@@ -1,0 +1,31 @@
+# 004_generate_code_ia_jira_ticket_add_tag_me_button.txt
+# source for GPT query
+# Write a Jira ticket to create a button that automatically add the author tag to the editing content. The ticket must give a precise DOR (definition of ready) and DOD (definition of done) to clarify the Acceptance Criteria.
+
+Ticket Title: Add Author Tag Button
+
+Description:
+As a content creator, I would like to have a button that automatically adds the author tag to the editing content. This will help to streamline the content creation process and ensure that all content is properly attributed to the correct author.
+
+DOR (Definition of Ready):
+
+Acceptance criteria are clearly defined and agreed upon
+Technical feasibility has been assessed and approved by the development team
+UX design for the button has been created and approved
+User story and requirements are clear and concise
+Acceptance Criteria:
+
+A button is added to the editing interface that, when clicked, adds the author tag to the content
+The author tag includes the name of the current user and the date of creation
+The button is located in a prominent location on the editing interface
+The button is visually appealing and consistent with the design of the editing interface
+The button is only visible to users with editing permissions
+The feature is tested and works in all supported browsers
+DOD (Definition of Done):
+
+The code has been written and reviewed by at least one other member of the development team
+The feature has been tested in all supported browsers and on all supported platforms
+The code has been merged into the main branch of the code repository
+The documentation has been updated to reflect the new feature
+The feature has been deployed to the production environment
+The product owner has signed off on the feature

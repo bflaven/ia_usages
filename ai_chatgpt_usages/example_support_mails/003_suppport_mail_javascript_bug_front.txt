@@ -1,0 +1,18 @@
+# 003_suppport_mail_javascript_bug_front.txt
+# source for GPT query
+# write a support mail to a user to explain that this JavaScript used in the website that is not properly loaded but that a fix will be deployed soon and be polite.
+
+Dear [User],
+
+Thank you for reaching out to us about the issue you are experiencing with the JavaScript on our website. I apologize for any inconvenience this may have caused.
+
+I can understand your concern and I want to assure you that our team is aware of the issue and working to resolve it as quickly as possible. The problem is caused by a recent update to the website that has caused some of the JavaScript to not load properly.
+
+We are currently working on a fix that will be deployed as soon as possible. We anticipate that the issue will be resolved within the next 24 hours. In the meantime, if you need assistance with any other aspects of our website, please do not hesitate to reach out to us.
+
+Once again, I apologize for any inconvenience this may have caused and thank you for your patience and understanding as we work to resolve the issue.
+
+Best regards,
+
+[Your Name]
+Support Team

@@ -1,0 +1,44 @@
+annotated-types==0.5.0
+anyio==3.7.1
+blis==0.7.10
+catalogue==2.0.9
+certifi==2023.7.22
+charset-normalizer==3.2.0
+click==8.1.7
+confection==0.1.1
+cymem==2.0.7
+en-core-web-lg @ https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.6.0/en_core_web_lg-3.6.0-py3-none-any.whl#sha256=9012584a8fcf5bc61bedb13a4b511fb81ffff9f770958ee06366671be10632e9
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.6.0/en_core_web_sm-3.6.0-py3-none-any.whl#sha256=83276fc78a70045627144786b52e1f2728ad5e29e5e43916ec37ea9c26a11212
+exceptiongroup==1.1.3
+fastapi==0.103.1
+fr-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/fr_core_news_sm-3.6.0/fr_core_news_sm-3.6.0-py3-none-any.whl#sha256=88ba4254539a7efb51d5e0c5b6c4ea5b350542752b634088274c1b97d8c8b8ee
+h11==0.14.0
+idna==3.4
+Jinja2==3.1.2
+joblib==1.3.2
+langcodes==3.3.0
+MarkupSafe==2.1.3
+murmurhash==1.0.9
+nltk==3.8.1
+numpy==1.25.2
+packaging==23.1
+pathy==0.10.2
+preshed==3.0.8
+pydantic==2.3.0
+pydantic_core==2.6.3
+regex==2023.8.8
+requests==2.31.0
+smart-open==6.3.0
+sniffio==1.3.0
+spacy==3.6.1
+spacy-legacy==3.0.12
+spacy-loggers==1.0.4
+srsly==2.4.7
+starlette==0.27.0
+thinc==8.1.12
+tqdm==4.66.1
+typer==0.9.0
+typing_extensions==4.7.1
+urllib3==2.0.4
+uvicorn==0.23.2
+wasabi==1.1.2

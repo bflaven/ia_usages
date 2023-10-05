@@ -1,0 +1,187 @@
+
+! REQUIREMNTS
+cd /Users/brunoflaven/Documents/01_work/blog_articles/ml_label_studio/
+git clone https://github.com/bflaven/BlogArticlesExamples.git
+
+
+- Only need this directory 02_using_label_studio/label_studio_ml_with_label_studio/sentiment_analysis
+
+--- Source: https://github.com/bflaven/BlogArticlesExamples/tree/master/ml_label_studio/02_using_label_studio/label_studio_ml_with_label_studio/sentiment_analysis
+
+
+
+! HOW-TO
++ STEP_1 :: Article :: Zero to One: Getting Started with Label Studio
+--- Source: https://labelstud.io/blog/zero-to-one-getting-started-with-label-studio/
+
+--- Label Studio (https://labelstud.io/) 
+--- Docker (https://www.docker.com/)
+
+
+! CASE_1 (manually labeling)
+- 1. Create the dir
+--- go to you path
+cd /Users/brunoflaven/Documents/01_work/blog_articles/ml_label_studio
+mkdir yt-label-studio-ml-tutorial
+cd yt-label-studio-ml-tutorial
+
+
+- 2. Get a sample Download sample
+https://s3.amazonaws.com/labelstud.io/datasets/IMDB_train_unlabeled_100.csv
+
+
+- 2. Install docker and launch label studio
+# Run latest Docker version
+docker run -it -p 8080:8080 -v `pwd`/mydata:/label-studio/data heartexlabs/label-studio:latest
+
+--- you must create an account
+# Go to http://localhost:8080 or http://0.0.0.0:8080/
+# Create a user admin added label-studio
+# user :: test1@example.com
+# pwd :: test1test1*234
+# URL :: http://localhost:8080/user/signup
+
+- 3. Creating and prepare your Project 
+
+# 3.1 Project Name
+# Title :: Movie Sentiment Analysis #1
+# Description :: A Movie Sentiment Analysis project
+# Select an existing template
+
+
+# 3.2 Import data
+# Import IMDB_train_unlabeled_100.csv
+
+
++ STEP_2 :: Article :: Introduction to Machine Learning with Label Studio
+--- Source: https://labelstud.io/blog/introduction-to-machine-learning-with-label-studio/
+--- Code :: https://github.com/HumanSignal/label-studio-ml-tutorial
+
+! We’re choosing this set because it will allow us to evaluate the predictive power of our model. The dataset is included as 'file_train_labeled_100.csv'.
+
+- 1. Create the dir
+cd yt-label-studio-ml-tutorial
+
+- 2. Create the env with anaconda
+! You can use poetry, venv or anaconda
+--- https://python-poetry.org/
+--- https://www.anaconda.com/
+--- https://docs.python.org/3/library/venv.html
+
+- 2.1 # Create the Environment with venv
+# python -m venv .venv
+# source .venv/bin/activate
+
+
+- 2.2 # Create the Environment with Conda 
+conda create --name using_label_studio python=3.9.13
+conda info --envs
+source activate using_label_studio
+conda deactivate
+pip install -r sentiment_analysis/requirements.txt
+
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n using_label_studio
+
+
+# update conda 
+conda update -n base -c defaults conda
+
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
+
+
+
+- 2.2 Create the Environment with poetry
+
+# install poetry 
+--- To install poetry, you can use homebrew. https://formulae.brew.sh/formula/poetry
+brew install poetry
+--- check if poetry is installed
+poetry --version
+
+# init poetry 
+--- Fill up the elements, say no to the 2 last questions
+poetry init 
+
+# create a shell in poetry
+--- to go out from the env type "exit"
+poetry shell
+
+# install packages with poetry
+poetry add torch
+poetry add torchtext
+poetry add label-studio-ml
+poetry add redis
+poetry add rq
+poetry add gunicorn
+
+
+- 2.2 Use Project Name "Movie Sentiment Analysis #1"
+--- Check that you are ging to work on the sentiment of the 'review' column of the data.
+# Run latest Docker version
+docker run -it -p 8080:8080 -v `pwd`/mydata:/label-studio/data heartexlabs/label-studio:latest
+
+! CASE_2 (manually used a model to label with Label Studio)
+
+- 3. Test the model used for these examples is a Convolutional Neural Network (CNN)
+
+--- The model used for these examples is a Convolutional Neural Network (CNN) based on a series of Sentiment Analysis with PyTorch tutorials written by Ben Trevett. Their tutorial covers several different methods for building a sentiment analysis model using the same IMDB dataset that we’re using for this tutorial.
+
+cd /Users/brunoflaven/Documents/01_work/blog_articles/ml_label_studio/BlogArticlesExamples/ml_label_studio/02_using_label_studio/label_studio_ml_with_label_studio/sentiment_analysis
+
+python 001_ml_label_studio.py
+
+--- The first value, '1', represents a positive sentiment (a '0' would represent a negative sentiment).
+
+
+- 4. Create predictions with the model and import it in label studio
+python generate_predictions.py \
+  ../IMDB_train_labeled_100.csv \
+  ../IMDB_predictions_100_YT_NEW_2.json
+
+
+! CASE_3 (automatically labeling using a ML Prediction Server with Label Studio)
+
+
+- 5. Running the Prediction Server
+
+--- scaffolding for the ML backend.
+label-studio-ml init yt-three-mlbackend --script sentiment_analysis/sentiment_api.py
+
+--- copy over the supporting model and data files into the newly generated model template.
+cp sentiment_analysis/sentiment_cnn.py yt-three-mlbackend/.
+mkdir yt-three-mlbackend/data
+cp sentiment_analysis/data/* yt-three-mlbackend/data/.
+
+--- Navigate into the "mlbackend" directory, and start the machine learning service.
+
+cd yt-three-mlbackend
+label-studio-ml start .
+
+- 6. Connecting the ML Backend to Label Studio
+Go "Settings", then select "Machine Learning"
+
+- 7. Automatically Labeling Tasks
+
+
+! RESOURCE
++ Resource :: need to go down the full documentation
+https://labelstud.io/guide/
+
++ Resource :: to create config file for certain kind of doc
+https://labelstud.io/playground
+
+
+! OTHER INFOS ON ML EXAMPLES AND TUTORIALS LABEL STUDIO
+More in https://labelstud.io/guide/ml_tutorials.html
+
+
+
+
+

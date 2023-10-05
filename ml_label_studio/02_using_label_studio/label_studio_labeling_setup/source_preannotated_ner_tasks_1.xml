@@ -1,0 +1,23 @@
+<View>
+  <View style="display:flex;align-items:start;gap:8px;flex-direction:column-reverse">
+  <Labels name="label" toName="text" showInline="true">
+    <Label value="CRYPTO" background="#ff00d0"></Label>
+    <Label value="PER" background="#f58c8c"></Label>
+    <Label value="ORG" background="darkred"></Label>
+    <Label value="FACT" background="#6e31ff"></Label>
+    <Label value="CURR" background="#e58749"></Label>
+    <Label value="DATE" background="#29ff53"></Label>
+    <Label value="TIME" background="#2698d3"></Label>
+    <Label value="ORD" background="#c55083"></Label>
+    <Label value="PERC" background="#6342bb"></Label>
+    <Label value="PRODUCT" background="#cd5f5f"></Label>
+    <Label value="LANG" background="lime"></Label>
+    <Label value="LOC" background="red"></Label>
+    <Label value="MISC" background="green"/>
+  </Labels></View>
+  <Text name="text" value="$text"/>
+</View>
+
+
+
+

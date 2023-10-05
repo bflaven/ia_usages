@@ -1,0 +1,151 @@
+<?php
+/*
+Plugin Name: MySocialBuddyAgainAgain
+Description: A plugin to add social network accounts to your WordPress site.
+Version: 1.1
+Author: Your Name
+License: GPL2
+*/
+// source_PHP_GPT_query.php
+// source PHP for GPT query  
+
+
+// Add a new entry in the main administration menu in "Settings"
+add_action('admin_menu', 'MySocialBuddyAgain_add_admin_menu');
+
+
+function MySocialBuddyAgainAgain_add_admin_menu() {
+  add_options_page('MySocialBuddyAgain', 'MySocialBuddyAgain', 'manage_options', 'MySocialBuddyAgain', 'MySocialBuddyAgain_options_page');
+}
+
+// Display the options page for MySocialBuddyAgain
+function MySocialBuddyAgain_options_page() {
+  ?>
+  <div class="wrap">
+    <h1>MySocialBuddyAgain Settings</h1>
+    <p>Use this page to enter your social network accounts.</p>
+    <form method="post" action="options.php">
+      <?php
+        // Given by Chat GPT      
+        // settings_fields('MySocialBuddyAgain_options');
+        // Change by human
+        settings_fields('MySocialBuddyAgain_settings_group');
+        do_settings_sections('MySocialBuddyAgain');
+        submit_button('Save Settings');
+      ?>
+    </form>
+  </div>
+  <?php
+}
+
+// Register the custom field for social network accounts
+add_action('admin_init', 'MySocialBuddyAgain_register_settings');
+
+function MySocialBuddyAgain_register_settings() {
+  
+    // register_setting('MySocialBuddyAgain_options', 'MySocialBuddyAgain_twitter');
+    register_setting('MySocialBuddyAgain_settings_group', 'MySocialBuddyAgain_twitter');
+    // lazy GPT stops here, need to complete
+    register_setting('MySocialBuddyAgain_settings_group', 'MySocialBuddyAgain_linkedin');
+    register_setting('MySocialBuddyAgain_settings_group', 'MySocialBuddyAgain_facebook');
+    register_setting('MySocialBuddyAgain_settings_group', 'MySocialBuddyAgain_instagram');
+    register_setting('MySocialBuddyAgain_settings_group', 'MySocialBuddyAgain_vkontakte');
+    register_setting('MySocialBuddyAgain_settings_group', 'MySocialBuddyAgain_weibo');
+    
+    add_settings_section('MySocialBuddyAgain_section', 'Social Network Accounts', 'MySocialBuddyAgain_section_text', 'MySocialBuddyAgain');
+
+    // Given by GPT
+    // add_settings_field('MySocialBuddyAgain_twitter', 'Twitter', 'MySocialBuddyAgain_twitter_input', 'MySocialBuddyAgain', 'MySocialBuddyAgain_section');
+    
+    
+    // Extend the logic given by GPT
+    add_settings_field('MySocialBuddyAgain_twitter', 'Twitter', 'MySocialBuddyAgain_twitter_input', 'MySocialBuddyAgain', 'MySocialBuddyAgain_section');
+    add_settings_field('MySocialBuddyAgain_linkedin', 'Linkedin', 'MySocialBuddyAgain_linkedin_input', 'MySocialBuddyAgain', 'MySocialBuddyAgain_section');
+    add_settings_field('MySocialBuddyAgain_facebook', 'Facebook', 'MySocialBuddyAgain_facebook_input', 'MySocialBuddyAgain', 'MySocialBuddyAgain_section');
+    add_settings_field('MySocialBuddyAgain_instagram', 'Instagram', 'MySocialBuddyAgain_instagram_input', 'MySocialBuddyAgain', 'MySocialBuddyAgain_section');
+    add_settings_field('MySocialBuddyAgain_vkontakte', 'Vkontakte', 'MySocialBuddyAgain_vkontakte_input', 'MySocialBuddyAgain', 'MySocialBuddyAgain_section');
+    add_settings_field('MySocialBuddyAgain_weibo', 'Weibo', 'MySocialBuddyAgain_weibo_input', 'MySocialBuddyAgain', 'MySocialBuddyAgain_section');
+
+
+}
+
+// Display the description for the social network accounts section
+function MySocialBuddyAgain_section_text() {
+  echo '<p>Enter your social network accounts below.</p>';
+}
+
+// Display the input field for the Twitter account
+
+
+function MySocialBuddyAgain_twitter_input() {
+  $twitter = esc_attr(get_option('MySocialBuddyAgain_twitter'));
+  echo '<input type="text" name="MySocialBuddyAgain_twitter" value="' . $twitter . '" />';
+}
+// linkedin
+function MySocialBuddyAgain_linkedin_input() {
+    $linkedin = esc_attr(get_option('MySocialBuddyAgain_linkedin'));
+    echo '<input type="text" name="MySocialBuddyAgain_linkedin" value="' . $linkedin . '" />';
+}
+
+// facebook
+function MySocialBuddyAgain_facebook_input(){
+    $facebook = esc_attr(get_option('MySocialBuddyAgain_facebook'));
+    echo '<input type="text" name="MySocialBuddyAgain_facebook" value="' . $facebook . '" />';
+}
+
+// instagram
+function MySocialBuddyAgain_instagram_input() {
+    $instagram = esc_attr(get_option('MySocialBuddyAgain_instagram'));
+    echo '<input type="text" name="MySocialBuddyAgain_instagram" value="' . $instagram . '" />';
+}
+
+// vkontakte
+function MySocialBuddyAgain_vkontakte_input() {
+    $vkontakte = esc_attr(get_option('MySocialBuddyAgain_vkontakte'));
+    echo '<input type="text" name="MySocialBuddyAgain_vkontakte" value="' . $vkontakte . '" />';
+}
+
+// weibo
+function MySocialBuddyAgain_weibo_input() {
+    $weibo = esc_attr(get_option('MySocialBuddyAgain_weibo'));
+    echo '<input type="text" name="MySocialBuddyAgain_weibo" value="' . $weibo . '" />';
+}
+
+/*
+MySocialBuddyAgain_linkedin_input
+MySocialBuddyAgain_facebook_input
+MySocialBuddyAgain_instagram_input
+MySocialBuddyAgain_vkontakte_input
+MySocialBuddyAgain_weibo_input
+*/
+/*
+MySocialBuddyAgain_linkedin
+MySocialBuddyAgain_facebook
+MySocialBuddyAgain_instagram
+MySocialBuddyAgain_vkontakte
+MySocialBuddyAgain_weibo
+*/
+
+
+
+/*
+This plugin registers a custom field for the Twitter account under the "Social Network Accounts" section in the "MySocialBuddyAgain" menu. The field can be accessed and edited by users with the "manage_options" capability. The settings are saved using the WordPress settings API and can be accessed using the get_option() function.
+
+To add more social network accounts, you can add more fields using the add_settings_field() function and register them using the register_setting() function. You can also add more sections and descriptions using the add_settings_section() function and the corresponding text functions.
+
+ */
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

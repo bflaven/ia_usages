@@ -1,0 +1,25 @@
+# 001_generate_code_ia_jira_ticket_improve_image_loading.txt
+# source for GPT query
+# Write a Jira ticket to improve image loading in media library
+
+Issue Type: Improvement
+
+Summary: Improve image loading in media library
+
+Description:
+Currently, the image loading time in the media library is slow, which causes delays for users who need to access and manage their images. This can result in frustration and decreased productivity.
+
+Proposed Solution:
+To improve the image loading time in the media library, we propose implementing a lazy loading mechanism that only loads the images when they are needed. This can be done by using a third-party library such as LazyLoad or by implementing a custom solution. Additionally, we suggest optimizing the image file sizes to reduce the overall load time.
+
+Acceptance Criteria:
+
+Images in the media library should load quickly and efficiently
+The lazy loading mechanism should be implemented without any negative impact on the user experience
+Image file sizes should be optimized without any loss of image quality
+The improvement should be tested and validated on different browsers and devices
+Priority: Medium
+
+Assignee: [insert name]
+
+Due Date: [insert date]

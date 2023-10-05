@@ -1,0 +1,30 @@
+# 002_suppport_mail_login_logout_private.txt
+# source for GPT query
+# write a support mail to a user that need to login/logout and start private session with his/her chrome browser and login again.
+
+Subject: Assistance with Chrome Browser Login/Logout and Private Session
+
+Dear [User],
+
+Thank you for reaching out to us for assistance with your Chrome browser. I understand that you are having trouble logging in and out and starting a private session. I am here to help.
+
+To log out of your Chrome browser, follow these steps:
+
+Click on the three dots in the upper-right corner of the Chrome window
+Select "Sign out" from the dropdown menu
+You will be logged out of your Google account and any other accounts you have signed into in Chrome.
+To start a private session in Chrome, follow these steps:
+
+Click on the three dots in the upper-right corner of the Chrome window
+Select "New incognito window" from the dropdown menu
+A new incognito window will open, and you can browse the web privately.
+To log back in, follow these steps:
+
+Click on the three dots in the upper-right corner of the Chrome window
+Select "Sign in" from the dropdown menu
+Enter your email address and password to sign in to your Google account.
+If you have any further issues, please do not hesitate to reach out to us. We are here to help.
+
+Best regards,
+[Your Name]
+Support Team

@@ -1,0 +1,23 @@
+# 004_suppport_mail_site_down_emergency_hacked_please_stay_calm.txt
+# source for GPT query
+# write a support mail to users to explain that the site is down because we are currently under attack. Users need to remain calm, and the problem will be fixed as all the team is working on it (best efforts) and be polite.
+
+Subject: Site Unavailable Due to Attack - We're Working on It
+
+Dear Valued Users,
+
+We regret to inform you that our website is currently unavailable due to an ongoing attack. We are working hard to resolve the issue as quickly as possible, and we appreciate your patience during this difficult time.
+
+Our team is fully engaged in addressing the problem, and we assure you that we are doing everything within our power to restore normal operations as soon as possible. We are taking all necessary steps to mitigate the impact of the attack and prevent any further damage to our website.
+
+We understand that this situation may be frustrating and inconvenient for you, but we kindly request that you remain calm and patient. Our team is doing their best to resolve this issue, and we will keep you updated on the progress.
+
+In the meantime, please be assured that we take the security of our website and our users' data very seriously. We have implemented additional measures to safeguard against future attacks and ensure that your information remains safe and secure.
+
+We sincerely apologize for any inconvenience this may have caused and thank you for your understanding and support. If you have any questions or concerns, please do not hesitate to contact our customer support team.
+
+Thank you for your patience and understanding.
+
+Best regards,
+[Your Name]
+[Company Name]

@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "ner-service"
+version = "0.1.0"
+description = "A fastapi POC for NER in English and French using Poetry"
+authors = ["Bruno Flaven <info@flaven.fr>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+spacy = "^3.6.1"
+fastapi = "^0.103.1"
+uvicorn = "^0.23.2"
+en_core_web_sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.6.0/en_core_web_sm-3.6.0-py3-none-any.whl" }
+fr_core_news_sm = { url = "https://github.com/explosion/spacy-models/releases/download/fr_core_news_sm-3.6.0/fr_core_news_sm-3.6.0-py3-none-any.whl" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

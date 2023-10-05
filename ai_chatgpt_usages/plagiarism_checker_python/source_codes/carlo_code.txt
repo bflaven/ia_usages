@@ -1,0 +1,103 @@
+<?php
+
+/*
+Plugin Name: MyFlagsSiteVersionCarlo (second YT chat-gpt-MyFlagsSiteVersionCarlo)
+Plugin URI: https://www.example.com/MyFlagsSiteVersionCarlo
+Description: A plugin to manipulate custom fields for two languages.
+Version: 1.0
+Author: Your Name
+Author URI: https://www.example.com
+*/
+/*
+# FIRST CODE GENERATION
+# 005_generate_php_plugin_wordpress_flags_header.php
+# Write in PHP, a Wordpress plugin with comments, named MyFlagsSiteVersionCarlo. This Plugin MyFlagsSiteVersionCarlo will add a new entry in the main administration menu in "Settings". The name of the entrance will be MyFlagsSiteVersionCarlo. The purpose of this plugin is to manipulate a single custom fields for 2 languages (spanish, russian):  MyFlagsSiteVersionCarlo_sp, MyFlagsSiteVersionCarlo_ru. You can you write also tips for this field and general explanation at the beginning of the plugin page settings to explain how does the plugin work.
+
+# Model: https://github.com/bflaven/PluginWordpressForFun/blob/master/johann_flags_header/johann_flags_header.php
+*/
+
+// Add entry in main administration menu
+add_action('admin_menu', 'MyFlagsSiteVersionCarlo_plugin_menu');
+
+function MyFlagsSiteVersionCarlo_plugin_menu() {
+    add_options_page(
+        'MyFlagsSiteVersionCarlo Settings', 
+        'MyFlagsSiteVersionCarlo', 
+        'manage_options', 
+        'MyFlagsSiteVersionCarlo', 
+        'MyFlagsSiteVersionCarlo_plugin_settings_page'
+    );
+}
+
+// Display settings page
+function MyFlagsSiteVersionCarlo_plugin_settings_page() {
+    if (!current_user_can('manage_options')) {
+        wp_die(__('You do not have sufficient permissions to access this page.'));
+    }
+    ?>
+    <div class="wrap">
+        <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
+        <p><?php echo __('This plugin allows you to manipulate custom fields for two languages.'); ?></p>
+        <form method="post" action="options.php">
+            <?php settings_fields('MyFlagsSiteVersionCarlo-settings-group'); ?>
+            <?php do_settings_sections('MyFlagsSiteVersionCarlo'); ?>
+            <?php submit_button(); ?>
+        </form>
+    </div>
+    <?php
+}
+
+// Add custom fields for each language
+add_action('admin_init', 'MyFlagsSiteVersionCarlo_plugin_settings');
+
+function MyFlagsSiteVersionCarlo_plugin_settings() {
+    add_settings_section(
+        'MyFlagsSiteVersionCarlo-section',
+        __('MyFlagsSiteVersionCarlo Custom Fields'),
+        'MyFlagsSiteVersionCarlo_plugin_section_callback',
+        'MyFlagsSiteVersionCarlo'
+    );
+
+    add_settings_field(
+        'MyFlagsSiteVersionCarlo-sp',
+        __('Spanish Field'),
+        'MyFlagsSiteVersionCarlo_sp_callback',
+        'MyFlagsSiteVersionCarlo',
+        'MyFlagsSiteVersionCarlo-section'
+    );
+
+    add_settings_field(
+        'MyFlagsSiteVersionCarlo-ru',
+        __('Russian Field'),
+        'MyFlagsSiteVersionCarlo_ru_callback',
+        'MyFlagsSiteVersionCarlo',
+        'MyFlagsSiteVersionCarlo-section'
+    );
+
+    register_setting(
+        'MyFlagsSiteVersionCarlo-settings-group',
+        'MyFlagsSiteVersionCarlo_sp'
+    );
+
+    register_setting(
+        'MyFlagsSiteVersionCarlo-settings-group',
+        'MyFlagsSiteVersionCarlo_ru'
+    );
+}
+
+// Display custom fields for each language
+function MyFlagsSiteVersionCarlo_plugin_section_callback() {
+    echo '<p>' . __('Enter the text for each language below.') . '</p>';
+}
+
+function MyFlagsSiteVersionCarlo_sp_callback() {
+    $sp_value = get_option('MyFlagsSiteVersionCarlo_sp');
+    echo '<input type="text" name="MyFlagsSiteVersionCarlo_sp" value="' . esc_attr($sp_value) . '" />';
+}
+
+function MyFlagsSiteVersionCarlo_ru_callback() {
+    $ru_value = get_option('MyFlagsSiteVersionCarlo_ru');
+    echo '<input type="text" name="MyFlagsSiteVersionCarlo_ru" value="' . esc_attr($ru_value) . '" />';
+}
+
+?>

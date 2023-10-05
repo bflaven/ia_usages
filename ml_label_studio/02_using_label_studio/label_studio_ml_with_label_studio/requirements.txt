@@ -1,0 +1,6 @@
+torch
+torchtext
+label-studio-ml
+redis
+rq
+gunicorn

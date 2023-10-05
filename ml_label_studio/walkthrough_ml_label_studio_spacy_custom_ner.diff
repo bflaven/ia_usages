@@ -1,0 +1,102 @@
+! SOURCE
+- Article
+https://flaven.fr/2023/08/the-importance-of-the-labeling-process-or-annotating-inside-an-ml-pipeline-plus-an-example-with-ner-made-for-spacy/
+
+NER :: Named-entity recognition (NER)
+
+
+- command to remove Anaconda Environments
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n ml_with_label_studio
+conda env remove -n tagging_entity_extraction
+
+
+- Code
+https://github.com/bflaven/BlogArticlesExamples/tree/master/ml_label_studio
+
+--- Example in Portuguese
+https://medium.com/@johnidouglasmarangon/train-a-custom-named-entity-recognition-with-spacy-v3-ea48dfce67a5
+https://gist.github.com/johnidm/27e3b2ff50e592bc37183907ba97d31d
+
+
++ How to Train Custom Named Entity Recognition Model Using SpaCy
+
+I will present how to use Label Studio (https://labelstud.io/) instead of prodigy (https://prodi.gy/) to create annotations and then train with Spacy this sample to generate a new NER.
+
+--- Label Studio (https://labelstud.io/) 
+--- Prodigy (https://prodi.gy/)
+--- Spacy (https://spacy.io/)
+--- Spacy 🪐 Project Templates (https://github.com/explosion/projects)
+--- Docker (https://www.docker.com/)
+
+
+! HOW-TO
+
++ MAKE ANNOTATION with Label Studio
+
+- Clone the source
+git clone https://github.com/bflaven/BlogArticlesExamples.git
+
+- CONSOLE_1 (red)
+- Go to the dir
+cd /Users/brunoflaven/Documents/01_work/blog_articles/ml_label_studio/
+mkdir spacy_ml_with_label_studio
+cd spacy_ml_with_label_studio
+docker run -it -p 8080:8080 -v `pwd`/mydata:/label-studio/ml-data heartexlabs/label-studio:latest
+
+- CONSOLE_2 (blue)
+cd /Users/brunoflaven/Documents/01_work/blog_articles/ml_label_studio/BlogArticlesExamples/ml_label_studio/03_using_label_studio_spacy
+
++ TRAIN YOUR MODEL
+
+! ENV
+- 1. create the env
+
+[ENV_1]
+# Conda Environment
+conda create --name using_label_studio python=3.9.13
+conda info --envs
+source activate using_label_studio
+conda deactivate
+
+
+[ENV_2]
+# Conda Environment
+conda create --name tagging_entity_extraction python=3.9.13
+conda info --envs
+source activate tagging_entity_extraction
+conda deactivate
+
+--- installed Spacy language packages 
+en_core_web_lg (3.5.0), 
+de_core_news_md (3.5.0), 
+pt_core_news_sm (3.5.0), 
+en_ner_drugs (0.0.0), 
+pt_core_news_md (3.5.0), 
+it_core_news_md (3.5.0), 
+en_core_web_trf (3.5.0), 
+en_core_web_sm (3.5.0), 
+es_core_news_md (3.5.0), 
+en_core_web_md (3.5.0), 
+fr_core_news_md (3.5.0)
+
+
+
+! EXAMPLES
+
+
+- ENT :: FASHION_BRAND
+Check source_ner_fashion_1.txt
+Source : https://github.com/explosion/projects/tree/v3/tutorials/ner_fashion_brands/assets
+
+- ENT :: INGRED
+Check reddit_r_cooking_sample.jsonl
+Source : https://github.com/tim-smart/label-studio-spacy
+
+--- ENT :: AIRCRAFT
+https://zachlim98.github.io/me/2021-03/spacy3-ner-tutorial
+
+--- ENT :: MED
+Check https://www.kaggle.com/datasets/finalepoch/medical-ner
+
+

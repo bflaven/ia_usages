@@ -1,0 +1,327 @@
+[
+  {
+    "data": {
+      "text": "All that changed when he was 27 and he came to Jerusalem. It was the weekend of both Easter and Passover, and the city was flooded with tourists."
+    },
+    "predictions": [
+      {
+        "model_version": "one",
+        "score": 0.5,
+        "result": [
+          {
+            "id": "abc",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 29,
+              "end": 31,
+              "score": 0.70,
+              "text": "27",
+              "labels": [
+                "Date"
+              ]
+            }
+          },
+          {
+            "id": "def",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 47,
+              "end": 56,
+              "score": 0.65,
+              "text": "Jerusalem",
+              "labels": [
+                "Location"
+              ]
+            }
+          },
+          {
+            "id": "ghi",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 65,
+              "end": 76,
+              "score": 0.95,
+              "text": "the weekend",
+              "labels": [
+                "Date"
+              ]
+            }
+          },
+          {
+            "id": "jkl",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 85,
+              "end": 91,
+              "score": 0.50,
+              "text": "Easter",
+              "labels": [
+                "Date"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "model_version": "two",
+        "score": 0.42,
+        "result": [
+          {
+            "id": "mno",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 29,
+              "end": 31,
+              "score": 0.55,
+              "text": "27",
+              "labels": [
+                "Date"
+              ]
+            }
+          },
+          {
+            "id": "pqr",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 47,
+              "end": 56,
+              "score": 0.40,
+              "text": "Jerusalem",
+              "labels": [
+                "Location"
+              ]
+            }
+          },
+          {
+            "id": "stu",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 65,
+              "end": 76,
+              "score": 0.32,
+              "text": "the weekend",
+              "labels": [
+                "Time"
+              ]
+            }
+          },
+          {
+            "id": "vwx",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 85,
+              "end": 91,
+              "score": 0.22,
+              "text": "Easter",
+              "labels": [
+                "Location"
+              ]
+            }
+          },
+          {
+            "id": "yz1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 96,
+              "end": 104,
+              "score": 0.96,
+              "text": "Passover",
+              "labels": [
+                "Date"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": {
+      "text": " Each journal was several inches thick and bound in leather. On one page are drawn portraits of Sunny in a flowery, Easter dress and sun hat. On another page are hundreds of sketches of leaves that Niyati saw in her yard."
+    },
+    "predictions": [
+      {
+        "model_version": "one",
+        "result": [
+          {
+            "id": "ab2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 18,
+              "end": 32,
+              "text": "several inches",
+              "labels": [
+                "Product"
+              ]
+            }
+          },
+          {
+            "id": "cd3",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 64,
+              "end": 67,
+              "text": "one",
+              "labels": [
+                "Percent"
+              ]
+            }
+          },
+          {
+            "id": "ef4",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 96,
+              "end": 101,
+              "text": "Sunny",
+              "labels": [
+                "Person"
+              ]
+            }
+          },
+          {
+            "id": "gh5",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 162,
+              "end": 170,
+              "text": "hundreds",
+              "labels": [
+                "Percent"
+              ]
+            }
+          },
+          {
+            "id": "ij6",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 198,
+              "end": 204,
+              "text": "Niyati",
+              "labels": [
+                "Person"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "model_version": "two",
+        "result": [
+          {
+            "id": "kl7",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 18,
+              "end": 32,
+              "text": "several inches",
+              "labels": [
+                "Fact"
+              ]
+            }
+          },
+          {
+            "id": "mn8",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 64,
+              "end": 67,
+              "text": "one",
+              "labels": [
+                "Percent"
+              ]
+            }
+          },
+          {
+            "id": "op9",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 96,
+              "end": 101,
+              "text": "Sunny",
+              "labels": [
+                "Time"
+              ]
+            }
+          },
+          {
+            "id": "qr10",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 116,
+              "end": 122,
+              "text": "Easter",
+              "labels": [
+                "Location"
+              ]
+            }
+          },
+          {
+            "id": "st11",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 162,
+              "end": 170,
+              "text": "hundreds",
+              "labels": [
+                "Money"
+              ]
+            }
+          },
+          {
+            "id": "uv12",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "value": {
+              "start": 198,
+              "end": 204,
+              "text": "Niyati",
+              "labels": [
+                "Person"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

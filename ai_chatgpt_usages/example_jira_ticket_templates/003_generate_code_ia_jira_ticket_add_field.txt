@@ -1,0 +1,33 @@
+# 003_generate_code_ia_jira_ticket_add_field.txt
+# source for GPT query
+# Write a Jira ticket to add a field name "location" in an edit form for content type article.
+
+
+Project: Content Management System (CMS)
+
+Summary: Add field "Location" to the edit form for the Article content type
+
+Description:
+As a content editor, I need the ability to specify the location for an article. This information will be displayed on the front-end and will enhance the user experience.
+
+The field "Location" should be added to the edit form for the Article content type. This field should be a text input field, allowing the content editor to enter a location.
+
+Acceptance Criteria:
+
+The field "Location" is added to the edit form for the Article content type
+The field "Location" is a text input field
+The entered location is displayed on the front-end for the corresponding article
+Steps to Reproduce:
+
+Log in to the CMS
+Navigate to the "Articles" section
+Click on an existing article or create a new article
+Observe the edit form for the article
+The "Location" field should be present in the form
+Priority: High
+
+Component/s: Content Types, Edit Forms
+
+Labels: Content Management, User Experience
+
+Assignee: CMS Development Team

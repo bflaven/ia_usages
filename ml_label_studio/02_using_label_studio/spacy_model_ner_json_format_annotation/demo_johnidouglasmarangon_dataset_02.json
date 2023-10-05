@@ -1,0 +1,568 @@
+{
+    "classes": [
+        "",
+        "CRYPTO"
+    ],
+    "annotations": [
+        [
+            "Antes considerado um mês de alta, abril repete o que aconteceu em 2021 e traz uma sequência de quedas para o Bitcoin (BTC). A criptomoeda já acumula perdas de 18% em relação aos US$ 48 mil alcançados no final de março, após cair momentaneamente para menos de US$ 40 mil ontem.",
+            {
+                "entities": [
+                    [
+                        109,
+                        116,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "“Após o Bitcoin perder os US$ 44 mil, o mercado acelerou a queda, voltando para a região de consolidação do primeiro trimestre, e, em paralelo, aumentando ainda mais a correlação com os mercados tradicionais e enfraquecendo a tese que o mercado cripto pode ser um ativo diversificado no portfólio dos investidores”, afirma, em nota, o analista de trading do Mercado Bitcoin, Humberto Andrade.",
+            {
+                "entities": [
+                    [
+                        8,
+                        15,
+                        "CRYPTO"
+                    ],
+                    [
+                        366,
+                        373,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "“No momento, nós estamos na média móvel de 200 do gráfico de 3 dias, que foi o que segurou toda essa queda até o momento”, disse o especialista quando o Bitcoin rondava os US$ 39.600 ontem.",
+            {
+                "entities": [
+                    [
+                        153,
+                        160,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Dessa vez, se o Bitcoin repetir a dose e cair abaixo dos US$ 35 mil, é possível que a queda se prolongue ainda mais. O suporte mais forte da criptomoeda, relembra o analista, está perto de US$ 21.500",
+            {
+                "entities": [
+                    [
+                        16,
+                        23,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "O Bitcoin (BTC) e o Ethereum (ETH) caíram forte na noite de ontem e perderam, momentaneamente, níveis de preço considerados chave para a manutenção do mínimo de otimismo de curto prazo: US$ 40 mil e US$ 3 mil, respectivamente. Em sinal de recuperação, as criptomoedas retomam esses patamares hoje e mantêm perdas em 3,4% e 2,1%. Investidores, no entanto, seguem em modo de cautela, atentos ao dado de inflação dos Estados Unidos, que ficou em 8,5% anuais após aumento de 1,2% março.",
+            {
+                "entities": [
+                    [
+                        2,
+                        9,
+                        "CRYPTO"
+                    ],
+                    [
+                        20,
+                        28,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "O bitcoin caía 4,76%, a US$ 40.383, ou R$ 189.518, por volta das 17h desta segunda-feira (11), conforme o ambiente macroeconômico e geopolítico global segue gerando aversão a risco. O ether, moeda digital da rede ethereum, recuava 5,08%, a US$ 3.025 ou R$ 14.198. Os dados são do Valor Data em parceria com o Mercado Bitcoin.",
+            {
+                "entities": [
+                    [
+                        2,
+                        9,
+                        "CRYPTO"
+                    ],
+                    [
+                        184,
+                        189,
+                        "CRYPTO"
+                    ],
+                    [
+                        213,
+                        221,
+                        "CRYPTO"
+                    ],
+                    [
+                        317,
+                        324,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Textos, fotos, artes e vídeos do Valor estão protegidos pela legislação brasileira sobre direito autoral. Não reproduza o conteúdo do jornal em qualquer meio de comunicação, eletrônico ou impresso, sem autorização do Valor (falecom@valor.com.br). Essas regras têm como objetivo proteger o investimento que o Valor faz na qualidade de seu jornalismo.",
+            {
+                "entities": []
+            }
+        ],
+        [
+            "Para Andrade, uma das poucas notícias positivas para o investidor de bitcoin, hoje, é que a Blockstream começou a construção de uma fábrica 100% solar para a mineração da criptomoeda no Estado americano do Texas.",
+            {
+                "entities": [
+                    [
+                        69,
+                        76,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Textos, fotos, artes e vídeos do Valor estão protegidos pela legislação brasileira sobre direito autoral. Não reproduza o conteúdo do jornal em qualquer meio de comunicação, eletrônico ou impresso, sem autorização do Valor (falecom@valor.com.br). Essas regras têm como objetivo proteger o investimento que o Valor faz na qualidade de seu jornalismo.",
+            {
+                "entities": []
+            }
+        ],
+        [
+            "Às 12h30 (horário de Brasília), o bitcoin (BTC) registrava queda de 1,34%, nas últimas 24 horas, a US$ 40.292. No período, a mínima foi de US$ 39.253 e a máxima de US$ 40.973. O ethereum (ETH), segunda cripto mais negociada, tinha ligeira variação negativa de 0,15%, a US$ 3.029, segundo dados do CoinDesk.",
+            {
+                "entities": [
+                    [
+                        34,
+                        41,
+                        "CRYPTO"
+                    ],
+                    [
+                        178,
+                        186,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "O Ether (ETH), criptoativo da Ethereum, também mostra quedas acentuadas. O criptoativo de governança da maior rede de contratos inteligentes do mercado vem se mantendo em US$ 2.900 – e mostra uma desvalorização em 24 horas de cerca de 9%.",
+            {
+                "entities": [
+                    [
+                        2,
+                        7,
+                        "CRYPTO"
+                    ],
+                    [
+                        30,
+                        38,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "10 bilhões de razões que podem tornar o bitcoin uma moeda de reserva.",
+            {
+                "entities": [
+                    [
+                        40,
+                        47,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Na última semana, o mercado de bitcoins (BTC) caiu, tendo começado com uma alta de US$ 47.102 e terminando em US$ 42.183. Esse enfraquecimento de mercado segue uma faixa de consolidação mensal que foi estabelecida desde janeiro.",
+            {
+                "entities": [
+                    [
+                        31,
+                        39,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Taxas de transação agregadas do Bitcoin estão próximas de suas baixas recordes — uma consequência de fatores, incluindo a adesão do SegWit (ou “testemunhas segregadas”, em tradução livre, que se referem à exigência de assinaturas por várias chaves privadas), agrupamento de transações e a falta de demanda por espaço em blocos na rede Bitcoin.",
+            {
+                "entities": [
+                    [
+                        32,
+                        39,
+                        "CRYPTO"
+                    ],
+                    [
+                        335,
+                        342,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "A promessa de uma plataforma de criptomoedas de acumular 10 bilhões de dólares em bitcoin para apoiar sua própria \"stablecoin\" está impulsionando o mercado. É parte de um movimento mais amplo para coroar o bitcoin como a moeda de reserva de uma nova era.",
+            {
+                "entities": [
+                    [
+                        82,
+                        89,
+                        "CRYPTO"
+                    ],
+                    [
+                        206,
+                        213,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "A promessa de uma plataforma de criptomoedas de acumular 10 bilhões de dólares em bitcoin para apoiar sua própria “stablecoin” está impulsionando o mercado.",
+            {
+                "entities": [
+                    [
+                        82,
+                        89,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "O comportamento do bitcoin hoje apresenta uma nova queda, colocando em risco o rendimento da criptomoeda, bem como de outros ativos digitais. A alta na inflação dos Estados Unidos está fazendo com que o mercado, de forma geral, fique cada vez mais cauteloso.",
+            {
+                "entities": [
+                    [
+                        19,
+                        26,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Certamente o lugar do Bitcoin é em uma carteira segura e não em corretoras. Contudo, é comum que traders deixem valores nas plataformas para realizarem suas operações, seja de arbitragem, diárias ou de swing trade.",
+            {
+                "entities": [
+                    [
+                        22,
+                        29,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "De acordo com analistas, as reduções do balanço do Federal Reserve dos Estados Unidos estão pressionando as ações e os ativos de risco, com o Bitcoin perdendo apelo.",
+            {
+                "entities": [
+                    [
+                        142,
+                        149,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "O Bitcoin reagiu desfavoravelmente a um dólar ressurgente, com o índice de moeda do dólar americano (DXY) retornando acima de 100 pela primeira vez desde maio de 2020.",
+            {
+                "entities": [
+                    [
+                        2,
+                        9,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "A negociação de margem permite que os investidores emprestem criptomoedas para alavancar sua posição de negociação com a esperança de retornos crescentes. Os traders podem emprestar Tether (USDT) para abrir uma posição longa alavancada, enquanto os tomadores de Bitcoin só podem vender a criptomoeda porque estão apostando na queda do preço.",
+            {
+                "entities": [
+                    [
+                        182,
+                        188,
+                        "CRYPTO"
+                    ],
+                    [
+                        262,
+                        269,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "O Senado Federal colocou na pauta desta terça-feira (12) a votação da lei Bitcoin, indicando que o plenário pode aprovar novas regra.",
+            {
+                "entities": [
+                    [
+                        74,
+                        81,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Compre Bitcoin e outras criptomoedas na corretora mais segura do Brasil. Cadastre-se e veja como é simples, acesse: https://coinext.com.br.",
+            {
+                "entities": [
+                    [
+                        7,
+                        14,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "O Bitcoin Conference 2022, maior evento de bitcoin do mundo, aconteceu esta semana na cidade de Miami, na Flórida. O encontro reuniu mais de 30 mil pessoas entre os dias 6 e 9 de abril e trouxe insights e debates dos principais nomes do mercado de criptomoedas e tecnologia do planeta.",
+            {
+                "entities": [
+                    [
+                        2,
+                        9,
+                        "CRYPTO"
+                    ],
+                    [
+                        43,
+                        50,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Não há como negar: existe algo muito semelhante acontecendo com o Bitcoin e o universo cripto agora.",
+            {
+                "entities": [
+                    [
+                        66,
+                        73,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "O Bitcoin Conference 2022, maior evento de bitcoin do mundo, aconteceu esta semana na cidade de Miami, na Flórida.",
+            {
+                "entities": [
+                    [
+                        2,
+                        9,
+                        "CRYPTO"
+                    ],
+                    [
+                        43,
+                        50,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Com uma queda acumulada no ano, o bitcoin está longe de despertar o interesse de especuladores nesta fase atual.",
+            {
+                "entities": [
+                    [
+                        34,
+                        41,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Um dos lemas da comunidade Bitcoin é em relação à prática de comprar e acumular a moeda digital sempre que possível.",
+            {
+                "entities": [
+                    [
+                        27,
+                        34,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Pelo seu Twitter, Peter disse que essa queda do bitcoin é uma oportunidade para que todos os holders vendam suas moedas e comprem ouro, este último sim, uma reserva de valor na opinião dele.",
+            {
+                "entities": [
+                    [
+                        48,
+                        55,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "“Atenção Bitcoin HODLers. Não é tarde demais para vender seu Bitcoin e comprar ouro. Mas não espere muito, pois em breve será!”",
+            {
+                "entities": [
+                    [
+                        9,
+                        16,
+                        "CRYPTO"
+                    ],
+                    [
+                        61,
+                        68,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Segundo um levantamento no último domingo (10), utilizando dados da ferramente Bitcoin ROI (%), ficou claro que o retorno da moeda digital em relação ao ouro foi muito maior, com uma valorização de 2.163%.",
+            {
+                "entities": [
+                    [
+                        79,
+                        86,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "De qualquer forma, no curto prazo o bitcoin perdeu a cotação em US$ 40 mil e é importante para interessados em negociar, seja comprar ou vender, proceder com cautela.",
+            {
+                "entities": [
+                    [
+                        36,
+                        43,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Continuando uma aceleração de baixa iniciada na noite de domingo, o Bitcoin começou a semana com fortes perdas ontem, com a criptomoeda chegando à mínima US$ 39.223 das últimas 24 horas no fim da noite de segunda (11), quando atingiu uma queda de quase 10% em relação ao pico de domingo à noite em US$ 43.500.",
+            {
+                "entities": [
+                    [
+                        68,
+                        75,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Do ponto de vista gráfico, as perdas adicionais do Bitcoin desde o fim de semana tiveram consequências importantes com os principais sinais de baixa. Notavelmente, o Bitcoin quebrou abaixo da zona de suporte de US$ 42.000, bem como abaixo da média móvel de 100 dias, atualmente em US$ 41.454, sem mencionar o teste de limite de US$ 40.000 que está em andamento.",
+            {
+                "entities": [
+                    [
+                        51,
+                        58,
+                        "CRYPTO"
+                    ],
+                    [
+                        166,
+                        173,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Muitas pessoas que querem comprar Bitcoin, seja para experimentar a tecnologia, ou para guardar como reserva de longo prazo, acabam culpando a falta de dinheiro para postergar essa atitude.",
+            {
+                "entities": [
+                    [
+                        34,
+                        41,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Com a alta do Bitcoin nos últimos anos, quem comprou míseros R$ 1.000,00 pode ter visto seu patrimônio multiplicar consideravelmente. E essa soma que neste domingo (10) dá cerca de 0,005 satoshis de bitcoin podem ser uma boa economia para o futuro.",
+            {
+                "entities": [
+                    [
+                        14,
+                        21,
+                        "CRYPTO"
+                    ],
+                    [
+                        199,
+                        206,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Criar um produto novo e aceitar Bitcoin como pagamento em seu comércio também é uma tarefa possível e cada vez mais comum como forma de obter moedas sem ter que efetivamente comprar.",
+            {
+                "entities": [
+                    [
+                        32,
+                        39,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Às 12h10 (horário de Brasília), o bitcoin (BTC) registrava queda de 4,25%, nas últimas 24 horas, a US$ 40.886. A mínima do período foi de US$ 40.718 e a máxima de US$ 43.421. O ethereum (ETH), segunda cripto mais negociada, tinha queda de 6,6%, a US$ 3.036, de acordo com dados do CoinDesk.",
+            {
+                "entities": [
+                    [
+                        34,
+                        41,
+                        "CRYPTO"
+                    ],
+                    [
+                        177,
+                        185,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Como resultado, o trader coreano teve toda sua posição liquidada com o Bitcoin caindo para cerca de 40.000 dólares. A decepção de Satto pode ser observada no clipe abaixo.",
+            {
+                "entities": [
+                    [
+                        71,
+                        78,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Buscando reaver sua perda, Satto abre outra posição de long, novamente apostando que o preço do Bitcoin subirá, outra vez negligenciando a tendência de baixa.\n",
+            {
+                "entities": [
+                    [
+                        96,
+                        103,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ],
+        [
+            "Buscando reaver sua perda, Satto abre outra posição de long, novamente apostando que o preço do Bitcoin subirá, outra vez negligenciando a tendência de baixa.\n",
+            {
+                "entities": [
+                    [
+                        96,
+                        103,
+                        "CRYPTO"
+                    ]
+                ]
+            }
+        ]
+    ]
+}

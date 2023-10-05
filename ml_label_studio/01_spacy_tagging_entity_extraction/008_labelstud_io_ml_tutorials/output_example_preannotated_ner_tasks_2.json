@@ -1,0 +1,367 @@
+[{
+	"id": 37,
+	"annotations": [{
+		"id": 31,
+		"completed_by": 1,
+		"result": [{
+			"value": {
+				"start": 29,
+				"end": 31,
+				"text": "27",
+				"labels": ["Date"]
+			},
+			"id": "mno",
+			"from_name": "label",
+			"to_name": "text",
+			"type": "labels",
+			"origin": "prediction"
+		}, {
+			"value": {
+				"start": 47,
+				"end": 56,
+				"text": "Jerusalem",
+				"labels": ["Location"]
+			},
+			"id": "pqr",
+			"from_name": "label",
+			"to_name": "text",
+			"type": "labels",
+			"origin": "prediction"
+		}, {
+			"value": {
+				"start": 65,
+				"end": 76,
+				"text": "the weekend",
+				"labels": ["Time"]
+			},
+			"id": "stu",
+			"from_name": "label",
+			"to_name": "text",
+			"type": "labels",
+			"origin": "prediction"
+		}, {
+			"value": {
+				"start": 85,
+				"end": 91,
+				"text": "Easter",
+				"labels": ["Location"]
+			},
+			"id": "vwx",
+			"from_name": "label",
+			"to_name": "text",
+			"type": "labels",
+			"origin": "prediction"
+		}, {
+			"value": {
+				"start": 96,
+				"end": 104,
+				"text": "Passover",
+				"labels": ["Date"]
+			},
+			"id": "yz1",
+			"from_name": "label",
+			"to_name": "text",
+			"type": "labels",
+			"origin": "prediction"
+		}],
+		"was_cancelled": false,
+		"ground_truth": false,
+		"created_at": "2023-07-26T16:17:11.591011Z",
+		"updated_at": "2023-07-26T16:17:34.414083Z",
+		"draft_created_at": null,
+		"lead_time": 9.57,
+		"prediction": {
+			"id": 66,
+			"model_version": "two",
+			"created_ago": "3 minutes",
+			"result": [{
+				"id": "mno",
+				"from_name": "label",
+				"to_name": "text",
+				"type": "labels",
+				"value": {
+					"start": 29,
+					"end": 31,
+					"score": 0.55,
+					"text": "27",
+					"labels": ["Date"]
+				}
+			}, {
+				"id": "pqr",
+				"from_name": "label",
+				"to_name": "text",
+				"type": "labels",
+				"value": {
+					"start": 47,
+					"end": 56,
+					"score": 0.4,
+					"text": "Jerusalem",
+					"labels": ["Location"]
+				}
+			}, {
+				"id": "stu",
+				"from_name": "label",
+				"to_name": "text",
+				"type": "labels",
+				"value": {
+					"start": 65,
+					"end": 76,
+					"score": 0.32,
+					"text": "the weekend",
+					"labels": ["Time"]
+				}
+			}, {
+				"id": "vwx",
+				"from_name": "label",
+				"to_name": "text",
+				"type": "labels",
+				"value": {
+					"start": 85,
+					"end": 91,
+					"score": 0.22,
+					"text": "Easter",
+					"labels": ["Location"]
+				}
+			}, {
+				"id": "yz1",
+				"from_name": "label",
+				"to_name": "text",
+				"type": "labels",
+				"value": {
+					"start": 96,
+					"end": 104,
+					"score": 0.96,
+					"text": "Passover",
+					"labels": ["Date"]
+				}
+			}],
+			"score": 0.42,
+			"cluster": null,
+			"neighbors": null,
+			"mislabeling": 0.0,
+			"created_at": "2023-07-26T16:14:00.308471Z",
+			"updated_at": "2023-07-26T16:14:00.308479Z",
+			"task": 37
+		},
+		"result_count": 0,
+		"unique_id": "40043821-121e-4d26-810b-abc25ab24664",
+		"last_action": null,
+		"task": 37,
+		"project": 3,
+		"updated_by": 1,
+		"parent_prediction": 66,
+		"parent_annotation": null,
+		"last_created_by": null
+	}],
+	"file_upload": "8a476d1c-example_preannotated_ner_tasks.json",
+	"drafts": [],
+	"predictions": [65, 66],
+	"data": {
+		"text": "All that changed when he was 27 and he came to Jerusalem. It was the weekend of both Easter and Passover, and the city was flooded with tourists."
+	},
+	"meta": {},
+	"created_at": "2023-07-26T16:14:00.297158Z",
+	"updated_at": "2023-07-26T16:17:34.442446Z",
+	"inner_id": 1,
+	"total_annotations": 1,
+	"cancelled_annotations": 0,
+	"total_predictions": 2,
+	"comment_count": 0,
+	"unresolved_comment_count": 0,
+	"last_comment_updated_at": null,
+	"project": 3,
+	"updated_by": 1,
+	"comment_authors": []
+}, {
+	"id": 38,
+	"annotations": [{
+		"id": 32,
+		"completed_by": 1,
+		"result": [{
+			"value": {
+				"start": 18,
+				"end": 32,
+				"text": "several inches",
+				"labels": ["Fact"]
+			},
+			"id": "kl7",
+			"from_name": "label",
+			"to_name": "text",
+			"type": "labels",
+			"origin": "prediction"
+		}, {
+			"value": {
+				"start": 64,
+				"end": 67,
+				"text": "one",
+				"labels": ["Percent"]
+			},
+			"id": "mn8",
+			"from_name": "label",
+			"to_name": "text",
+			"type": "labels",
+			"origin": "prediction"
+		}, {
+			"value": {
+				"start": 96,
+				"end": 101,
+				"text": "Sunny",
+				"labels": ["Time"]
+			},
+			"id": "op9",
+			"from_name": "label",
+			"to_name": "text",
+			"type": "labels",
+			"origin": "prediction"
+		}, {
+			"value": {
+				"start": 116,
+				"end": 122,
+				"text": "Easter",
+				"labels": ["Location"]
+			},
+			"id": "qr10",
+			"from_name": "label",
+			"to_name": "text",
+			"type": "labels",
+			"origin": "prediction"
+		}, {
+			"value": {
+				"start": 162,
+				"end": 170,
+				"text": "hundreds",
+				"labels": ["Money"]
+			},
+			"id": "st11",
+			"from_name": "label",
+			"to_name": "text",
+			"type": "labels",
+			"origin": "prediction"
+		}, {
+			"value": {
+				"start": 198,
+				"end": 204,
+				"text": "Niyati",
+				"labels": ["Person"]
+			},
+			"id": "uv12",
+			"from_name": "label",
+			"to_name": "text",
+			"type": "labels",
+			"origin": "prediction"
+		}],
+		"was_cancelled": true,
+		"ground_truth": false,
+		"created_at": "2023-07-26T16:17:17.886620Z",
+		"updated_at": "2023-07-26T16:17:25.992872Z",
+		"draft_created_at": null,
+		"lead_time": 11.24,
+		"prediction": {
+			"id": 68,
+			"model_version": "two",
+			"created_ago": "3 minutes",
+			"result": [{
+				"id": "kl7",
+				"from_name": "label",
+				"to_name": "text",
+				"type": "labels",
+				"value": {
+					"start": 18,
+					"end": 32,
+					"text": "several inches",
+					"labels": ["Fact"]
+				}
+			}, {
+				"id": "mn8",
+				"from_name": "label",
+				"to_name": "text",
+				"type": "labels",
+				"value": {
+					"start": 64,
+					"end": 67,
+					"text": "one",
+					"labels": ["Percent"]
+				}
+			}, {
+				"id": "op9",
+				"from_name": "label",
+				"to_name": "text",
+				"type": "labels",
+				"value": {
+					"start": 96,
+					"end": 101,
+					"text": "Sunny",
+					"labels": ["Time"]
+				}
+			}, {
+				"id": "qr10",
+				"from_name": "label",
+				"to_name": "text",
+				"type": "labels",
+				"value": {
+					"start": 116,
+					"end": 122,
+					"text": "Easter",
+					"labels": ["Location"]
+				}
+			}, {
+				"id": "st11",
+				"from_name": "label",
+				"to_name": "text",
+				"type": "labels",
+				"value": {
+					"start": 162,
+					"end": 170,
+					"text": "hundreds",
+					"labels": ["Money"]
+				}
+			}, {
+				"id": "uv12",
+				"from_name": "label",
+				"to_name": "text",
+				"type": "labels",
+				"value": {
+					"start": 198,
+					"end": 204,
+					"text": "Niyati",
+					"labels": ["Person"]
+				}
+			}],
+			"score": null,
+			"cluster": null,
+			"neighbors": null,
+			"mislabeling": 0.0,
+			"created_at": "2023-07-26T16:14:00.308551Z",
+			"updated_at": "2023-07-26T16:14:00.308557Z",
+			"task": 38
+		},
+		"result_count": 0,
+		"unique_id": "e0c37dbd-7463-430f-852e-06cf54d4745a",
+		"last_action": null,
+		"task": 38,
+		"project": 3,
+		"updated_by": 1,
+		"parent_prediction": 68,
+		"parent_annotation": null,
+		"last_created_by": null
+	}],
+	"file_upload": "8a476d1c-example_preannotated_ner_tasks.json",
+	"drafts": [],
+	"predictions": [67, 68],
+	"data": {
+		"text": " Each journal was several inches thick and bound in leather. On one page are drawn portraits of Sunny in a flowery, Easter dress and sun hat. On another page are hundreds of sketches of leaves that Niyati saw in her yard."
+	},
+	"meta": {},
+	"created_at": "2023-07-26T16:14:00.297250Z",
+	"updated_at": "2023-07-26T16:17:26.017426Z",
+	"inner_id": 2,
+	"total_annotations": 0,
+	"cancelled_annotations": 1,
+	"total_predictions": 2,
+	"comment_count": 0,
+	"unresolved_comment_count": 0,
+	"last_comment_updated_at": null,
+	"project": 3,
+	"updated_by": 1,
+	"comment_authors": []
+}]

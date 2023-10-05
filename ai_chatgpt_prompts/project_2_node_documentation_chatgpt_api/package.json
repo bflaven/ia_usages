@@ -1,0 +1,54 @@
+{
+  "name": "chat-gpt-node",
+  "version": "1.0.0",
+  "description": "This attempt made for chat-gpt-node.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.4.3",
+    "@types/lodash": "^4.14.191",
+    "@types/node": "^18.11.19",
+    "axios": "^1.3.2",
+    "csv": "^6.2.6",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^16.0.3",
+    "fs": "^0.0.1-security",
+    "jest": "^29.4.3",
+    "lodash": "^4.17.21",
+    "rimraf": "^4.1.2",
+    "ts-node": "^10.9.1",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "chatgpt": "^5.1.2",
+    "openai": "^3.3.0"
+  },
+  "keywords": [
+    "openai",
+    "chatgpt",
+    "chat",
+    "gpt",
+    "gpt-3",
+    "gpt3",
+    "gpt4",
+    "chatbot",
+    "machine learning",
+    "conversation",
+    "conversational ai",
+    "ai",
+    "ml",
+    "bot"
+  ],
+  "author": "bflaven",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bflaven/ai_chatgpt_prompts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bflaven/ai_chatgpt_prompts/issues"
+  },
+  "homepage": "https://github.com/bflaven/ai_chatgpt_prompts/#readme"
+}

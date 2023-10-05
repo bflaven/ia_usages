@@ -1,0 +1,24 @@
+# sent_id = 1
+# text = Le chat mange une souris.
+1	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det	_	_
+2	chat	chat	NOUN	_	Gender=Masc|Number=Sing	3	nsubj	_	_
+3	mange	manger	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+4	une	un	DET	_	Definite=Ind|Gender=Fem|Number=Sing|PronType=Art	5	det	_	_
+5	souris	souris	NOUN	_	Gender=Fem|Number=Sing	3	obj	_	_
+6	.	.	PUNCT	_	_	3	punct	_	_
+
+# sent_id = 2
+# text = Il fait beau dehors.
+1	Il	il	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	nsubj	_	_
+2	fait	faire	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	beau	beau	ADJ	_	Gender=Masc|Number=Sing	2	xcomp	_	_
+4	dehors	dehors	ADV	_	_	2	advmod	_	_
+5	.	.	PUNCT	_	_	2	punct	_	_
+
+# sent_id = 3
+# text = J'aime le chocolat.
+1	J'	je	PRON	_	Number=Sing|Person=1|PronType=Prs	2	nsubj	_	_
+2	aime	aimer	VERB	_	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	4	det	_	_
+4	chocolat	chocolat	NOUN	_	Gender=Masc|Number=Sing	2	obj	_	_
+5	.	.	PUNCT	_	_	2	punct	_	_
