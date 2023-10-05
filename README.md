@@ -18,3 +18,40 @@
 5. Using ChatGPT on a daily work as a P.O, Developer or for Q/A or Support and checking plagiarism if needed with Python. [https://flaven.fr/2023/02/using-chatgpt-on-a-daily-work-as-a-p-o-developer-or-for-q-a-or-support-and-checking-plagiarism-if-needed-with-python/](https://flaven.fr/2023/02/using-chatgpt-on-a-daily-work-as-a-p-o-developer-or-for-q-a-or-support-and-checking-plagiarism-if-needed-with-python/)
 
 
+**GIT COMMANDS REMINDER**
+
+```bash
+# GIT
+
+# suppose you have set a personal access token
+# https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
+
+# go to the directory
+cd /Users/brunoflaven/Documents/03_git/BlogArticlesExamples/
+
+# create the directory
+git remote add origin streamlit-sweetviz-pandas-profiling-eda-made-easy
+
+# know your branch
+git branch
+
+
+# check for status
+git status
+
+# for any change just type this command
+git add .
+
+# add a commit with a message
+git commit -am "add usecase"
+git commit -am "add files"
+git commit -am "update files"
+git commit -am "add files and update readme"
+git commit -am "add to .svg the Musk\'s Favorite Letter X"
+git commit -am "add .gitignore"
+
+# push to github if your branch on github is master
+git push origin master
+
+```
