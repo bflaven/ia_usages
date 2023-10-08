@@ -24,7 +24,8 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/fastapi_database/011_openai_sqlite_nlp_fastapi_streamlit
+cd /Users/brunoflaven/Documents/03_git/ia_usages/fastapi_database/011_openai_sqlite_nlp_fastapi_streamlit/
+
 
 # Launch the streamlit app
 streamlit run app_streamlit.py

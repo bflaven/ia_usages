@@ -52,6 +52,7 @@ git commit -am "add to .svg the Musk\'s Favorite Letter X"
 git commit -am "add .gitignore"
 
 # push to github if your branch on github is master
-git push origin master
+# git push origin master
+git push
 
 ```

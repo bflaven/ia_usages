@@ -23,7 +23,7 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 # [path]
-cd /Users/brunoflaven/Documents/03_git/BlogArticlesExamples/fastapi_database/011_openai_sqlite_nlp_fastapi_streamlit/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/fastapi_database/011_openai_sqlite_nlp_fastapi_streamlit/
 
 # LAUNCH THE API
 uvicorn nlp_db_app.main:app --reload
