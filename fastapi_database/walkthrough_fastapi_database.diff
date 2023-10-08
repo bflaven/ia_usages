@@ -1,0 +1,70 @@
+--- walkthrough_fastapi_database.diff
+
+! SOURCE
+- Article
+https://flaven.fr/2023/10/poc-with-fastapi-for-an-nlp-api-with-spacy-sqlalchemy-sqlite-and-streamlit/
+
+
++ create the env with anaconda
+[env]
+# Conda Environment
+conda create --name ner_spacy_fastapi_database python=3.9.13
+conda info --envs
+source activate ner_spacy_fastapi_database
+conda deactivate
+
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n ner_spacy_fastapi_database
+
+# update conda 
+conda update -n base -c defaults conda
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
+
+
+
+
+008_fastapi_mysql_restapi
+
++ 011_openai_sqlite_nlp_fastapi_streamlit:
+--- fastapi_openai_sqlite_nlp_fastapi_streamlit_1.mov
+
+cd /Users/brunoflaven/Documents/03_git/ia_usages/fastapi_database/011_openai_sqlite_nlp_fastapi_streamlit
+
+
+- description
+A very simple, educational and hybrid project that demonstrate how-to create an API with FastAPI (backend) that will back a web app made with Streamlit. Nice source of inspiration and a basic illustration of the FRONTEND, API, MODEL workflow.
+
+- CONSOLE_SCREEN_1 (blue)
+# GO TO DIR
+/Users/brunoflaven/Documents/03_git/ia_usages/fastapi_database/011_openai_sqlite_nlp_fastapi_streamlit/nlp_db_app
+
+# LAUNCH THE ENV
+source activate ner_spacy_fastapi_database
+
+# LAUNCH THE API
+uvicorn nlp_db_app.main:app --reload
+
+# CHECK THE API
+http://127.0.0.1:8000/docs
+
+- CONSOLE_SCREEN_2 (black)
+# GO TO DIR
+cd /Users/brunoflaven/Documents/03_git/ia_usages/fastapi_database/011_openai_sqlite_nlp_fastapi_streamlit/
+
+# LAUNCH THE ENV
+source activate ner_spacy_fastapi_database
+
+# LAUNCH THE STREAMLIT APP
+streamlit run app_streamlit.py
+
+# CHECK
+http://localhost:8501/
+
+
+
