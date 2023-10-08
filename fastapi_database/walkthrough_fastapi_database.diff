@@ -27,6 +27,9 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 
+git add fastapi_database/004_bugbytes_io_fastapi_htmx_example
+git add fastapi_database/008_fastapi_mysql_restapi
+
 
 
 008_fastapi_mysql_restapi
