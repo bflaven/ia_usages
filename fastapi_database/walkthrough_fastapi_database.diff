@@ -5,7 +5,7 @@
 https://flaven.fr/2023/10/poc-with-fastapi-for-an-nlp-api-with-spacy-sqlalchemy-sqlite-and-streamlit/
 
 
-+ create the env with anaconda
++ CREATE THE ENV WITH ANACONDA
 [env]
 # Conda Environment
 conda create --name ner_spacy_fastapi_database python=3.9.13
@@ -27,17 +27,14 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 
-
-008_fastapi_mysql_restapi
-
-+ 011_openai_sqlite_nlp_fastapi_streamlit:
++ EXAMPLE 011_openai_sqlite_nlp_fastapi_streamlit:
 --- fastapi_openai_sqlite_nlp_fastapi_streamlit_1.mov
 
 cd /Users/brunoflaven/Documents/03_git/ia_usages/fastapi_database/011_openai_sqlite_nlp_fastapi_streamlit
 
 
-- description
-A very simple, educational and hybrid project that demonstrate how-to create an API with FastAPI (backend) that will back a web app made with Streamlit. Nice source of inspiration and a basic illustration of the FRONTEND, API, MODEL workflow.
+- Description
+A NLP project that save the result in database that combine an API with FastAPI (backend) and a webapp made with Streamlit. 
 
 - CONSOLE_SCREEN_1 (blue)
 # GO TO DIR
@@ -65,5 +62,50 @@ streamlit run app_streamlit.py
 # CHECK
 http://localhost:8501/
 
+
++ EXAMPLE 005_fastapi_tiangolo_tutorial_sql_databases
+--- fastapi_tiangolo_tutorial_sql_databases_2.mov
+
+# GO TO THE DIR
+cd /Users/brunoflaven/Documents/03_git/ia_usages/fastapi_database/005_fastapi_tiangolo_tutorial_sql_databases
+
+
+# LAUNCH THE API
+uvicorn main:app --reload
+
+# Check localhost
+http://127.0.0.1:8000/docs
+http://127.0.0.1:8000/redoc
+
+
+
++ EXAMPLE 007_sql_databases_peewee
+--- fastapi_sql_databases_peewee_3.mov
+
+# GO TO THE DIR
+cd /Users/brunoflaven/Documents/03_git/ia_usages/fastapi_database/007_sql_databases_peewee
+
+# LAUNCH THE API
+uvicorn main:app --reload
+
+# Check localhost
+http://127.0.0.1:8000/docs
+http://127.0.0.1:8000/redoc
+
+
+
++ EXAMPLE 008_fastapi_mysql_restapi
+--- fastapi_mysql_restapi_4.mov
+
+# GO TO THE DIR
+cd /Users/brunoflaven/Documents/03_git/ia_usages/fastapi_database/008_fastapi_mysql_restapi
+
+
+Do not forget to install Docker
+
+You can find the code at https://github.com/FaztWeb/fastapi-mysql-restapi/tree/main
+
+# lauch docker 
+make start
 
 
