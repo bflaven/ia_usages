@@ -56,7 +56,7 @@ database.db.connect()
 database.db.create_tables([models.User, models.Item])
 database.db.close()
 
-app = FastAPI()
+app = FastAPI(title="YT demo with peewee")
 
 sleep_time = 10
 

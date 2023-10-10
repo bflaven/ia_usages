@@ -38,7 +38,7 @@ A NLP project that save the result in database that combine an API with FastAPI 
 
 - CONSOLE_SCREEN_1 (blue)
 # GO TO DIR
-/Users/brunoflaven/Documents/03_git/ia_usages/fastapi_database/011_openai_sqlite_nlp_fastapi_streamlit/nlp_db_app
+cd /Users/brunoflaven/Documents/03_git/ia_usages/fastapi_database/011_openai_sqlite_nlp_fastapi_streamlit/
 
 # LAUNCH THE ENV
 source activate ner_spacy_fastapi_database
@@ -64,7 +64,7 @@ http://localhost:8501/
 
 
 + EXAMPLE 005_fastapi_tiangolo_tutorial_sql_databases
---- fastapi_tiangolo_tutorial_sql_databases_2.mov
+--- fastapi_tiangolo_tutorial__sqlalchemy_databases_peewee_2.mov
 
 # GO TO THE DIR
 cd /Users/brunoflaven/Documents/03_git/ia_usages/fastapi_database/005_fastapi_tiangolo_tutorial_sql_databases
@@ -95,13 +95,12 @@ http://127.0.0.1:8000/redoc
 
 
 + EXAMPLE 008_fastapi_mysql_restapi
---- fastapi_mysql_restapi_4.mov
+--- fastapi_mysql_restapi_3.mov
 
 # GO TO THE DIR
 cd /Users/brunoflaven/Documents/03_git/ia_usages/fastapi_database/008_fastapi_mysql_restapi
 
-
-Do not forget to install Docker
+- Do not forget to install Docker
 
 You can find the code at https://github.com/FaztWeb/fastapi-mysql-restapi/tree/main
 
