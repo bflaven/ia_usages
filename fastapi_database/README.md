@@ -66,6 +66,8 @@ Using Docker to create a MYSQL database and a Phpmyaadmin instance connected to 
 
 ## VIDEOS
 
+
+- [#1 POC with #fastapi for an #nlp #api with #spacy #sqlalchemy #sqlite and... #streamlit](https://www.youtube.com/watch?v=9qxP2efjXRw)
 [![#1 POC with #fastapi for an #nlp #api with #spacy #sqlalchemy #sqlite and... #streamlit](https://img.youtube.com/vi/9qxP2efjXRw/hqdefault.jpg)](https://www.youtube.com/watch?v=9qxP2efjXRw)
 
 
