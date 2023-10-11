@@ -71,7 +71,6 @@ Using Docker to create a MYSQL database and a Phpmyaadmin instance connected to 
 [![#1 POC with #fastapi for an #nlp #api with #spacy #sqlalchemy #sqlite and... #streamlit](https://img.youtube.com/vi/9qxP2efjXRw/hqdefault.jpg)](https://www.youtube.com/watch?v=9qxP2efjXRw)
 
 
-
 - [#2 POC with #fastapi using an ORM like #sqlalchemy or #peewee for a #sqlite #database](https://www.youtube.com/watch?v=v9gpMCLHdgY)
 [![#2 POC with #fastapi using an ORM like #sqlalchemy or #peewee for a #sqlite #database](https://img.youtube.com/vi/v9gpMCLHdgY/hqdefault.jpg)](https://www.youtube.com/watch?v=v9gpMCLHdgY)
 
