@@ -8,7 +8,7 @@ Using Docker to create a MYSQL database and a Phpmyaadmin instance connected to 
 - The code source came from this project: FastAPI & SQLAlchemy Mysql REST API [https://github.com/FaztWeb/fastapi-mysql-restapi/](https://github.com/FaztWeb/fastapi-mysql-restapi/)
 
 
-git rm --cached fastapi_database/008_fastapi_mysql_restapi
-
+git rm --cached 008_fastapi_mysql_restapi
+git rm --cached 004_bugbytes_io_fastapi_htmx_example
 
 
