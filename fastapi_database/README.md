@@ -44,8 +44,6 @@ entities extracted form the post_body
 
 Here are presentation for each GitHub directories attached to this exploration:
 
-
-
 - **001_extra_files** 
 It contains 2 files 001_fastapi_database.py and create_files_for_fastapi_sql_app.sh. The file "create_files_for_fastapi_sql_app.sh" creates a directory named "sql_app" and inside all the empty files required to start the FastAPI API with a database. The file "001_fastapi_database.py" check if sqlalchemy is properly installed in your environment with the creation of database named "example.db" and add 2 records in it.
 
@@ -66,3 +64,9 @@ Using Docker to create a MYSQL database and a Phpmyaadmin instance connected to 
 
 - **011_openai_sqlite_nlp_fastapi_streamlit** a simple combination with Streamlit, FastAPI and Spacy to expose "features" like: NER, Summary, Tags extraction for text in French, Spanish, English and Russian. The skeleton has been written by ChatGPT and extended manually after.
 
+## VIDEOS
+
+[![#1 POC with #fastapi for an #nlp #api with #spacy #sqlalchemy #sqlite and... #streamlit](https://img.youtube.com/vi/9qxP2efjXRw/hqdefault.jpg)](https://www.youtube.com/embed/9qxP2efjXRw)
+
+
+git commit -am "add videos"
