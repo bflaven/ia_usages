@@ -10,5 +10,23 @@ Using Docker to create a MYSQL database and a Phpmyaadmin instance connected to 
 
 git rm --cached 008_fastapi_mysql_restapi
 git rm --cached 004_bugbytes_io_fastapi_htmx_example
+git rm --cached python_nlp_explorations_chatbot_keywords_extraction
+git rm --cached stop_starting_start_stopping
+
+git status
+git add .
+git commit -am "update"
+git push
+cd python_nlp_explorations_chatbot_keywords_extraction
+cd ..
+git rm --cached python_nlp_explorations_chatbot_keywords_extraction
+
+cd stop_starting_start_stopping
+cd ..
+git rm --cached stop_starting_start_stopping
+
+
+rm -rf .git
+
 
 
