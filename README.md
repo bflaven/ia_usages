@@ -1,5 +1,8 @@
 # ia_usages
 
+*Using the french acronym "Intelligence Artificielle" (IA) instead of the english one "Artificial intelligence" (AI)*
+
+
 **All the latest posts dedicated to artificial intelligence usages are brought together in this repository for convenience.**
 
 
