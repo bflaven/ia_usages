@@ -24,7 +24,8 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_openai_whisper/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ai_openai_whisper/
+
 
 python 006_openai_whisper_pytube.py
 
