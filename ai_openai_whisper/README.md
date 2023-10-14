@@ -13,6 +13,12 @@ Check "Unlocking Speech-to-Text: Harnessing the Power of the OpenAI Whisper API 
 
 ## FILES
 
+**It is mainly a POC so you have progressive and iterated attempts that goes from the simple usage to the integration into FastAPI. I gave also some audio samples and like I said tests and prompts made to ChatGPT.**
+
+**Below, All files and directory with a quick description for this POC.**
+
+
+
 **All files and directory described for this POC.**
 
 - `001_openai_whisper.py`: minimum loading and usage of WHISPER
