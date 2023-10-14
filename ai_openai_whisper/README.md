@@ -2,8 +2,7 @@
 
 Exploring the ability to extract text from audio file (.mp3) and video file (.mp4) with the help of Python libraries Whisper &Faster-Whisper and exposing this extraction feature through FastAPI.
 
-Post on the Blog is coming soon at <a href="https://flaven.fr" target="_blank">https://flaven.fr</a>/
-
+Check "Unlocking Speech-to-Text: Harnessing the Power of the OpenAI Whisper API with FastAPI Integration" <a href="https://wp.me/p3Vuhl-3gJ" target="_blank">https://wp.me/p3Vuhl-3gJ</a>/
 
 - whisper: <a href="https://openai.com/research/whisper" target="_blank" >https://openai.com/research/whisper</a>
 
@@ -11,6 +10,37 @@ Post on the Blog is coming soon at <a href="https://flaven.fr" target="_blank">h
 
 - whisper on Github: <a href="https://github.com/openai/whisper" target="_blank" >https://github.com/openai/whisper</a>
 
+
+## FILES
+
+**All files and directory described for this POC.**
+
+- `001_openai_whisper.py`: minimum loading and usage of WHISPER
+- `002_openai_whisper.py`: minimum loading and usage of WHISPER with languages (AR, ES, CN, RU, FR)
+- `003_openai_whisper.py`: output the WHISPER transcription into a text file
+- `004_openai_whisper_panda.py`: output the WHISPER transcription in a .cvs file with PANDA
+- `005_openai_whisper.py`: WHISPER few attempts on languages detection (AR, ES, CN, RU, FR)
+- `006_openai_whisper_pytube.py`: make WHISPER transcription for YOUTUBE video
+- `006_openai_whisper_pytube_ffmpeg.py`: make WHISPER transcription for YOUTUBE video leveraging on FFMPEG
+- `007_openai_whisper.py`: ditto to 001_openai_whisper.py
+- `008_openai_whisper_fastapi.py`: Integration of WHISPER into FASTAPI to provide an POC for an API
+- `009_openai_whisper_fastapi.py`: POC with WHISPER and FASTAPI, managing audio and video upload and extract transcription
+- `010_request_files_fastapi.py`: Other way to managing files upload in FASTAPI
+- `011_faster_whisper.py`: experiments with FASTER-WHISPER
+- `012_openai_whisper.py`: build WHISPER transcription function
+- `013_openai_whisper.py`: WHISPER transcription in different formats (.json, .srt, .tsv, .txt, .vtt)
+- `README.md`: the readme for the main Github directory
+- `audio_files_sources`: some audio samples in different languages
+- `ffmpeg_python`: experiments with ffmpeg-python
+- `output_srtfiles_writer`: output directory for transcription
+- `prompts_chatgpt_samples.diff`: some prompts related to the post and to WHISPER
+- `requirements.txt`: the python requirements for WHISPER
+- `tests_from_whisper`: some tests (pytest) extracted from the original WHISPER project
+- `video_download_from_yt`: output audio extraction from a YT video
+
+
+
+## EXTRA INFOS
 
 **Audio Transcription with Whisper - Environment**
 ```bash
