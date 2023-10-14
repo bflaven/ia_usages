@@ -99,7 +99,7 @@ yt = youtube_video_content.streams.filter(only_audio=True, subtype='mp4', abr='4
 print(f'\n\n audio download done {yt}')
 
 
-# Other commanns 
+# Other commands 
 # ffmpeg -version
 
 # presentation starts from 32:04 and ends at 1:13:59 
@@ -107,6 +107,8 @@ print(f'\n\n audio download done {yt}')
 # https://www.metric-conversions.org/time/minutes-to-seconds.htm
 
 # ffmpeg -ss 1924 -i "/content/earnings_call_microsoft_q4_2022.mp4/Microsoft (MSFT) Q4 2022 Earnings Call.mp4" -t 2515 "earnings_call_microsoft_q4_2022_filtered.mp4"
-# 
-# 
-# 
+
+
+
+
+ 
