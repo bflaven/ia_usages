@@ -13,14 +13,9 @@ Please note that the term "Cloned Voice Overing" is not standard industry termin
 
 --- chat_GPT_3_5_prompt_11
 + PROMPT
-
-# PROMPT
 - Can you describe into different stages the process of audio cloning to produce a podcast like the one from Lex Fridman with Yuval Noah Harari that have been translated to Spanish. Number the steps and give them a summary title each time with a description for each stage e.g stage_1 :: Audio Transcription, stage_2 :: Transcription Translation... and so on 
 
 + OUTPUT
-
-
-# OUTPUT
 Creating a podcast like the one you mentioned, which involves audio cloning and translation, can be broken down into several stages. Here are the key stages with brief descriptions:
 
 **Stage 1: Audio Transcription**
@@ -53,7 +48,6 @@ It's important to note that voice cloning and voice synthesis should be done eth
 - Can you give a list of Image generation usages with IA ?
 
 + OUTPUT
-
 Certainly! Image generation using AI has a wide range of applications across various industries and creative fields. Here's a list of image generation use cases with AI:
 
 1. **Art Generation:**
@@ -127,7 +121,6 @@ These are just a few examples of how AI-powered image generation is being applie
 
 
 + OUTPUT
-
 Certainly, here's a list of pros and cons for the NLP library named SpaCy:
 
 **Pros of SpaCy NLP Library:**
@@ -202,8 +195,6 @@ The Natural Language Processing (NLP) operation that involves extracting tags or
 
 
 + OUTPUT
-
-
 1. **Cost:** Whisper or similar advanced TTS libraries might come with associated costs, and pricing structures can vary. High usage can lead to substantial expenses.
 
 2. **Resource Intensive:** Advanced TTS libraries like Whisper can be resource-intensive, which might not be suitable for resource-constrained environments.
@@ -257,6 +248,7 @@ Please note that the pros and cons of Whisper TTS or any TTS library may have ev
 --- chat_GPT_3_5_prompt_4
 + PROMPT
 - How do you call the IA topic that deal with Generating text from human speech ?
+
 + OUTPUT
 The AI topic that deals with generating text from human speech is often referred to as "Automatic Speech Recognition" (ASR) or "Speech-to-Text Conversion." ASR technology involves converting spoken language into written text, making it easier to analyze, search, and process spoken content.
 
@@ -265,6 +257,7 @@ The AI topic that deals with generating text from human speech is often referred
 + PROMPT
 - What are the best practices to deploy different Machine Learning models? Does each Machine Learning models must have it own API or can we put all the Machine Learning models into the same API for instance made with FastAPI
 - For example, I intend to use Speech to Text, NLP features and image recognition do I put all the endpoint in a same API, does it present a risk in term of maintainability are these endpoints are using different packages? In development each of these usages are generally inside its own environment. Can you answer precisely to all the questions ?
+
 + OUTPUT
 Deploying different machine learning models can be a complex task, and the best practices can vary depending on your specific use case and requirements. However, I can provide some general guidelines to consider when deploying multiple machine learning models.
 
