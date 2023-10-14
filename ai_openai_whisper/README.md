@@ -1,6 +1,6 @@
 # ai_openai_whisper
 
-Exploring the ability to extract text from audio file (.mp3) and video file (.mp4) with the help of Python libraries Whisper &Faster-Whisper and exposing this extraction feature through FastAPI.
+**Exploring the ability to extract text from audio file (.mp3) and video file (.mp4) with the help of Python libraries Whisper & Faster-Whisper and exposing this extraction feature through FastAPI.**
 
 Check "Unlocking Speech-to-Text: Harnessing the Power of the OpenAI Whisper API with FastAPI Integration" <a href="https://wp.me/p3Vuhl-3gJ" target="_blank">https://wp.me/p3Vuhl-3gJ</a>/
 
