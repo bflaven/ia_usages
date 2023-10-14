@@ -82,12 +82,12 @@ import pandas as pd
 
 # english
 # audio_input = "audio_files_sources/english/sample_1.mp3"
-# file_output = "003_openai_whisper_en_sample_1_output.txt"
+# file_output = "003_openai_whisper_en_sample_1_output.csv"
 # language_selected="english"
 
 # russian
 # audio_input = "audio_files_sources/foreign/ru_sample_1.mp3"
-# file_output = "003_openai_whisper_ru_sample_1_output.txt"
+# file_output = "003_openai_whisper_ru_sample_1_output.csv"
 # language_selected="russian"
 
 # spanish
