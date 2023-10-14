@@ -264,11 +264,8 @@ The AI topic that deals with generating text from human speech is often referred
 --- chat_GPT_3_5_prompt_3
 + PROMPT
 - What are the best practices to deploy different Machine Learning models? Does each Machine Learning models must have it own API or can we put all the Machine Learning models into the same API for instance made with FastAPI
-
+- For example, I intend to use Speech to Text, NLP features and image recognition do I put all the endpoint in a same API, does it present a risk in term of maintainability are these endpoints are using different packages? In development each of these usages are generally inside its own environment. Can you answer precisely to all the questions ?
 + OUTPUT
-For example, I intend to use Speech to Text, NLP features and image recognition do I put all the endpoint in a same API, does it present a risk in term of maintainability are these endpoints are using different packages? In development each of these usages are generally inside its own environment. Can you answer precisely to all the questions ?
-
-
 Deploying different machine learning models can be a complex task, and the best practices can vary depending on your specific use case and requirements. However, I can provide some general guidelines to consider when deploying multiple machine learning models.
 
 1. **Use a Microservices Architecture:**
