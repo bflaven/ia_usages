@@ -3,6 +3,8 @@
 A simple example of integration with Docker, YOLOv8 and FastAPI. It is just a POC that show the complete integration.
 CAUTION: the Docker image is huge if you install on a local machine e.g MacBook Air for instance.
 
+Example taken from <https://github.com/Alex-Lekov/yolov8-fastapi>
+
 ## EXAMPLE (001_yolov8-fastapi)
 **It requires Docker install on your machine up and running.**
 
