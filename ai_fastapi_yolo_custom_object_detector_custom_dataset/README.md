@@ -124,7 +124,10 @@ https://github.com/anwarkacem/detection_legend_image
 
 # remove .git from a subdirectory
 rm -rf .git
-
+# check what has been changed
+git status 
+# destroy all working copy changes
+git reset --hard HEAD 
 # clear cache
 git rm -r --cached .
 git add .
