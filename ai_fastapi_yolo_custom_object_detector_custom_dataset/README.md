@@ -13,7 +13,7 @@ cd /Users/brunoflaven/Documents/01_work/blog_articles/yolo_custom_object_detecto
 # clone the rep
 git clone https://github.com/Alex-Lekov/yolov8-fastapi.git 001_yolov8-fastapi
 
-
+# if needed but no use of conda. Everything is in the Docker file.
 conda install opencv
 conda install cv2
 
