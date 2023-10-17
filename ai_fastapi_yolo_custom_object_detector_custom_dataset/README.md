@@ -118,3 +118,16 @@ https://mpolinowski.github.io/docs/IoT-and-Machine-Learning/ML/2023-09-01--yolo-
 https://github.com/anwarkacem/detection_legend_image
 
 
+
+
+```bash
+
+# remove .git from a subdirectory
+rm -rf .git
+
+# clear cache
+git rm -r --cached .
+git add .
+git commit -am 'git cache cleared'
+git push
+```
