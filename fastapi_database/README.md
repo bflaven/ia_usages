@@ -67,13 +67,11 @@ Using Docker to create a MYSQL database and a Phpmyaadmin instance connected to 
 ## VIDEOS
 
 
-- [#1 POC with #fastapi for an #nlp #api with #spacy #sqlalchemy #sqlite and... #streamlit](https://www.youtube.com/watch?v=9qxP2efjXRw)
-[![#1 POC with #fastapi for an #nlp #api with #spacy #sqlalchemy #sqlite and... #streamlit](https://img.youtube.com/vi/9qxP2efjXRw/hqdefault.jpg)](https://www.youtube.com/watch?v=9qxP2efjXRw)
+- [#1 POC with #fastapi for an #nlp #api with #spacy #sqlalchemy #sqlite and... #streamlit](https://www.youtube.com/watch?v=9qxP2efjXRw)[![#1 POC with #fastapi for an #nlp #api with #spacy #sqlalchemy #sqlite and... #streamlit](001_fastapi_openai_sqlite_nlp_fastapi_streamlit.png)](https://www.youtube.com/watch?v=9qxP2efjXRw)
+
+- [#2 POC with #fastapi using an ORM like #sqlalchemy or #peewee for a #sqlite #database](https://www.youtube.com/watch?v=v9gpMCLHdgY)[![#2 POC with #fastapi using an ORM like #sqlalchemy or #peewee for a #sqlite #database](002_fastapi_tiangolo_tutorial__sqlalchemy_databases_peewee.png)](https://www.youtube.com/watch?v=v9gpMCLHdgY)
 
 
-- [#2 POC with #fastapi using an ORM like #sqlalchemy or #peewee for a #sqlite #database](https://www.youtube.com/watch?v=v9gpMCLHdgY)
-[![#2 POC with #fastapi using an ORM like #sqlalchemy or #peewee for a #sqlite #database](https://img.youtube.com/vi/v9gpMCLHdgY/hqdefault.jpg)](https://www.youtube.com/watch?v=v9gpMCLHdgY)
+- [#3 POC with #fastapi and #docker using an ORM like #sqlalchemy for a #mysql #database](https://www.youtube.com/watch?v=B4uxOFBsS7I)[![#3 POC with #fastapi and #docker using an ORM like #sqlalchemy for a #mysql #database](003_fastapi_mysql_restapi.png)](https://www.youtube.com/watch?v=B4uxOFBsS7I)
 
 
-- [#3 POC with #fastapi and #docker using an ORM like #sqlalchemy for a #mysql #database](https://www.youtube.com/watch?v=B4uxOFBsS7I)
-[![#3 POC with #fastapi and #docker using an ORM like #sqlalchemy for a #mysql #database](https://img.youtube.com/vi/9qxP2efjXRw/hqdefault.jpg)](https://www.youtube.com/watch?v=B4uxOFBsS7I)
