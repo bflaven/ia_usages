@@ -92,6 +92,8 @@ https://www.youtube.com/watch?v=gRAyOPjQ9_s
 
 - Label Studio+Yolov5 实现目标检测预标注(二)
 https://juejin.cn/post/7132263223817928734
+
+- Label Studio+Yolov5 实现目标检测预标注(一)
 https://juejin.cn/post/7130402058955390983
 
 - A powerful, free design tool
@@ -99,9 +101,7 @@ https://inkscape.org/
 
 
 
-- Train Yolov8 object detection on a custom dataset | Step by step guide | Computer vision tutorial
-
-If you have no data you can train any ML model
+- Train Yolov8 object detection on a custom dataset | Step by step guide | Computer vision tutorial. If you have no data you can train any ML model
 https://www.youtube.com/watch?v=m9fH9OWn8YM
 
 
