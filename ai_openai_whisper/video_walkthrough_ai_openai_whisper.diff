@@ -1,0 +1,81 @@
+! # Tutorial Video Walkthrough
+! # video_walkthrough_ai_openai_whisper.diff
+
+This file keep track of all the infos given in the videos....
+
+- TITLE
++ Unlocking Speech-to-Text: Harnessing the Power of the OpenAI Whisper API with FastAPI Integration
+--- See more on the post at https://wp.me/p3Vuhl-3gJ
+
+
+- URLs
++ POST: https://wp.me/p3Vuhl-3gJ
++ CODE: https://bit.ly/3LXogRa
++ WEBSITE ::  https://flaven.fr/
+
+
+- QUICK DESCRIPTION
+
+--- OBJECTIVE :: How to use ChatGPT to replace tedious work by AI + checking plagiarism if needed with Python
+
+--- OUPUT :: Numerous example from Jira ticket for P.O, Q/A testing script in JS, WP plugin in PHP, Pyhton stuff, SQL code...
+
+--- AUDIENCE :: Anyone who want to use ChatGPT on a daily basis.
+
+
+- TEK GUIDELINES
+--- Faster Whisper :: https://github.com/guillaumekln/faster-whisper
+--- Whisper :: https://github.com/openai/whisper
+--- ChatGPT :: https://chat.openai.com
+
+
+
+- PATH CONSOLE
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ai_openai_whisper/
+
+
+- CONDA ENVIRONMENT
+--- requirement using conda to manage development environment
+--- create requirements file for the apps
+
++ 2 environments: openai_whisper;faster_whisper
+
+pip freeze > requirements_faster_whisper.txt
+pip install -r requirements_faster_whisper.txt
+
+pip freeze > requirements_openai_whisper.txt
+pip install -r requirements_openai_whisper.txt
+
+! ENV
+
+[env]
+# Conda Environment
+conda create --name openai_whisper python=3.9.13
+conda info --envs
+source activate openai_whisper
+conda deactivate
+
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n openai_whisper
+
+# update conda 
+conda update -n base -c defaults conda
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
+
+! CONTENT
+
+
+003_openai_whisper.py: output the WHISPER transcription into a text file
+
+009_openai_whisper_fastapi.py: POC with WHISPER and FASTAPI, managing audio and video upload and extract transcription
+
+011_faster_whisper.py: experiments with FASTER-WHISPER
+
+
+
