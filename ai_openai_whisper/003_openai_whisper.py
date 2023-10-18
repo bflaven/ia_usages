@@ -99,9 +99,9 @@ import whisper
 # language_selected="chinese"
 
 # spanish
-# audio_input = "audio_files_sources/foreign/sp_sample_1.mp3"
-# file_output = "003_openai_whisper_sp_sample_1_output.txt"
-# language_selected="spanish"
+audio_input = "audio_files_sources/foreign/sp_sample_1.mp3"
+file_output = "003_openai_whisper_sp_sample_1_output.txt"
+language_selected="spanish"
 
 
 # load audio and pad/trim it to fit 30 seconds

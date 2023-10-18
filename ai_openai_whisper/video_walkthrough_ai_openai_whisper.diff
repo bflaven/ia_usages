@@ -16,19 +16,17 @@ This file keep track of all the infos given in the videos....
 
 - QUICK DESCRIPTION
 
---- OBJECTIVE :: How to use ChatGPT to replace tedious work by AI + checking plagiarism if needed with Python
+--- OBJECTIVE :: How to use OpenAI Whisper to explore audio (mp3) + a POC using Whisper into an API made with FastAPI.
 
---- OUPUT :: Numerous example from Jira ticket for P.O, Q/A testing script in JS, WP plugin in PHP, Pyhton stuff, SQL code...
+--- OUPUT :: Numerous examples from in differents languages. Part of global exploration of IA usages
 
---- AUDIENCE :: Anyone who want to use ChatGPT on a daily basis.
+--- AUDIENCE :: Anyone who, produce audio and want to use OpenAI Whisper on a daily basis or through an API with FastAPI
 
 
 - TEK GUIDELINES
---- Faster Whisper :: https://github.com/guillaumekln/faster-whisper
 --- Whisper :: https://github.com/openai/whisper
+--- Faster Whisper :: https://github.com/guillaumekln/faster-whisper
 --- ChatGPT :: https://chat.openai.com
-
-
 
 - PATH CONSOLE
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ai_openai_whisper/
@@ -76,6 +74,13 @@ pip install -r requirements.txt
 009_openai_whisper_fastapi.py: POC with WHISPER and FASTAPI, managing audio and video upload and extract transcription
 
 011_faster_whisper.py: experiments with FASTER-WHISPER
+
+! VIDEOS
+--- 001_ai_openai_whisper_output_text_file.mov
+--- 002_ai_openai_whisper_fastapi.mov
+--- 003_ai_openai_whisper_faster_whisper.mov
+
+
 
 
 
