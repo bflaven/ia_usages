@@ -77,10 +77,35 @@ pip install -r requirements.txt
 
 ! VIDEOS
 --- 001_ai_openai_whisper_output_text_file.mov
+#1 POC using #Whisper to explore #audio, extracting transcription from audio in different languages
+
+#1 Using Whisper & FastAPI
+Unlocking Multilingual 
+Transcription with #Whisper: 
+Exploring Audio for POC #1
+
+
 --- 002_ai_openai_whisper_fastapi.mov
+#2 POC using #Whisper to explore #audio, integrating into an API made with #fastapi
+
+
+#2 Using Whisper & FastAPI
+Creating a Multilingual 
+Audio API with 
+#Whisper: POC #2 
+Using #FastAPI
+
+
 --- 003_ai_openai_whisper_faster_whisper.mov
+#3 POC using #Whisper to explore #audio, leveraging on #faster-whisper for #nlp 
 
+Leveraging Faster-Whisper for Multilingual NLP: POC #3 with #Whisper and Audio Exploration
 
+#3 Using Whisper & FastAPI
+Leveraging Faster-Whisper 
+for Multilingual NLP: 
+POC #3 with #Whisper 
+& Audio Exploration
 
 
 
