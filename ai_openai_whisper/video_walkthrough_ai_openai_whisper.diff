@@ -16,12 +16,11 @@ This file keep track of all the infos given in the videos....
 
 - QUICK DESCRIPTION
 
---- OBJECTIVE :: How to use OpenAI Whisper to explore audio (mp3) + a POC using Whisper into an API made with FastAPI.
+--- OBJECTIVE: How to use OpenAI Whisper to explore audio (mp3) + a POC using Whisper into an API made with FastAPI.
 
---- OUPUT :: Numerous examples from in differents languages. Part of global exploration of IA usages
+--- OUPUT: Numerous examples from in different languages. Part of global exploration of IA usages
 
---- AUDIENCE :: Anyone who, produce audio and want to use OpenAI Whisper on a daily basis or through an API with FastAPI
-
+--- AUDIENCE: Anyone who, produce audio and want to use OpenAI Whisper daily or through an API with FastAPI
 
 - TEK GUIDELINES
 --- Whisper :: https://github.com/openai/whisper
@@ -76,7 +75,9 @@ pip install -r requirements.txt
 011_faster_whisper.py: experiments with FASTER-WHISPER
 
 ! VIDEOS
+
 --- 001_ai_openai_whisper_output_text_file.mov
++ https://youtu.be/oBMK-QUYB7A
 #1 POC using #Whisper to explore #audio, extracting transcription from audio in different languages
 
 #1 Using Whisper & FastAPI
@@ -86,6 +87,7 @@ Exploring Audio for POC #1
 
 
 --- 002_ai_openai_whisper_fastapi.mov
++ https://youtu.be/kTQPYqK0_Oc
 #2 POC using #Whisper to explore #audio, integrating into an API made with #fastapi
 
 
@@ -97,6 +99,7 @@ Using #FastAPI
 
 
 --- 003_ai_openai_whisper_faster_whisper.mov
++ https://youtu.be/iJDFfc_mmNo
 #3 POC using #Whisper to explore #audio, leveraging on #faster-whisper for #nlp 
 
 Leveraging Faster-Whisper for Multilingual NLP: POC #3 with #Whisper and Audio Exploration
@@ -106,6 +109,5 @@ Leveraging Faster-Whisper
 for Multilingual NLP: 
 POC #3 with #Whisper 
 & Audio Exploration
-
 
 

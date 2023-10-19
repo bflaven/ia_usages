@@ -44,6 +44,18 @@ Check "Unlocking Speech-to-Text: Harnessing the Power of the OpenAI Whisper API 
 - `tests_from_whisper`: some tests (pytest) extracted from the original WHISPER project
 - `video_download_from_yt`: output audio extraction from a YT video
 
+## VIDEOS
+
+You can find my WALKTHROUGHS for these four videos video_walkthrough_ai_openai_whisper.diff (Video #1, Video #2, Video #3)
+
+
+
+
+[#1 Using #whisper & #fastapi: Unlocking Multilingual Transcription with #whisper](https://www.youtube.com/watch?v=oBMK-QUYB7A)[![#1 Machine Learning for NLP: Labeling process to train a "custom" NER for Spacy with Label Studio](001_ai_openai_whisper_output_text_file.png)](https://www.youtube.com/watch?v=oBMK-QUYB7A)
+
+[#2 Using #whisper & #fastapi : Creating a #multilingual Audio #api with #whisper](https://www.youtube.com/watch?v=kTQPYqK0_Oc)[![#2 Using #whisper & #fastapi : Creating a #multilingual Audio #api with #whisper](002_ai_openai_whisper_fastapi.png)](https://www.youtube.com/watch?v=kTQPYqK0_Oc)
+
+[#3 Using #whisper & #fastapi : leveraging on Faster-Whisper for future Multilingual #nlp](https://www.youtube.com/watch?v=iJDFfc_mmNo)[![#3 Using #whisper & #fastapi : leveraging on Faster-Whisper for future Multilingual #nlp](003_ai_openai_whisper_faster_whisper.png)](https://www.youtube.com/watch?v=iJDFfc_mmNo)
 
 
 ## EXTRA INFOS
