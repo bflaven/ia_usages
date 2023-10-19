@@ -6,7 +6,7 @@
 **All the latest posts dedicated to artificial intelligence usages are brought together in this repository for convenience.**
 
 
-**You can find all videos related to these posts dedicated to artificial intelligence at [https://youtu.be/iJDFfc_mmNo?si=ACISl8WGzG32uJiv](https://youtu.be/iJDFfc_mmNo?si=ACISl8WGzG32uJiv)**
+**You can find all videos related to these posts dedicated to artificial intelligence at [https://www.youtube.com/playlist?list=PL999tA6UKRx_8ud6HfYg_Fn-ZFFyVvhr2](https://www.youtube.com/playlist?list=PL999tA6UKRx_8ud6HfYg_Fn-ZFFyVvhr2)**
 
 
 1. POC with FastAPI for an NLP API with Spacy, SQLAlchemy, Sqlite and… Streamlit. [https://flaven.fr/2023/10/poc-with-fastapi-for-an-nlp-api-with-spacy-sqlalchemy-sqlite-and-streamlit/](https://flaven.fr/2023/10/poc-with-fastapi-for-an-nlp-api-with-spacy-sqlalchemy-sqlite-and-streamlit/)
