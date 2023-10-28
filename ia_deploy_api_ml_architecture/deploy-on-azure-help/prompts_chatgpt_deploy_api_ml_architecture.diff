@@ -69,7 +69,7 @@ for _ in range(3):
 This script will generate and print three example application names following the format you specified, with random colors, common keywords, and random characters. You can adjust the number of examples by changing the range in the loop.
 
 
---- chat_GPT_3_5_prompt_1 (az_update_existing_application.py)
+--- chat_GPT_3_5_prompt_2 (az_update_existing_application.py)
 + PROMPT
 Write a script in python that goes to certain path e.g /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/simple-app-fastapi-azure and then execute these two commands with az cli, put the values "wannatrycontainerregistry" and "try-fastapi" in two variables and make a duration to five second between the execution of the 2 commands.
 
