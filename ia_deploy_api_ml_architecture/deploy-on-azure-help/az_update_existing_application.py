@@ -4,7 +4,7 @@
 """
 
 # Go to the dir
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/deploy-on-azure-help/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/deploy-on-azure-help/
 
 python az_update_existing_application.py
 
@@ -22,22 +22,10 @@ import os
 path = "/Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/mamamia-fastapi-azure"
 
 
-# Define the variables
-# container_registry_name = "wannatrycontainerregistry"
-# app_service_name = "try-fastapi"
+# Define the variables, replace by yours
+container_registry_name = "wannatrycontainerregistry"
+app_service_name = "try-fastapi"
 
-
-"""
-
-# To delete
-fastapi-poc-app
-fastapi-poc-rg
-pokatry1containerregistry
-
-"""
-
-container_registry_name = "pokatry1containerregistry"
-app_generic_var = "fastapi-poc"
 
 # Define the Azure CLI commands
 

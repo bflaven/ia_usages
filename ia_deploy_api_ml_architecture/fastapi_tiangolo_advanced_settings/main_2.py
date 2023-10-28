@@ -23,7 +23,7 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/fastapi_tiangolo_advanced_settings/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/fastapi_tiangolo_advanced_settings/
 
 # LAUNCH THE API
 ADMIN_EMAIL="deadpool@example.com" APP_NAME="ChimichangApp" uvicorn main_2:app

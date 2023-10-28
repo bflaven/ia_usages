@@ -6,7 +6,7 @@
 
 
 # Go to the dir
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/deploy-on-azure-help/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/deploy-on-azure-help/
 
 python az_project_name_generator.py
 

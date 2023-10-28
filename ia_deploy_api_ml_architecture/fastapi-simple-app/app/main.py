@@ -33,7 +33,7 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/fastapi-simple-app/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/fastapi-simple-app/
 
 # launch the app
 uvicorn app.main:api --reload
