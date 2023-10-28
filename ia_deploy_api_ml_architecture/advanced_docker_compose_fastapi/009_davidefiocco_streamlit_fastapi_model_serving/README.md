@@ -1,48 +1,55 @@
+# 009_davidefiocco_streamlit_fastapi_model_serving
 
---- Post: https://davidefiocco.github.io/streamlit-fastapi-ml-serving/
---- Source: https://github.com/davidefiocco/streamlit-fastapi-model-serving.git 
+It is about "Machine learning model serving in Python using FastAPI and streamlit".  I have changed the FastAPI and the Streamlit app, make something much more simpler but keep the principles for Docker usage especially.
 
 
+- Original Post: [https://davidefiocco.github.io/streamlit-fastapi-ml-serving/](https://davidefiocco.github.io/streamlit-fastapi-ml-serving/)
 
-- get the dir
+- Original Source: [https://github.com/davidefiocco/streamlit-fastapi-model-serving](https://github.com/davidefiocco/streamlit-fastapi-model-serving)
+
+```bash
+# get the dir
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
 
-- clone git repo
+# clone git repo
 git clone https://github.com/davidefiocco/streamlit-fastapi-model-serving.git 008_davidefiocco_streamlit_fastapi_model_serving
 
-! NUKE DOCKER IMAGES
+# NUKE DOCKER IMAGES
 docker ps
 docker rm -f $(docker ps -aq)
 docker system prune
 
 
-- get into the dir
+# get into the dir
 cd 008_davidefiocco_streamlit_fastapi_model_serving
 
-- create an env for streamlit
+# create an env for streamlit
 streamlit_fastapi_model_serving
 
 
 
-- launch the command docker
+# launch the command docker
 docker compose build
 docker compose up
 
 docker compose logs
---- To visit the FastAPI documentation of the resulting service, visit http://localhost:8000/docs with a web browser.
---- To visit the streamlit UI, visit http://localhost:8501.
+# To visit the FastAPI documentation of the resulting service, visit http://localhost:8000/docs with a web browser.
+# To visit the streamlit UI, visit http://localhost:8501.
 
-- FastAPI
+# FastAPI
 http://0.0.0.0:8000/docs
 http://localhost:8000/docs
 
-- streamlit UI
+# streamlit UI
 http://0.0.0.0:8501
 http://localhost:8501
+```
 
 
 
-# streamlit-fastapi-model-serving
+# ORIGINAL_README
+
+## streamlit-fastapi-model-serving
 
 Simple example of usage of streamlit and FastAPI for ML model serving described on [this blogpost](https://davidefiocco.github.io/streamlit-fastapi-ml-serving) and [PyConES 2020 video](https://www.youtube.com/watch?v=IvHCxycjeR0).
 
