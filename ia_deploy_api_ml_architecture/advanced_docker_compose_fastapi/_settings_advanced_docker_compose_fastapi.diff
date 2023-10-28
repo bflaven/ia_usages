@@ -1,0 +1,317 @@
+! NOTE ON MICROSERVICE
++ Building a Machine Learning Microservice with FastAPI
+https://developer.nvidia.com/blog/building-a-machine-learning-microservice-with-fastapi/
+
++ How to Build an Instant Machine Learning Web Application with Streamlit and FastAPI
+https://developer.nvidia.com/blog/how-to-build-an-instant-machine-learning-web-application-with-streamlit-and-fastapi/
+
+
+- Run the whole application
+docker compose build
+docker compose up
+docker compose down
+
+
+http://localhost:8501/
+http://localhost:8000/docs
+
+
+
++ Machine learning model serving in Python using FastAPI and streamlit
+
+
+! FastAPI-with-docker-compose (NOPE)
+--- description: usage with local.yml (another)
+--- source: https://github.com/khayitov-dev/FastAPI-with-docker-compose
+
+! Welcome to FastAPI with Docker-compose (NOPE)
+--- description: very straightforward project
+--- source: https://github.com/eelkjaer/fastapi-docker-compose
+
+
+
+- The cheap way how to use Docker to deploy your FastAPI
+--- source: https://dev.to/devasservice/the-cheap-way-how-to-use-docker-to-deploy-your-fastapi-kmn
+
+- Developing a FastAPI Application in a Docker Container
+--- source: https://dev.to/abbazs/developing-a-fastapi-application-in-a-docker-container-31n4
+
+- Docker Build: Dockerizing a Python App with FastAPI
+--- source: https://www.youtube.com/watch?v=qQNGw_m8t0Y&t=1354s
+
++ CODE_6 :: Deploying Streamlit and FastAPI apps using Docker and Docker-compose
+--- source: https://blog.jcharistech.com/2022/08/05/deploying-streamlit-and-fastapi-apps-using-docker-and-docker-compose/
+
+- make the dir
+cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
+mkdir 006_jcharistech_fastapi_docker
+cd 006_jcharistech_fastapi_docker
+
+
+--- NOPE cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/006_jcharistech_fastapi_docker
+
+cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/007_jcharistech_fastapi_docker
+
+
+! STREAMLIT
+- create streamlit app
+touch streamlit_app.py
+http://127.0.0.1:8000/generate_name?starts_with=p
+- create fastapi app
+touch main.py
+
+- Build your Docker image for the streamlitapp
+docker build -t streamlitapp:latest .
+
+- check all the images
+docker image ls
+
+- Run the docker image
+docker run -p 8501:8501 streamlitapp:latest
+
+http://localhost:8501/
+http://127.0.0.1:8501/
+
+Cf. https://www.section.io/engineering-education/how-to-deploy-streamlit-app-with-docker/
+
+! FASTAPI
+
+docker run -p 8000:8000 -t -i fastapi
+
+- check the network
+docker network ls
+--- bridge, host, none are pre-defined networks and cannot be removed
+
+--- MODEL :: docker network create myown-net
+
+- to create the network
+docker network create jcnet
+
+- to remove the network
+docker network rm jcnet
+
+
+docker run --net myown-net --name container_name -d imagename
+docker run --net myown-net  -it imagename bin/bash
+
+https://www.youtube.com/watch?v=doCia_CKcko
+
+
+
+
+
+--- using docker compose
+docker-compose build 
+docker-compose up 
+# run in detached mode using -d
+docker-compose build -d
+
+
+
+! NUKE DOCKER IMAGES
+docker ps
+docker rm -f $(docker ps -aq)
+docker system prune
+
+
+
+--- the env
+[env]
+# Conda Environment
+conda create --name azure_fastapi python=3.9.13
+conda info --envs
+source activate azure_fastapi
+conda deactivate
+
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n azure_fastapi
+
+# update conda 
+conda update -n base -c defaults conda
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
+
+
+
+
+
+
+
+- create the dir and files
+mkdir -p ~/projects/myproject
+cd ~/projects/myproject
+touch main.py Dockerfile .dockerignore docker-compose.yml
+
+- create the env
+python -m venv .venv
+source .venv/bin/python
+pip install fastapi hypercorn
+pip freeze > requirements.txt
+
+
++ CODE_1 :: Fastapi Project Template (DELETED)
+--- description: there is a make file in it
+--- source: https://github.com/BiteStreams/fastapi-template
+
+
+
+! INFOS
+
+- Docker: 
+Docker makes it easy to get started and enables easier switching between projects, operating systems and machines.
+
+- Makefile:
+The Makefile is the 'entrypoint' for the tools in this structure, such that you can easily run different commands without remembering the exact arguments. Run make help to get an overview of the available commands:
+
+
+! HOW-TO
+
+- clone the dir
+cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
+
+git clone https://github.com/BiteStreams/fastapi-template.git 001_bitestreams_fastapi_template
+
+- go to the dir
+cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/001_bitestreams_fastapi_template/
+
+rm -R 001_bitestreams_fastapi_template
+
+- check tools
+docker -v
+poetry --version
+
+- launch the command make up
+make up
+
+- launch the command make migrate
+make migrate
+
+- check the url
+http://localhost:5000/docs
+http://0.0.0.0:5000/docs
+
+http://localhost:5001/docs
+http://0.0.0.0:5001/docs
+
+
+! CONCLUSION: 
+--- not really working, but many concepts to take from the Makefile
+
+! NUKE DOCKER IMAGES
+docker rm -f $(docker ps -aq)
+docker system prune
+
+
+! REQUIRED VALUES
+! username: postgres
+! password: test
+! database: db
+
+e.g. localhost://username:password@data_quality:5432
+postgresql://bspostgres:bitestreams@dbbitestreams:5432/postgres
+
+
+
+
+
+
+! ISSUE ON PATH
+
+- check the path
+echo $PATH
+
++ Added path to ~/.zshrc
+- edit 
+sudo vi ~/.zshrc
+
+- Save and Update ~/.zshrc
+source ~/.zshrc
+
+- Check PATH
+echo $PATH
+
+- how-to
+To get started you need Poetry's bin directory (/Users/brunoflaven/.local/bin) in your `PATH`
+environment variable.
+Add `export PATH="/Users/brunoflaven/.local/bin:$PATH"` to your shell configuration file.
+Alternatively, you can call Poetry explicitly with `/Users/brunoflaven/.local/bin/poetry`.
+
+- You can test that everything is set up by executing:
+poetry --version
+
+
+
+
+
+
+!!! MAKE
+
+
+SHELL := bash
+.ONESHELL:
+.SHELLFLAGS := -eu -o pipefail -c
+
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
+export PROJECT=api
+
+targets: help
+
+up: ## Run the application
+	docker-compose up --build api
+
+
+done: lint test ## Prepare for a commit
+test: utest itest  ## Run unit and integration tests
+
+ci-docker-compose := docker-compose -f .ci/docker-compose.yml
+
+utest: cleantest ## Run unit tests
+	$(ci-docker-compose) run --rm unit pytest -m unit .
+
+itest: cleantest ## Run integration tests
+	$(ci-docker-compose) run --rm integration pytest -m integration .
+
+check: ## Check the code base
+	$(ci-docker-compose) run --rm unit black ./$(PROJECT) --check --diff
+	$(ci-docker-compose) run --rm unit isort ./$(PROJECT) --check --diff
+	$(ci-docker-compose) run --rm -v mypycache:/home/user/.mypy_cache unit mypy ./$(PROJECT)
+
+lint: ## Check the code base, and fix it
+	$(ci-docker-compose) run --rm unit black ./$(PROJECT)
+	$(ci-docker-compose) run --rm unit isort ./$(PROJECT)
+	$(ci-docker-compose) run --rm -v mypycache:/home/user/.mypy_cache unit mypy ./$(PROJECT)
+
+cleantest:  ## Clean up test containers
+	$(ci-docker-compose) build
+	$(ci-docker-compose) down --remove-orphans
+
+
+## Migrations
+
+migrations: ## Generate a migration using alembic
+ifeq ($(m),)
+	@echo "Specify a message with m={message} and a rev-id with revid={revid} (e.g. 0001 etc.)"; exit 1
+else ifeq ($(revid),)
+	@echo "Specify a message with m={message} and a rev-id with revid={revid} (e.g. 0001 etc.)"; exit 1
+else
+	docker-compose run api alembic revision --autogenerate -m "$(m)" --rev-id="$(revid)"
+endif
+
+migrate: ## Run migrations upgrade using alembic
+	docker-compose run --rm api alembic upgrade head
+
+downgrade: ## Run migrations downgrade using alembic
+	docker-compose run --rm api alembic downgrade -1
+
+help: ## Display this help message
+	@awk -F '##' '/^[a-z_]+:[a-z ]+##/ { print "\033[34m"$$1"\033[0m" "\n" $$2 }' Makefile
+
+
+
+

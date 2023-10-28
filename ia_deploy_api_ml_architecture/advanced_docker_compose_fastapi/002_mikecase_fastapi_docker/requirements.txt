@@ -1,0 +1,12 @@
+fastapi==0.65.1
+h11==0.12.0
+h2==4.0.0
+hpack==4.0.0
+Hypercorn==0.11.2
+hyperframe==6.0.1
+priority==1.3.0
+pydantic==1.8.2
+starlette==0.14.2
+toml==0.10.2
+typing-extensions==3.10.0.0
+wsproto==1.0.0

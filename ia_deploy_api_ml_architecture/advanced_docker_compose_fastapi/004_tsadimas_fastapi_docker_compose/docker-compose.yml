@@ -1,0 +1,21 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+    command: redis-server --requirepass pass123 --appendonly yes
+    volumes:
+      - ./redis-data:/data
+  fastapi-app:
+    restart: always
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.http.config:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+      - "443:443"

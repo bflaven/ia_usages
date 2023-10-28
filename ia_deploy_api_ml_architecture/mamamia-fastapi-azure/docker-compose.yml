@@ -1,0 +1,16 @@
+version: '3'
+services:
+  fastapi-app:
+    restart: always
+    build:
+      context: .
+      # Specify the path to your Dockerfile if it's not in the same directory
+      dockerfile: Dockerfile  
+    container_name: fastapi-container
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+# to launch the docker image just type docker-compose up -d
+# to stop the docker image just type docker-compose down
+# check http://localhost:8000

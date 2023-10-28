@@ -1,0 +1,8 @@
+redis-data
+*.env
+__pycache__
+.vscode
+fvenv
+test.db
+**.key
+**.crt

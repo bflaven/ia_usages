@@ -1,0 +1,85 @@
+
+# https://blog.pamelafox.org/2023/03/deploying-containerized-fastapi-app-to.html
+
+# aca stands for Advanced Computer Architecture
+# aka stands for Also Known As
+
+
+--- chat_GPT_3_5_prompt_1
++ PROMPT
+What is the best convention for naming a set of values for Azure ? Give me short advices.
+Then, can you write a script that generate an application name named "appName" in English with 5 random colors, 5 random common keywords with five random characters at the end of the appName with always the first character as a number between 0 to 9. Some examples below:
+
+# orangesmokeZceb35b3
+# purpleground2c63d040
+# greenfox2c63d040
+
++ OUTPUT
+
+Naming conventions for Azure resources and values should be consistent, descriptive, and easy to understand. Here are some short pieces of advice for naming Azure resources:
+
+1. **Be Descriptive**: Use names that convey the purpose and function of the resource. Avoid cryptic or abbreviated names.
+
+2. **Use Lowercase**: Azure resource names are case-insensitive, but lowercase names are recommended for consistency.
+
+3. **Avoid Special Characters**: Stick to letters, numbers, and hyphens in names. Avoid spaces and other special characters.
+
+4. **Keep It Short**: While being descriptive, keep the names relatively short to avoid complexity.
+
+5. **Use a Prefix**: Consider using a prefix to categorize resources. For example, "app-" for applications.
+
+6. **Avoid Reserved Words**: Don't use Azure reserved words in your resource names.
+
+7. **Use Hyphens for Separation**: If needed, use hyphens to separate words within a name. For example, "my-app" instead of "myapp."
+
+Now, here's a Python script that generates an application name following your specified format:
+
+```python
+import random
+import string
+
+# List of random colors and common keywords
+colors = ['red', 'blue', 'green', 'purple', 'orange']
+keywords = ['smoke', 'ground', 'fox', 'apple', 'banana']
+
+# Generate a random application name
+def generate_app_name():
+    # Randomly select a color and keyword
+    color = random.choice(colors)
+    keyword = random.choice(keywords)
+    
+    # Generate a random 5-character string
+    rand_chars = ''.join(random.choice(string.ascii_lowercase) for _ in range(5))
+    
+    # Randomly choose the first character as a number between 0 and 9
+    first_char = str(random.randint(0, 9))
+    
+    # Combine all components to create the application name
+    app_name = f"{color}{keyword}{first_char}{rand_chars}"
+    
+    return app_name
+
+# Generate and print example application names
+for _ in range(3):
+    app_name = generate_app_name()
+    print(app_name)
+```
+
+This script will generate and print three example application names following the format you specified, with random colors, common keywords, and random characters. You can adjust the number of examples by changing the range in the loop.
+
+
+--- chat_GPT_3_5_prompt_1
++ PROMPT
+Write a script in pyhton that automatise these 2 commands with az cli, put the values "wannatrycontainerregistry" and "try-fastapi" in two variables and make a duraction to firve second between the execution of the 2 commands.
+
+
+
+# COMMAND_GOOD_1
+az acr build --platform linux/amd64 \
+    -t wannatrycontainerregistry.azurecr.io/try-fastapi:latest \
+    -r wannatrycontainerregistry .
+
+# COMMAND_GOOD_2
+az containerapp update --name try-fastapi-app \
+  --resource-group try-fastapi-rg \
+  --image wannatrycontainerregistry.azurecr.io/try-fastapi:latest 

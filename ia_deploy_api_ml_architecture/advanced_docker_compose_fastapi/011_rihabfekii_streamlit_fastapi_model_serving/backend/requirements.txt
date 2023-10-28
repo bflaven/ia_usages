@@ -1,0 +1,13 @@
+annotated-types
+anyio
+click
+exceptiongroup
+fastapi
+h11
+idna
+pydantic
+pydantic_core
+sniffio
+starlette
+typing_extensions
+uvicorn
