@@ -71,7 +71,7 @@ This script will generate and print three example application names following th
 
 --- chat_GPT_3_5_prompt_1 (az_update_existing_application.py)
 + PROMPT
-Write a script in python that goes to certain path e.g /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/simple-app-fastapi-azure and then execute these two commands with az cli, put the values "wannatrycontainerregistry" and "try-fastapi" in two variables and make a duration to five second between the execution of the 2 commands.
+Write a script in python that goes to certain path e.g /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/simple-app-fastapi-azure and then execute these two commands with az cli, put the values "wannatrycontainerregistry" and "try-fastapi" in two variables and make a duration to five second between the execution of the 2 commands.
 
 
 
@@ -84,7 +84,7 @@ import subprocess
 import time
 
 # Define the path
-path = "/Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/simple-app-fastapi-azure"
+path = "/Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/simple-app-fastapi-azure"
 
 # Define the variables
 container_registry_name = "wannatrycontainerregistry"
