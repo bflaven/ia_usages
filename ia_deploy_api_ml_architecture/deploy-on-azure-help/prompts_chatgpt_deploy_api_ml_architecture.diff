@@ -39,7 +39,6 @@ import random
 import string
 
 # List of random colors and common keywords
-# List of random colors and common keywords
 colors = ['red', 'blue', 'green', 'purple', 'orange', 'pink', 'yellow', 'brown', 'teal', 'gray']
 keywords = ['smoke', 'ground', 'fox', 'apple', 'banana', 'sun', 'moon', 'star', 'sky', 'ocean']
 
