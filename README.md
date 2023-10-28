@@ -24,6 +24,7 @@
 
 6. Unlocking Speech-to-Text: Harnessing the Power of the OpenAI Whisper API with FastAPI Integration. [https://flaven.fr/2023/10/unlocking-speech-to-text-harnessing-the-power-of-the-openai-whisper-api-with-fastapi-integration/](https://flaven.fr/2023/10/unlocking-speech-to-text-harnessing-the-power-of-the-openai-whisper-api-with-fastapi-integration/)
 
+7. Step by step Introducing to Azure Cloud Deployment: Deploying a FastAPI ML Feature API. [https://flaven.fr/2023/10/step-by-step-introducing-to-azure-cloud-deployment-deploying-a-fastapi-ml-feature-api/](https://flaven.fr/2023/10/step-by-step-introducing-to-azure-cloud-deployment-deploying-a-fastapi-ml-feature-api/)
 
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
