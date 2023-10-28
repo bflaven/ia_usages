@@ -71,15 +71,46 @@ This script will generate and print three example application names following th
 
 --- chat_GPT_3_5_prompt_1 (az_update_existing_application.py)
 + PROMPT
-Write a script in pyhton that automatise these 2 commands with az cli, put the values "wannatrycontainerregistry" and "try-fastapi" in two variables and make a duraction to firve second between the execution of the 2 commands.
+Write a script in python that goes to certain path e.g /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/simple-app-fastapi-azure and then execute these two commands with az cli, put the values "wannatrycontainerregistry" and "try-fastapi" in two variables and make a duration to five second between the execution of the 2 commands.
 
 
-# COMMAND_GOOD_1
-az acr build --platform linux/amd64 \
-    -t wannatrycontainerregistry.azurecr.io/try-fastapi:latest \
-    -r wannatrycontainerregistry .
 
-# COMMAND_GOOD_2
-az containerapp update --name try-fastapi-app \
-  --resource-group try-fastapi-rg \
-  --image wannatrycontainerregistry.azurecr.io/try-fastapi:latest 
++ OUTPUT
+  
+  You can use Python to run commands with the `subprocess` module and add a delay between them using `time.sleep`. Here's a Python script that does this:
+
+```python
+import subprocess
+import time
+
+# Define the path
+path = "/Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/simple-app-fastapi-azure"
+
+# Define the variables
+container_registry_name = "wannatrycontainerregistry"
+app_service_name = "try-fastapi"
+
+# Define the Azure CLI commands
+command1 = f"az acr create --name {container_registry_name} --resource-group myResourceGroup --sku Basic"
+command2 = f"az webapp up --name {app_service_name} --location centralus --sku B1 --os-type Linux --container-registry {container_registry_name}"
+
+# Change directory to the specified path
+try:
+    os.chdir(path)
+except OSError:
+    print(f"Could not change directory to {path}")
+    exit(1)
+
+# Execute the first command
+subprocess.run(command1, shell=True)
+
+# Wait for 5 seconds
+time.sleep(5)
+
+# Execute the second command
+subprocess.run(command2, shell=True)
+```
+
+In this script, we first change the working directory to the specified path using `os.chdir`. Then, we define the variables `container_registry_name` and `app_service_name`, and the Azure CLI commands using f-strings to insert these variables. We use `subprocess.run` to execute the commands one by one, with a 5-second delay in between them using `time.sleep(5)`. Make sure to customize the Azure CLI commands and paths as needed for your specific use case.
+
+
