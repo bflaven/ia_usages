@@ -3,7 +3,7 @@
 --- Code: https://github.com/kurtispykes/car-evaluation-project.git
 
 - Get the dir
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
 
 - Clone git repo
 git clone https://github.com/kurtispykes/car-evaluation-project.git 013_kurtispykes_car_evaluation_project

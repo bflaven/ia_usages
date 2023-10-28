@@ -5,7 +5,7 @@
 
 
 - get the dir
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
 
 - clone git repo
 git clone https://github.com/davidefiocco/streamlit-fastapi-model-serving.git 008_davidefiocco_streamlit_fastapi_model_serving

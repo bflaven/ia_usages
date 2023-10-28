@@ -27,7 +27,7 @@ pip install watchdog
 pip install requests
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/009_davidefiocco_streamlit_fastapi_model_serving/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/009_davidefiocco_streamlit_fastapi_model_serving/
 
 # launch the app
 streamlit run ui.py

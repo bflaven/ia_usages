@@ -4,7 +4,7 @@
 --- Source: https://github.com/RihabFekii/streamlit-app.git 
 
 - Get the dir
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
 
 - Clone git repo
 git clone https://github.com/RihabFekii/streamlit-app.git 010_rihabfekii_streamlit_fastapi_model_serving

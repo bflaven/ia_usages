@@ -10,12 +10,12 @@ If you want to install the original...
 
 ```bash
 # clone the dir
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
 
 git clone https://github.com/AvanishCodes/FastAPI-docker-compose.git 003_avanishcodes_docker_compose
 
 # go to the dir
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/003_avanishcodes_docker_compose/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/003_avanishcodes_docker_compose/
 
 # if needed
 rm -R 003_avanishcodes_docker_compose

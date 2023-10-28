@@ -17,7 +17,7 @@ If you want to install the original...
 git clone https://github.com/MikeCase/fastapi-docker.git 002_mikecase_fastapi_docker
 
 # go to the dir
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/002_mikecase_fastapi_docker/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/002_mikecase_fastapi_docker/
 
 # if needed
 rm -R 002_mikecase_fastapi_docker

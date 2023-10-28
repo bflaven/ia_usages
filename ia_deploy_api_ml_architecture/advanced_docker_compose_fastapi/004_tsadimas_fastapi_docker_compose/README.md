@@ -1,47 +1,47 @@
+# 004_tsadimas_fastapi_docker_compose
+
+This projetc `fastapi-docker-compose` present a more advanced usage with .env, redis and so on
+
+- https://github.com/tsadimas/fastapi-docker-compose
 
 
-+ CODE_4 :: fastapi-docker-compose
---- More advanced usage with .env, redis and so on
---- source: https://github.com/tsadimas/fastapi-docker-compose
+The nice add-on is the `.env` usage. The `.env` avoids storing sensitive information within your application.
 
-! HOW-TO
-- clone the dir
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
+Check python-dotenv for the use of .env at https://pypi.org/project/python-dotenv/
+
+
+```bash
+# clone the dir
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
 
 git clone https://github.com/tsadimas/fastapi-docker-compose.git 004_tsadimas_fastapi_docker_compose
 
+# go to the dir
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/004_tsadimas_fastapi_docker_compose/
 
-- go to the dir
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/004_tsadimas_fastapi_docker_compose/
-
---- if needed
+# if needed
 rm -R 004_tsadimas_fastapi_docker_compose
 
 
-- create a .env file in root directory adding these values
+# create a .env file in root directory adding these values
 REDIS_SERVER=redis-server
 REDIS_PASS=pass123
 
-! NUKE DOCKER IMAGES
+# NUKE DOCKER IMAGES
 docker rm -f $(docker ps -aq)
 docker system prune
 
 
-- run the docker compose
+# run the docker compose
 docker-compose up --build
 
-- check the url
+# check the url
 http://0.0.0.0:8000/
 
-
-! CONCLUSION
-- Run without docker (NOPE)
---- le .env évite de stocker des informations sensibles au sein de votre application
---- voir python-dotenv pour l'utilisation du .env
---- Cf https://pypi.org/project/python-dotenv/
+```
 
 
-
+# ORIGINAL_README
 
 
 # Test
