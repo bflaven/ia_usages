@@ -66,4 +66,13 @@ git commit -am "add .gitignore"
 # git push origin master
 git push
 
+
+cd /Users/brunoflaven/Documents/03_git/ia_usages
+sudo chgrp -R staff .
+sudo chmod -R g+rwX .
+sudo find . -type d -exec chmod g+s '{}' +
+
+
+
+
 ```
