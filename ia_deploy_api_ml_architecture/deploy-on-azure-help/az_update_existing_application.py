@@ -19,7 +19,7 @@ import os
 # path = "/Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/simple-app-fastapi-azure"
 
 
-path = "/Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/mamamia-fastapi-azure"
+path = "/Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/simple-app-fastapi-azure"
 
 
 # Define the variables, replace by yours

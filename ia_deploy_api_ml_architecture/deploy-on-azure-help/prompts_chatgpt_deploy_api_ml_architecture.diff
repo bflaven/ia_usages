@@ -5,10 +5,10 @@
 # aka stands for Also Known As
 
 
---- chat_GPT_3_5_prompt_1
+--- chat_GPT_3_5_prompt_1 (az_project_name_generator.py)
 + PROMPT
 What is the best convention for naming a set of values for Azure ? Give me short advices.
-Then, can you write a script that generate an application name named "appName" in English with 5 random colors, 5 random common keywords with five random characters at the end of the appName with always the first character as a number between 0 to 9. Some examples below:
+Then, can you write a script that generate an application name named "appName" in English with 10 random colors, 10 random common keywords with five random characters at the end of the appName with always the first character as a number between 0 to 9. Some examples below:
 
 # orangesmokeZceb35b3
 # purpleground2c63d040
@@ -39,8 +39,9 @@ import random
 import string
 
 # List of random colors and common keywords
-colors = ['red', 'blue', 'green', 'purple', 'orange']
-keywords = ['smoke', 'ground', 'fox', 'apple', 'banana']
+# List of random colors and common keywords
+colors = ['red', 'blue', 'green', 'purple', 'orange', 'pink', 'yellow', 'brown', 'teal', 'gray']
+keywords = ['smoke', 'ground', 'fox', 'apple', 'banana', 'sun', 'moon', 'star', 'sky', 'ocean']
 
 # Generate a random application name
 def generate_app_name():
@@ -68,10 +69,9 @@ for _ in range(3):
 This script will generate and print three example application names following the format you specified, with random colors, common keywords, and random characters. You can adjust the number of examples by changing the range in the loop.
 
 
---- chat_GPT_3_5_prompt_1
+--- chat_GPT_3_5_prompt_1 (az_update_existing_application.py)
 + PROMPT
 Write a script in pyhton that automatise these 2 commands with az cli, put the values "wannatrycontainerregistry" and "try-fastapi" in two variables and make a duraction to firve second between the execution of the 2 commands.
-
 
 
 # COMMAND_GOOD_1
