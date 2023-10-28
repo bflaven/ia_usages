@@ -1,5 +1,13 @@
 # fastapi_cheatsheet
 
+**A great source of information on how to document FastAPI, taking the best advantage of Swagger integrated into FastAPI. Very useful.**
+
+**Documentation is KEY.... because it supports adoption and uses**
+
+# ORIGINAL_README
+
+# fastapi_cheatsheet
+
 ## why ?
 
 Classic repository question:

@@ -1,5 +1,7 @@
 # fastapi-simple-app
 
+**A quick and dirty application to have an application made with FastAPI to deploy to azure.**
+
 ```python
 """
 # create the env: fastapi_simple_app
@@ -29,7 +31,7 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/fastapi-simple-app/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/fastapi-simple-app/
 
 # launch the app
 uvicorn app.main:api --reload
@@ -40,41 +42,42 @@ http://127.0.0.1:8000/docs
 http://127.0.0.1:8000/redoc
 
 """
-```
 
-- 1. Virtual environment with venv
-
---- model python -m venv env
+# 1. Virtual environment with venv
+# model python -m venv env
 python -m venv fastapi_simple_app
 
---- model source env/bin/activate
+# model source env/bin/activate
 source fastapi_simple_app/bin/activate
 
---- if you need to exit from the env
+# if you need to exit from the env
 deactivate
 
---- to test the env
+# to test the env
 which python
 which pip
 
 # to upgrade pip
 python -m pip install --upgrade pip
 
-- 2. create a FastAPI app (DONE)
+# 2. create a FastAPI app (DONE)
 
 mkdir app
-...etc
+# ...etc
 
-- 3. create a dockerfile to enable the app to run in a container
+# 3. create a dockerfile to enable the app to run in a container
 
----  check if docker is running
+# check if docker is running
 docker --version
----  build your image "azure-fastapi-simple-app"
+# build your image "azure-fastapi-simple-app"
 docker build -t two-fastapi-app .
 
----  run the container of your image
+# run the container of your image
 docker run -p 80:80 -it two-fastapi-app
-- Check http://localhost/docs or http://0.0.0.0/docs
+# Check http://localhost/docs or http://0.0.0.0/docs
 
-- 4 - deploy to azure
-A simple api made with FastAPI easy to deploy
+# 4. deploy to azure
+# A simple api made with FastAPI easy to deploy
+
+
+```

@@ -1,6 +1,4 @@
 # api_fastapi_routes
 
-
-
-- See at [https://github.com/MikeCase/fastapi-docker](https://github.com/MikeCase/fastapi-docker)
+**3 cases to think about routing issue with the help of ChatGPT**
 
