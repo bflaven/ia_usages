@@ -1,24 +1,33 @@
-+ 013_kurtispykes_car_evaluation_project
---- Post: https://developer.nvidia.com/blog/how-to-build-an-instant-machine-learning-web-application-with-streamlit-and-fastapi/
---- Code: https://github.com/kurtispykes/car-evaluation-project.git
+# 013_kurtispykes_streamlit_car_evaluation_project
 
-- Get the dir
+A more sophisticated project in its architecture but still this principle of using a "Frontend" made in Streamilit and a "Backend" made in FastAPI.
+
+- Original Post: [https://developer.nvidia.com/blog/how-to-build-an-instant-machine-learning-web-application-with-streamlit-and-fastapi/](https://developer.nvidia.com/blog/how-to-build-an-instant-machine-learning-web-application-with-streamlit-and-fastapi/)
+
+- Original Source: [https://github.com/kurtispykes/car-evaluation-project](https://github.com/kurtispykes/car-evaluation-project)
+
+
+```bash
+# Get the dir
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/
 
-- Clone git repo
+# Clone git repo
 git clone https://github.com/kurtispykes/car-evaluation-project.git 013_kurtispykes_car_evaluation_project
 
-- Run the whole application
+# Run the whole application
 docker compose build
 docker compose up
 docker compose down
 
---- STREAMLIT
+# STREAMLIT
 http://localhost:8501/
---- API
+# API
 http://localhost:8001/docs
 
+```
 
+
+# ORIGINAL_README
 
 # Car Evaluation
 The purpose behind this project was to demonstrate how to build an instant machine learning application with Streamlit - this is great for rapid prototyping. 
