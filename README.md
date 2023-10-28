@@ -66,9 +66,10 @@ git commit -am "add .gitignore"
 # git push origin master
 git push
 
-
+# Repair Permissions
 cd /Users/brunoflaven/Documents/03_git/ia_usages
-sudo chgrp -R staff .
+# groupname is staff on a mac
+sudo chgrp -R groupname .
 sudo chmod -R g+rwX .
 sudo find . -type d -exec chmod g+s '{}' +
 
