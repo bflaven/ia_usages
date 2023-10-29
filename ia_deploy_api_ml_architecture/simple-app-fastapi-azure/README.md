@@ -36,7 +36,7 @@ touch main.py requirements.txt Dockerfile .dockerignore
 
 **For the code to put in each file. See below. The code is reduced to the minimum.**
 
-- **1. main.py**
+- ### 1. `main.py`
 ```bash
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
@@ -60,7 +60,8 @@ async def home():
     
 ```
 
-- **2. requirements.txt**
+- ### 2. `requirements.txt`
+
 ```bash
 fastapi
 uvicorn
@@ -88,7 +89,7 @@ EXPOSE 80
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80", "--proxy-headers"]
 ```
 
-- **4. .dockerignore**
+- ### 4. `.dockerignore`
 
 I have picked an extended model for .dockerignore on this site: <a href="https://shisho.dev/blog/posts/how-to-use-dockerignore/" target="_blank" rel="noopener">https://shisho.dev/blog/posts/how-to-use-dockerignore/</a>
 
@@ -117,8 +118,6 @@ coverage.xml
 Makefile
 README.md
 ```
-
-
 
 **If you have a development environment, you can test your API.  A development environment is made with tools like Anaconda, Poetry, Venv... etc. I am using Anaconda.**
 
