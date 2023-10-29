@@ -274,7 +274,7 @@ az acr build --platform linux/amd64 -t wannatrycontainerregistry.azurecr.io/fast
 
 ```
 
-- **4.2 Deploy to Azure Container App**
+- ### 4.2 Deploy to Azure Container App
 
 
 ```bash
@@ -365,7 +365,7 @@ az containerapp create --name try-fastapi-app \
 
 **Normally you are good! You have your app deployed**
 
-- **4.3 If you need to clean up everything on Azure**
+- ### 4.3 If you need to clean up everything on Azure
 
 CAUTION: I like to undo thing or I should even say nuke things. This command is the perfect one, you “kill” all your azure environment from group to app deployed. With great power comes great responsibility.
 
@@ -374,7 +374,7 @@ CAUTION: I like to undo thing or I should even say nuke things. This command is 
 az group delete --name try-fastapi-rg
 ```
 
-**4.4 If you need to update an existing application on Azure**
+- ### 4.4 If you need to update an existing application on Azure
 
 Here the most useful 2 commands as you may change some stuff in your application, every time you want to deploy just perform these 2 commands. You must be in the root application directory and ensure that the application is running locally with Docker.
 
@@ -415,7 +415,7 @@ az webapp log tail --name wannatrycontainerregistry --resource-group try-fastapi
 az group show --name try-fastapi-rg
 ```
 
-- **4.5 The magic command “all-in-one”**
+- ### 4.5 The magic command "all-in-one"
 
 
 ```bash
