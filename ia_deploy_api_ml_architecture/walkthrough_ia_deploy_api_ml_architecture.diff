@@ -60,7 +60,8 @@ https://docs.python.org/3/library/venv.html
 ! D. EXAMPLES
 
 + 1. SIMPLE-APP-FASTAPI-AZURE (simple-app-fastapi-azure) :
---- az_using_fastapi_simple_app.mov
+--- Objective: Testing locally with ananconda
+--- Video: 001_az_using_fastapi_simple_app_testing_locally.mov
 
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_deploy_api_ml_architecture/simple-app-fastapi-azure
@@ -82,7 +83,35 @@ uvicorn main:app --reload
 http://127.0.0.1:8000
 
 
-+ 2. MAMAMIA-FASTAPI-AZURE (mamamia-fastapi-azure) :
++ 2. SIMPLE-APP-FASTAPI-AZURE (simple-app-fastapi-azure) :
+--- Objective: Testing locally in Docker ot prepare the deploiment on Azure
+--- Video: 002_az_using_fastapi_simple_app_testing_locally_docker.mov
+
+- CODE: 
+https://github.com/bflaven/ia_usages/tree/main/ia_deploy_api_ml_architecture/simple-app-fastapi-azure
+
+- DESCRIPTION
+A very basic application made with FastAPI that can be the first app that you intend to deploy on Azure.
+
+- TERMINAL_SCREEN (blue)
+# GO TO DIR
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/simple-app-fastapi-azure/
+
+# LAUNCH THE ENV
+source activate azure_fastapi
+
+# LAUNCH THE API
+uvicorn main:app --reload
+
+# CHECK THE API
+http://127.0.0.1:8000
+
++ 3. SIMPLE-APP-FASTAPI-AZURE (simple-app-fastapi-azure) :
+--- Objective: Deploying the app on azure
+--- Video: 003_az_using_fastapi_simple_app_Deploying_azure.mov
+
+
++ 4. MAMAMIA-FASTAPI-AZURE (mamamia-fastapi-azure) :
 
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_deploy_api_ml_architecture/mamamia-fastapi-azure
@@ -106,7 +135,7 @@ http://127.0.0.1:8000
 
 
 
-+ 3. ADVANCED_DOCKER_COMPOSE_FASTAPI (advanced_docker_compose_fastapi): 
++ 5. ADVANCED_DOCKER_COMPOSE_FASTAPI (advanced_docker_compose_fastapi): 
 
 - DESCRIPTION
 Here is the list of directories. Let's take some examples with streamlit and FastAPI.
@@ -121,7 +150,7 @@ Here is the list of directories. Let's take some examples with streamlit and Fas
 
 Let's take this one "009_davidefiocco_streamlit_fastapi_model_serving"
 
-+ 4. 009_davidefiocco_streamlit_fastapi_model_serving
++ 6. 009_davidefiocco_streamlit_fastapi_model_serving
 
 
 ! CAUTION: It requires to have Docker installed and Up and Running.
@@ -156,9 +185,7 @@ http://0.0.0.0:8501
 http://localhost:8501
 
 
-
-
-+ 5. AZURE-CLI COMMAND: 
++ 7. AZURE-CLI COMMAND: 
 
 # login with Azure CLI, it will open a browsers
 az login
