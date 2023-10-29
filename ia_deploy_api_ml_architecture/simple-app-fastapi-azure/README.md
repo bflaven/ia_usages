@@ -5,6 +5,11 @@
 **This POC has everything required to be deployed on Azure.**
 
 
+- *The question is "How-to: Deploying a containerized FastAPI app to Azure Container Apps".*
+- *This how-to has been inspired by [https://blog.pamelafox.org/2023/03/deploying-containerized-fastapi-app-to.html](https://blog.pamelafox.org/2023/03/deploying-containerized-fastapi-app-to.html)*
+
+
+## 1. Create a simple FastAPI App named "simple-app-fastapi-azure" to deploy to Azure
 
 ```bash
 
@@ -142,3 +147,71 @@ http://cypress.mydomain.priv
 
 # See more at https://fastapi.tiangolo.com/deployment/manually/
 ```
+
+
+## 2. Using Docker to load locally this simple FastAPI App named "simple-app-fastapi-azure"
+
+
+**You need to install Docker. Check https://www.docker.com/**
+
+
+
+```bash
+# get into the dir
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/simple-app-fastapi-azure
+
+# START with increment the tags e.g test1, test2, test3... etc
+
+# build the Docker image named "bf-fastapi-demo:test2"
+docker build --tag bf-fastapi-demo:test2 .
+# The application Docker has to be up and running
+
+# run a container named "test2-bf-fastapi-container". It is an instance of an image named "bf-fastapi-demo:test1"
+docker run -d --name test2-bf-fastapi-container -p 80:80 bf-fastapi-demo:test2
+
+# The Dockerfile tells FastAPI to use a port of 80, so the run command publishes the container's port 80 as port 80 on the local computer. I visit localhost:80 to confirm that my API is up and running. 🏃🏽‍♀️
+
+# check the app locally
+http://localhost:80
+
+# list the images
+docker ps
+
+# stop the container test2-bf-fastapi-container
+docker stop test2-bf-fastapi-container
+
+# remove the container test2-bf-fastapi-container
+docker rm -f test2-bf-fastapi-container
+
+# remove the image with bf-fastapi-demo:test2
+docker rmi --force bf-fastapi-demo:test2
+
+# END If you change the code, you can restart from START above and redo the commands.
+
+# NUKE DOCKER IMAGES AND CONTAINERS
+# remove all containers
+docker rm -f $(docker ps -aq)
+
+# remove everything
+docker system prune
+
+```
+
+## 3. Deploy to Azure this simple FastAPI App named "simple-app-fastapi-azure"
+
+
+**You need to install Azure CLI. Check https://learn.microsoft.com/en-us/cli/azure/install-azure-cli**
+
+```bash
+
+# SOME COMMANDS FOR Azure CLI
+
+# Install the azure-cli
+brew update && brew install azure-cli
+
+# Check the install
+az --version
+
+
+```
+
