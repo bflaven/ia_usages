@@ -108,13 +108,44 @@ Here is the list of directories. Let's take some examples with streamlit and Fas
 
 Let's take this one "009_davidefiocco_streamlit_fastapi_model_serving"
 
++ 4. 009_davidefiocco_streamlit_fastapi_model_serving
+
+
+! CAUTION: It requires to have Docker installed and Up and Running.
+
+--- DOCKER
+https://www.docker.com/
+
+--- STREAMLIT
+https://streamlit.io/
+
+
 - DESCRIPTION
 A very simple, educational and hybrid project that demonstrate how-to create an API with FastAPI (backend) that will back a web app made with Streamlit. Nice source of inspiration and a basic illustration of the FRONTEND, API, MODEL workflow.
 
 
+- CONSOLE_SCREEN_1 (blue)
+# GO TO DIR
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/advanced_docker_compose_fastapi/009_davidefiocco_streamlit_fastapi_model_serving/
 
-+ 4. AZURE-CLI COMMAND: 
+# LAUNCH DOCKER
+make up
+
+# to get some infos
+make help
+
+# FastAPI
+http://0.0.0.0:8000/docs
+http://localhost:8000/docs
+
+# streamlit UI
+http://0.0.0.0:8501
+http://localhost:8501
+
+
+
+
++ 5. AZURE-CLI COMMAND: 
 
 # login with Azure CLI, it will open a browsers
 az login
