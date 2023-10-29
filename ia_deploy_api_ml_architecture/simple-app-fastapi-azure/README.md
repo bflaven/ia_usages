@@ -221,7 +221,7 @@ az --version
 ## 4. Deploy to Azure this simple FastAPI App named "simple-app-fastapi-azure"
 
 
-**4.1 Push image to registry**
+- **4.1 Push image to registry**
 
 
 ```bash
@@ -274,7 +274,7 @@ az acr build --platform linux/amd64 -t wannatrycontainerregistry.azurecr.io/fast
 
 ```
 
-**4.2 Deploy to Azure Container App**
+- **4.2 Deploy to Azure Container App**
 
 
 ```bash
@@ -365,7 +365,8 @@ az containerapp create --name try-fastapi-app \
 
 **Normally you are good! You have your app deployed**
 
-**4.3 If you need to clean up everything on Azure**
+- **4.3 If you need to clean up everything on Azure**
+
 CAUTION: I like to undo thing or I should even say nuke things. This command is the perfect one, you “kill” all your azure environment from group to app deployed. With great power comes great responsibility.
 
 ```bash
@@ -414,7 +415,8 @@ az webapp log tail --name wannatrycontainerregistry --resource-group try-fastapi
 az group show --name try-fastapi-rg
 ```
 
-4.5 The magic command “all-in-one”
+- **4.5 The magic command “all-in-one”**
+
 
 ```bash
 A unique command that “Create or update a container app as well as any associated resources (ACR, resource group, container apps environment, GitHub Actions, etc.).”
