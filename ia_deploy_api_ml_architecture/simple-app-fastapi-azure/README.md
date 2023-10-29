@@ -2,6 +2,10 @@
 
 **You need to have an app to deploy! Right? Here is a simple one below. You can find some more on my github account in `simple-app-fastapi-azure` and in `mamamia-fastapi-azure`**
 
+**This POC has everything required to be deployed on Azure.**
+
+
+
 ```bash
 
 # go to the dir

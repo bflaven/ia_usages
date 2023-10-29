@@ -1,0 +1,96 @@
+! A. SOURCE
+
+- Article: Step by step Introducing to Azure Cloud Deployment: Deploying a FastAPI ML Feature API
+https://flaven.fr/2023/10/step-by-step-introducing-to-azure-cloud-deployment-deploying-a-fastapi-ml-feature-api/
+
+- Path (local)
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/
+
+! B. DIRECTORIES ON GITHUB
+https://github.com/bflaven/ia_usages/tree/main/ia_deploy_api_ml_architecture
+
+- advanced_docker_compose_fastapi: 
+--- several example suing docker-compose and Makefile.
+- api_fastapi_routes: 
+--- routing issue with the help of ChatGPT
+- fastapi-simple-app: 
+--- simple app to deploy
+- fastapi_cheatsheet: 
+--- cheat sheet for fastapi for documentation especially.
+- fastapi_tiangolo_advanced_settings: 
+--- advanced setting examples.
+- mamamia-fastapi-azure: 
+--- application, written with the help of ChatGPT, made with FastAPI deployed to the Azure Cloud.
+
+! C. ENVIRONMENT ANACONDA
+
+[env]
+# Conda Environment
+conda create --name azure_fastapi python=3.9.13
+conda info --envs
+source activate azure_fastapi
+conda deactivate
+
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n azure_fastapi
+
+# update conda 
+conda update -n base -c defaults conda
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
+
+! D. EXAMPLES
+
++ 1. fastapi-simple-app:
+--- az_using_fastapi_simple_app.mov
+
+- CODE: 
+https://github.com/bflaven/ia_usages/tree/main/ia_deploy_api_ml_architecture/simple-app-fastapi-azure
+
+- DESCRIPTION
+A very basic application made with FastAPI that can be the first app that you intend to deploy on Azure.
+
+- CONSOLE_SCREEN (blue)
+# GO TO DIR
+cd /Users/brunoflaven/Documents/03_git/BlogArticlesExamples/fastapi_nlp_model/009_streamlit_fastapi_basic_calculator/
+
+# LAUNCH THE ENV
+source activate azure_fastapi
+
+# LAUNCH THE API
+uvicorn fast_api:app --reload
+
+# CHECK THE API
+http://127.0.0.1:8000/docs
+
+
++ 2. mamamia-fastapi-azure: 
+
+- CODE: 
+https://github.com/bflaven/ia_usages/tree/main/ia_deploy_api_ml_architecture/mamamia-fastapi-azure
+
+- DESCRIPTION
+A very simple, educational and hybrid project that demonstrate how-to create an API with FastAPI (backend) that will back a web app made with Streamlit. Nice source of inspiration and a basic illustration of the FRONTEND, API, MODEL workflow.
+
+- CONSOLE_SCREEN (blue)
+
+
+
++ 3. advanced_docker_compose_fastapi: 
+--- Here is the list of directories. Let's take some examples with streamlit and FastAPI.
+
+- 002_mikecase_fastapi_docker
+- 003_avanishcodes_docker_compose
+- 004_tsadimas_fastapi_docker_compose
+- 005_j0kim_fastapi_docker_virtualenv
+- 009_davidefiocco_streamlit_fastapi_model_serving
+- 011_rihabfekii_streamlit_fastapi_model_serving
+- 013_kurtispykes_streamlit_car_evaluation_project
+
+
+
