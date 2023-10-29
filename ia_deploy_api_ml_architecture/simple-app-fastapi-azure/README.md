@@ -2,6 +2,8 @@
 
 **You need to have an app to deploy! Right? Here is a simple one below. You can find some more on my github account in `simple-app-fastapi-azure` and in `mamamia-fastapi-azure`**
 
+**This how-to is also avaliable at https://flaven.fr/2023/10/step-by-step-introducing-to-azure-cloud-deployment-deploying-a-fastapi-ml-feature-api/**
+
 **This POC has everything required to be deployed on Azure.**
 
 
