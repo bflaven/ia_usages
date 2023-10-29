@@ -44,6 +44,19 @@ pip freeze > requirements.txt
 # to install
 pip install -r requirements.txt
 
+
+- Tools to create and manage of virtual environments:
+
+--- ANACONDA
+https://www.anaconda.com/
+
+--- PYTHON-POETRY
+https://python-poetry.org/
+
+--- VENV
+https://docs.python.org/3/library/venv.html
+
+
 ! D. EXAMPLES
 
 + 1. SIMPLE-APP-FASTAPI-AZURE (simple-app-fastapi-azure) :
