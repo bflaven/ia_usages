@@ -141,6 +141,167 @@ docker system prune
 --- Video: 003_az_using_fastapi_simple_app_Deploying_azure.mov
 
 
+- REQUIREMENT: Install Azure CLI
+
+--- https://learn.microsoft.com/en-us/cli/azure/
+! # SOME COMMANDS FOR Azure CLI
+
+# Install the azure-cli
+brew update && brew install azure-cli
+
+# Check the install
+az --version
+
+# Log in to Azure
+az login
+
+# By default, this command logs in with a user account. CLI will try to launch a web browser to log in interactively. If a web browser is not available, CLI will fall back to device code login. To login with a service principal, specify --service-principal.
+
+
+
+# Go to the dir
+cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_deploy_api_ml_architecture/simple-app-fastapi-azure/
+
+
+- PROCESS: 4. Deploy to Azure this simple FastAPI App named "simple-app-fastapi-azure"
+
+
+! # 4.1 Push image to registry
+# STEP_1. check the install
+az --version
+
+# STEP_2. Requirement, you must be logged
+az login
+
+# By default, this command logs in with a user account. CLI will try to launch a web browser to log in interactively. If a web browser is not available, CLI will fall back to device code login. To login with a service principal, specify --service-principal.
+
+# az login: Log in to Azure.
+# By default, this command logs in with a user account. CLI will try to launch a web browser to log in interactively. If a web browser is not available, CLI will fall back to device code login. To login with a service principal, specify --service-principal.
+
+# STEP_3. Create a resource group
+# Careful you can reuse an existing one but in this example I created from scratch
+# COMMAND MODEL :: az group create --location eastus --name fastapi-aca-rg
+
+# COMMAND GOOD
+az group create --location eastus --name fastapi-try-rg
+
+# if you need to delete
+az group delete --name fastapi-try-rg
+
+
+# STEP_4. Create a container registry wannatrycontainerregistry for the resource group "fastapi-try-rg"
+
+# COMMAND MODEL :: az acr create --resource-group fastapi-aca-rg \ --name pamelascontainerregistry --sku Basic
+
+# COMMAND GOOD
+az acr create --resource-group fastapi-try-rg --name wannatrycontainerregistry --sku Basic
+
+
+# STEP_5. Log into the registry so that later commands can push images to it:
+# COMMAND MODEL :: az acr login --name pamelascontainerregistry
+
+# COMMAND GOOD
+az acr login --name wannatrycontainerregistry
+
+
+
+# STEP_6. uploads the code to cloud and builds it there:
+# COMMAND MODEL :: az acr build --platform linux/amd64 -t pamelascontainerregistry.azurecr.io/fastapi-try:latest -r pamelascontainerregistry .
+
+# must be in a directory with a Dockerfile
+# cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/simple-app-fastapi-azure
+
+# COMMAND GOOD
+az acr build --platform linux/amd64 -t wannatrycontainerregistry.azurecr.io/fastapi-try:latest -r wannatrycontainerregistry . 
+
+
+! # 4.2 Deploy to Azure Container App
+
+# You must be in the directory of your app 
+# cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/simple-app-fastapi-azure
+
+
+# STEP_1: (OPTIONNAL) Upgrade the extension and register the necessary providers:
+az extension add --name containerapp --upgrade
+az provider register --namespace Microsoft.App
+az provider register -n Microsoft.OperationalInsights --wait
+
+# STEP_2: Create an environment for the container app:
+# COMMAND MODEL :: az containerapp env create --name fastapi-aca-env \
+    --resource-group fastapi-aca-rg --location eastus
+
+# COMMAND GOOD
+az containerapp env create --name fastapi-try-env --resource-group fastapi-try-rg --location eastus
+
+
+
+# This will output the URL aka defaultDomain e.g : 
+# orangesmoke-cceb35b3.eastus.azurecontainerapps.io
+# purpleground-2c63d040.eastus.azurecontainerapps.io
+
+
+# STEP_3: You must enable the admin:
+# Run 'az acr update -n pamelascontainerregistry --admin-enabled true' to enable admin first.
+
+# COMMAND GOOD
+az acr update -n wannatrycontainerregistry --admin-enabled true
+
+# STEP_4: Generate credentials to use for the next step:
+# COMMAND MODEL :: az acr credential show --name pamelascontainerregistry
+
+# output where you get the password
+
+# COMMAND GOOD
+az acr credential show --name wannatrycontainerregistry
+
+# OUPUT where you can find the password.
+{
+  "passwords": [
+    {
+      "name": "password",
+      "value": "FAKE+Ubb8iqWTtnDVDZg1ylHcCtHTTogZDt6iULcbKC+XXXXXXXXX"
+    },
+    {
+      "name": "password2",
+      "value": "FAKE+lwCMl71GlToW8YyeAsGaskVE4X8oLE2S8HipB+XXXXXXXXX"
+    }
+  ],
+  "username": "wannatrycontainerregistry"
+}
+
+
+# STEP_5: Create the container app, passing in the username and password from the credentials:
+
+# COMMAND MODEL 
+az containerapp create --name fmm-fastapi-app \
+    --resource-group fmm-fastapi-rg \
+    --image pamelascontainerregistry.azurecr.io/fastapi-aca:latest \
+    --environment fastapi-aca-env \
+    --registry-server pamelascontainerregistry.azurecr.io \
+    --registry-username pamelascontainerregistry \
+    --registry-password PASSWORD_HERE \
+    --ingress external \
+    --target-port 80
+
+# COMMAND GOOD
+# Do not forget to replace the password with one show earlier
+
+az containerapp create --name try-fastapi-app \
+    --resource-group try-fastapi-rg \
+    --image wannatrycontainerregistry.azurecr.io/try-fastapi:latest \
+    --environment try-fastapi-env \
+    --registry-server wannatrycontainerregistry.azurecr.io \
+    --registry-username wannatrycontainerregistry \
+    --registry-password T/ PASSWORD_HERE \
+    --ingress external \
+    --target-port 80
+
+
+
+# Output you have your f... latestRevisionFqdn where it is the url where the app live ! Bingo
+
+
+
 + 4. MAMAMIA-FASTAPI-AZURE (mamamia-fastapi-azure) :
 
 - CODE: 
