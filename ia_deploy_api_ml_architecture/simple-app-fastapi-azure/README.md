@@ -221,7 +221,7 @@ az --version
 ## 4. Deploy to Azure this simple FastAPI App named "simple-app-fastapi-azure"
 
 
-- **4.1 Push image to registry**
+- ### 4.1 Push image to registry
 
 
 ```bash
