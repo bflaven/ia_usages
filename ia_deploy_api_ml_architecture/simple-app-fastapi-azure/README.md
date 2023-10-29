@@ -67,7 +67,7 @@ fastapi
 uvicorn
 ```
 
-- ### 3. `Dockerfil`
+- ### 3. `Dockerfile`
 
 ```bash
 # Choose our version of Python
