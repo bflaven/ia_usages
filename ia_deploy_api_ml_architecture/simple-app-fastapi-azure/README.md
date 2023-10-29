@@ -34,7 +34,7 @@ touch main.py requirements.txt Dockerfile .dockerignore
 ```
 
 
-**For the code to put in each file. See below. It reduces to the minimum.**
+**For the code to put in each file. See below. The code is reduced to the minimum.**
 
 - **1. main.py**
 ```bash
