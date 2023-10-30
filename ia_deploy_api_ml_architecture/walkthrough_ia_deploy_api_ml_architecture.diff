@@ -140,7 +140,42 @@ docker system prune
 --- Objective: Deploying the simple app on Azure
 --- Video: 003_az_using_fastapi_simple_app_Deploying_azure.mov
 
+- ENV
+[env]
+# Conda Environment
+conda create --name azure_fastapi python=3.9.13
+conda info --envs
+source activate azure_fastapi
+conda deactivate
 
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n azure_fastapi
+
+# update conda 
+conda update -n base -c defaults conda
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
+
+- CONSOLE_SCREEN_1 (blue)
+# GO TO DIR
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/simple-app-fastapi-azure/
+
+# LAUNCH THE ENV
+source activate azure_fastapi
+ 
+
+# LAUNCH THE API
+uvicorn main:app --reload
+
+# CHECK THE API
+http://127.0.0.1:8000
+
+- CONSOLE_SCREEN_2 (red)
 - REQUIREMENT: Install Azure CLI
 
 --- https://learn.microsoft.com/en-us/cli/azure/
