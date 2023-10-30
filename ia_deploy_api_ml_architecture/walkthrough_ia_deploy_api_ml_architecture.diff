@@ -140,6 +140,17 @@ docker system prune
 --- Objective: Deploying the simple app on Azure
 --- Video: 003_az_using_fastapi_simple_app_Deploying_azure.mov
 
+- RESSOURCES 
+--- Azure services
+https://portal.azure.com/#home
+
+--- Azure Command-Line Interface (CLI) documentation
+https://learn.microsoft.com/en-us/cli/azure/
+
+--- Azure Extensions for Visual Studio (optionnal)
+https://code.visualstudio.com/docs/azure/extensions
+
+
 - CONSOLE_SCREEN_1 (blue)
 # GO TO DIR
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/simple-app-fastapi-azure/
