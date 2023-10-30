@@ -316,10 +316,12 @@ az containerapp create --name try-fastapi-app \
 
 # Output you have your f... latestRevisionFqdn where it is the url where the app live ! Bingo
 
---- URL but it will kiil soon
-https://try-fastapi-app--ldp26vq.graypond-d060486a.eastus.azurecontainerapps.io/
-- I kill it with the command
-az group delete --name fastapi-try-rg
+! The existing URL of the app hase been "killed" just after the vidoes. So, the app does not exist anymore but the workflow is good be sure to replace with your own values.
+
+--- https://try-fastapi-app--ldp26vq.graypond-d060486a.eastus.azurecontainerapps.io/
+
+! I kill the app with the command that kill the ressouce-gropup
+- az group delete --name fastapi-try-rg
 
 + 4. MAMAMIA-FASTAPI-AZURE (mamamia-fastapi-azure) :
 
@@ -327,7 +329,7 @@ az group delete --name fastapi-try-rg
 https://github.com/bflaven/ia_usages/tree/main/ia_deploy_api_ml_architecture/mamamia-fastapi-azure
 
 - DESCRIPTION
-A very simple, educational and hybrid project that demonstrate how-to create an API with FastAPI (backend) that will back a web app made with Streamlit. Nice source of inspiration and a basic illustration of the FRONTEND, API, MODEL workflow.
+Another simple app written with the help ChatGPT :)
 
 - TERMINAL_SCREEN (blue)
 
