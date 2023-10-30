@@ -384,3 +384,6 @@ az group show --name try-fastapi-rg
 az group delete --name try-fastapi-rg
 
 
++ 8. AZURE EXTENSIONS FOR VISUAL CODE:
+Check this page if you want to configure VS Code to work directly into VS Code
+See https://code.visualstudio.com/docs/azure/extensions
