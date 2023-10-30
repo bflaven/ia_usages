@@ -103,12 +103,12 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/s
 ! # START with increment the tags e.g test1, test2, test3... etc
 
 # build the Docker image named "bf-fastapi-demo:test10"
-docker build --tag bf-fastapi-demo:test10 .
+docker build --tag bf-fastapi-demo:test11 .
 
 # The application Docker has to be up and running
 
-# run a container named "test10-bf-fastapi-container". It is an instance of an image named "bf-fastapi-demo:test10"
-docker run -d --name test10-bf-fastapi-container -p 80:80 bf-fastapi-demo:test10
+# run a container named "test11-bf-fastapi-container". It is an instance of an image named "bf-fastapi-demo:test10"
+docker run -d --name test11-bf-fastapi-container -p 80:80 bf-fastapi-demo:test11
 
 # The Dockerfile tells FastAPI to use a port of 80, so the run command publishes the container's port 80 as port 80 on the local computer. I visit localhost:80 to confirm that my API is up and running. 🏃🏽‍♀️
 
@@ -149,6 +149,10 @@ https://learn.microsoft.com/en-us/cli/azure/
 
 --- Azure Extensions for Visual Studio (optionnal)
 https://code.visualstudio.com/docs/azure/extensions
+
+--- Deploying a containerized FastAPI app to Azure Container Apps
+
+https://blog.pamelafox.org/2023/03/deploying-containerized-fastapi-app-to.html
 
 
 - CONSOLE_SCREEN_1 (blue)
