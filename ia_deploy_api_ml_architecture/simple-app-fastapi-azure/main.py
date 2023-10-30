@@ -14,7 +14,7 @@ app = FastAPI()
 @app.get("/")
 async def home():
     # return RedirectResponse("/docs")
-    return {'Azure FastAPI test api': 'It is running'}
+    return {'Azure Youtube FastAPI test api': 'It is running'}
 
     
     

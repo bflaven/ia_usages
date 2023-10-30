@@ -353,11 +353,13 @@ az containerapp create --name try-fastapi-app \
     --environment try-fastapi-env \
     --registry-server wannatrycontainerregistry.azurecr.io \
     --registry-username wannatrycontainerregistry \
-    --registry-password T/ PASSWORD_HERE \
+    --registry-password PASSWORD_HERE \
     --ingress external \
     --target-port 80
 
 
+
+# be sure ot replace the PASSWORD_HERE with your own credential
 
 # Output you have your f... latestRevisionFqdn where it is the url where the app live ! Bingo
 

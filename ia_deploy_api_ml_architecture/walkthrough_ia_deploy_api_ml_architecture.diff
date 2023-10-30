@@ -63,7 +63,7 @@ https://fastapi.tiangolo.com/
 ! D. EXAMPLES
 
 + 1. SIMPLE-APP-FASTAPI-AZURE (simple-app-fastapi-azure) :
---- Objective: Testing locally with ananconda
+--- Objective: Testing locally with anaconda
 --- Video: 001_az_using_fastapi_simple_app_testing_locally.mov
 
 - CODE: 
@@ -102,13 +102,13 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/s
 
 ! # START with increment the tags e.g test1, test2, test3... etc
 
-# build the Docker image named "bf-fastapi-demo:test9"
-docker build --tag bf-fastapi-demo:test9 .
+# build the Docker image named "bf-fastapi-demo:test10"
+docker build --tag bf-fastapi-demo:test10 .
 
 # The application Docker has to be up and running
 
-# run a container named "test9-bf-fastapi-container". It is an instance of an image named "bf-fastapi-demo:test9"
-docker run -d --name test9-bf-fastapi-container -p 80:80 bf-fastapi-demo:test9
+# run a container named "test10-bf-fastapi-container". It is an instance of an image named "bf-fastapi-demo:test10"
+docker run -d --name test10-bf-fastapi-container -p 80:80 bf-fastapi-demo:test10
 
 # The Dockerfile tells FastAPI to use a port of 80, so the run command publishes the container's port 80 as port 80 on the local computer. I visit localhost:80 to confirm that my API is up and running. 🏃🏽‍♀️
 
@@ -118,14 +118,14 @@ http://localhost:80
 # list the images
 docker ps
 
-# stop the container test9-bf-fastapi-container
-docker stop test9-bf-fastapi-container
+# stop the container test10-bf-fastapi-container
+docker stop test10-bf-fastapi-container
 
 # remove the container test5-yt-bf-fastapi-container
-docker rm -f test9-bf-fastapi-container
+docker rm -f test10-bf-fastapi-container
 
-# remove the image with bf-fastapi-demo:test9
-docker rmi --force bf-fastapi-demo:test9
+# remove the image with bf-fastapi-demo:test10
+docker rmi --force bf-fastapi-demo:test10
 
 ! # END If you change the code, you can restart from START above and redo the commands.
 
@@ -140,40 +140,11 @@ docker system prune
 --- Objective: Deploying the simple app on Azure
 --- Video: 003_az_using_fastapi_simple_app_Deploying_azure.mov
 
-- ENV
-[env]
-# Conda Environment
-conda create --name azure_fastapi python=3.9.13
-conda info --envs
-source activate azure_fastapi
-conda deactivate
-
-# if needed to remove
-conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
-conda env remove -n azure_fastapi
-
-# update conda 
-conda update -n base -c defaults conda
-
-# to export requirements
-pip freeze > requirements.txt
-
-# to install
-pip install -r requirements.txt
-
 - CONSOLE_SCREEN_1 (blue)
 # GO TO DIR
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/simple-app-fastapi-azure/
 
-# LAUNCH THE ENV
-source activate azure_fastapi
- 
-
-# LAUNCH THE API
-uvicorn main:app --reload
-
-# CHECK THE API
-http://127.0.0.1:8000
+--- Redo the docker process
 
 - CONSOLE_SCREEN_2 (red)
 - REQUIREMENT: Install Azure CLI
@@ -318,15 +289,14 @@ az containerapp create --name fmm-fastapi-app \
 # Do not forget to replace the password with one show earlier
 
 az containerapp create --name try-fastapi-app \
-    --resource-group try-fastapi-rg \
-    --image wannatrycontainerregistry.azurecr.io/try-fastapi:latest \
-    --environment try-fastapi-env \
+    --resource-group fastapi-try-rg \
+    --image wannatrycontainerregistry.azurecr.io/fastapi-try:latest \
+    --environment fastapi-try-env \
     --registry-server wannatrycontainerregistry.azurecr.io \
     --registry-username wannatrycontainerregistry \
-    --registry-password T/ PASSWORD_HERE \
+    --registry-password 2Ix9XXRCZzRSNvcJxwtw94rEtA1xXLbipJ4LCvKwOq+ACRA4iZNM \
     --ingress external \
     --target-port 80
-
 
 
 # Output you have your f... latestRevisionFqdn where it is the url where the app live ! Bingo
@@ -414,6 +384,8 @@ az login
 
 # Show specific group
 az group show --name try-fastapi-rg
+az group show --all
+
 
 # CAUTION: with this command, you will remove and clean up everything
 az group delete --name try-fastapi-rg
