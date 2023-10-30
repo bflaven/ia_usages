@@ -102,13 +102,13 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/s
 
 ! # START with increment the tags e.g test1, test2, test3... etc
 
-# build the Docker image named "bf-fastapi-demo:test10"
-docker build --tag bf-fastapi-demo:test11 .
+# build the Docker image named "bf-fastapi-demo:test12"
+docker build --tag bf-fastapi-demo:test12 .
 
 # The application Docker has to be up and running
 
-# run a container named "test11-bf-fastapi-container". It is an instance of an image named "bf-fastapi-demo:test10"
-docker run -d --name test11-bf-fastapi-container -p 80:80 bf-fastapi-demo:test11
+# run a container named "test12-bf-fastapi-container". It is an instance of an image named "bf-fastapi-demo:test12"
+docker run -d --name test12-bf-fastapi-container -p 80:80 bf-fastapi-demo:test12
 
 # The Dockerfile tells FastAPI to use a port of 80, so the run command publishes the container's port 80 as port 80 on the local computer. I visit localhost:80 to confirm that my API is up and running. 🏃🏽‍♀️
 
@@ -309,14 +309,17 @@ az containerapp create --name try-fastapi-app \
     --environment fastapi-try-env \
     --registry-server wannatrycontainerregistry.azurecr.io \
     --registry-username wannatrycontainerregistry \
-    --registry-password 2Ix9XXRCZzRSNvcJxwtw94rEtA1xXLbipJ4LCvKwOq+ACRA4iZNM \
+    --registry-password fAB/CexG6HkvkA4w90TctbJ5MYBIAvsz/tb5zMp0XR+ACRDrcdjP \
     --ingress external \
     --target-port 80
 
 
 # Output you have your f... latestRevisionFqdn where it is the url where the app live ! Bingo
 
-
+--- URL but it will kiil soon
+https://try-fastapi-app--ldp26vq.graypond-d060486a.eastus.azurecontainerapps.io/
+- I kill it with the command
+az group delete --name fastapi-try-rg
 
 + 4. MAMAMIA-FASTAPI-AZURE (mamamia-fastapi-azure) :
 
@@ -403,7 +406,8 @@ az group show --all
 
 
 # CAUTION: with this command, you will remove and clean up everything
-az group delete --name try-fastapi-rg
+az group delete --name fastapi-try-rg
+
 
 
 + 8. AZURE EXTENSIONS FOR VISUAL CODE:
