@@ -36,6 +36,9 @@ down: ## Down the image
 ps: ## Check if the container is running
 	docker ps
 
+ntw: ## Check existing networks
+	docker network ls
+
 kill: ## Remove all containers
 	docker rm -f $(docker ps -aq)
 

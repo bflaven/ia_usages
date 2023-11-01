@@ -138,7 +138,7 @@ docker system prune
 
 + 3. SIMPLE-APP-FASTAPI-AZURE (simple-app-fastapi-azure) :
 --- Objective: Deploying the simple app on Azure
---- Video: 003_az_using_fastapi_simple_app_Deploying_azure.mov
+--- Video: 003_az_using_fastapi_simple_app_deploying_azure.mov
 
 - RESSOURCES 
 --- Azure services
@@ -324,6 +324,8 @@ az containerapp create --name try-fastapi-app \
 - az group delete --name fastapi-try-rg
 
 + 4. MAMAMIA-FASTAPI-AZURE (mamamia-fastapi-azure) :
+--- Objective: Streamlit and FastAPI :: Using Make to avoid typing command for docker
+--- Video: 004_az_using_fastapi_using_make.mov
 
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_deploy_api_ml_architecture/mamamia-fastapi-azure
@@ -336,18 +338,23 @@ Another simple app written with the help ChatGPT :)
 # GO TO DIR
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_deploy_api_ml_architecture/mamamia-fastapi-azure/
 
-# LAUNCH THE ENV
-source activate azure_fastapi
-
-# LAUNCH THE API
-uvicorn main:app --reload
+# USING MAKE
+make help
+make up
+make down
+make kill
 
 # CHECK THE API
-http://127.0.0.1:8000
+http://localhost
+
 
 
 
 + 5. ADVANCED_DOCKER_COMPOSE_FASTAPI (advanced_docker_compose_fastapi): 
+
+--- Objective: Streamlit and FastAPI :: Using Make to avoid typing command for docker. Let's work with  this directory 009_davidefiocco_streamlit_fastapi_model_serving
+--- Video: 005_az_using_fastapi_make_streamlit.mov
+
 
 - DESCRIPTION
 Here is the list of directories. Let's take some examples with streamlit and FastAPI.
@@ -359,10 +366,6 @@ Here is the list of directories. Let's take some examples with streamlit and Fas
 --- 009_davidefiocco_streamlit_fastapi_model_serving
 --- 011_rihabfekii_streamlit_fastapi_model_serving
 --- 013_kurtispykes_streamlit_car_evaluation_project
-
-Let's take this one "009_davidefiocco_streamlit_fastapi_model_serving"
-
-+ 6. 009_davidefiocco_streamlit_fastapi_model_serving
 
 
 ! CAUTION: It requires to have Docker installed and Up and Running.
@@ -395,6 +398,22 @@ http://localhost:8000/docs
 # streamlit UI
 http://0.0.0.0:8501
 http://localhost:8501
+
+
+! EXTRA: Check networks in Docker and create a new network named "my-local-docker-network" and "kill" it
+
+- check the network
+docker network ls
+--- bridge, host, none are pre-defined networks and cannot be removed
+
+--- MODEL :: docker network create [name-for-your-network]
+
+- to create the network
+docker network create my-local-docker-network
+
+- to remove the network
+docker network rm my-local-docker-network
+
 
 
 + 7. AZURE-CLI COMMAND: 
