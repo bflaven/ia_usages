@@ -12,7 +12,7 @@ ci-docker-compose := docker-compose -f .ci/docker-compose.yml
 targets: help
 
 ok: ## See if you are in the right Makefile
-	@echo "\n--- You are working in $(MAKEDESC) ---\n\n"
+	@echo "\n--- You are working in 009_davidefiocco_streamlit_fastapi_model_serving - $(MAKEDESC) ---\n\n"
 
 down: ## Down the image
 	docker-compose down
