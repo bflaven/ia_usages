@@ -11,12 +11,12 @@ This last post is again a journal to me of an how-to. This time, the post is ded
 **Here is the code produced through the different experiments that I made to understand deploy on Azure for a webapp.**
 
 
-- `advanced_docker_compose_fastapi`: several example suing docker-compose and Makefile.
-- `api_fastapi_routes`: routing issue with the help of ChatGPT
-- `fastapi-simple-app`: simple app to deploy
-- `fastapi_cheatsheet`: cheat sheet for fastapi for documentation especially.
+- `advanced_docker_compose_fastapi`: several example using docker-compose and Makefile.
+- `api_fastapi_routes`: routing issue with some solution provided with the help of ChatGPT
+- `fastapi-simple-app`: simple app ready to deploy to the Azure Cloud.
+- `fastapi_cheatsheet`: cheat sheet for FastAPI for documentation especially.
 - `fastapi_tiangolo_advanced_settings`: advanced setting examples.
-- `mamamia-fastapi-azure`: application, written with the help of ChatGPT, made with FastAPI deployed to the Azure Cloud.
+- `mamamia-fastapi-azure`: application, written with the help of ChatGPT, made with FastAPI, ready to deploy to the Azure Cloud.
 
 ## Videos
 
