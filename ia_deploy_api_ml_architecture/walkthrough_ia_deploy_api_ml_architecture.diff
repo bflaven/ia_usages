@@ -22,8 +22,28 @@ https://github.com/bflaven/ia_usages/tree/main/ia_deploy_api_ml_architecture
 - mamamia-fastapi-azure: 
 --- application, written with the help of ChatGPT, made with FastAPI deployed to the Azure Cloud.
 
-! C. ENVIRONMENT ANACONDA
 
+! C. TOOLS & ENVIRONMENT
+
+- Tools to create and manage of virtual environments:
+
+--- ANACONDA
+https://www.anaconda.com/
+
+--- PYTHON-POETRY
+https://python-poetry.org/
+
+--- VENV
+https://docs.python.org/3/library/venv.html
+
+- The framework to create an API in Python
+
+--- FASTAPI
+https://fastapi.tiangolo.com/
+
+
+
+--- MANAGE ENVIRONMENT ANACONDA
 [env]
 # Conda Environment
 conda create --name azure_fastapi python=3.9.13
@@ -43,21 +63,6 @@ pip freeze > requirements.txt
 
 # to install
 pip install -r requirements.txt
-
-
-- Tools to create and manage of virtual environments:
-
---- ANACONDA
-https://www.anaconda.com/
-
---- PYTHON-POETRY
-https://python-poetry.org/
-
---- VENV
-https://docs.python.org/3/library/venv.html
-
---- FASTAPI
-https://fastapi.tiangolo.com/
 
 
 ! D. EXAMPLES
@@ -348,8 +353,6 @@ make kill
 http://localhost
 
 
-
-
 + 5. ADVANCED_DOCKER_COMPOSE_FASTAPI (advanced_docker_compose_fastapi): 
 
 --- Objective: Streamlit and FastAPI :: Using Make to avoid typing command for docker. Let's work with  this directory 009_davidefiocco_streamlit_fastapi_model_serving
@@ -416,7 +419,7 @@ docker network rm my-local-docker-network
 
 
 
-+ 7. AZURE-CLI COMMAND: 
+! E. AZURE-CLI COMMAND: 
 
 # login with Azure CLI, it will open a browsers
 az login
@@ -431,6 +434,9 @@ az group delete --name fastapi-try-rg
 
 
 
-+ 8. AZURE EXTENSIONS FOR VISUAL CODE:
+! F. AZURE EXTENSIONS FOR VISUAL CODE:
 Check this page if you want to configure VS Code to work directly into VS Code
 See https://code.visualstudio.com/docs/azure/extensions
+
+
+
