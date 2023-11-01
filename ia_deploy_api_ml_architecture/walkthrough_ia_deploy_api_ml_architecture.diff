@@ -329,8 +329,9 @@ az containerapp create --name try-fastapi-app \
 - az group delete --name fastapi-try-rg
 
 + 4. MAMAMIA-FASTAPI-AZURE (mamamia-fastapi-azure) :
---- Objective: Streamlit and FastAPI :: Using Make to avoid typing command for docker
+--- Objective: Using Makefile to avoid typing command for docker
 --- Video: 004_az_using_fastapi_using_make.mov
+
 
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_deploy_api_ml_architecture/mamamia-fastapi-azure
@@ -355,7 +356,7 @@ http://localhost
 
 + 5. ADVANCED_DOCKER_COMPOSE_FASTAPI (advanced_docker_compose_fastapi): 
 
---- Objective: Streamlit and FastAPI :: Using Make to avoid typing command for docker. Let's work with  this directory 009_davidefiocco_streamlit_fastapi_model_serving
+--- Objective: Build up an APP with Streamlit (frontend), FastAPI (backend) and using a Makefile to avoid typing command for docker. Let's work with  this directory 009_davidefiocco_streamlit_fastapi_model_serving
 --- Video: 005_az_using_fastapi_make_streamlit.mov
 
 

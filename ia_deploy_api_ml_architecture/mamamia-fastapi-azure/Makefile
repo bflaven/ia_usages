@@ -17,7 +17,7 @@
 export PROJECT=fastapi
 
 #VALUES
-MAKEDESC = FastAPI API, docker deployment
+MAKEDESC = mamamia-fastapi-azure - FastAPI API, docker deployment
 
 targets: help
 
@@ -39,14 +39,14 @@ check: ## Check if the image is built
 ps: ## Check if the container is running
 	docker ps
 
+ntw: ## Check existing networks
+	docker network ls
+
 kill: ## Remove the container
 	docker rm -f $(docker ps -aq)
 
 prune: ## Prune the system
 	docker system prune
-
-
-
 
 help: ## Display this help message
 	@awk -F '##' '/^[a-z_]+:[a-z ]+##/ { print "\033[34m"$$1"\033[0m" "\n" $$2 }' Makefile
