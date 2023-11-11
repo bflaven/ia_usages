@@ -12,10 +12,10 @@ https://ai.meta.com/research/no-language-left-behind/
 
 
 ```bash
-001a_giladd123_nllb_fastapi # an attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb
+001a_giladd123_nllb_fastapi # an attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
 002_mlearning_ai # using langdetect and again nllb
 003_using_gradio # using gradio, some concepts + again for translation extracted from https://huggingface.co/spaces/Geonmo/nllb-translation-demo
-004_pyyush_maskedlanguagemodeling # a usecase with fastapi and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling. 
+004_pyyush_maskedlanguagemodeling # a usecase with FastAPI and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling. 
 README.md # this readme
 ```
 
