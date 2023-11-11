@@ -99,7 +99,7 @@ tags_metadata = [
 # declaring FastAPI instance
 app = FastAPI(
     title="mIAou",
-    description="""V1.0 - POC for API made with FastAPI for basic deployment on Azure with Roberta (xlm-roberta-base, xlm-roberta-large).""",
+    description="""V1.0 - POC for API made with FastAPI for basic deployment on Azure with Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling.""",
     openapi_tags=tags_metadata,
     version="1.0",
     )

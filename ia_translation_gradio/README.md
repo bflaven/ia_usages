@@ -1,7 +1,7 @@
 # ia_translation_gradio
 
 
-**Showcase under construction :) The blog does exit yet**
+**Showcase under construction :) The blog's Post does exit yet**
 
 Some use cases for translation with IA and coincidently how to use No Language Left Behind (for instance nllb-200-distilled-600M), transformers, langdetect and Gradio. Also an attempt on gradio and my dear FastAPI!
 
@@ -12,11 +12,11 @@ https://ai.meta.com/research/no-language-left-behind/
 
 
 ```bash
-001a_giladd123_nllb_fastapi
-002_mlearning_ai
-003_using_gradio
-004_pyyush_maskedlanguagemodeling
-README.md
+001a_giladd123_nllb_fastapi # an attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb
+002_mlearning_ai # using langdetect and again nllb
+003_using_gradio # using gradio, some concepts + again for translation extracted from https://huggingface.co/spaces/Geonmo/nllb-translation-demo
+004_pyyush_maskedlanguagemodeling # a usecase with fastapi and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling. 
+README.md # this readme
 ```
 
 **GIT COMMANDS REMINDER**
