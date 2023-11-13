@@ -1,0 +1,101 @@
+! A. SOURCE
+
+- Article: coming soon
+
+- Path (local)
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/
+
+! B. DIRECTORIES ON GITHUB
+https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio
+
+- 001a_giladd123_nllb_fastapi: 
+--- several example suing docker-compose and Makefile.
+- 002_mlearning_ai: 
+--- routing issue with the help of ChatGPT
+- 003_using_gradio: 
+--- simple app to deploy
+- 004_pyyush_maskedlanguagemodeling: 
+--- cheat sheet for fastapi for documentation especially
+- README.md
+--- cheat sheet for fastapi for documentation especially
+- walkthrough_ia_translation_gradio.diff
+--- cheat sheet for fastapi for documentation especially
+
+
+
+! C. TOOLS & ENVIRONMENT
+
+- Tools to create and manage of virtual environments:
+
+--- ANACONDA
+https://www.anaconda.com/
+
+--- PYTHON-POETRY
+https://python-poetry.org/
+
+--- VENV
+https://docs.python.org/3/library/venv.html
+
+- The framework to create an API in Python
+
+--- FASTAPI
+https://fastapi.tiangolo.com/
+
+
+
+--- MANAGE ENVIRONMENT ANACONDA
+[env]
+# Conda ia_translation_facebook_nllb
+conda create --name ia_translation_facebook_nllb python=3.9.13
+conda info --envs
+source activate ia_translation_facebook_nllb
+conda deactivate
+
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n ia_translation_facebook_nllb
+
+# update conda 
+conda update -n base -c defaults conda
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
+
+
+! D. EXAMPLES
+
+
+002_mlearning_ai
+003_using_gradio
+004_pyyush_maskedlanguagemodeling
+
+
++ 1. NLLB-FASTAPI (001a_giladd123_nllb_fastapi) :
+--- Objective: An attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
+--- Video: 001_ia_translation_gradio_nllb_fastapi.mov
+
+- CODE: 
+https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/001a_giladd123_nllb_fastapi
+
+- DESCRIPTION
+An attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
+
+- TERMINAL_SCREEN (blue)
+# GO TO DIR
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/001a_giladd123_nllb_fastapi/
+
+# LAUNCH THE ENV
+source activate ia_translation_facebook_nllb
+
+# LAUNCH THE API
+uvicorn webserver:app --reload
+
+# CHECK THE API
+http://127.0.0.1:8000
+
+
+
+
