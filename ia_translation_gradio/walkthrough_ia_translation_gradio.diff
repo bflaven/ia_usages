@@ -67,13 +67,7 @@ pip install -r requirements.txt
 
 ! D. EXAMPLES
 
-
-002_mlearning_ai
-003_using_gradio
-004_pyyush_maskedlanguagemodeling
-
-
-+ 1. NLLB-FASTAPI (001a_giladd123_nllb_fastapi) :
++ 001a_giladd123_nllb_fastapi :
 --- Objective: An attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
 --- Video: 001_ia_translation_gradio_nllb_fastapi.mov
 
@@ -96,6 +90,27 @@ uvicorn webserver:app --reload
 # CHECK THE API
 http://127.0.0.1:8000
 
++ 002_mlearning_ai :
+--- Objective: using langdetect and again some experiments with nllb
+--- Video: 002_ia_translation_nllb_langdetect.mov
+
+- CODE: 
+https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/002_mlearning_ai
+
++ 003_using_gradio
+--- Objective: using gradio, some concepts + again for translation extracted from https://huggingface.co/spaces/Geonmo/nllb-translation-demo
+--- Video: 003_ia_translation_gradio_translation_demo.mov
+
+- CODE: 
+https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/003_using_gradio
+
+
++ 004_pyyush_maskedlanguagemodeling
+--- Objective: a use case with FastAPI and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling
+--- Video: 004_ia_translation_fastapi_roberta.mov
+
+- CODE: 
+https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/004_pyyush_maskedlanguagemodeling
 
 
 
