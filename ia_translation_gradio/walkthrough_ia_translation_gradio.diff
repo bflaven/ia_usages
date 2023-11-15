@@ -7,21 +7,20 @@ https://flaven.fr/2023/11/crafting-fluent-translation-api-a-quick-journey-into-t
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/
 
 ! B. DIRECTORIES ON GITHUB
-https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio
+Source: https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio
 
 - 001a_giladd123_nllb_fastapi: 
---- several example suing docker-compose and Makefile.
+--- an attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
 - 002_mlearning_ai: 
---- routing issue with the help of ChatGPT
+--- using langdetect and again some experiments with nllb
 - 003_using_gradio: 
---- simple app to deploy
+--- using gradio, some concepts + again for translation extracted from https://huggingface.co/spaces/Geonmo/nllb-translation-demo
 - 004_pyyush_maskedlanguagemodeling: 
---- cheat sheet for fastapi for documentation especially
+--- a use case with FastAPI and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling
 - README.md
---- cheat sheet for fastapi for documentation especially
+--- a readme to present the code
 - walkthrough_ia_translation_gradio.diff
---- cheat sheet for fastapi for documentation especially
-
+--- this file which gives the broad outline of what is presented in the videos
 
 
 ! C. TOOLS & ENVIRONMENT
