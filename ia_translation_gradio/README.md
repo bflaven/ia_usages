@@ -1,9 +1,13 @@
 # ia_translation_gradio
 
 
-**Showcase under construction :) The blog's Post does exit yet**
+**The post is released on my Blog**
+
+Crafting Fluent Translation API: A quick Journey into Text Translation with NLLB, HuggingFace, and FastAPI, Plus a small Dive into Roberta Masked Language Modeling with Gradio. [https://flaven.fr/2023/11/crafting-fluent-translation-api-a-quick-journey-into-text-translation-with-nllb-huggingface-and-fastapi-plus-a-small-dive-into-roberta-masked-language-modeling-with-gradio/](https://flaven.fr/2023/11/crafting-fluent-translation-api-a-quick-journey-into-text-translation-with-nllb-huggingface-and-fastapi-plus-a-small-dive-into-roberta-masked-language-modeling-with-gradio/)
+
 
 Some use cases for translation with IA and coincidently how to use No Language Left Behind (for instance nllb-200-distilled-600M), transformers, langdetect and Gradio. Also an attempt on gradio and my dear FastAPI!
+
 
 
 - No Language Left Behind (for instance nllb-200-distilled-600M) "Driving inclusion through the power of AI translation"

@@ -26,6 +26,8 @@
 
 7. Step by step Introducing to Azure Cloud Deployment: Deploying a FastAPI ML Feature API. [https://flaven.fr/2023/10/step-by-step-introducing-to-azure-cloud-deployment-deploying-a-fastapi-ml-feature-api/](https://flaven.fr/2023/10/step-by-step-introducing-to-azure-cloud-deployment-deploying-a-fastapi-ml-feature-api/)
 
+8. Crafting Fluent Translation API: A quick Journey into Text Translation with NLLB, HuggingFace, and FastAPI, Plus a small Dive into Roberta Masked Language Modeling with Gradio. [https://flaven.fr/2023/11/crafting-fluent-translation-api-a-quick-journey-into-text-translation-with-nllb-huggingface-and-fastapi-plus-a-small-dive-into-roberta-masked-language-modeling-with-gradio/](https://flaven.fr/2023/11/crafting-fluent-translation-api-a-quick-journey-into-text-translation-with-nllb-huggingface-and-fastapi-plus-a-small-dive-into-roberta-masked-language-modeling-with-gradio/)
+
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
 
