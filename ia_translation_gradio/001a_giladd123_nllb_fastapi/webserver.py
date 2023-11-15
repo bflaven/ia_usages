@@ -23,7 +23,7 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_translation/001a_giladd123_nllb_fastapi/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/001a_giladd123_nllb_fastapi/
 
 # case_1
 uvicorn webserver:app --reload
