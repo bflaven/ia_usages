@@ -9,17 +9,17 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/
 ! B. DIRECTORIES ON GITHUB
 Source: https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio
 
-- 001a_giladd123_nllb_fastapi: 
++ 001a_giladd123_nllb_fastapi: 
 --- an attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
-- 002_mlearning_ai: 
++ 002_mlearning_ai: 
 --- using langdetect and again some experiments with nllb
-- 003_using_gradio: 
++ 003_using_gradio: 
 --- using gradio, some concepts + again for translation extracted from https://huggingface.co/spaces/Geonmo/nllb-translation-demo
-- 004_pyyush_maskedlanguagemodeling: 
++ 004_pyyush_maskedlanguagemodeling: 
 --- a use case with FastAPI and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling
-- README.md
++ README.md
 --- a readme to present the code
-- walkthrough_ia_translation_gradio.diff
++ walkthrough_ia_translation_gradio.diff
 --- this file which gives the broad outline of what is presented in the videos
 
 
