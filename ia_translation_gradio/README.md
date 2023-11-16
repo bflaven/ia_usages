@@ -8,34 +8,34 @@
 Crafting Fluent Translation API: A quick Journey into Text Translation with NLLB, HuggingFace, and FastAPI, Plus a small Dive into Roberta Masked Language Modeling with Gradio. [https://flaven.fr/2023/11/crafting-fluent-translation-api-a-quick-journey-into-text-translation-with-nllb-huggingface-and-fastapi-plus-a-small-dive-into-roberta-masked-language-modeling-with-gradio/](https://flaven.fr/2023/11/crafting-fluent-translation-api-a-quick-journey-into-text-translation-with-nllb-huggingface-and-fastapi-plus-a-small-dive-into-roberta-masked-language-modeling-with-gradio/)
 
 
-Some use cases for translation with IA and coincidently how to use No Language Left Behind (for instance nllb-200-distilled-600M), transformers, langdetect and Gradio. Also an attempt on gradio and my dear FastAPI!
+Some use cases for translation with IA and coincidently how to use No Language Left Behind (for instance `nllb-200-distilled-600M`), `transformers`, `langdetect` and `Gradio`. Also an attempt on gradio and my dear `FastAPI`!
 
 
 ## Usecases
 
 - **001a_giladd123_nllb_fastapi:** 
-An attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
+An attempt using No Language Left Behind (for instance `nllb-200-distilled-600M`) aka `nllb` and `FastAPI` to offer an endpoint for translation
     
 - **002_mlearning_ai:** 
-Using langdetect and again some experiments with nllb
+Using `langdetect` and again some experiments with `nllb`
     
 - **003_using_gradio:**
-Using gradio, some concepts + again for translation extracted from https://huggingface.co/spaces/Geonmo/nllb-translation-demo
+Using `Gradio`, some concepts + again for translation extracted from https://huggingface.co/spaces/Geonmo/nllb-translation-demo
     
 
 **004_pyyush_maskedlanguagemodeling:**
-A use case with FastAPI and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling
+A use case with `FastAPI` and `Roberta` (`xlm-roberta-base`, `xlm-roberta-large`) for Masked language modeling
 
 
-## More on No Language Left Behind
+## More on `No Language Left Behind`
 
 - No Language Left Behind (for instance nllb-200-distilled-600M) "Driving inclusion through the power of AI translation"
 https://ai.meta.com/research/no-language-left-behind/
 
 
-## Examples for Masked Language Modeling with Roberta with Gradio
+## Examples for `Masked Language Modeling` with `Roberta` with `Gradio`
 
-Possible illustration of "Biais" linked to the training: Roberta guesses the capital of Oregon but misses that of Uganda due to lack of appropriate training.
+Possible illustration of "Biais" linked to the training: `Roberta` guesses the capital of Oregon but misses that of Uganda due to lack of appropriate training.
 
 ```bash
 [MASK] is the capital of Oregon.
