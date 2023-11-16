@@ -41,8 +41,6 @@ https://docs.python.org/3/library/venv.html
 --- FASTAPI
 https://fastapi.tiangolo.com/
 
-
-
 --- MANAGE ENVIRONMENT ANACONDA
 [env]
 # Conda ia_translation_facebook_nllb
@@ -71,6 +69,7 @@ pip install -r requirements.txt
 --- Objective: An attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
 --- Video: 001_ia_translation_gradio_nllb_fastapi.mov
 
+
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/001a_giladd123_nllb_fastapi
 
@@ -97,12 +96,47 @@ http://127.0.0.1:8000
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/002_mlearning_ai
 
+- TERMINAL_SCREEN (blue)
+# GO TO DIR
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/002_mlearning_ai/
+
+# LAUNCH THE ENV
+source activate ia_translation_facebook_nllb
+
+
+# LAUNCH THE ENV
+source activate ia_translation_facebook_nllb
+
+# LAUNCH THE FILES
+python 001_langdetect.py
+python 002_translate.py
+
+
+
 + 003_using_gradio
 --- Objective: using gradio, some concepts + again for translation extracted from https://huggingface.co/spaces/Geonmo/nllb-translation-demo
 --- Video: 003_ia_translation_gradio_translation_demo.mov
 
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/003_using_gradio
+
+- TERMINAL_SCREEN (blue)
+# GO TO DIR
+cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_translation/003_using_gradio/narrativaai_nllb_translator/
+
+# LAUNCH THE ENV
+source activate ia_translation_facebook_nllb
+
+# launch the file
+python app.py
+
+
+# check
+The demo pop in a browser on 
+http://localhost:7860 
+or 
+http://127.0.0.1:7860
+
 
 
 + 004_pyyush_maskedlanguagemodeling
@@ -112,5 +146,41 @@ https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/003_using_g
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/004_pyyush_maskedlanguagemodeling
 
+- TERMINAL_SCREEN (blue)
+# go to path
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/004_pyyush_maskedlanguagemodeling/
+
+# do not forget to install this library
+conda install -c anaconda rich
+conda install -c conda-forge gradio
 
 
+# LAUNCH THE ENV
+source activate ia_translation_facebook_nllb
+
+# launch the api
+uvicorn main:app --reload
+
+# check
+The demo pop in a browser on 
+http://localhost:8000/docs
+or 
+http://127.0.0.1:8000/docs
+
+
+- TERMINAL_SCREEN (black)
+
+# go to path
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/004_pyyush_maskedlanguagemodeling/
+
+# LAUNCH THE ENV
+source activate ia_translation_facebook_nllb
+
+# launch the Gradio.py
+python ui.py
+
+# check
+The demo pop in a browser on 
+http://localhost:7860 
+or 
+http://127.0.0.1:7860
