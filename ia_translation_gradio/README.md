@@ -48,7 +48,7 @@ Possible illustration of "Biais" linked to the training: Roberta guesses the cap
 ```
 
 
-![MASK is the capital of Oregon - Examples for Masked Language Modeling with Roberta with Gradio](ia_translation_gradio/gradio_Masked_Language_Modeling_oregon.png)
+![MASK is the capital of Oregon - Examples for Masked Language Modeling with Roberta with Gradio](https://github.com/bflaven/ia_usages/blob/main/ia_translation_gradio/gradio_Masked_Language_Modeling_oregon.png)
 
 ```bash
 [MASK] is the capital and largest city of Uganda.
@@ -61,7 +61,7 @@ Possible illustration of "Biais" linked to the training: Roberta guesses the cap
 # It 6%
 ```
 
-![MASK is the capital and largest city of Uganda - Examples for Masked Language Modeling with Roberta with Gradio](ia_translation_gradio/gradio_Masked_Language_Modeling_uganda_800x204.png)
+![MASK is the capital and largest city of Uganda - Examples for Masked Language Modeling with Roberta with Gradio](ia_translation_gradio/gradio_Masked_Language_Modeling_uganda.png)
 
 
 
