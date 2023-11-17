@@ -55,6 +55,8 @@ http://127.0.0.1:8000/docs
 pip install srsly
 ```
 
+Source: https://github.com/giladd123/nllb-fastapi
+
 
 ## Original readme nllb-fastapi
 

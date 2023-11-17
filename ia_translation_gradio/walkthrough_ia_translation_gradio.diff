@@ -41,6 +41,11 @@ https://docs.python.org/3/library/venv.html
 --- FASTAPI
 https://fastapi.tiangolo.com/
 
+--- NLLB-200
+https://huggingface.co/facebook/nllb-200-distilled-600M
+
+
+
 --- MANAGE ENVIRONMENT ANACONDA
 [env]
 # Conda ia_translation_facebook_nllb
@@ -76,6 +81,7 @@ https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/001a_giladd
 - DESCRIPTION
 An attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
 
+
 - TERMINAL_SCREEN (blue)
 # GO TO DIR
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/001a_giladd123_nllb_fastapi/
@@ -88,6 +94,9 @@ uvicorn webserver:app --reload
 
 # CHECK THE API
 http://127.0.0.1:8000
+
+
+Source: https://github.com/giladd123/nllb-fastapi
 
 + 002_mlearning_ai :
 --- Objective: using langdetect and again some experiments with nllb
