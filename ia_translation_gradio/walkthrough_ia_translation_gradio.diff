@@ -70,6 +70,8 @@ pip install -r requirements.txt
 
 ! D. EXAMPLES
 
+! Use https://translate.google.com/ to make comparison with the result obtained.
+
 + 001a_giladd123_nllb_fastapi :
 --- Objective: An attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
 --- Video: 001_ia_translation_gradio_nllb_fastapi.mov
