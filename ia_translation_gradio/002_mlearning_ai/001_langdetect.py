@@ -18,7 +18,7 @@ conda update -n base -c defaults conda
 
 
 # to export requirements
-pip freeze > requirements.txt
+pip freeze > requirements_YT.txt
 
 # to install
 pip install -r requirements.txt
@@ -47,7 +47,7 @@ from langdetect import detect
 # text = "War doesn't show who's right, just who's left."
 
 # DE (deu_Latn stands for German in Latin)
-text = "Die Grenzen meiner Sprache bedeuten die Grenzen meiner Welt."
+# text = "Die Grenzen meiner Sprache bedeuten die Grenzen meiner Welt."
 
 # AR (arb_Arab stands for Standard Arabic in Arabic)
 # text = "ومنح ذلك بايسرز التقدم 122-121 ولم يتأخروا مرة أخرى في المباراة التي كانوا يتقدمون فيها بما يصل إلى 18 نقطة في الشوط الأول، قبل أن يعيد أنتيتوكونمبو فريق باكس إلى المباراة."
@@ -61,5 +61,5 @@ text = "Die Grenzen meiner Sprache bedeuten die Grenzen meiner Welt."
 
 
 predictions = detect(text)
-print(predictions)
+print(f'language detected => {predictions}')
 

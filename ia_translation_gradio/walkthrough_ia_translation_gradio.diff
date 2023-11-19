@@ -74,7 +74,7 @@ pip install -r requirements.txt
 
 + 001a_giladd123_nllb_fastapi :
 --- Objective: An attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
---- Video: 001_ia_translation_gradio_nllb_fastapi.mov
+--- Video: 001_ia_translation_gradio_nllb_fastapi_langdetect.mov
 
 
 - CODE: 
@@ -100,9 +100,39 @@ http://127.0.0.1:8000
 
 Source: https://github.com/giladd123/nllb-fastapi
 
+--- Google translate Italian to English
+Nothing to be done, finding a company interested in building the new Pigneto station is impossible.
+
+--- your API TrattorIA translate Italian to English (example_request_1_ita.json)
+{
+  "src_lang": "ita_Latn",
+  "tgt_lang": "eng_Latn",
+  "input_text": "Nulla da fare, trovare un impresa interessata a realizzare la nuova stazione Pigneto è impossibile.",
+  "output_text": [
+    {
+      "translation_text": "Nothing to do, finding a company interested in building the new Pigneto station is impossible."
+    }
+  ]
+}
+
+--- Google translate English to Spanish 
+Según una fuente policial, el incidente se produjo sobre las 13.15 horas.
+
+--- your API TrattorIA translate English to Spanish (example_request_7_spa.json)
+{
+  "src_lang": "eng_Latn",
+  "tgt_lang": "spa_Latn",
+  "input_text": "According to a police source, the incident occurred around 1:15 p.m.",
+  "output_text": [
+    {
+      "translation_text": "Según una fuente policial, el incidente ocurrió alrededor de la 1:15 p.m."
+    }
+  ]
+}
+
 + 002_mlearning_ai :
 --- Objective: using langdetect and again some experiments with nllb
---- Video: 002_ia_translation_nllb_langdetect.mov
+--- Video: 001_ia_translation_gradio_nllb_fastapi_langdetect.mov
 
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/002_mlearning_ai
@@ -110,10 +140,6 @@ https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/002_mlearni
 - TERMINAL_SCREEN (blue)
 # GO TO DIR
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/002_mlearning_ai/
-
-# LAUNCH THE ENV
-source activate ia_translation_facebook_nllb
-
 
 # LAUNCH THE ENV
 source activate ia_translation_facebook_nllb

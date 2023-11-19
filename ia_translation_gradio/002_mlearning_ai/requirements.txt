@@ -8,8 +8,8 @@ binaryornot==0.4.4
 blinker==1.7.0
 cachetools==5.3.2
 catalogue==2.0.10
-certifi 
-cffi 
+certifi @ file:///private/tmp/python-certifi-20231008-5561-13s00fm/certifi-2023.7.22
+cffi @ file:///private/tmp/cffi-20231014-5567-1hyue8f/cffi-1.16.0
 chardet==5.2.0
 charset-normalizer==3.3.1
 click==8.1.7
@@ -19,7 +19,7 @@ cookiecutter==2.4.0
 ctranslate2==3.20.0
 cycler==0.12.1
 fastapi==0.104.1
-fasttext 
+fasttext @ file:///Users/brunoflaven/Documents/01_work/blog_articles/ia_translation/fastText
 ffmpy==0.3.1
 filelock==3.12.4
 fonttools==4.44.0
@@ -48,7 +48,7 @@ networkx==3.2
 nlpcloud==1.1.43
 numpy==1.26.1
 orjson==3.9.10
-packaging 
+packaging @ file:///private/tmp/python-packaging-20231018-5368-zv724j/packaging-23.2
 pandas==2.1.2
 Pillow==10.1.0
 plotly==5.18.0
@@ -56,7 +56,7 @@ protobuf==4.25.0
 psutil==5.9.6
 pyarrow==14.0.1
 pybind11==2.11.1
-pycparser 
+pycparser @ file:///private/tmp/pycparser-20231013-5787-1anpge2/pycparser-2.21
 pydantic==2.4.2
 pydantic-settings==2.0.3
 pydantic_core==2.10.1
