@@ -129,7 +129,6 @@ Según una fuente policial, el incidente se produjo sobre las 13.15 horas.
     }
   ]
 }
-
 + 002_mlearning_ai :
 --- Objective: using langdetect and again some experiments with nllb
 --- Video: 001_ia_translation_gradio_nllb_fastapi_langdetect.mov
@@ -152,7 +151,7 @@ python 002_translate.py
 
 + 003_using_gradio
 --- Objective: using gradio, some concepts + again for translation extracted from https://huggingface.co/spaces/Geonmo/nllb-translation-demo
---- Video: 003_ia_translation_gradio_translation_demo.mov
+--- Video: 002_ia_translation_gradio_translation_demo.mov
 
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/003_using_gradio
