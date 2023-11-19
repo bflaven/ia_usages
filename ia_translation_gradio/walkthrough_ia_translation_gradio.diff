@@ -177,7 +177,38 @@ http://127.0.0.1:7860
 
 + 004_pyyush_maskedlanguagemodeling
 --- Objective: a use case with FastAPI and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling
---- Video: 004_ia_translation_fastapi_roberta.mov
+--- Video: 003_ia_translation_fastapi_roberta.mov
+
+
+! Use 003_example_request_example.json and also 004_example_request_example.json
+
+
+--- oregon output
+{
+  "text": "<mask> is the capital of Oregon",
+  "model": "xlm-roberta-large",
+  "predictions": {
+    "Portland": 0.9406738877296448,
+    "This": 0.016034075990319252,
+    "Washington": 0.014569816179573536,
+    "Seattle": 0.008444498293101788,
+    "It": 0.0037227030843496323
+  }
+}
+
+--- uganda output
+{
+  "text": "<mask> is the capital and largest city of Uganda",
+  "model": "xlm-roberta-large",
+  "predictions": {
+    "Juba": 0.24509300291538239,
+    "Uganda": 0.13919346034526825,
+    "Beni": 0.0782519057393074,
+    "Nairobi": 0.06192431598901749,
+    "It": 0.06149494647979736
+  }
+}
+
 
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/004_pyyush_maskedlanguagemodeling
@@ -220,3 +251,14 @@ The demo pop in a browser on
 http://localhost:7860 
 or 
 http://127.0.0.1:7860
+
+! CONCLUSION
+
+--- Indeed, for sure, Roberta guesses the capital of Oregon but misses that of Uganda due to lack of appropriate training.
+
+--- I should say! Without being a specialist on the issue, I use this example as an illustration of cognitive bias, which is also very much linked to cultural domination.
+
+- tradeoff
+
+
+

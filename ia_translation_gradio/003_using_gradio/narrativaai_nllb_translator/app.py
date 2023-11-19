@@ -30,7 +30,8 @@ conda install -c conda-forge gradio
 
 
 # go to path
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_translation/003_using_gradio/narrativaai_nllb_translator/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/003_using_gradio/narrativaai_nllb_translator/
+
 
 # launch the file
 python app.py
