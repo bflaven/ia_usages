@@ -75,7 +75,7 @@ pip install -r requirements.txt
 + 001a_giladd123_nllb_fastapi :
 --- Objective: An attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
 --- Video: 001_ia_translation_gradio_nllb_fastapi_langdetect.mov
-
++ https://youtu.be/WPX05gnL8UQ
 
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/001a_giladd123_nllb_fastapi
@@ -132,6 +132,7 @@ Según una fuente policial, el incidente se produjo sobre las 13.15 horas.
 + 002_mlearning_ai :
 --- Objective: using langdetect and again some experiments with nllb
 --- Video: 001_ia_translation_gradio_nllb_fastapi_langdetect.mov
++ https://youtu.be/WPX05gnL8UQ
 
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/002_mlearning_ai
@@ -152,6 +153,7 @@ python 002_translate.py
 + 003_using_gradio
 --- Objective: using gradio, some concepts + again for translation extracted from https://huggingface.co/spaces/Geonmo/nllb-translation-demo
 --- Video: 002_ia_translation_gradio_translation_demo.mov
++ https://youtu.be/G0ei9PX-Q1g
 
 - CODE: 
 https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/003_using_gradio
@@ -178,7 +180,7 @@ http://127.0.0.1:7860
 + 004_pyyush_maskedlanguagemodeling
 --- Objective: a use case with FastAPI and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling
 --- Video: 003_ia_translation_fastapi_roberta.mov
-
++ https://youtu.be/e5jubbwjLaQ
 
 ! Use 003_example_request_example.json and also 004_example_request_example.json
 
