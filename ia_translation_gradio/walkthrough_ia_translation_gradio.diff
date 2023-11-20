@@ -10,7 +10,7 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/
 Source: https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio
 
 + 001a_giladd123_nllb_fastapi: 
---- an attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
+--- An attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
 + 002_mlearning_ai: 
 --- using langdetect and again some experiments with nllb
 + 003_using_gradio: 

@@ -27,6 +27,24 @@ Using `Gradio`, some concepts + again for translation extracted from https://hug
 A use case with `FastAPI` and `Roberta` (`xlm-roberta-base`, `xlm-roberta-large`) for Masked language modeling
 
 
+## Videos
+
+You can find my WALKTHROUGHS for these 3 videos walkthrough_ia_translation_gradio.diff (Video #1, Video #2, Video #3)
+
+
+### Video #1
+
+[IA Text Translation : Unlocking Multilingual Text Translation with NLLB, HuggingFace, and FastAPI and leverage on LangDetect Python Package](https://www.youtube.com/watch?v=WPX05gnL8UQ)[![IA Text Translation : Unlocking Multilingual Text Translation with NLLB, HuggingFace, and FastAPI and leverage on LangDetect Python Package](001_ia_translation_gradio_nllb_fastapi_langdetect.png)](https://www.youtube.com/watch?v=WPX05gnL8UQ)
+
+
+### Video #2
+
+[IA Text Translation : Revolutionize Translation Apps with Gradio: A Quick Guide to Building and Sharing Your Own Apps!](https://www.youtube.com/watch?v=G0ei9PX-Q1g)[![IA Text Translation : Revolutionize Translation Apps with Gradio: A Quick Guide to Building and Sharing Your Own Apps!](002_ia_translation_gradio_translation_demo.png)](https://www.youtube.com/watch?v=G0ei9PX-Q1g)
+
+### Video #3
+
+[IA Text Translation : Usecase with FastAPI and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling](https://www.youtube.com/watch?v=e5jubbwjLaQ)[![IA Text Translation : Usecase with FastAPI and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling](003_ia_translation_fastapi_roberta.png)](https://www.youtube.com/watch?v=e5jubbwjLaQ)
+
 ## More on `No Language Left Behind`
 
 - No Language Left Behind (for instance nllb-200-distilled-600M) "Driving inclusion through the power of AI translation"
