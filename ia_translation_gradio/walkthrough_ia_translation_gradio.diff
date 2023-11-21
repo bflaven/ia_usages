@@ -254,13 +254,75 @@ http://localhost:7860
 or 
 http://127.0.0.1:7860
 
-! CONCLUSION
++ CONCLUSION for usecase 004_pyyush_maskedlanguagemodeling
 
+- So, the tradeoff is
 --- Indeed, for sure, Roberta guesses the capital of Oregon but misses that of Uganda due to lack of appropriate training.
-
 --- I should say! Without being a specialist on the issue, I use this example as an illustration of cognitive bias, which is also very much linked to cultural domination.
 
-- tradeoff
+
+
+! E. VIDEOS TITLE WITH CHATGPT
+
+--- POST_ORIGINAL_TITLE :: Crafting Fluent Translation API: A quick Journey into Text Translation with NLLB, HuggingFace, and FastAPI, Plus a small Dive into Roberta Masked Language Modeling with Gradio
+
+
++ VIDEO_1 TITLE
+
+--- example_prompt_1
+Make a catchy title of this short text: An attempt or POC using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation and an extra using langdetect and again some experiments with nllb.
+
+--- example_ouput_1
+Breaking Language Barriers: Pioneering Translation Endpoints with No Language Left Behind (NLLB) and FastAPI – Plus, Unleashing the Power of Language Detection and Exciting NLLB Experiments!
+
+
++ VIDEO_2 TITLE
+
+--- example_prompt_2
+Make a catchy summary of this short text: using gradio, some concepts + again for translation extracted from https://huggingface.co/spaces/Geonmo/nllb-translation-demo
+
+--- example_ouput_2
+Unlock the power of seamless translation with Gradio! Dive into key concepts and explore the magic of language transformation using the cutting-edge model from https://huggingface.co/spaces/Geonmo/nllb-translation-demo. Elevate your understanding and experience the future of effortless communication!
+
+--- example_prompt_3
+Make a more catchy title a for video tutorial from the title below: POC to make an application for translation using Gradio, another way to build and share data apps
+
+
+--- example_ouput_3
+Revolutionize Translation Apps with Gradio: A Quick Guide to Building and Sharing Your Own Apps!
+
+
++ VIDEO_3 TITLE
+
+--- example_prompt_4
+Make a more catchy title a for video tutorial from the title below: a 
+
+--- example_ouput_4
+Usecase with FastAPI and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling
+
+
++ VIDEOS FINAL TITLES
+Need to re-humanise the stuff! 
+Wow, a bit oversale, ha ha!
+Found it too salesy! 
+
+
+
+- Video #1 Unlocking #multilingual Text #translation with NLLB, #huggingface and #fastapi
+https://youtu.be/WPX05gnL8UQ
+
+- Video #2 Revolutionize Translation Apps with Gradio: A Quick Guide to Building and Sharing Your Own Apps!
+https://youtu.be/G0ei9PX-Q1g
+
+
+- Video #1 Usecase with #fastapi & #roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling
+https://youtu.be/e5jubbwjLaQ
+
+
+
+
+
+
 
 
 

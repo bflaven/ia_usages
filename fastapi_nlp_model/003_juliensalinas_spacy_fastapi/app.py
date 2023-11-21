@@ -66,7 +66,6 @@ async def home():
 #     return {"message": "Hello Bruno"}
 
 @api.post("/extractions", response_model=Output)
-
 async def extractions(input: Input):
 
     document = en_core_web_lg(input.sentence)
