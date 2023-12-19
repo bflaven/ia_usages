@@ -53,6 +53,8 @@ ollama rm orca-mini
 ollama rm mistral
 ollama rm falcon:7b
 ollama rm mistral:text
+ollama rm orca-mini:latest
+
 
 
 # list the model

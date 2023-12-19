@@ -25,12 +25,24 @@ pip install -r requirements.txt
 
 conda install -c conda-forge langchain
 
+# This example requires beautifulsoup
+conda install -c anaconda beautifulsoup4
+
+conda install -c anaconda beautifulsoup4
+
+
+# This example requires gpt4all
+pip install gpt4all
+
+# This example requires chromadb
+conda install -c conda-forge chromadb
+
 
 # [path]
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_other_llm/
 
 # LAUNCH the file
-python samwit_rag.py
+python samwit_rag.py --url https://techcrunch.com/
 
 
 # EXPLICATIONS
