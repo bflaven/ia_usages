@@ -28,6 +28,12 @@
 
 8. Crafting Fluent Translation API: A quick Journey into Text Translation with NLLB, HuggingFace, and FastAPI, Plus a small Dive into Roberta Masked Language Modeling with Gradio. [https://flaven.fr/2023/11/crafting-fluent-translation-api-a-quick-journey-into-text-translation-with-nllb-huggingface-and-fastapi-plus-a-small-dive-into-roberta-masked-language-modeling-with-gradio/](https://flaven.fr/2023/11/crafting-fluent-translation-api-a-quick-journey-into-text-translation-with-nllb-huggingface-and-fastapi-plus-a-small-dive-into-roberta-masked-language-modeling-with-gradio/)
 
+9. Empower Your Workflow: Harnessing the Power of LM Studio and Ollama for Seamless Local LLM Execution
+[https://wp.me/p3Vuhl-3iX](https://wp.me/p3Vuhl-3iX)
+
+
+
+
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
 
