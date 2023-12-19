@@ -14,6 +14,12 @@ conda deactivate
 conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
 conda env remove -n langchain_ai
 
+
+conda env remove -n azure_fastapi_audio
+conda env remove -n ollama_fastapi
+
+
+
 # update conda 
 conda update -n base -c defaults conda
 
