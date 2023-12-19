@@ -249,7 +249,6 @@ else:
     print("The person is not between 18 and 25 years old")
 ```
 Dans cet exemple, l'age d'un adhérent est entrée par l'utilisateur et le script tente de déterminer si cet adhérent est entre 18 et 25 ans. Il utilise les opérateurs logiques pour faire le calcul. Le script teste si `age` est plus grand que 17 (mineur) et moins grand que 26 (majeur). Si c'est vrai, le script affiche "The person is between 18 and 25 years old". Sinon, il affiche "The person is not between 18 and 25 years old".
-```
 
 
 ## PROMPT_5 (question d'histoire)
