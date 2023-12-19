@@ -46,9 +46,10 @@ python samwit_rag.py --url https://techcrunch.com/
 
 
 # EXPLICATIONS
-https://github.com/samwit/langchain-tutorials/blob/382e8db4dc5e01fc400bee8d4146cb1a2e9c3150/ollama/basic.py
+Code: https://github.com/samwit/langchain-tutorials/blob/382e8db4dc5e01fc400bee8d4146cb1a2e9c3150/ollama/basic.py
+Video: https://www.youtube.com/watch?v=k_1pOF1mj8k
 
-
+More on https://python.langchain.com/docs/integrations/providers/gpt4all
 
 
 """
