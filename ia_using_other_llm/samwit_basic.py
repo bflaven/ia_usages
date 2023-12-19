@@ -38,10 +38,19 @@ https://github.com/samwit/langchain-tutorials/blob/382e8db4dc5e01fc400bee8d4146c
 
 # FOR OLLAMA
 
-
 # To run and chat with Llama 2
 ollama run llama2
+ollama run llama2-uncensored
+ollama run orca-mini
 
+
+# remove a model
+ollama rm llama2
+ollama rm orca-mini
+ollama rm mistral
+ollama rm falcon:7b
+ollama rm mistral:text
+ollama rm llama2:latest
 
 # list the model
 ollama list
@@ -64,8 +73,17 @@ ollama list
 from langchain.llms import Ollama
 from langchain.callbacks.manager import CallbackManager
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler 
-                                 
-llm = Ollama(model="llama2", 
-             callback_manager = CallbackManager([StreamingStdOutCallbackHandler()]))
 
-llm("Tell me 5 facts about Roman history:")
+# unable to llama2 on Mac M2 change for orca-mini
+# llm = Ollama(model="llama2", callback_manager = CallbackManager([StreamingStdOutCallbackHandler()]))
+
+# change for orca-mini
+llm = Ollama(model="orca-mini:latest", callback_manager = CallbackManager([StreamingStdOutCallbackHandler()]))
+
+
+# llm("Tell me 5 facts about Roman history:")
+# llm("Tell me 3 facts about Ludwig Wittgenstein:")
+llm("Give me a short geographical description with a maximum 10 lines of the country Argentina:")
+
+
+
