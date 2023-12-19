@@ -5,14 +5,14 @@
 """
 [env]
 # Conda Environment
-conda create --name mistral_ai_streamlit python=3.9.13
+conda create --name langchain_ai python=3.9.13
 conda info --envs
-source activate mistral_ai_streamlit
+source activate langchain_ai
 conda deactivate
 
 # if needed to remove
 conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
-conda env remove -n mistral_ai_streamlit
+conda env remove -n langchain_ai
 
 # update conda 
 conda update -n base -c defaults conda
@@ -32,7 +32,7 @@ conda install -c conda-forge transformers
 pip install ctransformers
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_exploring_huggingface/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_other_llm/
 
 # LAUNCH the file
 python basic.py
