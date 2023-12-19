@@ -37,7 +37,32 @@ python samwit_basic_chain.py
 # EXPLICATIONS
 https://github.com/samwit/langchain-tutorials/blob/382e8db4dc5e01fc400bee8d4146cb1a2e9c3150/ollama/basic.py
 
+# FOR OLLAMA
 
+# To run and chat with Llama 2
+ollama run llama2
+ollama run llama2-uncensored
+ollama run orca-mini
+
+
+# remove a model
+ollama rm llama2
+ollama rm orca-mini
+ollama rm mistral
+ollama rm falcon:7b
+ollama rm mistral:text
+ollama rm llama2:latest
+
+# list the model
+ollama list
+
+# when you are in the model you can use
+>>> /?
+>>> /list
+>>> /set verbose
+
+# to get out from the model
+/exit
 
 
 """

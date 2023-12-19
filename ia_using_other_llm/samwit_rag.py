@@ -51,6 +51,32 @@ Video: https://www.youtube.com/watch?v=k_1pOF1mj8k
 
 More on https://python.langchain.com/docs/integrations/providers/gpt4all
 
+# FOR OLLAMA
+
+# To run and chat with Llama 2
+ollama run llama2
+ollama run llama2-uncensored
+ollama run orca-mini
+
+
+# remove a model
+ollama rm llama2
+ollama rm orca-mini
+ollama rm mistral
+ollama rm falcon:7b
+ollama rm mistral:text
+ollama rm llama2:latest
+
+# list the model
+ollama list
+
+# when you are in the model you can use
+>>> /?
+>>> /list
+>>> /set verbose
+
+# to get out from the model
+/exit
 
 """
 
@@ -102,10 +128,17 @@ def main():
 
 
     # LLM
+    """
     llm = Ollama(model="llama2",
                 verbose=True,
                 callback_manager=CallbackManager([StreamingStdOutCallbackHandler()]))
     print(f"Loaded LLM model {llm.model}")
+    """
+    llm = Ollama(model="orca-mini:latest",
+                verbose=True,
+                callback_manager=CallbackManager([StreamingStdOutCallbackHandler()]))
+    print(f"Loaded LLM model {llm.model}")
+
 
     # QA chain
     from langchain.chains import RetrievalQA
