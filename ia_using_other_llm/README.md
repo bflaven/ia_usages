@@ -23,8 +23,8 @@
 - samwit_rag.py
 
 **Convert a UAT made with Cypress into a gherkin to enable migration to another testing framework e.g PlayWright (https://playwright.dev) or simply the Q/A workchain**
-[![(lm_studio_try_1.png) ](fastapi_postman_remember_1.png)](https://flaven.fr/)
 
+![Convert a UAT made with Cypress into a gherkin to enable migration to another testing framework e.g PlayWright (https://playwright.dev) or simply the Q/A workchain](lm_studio_try_1.png "Convert a UAT made with Cypress into a gherkin to enable migration to another testing framework e.g PlayWright (https://playwright.dev) or simply the Q/A workchain")
 
 ## VIDEOS
 
