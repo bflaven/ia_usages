@@ -169,16 +169,53 @@ Then I should see a list of all images that were published between the start and
 ## PROMPT_4a (formulation_1, problème de mathématiques)
 Donne moi le raisonnement en calcul et toutes les explications pour résoudre le problème suivant : Dans un club sportif 3/4 des adhérents sont mineurs et le 1/3 des adhérents majeurs a plus de 25 ans. Peut-on dire que un adhèrent sur 6 a entre 18 et 25 ans ? 
 
-## OUTPUT_PROMPT_4a (problème de mathématiques)
 
-Oui, on peut dire qu'un adhérent sur 6 a entre 18 et 25 ans, car le nombre d'adhérents majeurs ayant plus de 25 ans est la moitié du total des adhérents majeurs (1/3), donc les deux tiers restants des adhérents doivent être mineurs. Enfin, le nombre de mineurs entre 18 et 25 ans est une fraction du total des mineurs (3/4), soit un adhérent sur 6 doit être dans cette catégorie.
+### ChatGPT
+Pour résoudre ce problème, nous allons utiliser des lettres pour représenter le nombre d'adhérents mineurs et majeurs, puis nous allons traduire les informations fournies dans le problème en équations.
 
-## PROMPT_4b (formulation_3, problème de mathématiques)
-Donne moi le raisonnement en calcul pour le problème suivant : Dans un club sportif 3/4 des adhérents sont mineurs et le 1/3 des adhérents majeurs a plus de 25 ans. Peut-on dire que un adhèrent sur 6 a entre 18 et 25 ans ? 
+Soit \( M \) le nombre total d'adhérents majeurs et \( m \) le nombre total d'adhérents mineurs.
 
-## PROMPT_4c (formulation_1c, problème de mathématiques)
+Les informations fournies sont les suivantes :
+
+1. **Trois quarts des adhérents sont mineurs :**
+   Cela peut être exprimé par l'équation :
+   \[ m = \frac{3}{4}(M + m) \]
+
+   En multipliant chaque terme par \( \frac{4}{3} \) pour éliminer le dénominateur, on obtient :
+   \[ 4m = 3M + 3m \]
+   En simplifiant, on trouve que \( M = \frac{1}{3}m \).
+
+2. **Le tiers des adhérents majeurs a plus de 25 ans :**
+   Cela peut être exprimé par l'équation :
+   \[ \frac{1}{3}M = \frac{1}{3}m + \text{(nombre d'adhérents majeurs de plus de 25 ans)} \]
+
+   On peut simplifier cette équation en soustrayant \( \frac{1}{3}m \) des deux côtés :
+   \[ \frac{1}{3}M - \frac{1}{3}m = \text{(nombre d'adhérents majeurs de plus de 25 ans)} \]
+   \[ \frac{1}{3}(M - m) = \text{(nombre d'adhérents majeurs de plus de 25 ans)} \]
+
+Maintenant, pour déterminer si un adhérent sur 6 a entre 18 et 25 ans, regardons l'expression \( \frac{1}{6}(M + m) \) (qui représente le sixième total des adhérents) et vérifions s'il est équivalent à \( \frac{2}{9}m \) (qui représente le nombre d'adhérents de 18 à 25 ans).
+
+\[ \frac{1}{6}(M + m) = \frac{1}{6}\left(\frac{1}{3}m + m\right) = \frac{1}{6}\left(\frac{4}{3}m\right) = \frac{2}{9}m \]
+
+Ainsi, la réponse est oui, on peut dire qu'un adhérent sur 6 a entre 18 et 25 ans, en fonction des informations fournies dans le problème.
+
+### Mistral
+
+On peut résoudre ce problème en suivant ces étapes de calcul :
+
+1. Le nombre d'adhérents majeurs a plus de 25 ans est 1/3 du total des adhérents, donc il est entre (1/4 et 1/3) du total.
+2. Le nombre de mineurs est 3/4 du total des adhérents.
+3. Pour déterminer si un adhérent sur 6 est entre 18 et 25 ans, nous devons donc définir les bornes des deux groupes. Les majeurs ont plus de 25 ans et les mineurs sont entre 18 et 24.
+4. Le nombre d'adhérents majeurs a plus de 25 ans est entre (1/4 et 1/3) du total, soit entre (1/16 et 1/9).
+5. Les bornes des mineurs sont entre 18 et 24, donc le nombre d'adhérents majeurs a plus de 25 ans est compris entre (1/16 et 1/9) et les bornes des mineurs sont entre (18 et 24).
+6. Les bornes de la totalité des adhérents sont entre (1/4 et 1), donc (1/16 et 1/9) est compris entre (1/4 et 1).
+7. Par conséquent, il n'existe pas d'adhérent sur 6 qui soit entre 18 et 25 ans, car tous les adhérents majeurs a plus de 25 ans sont compris entre (1/16 et 1/9).
+
+
+## PROMPT_4b (formulation_1b, problème de mathématiques)
 Ecrire en Python, un script qui fait le calcul pour le problème suivant : Dans un club sportif 3/4 des adhérents sont mineurs et le 1/3 des adhérents majeurs a plus de 25 ans. Peut-on dire que un adhèrent sur 6 a entre 18 et 25 ans ? 
 
+### ChatGPT
 ```python
 # Define the fractions of members in different age categories
 minor_members = 0.75
@@ -199,11 +236,43 @@ else:
     print("No, we cannot say that one in six members is between 18 and 25 years old.")
 ```
 
+### Mistral
+
+```python
+
+Certainement, je vous ai écrit un script Python qui répond à votre problème :
+```python
+age = int(input("Enter the age of the person: "))
+if age > 17 and age < 26:
+    print("The person is between 18 and 25 years old")
+else:
+    print("The person is not between 18 and 25 years old")
+```
+Dans cet exemple, l'age d'un adhérent est entrée par l'utilisateur et le script tente de déterminer si cet adhérent est entre 18 et 25 ans. Il utilise les opérateurs logiques pour faire le calcul. Le script teste si `age` est plus grand que 17 (mineur) et moins grand que 26 (majeur). Si c'est vrai, le script affiche "The person is between 18 and 25 years old". Sinon, il affiche "The person is not between 18 and 25 years old".
+```
+
+
 ## PROMPT_5 (question d'histoire)
 
 ## question d'histoire
 Donne une mini biographie de Olympe de Gouges et le titre de son principale ouvrage ainsi que 3 idées force de sa pensée ?
 
+### ChatGPT
 
+Olympe de Gouges, de son vrai nom Marie Gouze, était une écrivaine et militante politique française née le 7 mai 1748 à Montauban et morte sur l'échafaud le 3 novembre 1793 à Paris pendant la Révolution française. Elle est surtout connue pour son engagement en faveur des droits des femmes et pour avoir écrit la "Déclaration des droits de la femme et de la citoyenne" en 1791, en réponse à la Déclaration des droits de l'homme et du citoyen adoptée pendant la Révolution.
+
+Son principal ouvrage est "Déclaration des droits de la femme et de la citoyenne" (1791), où elle revendique l'égalité des droits entre les sexes et dénonce les inégalités sociales.
+
+Trois idées fortes de la pensée d'Olympe de Gouges incluent :
+
+1. **Égalité des sexes :** Olympe de Gouges a plaidé pour l'égalité des droits entre hommes et femmes. Elle a remis en question le traitement discriminatoire des femmes dans la société et a exigé leur reconnaissance en tant que citoyennes à part entière.
+
+2. **Critique sociale :** À travers ses écrits, de Gouges a critiqué les inégalités sociales et la corruption politique de son époque. Elle a cherché à sensibiliser le public aux problèmes sociaux et à promouvoir une société plus équitable.
+
+3. **Droits de la personne et de la citoyenne :** Inspirée par les idéaux de la Révolution française, Olympe de Gouges a plaidé pour les droits de la personne et de la citoyenne. Elle a insisté sur la nécessité d'une déclaration des droits incluant les femmes, soulignant que les droits fondamentaux ne devraient pas être limités à un genre particulier.
+
+### Mistral
+
+Olympe de Gouges (1761-1793) était une poétesse française du XVIIIe siècle, considérée comme une précurseure des féministes. Son principal ouvrage est la pièce de théâtre intitulée "La Femme supérieure". Parmi ses idées fortes on peut citer son critique de la société patriarcale, sa défense du droit de la femme et son rejet de l'idée de la submissive féminité.
 
 
