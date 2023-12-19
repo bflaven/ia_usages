@@ -23,24 +23,36 @@ pip freeze > requirements.txt
 # to install
 pip install -r requirements.txt
 
-conda install -c anaconda nltk
-conda install -c pytorch pytorch
-conda install -c anaconda numpy
-conda install -c conda-forge gradio
-conda install -c conda-forge transformers
+conda install -c conda-forge langchain
 
-pip install ctransformers
 
 # [path]
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_other_llm/
 
 # LAUNCH the file
-python basic.py
+python samwit_basic.py
 
 
 # EXPLICATIONS
 https://github.com/samwit/langchain-tutorials/blob/382e8db4dc5e01fc400bee8d4146cb1a2e9c3150/ollama/basic.py
 
+# FOR OLLAMA
+
+
+# To run and chat with Llama 2
+ollama run llama2
+
+
+# list the model
+ollama list
+
+# when you are in the model you can use
+>>> /?
+>>> /list
+>>> /set verbose
+
+# to get out from the model
+/exit
 
 
 

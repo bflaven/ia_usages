@@ -14,12 +14,6 @@ conda deactivate
 conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
 conda env remove -n langchain_ai
 
-
-conda env remove -n azure_fastapi_audio
-conda env remove -n ollama_fastapi
-
-
-
 # update conda 
 conda update -n base -c defaults conda
 
@@ -29,15 +23,14 @@ pip freeze > requirements.txt
 # to install
 pip install -r requirements.txt
 
+conda install -c conda-forge langchain
 
-pip install ctransformers
 
 # [path]
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_other_llm/
 
-
 # LAUNCH the file
-python basic.py
+python samwit_rag.py
 
 
 # EXPLICATIONS

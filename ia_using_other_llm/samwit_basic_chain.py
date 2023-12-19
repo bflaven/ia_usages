@@ -23,15 +23,15 @@ pip freeze > requirements.txt
 # to install
 pip install -r requirements.txt
 
+conda install -c conda-forge langchain
 
-pip install ctransformers
 
 # [path]
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_other_llm/
 
 
 # LAUNCH the file
-python basic.py
+python samwit_basic_chain.py
 
 
 # EXPLICATIONS
