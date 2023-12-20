@@ -7,10 +7,20 @@
 
 [Read more on flaven.fr: https://flaven.fr/2023/12/empower-your-workflow-harnessing-the-power-of-lm-studio-and-ollama-for-seamless-local-llm-execution/](https://flaven.fr/2023/12/empower-your-workflow-harnessing-the-power-of-lm-studio-and-ollama-for-seamless-local-llm-execution/)
 
+## REQUIREMENTS
+
+**Loading LLM with ollama.ai or lmstudio.ai.**
+
+I found 2 great tools to query LLMs confidentially and securely. The only remark the only remark that this calls for is that lmstudio is much more UX friendly than ollama.
+
+- [https://ollama.ai/](https://ollama.ai/)
+- [https://lmstudio.ai/](https://lmstudio.ai/)
 
 
 
 ## EXPLANATIONS
+Some explanations for the files avalaible in this directory: 
+
 - Modelfile_advanced_llama2: Prompt Model for Ollama
 - Modelfile_llama2: Prompt Model for Ollama
 - Modelfile_orca-mini: Prompt Model for Ollama
@@ -29,7 +39,8 @@
 
 ### commands for Ollama
 
-You can find other info at <a href="https://github.com/jmorganca/ollama" target="_blank" rel="noopener">https://github.com/jmorganca/ollama</a>
+You can find other info at [https://github.com/jmorganca/ollama](https://github.com/jmorganca/ollama)
+
 
 
 
