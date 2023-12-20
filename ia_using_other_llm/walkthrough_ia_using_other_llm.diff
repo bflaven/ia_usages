@@ -27,25 +27,26 @@ https://docs.python.org/3/library/venv.html
 
 - The framework to create an API in Python
 
---- FASTAPI
-https://fastapi.tiangolo.com/
+--- ollama.ai
+https://ollama.ai/
 
---- NLLB-200
-https://huggingface.co/facebook/nllb-200-distilled-600M
+--- lmstudio.ai
+https://lmstudio.ai/
 
-
+--- for LLMs huggingface.co
+https://huggingface.co/
 
 --- MANAGE ENVIRONMENT ANACONDA
 [env]
-# Conda ia_translation_facebook_nllb
-conda create --name ia_translation_facebook_nllb python=3.9.13
+# Conda Environment
+conda create --name langchain_ai python=3.9.13
 conda info --envs
-source activate ia_translation_facebook_nllb
+source activate langchain_ai
 conda deactivate
 
 # if needed to remove
 conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
-conda env remove -n ia_translation_facebook_nllb
+conda env remove -n langchain_ai
 
 # update conda 
 conda update -n base -c defaults conda
@@ -56,256 +57,53 @@ pip freeze > requirements.txt
 # to install
 pip install -r requirements.txt
 
+conda install -c conda-forge langchain
+
+
+# [path]
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_other_llm/
+
+
+# LAUNCH the file
+python samwit_basic_chain.py
+
+
+# EXPLICATIONS
+https://github.com/samwit/langchain-tutorials/blob/382e8db4dc5e01fc400bee8d4146cb1a2e9c3150/ollama/basic.py
+
+# FOR OLLAMA
+
+# To run and chat with Llama 2
+ollama run llama2
+ollama run llama2-uncensored
+ollama run orca-mini
+
+
+# remove a model
+ollama rm llama2
+ollama rm orca-mini
+ollama rm mistral
+ollama rm falcon:7b
+ollama rm mistral:text
+ollama rm llama2:latest
+
+# list the model
+ollama list
+
+# when you are in the model you can use
+>>> /?
+>>> /list
+>>> /set verbose
+
+# to get out from the model
+/exit
+
 
 ! D. EXAMPLES
 
-! Use https://translate.google.com/ to make comparison with the result obtained.
 
-+ 001a_giladd123_nllb_fastapi :
---- Objective: An attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
---- Video: 001_ia_translation_gradio_nllb_fastapi_langdetect.mov
-+ https://youtu.be/WPX05gnL8UQ
 
-- CODE: 
-https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/001a_giladd123_nllb_fastapi
 
-- DESCRIPTION
-An attempt using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation
-
-
-- TERMINAL_SCREEN (blue)
-# GO TO DIR
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/001a_giladd123_nllb_fastapi/
-
-# LAUNCH THE ENV
-source activate ia_translation_facebook_nllb
-
-# LAUNCH THE API
-uvicorn webserver:app --reload
-
-# CHECK THE API
-http://127.0.0.1:8000
-
-
-Source: https://github.com/giladd123/nllb-fastapi
-
---- Google translate Italian to English
-Nothing to be done, finding a company interested in building the new Pigneto station is impossible.
-
---- your API TrattorIA translate Italian to English (example_request_1_ita.json)
-{
-  "src_lang": "ita_Latn",
-  "tgt_lang": "eng_Latn",
-  "input_text": "Nulla da fare, trovare un impresa interessata a realizzare la nuova stazione Pigneto è impossibile.",
-  "output_text": [
-    {
-      "translation_text": "Nothing to do, finding a company interested in building the new Pigneto station is impossible."
-    }
-  ]
-}
-
---- Google translate English to Spanish 
-Según una fuente policial, el incidente se produjo sobre las 13.15 horas.
-
---- your API TrattorIA translate English to Spanish (example_request_7_spa.json)
-{
-  "src_lang": "eng_Latn",
-  "tgt_lang": "spa_Latn",
-  "input_text": "According to a police source, the incident occurred around 1:15 p.m.",
-  "output_text": [
-    {
-      "translation_text": "Según una fuente policial, el incidente ocurrió alrededor de la 1:15 p.m."
-    }
-  ]
-}
-+ 002_mlearning_ai :
---- Objective: using langdetect and again some experiments with nllb
---- Video: 001_ia_translation_gradio_nllb_fastapi_langdetect.mov
-+ https://youtu.be/WPX05gnL8UQ
-
-- CODE: 
-https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/002_mlearning_ai
-
-- TERMINAL_SCREEN (blue)
-# GO TO DIR
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/002_mlearning_ai/
-
-# LAUNCH THE ENV
-source activate ia_translation_facebook_nllb
-
-# LAUNCH THE FILES
-python 001_langdetect.py
-python 002_translate.py
-
-
-
-+ 003_using_gradio
---- Objective: using gradio, some concepts + again for translation extracted from https://huggingface.co/spaces/Geonmo/nllb-translation-demo
---- Video: 002_ia_translation_gradio_translation_demo.mov
-+ https://youtu.be/G0ei9PX-Q1g
-
-- CODE: 
-https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/003_using_gradio
-
-- TERMINAL_SCREEN (blue)
-# GO TO DIR
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_translation/003_using_gradio/narrativaai_nllb_translator/
-
-# LAUNCH THE ENV
-source activate ia_translation_facebook_nllb
-
-# launch the file
-python app.py
-
-
-# check
-The demo pop in a browser on 
-http://localhost:7860 
-or 
-http://127.0.0.1:7860
-
-
-
-+ 004_pyyush_maskedlanguagemodeling
---- Objective: a use case with FastAPI and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling
---- Video: 003_ia_translation_fastapi_roberta.mov
-+ https://youtu.be/e5jubbwjLaQ
-
-! Use 003_example_request_example.json and also 004_example_request_example.json
-
-
---- oregon output
-{
-  "text": "<mask> is the capital of Oregon",
-  "model": "xlm-roberta-large",
-  "predictions": {
-    "Portland": 0.9406738877296448,
-    "This": 0.016034075990319252,
-    "Washington": 0.014569816179573536,
-    "Seattle": 0.008444498293101788,
-    "It": 0.0037227030843496323
-  }
-}
-
---- uganda output
-{
-  "text": "<mask> is the capital and largest city of Uganda",
-  "model": "xlm-roberta-large",
-  "predictions": {
-    "Juba": 0.24509300291538239,
-    "Uganda": 0.13919346034526825,
-    "Beni": 0.0782519057393074,
-    "Nairobi": 0.06192431598901749,
-    "It": 0.06149494647979736
-  }
-}
-
-
-- CODE: 
-https://github.com/bflaven/ia_usages/tree/main/ia_translation_gradio/004_pyyush_maskedlanguagemodeling
-
-- TERMINAL_SCREEN (blue)
-# go to path
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/004_pyyush_maskedlanguagemodeling/
-
-# do not forget to install this library
-conda install -c anaconda rich
-conda install -c conda-forge gradio
-
-
-# LAUNCH THE ENV
-source activate ia_translation_facebook_nllb
-
-# launch the api
-uvicorn main:app --reload
-
-# check
-The demo pop in a browser on 
-http://localhost:8000/docs
-or 
-http://127.0.0.1:8000/docs
-
-
-- TERMINAL_SCREEN (black)
-
-# go to path
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_translation_gradio/004_pyyush_maskedlanguagemodeling/
-
-# LAUNCH THE ENV
-source activate ia_translation_facebook_nllb
-
-# launch the Gradio.py
-python ui.py
-
-# check
-The demo pop in a browser on 
-http://localhost:7860 
-or 
-http://127.0.0.1:7860
-
-+ CONCLUSION for usecase 004_pyyush_maskedlanguagemodeling
-
-- So, the tradeoff is
---- Indeed, for sure, Roberta guesses the capital of Oregon but misses that of Uganda due to lack of appropriate training.
---- I should say! Without being a specialist on the issue, I use this example as an illustration of cognitive bias, which is also very much linked to cultural domination.
-
-
-
-! E. VIDEOS TITLE WITH CHATGPT
-
---- POST_ORIGINAL_TITLE :: Crafting Fluent Translation API: A quick Journey into Text Translation with NLLB, HuggingFace, and FastAPI, Plus a small Dive into Roberta Masked Language Modeling with Gradio
-
-
-+ VIDEO_1 TITLE
-
---- example_prompt_1
-Make a catchy title of this short text: An attempt or POC using No Language Left Behind (for instance nllb-200-distilled-600M) aka nllb and FastAPI to offer an endpoint for translation and an extra using langdetect and again some experiments with nllb.
-
---- example_ouput_1
-Breaking Language Barriers: Pioneering Translation Endpoints with No Language Left Behind (NLLB) and FastAPI – Plus, Unleashing the Power of Language Detection and Exciting NLLB Experiments!
-
-
-+ VIDEO_2 TITLE
-
---- example_prompt_2
-Make a catchy summary of this short text: using gradio, some concepts + again for translation extracted from https://huggingface.co/spaces/Geonmo/nllb-translation-demo
-
---- example_ouput_2
-Unlock the power of seamless translation with Gradio! Dive into key concepts and explore the magic of language transformation using the cutting-edge model from https://huggingface.co/spaces/Geonmo/nllb-translation-demo. Elevate your understanding and experience the future of effortless communication!
-
---- example_prompt_3
-Make a more catchy title a for video tutorial from the title below: POC to make an application for translation using Gradio, another way to build and share data apps
-
-
---- example_ouput_3
-Revolutionize Translation Apps with Gradio: A Quick Guide to Building and Sharing Your Own Apps!
-
-
-+ VIDEO_3 TITLE
-
---- example_prompt_4
-Make a more catchy title a for video tutorial from the title below: a 
-
---- example_ouput_4
-Usecase with FastAPI and Roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling
-
-
-+ VIDEOS FINAL TITLES
-Need to re-humanise the stuff! 
-Wow, a bit oversale, ha ha!
-Found it too salesy! 
-
-
-
-- Video #1 Unlocking #multilingual Text #translation with NLLB, #huggingface and #fastapi
-https://youtu.be/WPX05gnL8UQ
-
-- Video #2 Revolutionize Translation Apps with Gradio: A Quick Guide to Building and Sharing Your Own Apps!
-https://youtu.be/G0ei9PX-Q1g
-
-
-- Video #1 Usecase with #fastapi & #roberta (xlm-roberta-base, xlm-roberta-large) for Masked language modeling
-https://youtu.be/e5jubbwjLaQ
 
 
 
