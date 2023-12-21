@@ -99,5 +99,7 @@ chain = LLMChain(llm=llm,
 
 # Run the chain only specifying the input variable.
 # print(chain.run("the moon"))
-print(chain.run("Argentina"))
+# print(chain.run("Argentina"))
 # print(chain.run("Ludwig Wittgenstein"))
+
+print(chain.run("Barack Obama"))
