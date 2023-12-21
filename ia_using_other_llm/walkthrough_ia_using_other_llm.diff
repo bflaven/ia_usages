@@ -110,7 +110,7 @@ I want to find a way to locally test other LLMs in a more confidential and secur
 + 1. Using Ollama:
 --- ia_using_other_llm_ollama_1.mov
 
-- description
+- DESCRIPTION
 I have download ollama at https://ollama.ai/download
 Check the models of LLMs avalaible at https://ollama.ai/library
 And... I try to use this new LLM.
@@ -133,23 +133,22 @@ python samwit_basic_chain.py
 + 2. Using Ollama:
 --- ia_using_other_llm_lmstudio_2.mov
 
-- description
-Need to install lmstudio.ai from https://lmstudio.ai/ (Mac, PC, Linux)
-Non console required.
-You can look for any LLMs.
+- DESCRIPTION
+Need to install lmstudio.ai from https://lmstudio.ai/ (Mac, PC, Linux). Non console required. You can look for any LLMs.
+
+- NO CONSOLE_SCREEN
+
+- TIP 
+Take some examples from https://github.com/bflaven/ia_usages/tree/main/ai_chatgpt_usages
 
 
+- DEMO
+--- 1. Let search for llama2, orca, falcon, mistral... etc
+
+--- 2. Look for mistral and install it TheBloke/Mistral-7B-Instruct-v0.1-GGUF/mistral-7b-instruct-v0.1.Q2_K.gguf. Check https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF
 
 
-
-
-
-
-
-
-
-
-
+--- 3. Use Mistral-7B-Instruct-v0.1 for different purposes
 
 
 
