@@ -53,11 +53,28 @@ Feature: QA for ARTICLE creation
     Then the URL should include "content/" and the article title, author tags, super tags and thematic tags should have the correct data
 ```
 
+## OUTPUT_PROMPT_1_YT
 
+```scss
+Feature: Create Article with QA Steps
+
+Scenario: User should be able to create an article
+Given a user is on the main page
+When they click on the "Create Content" button
+And they navigate to the article creation panel
+And enter the article title with random string, start date and thematic tags
+And select the appropriate tags
+And save the article
+Then the user should be able to view the created article
+
+Feature File: Create Article With QA Steps.feature
+```
 
 ## PROMPT_2
 
 Can you write in Cypress a test name create_post.cy.js from this gherkin feature do not hesitate to put real content in te field form.
+
+
 
 
 ```scss
@@ -119,6 +136,82 @@ describe('ARTICLE creation', () => {
   });
 });
 ```
+## PROMPT_2_YT
+Can you write a log parser in Python to detect specific part of data contained in .log file, extract this sample of data, retrieve it and load it with the Panda library inside a dataframe (df) then export this sample as .csv file then write a small application with the Streamlit framework to manipulate this new .csv file
+
+## OUTPUT_PROMPT_2_YT (ChatGPT)
+
+Certainly! Below is an example of a Python script that parses a log file, extracts specific data, loads it into a Pandas DataFrame, and exports it to a CSV file. Additionally, a simple Streamlit application is provided to interact with the generated CSV file.
+
+```python
+# Import necessary libraries
+import re
+import pandas as pd
+import streamlit as st
+
+# Log Parser function
+def parse_log_file(log_file_path, pattern):
+    data = []
+
+    # Define the regular expression pattern to match the desired data
+    regex_pattern = re.compile(pattern)
+
+    # Read the log file line by line
+    with open(log_file_path, 'r') as file:
+        for line in file:
+            match = regex_pattern.search(line)
+            if match:
+                # Extract the matched data
+                data.append(match.group(1))
+
+    return data
+
+# Streamlit application
+def main():
+    st.title("Log Parser and CSV Exporter")
+
+    # Upload log file
+    log_file = st.file_uploader("Upload Log File", type=["log"])
+    
+    if log_file is not None:
+        st.sidebar.subheader("Log Parser Settings")
+
+        # Define a pattern to extract specific data from log entries
+        pattern = st.sidebar.text_input("Enter Regex Pattern", r'\b(\d{2}/\d{2}/\d{4} \d{2}:\d{2}:\d{2})\b')
+
+        # Parse the log file and extract data
+        extracted_data = parse_log_file(log_file.name, pattern)
+
+        # Create a Pandas DataFrame from the extracted data
+        df = pd.DataFrame({"Extracted Data": extracted_data})
+
+        # Display the DataFrame
+        st.dataframe(df)
+
+        # Export DataFrame to CSV
+        csv_file = st.button("Export as CSV")
+        if csv_file:
+            df.to_csv("extracted_data.csv", index=False)
+            st.success("CSV file exported successfully!")
+
+if __name__ == "__main__":
+    main()
+```
+
+Here's how to use the provided script:
+
+1. Save the script with a `.py` extension (e.g., `log_parser_app.py`).
+2. Install the required libraries: `pip install pandas streamlit`.
+3. Run the script in your terminal: `streamlit run log_parser_app.py`.
+4. Open the provided Streamlit app in your web browser.
+5. Upload a log file and enter a regular expression pattern to extract the desired data.
+6. The extracted data will be displayed in a Pandas DataFrame, and you can export it as a CSV file.
+
+Make sure to adjust the regex pattern in the Streamlit sidebar according to your log file's structure and the data you want to extract.
+
+
+## OUTPUT_PROMPT_2_YT (Mistral)
+
 
 
 ## PROMPT_3
