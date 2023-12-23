@@ -104,7 +104,7 @@ in a safe and confidential way
 [Video #1 Using LLM in Ollama or LM Studio: Discover LLMs potential (orca-mini) help through Ollama for daily tasks in a safe and confidential way](https://www.youtube.com/watch?v=LULqXhM5guk)[![Video #1 Using LLM in Ollama or LM Studio: Discover LLMs potential (orca-mini) help through Ollama for daily tasks in a safe and confidential way](001_ia_using_other_llm_ollama.png)](https://www.youtube.com/watch?v=LULqXhM5guk)
 
 
-### Video #2 Using LLM in Ollama or LM Studio: Discover LLMs potential (orca-mini) help through Ollama for daily tasks in a safe and confidential way
+### Video #2 Using LLM in Ollama or LM Studio: Discover LLMs (Mistral) potential help through LM Studio for daily tasks in a safe and confidential way.
 
 [Video #2 Using LLM in Ollama or LM Studio: Discover LLMs (Mistral) potential help through LM Studio for daily tasks in a safe and confidential way.](https://www.youtube.com/watch?v=tjpj41yrgro)[![Video #2 Using LLM in Ollama or LM Studio: Discover LLMs (Mistral) potential help through LM Studio for daily tasks in a safe and confidential way.](002_ia_using_other_llm_ollama.png)](https://www.youtube.com/watch?v=tjpj41yrgro)
 
@@ -208,4 +208,18 @@ in a safe and confidential way
 **Outro:**
 - Provide links to LM Studio (lmstudio.ai) and Mistral AI for viewers to explore further.
 - Invite viewers to like, comment, and subscribe for more tutorials on leveraging AI for productivity.
+
+
+## NOTES
+In an ironic way, here are some observations on AI:
+
+- Vary the supply sources, otherwise we will all “drink” from the same ChatGPT source.
+
+- With AI, personally, I oscillate between the complete delegation of all tasks, an old dream of automation in decision-making at the risk to face Information overloading (infobesity).
+
+- In the same way, the only rule to stick to is the same one mentioned by many lawyers: "Don't ask a question you don't know the answer to" because you have every chance of getting yourself into difficulty... **Indeed, how can you ensure that the AI does not tell you hallucinations?**
+
+- In subversive and unscrupulous crook mode, also fascinating the concept of fake, post-truth, fake-book. They say that in times of war the truth is the first victim.
+
+
 
