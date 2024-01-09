@@ -1,0 +1,103 @@
+
+! A. SOURCE
+- Article: A small Guide to Harnessing the Power of Open Interpreter and Unlocking Productivity with a ChatGPT-Like Terminal Interface 
+https://flaven.fr/2024/01/a-small-guide-to-harnessing-the-power-of-open-interpreter-and-unlocking-productivity-with-a-chatgpt-like-terminal-interface/
+
+- Path (local)
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_open_interpreter/
+
+! B. DIRECTORIES ON GITHUB
+Source: https://github.com/bflaven/ia_usages/tree/main/ia_open_interpreter
+
+! C. TOOLS & ENVIRONMENT
+
+- Tools to create and manage of virtual environments:
+
+--- ANACONDA
+https://www.anaconda.com/
+
+--- PYTHON-POETRY
+https://python-poetry.org/
+
+--- VENV
+https://docs.python.org/3/library/venv.html
+
+- Open Interpreter
+
+--- Open Interpreter Official website
+https://openinterpreter.com/
+
+--- Open Interpreter on GitHub
+https://github.com/KillianLucas/open-interpreter
+
+
+--- MANAGE ENVIRONMENT ANACONDA
+[env]
+# Conda Environment
+conda create --name open_interpreter python=3.9.13
+conda info --envs
+source activate open_interpreter
+conda deactivate
+
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n open_interpreter
+
+# update conda 
+conda update -n base -c defaults conda
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
+
+# [path]
+
+cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_and_the_fake_prompt_academy
+
+python 001_open_interpreter.py
+
+See https://docs.openinterpreter.com/setup#python-usage
+
+- Installation
+pip install open-interpreter
+
+
+- Console or Terminal usage
+interpreter
+
+
+! D. EXAMPLES
+
+
++ OBJECTIVE
+I want to use Open Interpreter with a paid API KEY from ChatGPT. By using interpreter, you are about to unleash the power of ChatGPT on your computer… Nice baseline. Their motto is “Anyone can code” like a kind of geek version of the “Anyone can cook” from Gusteau in Ratatouille.
+
+I have defined three usecases with Open Interpreter
+
+
+
++ 1. Using Open Interpreter, the classical way through the terminal:
+--- ia_open_interpreter_classical_1.mov
+
+- DESCRIPTION
+As a user, I have installed Open Interpreter. Follow the instructions from https://github.com/KillianLucas/open-interpreter. Besides I have paid API KEY from ChatGPT.
+
+
++ 2. Open Interpreter, Combine with LM Studio:
+--- ia_open_interpreter_combined_lm_studio_2.mov
+
+- DESCRIPTION
+As a user, I want to use Open Interpreter but with a local LMM such as Mistral, Orca, Codellama, Llama2 hold by LM Studio
+
+It requires to install lmstudio.ai from https://lmstudio.ai/ (Mac, PC, Linux). Non console required. You can look for any LLMs.
+
++ 3. Open Interpreter, Combine with FastAPI
+--- ia_open_interpreter_combined_fastapi_3.mov
+
+- DESCRIPTION
+As a user, I want to use Open Interpreter combined with FastAPI.
+
+
+
