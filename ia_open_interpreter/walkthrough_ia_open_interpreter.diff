@@ -60,11 +60,10 @@ python 001_open_interpreter.py
 
 See https://docs.openinterpreter.com/setup#python-usage
 
-- Installation
+# Installation
 pip install open-interpreter
 
-
-- Console or Terminal usage
+# Console or Terminal usage
 interpreter
 
 
