@@ -3,9 +3,9 @@
 ## Intro
 An article exploring the ability to use `Open Interpreter`. I have defined three usecases with `Open Interpreter`: 
 
-- 1. Using Open Interpreter, the classical way through the terminal:
-- 2. Open Interpreter, Combine with LM Studio:
-- 3. Open Interpreter, Combine with FastAPI
+- Using Open Interpreter, the classical way through the terminal:
+- Open Interpreter, Combine with LM Studio:
+- Open Interpreter, Combine with FastAPI
 
 **You can read the article on my blog**
 [A small Guide to Harnessing the Power of Open Interpreter and Unlocking Productivity with a ChatGPT-Like Terminal Interface 
