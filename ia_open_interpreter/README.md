@@ -22,6 +22,7 @@ https://openinterpreter.com/
 - Open Interpreter on GitHub
 https://github.com/KillianLucas/open-interpreter
 
+**Using anaconda to manage Open Interpreter**
 
 ```python
 """
