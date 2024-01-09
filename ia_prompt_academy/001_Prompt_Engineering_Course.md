@@ -207,6 +207,7 @@ The Kermode bear is a unique and special animal that is found in the coastal reg
 ## 4. RESSOURCES
 
 **Other**
+- https://arxiv.org/pdf/2312.16171v1.pdf
 - http://pretrain.nlpedia.ai/
 - https://github.com/openai/openai-cookbook
 - https://learnprompting.org/docs/intro
