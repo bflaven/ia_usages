@@ -32,7 +32,8 @@
 [https://wp.me/p3Vuhl-3iX](https://wp.me/p3Vuhl-3iX)
 
 
-
+10. A small Guide to Harnessing the Power of Open Interpreter and Unlocking Productivity with a ChatGPT-Like Terminal Interface
+[https://wp.me/p3Vuhl-3jh](https://wp.me/p3Vuhl-3jh)
 
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
