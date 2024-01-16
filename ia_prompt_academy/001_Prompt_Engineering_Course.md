@@ -249,15 +249,12 @@ ChatGPT Prompt Engineering for Developers
 https://www.datacamp.com/courses/chatgpt-prompt-engineering-for-developers
 
 The ChatGPT Prompt Book - LifeArchitect.ai - Rev 6
-
 https://docs.google.com/presentation/d/17b_ocq-GL5lhV_bYSShzUgxL02mtWDoiw9xEroJ5m3Q/edit#slide=id.g1b8e0b333f6_0_257
 
 Prompt-engineering tag on GitHub
-
 https://github.com/topics/prompt-engineering
 
 Use cases from langchain.com
-
 https://python.langchain.com/docs/use_cases
 
 - https://arxiv.org/pdf/2312.16171v1.pdf
