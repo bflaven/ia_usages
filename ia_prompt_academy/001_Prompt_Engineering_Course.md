@@ -206,18 +206,25 @@ For more complex and knowledge-intensive tasks, it's possible to build a languag
 
 
 ### 8. Automatic Reasoning and Tool-use
+To be completed
 
 ### 9. Automatic Prompt Engineer
+To be completed
 
 ### 10. Active-Prompt
+To be completed
 
 ### 11. Directional Stimulus Prompting
+To be completed
 
 ### 12. ReAct
+To be completed
 
 ### 13. Multimodal CoT
+To be completed
 
 ### 14. Graph Prompting
+To be completed
 
 ## 2. GOOGLE
 
