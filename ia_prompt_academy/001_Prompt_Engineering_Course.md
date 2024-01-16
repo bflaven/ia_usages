@@ -243,7 +243,7 @@ For more complex and knowledge-intensive tasks, it's possible to build a languag
 
 ## 4. RESSOURCES
 
-**Other**
+**Detailed**
 
 ChatGPT Prompt Engineering for Developers
 https://www.datacamp.com/courses/chatgpt-prompt-engineering-for-developers
@@ -257,6 +257,7 @@ https://github.com/topics/prompt-engineering
 Use cases from langchain.com
 https://python.langchain.com/docs/use_cases
 
+**Other**
 - https://arxiv.org/pdf/2312.16171v1.pdf
 - http://pretrain.nlpedia.ai/
 - https://github.com/openai/openai-cookbook
