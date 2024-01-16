@@ -166,7 +166,44 @@ The Kermode bear is a unique and special animal that is found in the coastal reg
 
 ### 6. Tree of Thoughts
 
-### 7. Retrieval Augmented Generation
+Tree-of-Thought (ToT) Prompting, a fresh technique borrowing ideas from the Tree-of-Thoughts framework, broadens and enhances the well-established Chain-of-Thought prompting concept, thereby enabling Large Language Models, like ChatGPT, to exhibit superior reasoning abilities. This Tree-of-Thought Prompting technique permits Large Language Models to rectify their errors autonomously while progressively accumulating knowledge.
+
+In one example, a ToT prompt improves ChatGPT 3.5's reasoning ability to answer a question that could previously only be answered by ChatGPT 4.
+
+The existing papers discussing the Tree-of-Thought framework appear to be premised on making multiple calls to an LLM, typically via Python. One of the main advantages of Chain-of-Thought reasoning is that it can be achieved with ChatGPT in a single sentence prompt.
+
+**This led me to ponder: could we improve upon the results of CoT by utilizing a ToT-style prompt?**
+
+```bash
+# Prompt:
+Imagine three different experts are answering this question.
+All experts will write down 1 step of their thinking,
+then share it with the group.
+Then all experts will go on to the next step, etc.
+If any expert realises they're wrong at any point then they leave.
+The question is...
+```
+
+```bash
+# Prompt:
+Bob is in the living room.
+He walks to the kitchen, carrying a cup.
+He puts a ball in the cup and carries the cup to the bedroom.
+He turns the cup upside down, then walks to the garden.
+He puts the cup down in the garden, then walks to the garage.
+Where is the ball?
+
+
+```
+
+
+### 7. Retrieval Augmented Generation (RAG)
+
+General-purpose language models can be fine-tuned to achieve several common tasks such as sentiment analysis and named entity recognition. These tasks generally don't require additional background knowledge.
+
+For more complex and knowledge-intensive tasks, it's possible to build a language model-based system that accesses external knowledge sources to complete tasks. This enables more factual consistency, improves reliability of the generated responses, and helps to mitigate the problem of "hallucination".
+
+
 
 ### 8. Automatic Reasoning and Tool-use
 
@@ -207,15 +244,24 @@ The Kermode bear is a unique and special animal that is found in the coastal reg
 ## 4. RESSOURCES
 
 **Other**
+
+ChatGPT Prompt Engineering for Developers
+https://www.datacamp.com/courses/chatgpt-prompt-engineering-for-developers
+
+The ChatGPT Prompt Book - LifeArchitect.ai - Rev 6
+
+https://docs.google.com/presentation/d/17b_ocq-GL5lhV_bYSShzUgxL02mtWDoiw9xEroJ5m3Q/edit#slide=id.g1b8e0b333f6_0_257
+
+Prompt-engineering tag on GitHub
+
+https://github.com/topics/prompt-engineering
+
+Use cases from langchain.com
+
+https://python.langchain.com/docs/use_cases
+
 - https://arxiv.org/pdf/2312.16171v1.pdf
 - http://pretrain.nlpedia.ai/
 - https://github.com/openai/openai-cookbook
 - https://learnprompting.org/docs/intro
-
-- https://www.datacamp.com/courses/chatgpt-prompt-engineering-for-developers
-
-The ChatGPT Prompt Book - LifeArchitect.ai - Rev 6
-- https://docs.google.com/presentation/d/17b_ocq-GL5lhV_bYSShzUgxL02mtWDoiw9xEroJ5m3Q/edit#slide=id.g1b8e0b333f6_0_257
-
-
 
