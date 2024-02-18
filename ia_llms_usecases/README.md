@@ -1,6 +1,9 @@
 # dera-usecases
 
-A quick feedback post on 2 easy usecases + an attempt on "Webapp + API".
+**A quick feedback post, realesed at https://flaven.fr/, on 2 easy usecases + an attempt on "Webapp + API".**
+
+
+
 
 - `usecase_1_sentiment_analysis`: A POC on sentiment analysis on comments.
 
