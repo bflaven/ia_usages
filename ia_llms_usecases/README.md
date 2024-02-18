@@ -1,6 +1,6 @@
 # dera-usecases
 
-**A quick feedback post, realesed at https://flaven.fr/, on 2 easy usecases + an attempt on "Webapp + API".**
+**A quick feedback post, released at https://flaven.fr/, on 2 easy use cases + an attempt on "Webapp + API" with FastAPI and Streamlit**
 
 
 
