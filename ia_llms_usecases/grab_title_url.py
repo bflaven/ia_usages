@@ -30,7 +30,7 @@ python -m pip install beautifulsoup4
 python -m pip install requests
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_llms_usecases/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_llms_usecases/
 
 # LAUNCH the file
 python grab_title_url.py

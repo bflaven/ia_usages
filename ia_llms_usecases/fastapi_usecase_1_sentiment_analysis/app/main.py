@@ -24,11 +24,7 @@ pip install -r requirements.txt
 
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_llms_usecases/fastapi_usecase_1_sentiment_analysis/
-
-
-
-
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_llms_usecases/fastapi_usecase_1_sentiment_analysis
 
 [install]
 # for ML

@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 
 # [path]
-cd /Users/brunoflaven/Documents/02_copy/DERA_Ghislain_USECASES/dera-usecases/usecase_1_sentiment_analysis
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_llms_usecases/usecase_1_sentiment_analysis
 
 # LAUNCH the file
 python 003_merge_csv_files.py

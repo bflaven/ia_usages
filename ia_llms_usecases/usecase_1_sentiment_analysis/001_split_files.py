@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_llms_usecases/usecase_1_sentiment_analysis/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_llms_usecases/usecase_1_sentiment_analysis
 
 # LAUNCH the file
 python 001_split_files.py

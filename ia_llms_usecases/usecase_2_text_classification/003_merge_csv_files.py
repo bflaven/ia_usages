@@ -23,7 +23,7 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_llms_usecases/usecase_2_text_classification/
+cd cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_llms_usecases/usecase_2_text_classification/
 
 # LAUNCH the file
 python 003_merge_csv_files.py
