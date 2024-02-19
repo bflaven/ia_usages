@@ -92,9 +92,10 @@ import plotly.graph_objs as go
 # @st.cache_data
 def load_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows)
-    lowercase = lambda x: str(x).lower()
-    data.rename(lowercase, axis='columns', inplace=True)
-    data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
+    # lowercase = lambda x: str(x).lower()
+    # data.rename(lowercase, axis='columns', inplace=True)
+    # data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
+    
     return data
 
 # @st.cache(ttl=60*60*12, allow_output_mutation=True)
@@ -118,8 +119,8 @@ tab1, tab2, tab3 = st.tabs(["Source", "API", "Result"])
 with tab1:
     st.header("Source")
 
-    DATE_COLUMN = 'date'
-    DATA_URL = ('data_source/source_quintly_commentaires_0.csv')
+    # DATE_COLUMN = 'ProductId'
+    DATA_URL = ('data_source/sentiment_analysis_reviews_0.csv')
 
     # Create a text element and let the reader know the data is loading.
     data_load_state = st.text('Loading data...')
@@ -239,7 +240,7 @@ See at https://huggingface.co/cmarkea/distilcamembert-base-sentiment
 with tab3:
     st.header("Result")
 
-    DATA_URL_RESULT = ('data_destination/full_quintly_commentaires_sentiment_analysis_1.csv')
+    DATA_URL_RESULT = ('data_destination/full_sentiment_analysis_reviews_sample_analysis_1.csv')
 
 
     # "dim1","dim2","message"
