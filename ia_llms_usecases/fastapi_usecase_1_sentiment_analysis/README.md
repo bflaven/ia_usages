@@ -1,14 +1,13 @@
 # fastapi_usecase_1_sentiment_analysis
 
-- usecase_1 (IA-38) sentiment analysis des comments (usecase_1_sentiment_analysis)
+- usecase_1 comments sentiment analysis (usecase_1_sentiment_analysis)
 
-- **Source :** Quintly Commentaires (1).csv, sample de commentaires (15 000).
-- **Objectif :** Donner un sentiment analysis sur l'ensemble de ces commentaires.
-- **Négatif / positif:**  pronostic via ML sur la nature du commentaire**
+- **Source :** sentiment_analysis_reviews_0.csv, sample de commentaires (1001).
+- **Objective :** Give a sentiment analysis on all of these comments.
+- **Negative/positive:**  prediction via ML on the nature of the comment**
 
 
-**To convert the project into a deployable app, take the example `001_fmm_fastapi_poc` in ` https://github.com/FranceMediasMonde/den-ia/tree/main/001_fmm_fastapi_poc`**
-
+**To convert the project into a deployable app**
 **Here are the requirements to manipulate locally the file**
 
 
@@ -52,7 +51,7 @@ python -m pip install streamlit requests
 
 
 # [path]
-cd /Users/brunoflaven/Documents/02_copy/DERA_Ghislain_USECASES/fastapi_usecase_1_sentiment_analysis
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_llms_usecases/fastapi_usecase_1_sentiment_analysis/
 
 # LAUNCH THE API
 uvicorn app.main:app --reload
@@ -222,30 +221,30 @@ score is the porbability for the highste label
 
 
 
---- model
+--- prompt_model
 I want you to act as a data scientist coding in R. Given a dataframe {dataframe name} containing the columns {column names} Use ggplot2 to plot a {chart type and requirement}.
 
---- example_0
+--- prompt_example_0
 I want you to act as a data scientist coding in R. Given a dataframe 'gapminder' containing the columns 'country', 'gdp', 'year'. Use ggplot2 to plot a 'a line chart of GDP against the year of each country'.
 
---- example_1
+--- prompt_example_1
 I want you to act as a data scientist coding in Python for Streamlit. Given a dataframe named "result". The result is obtained by readinding a csv file named "full_quintly_commentaires_sentiment_analysis_1.csv" containing the columns "date,source,message,label,score". Use Plotly to plot a 'a line chart of label against the year of each score'.
 
---- example_2
+--- prompt_example_2
 I want you to act as a data scientist coding in Python for Streamlit. Given a dataframe named "result". The result is obtained by readinding a csv file named "full_quintly_commentaires_sentiment_analysis_1.csv" containing the columns "date,source,message,label,score". Use Plotly to plot a 'scatter' where you can see both label and score.
 
 
---- example_3
+--- prompt_example_3
 I want you to act as a data scientist coding in Python for Streamlit. Given a dataframe named "result". The result is obtained by readinding a csv file named "full_quintly_commentaires_sentiment_analysis_1.csv" containing the columns "date,source,message,label,score". Use Plotly to plot a 'scatter' where you can see both label and score. On the Y axis order the label increasing from 1 to 5 stars.
 
---- example_4
+--- prompt_example_4
 What are the different values possible for the following attribute 'barmode' in command 'fig = px.bar(result, x='score', y='label', color='score', barmode='group')'
 
 'group': This places bars of the same x value next to each other, creating a grouped bar chart where each category has its own set of bars.
 
 'stack': This stacks bars of the same x value on top of each other, creating a stacked bar chart. Each bar represents the total sum of values for that x value.
 
---- example_5
+--- prompt_example_5
 In python, for streamlit, give a different command to print a scatter where the score are between 0 to 1 on the X axis.
 
 fig = px.scatter(
@@ -266,29 +265,29 @@ If the values are like for instance '0.3923925757408142,0.2663969397544861,0.247
 
 
 
---- model
+--- prompt_model
 I want you to act as a data scientist coding in R. Given a dataframe {dataframe name} containing the columns {column names}. Use ggplot2 to plot a pair plot that shows the relationship of one variable against another.
 
 
---- model
+--- prompt_model
 I want you to act as a data scientist coding in R. Given a dataframe 
 {dataframe name} containing the columns {column names}, use ggplot2 to plot a {chart type} the relationship between {variables}. {Insert annotation and formatting requirements}
 
---- model
+--- prompt_model
 I want you to act as a data scientist coding in R. Given a dataframe {dataframe name} containing the columns {column names}, use ggplot2 to to plot a {chart type} the relationship between {variables}. Change the color theme to match that of {theme}
 
---- model
+--- prompt_model
 I want you to act as a data scientist coding in Python. Given a dataframe 
 {dataframe name} containing the columns {column names} Use matplotlib to plot a {chart type and requirement}.
 
---- model
+--- prompt_model
 I want you to act as a data scientist coding in Python. Given a dataframe {dataframe name} containing the columns {column names}. Use matplotlib to plot a pair plot that shows the relationship of one variable against another.
 
---- model
+--- prompt_model
 I want you to act as a data scientist coding in Python. Given a dataframe 
 {dataframe name} containing the columns {column names}, use matplotlib to to plot a {chart type} the relationship between {variables}. {Insert annotation and formatting requirements}
 
---- model
+--- prompt_model
 I want you to act as a data scientist coding in Python. Given a dataframe {dataframe name} containing the columns {column names}, use matplotlib to to plot a {chart type} the relationship between {variables}. Change the color theme to match that of {theme} Plotly
 
 

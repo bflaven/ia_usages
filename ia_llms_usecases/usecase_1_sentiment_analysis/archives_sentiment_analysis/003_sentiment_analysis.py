@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 
 # [path]
-cd /Users/brunoflaven/Documents/02_copy/DERA_Ghislain_USECASES/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_llms_usecases/usecase_1_sentiment_analysis/archives_sentiment_analysis/
 
 # LAUNCH the file
 python 003_sentiment_analysis.py

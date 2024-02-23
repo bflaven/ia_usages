@@ -1,16 +1,16 @@
 # usecase_1_sentiment_analysis
 
-- usecase_1 (IA-38) sentiment analysis des comments (usecase_1_sentiment_analysis)
+- usecase_1 comments sentiment analysis (usecase_1_sentiment_analysis)
 
-- **Source :** Quintly Commentaires (1).csv, sample de commentaires (15 000).
-- **Objectif :** Donner un sentiment analysis sur l'ensemble de ces commentaires.
-- **Négatif / positif:**  pronostic via ML sur la nature du commentaire**
-
+- **Source :** sentiment_analysis_reviews_0.csv, sample de commentaires (1001).
+- **Objective :** Give a sentiment analysis on all of these comments.
+- **Negative/positive:**  prediction via ML on the nature of the comment**
+- 
 ## HOW-TO
 
-Il faut gérer son environnement de développement en Python je le fais à l'aide d’anaconda voir ci-dessous pour les commandes.
+You have to manage your development environment in Python I do it using anaconda see below for the commands.
 
-Les commandes sont en commentaire dans les fichiers python 
+Commands are commented out in python files
 
 ```bash
 001_split_files.py
@@ -79,12 +79,12 @@ The dataset comprises 204,993 reviews for training and 4,999 reviews for the tes
 """
 ```
 
-Plus difficile de faire fonctionner le tout dans un jupyter notebook mais voici quelques éléments pour commencer dans `0_notebook_sentiment _analysis.ipynb`
+Harder to get it all working in a jupyter notebook but here are some things to get started in `0_notebook_sentiment _analysis.ipynb`
 
 ```bash
 ## to launch the jupyter notebook
 # Go to path
-cd /Users/brunoflaven/Documents/02_copy/DERA_Ghislain_USECASES/dera-usecases/usecase_1_sentiment_analysis
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_llms_usecases/usecase_1_sentiment_analysis/
 
 # In base launch the specific sentiment_analysis with this command
 python -m ipykernel install --user --name=sentiment_analysis
