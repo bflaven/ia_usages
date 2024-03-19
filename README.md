@@ -49,7 +49,8 @@
 
 
 # go to the directory
-cd /Users/brunoflaven/Documents/03_git/BlogArticlesExamples/
+cd /Users/brunoflaven/Documents/03_git/ia_usages
+
 
 # create the directory
 git remote add origin streamlit-sweetviz-pandas-profiling-eda-made-easy
@@ -74,6 +75,7 @@ git commit -am "add to .svg the Musk\'s Favorite Letter X"
 git commit -am "add .gitignore"
 git commit -am "add docker files"
 git commit -am "update readme"
+git commit -am "add some code in grammar_correction_language_tool_python"
 
 # push to github if your branch on github is master
 # git push origin master
