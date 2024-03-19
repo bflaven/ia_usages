@@ -1,5 +1,6 @@
 # ia_usages
 
+
 *Using the french acronym "Intelligence Artificielle" (IA) instead of the english one "Artificial intelligence" (AI) for the directory name.*
 
 
@@ -72,7 +73,7 @@ git commit -am "add files and update readme"
 git commit -am "add to .svg the Musk\'s Favorite Letter X"
 git commit -am "add .gitignore"
 git commit -am "add docker files"
-
+git commit -am "update readme"
 
 # push to github if your branch on github is master
 # git push origin master
