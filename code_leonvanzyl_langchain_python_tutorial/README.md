@@ -1,6 +1,6 @@
 
 
-**A bunch of ressources and code on  FLOWISEAI, RAG with Langchain + Ollama + Streamlit, MISTRAL...**
+**This is pieces of working elements. A bunch of ressources and code on  FLOWISEAI, RAG with Langchain + Ollama + Streamlit, MISTRAL...**
 
 
 ## TRY FLOWISE
