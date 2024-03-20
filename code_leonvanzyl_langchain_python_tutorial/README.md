@@ -66,7 +66,6 @@ curl http://localhost:11434/api/generate -d '{
 - Build your own RAG and run it locally: Langchain + Ollama + Streamlit (idem to alros_rag_python): https://blog.duy-huynh.com/build-your-own-rag-and-run-them-locally/
 - https://github.com/jacttp/simpleRAG
 - https://github.com/vndee/local-rag-example
-- https://github.com/vndee/local-rag-example.git ollama_pdfchat_streamlit_local_rag_example_vndee
 - Building a Local PDF Chat Application with Mistral 7B LLM, Langchain, Ollama, and Streamlit
   + Post: https://medium.com/@harjot802/building-a-local-pdf-chat-application-with-mistral-7b-llm-langchain-ollama-and-streamlit-67b314fbab57
   + Code: https://github.com/SonicWarrior1/pdfchat
