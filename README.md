@@ -80,6 +80,8 @@ git commit -am "add some code in code_grammar_correction_language_tool_python"
 
 git commit -am "add some code in code_leonvanzyl_langchain_python_tutorial and code_grammar_correction_language_tool_python"
 
+git commit -am "move some code to ia_usages_code_depot"
+
 # push to github if your branch on github is master
 # git push origin master
 git push
