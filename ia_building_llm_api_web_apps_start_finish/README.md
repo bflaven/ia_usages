@@ -1,6 +1,4 @@
-# webapp_api_fmm_ia
-
-
+# ia_building_llm_api_web_apps_start_finish
 
 # INTRO
 **This time no code, you can find the prompts at https://github.com/bflaven/ia_usages_code_depot/tree/main/prompts/prompts_webapp_api_fmm_ia**
@@ -19,9 +17,9 @@ Following on from previous POCS, further integration of the “Webapp + API + LL
 *Illustration simplifiée de l'écosystème IA possible*
 
 
-# INTRO
+# PROJECT SCOPE
 
-**In french, below, extracted from the orignal README of the project. I gave a descriptions for each functionalities written for the purpose of the project.**
+**In French, below, extracted from the orignal README of the project. I gave a descriptions for each functionalities written for the purpose of the project.**
 
 
 ## 1. Fonctionnalités implémentées
@@ -153,7 +151,7 @@ https://huggingface.co/facebook/bart-large-cnn
 #### FONCTIONNALITÉ #6 Social
 Reconditionnement du contenu dans un format spécifique pour les RS : Sur la base d'un texte, génération d'un tweet de 140 caractères "SMO friendly" avec une proposition de 5 hashtags issus du texte. Fonctionnalité disponible via un LMM (Mistral)
 
-Cette fonctionnalité utilise véritablement un LLM via des prompts. Le LLM utilisée est Mistral. On pourrait utiliser le LMM ChatGPT, mais Mistral est une alternative française intéressante qui assure la confidentialité et la quasi-gratuité à FMM.
+Cette fonctionnalité utilise véritablement un LLM via des prompts. Le LLM utilisée est Mistral. On pourrait utiliser le LMM ChatGPT, mais Mistral est une alternative française intéressante qui assure la confidentialité et la quasi-gratuité.
 
 **Mistral 7B in short**
 
