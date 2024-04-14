@@ -36,6 +36,11 @@
 10. A small Guide to Harnessing the Power of Open Interpreter and Unlocking Productivity with a ChatGPT-Like Terminal Interface
 [https://wp.me/p3Vuhl-3jh](https://wp.me/p3Vuhl-3jh)
 
+
+11. Transform Your Ideas into Reality: Develop an Advanced LLM AI App with Mistral and ChatGPT’s Expert Guidance and Comprehensive Prompts
+[https://wp.me/p3Vuhl-3k2](https://wp.me/p3Vuhl-3k2)
+
+
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
 
