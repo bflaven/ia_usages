@@ -14,7 +14,8 @@ Following on from previous POCS, further integration of the “Webapp + API + LL
 
 
 ![](workflow_webapp_api_llm_4_small.png)
-*Illustration simplifiée de l'écosystème IA possible*
+
+*Simplified illustration of the possible AI ecosystem*
 
 
 # PROJECT SCOPE
