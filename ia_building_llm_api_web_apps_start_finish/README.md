@@ -2,9 +2,8 @@
 
 
 
-This time no code, you can find the prompts at https://github.com/bflaven/ia_usages_code_depot/tree/main/prompts/prompts_webapp_api_fmm_ia
-
-
+# INTRO
+**This time no code, you can find the prompts at https://github.com/bflaven/ia_usages_code_depot/tree/main/prompts/prompts_webapp_api_fmm_ia**
 
 
 Following on from previous POCS, further integration of the “Webapp + API + LLM” system in order to experiment with the uses of AI.
@@ -20,6 +19,7 @@ Following on from previous POCS, further integration of the “Webapp + API + LL
 *Illustration simplifiée de l'écosystème IA possible*
 
 
+# INTRO
 
 **In french, below, extracted from the orignal README of the project. I gave a descriptions for each functionalities written for the purpose of the project.**
 
