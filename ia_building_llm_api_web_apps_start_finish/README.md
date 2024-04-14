@@ -149,7 +149,7 @@ https://huggingface.co/facebook/bart-large-cnn
 * Il existe deux autres points de terminaison (endpoint) pour accéder à d'autres fonctions possibles de résumé `/summary/bart_conditional_generation` et `/summary/ktrain_transformer_summarizer` mais qui ne sont pas branchés sur la Webapp.
                 
 #### FONCTIONNALITÉ #6 Social
-Reconditionnement du contenu dans un format spécifique pour les RS : Sur la base d'un texte, génération d'un tweet de 140 caractères "SMO friendly" avec une proposition de 5 hashtags issus du texte. Fonctionnalité disponible via un LMM (Mistral)
+Reconditionnement du contenu dans un format spécifique pour les Réseaux Sociaux : Sur la base d'un texte, génération d'un tweet de 140 caractères "SMO friendly" avec une proposition de 5 hashtags issus du texte. Fonctionnalité disponible via un LMM (Mistral)
 
 Cette fonctionnalité utilise véritablement un LLM via des prompts. Le LLM utilisée est Mistral. On pourrait utiliser le LMM ChatGPT, mais Mistral est une alternative française intéressante qui assure la confidentialité et la quasi-gratuité.
 
