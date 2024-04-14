@@ -1,0 +1,179 @@
+! A. SOURCE
+
++ Objectif: Demo en local de la suite "Webapp + API + LLM"
+
+--- Dans la continuité des POCS précédents, une intégration plus poussée du dispositif "Webapp + API + LLM" afin d'expérimenter les mots-clés "Acculturer / Apprivoiser / Utiliser" avec les membres du groupe IA.
+--- Dans ce dispositif "Webapp + API + LLM", Mistral est utilisé comme LLM , LangChain et Ollama comme framework pour requêter le LLM, FastAPI comme framework pour créer l'API et Streamlit comme framework pour créer l'application web.
+
+- Path (local)
+cd /Users/brunoflaven/Documents/02_copy/fmm_USECASES/_webapp_api_fmm_ia/007_webapp_api_fmm_ia/
+
+- list the envs
+conda info --envs
+
+- deactivate env
+conda deactivate
+
+! B. EXAMPLES
+
+- CONSOLE_SCREEN_1 (fastapi)
+# GO TO DIR
+cd /Users/brunoflaven/Documents/02_copy/fmm_USECASES/_webapp_api_fmm_ia/007_webapp_api_fmm_ia
+
+# activate the env
+source activate fmm_fastapi_poc
+
+# LAUNCH THE API
+uvicorn api:app --reload
+
+- CONSOLE_SCREEN_2 (streamlit)
+# GO TO DIR
+cd /Users/brunoflaven/Documents/02_copy/fmm_USECASES/_webapp_api_fmm_ia/007_webapp_api_fmm_ia
+
+# activate the env
+source activate fmm_fastapi_poc
+
+# LAUNCH THE WEBAPP
+streamlit run ux.py
+
+- CONSOLE_SCREEN_3 (ollama)
+
+# List LLMS
+ollama list
+
+
+
+
+! B. DIRECTORIES ON GITHUB
+Source: https://github.com/bflaven/ia_usages
+
+! C. TOOLS & ENVIRONMENT
+
+- Tools to create and manage of virtual environments:
+
+--- ANACONDA
+https://www.anaconda.com/
+
+--- PYTHON-POETRY
+https://python-poetry.org/
+
+--- VENV
+https://docs.python.org/3/library/venv.html
+
+
+--- fastapi
+https://fastapi.tiangolo.com/
+
+--- streamlit
+https://streamlit.io/
+
+--- ollama.ai
+https://ollama.ai/
+
+! D. ENVIRONMENT
+
+
+--- MANAGE ENVIRONMENT ANACONDA
+[env]
+# Conda Environment
+conda create --name fmm_fastapi_poc python=3.9.13
+conda info --envs
+source activate fmm_fastapi_poc
+conda deactivate
+
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+
+
+# update conda 
+conda update -n base -c defaults conda
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
+
+
+[install]
+# for ML
+python -m pip install transformers 
+python -m pip install pyarrow
+python -m pip install pandas
+python -m pip install numpy
+python -m pip install tensorflow
+python -m pip install sentencepiece
+python -m pip install torchvision 
+
+# all in one plus spellchecker
+python -m pip install transformers pyarrow pandas numpy tensorflow sentencepiece language-tool-python
+
+
+# for API
+python -m pip install fastapi uvicorn 
+python -m pip install fastapi transformers
+
+# for UX
+python -m pip install streamlit requests
+
+# for search
+pip install ktrain 
+pip install tensorflow 
+
+# for audio
+pip install whisper
+pip install faster_whisper
+
+# [path]
+cd /Users/brunoflaven/Documents/02_copy/fmm_USECASES/_webapp_api_fmm_ia/006_webapp_api_fmm_ia
+
+# LAUNCH THE API
+uvicorn api:app --reload
+
+# LAUNCH THE WEBAPP
+streamlit run ux.py
+
+# LAUNCH THE LLM
+ollama serve
+
+
+# local
+http://localhost:8000
+http://127.0.0.1:8000
+
+# docker
+http://localhost
+http://0.0.0.0:80
+
+--- COMMANDS FOR OLLAMA
+
+# To run and chat with Llama 2
+ollama run llama2
+ollama run llama2-uncensored
+ollama run orca-mini
+
+
+# remove a model
+ollama rm llama2
+ollama rm orca-mini
+ollama rm mistral
+ollama rm falcon:7b
+ollama rm mistral:text
+ollama rm llama2:latest
+ollama rm orca-mini:latest
+
+# list the model
+ollama list
+
+# when you are in the model you can use
+>>> /?
+>>> /list
+>>> /set verbose
+
+# to get out from the model
+/exit
+
+
+
+
+

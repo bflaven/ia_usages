@@ -53,7 +53,7 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages
 
 
 # create the directory
-git remote add origin streamlit-sweetviz-pandas-profiling-eda-made-easy
+git remote add origin fastapi_database
 
 # know your branch
 git branch
@@ -81,6 +81,10 @@ git commit -am "add some code in code_grammar_correction_language_tool_python"
 git commit -am "add some code in code_leonvanzyl_langchain_python_tutorial and code_grammar_correction_language_tool_python"
 
 git commit -am "move some code to ia_usages_code_depot"
+
+
+git commit -am "move some code to ia_building_llm_api_web_apps_start_finish"
+
 
 # push to github if your branch on github is master
 # git push origin master
