@@ -38,7 +38,7 @@ python -m pip install openai
 
 
 # [path]
-cd /Users/brunoflaven/Documents/02_copy/fmm_USECASES/pricing_mistral_chatgpt/using_nvidia_api/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ai_pricing_llm/using_nvidia_api/
 
 # LAUNCH the file
 python 001_nvidia_api_llama3-70b.py

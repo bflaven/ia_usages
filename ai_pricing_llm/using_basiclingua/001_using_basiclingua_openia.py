@@ -46,10 +46,16 @@ pip install emoji
 python -m pip install emoji
 
 # [path]
-cd /Users/brunoflaven/Documents/02_copy/fmm_USECASES/pricing_mistral_chatgpt/_using_basiclingua/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ai_pricing_llm/using_basiclingua/
+
 
 # LAUNCH the file
 python 001_using_basiclingua.py
+
+
+# source
+https://github.com/FareedKhan-dev/basiclingua-LLM-Based-NLP
+
 
 """
 ############## OPENAI LINGUA CLASS ##############

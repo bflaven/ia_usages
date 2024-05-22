@@ -40,14 +40,14 @@ python -m pip install openai
 
 
 # [path]
-cd /Users/brunoflaven/Documents/02_copy/fmm_USECASES/pricing_mistral_chatgpt/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ai_pricing_llm/using_basiclingua/
 
 # LAUNCH the file
-python nvidia_api_1.py
+python openia_basiclingua.py
 
 
 # source
-https://build.nvidia.com/explore/discover#llama3-70b
+# https://github.com/FareedKhan-dev/basiclingua-LLM-Based-NLP
 
 
 

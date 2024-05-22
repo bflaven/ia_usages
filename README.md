@@ -89,6 +89,7 @@ git commit -am "update readme"
 git commit -am "add ai_pricing_llm"
 git commit -am "update with files ai_pricing_llm"
 git commit -am "update readme"
+git commit -am "add files"
 
 # push to github if your branch on github is master
 # git push origin master

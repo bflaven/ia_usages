@@ -1,3 +1,6 @@
+# source
+# https://github.com/FareedKhan-dev/basiclingua-LLM-Based-NLP
+
 ######### IMPORTING LIBRARIES #########
 import google.generativeai as genai
 import re
