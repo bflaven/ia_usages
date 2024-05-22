@@ -41,6 +41,7 @@ python -m pip install openai
 # [path]
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ai_pricing_llm/using_nvidia_api/
 
+
 # LAUNCH the file
 python 002_nvidia_api_phi-3-mini.py
 

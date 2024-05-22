@@ -31,7 +31,8 @@ pip install llm_cost_estimation
 
 
 # [path]
-cd /Users/brunoflaven/Documents/02_copy/fmm_USECASES/pricing_mistral_chatgpt/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ai_pricing_llm/streamlit_app_mistral_cost_estimation/
+
 
 # LAUNCH the file
 streamlit run streamlit_app_mistral_cost_estimation_1.py

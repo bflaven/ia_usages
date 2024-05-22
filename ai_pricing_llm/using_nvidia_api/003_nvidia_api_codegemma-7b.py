@@ -42,6 +42,7 @@ python -m pip install openai
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ai_pricing_llm/using_nvidia_api/
 
 
+
 # LAUNCH the file
 python 003_nvidia_api_codegemma-7b.py
 
