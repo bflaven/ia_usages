@@ -24,7 +24,7 @@ pip install -r requirements.txt
 To complete
 
 # [path]
-cd /Users/brunoflaven/Documents/02_copy/fmm_USECASES/pricing_mistral_chatgpt/_ia_pricing_llm/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ai_pricing_llm/reduce_api_costs
 
 # launch the file
 python 002_reduce_api_costs.py

@@ -42,7 +42,7 @@ python -m pip install openai
 Cf https://bobbyhadz.com/blog/python-no-module-named-openai
 
 # [path]
-cd /Users/brunoflaven/Documents/02_copy/fmm_USECASES/pricing_mistral_chatgpt/_ia_pricing_llm/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ai_pricing_llm/reduce_api_costs
 
 # launch the file
 python 001_reduce_api_costs.py
