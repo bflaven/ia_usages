@@ -87,7 +87,7 @@ git commit -am "move some code to ia_usages_code_depot"
 git commit -am "move some code to ia_building_llm_api_web_apps_start_finish"
 git commit -am "update readme"
 git commit -am "add ai_pricing_llm"
-
+git commit -am "update with files ai_pricing_llm"
 
 # push to github if your branch on github is master
 # git push origin master
