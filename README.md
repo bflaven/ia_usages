@@ -91,6 +91,8 @@ git commit -am "update with files ai_pricing_llm"
 git commit -am "update readme"
 git commit -am "add files"
 git commit -am "update files"
+git commit -am "update prompts, starting and staring SEO concerns"
+
 
 # push to github if your branch on github is master
 # git push origin master
