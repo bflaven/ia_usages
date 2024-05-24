@@ -41,6 +41,11 @@
 [https://wp.me/p3Vuhl-3k2](https://wp.me/p3Vuhl-3k2)
 
 
+12. Unraveling the Cost of AI: The Hidden Expenses of API Keys and Pay-as-You-Go Pricing in AI-Based Products
+[https://wp.me/p3Vuhl-3kH](https://wp.me/p3Vuhl-3kH)
+
+
+
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
 
@@ -92,7 +97,7 @@ git commit -am "update readme"
 git commit -am "add files"
 git commit -am "update files"
 git commit -am "update prompts, starting and staring SEO concerns"
-
+git commit -am "update readme and files"
 
 # push to github if your branch on github is master
 # git push origin master

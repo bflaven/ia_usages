@@ -2,6 +2,8 @@
 
 **All files and directory described for this exploration on the LLM pricing system.**
 
+Check "Unraveling the Cost of AI: The Hidden Expenses of API Keys and Pay-as-You-Go Pricing in AI-Based Products" at https://wp.me/p3Vuhl-3kH
+
 - `_prompts`: all prompts used to create the files
 - `docs`: some screens captures on pricing especially for Mistral
 - `ia_pricing_llm`: the scripts from the post "Reduce Your OpenAI API Costs by 70%" at https://levelup.gitconnected.com/reduce-your-openai-api-costs-by-70-a9f123ce55a6
