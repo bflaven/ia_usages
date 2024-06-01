@@ -99,6 +99,8 @@ git commit -am "update files"
 git commit -am "update prompts, starting and staring SEO concerns"
 git commit -am "update readme and files"
 git commit -am "add files in ia_prompt_seo"
+git commit -am "update readme and files"
+
 # push to github if your branch on github is master
 # git push origin master
 git push
