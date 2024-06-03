@@ -24,10 +24,10 @@ pip install -r requirements.txt
 To complete
 
 # [path]
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_prompt_seo
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_prompt_seo/
 
 # launch the file
-python usecase_referent_seo_8.py
+python usecase_referent_seo_9.py
 
 
 

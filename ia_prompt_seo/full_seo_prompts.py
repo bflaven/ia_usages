@@ -38,12 +38,12 @@ As a SEO expert, can you help me identify high-volume and low-competition keywor
 
 ### 2. Group Keywords Based on Semantic Relevance
 "seo_other_group_keywords_semantic_relevance" = """
-As a SEO expert, I have a list of keywords related to '{user_input}'. Can you define a list of keywords in the same language as the post and group these keywords into categories based on their semantic relevance in the same language as the post?.
+As a SEO expert, I have a list of keywords related to '{user_input}'. Can you define a list of keywords in the same language as the post and group these keywords into categories based on their semantic relevance in the same language as the post?
 """
 
 ### 3. Create Topic Clusters
 "seo_other_create_topic_clusters" = """
-As a SEO expert, I want to create topic clusters for my post about '{user_input}'. Can you suggest main topics and subtopics that would form effective content clusters in the same language as the post??
+As a SEO expert, I want to create topic clusters for my post about '{user_input}'. Can you suggest main topics and subtopics that would form effective content clusters in the same language as the post?
  """
 
 ### 4. Generate Headline Ideas

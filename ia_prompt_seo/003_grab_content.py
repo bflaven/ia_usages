@@ -34,8 +34,7 @@ python -m pip install beautifulsoup4
 python -m pip install openai
 
 # [path]
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_prompt_seo
-
+cd /Users/brunoflaven/Documents/02_copy/fmm_USECASES/demo_seminaire_usecases/usecase_referent_seo
 
 # launch the file
 python 003_grab_content.py
