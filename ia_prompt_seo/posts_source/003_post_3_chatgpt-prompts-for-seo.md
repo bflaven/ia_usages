@@ -9,15 +9,12 @@ A ChatGPT prompt is a user-defined input or question designed to generate a spec
 For SEO, a ChatGPT Prompt is an instruction that guides ChatGPT in keyword research, content generation, and optimizing website elements for enhanced search visibility.
 
 
-
-
-
-
 ## Top 40 Best ChatGPT Prompts for SEO
 
 Here's how to prompt ChatGPT for all you search engine optimization tasks.
 
-1. Find related keywords
+**1. Find related keywords**
+
 I'm absolutely loving brainstorming some awesome keyword ideas!
 
 Prompt:
@@ -26,7 +23,8 @@ Identify 10 SEO keywords related to [topic].
 # e.g. Identify 10 SEO keywords related to yoga exercises.
 ```
 
-2. Find keywords related to product descriptions
+**2. Find keywords related to product descriptions**
+
 It's often best to take a gander at an existing product description:
 
 Prompt:
@@ -37,7 +35,8 @@ Create a list of 5 SEO keywords related to the following product description [pr
 
 Tip: We offer a free AI product description generator tool.
 
-3. Identify popular questions
+**3. Identify popular questions**
+
 Questions are like a gateway to the inner workings of the human brain!
 
 Prompt:
@@ -45,7 +44,8 @@ Prompt:
 Suggest a list of 5 popular questions related to [Keyword].
 ```
 
-4. Research keyword strategies
+**4. Research keyword strategies**
+
 AI will soon be a grandmaster of SEO, and its moves are always one step ahead of any junior SEO.
 
 Prompt:
@@ -57,7 +57,8 @@ Research the top 5 SEO keyword strategies for [topic].
 Also have a look at Joe Speiser's great ideas on how to get ChatGPT create a content marketing roadmap for you:
 
 
-5. Classify search intents
+**5. Classify search intents**
+
 Tables can be used to organize your search data.
 
 Prompt:
@@ -66,7 +67,8 @@ Classify the search intent (commercial, transactional or informational) for the 
 ```
 
 
-6. Cluster a list of keywords
+**6. Cluster a list of keywords**
+
 I got this brilliant idea from Aleyda Solis on Twitter!
 
 Prompt:
@@ -77,7 +79,8 @@ Cluster the following keywords (add a core topic for each group) based on their 
 Tip: Se many more of Aleyda's ChatGPT examples:
 Check https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/
 
-7. Suggest blog post titles related to keywords
+**7. Suggest blog post titles related to keywords**
+
 Writers block? More like writers rock, am I right?
 
 Prompt:
@@ -86,7 +89,8 @@ Suggest compelling blog post titles related to the following list of SEO keyword
 ```
 Tip: We also offer a free AI blog post title generator tool that you can use to create your titles.
 
-8. Create targeted blog post titles
+**8. Create targeted blog post titles**
+
 Tell the AI who your audience is!
 
 Prompt:
@@ -94,7 +98,8 @@ Prompt:
 Suggest 5 blog post title ideas for the keyword [keyword] targeted [audience].
 ```
 
-9. Write catchy blog post titles
+**9. Write catchy blog post titles**
+
 Boring titles are a surefire way to turn readers away.
 
 Prompt:
@@ -103,7 +108,8 @@ Make the blog post titled [title] more catchy.
 ```
 
 
-10. Get better click through rates
+**10. Get better click through rates**
+
 We need those clicks, don't we?
 
 Prompt:
@@ -111,7 +117,8 @@ Prompt:
 Write 3 examples of alternative blog post titles with higher CTR for [topic].
 ```
 
-11. Examples that contradict the dominant narrative
+**11. Examples that contradict the dominant narrative**
+
 @LinusEkenstam gave me the idea to ask ChatGPT to go against the current norm:
 
 Prompt:
@@ -124,7 +131,8 @@ See more great tips and tricks from @LinusEkenstam:
 
 
 
-12. Outline the key points of a blog post
+**12. Outline the key points of a blog post**
+
 Structure your content with subheadings:
 
 Prompt:
@@ -133,22 +141,23 @@ Outline the key points of a blog post about [topic].
 ```
 
 
+**13. Outline the main points**
 
-
-13. Outline the main points
 Prompt:
 ```bash
 Outline the main points of a comprehensive guide to [topic] for use in a blog post.
 ```
 
-14. Suggest subheadings
+**14. Suggest subheadings**
+
 Prompt:
 ```bash
 Write 7 subheadings for a blog post titled [title].
+```
 
 
+**15. Write a detailed outline**
 
-15. Write a detailed outline
 Prompt:
 ```bash
 Write a detailed outline for a blog post titled [title] with a 2-level heading structure.
@@ -156,14 +165,15 @@ Write a detailed outline for a blog post titled [title] with a 2-level heading s
 ```
 
 
-16. Write a benefit-focused intro
+**16. Write a benefit-focused intro**
 Prompt:
 ```bash
 Write a short introduction paragraph for the blog post titled [Title], start with a question, and focus on the benefit.
 
 ```
 
-17. Simplify the content
+**17. Simplify the content**
+
 Prompt:
 ```bash
 Paraphrase the content above to make it communicate to a child.
@@ -172,7 +182,8 @@ Paraphrase the content above to make it communicate to a child.
 
 
 
-18. Rewrite and optimize
+**18. Rewrite and optimize**
+
 Prompt:
 ```bash
 Rewrite the text above and include the following SEO keywords [Keyword 1, Keyword 2, Keyword 3]...
@@ -181,7 +192,8 @@ Rewrite the text above and include the following SEO keywords [Keyword 1, Keywor
 
 
 
-19. Write an expert answer
+**19. Write an expert answer**
+
 Prompt:
 ```bash
 Write a detailed expert answer to the question [question].
