@@ -1,9 +1,6 @@
 # ia_prompt_academy
 
-
 I wished I built a collection of resources to understand and learn the art of the prompt. It ends up finally with a randomly bulletproof prompts dictated by usage and used directly on the models (ChatGPT, Mistral, Phi-3, Llama, Codellama.... etc.)
-
-
 
 > In each directory from now on I add a `prompts` directory which contains all the prompts that accompany me in writing posts.
 
