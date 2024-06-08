@@ -1,2 +1,11 @@
 # ia_prompt_academy
-WIP on how-to master prompt...
+
+
+I wished I built a collection of resources to understand and learn the art of the prompt. It ends up finally with a randomly bulletproof prompts dictated by usage and used directly on the models (ChatGPT, Mistral, Phi-3, Llama, Codellama.... etc.)
+
+
+
+> In each directory from now on I add a `prompts` directory which contains all the prompts that accompany me in writing posts.
+
+**My model was this kind of stuff a cheatsheet for chatgpt**
+![A model cheatsheet for chatgpt](cheat_sheet-chatgpt-v0-yi71i3dbm6ua1.jpg)
