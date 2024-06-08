@@ -1,7 +1,7 @@
-# POST_3
+# Extract from POST_3
 
-Top 40 Best ChatGPT Prompts for SEO
-https://seo.ai/blog/chatgpt-prompts-for-seo
+- **Top 40 Best ChatGPT Prompts for SEO**
+- https://seo.ai/blog/chatgpt-prompts-for-seo
 
 ## What is a ChatGPT Prompt?
 A ChatGPT prompt is a user-defined input or question designed to generate a specific response or output from the ChatGPT language model.
@@ -202,7 +202,8 @@ Write a detailed expert answer to the question [question].
 
 
 
-20. Be more playful
+**20. Be more playful**
+
 Prompt:
 ```bash
 Rephrase the text above in a playful tone of voice.
@@ -211,7 +212,8 @@ Rephrase the text above in a playful tone of voice.
 
 
 
-21. Walk in your audience's shoes
+**21. Walk in your audience's shoes**
+
 This excellent little prompt idea comes from Rob Lennon and helps you understand your audience:
 
 Prompt:
@@ -225,7 +227,8 @@ Check out more inspiration from Rob here:
 
 
 
-22. Light up your text with metaphors
+**22. Light up your text with metaphors**
+
 This ChatGpt prompt is one of my absolute favorites!
 
 Prompt:
@@ -236,7 +239,8 @@ Write a funny metaphor about the following text:
 
 
 
-23. Quotes brings trust
+**23. Quotes brings trust**
+
 Prompt:
 ```bash
 Suggest a quote about the text above; talk to the emotions.
@@ -245,7 +249,8 @@ Suggest a quote about the text above; talk to the emotions.
 
 
 
-24. Provide examples that connects
+**24. Provide examples that connects**
+
 Prompt:
 ```bash
 Provide examples that connect the ideas of [topic].
@@ -254,7 +259,8 @@ Provide examples that connect the ideas of [topic].
 
 
 
-25. Summarize text
+**25. Summarize text**
+
 Prompts:
 ```bash
 Summarize the following content in 3 bullet points:
@@ -265,7 +271,8 @@ Summarize the following content in 3 bullet points:
 
 
 
-26. Write a list of benefits
+**26. Write a list of benefits**
+
 Prompt:
 ```bash
 Make a bullet list with benefits related to the above text.
@@ -274,7 +281,8 @@ Make a bullet list with benefits related to the above text.
 
 
 
-27. Persuades your audience to buy
+**27. Persuades your audience to buy**
+
 Prompt:
 ```bash
 Write a short paragraph that persuades [audience] to buy [product] and include the CTA: [CTA].
@@ -283,7 +291,8 @@ Write a short paragraph that persuades [audience] to buy [product] and include t
 
 
 
-28. Generate an FAQ
+**28. Generate an FAQ**
+
 Prompt:
 ```bash
 
@@ -297,7 +306,8 @@ Generate an FAQ of 5 questions based on the above content.
 
 
 
-29. Provide concise answers to questions
+**29. Provide concise answers to questions**
+
 Prompt:
 ```bash
 Suggest a list of [x] frequently asked questions related to [topic] and provide concise answers to each.
@@ -306,14 +316,16 @@ Suggest a list of [x] frequently asked questions related to [topic] and provide 
 
 
 
-30. Write a user-friendly meta description
+**30. Write a user-friendly meta description**
+
 Prompt:
 ```bash
 Suggest a meta description for the content above, make it user-friendly and with a call to action, include the keyword [keyword].
 ```
 Tip: You can also use our free meta description generator for this.
 
-31. Write a &lt;title&gt; tag
+**31. Write a &lt;title&gt; tag**
+
 Prompt:
 ```bash
 Write the HTML for the title tag [title tag].
@@ -322,7 +334,8 @@ Write the HTML for the title tag [title tag].
 
 
 
-32. Write a meta description tag
+**32. Write a meta description tag**
+
 Prompt:
 ```bash
 Write the HTML for the meta description [meta description].
@@ -331,7 +344,8 @@ Write the HTML for the meta description [meta description].
 
 
 
-33. Generate a robots.txt rule
+**33. Generate a robots.txt rule**
+
 Prompt:
 ```bash
 Generate a robots.txt directive to disallow access to the specified website directory [directory].
@@ -340,14 +354,16 @@ Generate a robots.txt directive to disallow access to the specified website dire
 
 
 
-34. Create an hreflang attribute example
+**34. Create an hreflang attribute example**
+
 Prompt:
 ```bash
 Write a code example for adding an hreflang attribute to a page.
 ```
 
 
-35. Specify an hreflang attribute
+**35. Specify an hreflang attribute**
+
 Prompt:
 ```bash
 Specify the hreflang attribute for the following languages and regions [languages and regions].
@@ -356,21 +372,21 @@ Specify the hreflang attribute for the following languages and regions [language
 
 
 
-36. Create an XML sitemap
+**36. Create an XML sitemap**
+
 Got this excellent prompt from Joe Hall.
 
 Prompt:
 ```bash
 Create a valid XML sitemap that includes the following URLs:
 ```
-
-
 Check out more of Joe Hall's prompts here:
 
 
 
 
-37. Write an outreach email in the tone of...
+**37. Write an outreach email in the tone of...**
+
 I got this cool idea from Matt Diggity:
 
 Prompt:
@@ -378,7 +394,8 @@ Prompt:
 Write an outreach email for link building (with subject line) in the tone of voice of [voice].
 ```
 
-38. Write ultra-short outreach emails
+**38. Write ultra-short outreach emails**
+
 Prompt:
 ```bash
 Write 3 examples of ultra-short 2-sentence outreach emails that only ask one curiosity-provoking question that connects to [free offer]. Include &lt;firstname and &lt;blog post title&gt;.
@@ -387,7 +404,8 @@ Write 3 examples of ultra-short 2-sentence outreach emails that only ask one cur
 
 
 
-39. Give an offer they can't refuse
+**39. Give an offer they can't refuse**
+
 Prompt:
 ```bash
 Write 3 examples of ultra-short 3-sentence outreach emails that give [free offer] in return for a mention of [our resource]. Include &lt;firstname and &lt;blog post title&gt;
@@ -396,7 +414,8 @@ Write 3 examples of ultra-short 3-sentence outreach emails that give [free offer
 
 
 
-40. Write a curiosity-provoking subject line
+**40. Write a curiosity-provoking subject line**
+
 Prompt:
 ```bash
 Write 2 examples of a 4-word curiosity-provoking subject line for the following email:...
