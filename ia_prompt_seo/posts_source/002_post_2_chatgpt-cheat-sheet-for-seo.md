@@ -17,7 +17,7 @@ Hey, I’m an SEO consultant, and I want you to help me brainstorm ideas for art
 ```
 
 
-2. Ask ChatGPT to Create an Outline 
+**2. Ask ChatGPT to Create an Outline**
 
 ChatGPT can help you create outlines for articles and video scripts by including all essential headings and subheadings with proper descriptions. 
 
@@ -33,7 +33,7 @@ Create an outline for a video about “Common SEO Mistakes and How to Avoid Them
 ```
 
 
-3. Ask ChatGPT to Generate SEO Title and Meta Description
+**3. Ask ChatGPT to Generate SEO Title and Meta Description**
 
 You can ask ChatGPT to generate compelling title tags and meta descriptions for your articles or blog posts. In this example, we’ve asked ChatGPT to create a meta description for a new article we’ve created.
 
@@ -62,7 +62,7 @@ Write a description for a YouTube video, "Best Resources to Learn SEO," with has
 ```
 
 
-4. Ask ChatGPT to Improve Copy
+**4. Ask ChatGPT to Improve Copy**
 
 ChatGPT can help you improve your copy by correcting grammar mistakes, such as spelling and punctuation errors. This helps you improve the readability of your copy. 
 
@@ -74,7 +74,7 @@ Search Engine Optimization (SEO) is a digital marketing strategy used to improve
 ```
 
 
-5. Ask ChatGPT to Summarize Articles
+**5. Ask ChatGPT to Summarize Articles**
 
 In no time at all, ChatGPT can provide a summary of any long article, helping you to understand the main ‘gist’ of it. 
 
@@ -85,7 +85,7 @@ https://hackr.io/blog/why-coders-are-turning-to-chatgpt
 ```
 
 
-6. Ask ChatGPT to Generate FAQs for a Website or Product
+**6. Ask ChatGPT to Generate FAQs for a Website or Product**
 
 You can use ChatGPT to generate frequently asked questions for a website, product, or blog post. Simply provide the details with the proper text prompt. 
 
@@ -95,7 +95,7 @@ I have a website offering SEO services. Generate frequently asked questions with
 ```
 
 
-7. Ask ChatGPT to Compose Emails 
+**7. Ask ChatGPT to Compose Emails**
 
 You can save significant time by asking ChatGPT to help you quickly compose professional emails. 
 
@@ -105,7 +105,7 @@ I have 6+ years of experience working as an SEO consultant with several reputed 
 ```
 
 
-8. Ask ChatGPT to Write Social Media Posts
+**8. Ask ChatGPT to Write Social Media Posts**
 
 ChatGPT can help you to generate engaging and catchy social media posts within seconds. 
 
@@ -121,7 +121,7 @@ Craft a social media post for the article: “Best SEO Practices”.
 ```
 
 
-9. Ask ChatGPT to Write Ad Copy 
+**9. Ask ChatGPT to Write Ad Copy**
 
 With the help of ChatGPT, creating ad copy now takes a matter of seconds. Simply provide the description. 
 
@@ -131,7 +131,7 @@ Create an Ad copy for my SEO services website.
 ```
 
 
-10. Ask ChatGPT to Write a Job Description 
+**10. Ask ChatGPT to Write a Job Description** 
 
 Creating a job description for any job role is now easy-peasy with ChatGPT. 
 
@@ -141,7 +141,7 @@ Generate a job description for Social Media Manager for an SEO Consultancy compa
 ```
 
 
-11. Ask ChatGPT to Generate CTAs
+**11. Ask ChatGPT to Generate CTAs**
 
 Call-to-actions (CTAs) are essential for your content or website. They should appeal to visitors and encourage them to take the desired action. ChatGPT can help you to generate clear, concise, and encouraging CTAs for your target audience. 
 
@@ -151,7 +151,7 @@ Generate some powerful CTAs (10 ideas) to encourage my audience to subscribe to 
 ```
 
 
-12. Ask ChatGPT to Paraphrase Content 
+**12. Ask ChatGPT to Paraphrase Content**
 
 If you want to reuse existing content, you can ask ChatGPT to paraphrase the original text to make it interesting and unique. 
 
@@ -161,7 +161,7 @@ Paraphrase the below text and make it unique:
 ```
 
 
-13. Ask ChatGPT to Write a Product Description 
+**13. Ask ChatGPT to Write a Product Description** 
 
 You can create compelling, clear, and concise product descriptions with ChatGPT, along with features, benefits, and specifications. 
 
@@ -170,7 +170,7 @@ Example prompt:
 Write the product description for Forerunner 955. 
 ```
 
-14. Ask ChatGPT to Generate Reference Links 
+**14. Ask ChatGPT to Generate Reference Links** 
 
 You can ask ChatGPT to provide you with reference links to curate your own article. 
 
