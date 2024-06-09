@@ -105,6 +105,9 @@ git commit -am "update .md files and do some french"
 git commit -am "add eisenhower_matrix files"
 git commit -am "update layout for readme"
 git commit -am "update ia_prompt_academy and add file"
+git commit -am "update directory name prompts_posts_source"
+
+
 
 # push to github if your branch on github is master
 # git push origin master
