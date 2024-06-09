@@ -277,14 +277,14 @@ You are a helpful and accurate translator. You have been provided with a source 
 
 --- 
 
-## 6. PROMPT DERA
+## 6. PROMPT DATA
 
-**Ces prompts sont uniquement à destination de la DERA. Ces prompts sont uniquement à destination de la DERA. Ils ont pas comme première vocation à fournir non une proposition éditoriale pour un journaliste mais  un traitement purement fonctionnel pour faciliter la compréhension d'éléments statistiques.**
+**Ces prompts sont uniquement à destination de la DATA. Ces prompts sont uniquement à destination de la DATA. Ils ont pas comme première vocation à fournir non une proposition éditoriale pour un journaliste mais  un traitement purement fonctionnel pour faciliter la compréhension d'éléments statistiques.**
 
 
 <!-- 006_dera_prompts.csv -->
 
-### PROMPT DERA #1
+### PROMPT DATA #1
 **Objectif:** 
 Proposer une catégorisation définie du contenu
 
@@ -294,7 +294,7 @@ Proposer une catégorisation définie du contenu
 Act as a highly intelligent news chatbot and classify the given news text into one of the following categories only: France, Europe, Africa, America, Asia-Pacific, Middle East, Sports, Economy, Technology, Culture, Environment. Do not code. Return only one word answer with only the category name that the given news text belongs to. In the output, return the result in a field named ""category_predicted:"" and return the comment in the field ""category_decision:"" in a python Dictionary. News text: '{content}'?
 ```
 
-### PROMPT DERA #2
+### PROMPT DATA #2
 **Objectif:** 
 Proposer une catégorisation libre du contenu
 
