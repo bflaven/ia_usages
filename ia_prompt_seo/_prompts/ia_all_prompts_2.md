@@ -6,7 +6,7 @@
 
 1. **Ces `Prompts` sont issus soit d'ateliers, soit de recherche, soit de création en fonction de cas d'usage précis... Ces `Prompts` constituent le socle de la `Prompt Academy`. Afin de faciliter la compréhension de chacun, si vous êtes familier de l'agilité et donc de la `User Story`. On peut convenir que le `Prompt` est très proche du concept de `User Story`. Le `Prompt` décrit une fonctionnalité qui va être exécutée par l'IA (Intelligence Artificielle).**
 
-2. **Il sagit de la totalité des prompts utilisés par le dispositif plus quelques ressources additionnelles.**
+2. **Il s'agit de la totalité des prompts utilisés par le dispositif plus quelques ressources additionnelles.**
 
 3. **Les principaux acronymes utilisés  et leurs définitions :** 
 	+ **SEO (Search Engine Optimization) :** Référencement naturel (optimisation pour les moteurs de recherche)
@@ -131,64 +131,64 @@ As an SEO and IA expert, could you please generate 10 engaging and SEO-friendly 
 
 ### PROMPT WORKSHOP SEO #2
 **Objectif:** 
-text
+Générer 10 URLs optimisées pour un contenu
 
-**Nom technique:** `name` 
+**Nom technique:** `seo_manage_url` 
 
 ```text
-Générer 10 URLs optimisées pour un contenu;seo_manage_url;As an SEO and Information Architecture (IA) expert, generate 10 SEO-friendly URLs for an online post about the topic given in the content ensuring to incorporate SEO best practices. The URLs should be in the same language as the post and should be compelling, relevant, and keyword-optimized. To ensure the output is correctly formatted, please provide each URL as a string within a Python dictionary object, with 'url' as the key. All of these dictionaries should then be included in a Python list object. Please replace 'url1', 'url2', and so on with the actual URLs you generate. Remember to use hyphens (-) to separate words in the URLs, and avoid using special characters or spaces. Output Format: [ {{"url": "The value of the url1"}}, {{"url": "The value of the url2"}}, {{"url": "The value of the url3"}}, {{"url": "The value of the url4"}}, {{"url": "The value of the url5"}}, {{"url": "The value of the url6"}}, {{"url": "The value of the url7"}}, {{"url": "The value of the url8"}}, {{"url": "The value of the url9"}}, {{"url": "The value of the url10"}}] Content: '{content}'
+As an SEO and Information Architecture (IA) expert, generate 10 SEO-friendly URLs for an online post about the topic given in the content ensuring to incorporate SEO best practices. The URLs should be in the same language as the post and should be compelling, relevant, and keyword-optimized. To ensure the output is correctly formatted, please provide each URL as a string within a Python dictionary object, with 'url' as the key. All of these dictionaries should then be included in a Python list object. Please replace 'url1', 'url2', and so on with the actual URLs you generate. Remember to use hyphens (-) to separate words in the URLs, and avoid using special characters or spaces. Output Format: [ {{"url": "The value of the url1"}}, {{"url": "The value of the url2"}}, {{"url": "The value of the url3"}}, {{"url": "The value of the url4"}}, {{"url": "The value of the url5"}}, {{"url": "The value of the url6"}}, {{"url": "The value of the url7"}}, {{"url": "The value of the url8"}}, {{"url": "The value of the url9"}}, {{"url": "The value of the url10"}}] Content: '{content}'
 ```
 
 ### PROMPT WORKSHOP SEO #3
 **Objectif:** 
-text
+Générer une meta-description pour un contenu
 
-**Nom technique:** `name`
+**Nom technique:** `seo_manage_meta_description`
 
 ```text
-Générer une meta-description pour un contenu;seo_manage_meta_description;As an SEO and Information Architecture (IA) expert, craft a compelling and concise meta description for an online post about the topic given in the content ensuring to incorporate SEO best practices. The meta description should be in the same language as the post, and it should accurately summarize the content of the post while also enticing users to click through to the post. The meta description should be between 150 and 160 characters in length, including spaces. Please replace 'meta description text' with the actual meta description you generate. Be sure to enclose the meta description in quotation marks and to check that it meets the character length requirements. Output Format: [{{"meta_description": "meta description text"}}] Content: '{content}'
+As an SEO and Information Architecture (IA) expert, craft a compelling and concise meta description for an online post about the topic given in the content ensuring to incorporate SEO best practices. The meta description should be in the same language as the post, and it should accurately summarize the content of the post while also enticing users to click through to the post. The meta description should be between 150 and 160 characters in length, including spaces. Please replace 'meta description text' with the actual meta description you generate. Be sure to enclose the meta description in quotation marks and to check that it meets the character length requirements. Output Format: [{{"meta_description": "meta description text"}}] Content: '{content}'
 
 ```
 
 ### PROMPT WORKSHOP SEO #4
 **Objectif:** 
-text
+Générer 10 étiquettes de lien (link labels) pour un contenu
 
-**Nom technique:** `name`
+**Nom technique:** `seo_manage_label_internal_link`
 
 ```text
-Générer 10 étiquettes de lien (link labels) pour un contenu;seo_manage_label_internal_link;As an SEO and Information Architecture (IA) expert, generate 10 semantically meaningful and editorial-friendly link labels for an online post about the topic given in the content ensuring to incorporate SEO best practices. The link labels should be in the same language as the post and should accurately describe the content that the link will point to. To ensure the output is correctly formatted, please provide each link label as a string within a Python dictionary object, with 'linklabel' as the key. All of these dictionaries should then be included in a Python list object. Please replace 'label1', 'label2', and so on with the actual link labels you generate. Remember to use descriptive and concise language for the link labels, and to avoid using generic phrases like 'click here' or 'read more'. Output Format: [ {{"linklabel": "label1"}},{{"linklabel": "label2"}}, {{"linklabel": "label3"}}, {{"linklabel": "label4"}}, {{"linklabel": "label5"}}, {{"linklabel": "label6"}}, {{"linklabel": "label7"}}, {{"linklabel": "label8"}}, {{"linklabel": "label9"}}, {{"linklabel": "label10"}} ] Content: '{content}'
+As an SEO and Information Architecture (IA) expert, generate 10 semantically meaningful and editorial-friendly link labels for an online post about the topic given in the content ensuring to incorporate SEO best practices. The link labels should be in the same language as the post and should accurately describe the content that the link will point to. To ensure the output is correctly formatted, please provide each link label as a string within a Python dictionary object, with 'linklabel' as the key. All of these dictionaries should then be included in a Python list object. Please replace 'label1', 'label2', and so on with the actual link labels you generate. Remember to use descriptive and concise language for the link labels, and to avoid using generic phrases like 'click here' or 'read more'. Output Format: [ {{"linklabel": "label1"}},{{"linklabel": "label2"}}, {{"linklabel": "label3"}}, {{"linklabel": "label4"}}, {{"linklabel": "label5"}}, {{"linklabel": "label6"}}, {{"linklabel": "label7"}}, {{"linklabel": "label8"}}, {{"linklabel": "label9"}}, {{"linklabel": "label10"}} ] Content: '{content}'
 ```
 
 ### PROMPT WORKSHOP SEO #5
 **Objectif:** 
-text
+Effectuer une reconnaissance d'entités nommées pour un contenu
 
-**Nom technique:** `name`
+**Nom technique:** `seo_manage_ner_tags`
 
 ```text
-Effectuer une reconnaissance d'entités nommées pour un contenu;seo_manage_ner_tags;Given the input text: '{content}', perform Named Entity Recognition (NER) detection on it.The following NER tags should be used: FAC, CARDINAL, NUMBER, DEMONYM, QUANTITY, TITLE, PHONE_NUMBER, NATIONAL, JOB, PERSON, LOC, NORP, TIME, CITY, EMAIL, GPE, LANGUAGE, PRODUCT, ZIP_CODE, ADDRESS, MONEY, ORDINAL, DATE, EVENT, CRIMINAL_CHARGE, STATE_OR_PROVINCE, RELIGION, DURATION, WORK_OF_ART, PERCENT, CAUSE_OF_DEATH, COUNTRY, ORG, LAW, NAME, COUNTRY, RELIGION, TIME. The answer must be in the format tag:value, where 'tag' is the NER tag and 'value' is the corresponding entity value. Each tag-value pair should be included in a JSON dictionary object, and all of these dictionaries should then be included in a JSON list object. Output Format: [ {{"tag": "tag1", "value": "value1"}},{{"tag": "tag2", "value": "value2"}}, {{"tag": "tag3", "value": "value3"}}, ...]Please replace 'tag1', 'tag2', and so on with the actual NER tags you detect, and 'value1', 'value2', and so on with the corresponding entity values.Note: If no entities are detected in the input text, please return an empty list in JSON format: [].
+Given the input text: '{content}', perform Named Entity Recognition (NER) detection on it.The following NER tags should be used: FAC, CARDINAL, NUMBER, DEMONYM, QUANTITY, TITLE, PHONE_NUMBER, NATIONAL, JOB, PERSON, LOC, NORP, TIME, CITY, EMAIL, GPE, LANGUAGE, PRODUCT, ZIP_CODE, ADDRESS, MONEY, ORDINAL, DATE, EVENT, CRIMINAL_CHARGE, STATE_OR_PROVINCE, RELIGION, DURATION, WORK_OF_ART, PERCENT, CAUSE_OF_DEATH, COUNTRY, ORG, LAW, NAME, COUNTRY, RELIGION, TIME. The answer must be in the format tag:value, where 'tag' is the NER tag and 'value' is the corresponding entity value. Each tag-value pair should be included in a JSON dictionary object, and all of these dictionaries should then be included in a JSON list object. Output Format: [ {{"tag": "tag1", "value": "value1"}},{{"tag": "tag2", "value": "value2"}}, {{"tag": "tag3", "value": "value3"}}, ...]Please replace 'tag1', 'tag2', and so on with the actual NER tags you detect, and 'value1', 'value2', and so on with the corresponding entity values.Note: If no entities are detected in the input text, please return an empty list in JSON format: [].
 ```
 
 ### PROMPT WORKSHOP SEO #6
 **Objectif:** 
-text
+Générer une structure de code HTML pour un contenu
 
-**Nom technique:** `name`
+**Nom technique:** `seo_manage_html_subtitles`
 
 
 ```text
-Générer une structure de code HTML pour un contenu;seo_manage_html_subtitles;As an SEO and Information Architecture (IA) expert, please generate an HTML code structure for the post content: '{content}' in the same language as the post. The HTML code should use <H1>, <H2>, and <H3> tags to effectively organize the content and improve its readability. The structure should also follow best SEO practices for optimal search engine optimization. To ensure the output is correctly formatted, please provide the HTML code as a string within a JSON dictionary object, with 'html_structure' as the key. Output Format: [{{"html_structure": "<H1>Title</H1><H2>Subtitle1</H2><p>Content1</p><H2>Subtitle2</H2><p>Content2</p><H3>Sub-subtitle1</H3><p>Content3</p><H3>Sub-subtitle2</H3><p>Content4</p>" }} ] Please replace the example HTML code with the actual HTML code you generate. Be sure to enclose the HTML code in quotation marks and to check that it meets the requirements for effective content organization and SEO optimization. Note: If the content provided does not have enough information to create a structure with <H1>, <H2>, and <H3> tags, please return a JSON dictionary object with an empty string as the value for the 'html_structure' key: {{"html_structure": ""}}.
+As an SEO and Information Architecture (IA) expert, please generate an HTML code structure for the post content: '{content}' in the same language as the post. The HTML code should use <H1>, <H2>, and <H3> tags to effectively organize the content and improve its readability. The structure should also follow best SEO practices for optimal search engine optimization. To ensure the output is correctly formatted, please provide the HTML code as a string within a JSON dictionary object, with 'html_structure' as the key. Output Format: [{{"html_structure": "<H1>Title</H1><H2>Subtitle1</H2><p>Content1</p><H2>Subtitle2</H2><p>Content2</p><H3>Sub-subtitle1</H3><p>Content3</p><H3>Sub-subtitle2</H3><p>Content4</p>" }} ] Please replace the example HTML code with the actual HTML code you generate. Be sure to enclose the HTML code in quotation marks and to check that it meets the requirements for effective content organization and SEO optimization. Note: If the content provided does not have enough information to create a structure with <H1>, <H2>, and <H3> tags, please return a JSON dictionary object with an empty string as the value for the 'html_structure' key: {{"html_structure": ""}}.
 ```
 
 ### PROMPT WORKSHOP SEO #7
 **Objectif:** 
-text
+Générer 10 descriptions de texte alternatif (alt text) pour un contenu
 
-**Nom technique:** `name`
+**Nom technique:** `seo_manage_image_alt_attribute`
 
 ```text
-Générer 10 descriptions de texte alternatif (alt text) pour un contenu;seo_manage_image_alt_attribute;As an SEO and Information Architecture (IA) expert, please generate 10 alt text descriptions in the same language as the post for images related to the main topic of the post: '{content}' in the same language as the post. Each alt text should be in the same language as the post. Each alt text should incorporate synonyms or variations of the main keyword and should accurately describe the image. The alt text should also be concise and should not exceed 125 characters, including spaces. To ensure the output is correctly formatted, please provide each alt text description as a string within a JSON dictionary object, with 'alt_text' as the key. All of these dictionaries should then be included in a JSON list object. Output Format: [ {{"alt_text": "alt text description 1"}}, {{"alt_text": "alt text description 2"}}, {{"alt_text": "alt text description 3"}}, ... ] Please replace 'alt text description 1', 'alt text description 2', and so on with the actual alt text descriptions you generate. Be sure to enclose the alt text descriptions in quotation marks and to check that they meet the requirements for accuracy, conciseness, and character length. Note: If the main topic of the post does not have enough related images to generate 10 alt text descriptions, please return a JSON list object with the number of alt text descriptions that were generated.
+As an SEO and Information Architecture (IA) expert, please generate 10 alt text descriptions in the same language as the post for images related to the main topic of the post: '{content}' in the same language as the post. Each alt text should be in the same language as the post. Each alt text should incorporate synonyms or variations of the main keyword and should accurately describe the image. The alt text should also be concise and should not exceed 125 characters, including spaces. To ensure the output is correctly formatted, please provide each alt text description as a string within a JSON dictionary object, with 'alt_text' as the key. All of these dictionaries should then be included in a JSON list object. Output Format: [ {{"alt_text": "alt text description 1"}}, {{"alt_text": "alt text description 2"}}, {{"alt_text": "alt text description 3"}}, ... ] Please replace 'alt text description 1', 'alt text description 2', and so on with the actual alt text descriptions you generate. Be sure to enclose the alt text descriptions in quotation marks and to check that they meet the requirements for accuracy, conciseness, and character length. Note: If the main topic of the post does not have enough related images to generate 10 alt text descriptions, please return a JSON list object with the number of alt text descriptions that were generated.
 
 ```
 
@@ -196,12 +196,12 @@ Générer 10 descriptions de texte alternatif (alt text) pour un contenu;seo_man
 
 <!-- 004_summary_prompts.csv -->
 
-**Un jeu de prompts dédiés au résumé depuis un texte existant. Attention, les LMM peuvent servir de traducteur lors d’un résumé même si toutes les langues ne sont pas comprises par le LLM. C’est un alternative possible à des LLM entraînés spécialement pour cette fonction de traduction comme NLLB (No Language Left Behind)**
+**Un jeu de prompts dédiés au résumé depuis un texte existant. Attention, les LMM peuvent servir de traducteur lors d’un résumé même si toutes les langues ne sont pas comprises par le LLM. C’est une alternative possible à des LLM entraînés spécialement pour cette fonction de traduction comme NLLB (No Language Left Behind)**
 
 
 ## 4. PROMPT SUMMARY
 
-**Un jeu de prompt dédiés au résumé depuis un texte exuistant.**
+**Un jeu de prompt dédiés au résumé depuis un texte existant.**
 
 
 ### PROMPT SUMMARY #1
@@ -693,13 +693,33 @@ Given the input sentence: user input: {source} Identify the intent of the text. 
 
 ### PROMPT NLP #9
 **Objectif:** 
-text
+Ce prompt demande à l'utilisateur d'effectuer une détection de spam sur un texte d'entrée donné. Le prompt spécifie également le nombre de classes de spam à détecter, à l'aide de la variable `{num_classes}`. L'utilisateur ne doit fournir aucune autre information que le format de réponse spécifié par la variable `{format_answer}`.
 
 **Nom technique:** `detect_spam`
 
 
 ```text
+# version_1
 Given the input text; perform spam detection on it  {source} num_classes: {num_classes} You must not provide any other information than the format {format_answer}
+```
+
+```text
+# version_2
+Instruction: Classify the following text as spam or not spam.
+
+Background: The text is from an email sent to a large number of recipients. The email contains a promotional offer for a product. The purpose of the spam detection is to filter out unwanted and potentially harmful emails.
+
+Expectations:
+
+* Use 1 for spam and 0 for not spam.
+* Provide a probability score between 0 and 1, like this: "0.9"
+* Do not provide any other information than the format: "{format_answer}"
+
+Output: {format_answer}
+
+Text: {source}
+
+Note: Feel free to ask for clarification if needed, and let me know if you have any suggestions for improving the text or the spam detection.
 ```
 
 ### PROMPT NLP #10
