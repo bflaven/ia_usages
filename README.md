@@ -116,7 +116,7 @@ git commit -am "add extra files"
 git commit -am "update extra files"
 git commit -am "update readme"
 git commit -am "add some stuff on streamlit"
-
+git commit -am "remove files"
 # push to github if your branch on github is master
 # git push origin master
 git push
