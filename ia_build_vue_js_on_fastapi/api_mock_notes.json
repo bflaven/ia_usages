@@ -1,0 +1,89 @@
+{
+    "status": "success",
+    "results": 10,
+    "notes": [
+        {
+            "published": false,
+            "title": "Take a shower",
+            "content": "I take a shower and get dressed. (Me ducho y me visto.)",
+            "id": "78ace81c-7db3-493a-b792-868bd9459b91",
+            "category": "Higiene Personal",
+            "updatedAt": "2024-06-23T02:58:15.773000",
+            "createdAt": "2024-06-23T02:58:15.773000"
+        },
+        {
+            "published": false,
+            "title": "Brush my teeth",
+            "content": "I brush my teeth and wash my face. (Me cepillo los dientes y me lavo la cara.)",
+            "id": "a68c8e12-a371-449e-a903-08171cbc8215",
+            "category": "Higiene Personal",
+            "updatedAt": "2024-06-23T02:58:15.773000",
+            "createdAt": "2024-06-23T02:58:15.773000"
+        },
+        {
+            "published": false,
+            "title": "Like to sleep",
+            "content": "On weekends, I like to sleep in and have a leisurely breakfast. (Los fines de semana, me gusta dormir más y desayunar sin prisa.",
+            "id": "89cc5f2a-6946-48c2-a5f3-477ebe68a98d",
+            "category": "Días de Descanso",
+            "updatedAt": "2024-06-23T02:58:15.773000",
+            "createdAt": "2024-06-23T02:58:15.773000"
+        },
+        {
+            "published": false,
+            "title": "Spend time with",
+            "content": "I spend time with family and friends or engage in hobbies. (Paso tiempo con la familia y amigos o practico mis aficiones.)",
+            "id": "b27de3d1-4b04-417e-b0ab-b943c2416a05",
+            "category": "Días de Descanso",
+            "updatedAt": "2024-06-23T02:58:15.773000",
+            "createdAt": "2024-06-23T02:58:15.773000"
+        },
+        {
+            "published": false,
+            "title": "Relax and watch TV",
+            "content": "In the evening, I relax and watch TV or read a book. (Por la noche, me relajo y veo televisión o leo un libro.)",
+            "id": "7c587abd-0555-4c36-9c4b-cce8d916eb56",
+            "category": "Actividades Diarias",
+            "updatedAt": "2024-06-23T02:58:15.773000",
+            "createdAt": "2024-06-23T02:58:15.773000"
+        },
+        {
+            "published": false,
+            "title": "Comb my hair",
+            "content": "I comb my hair and apply some moisturizer. (Me peino y me aplico un poco de crema hidratante.)",
+            "id": "52bd0e4b-4efc-4901-abe1-29da7dd8ec6f",
+            "category": "Higiene Personal",
+            "updatedAt": "2024-06-23T02:58:15.773000",
+            "createdAt": "2024-06-23T02:58:15.773000"
+        },
+        {
+            "published": false,
+            "title": "Go to the gym",
+            "content": "After work/school, I go to the gym or do some exercise. (Después del trabajo/escuela, voy al gimnasio o hago ejercicio.)",
+            "id": "eaab13dc-7bf4-4459-964b-659c1de27674",
+            "category": "Actividades Diarias",
+            "updatedAt": "2024-06-23T02:58:15.773000",
+            "createdAt": "2024-06-23T02:58:15.773000"
+        },
+        {
+            "published": false,
+            "title": "Have meetings",
+            "content": "In the afternoon, I usually have meetings or classes. (Por la tarde, normalmente tengo reuniones o clases.)",
+            "id": "d0e8a61a-29f2-43d4-af7b-4bbf9a2b885c",
+            "category": "Actividades Diarias",
+            "updatedAt": "2024-06-23T02:58:15.773000",
+            "createdAt": "2024-06-23T02:58:15.773000"
+        },
+        {
+            "published": false,
+            "title": "Have lunch",
+            "content": "I have lunch at 12 p.m. (Almuerzo a las 12 p.m.)",
+            "id": "ae634c5e-155e-4e37-9480-724ccb58cfb0",
+            "category": "Actividades Diarias",
+            "updatedAt": "2024-06-23T02:58:15.773000",
+            "createdAt": "2024-06-23T02:58:15.773000"
+        }
+    ]
+}
+
+
