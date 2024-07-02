@@ -47,6 +47,10 @@
 13. Exploring SEO, SMO, and ASO with AI: Developing Effective Prompts to Boost Digital Strategies
 [https://wp.me/p3Vuhl-3l6](https://wp.me/p3Vuhl-3l6)
 
+14. Building a Vue.js SPA with FastAPI Backend for AI Integration
+[https://wp.me/p3Vuhl-3lp](https://wp.me/p3Vuhl-3lp)
+
+
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
 
@@ -110,7 +114,7 @@ git commit -am "add directory named ia_build_vue_js_on_fastapi"
 git commit -am "update ia_build_vue_js_on_fastapi and add file"
 git commit -am "add extra files"
 git commit -am "update extra files"
-
+git commit -am "update readme"
 
 # push to github if your branch on github is master
 # git push origin master
