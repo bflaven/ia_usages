@@ -1,7 +1,7 @@
 ## 002_fastapi_vite
 
 
-
+**A simple frontend (Vue.js) and backend (FastAPI) project**
 
 
 
