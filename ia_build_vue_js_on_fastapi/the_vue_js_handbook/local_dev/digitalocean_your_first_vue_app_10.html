@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue App</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="result in results" :key="result.id">{{ result.title }}<br>{{ result.abstract }}<hr></li>
+        </ul>
+    </div>
+    <script>
+        const url = "http://localhost:5555/posts";
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    results: []
+                };
+            },
+            mounted() {
+                axios.get(url, { mode: 'cors' }).then(response => {
+                    this.results = response.data;
+                }).catch(error => {
+                    console.error("There was an error!", error);
+                });
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>

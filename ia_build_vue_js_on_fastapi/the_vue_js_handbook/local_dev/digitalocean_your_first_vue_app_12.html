@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+
+RESSOURCES
+- https://vuejs.org/guide/quick-start.html 
+- https://www.digitalocean.com/community/tutorials/how-to-use-vue-js-and-axios-to-display-data-from-an-api
+- https://www.freecodecamp.org/news/the-vue-handbook-a-thorough-introduction-to-vue-js-1e86835d8446/
+
+
+# command
+curl 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=USD,EUR'
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.prod.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+        <code>file: digitalocean_your_first_vue_app_12</code>
+    <div class="container" id="app">
+        <h1 class="text-center">News</h1>
+        <div class="columns medium-3" v-for="(result, index) in results">
+            <div class="card">
+
+                <!-- {{ index }} -->
+                <!-- <div class="card-divider">
+                    <p><img src="{{ result.thumbnail }}" alt="{{ result.title }}" width="210" height="140"></p>
+                </div> -->
+
+                
+                <div class="card-divider">
+                    <p><b>{{ result.title }}</b></p>
+                </div>
+                <div class="card-section">
+                    <p>{{ result.abstract }}</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script type="text/javascript" src="vueApp6.js"></script>
+
+</body>
+
+</html>

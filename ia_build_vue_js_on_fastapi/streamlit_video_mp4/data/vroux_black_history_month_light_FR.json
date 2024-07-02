@@ -1,0 +1,1421 @@
+{
+  "language": "fr",
+  "language_probability": 0.9909738898277283,
+  "segments": [
+    {
+      "start": 0,
+      "end": 5.14,
+      "words": [
+        {
+          "start": 0,
+          "end": 0.18,
+          "word": " Dans"
+        },
+        {
+          "start": 0.18,
+          "end": 0.32,
+          "word": " les"
+        },
+        {
+          "start": 0.32,
+          "end": 0.8,
+          "word": " écoles,"
+        },
+        {
+          "start": 1.24,
+          "end": 1.28,
+          "word": " sur"
+        },
+        {
+          "start": 1.28,
+          "end": 1.44,
+          "word": " les"
+        },
+        {
+          "start": 1.44,
+          "end": 1.72,
+          "word": " terrains"
+        },
+        {
+          "start": 1.72,
+          "end": 1.82,
+          "word": " de"
+        },
+        {
+          "start": 1.82,
+          "end": 2.12,
+          "word": " basket,"
+        },
+        {
+          "start": 2.66,
+          "end": 2.84,
+          "word": " comme"
+        },
+        {
+          "start": 2.84,
+          "end": 2.96,
+          "word": " à"
+        },
+        {
+          "start": 2.96,
+          "end": 3.04,
+          "word": " la"
+        },
+        {
+          "start": 3.04,
+          "end": 3.36,
+          "word": " Maison"
+        },
+        {
+          "start": 3.36,
+          "end": 3.84,
+          "word": " Blanche,"
+        },
+        {
+          "start": 4.34,
+          "end": 4.56,
+          "word": " chaque"
+        },
+        {
+          "start": 4.56,
+          "end": 4.88,
+          "word": " année"
+        },
+        {
+          "start": 4.88,
+          "end": 5.14,
+          "word": " en"
+        }
+      ]
+    },
+    {
+      "start": 5.14,
+      "end": 11.24,
+      "words": [
+        {
+          "start": 5.14,
+          "end": 5.64,
+          "word": " février,"
+        },
+        {
+          "start": 6.1,
+          "end": 6.24,
+          "word": " les"
+        },
+        {
+          "start": 6.24,
+          "end": 6.4,
+          "word": " États"
+        },
+        {
+          "start": 6.4,
+          "end": 6.66,
+          "word": "-Unis"
+        },
+        {
+          "start": 6.66,
+          "end": 7.14,
+          "word": " fêtent"
+        },
+        {
+          "start": 7.14,
+          "end": 7.42,
+          "word": " le"
+        },
+        {
+          "start": 7.42,
+          "end": 7.78,
+          "word": " Black"
+        },
+        {
+          "start": 7.78,
+          "end": 8.4,
+          "word": " History"
+        },
+        {
+          "start": 8.4,
+          "end": 8.96,
+          "word": " Month,"
+        },
+        {
+          "start": 9.3,
+          "end": 9.48,
+          "word": " le"
+        },
+        {
+          "start": 9.48,
+          "end": 9.78,
+          "word": " mois"
+        },
+        {
+          "start": 9.78,
+          "end": 10.14,
+          "word": " de"
+        },
+        {
+          "start": 10.14,
+          "end": 10.32,
+          "word": " l"
+        },
+        {
+          "start": 10.32,
+          "end": 10.62,
+          "word": "'histoire"
+        },
+        {
+          "start": 10.62,
+          "end": 10.86,
+          "word": " des"
+        },
+        {
+          "start": 10.86,
+          "end": 11.24,
+          "word": " noirs."
+        }
+      ]
+    },
+    {
+      "start": 11.5,
+      "end": 16.52,
+      "words": [
+        {
+          "start": 11.5,
+          "end": 11.66,
+          "word": " Cela"
+        },
+        {
+          "start": 11.66,
+          "end": 11.84,
+          "word": " fait"
+        },
+        {
+          "start": 11.84,
+          "end": 12.2,
+          "word": " bientôt"
+        },
+        {
+          "start": 12.2,
+          "end": 12.62,
+          "word": " 100"
+        },
+        {
+          "start": 12.62,
+          "end": 12.86,
+          "word": " ans"
+        },
+        {
+          "start": 12.86,
+          "end": 13.16,
+          "word": " de"
+        },
+        {
+          "start": 13.16,
+          "end": 13.3,
+          "word": " ce"
+        },
+        {
+          "start": 13.3,
+          "end": 13.48,
+          "word": " rendez"
+        },
+        {
+          "start": 13.48,
+          "end": 13.72,
+          "word": "-vous"
+        },
+        {
+          "start": 13.72,
+          "end": 14.42,
+          "word": " historique"
+        },
+        {
+          "start": 14.42,
+          "end": 15.14,
+          "word": " existe,"
+        },
+        {
+          "start": 15.3,
+          "end": 15.4,
+          "word": " mais"
+        },
+        {
+          "start": 15.4,
+          "end": 15.62,
+          "word": " d"
+        },
+        {
+          "start": 15.62,
+          "end": 15.7,
+          "word": "'où"
+        },
+        {
+          "start": 15.7,
+          "end": 16.1,
+          "word": " vient"
+        },
+        {
+          "start": 16.1,
+          "end": 16.52,
+          "word": " cette"
+        }
+      ]
+    },
+    {
+      "start": 16.52,
+      "end": 17.52,
+      "words": [
+        {
+          "start": 16.52,
+          "end": 17.18,
+          "word": " célébration"
+        },
+        {
+          "start": 17.18,
+          "end": 17.52,
+          "word": " ?"
+        }
+      ]
+    },
+    {
+      "start": 18.74,
+      "end": 21.68,
+      "words": [
+        {
+          "start": 18.74,
+          "end": 19.02,
+          "word": " C"
+        },
+        {
+          "start": 19.02,
+          "end": 19.1,
+          "word": "'est"
+        },
+        {
+          "start": 19.1,
+          "end": 19.44,
+          "word": " Carter"
+        },
+        {
+          "start": 19.44,
+          "end": 20.06,
+          "word": " Gottwin"
+        },
+        {
+          "start": 20.06,
+          "end": 20.66,
+          "word": " Woodson"
+        },
+        {
+          "start": 20.66,
+          "end": 21,
+          "word": " qui"
+        },
+        {
+          "start": 21,
+          "end": 21.1,
+          "word": " a"
+        },
+        {
+          "start": 21.1,
+          "end": 21.22,
+          "word": " eu"
+        },
+        {
+          "start": 21.22,
+          "end": 21.4,
+          "word": " cette"
+        },
+        {
+          "start": 21.4,
+          "end": 21.68,
+          "word": " idée."
+        }
+      ]
+    },
+    {
+      "start": 21.94,
+      "end": 27.64,
+      "words": [
+        {
+          "start": 21.94,
+          "end": 22.06,
+          "word": " Ce"
+        },
+        {
+          "start": 22.06,
+          "end": 22.3,
+          "word": " fils"
+        },
+        {
+          "start": 22.3,
+          "end": 22.6,
+          "word": " de"
+        },
+        {
+          "start": 22.6,
+          "end": 22.84,
+          "word": " deux"
+        },
+        {
+          "start": 22.84,
+          "end": 23.24,
+          "word": " esclaves"
+        },
+        {
+          "start": 23.24,
+          "end": 23.8,
+          "word": " affranchis"
+        },
+        {
+          "start": 23.8,
+          "end": 24.06,
+          "word": " est"
+        },
+        {
+          "start": 24.06,
+          "end": 24.52,
+          "word": " considéré"
+        },
+        {
+          "start": 24.52,
+          "end": 24.76,
+          "word": " comme"
+        },
+        {
+          "start": 24.76,
+          "end": 24.98,
+          "word": " le"
+        },
+        {
+          "start": 24.98,
+          "end": 25.34,
+          "word": " père"
+        },
+        {
+          "start": 25.34,
+          "end": 25.66,
+          "word": " de"
+        },
+        {
+          "start": 25.66,
+          "end": 25.86,
+          "word": " l"
+        },
+        {
+          "start": 25.86,
+          "end": 26.34,
+          "word": "'histoire"
+        },
+        {
+          "start": 26.34,
+          "end": 26.98,
+          "word": " afro"
+        },
+        {
+          "start": 26.98,
+          "end": 27.64,
+          "word": "-américaine."
+        }
+      ]
+    },
+    {
+      "start": 27.64,
+      "end": 33.16,
+      "words": [
+        {
+          "start": 27.64,
+          "end": 28.02,
+          "word": " Il"
+        },
+        {
+          "start": 28.02,
+          "end": 28.16,
+          "word": " est"
+        },
+        {
+          "start": 28.16,
+          "end": 28.46,
+          "word": " seulement"
+        },
+        {
+          "start": 28.46,
+          "end": 28.84,
+          "word": " le"
+        },
+        {
+          "start": 28.84,
+          "end": 29.28,
+          "word": " deuxième"
+        },
+        {
+          "start": 29.28,
+          "end": 29.54,
+          "word": " homme"
+        },
+        {
+          "start": 29.54,
+          "end": 29.96,
+          "word": " noir"
+        },
+        {
+          "start": 29.96,
+          "end": 30.32,
+          "word": " à"
+        },
+        {
+          "start": 30.32,
+          "end": 30.52,
+          "word": " avoir"
+        },
+        {
+          "start": 30.52,
+          "end": 30.94,
+          "word": " obtenu"
+        },
+        {
+          "start": 30.94,
+          "end": 31.08,
+          "word": " un"
+        },
+        {
+          "start": 31.08,
+          "end": 31.6,
+          "word": " diplôme"
+        },
+        {
+          "start": 31.6,
+          "end": 31.88,
+          "word": " de"
+        },
+        {
+          "start": 31.88,
+          "end": 32.02,
+          "word": " l"
+        },
+        {
+          "start": 32.02,
+          "end": 32.62,
+          "word": "'université"
+        },
+        {
+          "start": 32.62,
+          "end": 32.78,
+          "word": " de"
+        },
+        {
+          "start": 32.78,
+          "end": 33.16,
+          "word": " Harvard."
+        }
+      ]
+    },
+    {
+      "start": 33.54,
+      "end": 38.86,
+      "words": [
+        {
+          "start": 33.54,
+          "end": 33.66,
+          "word": " Et"
+        },
+        {
+          "start": 33.66,
+          "end": 33.86,
+          "word": " 50"
+        },
+        {
+          "start": 33.86,
+          "end": 34.14,
+          "word": " ans"
+        },
+        {
+          "start": 34.14,
+          "end": 34.36,
+          "word": " après"
+        },
+        {
+          "start": 34.36,
+          "end": 34.52,
+          "word": " l"
+        },
+        {
+          "start": 34.52,
+          "end": 34.86,
+          "word": "'abolition"
+        },
+        {
+          "start": 34.86,
+          "end": 35.06,
+          "word": " de"
+        },
+        {
+          "start": 35.06,
+          "end": 35.14,
+          "word": " l"
+        },
+        {
+          "start": 35.14,
+          "end": 35.72,
+          "word": "'esclavage,"
+        },
+        {
+          "start": 35.94,
+          "end": 35.98,
+          "word": " il"
+        },
+        {
+          "start": 35.98,
+          "end": 36.36,
+          "word": " lance"
+        },
+        {
+          "start": 36.36,
+          "end": 36.54,
+          "word": " l"
+        },
+        {
+          "start": 36.54,
+          "end": 36.7,
+          "word": "'idée"
+        },
+        {
+          "start": 36.7,
+          "end": 36.94,
+          "word": " d"
+        },
+        {
+          "start": 36.94,
+          "end": 37.08,
+          "word": "'une"
+        },
+        {
+          "start": 37.08,
+          "end": 37.62,
+          "word": " Negro"
+        },
+        {
+          "start": 37.62,
+          "end": 38.28,
+          "word": " History"
+        },
+        {
+          "start": 38.28,
+          "end": 38.86,
+          "word": " Week"
+        }
+      ]
+    },
+    {
+      "start": 38.86,
+      "end": 41.46,
+      "words": [
+        {
+          "start": 38.86,
+          "end": 39.18,
+          "word": " dans"
+        },
+        {
+          "start": 39.18,
+          "end": 39.34,
+          "word": " la"
+        },
+        {
+          "start": 39.34,
+          "end": 39.56,
+          "word": " première"
+        },
+        {
+          "start": 39.56,
+          "end": 39.96,
+          "word": " édition"
+        },
+        {
+          "start": 39.96,
+          "end": 40.16,
+          "word": " à"
+        },
+        {
+          "start": 40.16,
+          "end": 40.3,
+          "word": " lieu"
+        },
+        {
+          "start": 40.3,
+          "end": 40.52,
+          "word": " en"
+        },
+        {
+          "start": 40.52,
+          "end": 41.46,
+          "word": " 1926."
+        }
+      ]
+    },
+    {
+      "start": 41.86,
+      "end": 46.54,
+      "words": [
+        {
+          "start": 41.86,
+          "end": 42.24,
+          "word": " Woodson"
+        },
+        {
+          "start": 42.24,
+          "end": 42.62,
+          "word": " veut"
+        },
+        {
+          "start": 42.62,
+          "end": 43.14,
+          "word": " encourager"
+        },
+        {
+          "start": 43.14,
+          "end": 43.34,
+          "word": " les"
+        },
+        {
+          "start": 43.34,
+          "end": 43.64,
+          "word": " afro"
+        },
+        {
+          "start": 43.64,
+          "end": 44.36,
+          "word": "-américains"
+        },
+        {
+          "start": 44.36,
+          "end": 44.58,
+          "word": " à"
+        },
+        {
+          "start": 44.58,
+          "end": 44.7,
+          "word": " s"
+        },
+        {
+          "start": 44.7,
+          "end": 45.1,
+          "word": "'intéresser"
+        },
+        {
+          "start": 45.1,
+          "end": 45.72,
+          "word": " davantage"
+        },
+        {
+          "start": 45.72,
+          "end": 46,
+          "word": " à"
+        },
+        {
+          "start": 46,
+          "end": 46.1,
+          "word": " leur"
+        },
+        {
+          "start": 46.1,
+          "end": 46.54,
+          "word": " histoire"
+        }
+      ]
+    },
+    {
+      "start": 46.54,
+      "end": 49.98,
+      "words": [
+        {
+          "start": 46.54,
+          "end": 47,
+          "word": " et"
+        },
+        {
+          "start": 47,
+          "end": 47.36,
+          "word": " surtout,"
+        },
+        {
+          "start": 47.58,
+          "end": 47.72,
+          "word": " il"
+        },
+        {
+          "start": 47.72,
+          "end": 47.86,
+          "word": " veut"
+        },
+        {
+          "start": 47.86,
+          "end": 47.98,
+          "word": " que"
+        },
+        {
+          "start": 47.98,
+          "end": 48.12,
+          "word": " celle"
+        },
+        {
+          "start": 48.12,
+          "end": 48.32,
+          "word": "-ci"
+        },
+        {
+          "start": 48.32,
+          "end": 48.5,
+          "word": " soit"
+        },
+        {
+          "start": 48.5,
+          "end": 49.22,
+          "word": " enseignée"
+        },
+        {
+          "start": 49.22,
+          "end": 49.4,
+          "word": " dans"
+        },
+        {
+          "start": 49.4,
+          "end": 49.56,
+          "word": " les"
+        },
+        {
+          "start": 49.56,
+          "end": 49.98,
+          "word": " écoles."
+        }
+      ]
+    },
+    {
+      "start": 50.2,
+      "end": 54.38,
+      "words": [
+        {
+          "start": 50.2,
+          "end": 50.34,
+          "word": " Il"
+        },
+        {
+          "start": 50.34,
+          "end": 50.76,
+          "word": " choisit"
+        },
+        {
+          "start": 50.76,
+          "end": 51.08,
+          "word": " la"
+        },
+        {
+          "start": 51.08,
+          "end": 51.48,
+          "word": " deuxième"
+        },
+        {
+          "start": 51.48,
+          "end": 51.96,
+          "word": " semaine"
+        },
+        {
+          "start": 51.96,
+          "end": 52.14,
+          "word": " de"
+        },
+        {
+          "start": 52.14,
+          "end": 52.62,
+          "word": " février"
+        },
+        {
+          "start": 52.62,
+          "end": 52.88,
+          "word": " pour"
+        },
+        {
+          "start": 52.88,
+          "end": 53.08,
+          "word": " cette"
+        },
+        {
+          "start": 53.08,
+          "end": 53.7,
+          "word": " célébration"
+        },
+        {
+          "start": 53.7,
+          "end": 54.04,
+          "word": " car"
+        },
+        {
+          "start": 54.04,
+          "end": 54.16,
+          "word": " c"
+        },
+        {
+          "start": 54.16,
+          "end": 54.22,
+          "word": "'est"
+        },
+        {
+          "start": 54.22,
+          "end": 54.32,
+          "word": " à"
+        },
+        {
+          "start": 54.32,
+          "end": 54.38,
+          "word": " la"
+        }
+      ]
+    },
+    {
+      "start": 54.38,
+      "end": 59.22,
+      "words": [
+        {
+          "start": 54.38,
+          "end": 54.58,
+          "word": " fois"
+        },
+        {
+          "start": 54.58,
+          "end": 54.68,
+          "word": " l"
+        },
+        {
+          "start": 54.68,
+          "end": 55.2,
+          "word": "'anniversaire"
+        },
+        {
+          "start": 55.2,
+          "end": 55.38,
+          "word": " d"
+        },
+        {
+          "start": 55.38,
+          "end": 55.76,
+          "word": "'Abraham"
+        },
+        {
+          "start": 55.76,
+          "end": 56.06,
+          "word": " Lincoln"
+        },
+        {
+          "start": 56.06,
+          "end": 56.64,
+          "word": " et"
+        },
+        {
+          "start": 56.64,
+          "end": 56.8,
+          "word": " de"
+        },
+        {
+          "start": 56.8,
+          "end": 57.2,
+          "word": " Frédéric"
+        },
+        {
+          "start": 57.2,
+          "end": 57.52,
+          "word": " Douglas,"
+        },
+        {
+          "start": 58.12,
+          "end": 58.22,
+          "word": " les"
+        },
+        {
+          "start": 58.22,
+          "end": 58.44,
+          "word": " deux"
+        },
+        {
+          "start": 58.44,
+          "end": 58.82,
+          "word": " grandes"
+        },
+        {
+          "start": 58.82,
+          "end": 59.22,
+          "word": " figures"
+        }
+      ]
+    },
+    {
+      "start": 59.22,
+      "end": 60.94,
+      "words": [
+        {
+          "start": 59.22,
+          "end": 59.5,
+          "word": " de"
+        },
+        {
+          "start": 59.5,
+          "end": 59.66,
+          "word": " l"
+        },
+        {
+          "start": 59.66,
+          "end": 60.4,
+          "word": "'abolitionnisme"
+        },
+        {
+          "start": 60.4,
+          "end": 60.5,
+          "word": " aux"
+        },
+        {
+          "start": 60.5,
+          "end": 60.64,
+          "word": " États"
+        },
+        {
+          "start": 60.64,
+          "end": 60.94,
+          "word": "-Unis."
+        }
+      ]
+    },
+    {
+      "start": 61.24,
+      "end": 65.48,
+      "words": [
+        {
+          "start": 61.24,
+          "end": 61.34,
+          "word": " Peu"
+        },
+        {
+          "start": 61.34,
+          "end": 61.48,
+          "word": " à"
+        },
+        {
+          "start": 61.48,
+          "end": 61.62,
+          "word": " peu,"
+        },
+        {
+          "start": 61.86,
+          "end": 61.92,
+          "word": " le"
+        },
+        {
+          "start": 61.92,
+          "end": 62.1,
+          "word": " rendez"
+        },
+        {
+          "start": 62.1,
+          "end": 62.32,
+          "word": "-vous"
+        },
+        {
+          "start": 62.32,
+          "end": 62.48,
+          "word": " s"
+        },
+        {
+          "start": 62.48,
+          "end": 62.84,
+          "word": "'impose"
+        },
+        {
+          "start": 62.84,
+          "end": 63.18,
+          "word": " dans"
+        },
+        {
+          "start": 63.18,
+          "end": 63.4,
+          "word": " les"
+        },
+        {
+          "start": 63.4,
+          "end": 63.82,
+          "word": " Etats"
+        },
+        {
+          "start": 63.82,
+          "end": 64.08,
+          "word": " et"
+        },
+        {
+          "start": 64.08,
+          "end": 64.2,
+          "word": " les"
+        },
+        {
+          "start": 64.2,
+          "end": 64.38,
+          "word": " villes"
+        },
+        {
+          "start": 64.38,
+          "end": 64.5,
+          "word": " les"
+        },
+        {
+          "start": 64.5,
+          "end": 64.66,
+          "word": " plus"
+        },
+        {
+          "start": 64.66,
+          "end": 65.48,
+          "word": " progressistes."
+        }
+      ]
+    },
+    {
+      "start": 65.8,
+      "end": 69.64,
+      "words": [
+        {
+          "start": 65.8,
+          "end": 66.3,
+          "word": " Woodson"
+        },
+        {
+          "start": 66.3,
+          "end": 66.94,
+          "word": " meurt"
+        },
+        {
+          "start": 66.94,
+          "end": 67.2,
+          "word": " en"
+        },
+        {
+          "start": 67.2,
+          "end": 67.82,
+          "word": " 1950,"
+        },
+        {
+          "start": 68.42,
+          "end": 68.64,
+          "word": " mais"
+        },
+        {
+          "start": 68.64,
+          "end": 68.8,
+          "word": " son"
+        },
+        {
+          "start": 68.8,
+          "end": 69.04,
+          "word": " idée"
+        },
+        {
+          "start": 69.04,
+          "end": 69.2,
+          "word": " lui"
+        },
+        {
+          "start": 69.2,
+          "end": 69.64,
+          "word": " survit."
+        }
+      ]
+    },
+    {
+      "start": 69.9,
+      "end": 75.94,
+      "words": [
+        {
+          "start": 69.9,
+          "end": 70.02,
+          "word": " En"
+        },
+        {
+          "start": 70.02,
+          "end": 70.76,
+          "word": " 1976,"
+        },
+        {
+          "start": 71.28,
+          "end": 71.34,
+          "word": " pour"
+        },
+        {
+          "start": 71.34,
+          "end": 71.5,
+          "word": " le"
+        },
+        {
+          "start": 71.5,
+          "end": 72.3,
+          "word": " bicentenaire"
+        },
+        {
+          "start": 72.3,
+          "end": 72.42,
+          "word": " des"
+        },
+        {
+          "start": 72.42,
+          "end": 72.62,
+          "word": " États"
+        },
+        {
+          "start": 72.62,
+          "end": 72.98,
+          "word": "-Unis,"
+        },
+        {
+          "start": 73.22,
+          "end": 73.26,
+          "word": " le"
+        },
+        {
+          "start": 73.26,
+          "end": 73.64,
+          "word": " président"
+        },
+        {
+          "start": 73.64,
+          "end": 74.04,
+          "word": " Gerald"
+        },
+        {
+          "start": 74.04,
+          "end": 74.48,
+          "word": " Ford"
+        },
+        {
+          "start": 74.48,
+          "end": 74.82,
+          "word": " en"
+        },
+        {
+          "start": 74.82,
+          "end": 75,
+          "word": " fait"
+        },
+        {
+          "start": 75,
+          "end": 75.22,
+          "word": " une"
+        },
+        {
+          "start": 75.22,
+          "end": 75.94,
+          "word": " célébration"
+        }
+      ]
+    },
+    {
+      "start": 75.94,
+      "end": 80.46,
+      "words": [
+        {
+          "start": 75.94,
+          "end": 76.96,
+          "word": " officielle"
+        },
+        {
+          "start": 76.96,
+          "end": 77.32,
+          "word": " et"
+        },
+        {
+          "start": 77.32,
+          "end": 77.46,
+          "word": " la"
+        },
+        {
+          "start": 77.46,
+          "end": 77.8,
+          "word": " semaine"
+        },
+        {
+          "start": 77.8,
+          "end": 78.26,
+          "word": " devient"
+        },
+        {
+          "start": 78.26,
+          "end": 78.72,
+          "word": " un"
+        },
+        {
+          "start": 78.72,
+          "end": 79.12,
+          "word": " mois"
+        },
+        {
+          "start": 79.12,
+          "end": 79.34,
+          "word": " de"
+        },
+        {
+          "start": 79.34,
+          "end": 79.46,
+          "word": " l"
+        },
+        {
+          "start": 79.46,
+          "end": 79.84,
+          "word": "'histoire"
+        },
+        {
+          "start": 79.84,
+          "end": 80.08,
+          "word": " des"
+        },
+        {
+          "start": 80.08,
+          "end": 80.46,
+          "word": " noirs."
+        }
+      ]
+    },
+    {
+      "start": 80.46,
+      "end": 86.66,
+      "words": [
+        {
+          "start": 80.46,
+          "end": 81.02,
+          "word": " En"
+        },
+        {
+          "start": 81.02,
+          "end": 81.52,
+          "word": " 2016,"
+        },
+        {
+          "start": 81.74,
+          "end": 81.94,
+          "word": " Barack"
+        },
+        {
+          "start": 81.94,
+          "end": 82.4,
+          "word": " Obama"
+        },
+        {
+          "start": 82.4,
+          "end": 82.7,
+          "word": " en"
+        },
+        {
+          "start": 82.7,
+          "end": 82.94,
+          "word": " fait"
+        },
+        {
+          "start": 82.94,
+          "end": 83.18,
+          "word": " le"
+        },
+        {
+          "start": 83.18,
+          "end": 83.78,
+          "word": " 40e"
+        },
+        {
+          "start": 83.78,
+          "end": 84.48,
+          "word": " anniversaire"
+        },
+        {
+          "start": 84.48,
+          "end": 84.7,
+          "word": " par"
+        },
+        {
+          "start": 84.7,
+          "end": 84.94,
+          "word": " ses"
+        },
+        {
+          "start": 84.94,
+          "end": 85.16,
+          "word": " mots"
+        },
+        {
+          "start": 85.16,
+          "end": 85.8,
+          "word": " depuis"
+        },
+        {
+          "start": 85.8,
+          "end": 86.02,
+          "word": " nos"
+        },
+        {
+          "start": 86.02,
+          "end": 86.66,
+          "word": " origines,"
+        }
+      ]
+    },
+    {
+      "start": 86.86,
+      "end": 89.44,
+      "words": [
+        {
+          "start": 86.86,
+          "end": 86.92,
+          "word": " l"
+        },
+        {
+          "start": 86.92,
+          "end": 87.22,
+          "word": "'histoire"
+        },
+        {
+          "start": 87.22,
+          "end": 87.38,
+          "word": " des"
+        },
+        {
+          "start": 87.38,
+          "end": 87.76,
+          "word": " noirs,"
+        },
+        {
+          "start": 87.92,
+          "end": 88.14,
+          "word": " c"
+        },
+        {
+          "start": 88.14,
+          "end": 88.24,
+          "word": "'est"
+        },
+        {
+          "start": 88.24,
+          "end": 88.5,
+          "word": " l"
+        },
+        {
+          "start": 88.5,
+          "end": 88.72,
+          "word": "'histoire"
+        },
+        {
+          "start": 88.72,
+          "end": 88.96,
+          "word": " des"
+        },
+        {
+          "start": 88.96,
+          "end": 89.16,
+          "word": " États"
+        },
+        {
+          "start": 89.16,
+          "end": 89.44,
+          "word": "-Unis."
+        }
+      ]
+    }
+  ]
+}

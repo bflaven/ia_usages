@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 
+
+RESSOURCES
+- https://vuejs.org/guide/quick-start.html 
+- https://www.digitalocean.com/community/tutorials/how-to-use-vue-js-and-axios-to-display-data-from-an-api
+- https://www.freecodecamp.org/news/the-vue-handbook-a-thorough-introduction-to-vue-js-1e86835d8446/
+-->
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">
+
+<script type="module">
+import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+        
+        createApp({    
+          data() {
+            return { 
+              BTCinUSD: 3759.91, 
+              BTCinEURO: 3166.21
+            }
+          }  
+        }).mount('#app')
+</script>
+  <meta charset="utf-8">
+  <title>Cryptocurrency Pricing Application</title>
+</head>
+<body>
+
+    <div class="container" id="app">
+      <h3 class="text-center">Cryptocurrency Pricing</h3>
+      <div class="columns medium-4" >
+        <div class="card">
+          <div class="card-section">
+            <p> BTC in USD  </p>
+          </div>
+          <div class="card-divider">
+            <p>{{ BTCinUSD }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="columns medium-4" >
+        <div class="card">
+          <div class="card-section">
+            <p> BTC in EURO  </p>
+          </div>
+          <div class="card-divider">
+            <p>{{ BTCinEURO }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
