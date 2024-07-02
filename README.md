@@ -115,6 +115,7 @@ git commit -am "update ia_build_vue_js_on_fastapi and add file"
 git commit -am "add extra files"
 git commit -am "update extra files"
 git commit -am "update readme"
+git commit -am "add some stuff on streamlit"
 
 # push to github if your branch on github is master
 # git push origin master
