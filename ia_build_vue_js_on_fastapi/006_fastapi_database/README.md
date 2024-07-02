@@ -1,11 +1,7 @@
 # 006_fastapi_database
 
 
-**Investigation  on how to replace a frontend made in Streamlit by one made with Vue.js**
-
-
-
-
+**Two backend projects to have an api made wit fastapi and plugged it to frontend in Vue.js**
 
 
 
