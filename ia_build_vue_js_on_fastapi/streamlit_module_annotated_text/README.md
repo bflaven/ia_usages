@@ -1,4 +1,4 @@
-# 001_streamlit_annotated_text.md
+# streamlit_module_annotated_text
 
 
 **In this directory `streamlit_module_annotated_text`, an attempt on `Annotated Text Component for Streamlit` by Thiago Teixeira, one of the founders of Streamlit. Checkout https://github.com/tvst/st-annotated-text/tree/master**
