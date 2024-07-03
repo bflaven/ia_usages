@@ -1,7 +1,13 @@
 # 001_streamlit_annotated_text.md
 
+
+**In this directory `streamlit_module_annotated_text`, an attempt on `Annotated Text Component for Streamlit` by Thiago Teixeira, one of the founders of Streamlit. Checkout https://github.com/tvst/st-annotated-text/tree/master**
+
+
+Below, one of the prompt to mix `annotated_text` and `Spacy`.
+
 ## PROMPT_1
-As an advanced programmer in Python, using Streamlit, can you write a script using this function "annotated_text" and spacy
+As an advanced programmer in Python, using Streamlit, can you write a script using this function "annotated_text" and Spacy
 
 ```python
 with st.echo():
