@@ -129,6 +129,9 @@ sudo chgrp -R groupname .
 sudo chmod -R g+rwX .
 sudo find . -type d -exec chmod g+s '{}' +
 
+git restore the_vue_js_handbook/poc_vue_api/frontend_1
+git restore the_vue_js_handbook/poc_vue_api/frontend_2
+
 
 
 
