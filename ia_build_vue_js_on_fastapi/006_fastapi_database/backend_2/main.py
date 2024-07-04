@@ -30,7 +30,7 @@ python -m pip install loguru
 
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/build_vue_js_on_fastapi/009_fastapi_vue
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/006_fastapi_database/backend_2
 
 # LAUNCH THE API
 # be sure to be at he root dir cf [path]

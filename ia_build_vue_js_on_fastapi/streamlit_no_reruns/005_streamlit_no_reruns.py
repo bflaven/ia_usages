@@ -43,7 +43,7 @@ python -m pip install beautifulsoup4
 python -m pip install openai
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/streamlit_no_reruns/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/streamlit_no_reruns/
 
 # launch the file
 streamlit run 005_streamlit_no_reruns.py

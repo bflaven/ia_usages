@@ -43,7 +43,8 @@ python -m pip install beautifulsoup4
 python -m pip install openai
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/build_vue_js_on_fastapi/streamlit_video_mp4/video_streamlit/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/streamlit_video_mp4/video_streamlit/
+
 
 # launch the file
 streamlit run good_010_video_streamlit.py

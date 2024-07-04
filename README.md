@@ -119,6 +119,9 @@ git commit -am "add some stuff on streamlit"
 git commit -am "remove files"
 git commit -am "add directory the_vue_js_handbook/poc_vue_api/frontend_1/"
 git commit -am "add directory the_vue_js_handbook/poc_vue_api/frontend_2/"
+git commit -am "update path"
+
+
 # push to github if your branch on github is master
 # git push origin master
 git push

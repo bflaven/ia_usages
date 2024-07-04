@@ -23,7 +23,7 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/build_vue_js_on_fastapi/006_fastapi_database/005_fastapi_tiangolo_tutorial_sql_databases
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/006_fastapi_database/backend_1/
 
 # LAUNCH THE API
 uvicorn main:app --reload
