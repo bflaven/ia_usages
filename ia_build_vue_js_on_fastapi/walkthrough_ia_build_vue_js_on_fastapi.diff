@@ -1,0 +1,104 @@
+--- walkthrough_ia_build_vue_js_on_fastapi.diff
+
+! SOURCE
+- Article
+https://flaven.fr/2024/07/building-a-vue-js-spa-single-page-application-frontend-with-fastapi-backend-for-ai-integration/
+
+
+
+
+
+
+
++ CREATE THE ENV WITH ANACONDA
+"""
+[env]
+# Conda Environment
+conda create --name fmm_fastapi_poc python=3.9.13
+conda info --envs
+source activate fmm_fastapi_poc
+conda deactivate
+
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n fmm_fastapi_poc
+
+# update conda 
+conda update -n base -c defaults conda
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
+
+# [path]
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/006_fastapi_database/backend_1/
+
+# LAUNCH THE API
+uvicorn main:app --reload
+
+# Check localhost
+http://127.0.0.1:8000/docs
+http://127.0.0.1:8000/redoc
+
+
+"""
+
+! 1. Some investigation on Streamlit
+
++ EXAMPLE streamlit_video_mp4:
+--- 005_ia_vue_fastapi_streamlit_video_mp4.mov
+
++ EXAMPLE streamlit_no_reruns:
+--- 006_ia_vue_fastapi_streamlit_no_reruns.mov
+
++ EXAMPLE streamlit_module_annotated_text:
+--- 007_ia_vue_fastapi_streamlit_module_annotated_text.mov
+
+
+
+! 2. Vite Vue.js and FastAPI
+
+
+
++ EXAMPLE the_vue_js_handbook:
+--- 001_ia_vue_fastapi_the_vue_js_handbook.mov
+
+
++ EXAMPLE 001_my_vue_project:
+--- 002_ia_vue_fastapi_001_my_vue_project.mov
+
++ EXAMPLE 002_fastapi_vite:
+--- 003_ia_vue_fastapi_002_fastapi_vite.mov
+
+
++ EXAMPLE 006_fastapi_database:
+--- 004_ia_vue_fastapi_006_fastapi_database.mov
+
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/006_fastapi_database/backend_1/
+
+
+- Description
+Some simple examples of API made with FastAPI 
+
+- CONSOLE_SCREEN_1 (blue)
+# GO TO DIR
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/006_fastapi_database/backend_1/
+
+# LAUNCH THE ENV
+source activate fmm_fastapi_poc
+
+# LAUNCH THE API
+uvicorn main:app --reload
+
+# CHECK THE API
+http://127.0.0.1:8000/docs
+
+! 3. Other files
+_prompt
+api_mock_notes.json
+grab_title_url.py
+
+
+
