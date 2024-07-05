@@ -245,10 +245,27 @@ http://127.0.0.1:8000/docs
 
 + EXAMPLE streamlit_video_mp4:
 --- 007_ia_vue_fastapi_streamlit_video_mp4.mov
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/streamlit_video_mp4/
+
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/streamlit_video_mp4/video_streamlit/
+
+# launch the anacoda env
+source activate fmm_fastapi_poc
+
+# launch the file
+streamlit run 010_video_streamlit.py
+
 
 + EXAMPLE streamlit_no_reruns:
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/streamlit_no_reruns/
+
+# launch the anacoda env
+source activate fmm_fastapi_poc
+
+# launch the file
+streamlit run 001_streamlit_no_reruns_checkbox.py
+streamlit run 002_streamlit_no_reruns_session.py
+
+
 
 
 ! (VI) OTHER FILES
