@@ -126,6 +126,8 @@ git commit -am "update walkthrough_ia_build_vue_js_on_fastapi.diff for YT"
 # git push origin master
 git push
 
+# OTHER COMMANDS
+
 # Repair Permissions
 cd /Users/brunoflaven/Documents/03_git/ia_usages
 
