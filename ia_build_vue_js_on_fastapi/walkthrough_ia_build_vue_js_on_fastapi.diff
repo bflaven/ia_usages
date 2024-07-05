@@ -15,7 +15,7 @@ It is a single-page application (SPA) built using Vue.js to interact with the ba
 
 ! (II) REQUIREMENTS
 
-+ NEED HOMEBREW, NODE.JS AND NPM (MAC)
++ NEED HOMEBREW, NODE.JS AND NPM + ANACONDA + PYTHON + OTHER TOOLS (MAC)
 --- Install Homebrew (See https://brew.sh/): 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 --- Install Node.js and NPM:
@@ -25,6 +25,20 @@ brew install node
 # check
 node -v
 npm -v
+
+--- Links for JavaScript
+- HOMEBREW: https://brew.sh/
+- NODE: https://nodejs.org/en
+- VUEJS: https://vuejs.org/
+- VITEJS: https://vitejs.dev/
+
+--- Links for Python
+- ANACONDA: https://www.anaconda.com/
+- FASTAPI: https://fastapi.tiangolo.com/
+
+--- Links for Tools
+- VISUAL STUDIO CODE: https://code.visualstudio.com/
+- SUBLIMETEXT: https://www.sublimetext.com/
 
 
 + CREATE THE ENV WITH ANACONDA
