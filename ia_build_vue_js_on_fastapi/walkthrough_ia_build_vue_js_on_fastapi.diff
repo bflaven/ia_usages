@@ -170,19 +170,34 @@ npm run dev
 
 + C. OTHER EXAMPLES USING VUEJS TO CREATE AN APP
 
-EXAMPLE the_vue_js_handbook:
+! # EXAMPLE the_vue_js_handbook:
 --- 003_ia_vue_fastapi_the_vue_js_handbook.mov
 
-EXAMPLE 001_my_vue_project:
+- path
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/the_vue_js_handbook/
+
+
+- open the file with chrome 
+digitalocean_your_first_vue_app_12.html 
+
+- launch fake server
+json-server -p 5555 posts.json
+# Check http://localhost:5555/posts
+
+! # EXAMPLE 001_my_vue_project:
 --- 004_ia_vue_fastapi_001_my_vue_project.mov
 
-
-! (IV) CREATE A  FASTAPI API
-
++ FRONTEND
 - path
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/002_fastapi_vite/frontend/
 
---- TERMINAL (BLACK) FOR PYTHON
+- frontend
+npm install
+npm run dev
+
++ BACKEND
+- path
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/002_fastapi_vite/backend
 
 # USING CONDA
 conda info --envs
@@ -195,6 +210,9 @@ uvicorn main:app --reload
 
 # CHECK THE API
 http://127.0.0.1:8000/docs
+
+
+! (IV) CREATE A  FASTAPI API
 
 
 + EXAMPLE 002_fastapi_vite:
