@@ -1,10 +1,19 @@
 --- walkthrough_ia_build_vue_js_on_fastapi.diff
 
-! SOURCE
-- Article
-https://flaven.fr/2024/07/building-a-vue-js-spa-single-page-application-frontend-with-fastapi-backend-for-ai-integration/
+! (I) SOURCE
+- Article: Building a Vue.js SPA (Single Page Application) Frontend with FastAPI Backend for AI Integration
+Source : https://flaven.fr/2024/07/building-a-vue-js-spa-single-page-application-frontend-with-fastapi-backend-for-ai-integration/
 
-! REQUIREMENTS
+--- Here are some experiments made with Streamlit that prevents me from switching from Streamlit to Vue.js with no doubt.
+
+- Backend (FastAPI):
+It provides RESTful APIs for CRUD operations and serves as the backend server for the application.
+- Frontend (Vue.js):
+It is a single-page application (SPA) built using Vue.js to interact with the backend APIs and render the user interface.
+
+
+
+! (II) REQUIREMENTS
 
 + NEED HOMEBREW, NODE.JS AND NPM (MAC)
 --- Install Homebrew (See https://brew.sh/): 
@@ -53,34 +62,14 @@ http://127.0.0.1:8000/redoc
 
 """
 
-! 1. Vite Vue.js and FastAPI
-
-+ EXAMPLE 001_my_vue_project:
---- 002_ia_vue_fastapi_001_my_vue_project.mov
-
+- Open a terminla and get to your dir
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi
 
+! (III) CREATE AN APP WITH VITE OR VUE.JS
 
+--- TERMINAL (BLACK) FOR JAVASCRIPT
 
---- TERMINAL_1 (BLUE) FOR PYTHON
-
-# USING CONDA
-conda info --envs
-
-# LAUNCH THE ENV
-source activate fmm_fastapi_poc
-
-# LAUNCH THE API
-uvicorn main:app --reload
-
-# CHECK THE API
-http://127.0.0.1:8000/docs
-
-
-
---- TERMINAL_2 (BLACK) FOR JAVASCRIPT
-
-! A. USING VITE TO CREATE AN APP
++ A. USING VITE TO CREATE AN APP
 
 - Install Vite
 # CAUTION: if you want to use the commnds vite 
@@ -139,7 +128,7 @@ vite preview
 --- Source: Checkout https://vitejs.dev/guide/
 
 
-! B. USING VUEJS TO CREATE AN APP
++ B. USING VUEJS TO CREATE AN APP
 
 --- create a directory
 # to create the dir
@@ -160,14 +149,35 @@ npm install
 npm run format
 npm run dev
 
-npm run toto
-
-
-
-
-
-
 --- Source: https://vuejs.org/guide/quick-start.html
+
++ C. OTHER EXAMPLES USING VUEJS TO CREATE AN APP
+
+EXAMPLE the_vue_js_handbook:
+--- 001_ia_vue_fastapi_the_vue_js_handbook.mov
+
+EXAMPLE 001_my_vue_project:
+--- 002_ia_vue_fastapi_001_my_vue_project.mov
+
+
+! (IV) CREATE A  FASTAPI API
+
+- path
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi
+
+--- TERMINAL (BLUE) FOR PYTHON
+
+# USING CONDA
+conda info --envs
+
+# LAUNCH THE ENV
+source activate fmm_fastapi_poc
+
+# LAUNCH THE API
+uvicorn main:app --reload
+
+# CHECK THE API
+http://127.0.0.1:8000/docs
 
 
 + EXAMPLE 002_fastapi_vite:
@@ -176,11 +186,6 @@ npm run toto
 
 + EXAMPLE 006_fastapi_database:
 --- 004_ia_vue_fastapi_006_fastapi_database.mov
-
-+ EXAMPLE the_vue_js_handbook:
---- 001_ia_vue_fastapi_the_vue_js_handbook.mov
-
-
 
 
 
@@ -201,7 +206,7 @@ uvicorn main:app --reload
 http://127.0.0.1:8000/docs
 
 
-! 2. Some investigation on Streamlit
+! (V) SOME INVESTIGATION ON STREAMLIT
 
 + EXAMPLE streamlit_video_mp4:
 --- 005_ia_vue_fastapi_streamlit_video_mp4.mov
@@ -213,8 +218,7 @@ http://127.0.0.1:8000/docs
 --- 007_ia_vue_fastapi_streamlit_module_annotated_text.mov
 
 
-
-! 3. Other files
+! (VI) OTHER FILES
 _prompt
 api_mock_notes.json
 grab_title_url.py
