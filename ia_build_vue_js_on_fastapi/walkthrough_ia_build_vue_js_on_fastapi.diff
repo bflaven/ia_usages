@@ -90,7 +90,7 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi
 npm install -g vite
 
 # For dev
-vite --V
+vite -v
 
 - scaffolding your first vite project (way_1)
 
