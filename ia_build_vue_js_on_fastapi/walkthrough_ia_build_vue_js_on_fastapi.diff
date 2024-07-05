@@ -4,10 +4,18 @@
 - Article
 https://flaven.fr/2024/07/building-a-vue-js-spa-single-page-application-frontend-with-fastapi-backend-for-ai-integration/
 
+! REQUIREMENTS
 
++ NEED HOMEBREW, NODE.JS AND NPM (MAC)
+--- Install Homebrew (See https://brew.sh/): 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+--- Install Node.js and NPM:
+brew install node
 
-
-
+--- Check the install of Node.js and NPM:
+# check
+node -v
+npm -v
 
 
 + CREATE THE ENV WITH ANACONDA
@@ -45,29 +53,122 @@ http://127.0.0.1:8000/redoc
 
 """
 
-! 1. Some investigation on Streamlit
-
-+ EXAMPLE streamlit_video_mp4:
---- 005_ia_vue_fastapi_streamlit_video_mp4.mov
-
-+ EXAMPLE streamlit_no_reruns:
---- 006_ia_vue_fastapi_streamlit_no_reruns.mov
-
-+ EXAMPLE streamlit_module_annotated_text:
---- 007_ia_vue_fastapi_streamlit_module_annotated_text.mov
-
-
-
-! 2. Vite Vue.js and FastAPI
-
-
-
-+ EXAMPLE the_vue_js_handbook:
---- 001_ia_vue_fastapi_the_vue_js_handbook.mov
-
+! 1. Vite Vue.js and FastAPI
 
 + EXAMPLE 001_my_vue_project:
 --- 002_ia_vue_fastapi_001_my_vue_project.mov
+
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi
+
+
+
+--- TERMINAL_1 (BLUE) FOR PYTHON
+
+# USING CONDA
+conda info --envs
+
+# LAUNCH THE ENV
+source activate fmm_fastapi_poc
+
+# LAUNCH THE API
+uvicorn main:app --reload
+
+# CHECK THE API
+http://127.0.0.1:8000/docs
+
+
+
+--- TERMINAL_2 (BLACK) FOR JAVASCRIPT
+
+! A. USING VITE TO CREATE AN APP
+
+- Install Vite
+# CAUTION: if you want to use the commnds vite 
+npm install -g vite
+
+# For dev
+vite --V
+
+- scaffolding your first vite project (way_1)
+
+--- create a directory
+# to create the dir
+mkdir test-yt-vite-project-1
+# to delete the dir
+rm -r test-yt-vite-project-1
+# get into the dir
+cd test-yt-vite-project-1
+
+--- You will need a project name for our vite project e.g. my-vite-app-yt-1
+
+--- scaffold your first project
+npm create vite@latest
+
+--- go to the app named "my-vite-app-yt-1" and run command
+cd my-vite-app-yt-1
+npm install
+npm run dev
+
+
+- create your first vite project
+
+--- create a directory
+# to create the dir
+mkdir test-yt-vite-project-1
+# to delete the dir
+rm -r test-yt-vite-project-1
+# get into the dir
+cd test-yt-vite-project-1
+
+
+- create your first vite project (way_2)
+npm create vite@latest my-vite-app-yt-1 -- --template vue
+
+--- go to the app named "my-vite-app-yt-1"
+cd my-vite-app-yt-1
+npm install
+npm run dev
+
+--- identical commands inside the app named "my-vite-app-yt-1"
+# For build
+vite build
+
+# For preview or serve
+vite preview
+
+--- Source: Checkout https://vitejs.dev/guide/
+
+
+! B. USING VUEJS TO CREATE AN APP
+
+--- create a directory
+# to create the dir
+mkdir test-yt-vue-project-1
+# to delete the dir
+rm -r test-yt-vue-project-1
+# get into the dir
+cd test-yt-vue-project-1
+
+
+--- scaffold a Vue Single Page Application
+npm create vue@latest
+
+
+--- go to the app named "my-vue-app-yt-1"
+cd my-vue-app-yt-1
+npm install
+npm run format
+npm run dev
+
+npm run toto
+
+
+
+
+
+
+--- Source: https://vuejs.org/guide/quick-start.html
+
 
 + EXAMPLE 002_fastapi_vite:
 --- 003_ia_vue_fastapi_002_fastapi_vite.mov
@@ -76,7 +177,11 @@ http://127.0.0.1:8000/redoc
 + EXAMPLE 006_fastapi_database:
 --- 004_ia_vue_fastapi_006_fastapi_database.mov
 
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/006_fastapi_database/backend_1/
++ EXAMPLE the_vue_js_handbook:
+--- 001_ia_vue_fastapi_the_vue_js_handbook.mov
+
+
+
 
 
 - Description
@@ -94,6 +199,20 @@ uvicorn main:app --reload
 
 # CHECK THE API
 http://127.0.0.1:8000/docs
+
+
+! 2. Some investigation on Streamlit
+
++ EXAMPLE streamlit_video_mp4:
+--- 005_ia_vue_fastapi_streamlit_video_mp4.mov
+
++ EXAMPLE streamlit_no_reruns:
+--- 006_ia_vue_fastapi_streamlit_no_reruns.mov
+
++ EXAMPLE streamlit_module_annotated_text:
+--- 007_ia_vue_fastapi_streamlit_module_annotated_text.mov
+
+
 
 ! 3. Other files
 _prompt
