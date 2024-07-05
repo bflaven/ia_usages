@@ -47,7 +47,7 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/stre
 
 
 # launch the file
-streamlit run good_010_video_streamlit.py
+streamlit run 010_video_streamlit.py
 
 
 [source]

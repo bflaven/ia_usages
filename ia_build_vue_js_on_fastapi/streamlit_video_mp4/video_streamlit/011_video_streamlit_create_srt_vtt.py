@@ -46,7 +46,7 @@ python -m pip install openai
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/streamlit_video_mp4/video_streamlit/
 
 # launch the file
-streamlit run 011_video_streamlit.py
+streamlit run 011_video_streamlit_create_srt_vtt.py
 
 
 [source]
@@ -161,7 +161,7 @@ def display_player_and_transcript(transcript, current_time):
 
 
 # Load the JSON transcript
-transcript_path = "data/vroux_black_history_month_light_FR.json"
+transcript_path = "../data/vroux_black_history_month_light_FR.json"
 with open(transcript_path, "r", encoding="utf-8") as f:
     transcript = json.load(f)
 

@@ -216,7 +216,7 @@ uvicorn main:app --reload
 http://127.0.0.1:8000/docs
 
 + EXAMPLE 006_fastapi_database:
---- 006_ia_vue_fastapi_006_fastapi_database.mov
+--- 005_ia_vue_fastapi_006_fastapi_database.mov
 
 - Description
 Some simple examples of API made with FastAPI 
@@ -245,12 +245,10 @@ http://127.0.0.1:8000/docs
 
 + EXAMPLE streamlit_video_mp4:
 --- 007_ia_vue_fastapi_streamlit_video_mp4.mov
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/streamlit_video_mp4/
 
 + EXAMPLE streamlit_no_reruns:
---- 008_ia_vue_fastapi_streamlit_no_reruns.mov
-
-+ EXAMPLE streamlit_module_annotated_text:
---- 009_ia_vue_fastapi_streamlit_module_annotated_text.mov
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/streamlit_no_reruns/
 
 
 ! (VI) OTHER FILES
