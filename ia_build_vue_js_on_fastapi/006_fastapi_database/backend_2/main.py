@@ -34,7 +34,7 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/006_
 
 # LAUNCH THE API
 # be sure to be at he root dir cf [path]
-uvicorn backend.main:app --reload
+uvicorn main:app --reload
 
 # local
 http://localhost:8000
@@ -44,7 +44,7 @@ http://127.0.0.1:8000
 """
 
 
-from backend import models, note
+import models, note
 from fastapi import Depends, FastAPI, File, status, APIRouter, Query, Header, HTTPException
 from fastapi.responses import RedirectResponse
 from fastapi.responses import StreamingResponse
@@ -56,7 +56,7 @@ from typing import Optional, List
 from fastapi.middleware.cors import CORSMiddleware
 
 # db
-from .database import engine
+from database import engine
 # debug
 from loguru import logger
 

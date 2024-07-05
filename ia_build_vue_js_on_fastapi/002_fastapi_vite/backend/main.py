@@ -158,7 +158,8 @@ async def things() -> List[Item]:
         Item(id=5, example="example5"),
         Item(id=6, example="example6"),
         Item(id=7, example="example7"),
-        Item(id=8, example="example8")
+        Item(id=8, example="example8"),
+        Item(id=9, example="example9 YOUTUBE")
 
         ]
 

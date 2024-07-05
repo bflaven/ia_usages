@@ -201,7 +201,7 @@ npm run dev
 
 + BACKEND
 - path
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/002_fastapi_vite/backend
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/002_fastapi_vite/backend/
 
 # USING CONDA
 conda info --envs
@@ -215,20 +215,21 @@ uvicorn main:app --reload
 # CHECK THE API
 http://127.0.0.1:8000/docs
 
-
-+ EXAMPLE 
---- 005_ia_vue_fastapi_001_my_vue_project.mov
-
 + EXAMPLE 006_fastapi_database:
 --- 006_ia_vue_fastapi_006_fastapi_database.mov
-
 
 - Description
 Some simple examples of API made with FastAPI 
 
-- CONSOLE_SCREEN_1 (blue)
+- CONSOLE
 # GO TO DIR
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/006_fastapi_database/backend_1/
+
+--- example_1
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/006_fastapi_database/backend_1
+
+--- example_1
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/006_fastapi_database/backend_2
+
 
 # LAUNCH THE ENV
 source activate fmm_fastapi_poc
