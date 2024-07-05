@@ -81,9 +81,10 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi
 
 ! (III) CREATE AN APP WITH VITE OR VUE.JS
 
---- TERMINAL (BLACK) FOR JAVASCRIPT
+--- TERMINAL (BLUE) FOR JAVASCRIPT
 
 + A. USING VITE TO CREATE AN APP
+--- 001_ia_build_vite.mov
 
 - Install Vite
 # CAUTION: if you want to use the commnds vite 
@@ -111,6 +112,7 @@ npm create vite@latest
 cd my-vite-app-yt-1
 npm install
 npm run dev
+npm run toto
 
 
 - create your first vite project
@@ -143,6 +145,7 @@ vite preview
 
 
 + B. USING VUEJS TO CREATE AN APP
+--- 002_ia_build_vuejs.mov
 
 --- create a directory
 # to create the dir
@@ -168,10 +171,10 @@ npm run dev
 + C. OTHER EXAMPLES USING VUEJS TO CREATE AN APP
 
 EXAMPLE the_vue_js_handbook:
---- 001_ia_vue_fastapi_the_vue_js_handbook.mov
+--- 003_ia_vue_fastapi_the_vue_js_handbook.mov
 
 EXAMPLE 001_my_vue_project:
---- 002_ia_vue_fastapi_001_my_vue_project.mov
+--- 004_ia_vue_fastapi_001_my_vue_project.mov
 
 
 ! (IV) CREATE A  FASTAPI API
@@ -179,7 +182,7 @@ EXAMPLE 001_my_vue_project:
 - path
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi
 
---- TERMINAL (BLUE) FOR PYTHON
+--- TERMINAL (BLACK) FOR PYTHON
 
 # USING CONDA
 conda info --envs
