@@ -184,8 +184,12 @@ digitalocean_your_first_vue_app_12.html
 json-server -p 5555 posts.json
 # Check http://localhost:5555/posts
 
-! # EXAMPLE 001_my_vue_project:
---- 004_ia_vue_fastapi_001_my_vue_project.mov
+
+! (IV) CREATE A FASTAPI API
+
++ EXAMPLE 002_fastapi_vite:
+--- 004_ia_vue_fastapi_002_fastapi_vite.mov
+
 
 + FRONTEND
 - path
@@ -212,16 +216,11 @@ uvicorn main:app --reload
 http://127.0.0.1:8000/docs
 
 
-! (IV) CREATE A  FASTAPI API
-
-
-+ EXAMPLE 002_fastapi_vite:
---- 003_ia_vue_fastapi_002_fastapi_vite.mov
-
++ EXAMPLE 
+--- 005_ia_vue_fastapi_001_my_vue_project.mov
 
 + EXAMPLE 006_fastapi_database:
---- 004_ia_vue_fastapi_006_fastapi_database.mov
-
+--- 006_ia_vue_fastapi_006_fastapi_database.mov
 
 
 - Description
@@ -244,13 +243,13 @@ http://127.0.0.1:8000/docs
 ! (V) SOME INVESTIGATION ON STREAMLIT
 
 + EXAMPLE streamlit_video_mp4:
---- 005_ia_vue_fastapi_streamlit_video_mp4.mov
+--- 007_ia_vue_fastapi_streamlit_video_mp4.mov
 
 + EXAMPLE streamlit_no_reruns:
---- 006_ia_vue_fastapi_streamlit_no_reruns.mov
+--- 008_ia_vue_fastapi_streamlit_no_reruns.mov
 
 + EXAMPLE streamlit_module_annotated_text:
---- 007_ia_vue_fastapi_streamlit_module_annotated_text.mov
+--- 009_ia_vue_fastapi_streamlit_module_annotated_text.mov
 
 
 ! (VI) OTHER FILES
