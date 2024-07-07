@@ -11,13 +11,6 @@
 
 You can find my WALKTHROUGHS for these 6 videos walkthrough_ia_build_vue_js_on_fastapi.diff (Video #1, Video #2, Video #3, Video #4, Video #5, Video #6)
 
-.png
-.png
-.png
-.png
-.png
-.png
-
 
 [Video #1 #scaffold Your First #vitejs #app: Comprehensive Beginner's Guide](https://www.youtube.com/watch?v=oBMK-QUYB7A)[![Video #1 #scaffold Your First #vitejs #app: Comprehensive Beginner's Guide](001_ia_build_vite.png)](https://www.youtube.com/watch?v=RjP-KkmfscM)
 
