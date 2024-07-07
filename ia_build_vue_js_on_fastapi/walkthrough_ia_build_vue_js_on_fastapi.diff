@@ -1,8 +1,15 @@
+
+
 --- walkthrough_ia_build_vue_js_on_fastapi.diff
+
 
 ! (I) SOURCE
 - Article: Building a Vue.js SPA (Single Page Application) Frontend with FastAPI Backend for AI Integration
 Source : https://flaven.fr/2024/07/building-a-vue-js-spa-single-page-application-frontend-with-fastapi-backend-for-ai-integration/
+
+Post : https://wp.me/p3Vuhl-3lp
+Code : https://shorturl.at/jkOOX
+
 
 --- Here are some experiments made with Streamlit that prevents me from switching from Streamlit to Vue.js with no doubt.
 
@@ -244,7 +251,7 @@ http://127.0.0.1:8000/docs
 ! (V) SOME INVESTIGATION ON STREAMLIT
 
 + EXAMPLE streamlit_video_mp4:
---- 007_ia_vue_fastapi_streamlit_video_mp4.mov
+--- 006_ia_vue_fastapi_streamlit.mov
 
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/streamlit_video_mp4/video_streamlit/
 
@@ -266,12 +273,108 @@ streamlit run 001_streamlit_no_reruns_checkbox.py
 streamlit run 002_streamlit_no_reruns_session.py
 
 
-
-
 ! (VI) OTHER FILES
 _prompt
 api_mock_notes.json
 grab_title_url.py
+
+
+! (VII) YOUTUBE
+
++  (1) FILES FOR YOUTUBE
+
+- VIDEO_1 001_ia_build_vite.mov
+--- 001_ia_build_vite.png
++ https://youtu.be/RjP-KkmfscM
+
+- VIDEO_2 002_ia_build_vuejs.mov
+--- 002_ia_build_vuejs.png
++ https://youtu.be/lZFLytx-mr8
+
+- VIDEO_3 003_ia_vue_fastapi_the_vue_js_handbook.mov
+--- 003_ia_vue_fastapi_the_vue_js_handbook.png
++ https://youtu.be/xZnym1tL3IY
+
+- VIDEO_4 004_ia_vue_fastapi_002_fastapi_vite.mov
+--- 004_ia_vue_fastapi_002_fastapi_vite.png
++ https://youtu.be/RYKZfTAaC54
+
+
+- VIDEO_5 005_ia_vue_fastapi_006_fastapi_database.mov
+--- 005_ia_vue_fastapi_006_fastapi_database.png
++ https://youtu.be/Tjr5DYqxapE
+
+- VIDEO_6 006_ia_vue_fastapi_streamlit.mov
+--- 006_ia_vue_fastapi_streamlit.png
++ https://youtu.be/xQT6bxVNbqY
+
++  (1) TITLE FOR YOUTUBE
+
+1. Scaffold Your First Vitejs App: Comprehensive Beginner's Guide
+#scaffold Your First #vitejs #app: Comprehensive Beginner's Guide
+
+2. Master Vuejs: Build Your First App and Project with Ease
+Master #vuejs: Build Your First #app and Project with Ease
+
+3. Display API Data using Vuejs & Axios: Step-by-Step Tutorial
+Display #api Data using #vuejs & #axios: Step-by-Step Tutorial
+
+4. Connect FastAPI Backend to Vue.js Frontend: Full Guide
+Connect #fastapi #backend to #vuejs #frontend: Full Guide
+
+5. FastAPI Development: Boost Productivity with Database Boilerplates
+#fastapi #development Boost #productivity with boilerplate code with #database
+
+
+6. Streamlit Mastery: View Whisper Transcripts & Prevent Page Reloads
+#streamlit Mastery: View #whisper #transcripts & Prevent Page Reloads
+
++  (2) CONTENT FOR YOUTUBE
+
+<b>This video is part of a post "Building a Vue.js SPA (Single Page Application) Frontend with FastAPI Backend for AI Integration"</b>
+
+<b>QUICK DESCRIPTION</b>
+Transitioning from Streamlit to Vue.js: some expeiments made with Vuejs and Vitejs to achieve the migration from a frontrend in Streamlit to Vitejs or Vuejs.
+
+In these videos post, I delve into the process of replacing Streamlit with Vue.js as the frontend for an AI-powered web application, connecting it to an API built with FastAPI. The shift aims to delegate frontend management to a separate team, allowing the AI team to focus on high-value tasks such as fine-tuning and model selection. Discover a simple yet effective architecture for the application, with a tech stack featuring FastAPI, SQLAlchemy, Vue.js, Vuex, and more.
+
+
+<b>URLs</b>
+POST: <a href="https://wp.me/p3Vuhl-3lp" target="_blank" rel="noopener">https://wp.me/p3Vuhl-3lp</a> 
+CODE: <a href="https://shorturl.at/jkOOX" target="_blank" rel="noopener">https://shorturl.at/jkOOX</a>
+
+--- FOR YT ONLY
+This video is part of a post "Building a Vue.js SPA (Single Page Application) Frontend with FastAPI Backend for AI Integration"
+
+QUICK DESCRIPTION
+Transitioning from Streamlit to Vue.js: some experiments made with Vuejs and Vitejs to achieve the migration from a frontrend in Streamlit to Vitejs or Vuejs.
+
+In these videos post, I delve into the process of replacing Streamlit with Vue.js as the frontend for an AI-powered web application, connecting it to an API built with FastAPI. The shift aims to delegate frontend management to a separate team, allowing the AI team to focus on high-value tasks such as fine-tuning and model selection. Discover a simple yet effective architecture for the application, with a tech stack featuring FastAPI, SQLAlchemy, Vue.js, Vuex, and more.
+
+
+URLs
+POST: https://wp.me/p3Vuhl-3lp
+CODE: https://shorturl.at/jkOOX
+
+--- YOUTUBE WITH HASHTAGS
+This video is part of a post "Building a #vuejs #spa  (Single Page Application) Frontend with #fastapi  #backend  for #ai Integration"
+
+QUICK DESCRIPTION
+Transitioning from #streamlit to #vuejs: some experiments made with #vuejs and #vitejs to achieve the migration from a frontend in #streamlit to #vuejs or #vitejs.
+
+In these videos post, I delve into the process of replacing Streamlit with Vue.js as the frontend for an AI-powered web application, connecting it to an API built with FastAPI. The shift aims to delegate frontend management to a separate team, allowing the AI team to focus on high-value tasks such as fine-tuning and model selection. Discover a simple yet effective architecture for the application, with a tech stack featuring FastAPI, SQLAlchemy, Vue.js, Vuex, and more.
+
+
+URLs
+POST:  https://wp.me/p3Vuhl-3lp
+CODE: https://shorturl.at/jkOOX
+
+
++ (3) KEYWORDS FOR YOUTUBE
+
+FastAPI, Python, backend, Vue.js, frontend, boilerplate codes, databases, Streamlit, Whisper Transcript, video, page reloading, user action, vitejs, scaffolding, first app, getting started, creating, project, axios, display data, api, how to use, web development, full stack development, REST API, data visualization, user interface, user experience, web application framework, single page application, data fetching, HTTP requests, data binding, web components, template engine
+
+
 
 
 
