@@ -45,7 +45,7 @@ python -m pip install openai
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_build_vue_js_on_fastapi/streamlit_no_reruns/
 
 # launch the file
-streamlit run 001_streamlit_no_reruns.py
+streamlit run 001_streamlit_no_reruns_checkbox.py
 
 https://www.youtube.com/watch?v=dPdB7zyGttg
 
