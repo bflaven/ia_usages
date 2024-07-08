@@ -23,9 +23,8 @@ Only the videos themselves ultimately retain this touching awkwardness made up o
 The 6 videos that echoed my last post "Building a Vue.js SPA (Single Page Application) Frontend with FastAPI Backend for AI Integration"
 
 ### LINKS
-Post : https://wp.me/p3Vuhl-3lp
-Code : https://shorturl.at/jkOOX
-
+- Post : https://wp.me/p3Vuhl-3lp
+- Code : https://shorturl.at/jkOOX
 
 - Video 1. #scaffold Your First #vitejs #app: Comprehensive Beginner's Guide. https://youtu.be/RjP-KkmfscM
 
