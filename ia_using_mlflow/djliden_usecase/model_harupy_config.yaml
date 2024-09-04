@@ -1,0 +1,28 @@
+# https://github.com/harupy/mlflow/blob/20b07e5de422a5dea401cf1d825ae23ff2268132/examples/deployments/deployments_server/openai/config.yaml
+endpoints:
+  - name: chat
+    endpoint_type: llm/v1/chat
+    model:
+      provider: openai
+      name: gpt-3.5-turbo
+      config:
+        openai_api_key: $OPENAI_API_KEY
+    limit:
+      renewal_period: minute
+      calls: 10
+
+  - name: completions
+    endpoint_type: llm/v1/completions
+    model:
+      provider: openai
+      name: gpt-3.5-turbo
+      config:
+        openai_api_key: $OPENAI_API_KEY
+
+  - name: embeddings
+    endpoint_type: llm/v1/embeddings
+    model:
+      provider: openai
+      name: text-embedding-ada-002
+      config:
+        openai_api_key: $OPENAI_API_KEY

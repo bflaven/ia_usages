@@ -1,0 +1,29 @@
+# mlflow_prompt_eng_ui_assets/config.yaml
+# https://github.com/djliden/llmops-examples/blob/00b42c7ec0f7e5914bf77966e84ddbfe02230e18/mlflow_prompt_eng_ui_assets/config.yaml
+# https://mlflow.org/docs/latest/llms/gateway/migration.html
+
+endpoints:  # Renamed to "endpoints"
+  - name: chat
+    endpoint_type: llm/v1/chat  # Renamed to "endpoint_type"
+    model:
+      provider: openai
+      name: gpt-3.5-turbo
+      config:
+        openai_api_key: $OPENAI_API_KEY
+        # openai_api_key: api_key
+
+# routes: 
+#   - name: chat_openai
+#     route_type: llm/v1/chat
+#     model:
+#       provider: openai
+#       name: gpt-3.5-turbo
+#       config:
+#         openai_api_key: $OPENAI_API_KEY
+  # - name: chat_mosaic_llama
+  #   route_type: llm/v1/chat
+  #   model:
+  #     provider: mosaicml
+  #     name: llama2-70b-chat
+  #     config:
+  #       mosaicml_api_key: $MOSAIC_API_KEY

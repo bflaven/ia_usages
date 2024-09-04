@@ -1,0 +1,50 @@
+endpoints:
+  - name: ollama
+    endpoint_type: llm/v1/completions
+    model:
+      provider: openai
+      name: mistral:latest
+      config:
+        openai_api_key: ""
+        openai_api_base: http://ollama:11434/v1
+
+
+# endpoints:
+# - name: completions
+#   endpoint_type: llm/v1/completions
+#   model:
+#       provider: openai
+#       name: gpt-3.5-turbo
+#       config:
+#           openai_api_key: $OPENAI_API_KEY
+
+# - name: chat
+#   endpoint_type: llm/v1/chat
+#   model:
+#       provider: openai
+#       name: gpt-4
+#       config:
+#           openai_api_key: $OPENAI_API_KEY
+
+# - name: chat_3.5
+#   endpoint_type: llm/v1/chat
+#   model:
+#       provider: openai
+#       name: gpt-3.5-turbo
+#       config:
+#           openai_api_key: $OPENAI_API_KEY
+
+# - name: embeddings
+#   endpoint_type: llm/v1/embeddings
+#   model:
+#       provider: openai
+#       name: text-embedding-ada-002
+#       config:
+#           openai_api_key: $OPENAI_API_KEY
+
+
+
+# class RouteType(str, Enum):
+#     LLM_V1_COMPLETIONS = "llm/v1/completions"
+#     LLM_V1_CHAT = "llm/v1/chat"
+#     LLM_V1_EMBEDDINGS = "llm/v1/embeddings"

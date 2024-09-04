@@ -1,0 +1,4 @@
+name: mlflow_demos
+channels:
+  - defaults
+prefix: /Users/brunoflaven/anaconda3/envs/mlflow_demos
