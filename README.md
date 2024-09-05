@@ -50,6 +50,10 @@
 14. Building a Vue.js SPA with FastAPI Backend for AI Integration
 [https://wp.me/p3Vuhl-3lp](https://wp.me/p3Vuhl-3lp)
 
+15. Enhance LLM Prompt Quality and Results with MLflow Integration
+[https://wp.me/p3Vuhl-3lS](https://wp.me/p3Vuhl-3lS)
+
+
 
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
@@ -122,7 +126,7 @@ git commit -am "add directory the_vue_js_handbook/poc_vue_api/frontend_2/"
 git commit -am "update path"
 git commit -am "update walkthrough_ia_build_vue_js_on_fastapi.diff for YT"
 git commit -am "update files"
-
+git commit -am "add link to readme file"
 
 # push to github if your branch on github is master
 # git push origin master
