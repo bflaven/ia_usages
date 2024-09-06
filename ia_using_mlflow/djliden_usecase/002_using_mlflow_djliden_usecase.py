@@ -33,7 +33,7 @@ python -m pip install mlflow
 python -m pip install starlette 
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_using_mlflow/djliden_usecase/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_mlflow/djliden_usecase/
 
 # launch the file
 python 002_using_mlflow_djliden_usecase.py

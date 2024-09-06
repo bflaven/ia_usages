@@ -34,7 +34,7 @@ pip install mlflow
 python -m pip install mlflow
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_using_mlflow/code_mlflow_langchain/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_mlflow/code_manuelgilm_mlflow_for_ml_dev/
 
 # launch the file
 python 000_using_mlflow.py

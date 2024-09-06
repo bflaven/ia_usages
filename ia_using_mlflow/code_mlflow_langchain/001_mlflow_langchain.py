@@ -41,7 +41,7 @@ python -m pip install openai
 
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_using_mlflow/code_mlflow_langchain
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_mlflow/code_mlflow_langchain/
 
 # launch the file
 python 001_mlflow_langchain.py

@@ -44,7 +44,7 @@ python -m pip install pydantic
 
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_using_mlflow/controlling-large-language-model-output-with-pydantic/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_mlflow/controlling-large-language-model-output-with-pydantic/
 
 # launch the file
 python 010b_controlling-large-language-model-output-with-pydantic.py

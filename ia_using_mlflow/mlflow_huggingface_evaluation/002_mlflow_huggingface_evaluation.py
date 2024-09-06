@@ -37,7 +37,8 @@ python -m pip install xformers
   
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_using_mlflow/mlflow_huggingface_evaluation/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_mlflow/mlflow_huggingface_evaluation/
+
 
 # launch the file
 python 002_mlflow_huggingface_evaluation.py
