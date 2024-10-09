@@ -14,6 +14,10 @@ An article exploring the process for testing the output of Large Language Models
 
 
 ## Audio version
-This post is also an expreiment to test NotebookLM. So, here is this regular blog post "Promptfoo: The Ultimate Tool for Ensuring LLM Quality and Reliability" converted into a podcast using NotebookLM.
+This post is also an experiment to test NotebookLM. So, here is this regular blog post "Promptfoo: The Ultimate Tool for Ensuring LLM Quality and Reliability" converted into a podcast using NotebookLM.
 
-<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1931591423&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/bruno-flaven" title="Bruno Flaven" target="_blank" style="color: #cccccc; text-decoration: none;">Bruno Flaven</a> · <a href="https://soundcloud.com/bruno-flaven/ia_testing_llm_3" title="ia_testing_llm_3" target="_blank" style="color: #cccccc; text-decoration: none;">ia_testing_llm_3</a></div>
+[Blog Post Audio made with NotebookLM on Promptfoo](https://on.soundcloud.com/vmw6Aj1S6Nx5AT8V6)
+
+
+
+
