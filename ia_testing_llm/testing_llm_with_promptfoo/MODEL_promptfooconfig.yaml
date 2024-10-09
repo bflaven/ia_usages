@@ -1,0 +1,125 @@
+description: "MLFLOW PROMPTFOO EVAL #1"
+
+# cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_testing_llm/001_promptfoo_running
+# npx promptfoo eval
+
+prompts: file://prompts/mig_prompt_1.txt
+  
+
+providers:
+  - id: ollama:mistral:latest
+    config:
+      temperature: 0.8
+#  - id: openrouter:mistralai/mixtral-8x7b-instruct
+#    config:
+#      temperature: 0.5
+#  - id: openrouter:meta-llama/llama-3.1-8b-instruct
+#    config:
+#      temperature: 0.5
+
+tests:
+
+    - vars:
+        lang: Français
+        content: file://articles/fr/*.txt
+      assert:
+        - type: contains-json
+          value: file://assert/assert_all.json
+        - type: python
+          value: file://assert/assert_all_4.py
+    - vars:
+        lang: Portuguais
+        content: file://articles/pt/*.txt
+      assert:
+        - type: contains-json
+          value: file://assert/assert_all.json
+        - type: python
+          value: file://assert/assert_all_4.py
+    - vars:
+        lang: Espagnol
+        content: file://articles/es/*.txt
+      assert:
+        - type: contains-json
+          value: file://assert/assert_all.json
+        - type: python
+          value: file://assert/assert_all_4.py
+    - vars:
+        lang: Russe
+        content: file://articles/ru/*.txt
+      assert:
+        - type: contains-json
+          value: file://assert/assert_all.json
+        - type: python
+          value: file://assert/assert_all_4.py
+    - vars:
+        lang: Arabe
+        content: file://articles/ar/*.txt
+      assert:
+        - type: contains-json
+          value: file://assert/assert_all.json
+        - type: python
+          value: file://assert/assert_all_4.py
+    - vars:
+        lang: English
+        content: file://articles/en/*.txt
+      assert:
+        - type: contains-json
+          value: file://assert/assert_all.json
+        - type: python
+          value: file://assert/assert_all_4.py
+    - vars:
+        lang: Persan
+        content: file://articles/fa/*.txt
+      assert:
+        - type: contains-json
+          value: file://assert/assert_all.json
+        - type: python
+          value: file://assert/assert_all_4.py
+    - vars:
+        lang: Roumain
+        content: file://articles/ro/*.txt
+      assert:
+        - type: contains-json
+          value: file://assert/assert_all.json
+        - type: python
+          value: file://assert/assert_all_4.py
+    - vars:
+        lang: Swahili
+        content: file://articles/sw/*.txt
+      assert:
+        - type: contains-json
+          value: file://assert/assert_all.json
+        - type: python
+          value: file://assert/assert_all_4.py
+    - vars:
+        lang: Ukrainien
+        content: file://articles/uk/*.txt
+      assert:
+        - type: contains-json
+          value: file://assert/assert_all.json
+        - type: python
+          value: file://assert/assert_all_4.py
+    - vars:
+        lang: Vietnamien
+        content: file://articles/vi/*.txt
+      assert:
+        - type: contains-json
+          value: file://assert/assert_all.json
+        - type: python
+          value: file://assert/assert_all_4.py
+    - vars:
+        lang: Chinois
+        content: file://articles/cn/*.txt
+      assert:
+        - type: contains-json
+          value: file://assert/assert_all.json
+        - type: python
+          value: file://assert/assert_all_4.py
+    - vars:
+        lang: Khmer
+        content: file://articles/km/*.txt
+      assert:
+        - type: contains-json
+          value: file://assert/assert_all.json
+        - type: python
+          value: file://assert/assert_all_4.py
