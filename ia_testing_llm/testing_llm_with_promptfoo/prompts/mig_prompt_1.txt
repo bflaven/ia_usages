@@ -1,0 +1,20 @@
+Génère un objet JSON valide strictement conforme aux spécifications ci-dessous à partir du {{ content }} fourni par l'utilisateur. Aucune balise de code ou formatage supplémentaire n'est autorisé. La sortie doit être un objet JSON strict pouvant être consommé directement par une API, sans texte explicatif, sans balises ```json, ``` ou tout autre format additionnel.
+
+Format attendu du JSON :
+1. Un titre entre 50 et 60 caractères, engageant et riche en mots-clés, qui représente fidèlement le contenu.
+2. Un résumé concis de 2 à 3 phrases des points principaux du texte, avec 1 ou 2 mots-clés inclus pour susciter l'intérêt du lecteur.
+3. Les cinq mots-clés ou expressions les plus pertinents du texte, que les lecteurs potentiels utiliseraient pour le rechercher.
+4. La catégorie générale ou le thème principal auquel appartient le contenu.
+
+Le résultat doit être en {{ lang }} et structuré en JSON strictement comme suit :
+
+[
+  {
+    \"1\": \"Titre de l'article\",
+    \"2\": \"Résumé de l'article en 2-3 phrases.\",
+    \"3\": [\"Mot-clé 1\", \"Mot-clé 2\", \"Mot-clé 3\", \"Mot-clé 4\", \"Mot-clé 5\"],
+    \"4\": \"Catégorie ou sujet principal\"
+  }
+]
+
+Ne fournis que l'objet JSON pur en {{ lang }}, sans aucune balise, texte explicatif, ou autre formatage non JSON. Le résultat doit être un JSON brut et valide, strictement conforme aux spécifications, prêt à être consommé par une API.

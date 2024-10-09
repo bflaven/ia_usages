@@ -1,0 +1,21 @@
+# Learn more about building a configuration: https://promptfoo.dev/docs/configuration/guide
+description: "My eval"
+
+prompts:
+  - 'Convert this English to {{language}}: {{input}}'
+  - 'Translate to {{language}}: {{input}}'
+  
+
+providers:
+  # - "openai:gpt-4o-mini"
+  # - "openai:gpt-4o"
+  # - ollama:llama2
+  - ollama:mistral:latest
+
+tests:
+  - vars:
+      language: French
+      input: Hello world
+  - vars:
+      language: Spanish
+      input: Where is the library?

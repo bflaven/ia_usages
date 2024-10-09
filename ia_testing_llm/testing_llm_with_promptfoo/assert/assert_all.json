@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "1": {
+            "type": "string",
+            "description": "Title or main description of the event or situation."
+        },
+        "2": {
+            "type": "string",
+            "description": "Detailed description or additional information about the event or situation."
+        },
+        "3": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "List of keywords or tags related to the event or situation."
+        },
+        "4": {
+            "type": "string",
+            "description": "Category or classification of the event or situation."
+        }
+    },
+    "required": [
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    "additionalProperties": false
+}

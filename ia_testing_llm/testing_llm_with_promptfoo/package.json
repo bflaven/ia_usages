@@ -1,0 +1,15 @@
+{
+    "dependencies": {
+        "punycode": "^2.3.1"
+    },
+    "overrides": {
+        "ajv": "^8.17.1",
+        "whatwg-url": "^14.0.0"
+    },
+    "scripts": {
+        "start": "NODE_NO_WARNINGS=1 vite"
+    },
+    "devDependencies": {
+        "promptfoo": "^0.91.1"
+    }
+}
