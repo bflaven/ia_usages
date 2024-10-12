@@ -98,6 +98,9 @@ npm install -g promptfoo@latest
 # change providers in promptfooconfig.yaml
 --- ollama:mistral:latest
 
+# init
+npx promptfoo init
+
 # eval
 npx promptfoo eval
 
