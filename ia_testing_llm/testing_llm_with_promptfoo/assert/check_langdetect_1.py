@@ -40,7 +40,7 @@ Check https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
 
 
 
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_testing_llm/testing_llm_with_promptfoo/assert
+/Users/brunoflaven/Documents/03_git/ia_usages/ia_testing_llm/testing_llm_with_promptfoo/assert
 python check_langdetect_1.py
 
 """
