@@ -54,7 +54,9 @@
 [https://wp.me/p3Vuhl-3lS](https://wp.me/p3Vuhl-3lS)
 
 
-16. Promptfoo: The Ultimate Tool for Ensuring LLM Quality and Reliability (https://wp.me/p3Vuhl-3me)
+16. Promptfoo: The Ultimate Tool for Ensuring LLM Quality and Reliability 
+[https://wp.me/p3Vuhl-3me](https://wp.me/p3Vuhl-3me)
+
 
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
