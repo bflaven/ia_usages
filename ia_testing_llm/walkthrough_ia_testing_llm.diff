@@ -1,0 +1,105 @@
+! SOURCE
++ Article
+https://flaven.fr/2024/10/promptfoo-the-ultimate-tool-for-ensuring-llm-quality-and-reliability/
+
+
+--- Intro
+An article exploring the process for testing the output of Large Language Models (LLMs) using a tool called "promptfoo." This tool allows developers to evaluate the quality and relevance of LLM outputs by defining tests for both structural and content-based criteria. It outlines a scenario where "promptfoo" is used to test the validity of JSON outputs and the quality of generated text summaries, emphasizing its utility in ensuring reliable LLM performance for applications. It also highlights the benefits of "promptfoo," including its developer-friendly nature, battle-tested reliability, and open-source availability, making it a powerful tool for enhancing LLM-based applications.
+
+You can read the article on my blog.
+Promptfoo: The Ultimate Tool for Ensuring LLM Quality and Reliability.
+- https://wp.me/p3Vuhl-3me
+
+
+
+--- Audio version
+This post is also an experiment to test NotebookLM. So, here is this regular blog post "Promptfoo: The Ultimate Tool for Ensuring LLM Quality and Reliability" converted into a podcast using NotebookLM.
+
+Blog Post Audio made with NotebookLM on Promptfoo
+- https://on.soundcloud.com/vmw6Aj1S6Nx5AT8V6
+
+
++ Video
+
+--- create the env with anaconda
+"""
+[env]
+# Conda Environment
+conda create --name promptfoo python=3.9.13
+conda info --envs
+source activate promptfoo
+conda deactivate
+
+
+# BURN AFTER READING
+source activate promptfoo
+
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n promptfoo
+
+# BURN AFTER READING
+conda env remove -n promptfoo
+
+
+# update conda 
+conda update -n base -c defaults conda
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
+
+# manual install
+pip install langdetect
+python -m pip install langdetect
+
+Check https://pypi.org/project/langdetect/
+
+"""
+
+
+--- testing_llm_with_promptfoo:
+- testing_llm_with_promptfoo.mov
+CODE: https://github.com/bflaven/ia_usages/tree/main/ia_testing_llm
+
+! CONSOLE_SCREEN (commands)
+
+# GO TO DIR
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_testing_llm
+
+# LAUNCH THE ENV
+source activate promptfoo
+
+
+#create the dir
+mkdir 001_promptfoo_running
+
+# path
+cd Users/brunoflaven/Documents/03_git/ia_usages/ia_testing_llm
+
+# install promptfoo
+npm install -g promptfoo@latest
+
+# change providers in promptfooconfig.yaml
+--- ollama:mistral:latest
+
+# eval
+npx promptfoo eval
+
+# launch commands
+LOG_LEVEL=debug npx promptfoo eval
+
+# launch eval
+npx promptfoo eval
+
+# view result
+npx promptfoo view
+
+# uninstall
+npm uninstall -g promptfoo
+# gain space disk
+npm cache clean --force
+
+
