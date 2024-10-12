@@ -46,7 +46,8 @@ brew install poppler
 brew install tesseract-lang 
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_testing_llm/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_testing_llm/
+
 
 # launch the file
 python 002_similarity_kws_human_llm.py
