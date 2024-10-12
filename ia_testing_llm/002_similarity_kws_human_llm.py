@@ -5,23 +5,23 @@
 """
 [env]
 # Conda Environment
-conda create --name using_mlflow python=3.9.13
+conda create --name promptfoo python=3.9.13
 conda info --envs
-source activate using_mlflow
+source activate promptfoo
 conda deactivate
 
 
 # BURN AFTER READING
-source activate using_mlflow
+source activate promptfoo
 
 
 
 # if needed to remove
 conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
-conda env remove -n using_mlflow
+conda env remove -n promptfoo
 
 # BURN AFTER READING
-conda env remove -n using_mlflow
+conda env remove -n promptfoo
 
 
 # update conda 

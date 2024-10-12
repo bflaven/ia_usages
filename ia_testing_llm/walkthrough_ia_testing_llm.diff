@@ -59,9 +59,22 @@ Check https://pypi.org/project/langdetect/
 
 """
 
+--- testing_llm_with_promptfoo:
+- testing_llm_with_promptfoo_1.mov
+
+
+
+# Conda Environment
+conda create --name using_mlflow python=3.9.13
+conda info --envs
+source activate promptfoo
+conda deactivate
+
+
+
 
 --- testing_llm_with_promptfoo:
-- testing_llm_with_promptfoo.mov
+- testing_llm_with_promptfoo_2.mov
 CODE: https://github.com/bflaven/ia_usages/tree/main/ia_testing_llm
 
 ! CONSOLE_SCREEN (commands)
@@ -99,6 +112,7 @@ npx promptfoo view
 
 # uninstall
 npm uninstall -g promptfoo
+
 # gain space disk
 npm cache clean --force
 
