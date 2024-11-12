@@ -6,7 +6,6 @@ The provided text explores the author's concerns about the potential downsides o
 
 
 ## prompt
-## prompt
 As editorial journalist generate :
 - 3 "sexy" titles proposal based on this summary and the content below.
 - a list of most important keywords based on this summary and the content below. Print the keywords in comma separated list.
@@ -19,7 +18,6 @@ The provided text explores the author's concerns about the potential downsides o
 
 
 ### content
-# ia_spacy_llm_1.md
 
 I don't like much laudatory speeches. I'm wary of them. They often sound false, closer to magical thinking than anything else. Inevitably, on AI, these speeches are legion. Insisting on the necessarily "tremendous" help that generative AI could bring as an editorial assistant or to remove irritants on time-consuming tasks is in a way easy.
 
