@@ -57,6 +57,7 @@
 16. Promptfoo: The Ultimate Tool for Ensuring LLM Quality and Reliability 
 [https://wp.me/p3Vuhl-3me](https://wp.me/p3Vuhl-3me)
 
+17. Content Quality: How Sentence Embeddings Can Save AI-Generated Content and some other concerns on AI: Environmental Impact, Job Loss [https://wp.me/p3Vuhl-3mv](https://wp.me/p3Vuhl-3mv)
 
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
@@ -135,6 +136,8 @@ git commit -am "add ia_testing_llm"
 git commit -am "update ia_testing_llm"
 git commit -am "add ia_spacy_llm"
 git commit -am "update ia_spacy_llm"
+git commit -am "add some other output (made with notebooklm) for ia_spacy_llm"
+
 
 # push to github if your branch on github is master
 # git push origin master
