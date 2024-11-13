@@ -2,7 +2,94 @@
 
 **made with notebooklm**
 
+
+## Abstract (made with notebooklm)
+
 The provided text explores the author's concerns about the potential downsides of artificial intelligence (AI). They express skepticism about AI's purported benefits, highlighting fears about its impact on the environment, the labor market, and the production of relevant, useful content. The author then focuses on the challenge of evaluating the quality of AI-generated text, specifically addressing how to ensure it is "correct" and avoids "hallucinations" - instances where AI produces inaccurate or nonsensical output. They introduce the concept of "sentence embeddings" as a potential solution, explaining how it allows for comparing sentences based on meaning rather than just words. The author then presents their approach for validating the quality of AI-generated text using the "spacy-llm" package, along with other tools like "pytextrank" and "pysentence-similarity," all with the goal of ensuring the usefulness of AI-generated content.
+
+## Other output (made with notebooklm)
+
+**IA Study Guide: Making AI & Evaluating Relevance**
+
+**1. Quiz**
+
+Instructions: Answer the following questions in 2-3 sentences each.
+
+- What is the author's primary concern regarding the practical application of AI in their work?
+
+- Why does the author find laudatory speeches about AI problematic?
+
+- What are the two major ecological concerns the author raises regarding AI?
+Explain the author's user story in relation to their work with AI.
+
+- What specific challenge does the author face when trying to use Ollama and spacy-llm together?
+
+- What is the purpose of using sentence embeddings in this context?
+
+- How does the all-MiniLM-L6-v2 model contribute to the process of evaluating AI output?
+
+- What are three potential applications of the Sentence-Transformers library mentioned in the text?
+
+- What is the author's main economic concern regarding the increasing use of AI in the workplace?
+Briefly explain why the author believes that utilizing an LLM for every NLP task might be inefficient.
+
+**2. Answer Key**
+
+- The author's primary concern is ensuring that the AI-generated text is "correct," meaning intelligible, relevant, and ultimately useful. They seek methods for measuring this relevance and preventing hallucinations, instances where the LLM produces nonsensical or irrelevant output.
+
+- The author finds such speeches problematic because they often rely on hype and overpromise the potential benefits of AI without acknowledging the practical challenges and potential drawbacks. The author emphasizes that action and tangible results are more valuable than empty praise.
+
+- The author's ecological concerns are the high energy consumption and substantial carbon footprint associated with AI technologies. They express skepticism about the effectiveness of guilt-inducing arguments regarding AI's environmental impact.
+
+- The author's user story is "As an AI coordinator, I want to ensure that AI functionalities provided to my company staff have added value, so that I can confidently implement these features knowing they contribute meaningfully to our work."
+Spacy-llm is currently not compatible with Ollama. To use spacy-llm with models like ChatGPT, a paid license is required, although a patch for Ollama compatibility is reportedly in development.
+
+- Sentence embeddings are used to represent sentences as numerical vectors that capture their meaning. This allows for quantitative comparisons of sentences based on semantic similarity rather than just surface-level word matches.
+
+- The all-MiniLM-L6-v2 model creates 384-dimensional sentence embeddings, facilitating tasks like semantic search, clustering of similar sentences, and measuring the degree of semantic similarity between sentences.
+
+- The Sentence-Transformers library can be used for finding similar text within a corpus, measuring the semantic similarity between sentences, and clustering text based on shared meaning.
+The author is concerned that AI will further benefit capital at the expense of labor, potentially leading to job displacement, wage suppression, and reduced hiring, particularly for those in cognitive-intensive roles.
+
+- The author argues that using a powerful LLM for simple NLP tasks can be overkill, akin to "using a sledgehammer to crack a nut." They suggest that spaCy provides a more efficient and cost-effective solution for certain tasks, reserving LLMs for more complex situations that require their full capabilities.
+
+**3. Essay Questions**
+
+- Analyze the author's concerns regarding the ethical implications of AI development and deployment. Consider the potential for job displacement, economic inequality, and environmental harm. Discuss possible strategies to mitigate these negative consequences.
+
+- Evaluate the author's approach to validating the relevance of AI-generated text. What are the strengths and limitations of their methods? Propose alternative or complementary approaches for ensuring the quality and usefulness of AI output.
+
+- Explore the concept of "making AI" as presented by the author. Drawing on Hannah Arendt's The Human Condition, analyze the author's desire for AI development to be both intellectually stimulating and practically valuable. How might this perspective influence the future direction of AI research and application?
+
+- Critically examine the author's skepticism about the impact of ecological arguments against AI development. Do you agree with their assessment? Discuss the potential role of environmental considerations in shaping the future of AI technology.
+
+- Considering the author's role as an AI coordinator, imagine a scenario where they need to present their findings and recommendations regarding AI implementation to a skeptical or resistant audience within their company. Develop a persuasive argument that addresses their concerns while highlighting the potential benefits of responsible AI adoption.
+
+**4. Glossary of Key Terms**
+
+- LLM (Large Language Model): A type of artificial intelligence model trained on a massive dataset of text and code, enabling it to generate text, translate languages, write different kinds of creative content, and answer questions in an informative way.
+
+- Generative AI: A category of AI systems that can create new content, including text, images, audio, video, and code, based on learned patterns from input data.
+
+- Hallucination: A phenomenon in AI, particularly in LLMs, where the model generates outputs that are factually incorrect, nonsensical, or irrelevant to the given context.
+
+- User Story: A short, simple description of a feature or functionality from the perspective of the end-user, often used in software development to capture user needs and guide development priorities.
+
+- Sentence Embeddings: Numerical representations of sentences, typically in the form of vectors, that capture their semantic meaning, enabling computers to understand and compare the meaning of different sentences.
+
+- Semantic Similarity: A measure of how closely related two pieces of text are in terms of their meaning, often calculated using sentence embeddings.
+
+- Sentence-Transformers: A Python library that provides easy-to-use tools for creating and working with sentence embeddings, commonly used for tasks like semantic search, text clustering, and paraphrase detection.
+
+- spacy-llm: A Python package that integrates LLMs into the spaCy NLP library, facilitating the use of LLMs for various NLP tasks.
+
+- Ollama: An open-source project that provides a framework for running large language models locally, allowing users to experiment with and deploy LLMs without relying on cloud services.
+
+- NLP (Natural Language Processing): A branch of artificial intelligence that focuses on enabling computers to understand, interpret, and generate human language.
+
+- pytextrank: A Python library that implements the TextRank algorithm for extracting keywords and generating summaries from text.
+
+- pysentence-similarity: A Python tool used for identifying and quantifying the similarity between sentences, useful for tasks like paraphrase detection and text clustering.
 
 
 ## prompt
@@ -15,6 +102,8 @@ As editorial journalist generate :
 
 The provided text explores the author's concerns about the potential downsides of artificial intelligence (AI). They express skepticism about AI's purported benefits, highlighting fears about its impact on the environment, the labor market, and the production of relevant, useful content. The author then focuses on the challenge of evaluating the quality of AI-generated text, specifically addressing how to ensure it is "correct" and avoids "hallucinations" - instances where AI produces inaccurate or nonsensical output. They introduce the concept of "sentence embeddings" as a potential solution, explaining how it allows for comparing sentences based on meaning rather than just words. The author then presents their approach for validating the quality of AI-generated text using the "spacy-llm" package, along with other tools like "pytextrank" and "pysentence-similarity," all with the goal of ensuring the usefulness of AI-generated content.
 ```
+
+
 
 
 ### content
