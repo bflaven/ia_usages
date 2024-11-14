@@ -113,10 +113,11 @@ class TitleAndKeywordAnalyzer:
 # ia_ollama_russian_2024_11_10_09_52_06.py
 # ia_ollama_spanish_2024_11_10_09_51_04.py
 # ia_ollama_vietnamese_2024_11_10_09_42_46.py
-
+# ia_ollama_English_2024_11_14_14_12_02.py
 """
 
-spec = importlib.util.spec_from_file_location("ia_ollama_portuguese_2024_11_10_09_53_26", "ollama_output/ia_ollama_portuguese_2024_11_10_09_53_26.py")
+# add for youtube video
+spec = importlib.util.spec_from_file_location("ia_ollama_English_2024_11_14_14_12_02", "ollama_output/ia_ollama_English_2024_11_14_14_12_02.py")
 
 
 
