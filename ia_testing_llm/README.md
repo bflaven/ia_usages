@@ -18,7 +18,7 @@ This post is also an experiment to test NotebookLM. So, here is this regular blo
 
 [Blog Post Audio made with NotebookLM on Promptfoo](https://on.soundcloud.com/vmw6Aj1S6Nx5AT8V6)
 
-# videos
+# Videos
 
 [Promptfoo: The Ultimate Tool for Ensuring LLM Quality and Reliability (Part 1)](https://www.youtube.com/watch?v=hFh_DkN63KU)[![Promptfoo: The Ultimate Tool for Ensuring LLM Quality and Reliability (Part 1)](testing_llm_with_promptfoo_1.png)](https://www.youtube.com/watch?v=hFh_DkN63KU)
 

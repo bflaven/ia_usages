@@ -13,3 +13,11 @@ This post is also an experiment to test NotebookLM. So, here is this regular blo
 
 [Blog Post Audio made with NotebookLM on "How Sentence Embeddings Can Save AI-Generated Content and some other concerns on AI: Environmental Impact, Job Loss"](https://on.soundcloud.com/61ufT6BNt4WzhvwX7)
 
+# Videos
+
+
+[Streamlit & Ollama: Querying Mistral LLM Locally and Generating Titles & Keywords](https://www.youtube.com/watch?v=gkc5OVaEcbg)[![Streamlit & Ollama: Querying Mistral LLM Locally and Generating Titles & Keywords](ia_spacy_llm_1.png)](https://www.youtube.com/watch?v=gkc5OVaEcbg)
+
+
+
+[Evaluating AI-Generated Text: Semantic Similarity with Sentence Embeddings](https://www.youtube.com/watch?v=OgIvs2eWwOM)[![Evaluating AI-Generated Text: Semantic Similarity with Sentence Embeddings](ia_spacy_llm_2.png)](https://www.youtube.com/watch?v=OgIvs2eWwOM)
