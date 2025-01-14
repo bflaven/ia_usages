@@ -28,9 +28,8 @@ Faiss is used with the **"all-MiniLM-L6-v2"** model to quickly rank and organize
 #### **Use Case #2: Image Ordering**
 Faiss works with **CLIP** (a tool that connects text and images) to sort images based on their relevance to a user’s multilingual text input. For example, if a user searches "beautiful sunset," it finds the most suitable image from a collection, even if the text is in different languages.
 
----
 
-#### **Use Case #3:  Unrelated Use Case: Image Descriptions
+#### Use Case #3:  Unrelated Use Case: Image Descriptions
 A separate method using **face_recognition** and **transformers** creates accurate descriptions for images. These descriptions can improve image search or provide useful alternative text (alt messages) for accessibility. For instance, it might describe an image as "A smiling person at the beach during sunset," which is helpful for users and search engines.
 
 
