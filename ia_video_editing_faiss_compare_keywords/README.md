@@ -30,7 +30,7 @@ Faiss works with **CLIP** (a tool that connects text and images) to sort images 
 
 ---
 
-### Unrelated Use Case: Image Descriptions
+#### **Use Case #3:  Unrelated Use Case: Image Descriptions
 A separate method using **face_recognition** and **transformers** creates accurate descriptions for images. These descriptions can improve image search or provide useful alternative text (alt messages) for accessibility. For instance, it might describe an image as "A smiling person at the beach during sunset," which is helpful for users and search engines.
 
 
