@@ -1,0 +1,41 @@
+{
+    "nid": "959cf240-aa97-11e8-9830-005056a9425e",
+    "created": 1535442866,
+    "changed": 1582565211,
+    "type": "taxonomy",
+    "description": "keywords in Portuguese",
+    "keywords": [
+        {
+            "code": "105_D64_8802",
+            "label": "\"Milagre económico\""
+        },
+        {
+            "code": "105_D64_8876",
+            "label": "\"agentes do estrangeiro\""
+        },
+        {
+            "code": "105_D64_7060",
+            "label": "1° de Maio"
+        },
+        {
+            "code": "105_D64_MZ25210",
+            "label": "\"persona non grata\"."
+        },
+        {
+            "code": "105_D64_8929",
+            "label": "\"phygital\""
+        },
+        {
+            "code": "105_D64_MZ26026",
+            "label": "#Metoopolitico"
+        },
+        {
+            "code": "105_D64_9601",
+            "label": "óleo de palma"
+        },
+        {
+            "code": "105_D64_6307",
+            "label": "ABBA"
+        }
+    ]
+}
