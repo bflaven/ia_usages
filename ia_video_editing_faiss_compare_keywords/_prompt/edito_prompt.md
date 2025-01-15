@@ -6,10 +6,7 @@ Translate in to english and improve the logic of the text below :
 
 Derrière ce code, la user story est simple : Faire un rapprochement sémantique entre tous les mots-clés existant dans un CMS (WordPress, Drupal, Homemade CMS) et une une liste de mots-clés générée par de l'Intelligence Artificielle via un prompt (Claude, Mistral, Chatgpt) afin de proposer une liste de mots-clés existants restreinte sur la base de la proposition IA.
 
-The code leverage on this model  SentenceTransformer('all-MiniLM-L6-v2')
-
-
-
+The code leverage on this model  is SentenceTransformer('all-MiniLM-L6-v2')
 
 
 ## CHATGPT_1
