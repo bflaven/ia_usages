@@ -45,8 +45,7 @@ conda update -n base -c defaults conda
 pip freeze > requirements.txt
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_video_editing_faiss_compare_keywords/ia_video_editing/
-
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_video_editing_faiss_compare_keywords/ia_video_editing
 # launch the file
 streamlit run 011_ia_video_editing_spacy_entitities_cuepoints_streamlit.py
 
