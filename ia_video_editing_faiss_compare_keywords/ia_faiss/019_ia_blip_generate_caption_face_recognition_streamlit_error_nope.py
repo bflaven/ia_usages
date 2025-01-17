@@ -35,56 +35,47 @@ pip freeze > requirements.txt
 # [path]
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_video_editing_faiss_compare_keywords/ia_faiss
 
-# launch the file
-python 017_ia_blip_generate_caption_face_recognition.py
-
+# launch the file in streamlit
+streamlit run 019_ia_blip_generate_caption_face_recognition_streamlit.py
 
 """
 
 
 import os
+import streamlit as st
 from PIL import Image
 import face_recognition
 import torch
 from transformers import VisionEncoderDecoderModel, ViTImageProcessor, AutoTokenizer
 
-# Sample image paths
-image_paths = [
-    "pictures/brazil_indonesia_presidents.png",
-    "pictures/Prime-Minister-Narendra-Modi_1687153732144_1687153732409.jpg",
-    "pictures/putin_obama_78882139_179597572-1587096938.jpg",
-    "pictures/trump-handshake-1.jpg",
-    "pictures/kamala_en_20250107_142604_142726_cs.jpg",
-    "pictures/syria_prisoner_img_9135.jpg",
-    "pictures/edmundo_gonzalez_ap25006631909879.jpg",
-    "pictures/elon-musk-donald-trump-jd-vance.jpg",
-    # ... (other image paths)
-]
-
 # Load pre-trained model and tokenizer
-model = VisionEncoderDecoderModel.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
-feature_extractor = ViTImageProcessor.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
-tokenizer = AutoTokenizer.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
+@st.cache_resource
+def load_model():
+    model = VisionEncoderDecoderModel.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
+    feature_extractor = ViTImageProcessor.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
+    tokenizer = AutoTokenizer.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model.to(device)
+    return model, feature_extractor, tokenizer, device
 
-# Set the device
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model.to(device)
+model, feature_extractor, tokenizer, device = load_model()
 
 # Load known faces
-known_face_encodings = []
+@st.cache_resource
+def load_known_faces():
+    known_face_encodings = []
+    known_face_names = ["Trump", "Harris", "Lula", "Modi", "Putin", "Obama", "Macron", "Gonzalez", "Subianto", "Vance", "Musk"]
 
-# known_face_names = ["Harris", "Lula", "Modi", "Putin", "Obama", "Macron", "Gonzalez", "Subianto"]
+    for name in known_face_names:
+        image = face_recognition.load_image_file(f"known_faces/{name.lower()}.jpg")
+        encoding = face_recognition.face_encodings(image)[0]
+        known_face_encodings.append(encoding)
 
-# known_face_names = ["Trump", "Harris", "Lula", "Modi", "Putin", "Obama", "Macron", "Gonzalez", "Subianto"]
+    return known_face_encodings, known_face_names
 
-known_face_names = ["Trump", "Harris", "Lula", "Modi", "Putin", "Obama", "Macron", "Gonzalez", "Subianto", "Vance", "Musk"]
+known_face_encodings, known_face_names = load_known_faces()
 
-
-for name in known_face_names:
-    image = face_recognition.load_image_file(f"known_faces/{name.lower()}.jpg")
-    encoding = face_recognition.face_encodings(image)[0]
-    known_face_encodings.append(encoding)
-
+# Face recognition function
 def recognize_faces(image_path):
     image = face_recognition.load_image_file(image_path)
     face_locations = face_recognition.face_locations(image)
@@ -99,25 +90,21 @@ def recognize_faces(image_path):
 
     return recognized_names
 
-
+# Generate description function
 def generate_description(image_path):
     try:
         # Load and preprocess the image
         image = Image.open(image_path)
         inputs = feature_extractor(images=image, return_tensors="pt").to(device)
-        
+
         # Generate the caption
         with torch.no_grad():
             outputs = model.generate(**inputs, max_length=50, num_beams=4, early_stopping=True)
-        
+
         caption = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
         # Recognize faces
         recognized_faces = recognize_faces(image_path)
-
-        # Print out recognized_faces
-        # print('\n--- recognized_faces ')
-        # print(f"{recognized_faces}")
 
         # Add face recognition information to the caption
         if recognized_faces:
@@ -128,10 +115,29 @@ def generate_description(image_path):
     except Exception as e:
         return f"Error processing {os.path.basename(image_path)}: {str(e)}"
 
-# Generate descriptions for each image
-for path in image_paths:
-    description = generate_description(path)
-    print(f"{os.path.basename(path)}: {description}")
+# Streamlit app
+st.title("Image Captioning and Face Recognition App")
+
+# Upload images
+uploaded_files = st.file_uploader("Upload Images", accept_multiple_files=True, type=["jpg", "jpeg", "png"])
+
+if uploaded_files:
+    for uploaded_file in uploaded_files:
+        # Save uploaded file temporarily
+        temp_path = os.path.join("temp", uploaded_file.name)
+        os.makedirs("temp", exist_ok=True)
+        with open(temp_path, "wb") as f:
+            f.write(uploaded_file.getbuffer())
+
+        # Display the image
+        st.image(temp_path, caption=uploaded_file.name, use_column_width=True)
+
+        # Generate and display description
+        description = generate_description(temp_path)
+        st.write(f"**{uploaded_file.name}:** {description}")
+
+        # Remove temporary file
+        os.remove(temp_path)
 
 
 

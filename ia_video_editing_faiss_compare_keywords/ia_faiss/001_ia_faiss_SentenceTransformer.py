@@ -35,7 +35,7 @@ conda update -n base -c defaults conda
 pip freeze > requirements.txt
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_video_editing_faiss_compare_keywords/ia_faiss/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_video_editing_faiss_compare_keywords/ia_faiss/
 
 
 # launch the file
