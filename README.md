@@ -143,7 +143,7 @@ git commit -am "add youtube video"
 git commit -am "add ia_video_editing_faiss_compare_keywords"
 git commit -am "add files and directories to ia_video_editing_faiss_compare_keywords"
 git commit -am "update files in ia_video_editing_faiss_compare_keywords"
-
+git commit -am "add images generated and prompts for Grok"
 
 # push to github if your branch on github is master
 # git push origin master
