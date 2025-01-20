@@ -22,7 +22,7 @@ A separate method using **face_recognition** and **transformers** creates accura
 
 - More on "CLIP, Connecting text and images" at https://openai.com/index/clip/ and "open_clip" at https://github.com/mlfoundations/open_clip
 
-**Illustration made with Grok for "ia_faiss: Using faiss"**
+**Illustration made with Grok for "ia_faiss: Using faiss**
 ![ia_faiss: Using faiss](good_grok_illustration_usecase_prompt_20_faiss.jpg)
 
 

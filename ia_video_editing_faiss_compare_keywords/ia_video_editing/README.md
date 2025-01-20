@@ -11,7 +11,7 @@ This app helps analyze text from a transcription file (exported as JSON from Whi
 **So that** I can easily find key moments (like when important topics or entities are mentioned) and use the timecodes to edit or navigate my content efficiently.
 
 
-**Illustration made with Grok for "Uia_video_editing: Attempt using streamlit and spacy to make video editing"**
+**Illustration made with Grok for "ia_video_editing: Attempt using streamlit and spacy to make video editing"**
 ![ia_video_editing: Attempt using streamlit and spacy to make video editing](good_grok_illustration_usecase_prompt_14_video.jpg)
 
 
