@@ -1,4 +1,4 @@
-# ia_cms
+# ia_cms: Using semantic similarity with a CMS
 
 
 ## 1. ia_cms: Using semantic similarity with a CMS
@@ -9,6 +9,8 @@ The code utilizes the **SentenceTransformer('all-MiniLM-L6-v2')** model to achie
 
 **Illustration made with Grok for "Using semantic similarity with a CMS"**
 ![Using semantic similarity with a CMS](good_grok_illustration_usecase_prompt_17_tags.jpg)
+
+
 
 
 
