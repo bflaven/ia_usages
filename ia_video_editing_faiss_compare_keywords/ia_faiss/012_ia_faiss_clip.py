@@ -179,7 +179,7 @@ index.add(image_features.astype(np.float32))
 # query = "Lula, le président du Brésil, serre la main d'une autre personne"
 # query = "Лула, президент Бразилии"
 # query = "Lula, o presidente do Brasil"
-# query = "Lula, tổng thống Brazil"
+query = "Lula, tổng thống Brazil"
 # query = "لولا، رئیس جمهور برزیل"
 # query = "Macron serre la main d'une autre personne"
 # query = "Un serpent dans un arbre"
@@ -188,7 +188,7 @@ index.add(image_features.astype(np.float32))
 # query = "Looking for J. D. Vance"
 # query = "¿Dónde está el señor Musk?"
 # query = "¿Dónde está el señor Trump?"
-query = "Find me a picture for President Prabowo Subianto?"
+# query = "Find me a picture for President Prabowo Subianto?"
 
 
 # Vice President Kamala Harris shakes hands with House Speaker Mike Johnson, as a joint session of Congress convenes to certify President-elect Donald Trump's election victory on January 6, 2025, at the U.S. Capitol in Washington.
