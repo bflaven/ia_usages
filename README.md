@@ -59,6 +59,9 @@
 
 17. Content Quality: How Sentence Embeddings Can Save AI-Generated Content and some other concerns on AI: Environmental Impact, Job Loss [https://wp.me/p3Vuhl-3mv](https://wp.me/p3Vuhl-3mv)
 
+
+18. Breadcrumbs of Innovation: A Snapshot of AI Explorations [https://wp.me/p3Vuhl-3mP](https://wp.me/p3Vuhl-3mP)
+
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
 

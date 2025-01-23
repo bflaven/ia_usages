@@ -49,3 +49,11 @@ This app helps analyze text from a transcription file (exported as JSON from Whi
 **So that** I can easily find key moments (like when important topics or entities are mentioned) and use the timecodes to edit or navigate my content efficiently.
 
 
+## Audio version
+This post is also an experiment to test NotebookLM. So, here is this regular blog post Breadcrumbs of Innovation: A Snapshot of AI Explorations [https://wp.me/p3Vuhl-3mP](https://wp.me/p3Vuhl-3mP) converted into a podcast using NotebookLM.
+
+
+- [The Big Dive part 1 : exploring reflections on the impact of artificial intelligence (AI)](https://on.soundcloud.com/KYsxEU7Zh1qdDLGo8)
+
+- [The Big Dive part 2 : The 2025 US presidential election through the lens of "We Have Never Been Woke," a book critiquing a new "woke" elite.](https://on.soundcloud.com/THjokmLiH8q194Gr9)
+
