@@ -150,6 +150,9 @@ git commit -am "add images generated and prompts for Grok"
 git commit -am "add to readme images generated and prompts for Grok"
 git commit -am "update readme files generated and prompts for Claude"
 
+git commit -am "update readme files"
+
+
 
 # push to github if your branch on github is master
 # git push origin master

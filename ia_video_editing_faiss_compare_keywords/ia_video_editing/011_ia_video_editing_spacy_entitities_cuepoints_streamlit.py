@@ -34,9 +34,6 @@ python -m spacy validate
   warnings.warn(warn_msg)
 
 
-  
-
-  
 
 # update conda 
 conda update -n base -c defaults conda
