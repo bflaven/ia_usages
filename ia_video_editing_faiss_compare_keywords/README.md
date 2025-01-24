@@ -4,26 +4,24 @@ Breadcrumbs of Innovation: A Snapshot of AI Explorations
 
 Exploring cutting-edge AI technologies has been an exciting journey as we step into 2025. Here's a glimpse into my recent technological adventures:
 
-🔍 Key AI Exploration Topics:
+## 🔍 Key AI Exploration Topics:
 1. IA_CMS: Semantic Similarity in Content Management
 2. IA_Faiss: Advanced Text and Image Ordering Techniques
 3. IA_Video_Editing: Innovative Editing with Streamlit and Spacy
 4. Special Focus: AI's Influence on the 2025 US Presidential Election
 
-🎙️ Dive Deeper:
+## 🎙️ Dive Deeper:
 - Podcast Explorations: 
   [SoundCloud Link 1](https://on.soundcloud.com/KYsxEU7Zh1qdDLGo8)
   [SoundCloud Link 2](https://on.soundcloud.com/THjokmLiH8q194Gr9)
 
-📝 Full Details:
+## 📝 Full Details:
 - Blog Post: [Read More](https://wp.me/p3Vuhl-3mP)
 - Code Repository: [GitHub Link](https://shorturl.at/y5HNV)
 
 💡 Pro Tip: The prompts are often more valuable than the code itself!
 
 #AI #LLM #Mistral #Faiss #CLIP #ChatGPT #Perplexity #Claude #Innovation2025
-
-
 
 **You can read the article on my blog**
 Breadcrumbs of Innovation: A Snapshot of AI Explorations [https://wp.me/p3Vuhl-3mP](https://wp.me/p3Vuhl-3mP)
