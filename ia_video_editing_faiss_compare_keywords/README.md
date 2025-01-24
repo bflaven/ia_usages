@@ -12,21 +12,16 @@ Exploring cutting-edge AI technologies has been an exciting journey as we step i
 
 ## 🎙️ Dive Deeper:
 - Podcast Explorations: 
-  [SoundCloud Link 1](https://on.soundcloud.com/KYsxEU7Zh1qdDLGo8)
-  [SoundCloud Link 2](https://on.soundcloud.com/THjokmLiH8q194Gr9)
+  [The Big Dive part 1 : exploring reflections on the impact of artificial intelligence (AI)](https://on.soundcloud.com/KYsxEU7Zh1qdDLGo8)
+  [The Big Dive part 2 : The 2025 US presidential election through the lens of "We Have Never Been Woke," a book critiquing a new "woke" elite.](https://on.soundcloud.com/THjokmLiH8q194Gr9)
 
 ## 📝 Full Details:
-- Blog Post: [Read More](https://wp.me/p3Vuhl-3mP)
-- Code Repository: [GitHub Link](https://shorturl.at/y5HNV)
+- Blog Post: Breadcrumbs of Innovation: A Snapshot of AI Explorations [https://wp.me/p3Vuhl-3mP](https://wp.me/p3Vuhl-3mP)
+- - Code Repository: [GitHub Link](https://shorturl.at/y5HNV)
 
 💡 Pro Tip: The prompts are often more valuable than the code itself!
 
 #AI #LLM #Mistral #Faiss #CLIP #ChatGPT #Perplexity #Claude #Innovation2025
-
-**You can read the article on my blog**
-Breadcrumbs of Innovation: A Snapshot of AI Explorations [https://wp.me/p3Vuhl-3mP](https://wp.me/p3Vuhl-3mP)
-
-
 
 
 ## 1. ia_cms: Using semantic similarity with a CMS
