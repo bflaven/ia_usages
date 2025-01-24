@@ -6,7 +6,7 @@
 As a python expert, rewrite the all script below in order to convert into a Streamlit app with some slight changes:
 - first, keep in st.info the info about the package versions, make the app full screen. Feel free to find a sexy name for the app both as title in the tag title and as main title
 - second, find also an icon to illustrate the main function of the app. The app will have 2 tabs. A tab is called "Search".
-- In the search tabe, put the variable "known_face_names" into a st.multiselect
+- In the search tab, put the variable "known_face_names" into a st.multiselect
 - For the tab, for step 1, for the variable "image_paths" replaced into the new script by the ability to browse directly the directory "pictures/" and retrieve all the files with ".jpg" extension instead of declaring the files manually. When the app start launch in, background the encoding of the images and notify to the user in a field with the streamlit function "st.success" indicating the message "print("Encoding images...") and then the second action "print("Creating Faiss index...")", notify the user with st.info with the message "You can start using the search in natural language".
 
 - For the tab, for the variable "known_face_names" enable the select sp the user can select all the values and then hit a submit button in red named with the label "Launch". The result of the submit button must retrieve the images and generate the description with the st.write.
