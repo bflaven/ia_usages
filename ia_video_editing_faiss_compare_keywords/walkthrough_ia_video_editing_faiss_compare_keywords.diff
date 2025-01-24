@@ -97,6 +97,7 @@ python 005_ia_cms.py
 
 + 2. ia_faiss: Using faiss
 
+A separate method using face_recognition and transformers creates accurate descriptions for images. These descriptions can improve image search or provide useful alternative text (alt messages) for accessibility. For instance, it might describe an image as "A smiling person at the beach during sunset," which is helpful for users and search engines.
 
 + 2.1 ia_faiss_generate_caption:
 --- ia_faiss_generate_caption.mov
@@ -140,7 +141,7 @@ streamlit run 013_ia_faiss_clip_streamlit.py
 + 2.3 ia_faiss_caption_face_recognition_images:
 --- ia_faiss_caption_face_recognition_images.mov
 
-- DESC: A separate method using face_recognition and transformers creates accurate descriptions for images. These descriptions can improve image search or provide useful alternative text (alt messages) for accessibility. For instance, it might describe an image as "A smiling person at the beach during sunset," which is helpful for users and search engines. NOTE: It enables the face_recognition from a list of pictures set in a directory named known_faces where a bunch of presidents
+- DESC: It enables the face_recognition from a list of PICTURES that contains a bunch of leading international personalities e.g  ["Trump", "Harris", "Lula", "Modi", "Putin", "Obama", "Macron", "Gonzalez", "Subianto", "Vance", "Musk"] has been set to generate a description in english.
 
 CODE: https://github.com/bflaven/ia_usages/tree/main/ia_video_editing_faiss_compare_keywords/ia_faiss
 
@@ -157,7 +158,7 @@ python 015_ia_blip_generate_caption_face_recognition.py
 + 2.4 ia_faiss_caption_face_recognition_text:
 --- ia_faiss_caption_face_recognition_text.mov
 
-- DESC: It enables the face_recognition from a list of words where a bunch of presidents has been set.
+- DESC: It enables the face_recognition from a list of WORDS that contains a bunch of leading international personalities e.g  ["Trump", "Harris", "Lula", "Modi", "Putin", "Obama", "Macron", "Gonzalez", "Subianto", "Vance", "Musk"] has been set to generate a description in english.
 
 CODE: https://github.com/bflaven/ia_usages/tree/main/ia_video_editing_faiss_compare_keywords/ia_faiss
 
