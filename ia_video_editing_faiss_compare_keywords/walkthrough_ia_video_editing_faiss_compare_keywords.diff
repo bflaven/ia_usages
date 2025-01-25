@@ -83,7 +83,7 @@ python 005_ia_cms.py
 
 + 1. ia_cms: Using semantic similarity with a CMS
 
---- ia_cms_semantic_similarity:
+--- ia_cms_semantic_similarity
 --- ia_cms_semantic_similarity.mov
 
 - DESC: The underlying user story for this code is straightforward: to establish a semantic match between all existing keywords in a CMS (such as WordPress, Drupal, or a custom-built CMS) and a list of AI-generated keywords using prompts (e.g., with Claude, Mistral, or ChatGPT).
