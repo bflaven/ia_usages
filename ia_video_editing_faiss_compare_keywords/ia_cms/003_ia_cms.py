@@ -115,14 +115,14 @@ def get_similar_keywords(ia_generated_kw: List[str], cms_existing_kw: List[str])
 
 
 # IAG's tags in english
-ia_generated_kw = ["Ukraine", "Zelensky", "Belgium", "Leaders"]
+# ia_generated_kw = ["Ukraine", "Zelensky", "Belgium", "Leaders"]
 # CMS's tags in english
-cms_existing_kw = ["Zelensky", "Europe", "Brussels", "Russia", "European Union"]
+# cms_existing_kw = ["Zelensky", "Europe", "Brussels", "Russia", "European Union"]
 
 # IAG's tags in russian
-# ia_generated_kw = ["Украина", "Зеленский", "Бельгия", "Лидеры"]
+ia_generated_kw = ["Украина", "Зеленский", "Бельгия", "Лидеры"]
 # CMS's tags in russian
-# cms_existing_kw = ["Зеленский", "Европа", "Брюссель", "Россия", "Евросоюз"]
+cms_existing_kw = ["Зеленский", "Европа", "Брюссель", "Россия", "Евросоюз"]
 
 
 # Get the sorted list of similar keywords with similarities

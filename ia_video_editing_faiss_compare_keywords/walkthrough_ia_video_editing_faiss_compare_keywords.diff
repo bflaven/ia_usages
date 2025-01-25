@@ -84,7 +84,7 @@ python 005_ia_cms.py
 + 1. ia_cms: Using semantic similarity with a CMS
 
 --- ia_cms_semantic_similarity:
-- ia_cms_semantic_similarity.mov
+--- ia_cms_semantic_similarity.mov
 
 - DESC: The underlying user story for this code is straightforward: to establish a semantic match between all existing keywords in a CMS (such as WordPress, Drupal, or a custom-built CMS) and a list of AI-generated keywords using prompts (e.g., with Claude, Mistral, or ChatGPT).
 
@@ -124,16 +124,23 @@ CODE: https://github.com/bflaven/ia_usages/tree/main/ia_video_editing_faiss_comp
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_video_editing_faiss_compare_keywords/ia_faiss/
 
 
-# launch the file
-python 013_ia_blip_generate_caption_generate_english.py
-
 # LAUNCH THE ENV
 conda info --envs
 source activate ia_using_faiss
 
-
-# launch the file
+# launch the file (image description in english)
 python 013_ia_blip_generate_caption_generate_english.py
+
+
+# launch the file (image description in english with face_recognition from a directory of images with a boolean that let the user set the source object or directory)
+python 013a_ia_blip_generate_caption_generate_english_known_faces.py
+
+
+# launch the file (image description in english with face_recognition from an object)
+python 017_ia_blip_generate_caption_face_recognition.py
+
+
+
 
 + 2.2 ia_faiss_natural_language_query:
 --- ia_faiss_natural_language_query.mov

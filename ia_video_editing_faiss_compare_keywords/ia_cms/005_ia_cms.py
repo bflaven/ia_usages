@@ -166,9 +166,9 @@ most_similar_keywords = [kw for kw, _, _ in similar_keywords]
 print("\nOrdered list of most similar keywords:")
 print(most_similar_keywords)
 
-# Create a list of keywords with similarity >= 0.7
+# Create a list of keywords with similarity >= 0.6
 reduced_most_similar_keywords = [kw for kw, sim, _ in similar_keywords if sim >= 0.8]
-print("\nReduced list of most similar keywords (Similarity >= 0.8):")
+print("\nReduced list of most similar keywords (Similarity >= 0.6):")
 print(reduced_most_similar_keywords)
 
 

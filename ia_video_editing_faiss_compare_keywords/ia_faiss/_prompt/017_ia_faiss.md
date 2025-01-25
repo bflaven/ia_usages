@@ -1,45 +1,31 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
 
-
-"""
-[env]
-# Conda Environment
-conda create --name ia_using_faiss python=3.9.13
-conda info --envs
-source activate ia_using_faiss
-conda deactivate
+# 015_ia_faiss.md
 
 
 
-# if needed to remove
-conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
-conda env remove -n ia_using_faiss
 
-# install good
-python -m pip install pillow torch transformers
+## PROMPT_1
 
+As a python expert, rewrite all the script so I can cut and paste.
+- to fix the error below
 
-# update conda 
-conda update -n base -c defaults conda
-
-# to export requirements
-pip freeze > requirements.txt
-
-# [path]
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_video_editing_faiss_compare_keywords/ia_faiss/
+```text
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+We strongly recommend passing in an `attention_mask` since your input_ids may be padded. See https://huggingface.co/docs/transformers/troubleshooting#incorrect-output-when-padding-tokens-arent-masked.
+You may ignore this warning if your `pad_token_id` (50256) is identical to the `bos_token_id` (50256), `eos_token_id` (50256), or the `sep_token_id` (None), and your input is not padded.
+```
+- improve the code and do not hesitate to comment each line, to leverage on best practices, using class and function.
 
 
-# launch the file
-python 013a_ia_blip_generate_caption_generate_english_known_faces.py
 
+# PERPLEXITY_1
+Here's an improved version of the script that addresses the error and incorporates best practices, including the use of classes and functions with comments:
 
-"""
-
-
+```python
 import os
 import face_recognition
 from PIL import Image
+import numpy as np
 import torch
 from transformers import VisionEncoderDecoderModel, ViTImageProcessor, AutoTokenizer
 
@@ -93,12 +79,10 @@ class ImageCaptioner:
             image = image.convert(mode="RGB")
 
         pixel_values = self.feature_extractor(images=[image], return_tensors="pt").pixel_values
-        attention_mask = torch.ones(pixel_values.shape[0], pixel_values.shape[2], dtype=torch.long)
         
         with torch.no_grad():
             output_ids = self.model.generate(
                 pixel_values,
-                attention_mask=attention_mask,
                 max_length=50,
                 num_beams=4,
                 early_stopping=True
@@ -141,26 +125,45 @@ def main(use_directory, image_paths=None):
         print()
 
 if __name__ == "__main__":
-    # Set to True to use the "pictures" directory instead of image_paths
-    # use_directory = False  
-    use_directory = True  
-
+    use_directory = False  # Set to True to use the "pictures" directory instead of image_paths
     image_paths = [
         "pictures/kamala_en_20250107_142604_142726_cs.jpg",
         "pictures/syria_prisoner_img_9135.jpg",
         "pictures/edmundo_gonzalez_ap25006631909879.jpg"
     ]
     main(use_directory, image_paths)
+```
 
+This improved version of the script addresses the attention mask warning and incorporates several best practices:
 
+1. We've organized the code into classes (`FaceRecognizer` and `ImageCaptioner`) to improve modularity and readability.
 
-    
+2. Each method now has a docstring explaining its purpose.
 
+3. To fix the attention mask warning, we've set the pad token to be the same as the eos token in the `ImageCaptioner` class initialization.
 
+4. We've added error handling for face encoding in the `load_known_faces` method.
 
-    
+5. The image captioning model now uses beam search with early stopping for potentially better captions.
 
+6. The main function is now more concise and easier to read.
 
+To use this script:
 
+1. Install the required libraries: `face_recognition`, `pillow`, `numpy`, `torch`, and `transformers`.
+2. Place your input images in a directory named "pictures".
+3. Place images of known faces in a directory named "known_faces". The filenames (without extensions) will be used as the names for recognition.
+4. Set the `use_directory` boolean to `True` if you want to use all images in the "pictures" directory, or `False` to use the specified `image_paths`.
+5. Run the script.
 
-    
+This version should resolve the attention mask warning and provide a more robust and maintainable codebase[1][2][3][4][5][6][7].
+
+Citations:
+[1] https://realpython.com/face-recognition-with-python/
+[2] https://zaai.ai/llms-and-transformers-from-scratch-the-decoder/
+[3] https://realpython.com/image-processing-with-the-python-pillow-library/
+[4] https://cloudinary.com/guides/image-effects/face-detection-in-python
+[5] https://huggingface.co/docs/transformers/model_doc/vision-encoder-decoder
+[6] https://docs.scipy.org/doc/scipy/tutorial/ndimage.html
+[7] https://thepythoncode.com/article/create-a-facial-recognition-system-in-python
+[8] https://discuss.huggingface.co/t/visionencoderdecoder-x-attn-question/19276
