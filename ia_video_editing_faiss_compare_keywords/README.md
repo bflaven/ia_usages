@@ -80,6 +80,18 @@ This post is also an experiment to test NotebookLM. So, here is this regular blo
 
 ## Video
 
+[Using Semantic Similarity with a CMS #ia #nlp #cms #api #python](https://www.youtube.com/watch?v=xjf1xogmvp4)[![Using Semantic Similarity with a CMS #ia #nlp #cms #api #python](001_ia_cms_semantic_similarity.png)](https://www.youtube.com/watch?v=xjf1xogmvp4)
+
+[Combining Face Recognition and Image Captioning: A Comprehensive Guide #python #ia](https://www.youtube.com/watch?v=nPmrj9mBc-0)[![Combining Face Recognition and Image Captioning: A Comprehensive Guide #python #ia](002_ia_faiss_generate_caption.png)](https://www.youtube.com/watch?v=nPmrj9mBc-0)
+
+
+[Natural Language & Multilingual Image Discovery: How AI Understands Your Searches](https://www.youtube.com/watch?v=SJ8FaKZUiUI)[![Natural Language & Multilingual Image Discovery: How AI Understands Your Searches](003_ia_faiss_natural_language_query.png)](https://www.youtube.com/watch?v=SJ8FaKZUiUI)
+
+
+[Beyond Subtitles: AI-Powered Video Content Discovery #ia #nlp #spacy #whisper #streamlit #python](https://www.youtube.com/watch?v=gblpFYX4Wqg)[![Beyond Subtitles: AI-Powered Video Content Discovery #ia #nlp #spacy #whisper #streamlit #python](004_ia_video_editing.png)](https://www.youtube.com/watch?v=gblpFYX4Wqg)
+
+
+
 
 
 
