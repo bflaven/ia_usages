@@ -156,7 +156,12 @@ class ImageSearchApp:
         
 
     def archive_tab(self):
-        archived_queries = [
+        archived_queries = [            
+            "A badger in a field", # (EN)
+            "Un tejón en un campo", # (ES)
+            "Un blaireau dans un champs", # (FR)
+            "Барсук в поле", # (RU)
+            "Um texugo em um campo", # (BR)
             "A snake in a tree",
             "A man sits in a tent in the desert",
             "A zebra's muzzle with blue sky around it",

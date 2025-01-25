@@ -157,6 +157,8 @@ index.add(image_features.astype(np.float32))
 
 # Define the query
 # query = "A snake in a tree"
+query = "A snake and bear down in a forest"
+
 # query = "A man sits in a tent in the desert"
 # query = "A zebra's muzzle with blue sky around it"
 # query = "A chameleon on a broken branch"
@@ -179,7 +181,7 @@ index.add(image_features.astype(np.float32))
 # query = "Lula, le président du Brésil, serre la main d'une autre personne"
 # query = "Лула, президент Бразилии"
 # query = "Lula, o presidente do Brasil"
-query = "Lula, tổng thống Brazil"
+# query = "Lula, tổng thống Brazil"
 # query = "لولا، رئیس جمهور برزیل"
 # query = "Macron serre la main d'une autre personne"
 # query = "Un serpent dans un arbre"
