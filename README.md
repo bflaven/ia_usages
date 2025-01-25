@@ -152,7 +152,7 @@ git commit -am "update readme files generated and prompts for Claude"
 git commit -am "update readme files"
 git commit -am "add user story, code, prompt for face recognition generating description or alt message from a set of known faces"
 git commit -am "add some updates"
-
+git commit -am "update walkthrough_ia_video_editing_faiss_compare_keywords.diff fot YT videos"
 
 
 # push to github if your branch on github is master
