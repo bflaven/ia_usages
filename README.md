@@ -153,7 +153,7 @@ git commit -am "update readme files"
 git commit -am "add user story, code, prompt for face recognition generating description or alt message from a set of known faces"
 git commit -am "add some updates"
 git commit -am "update walkthrough_ia_video_editing_faiss_compare_keywords.diff fot YT videos"
-git commit -am "add images"
+git commit -am "add images and other things"
 
 # push to github if your branch on github is master
 # git push origin master
