@@ -101,14 +101,28 @@ def get_similar_keywords(ia_generated_kw: List[str], cms_existing_kw: List[str])
     return unique_similar_keywords
 
 # Define the input lists
+
+# IAG's tags in Portuguese
 # ia_generated_kw = ['Milagre económico', 'Ásia-Pacífico', 'Ásia-Pacífico', 'persona non grata".', 'Ébola', 'Áudio', 'óleo de palma', 'Áustria']
+
+# CMS's tags in Portuguese
 # cms_existing_kw = ['Milagre económico', 'agentes do estrangeiro', '1° de Maio', 'persona non grata".', 'phygital', '#Metoopolitico', 'óleo de palma', 'ABBA']
 
-# IAG
-ia_generated_kw = ["Ukraine", "Zelensky", "Belgique", "Dirigeants"]
-# CMS 
-cms_existing_kw = ["Zelensky", "Europe", "Bruxelles", "Russie", "Union Européenne"]
+# IAG's tags in french
+# ia_generated_kw = ["Ukraine", "Zelensky", "Belgique", "Dirigeants"]
+# CMS's tags in french
+# cms_existing_kw = ["Zelensky", "Europe", "Bruxelles", "Russie", "Union Européenne"]
 
+
+# IAG's tags in english
+# ia_generated_kw = ["Ukraine", "Zelensky", "Belgium", "Leaders"]
+# CMS's tags in english
+# cms_existing_kw = ["Zelensky", "Europe", "Brussels", "Russia", "European Union"]
+
+# IAG's tags in russian
+ia_generated_kw = ["Украина", "Зеленский", "Бельгия", "Лидеры"]
+# CMS's tags in russian
+cms_existing_kw = ["Зеленский", "Европа", "Брюссель", "Россия", "Евросоюз"]
 
 
 # Get the sorted list of similar keywords with similarities

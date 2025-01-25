@@ -3,8 +3,6 @@
 https://flaven.fr/2025/01/breadcrumbs-of-innovation-a-snapshot-of-ai-explorations/
 
 --- Intro
-Todo
-
 You can read the article on my blog.
 Breadcrumbs of Innovation: A Snapshot of AI Explorations
 - https://wp.me/p3Vuhl-3mP
@@ -64,7 +62,7 @@ conda update -n base -c defaults conda
 pip freeze > requirements.txt
 
 # [path]
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_video_editing_faiss_compare_keywords/ia_cms
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_video_editing_faiss_compare_keywords/
 
 # launch the file
 python 005_ia_cms.py
@@ -78,6 +76,8 @@ python 005_ia_cms.py
 --- ia_cms_semantic_similarity:
 - ia_cms_semantic_similarity.mov
 
+- DESC: The underlying user story for this code is straightforward: to establish a semantic match between all existing keywords in a CMS (such as WordPress, Drupal, or a custom-built CMS) and a list of AI-generated keywords using prompts (e.g., with Claude, Mistral, or ChatGPT).
+
 CODE: https://github.com/bflaven/ia_usages/tree/main/ia_video_editing_faiss_compare_keywords/ia_cms
 
 ! CONSOLE_SCREEN (commands)
@@ -90,8 +90,10 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_video_editing_faiss_compare_
 conda info --envs
 source activate ia_using_faiss
 
+# launch the file (simple)
+python 003_ia_cms.py
 
-# launch the file
+# launch the file (complex)
 python 005_ia_cms.py
 
 
