@@ -111,6 +111,14 @@ python 005_ia_cms.py
 
 A separate method using face_recognition and transformers creates accurate descriptions for images. These descriptions can improve image search or provide useful alternative text (alt messages) for accessibility. For instance, it might describe an image as "A smiling person at the beach during sunset," which is helpful for users and search engines.
 
+- Packages used in the videos
+https://pypi.org/project/face-recognition/
+https://github.com/salesforce/BLIP
+https://openai.com/index/clip/
+https://github.com/openai/CLIP
+
+
+
 + 2.1 ia_faiss_generate_caption:
 --- ia_faiss_generate_caption.mov
 
@@ -142,9 +150,6 @@ python 013a_ia_blip_generate_caption_generate_english_known_faces.py
 - DESC: Generate image description in english with face_recognition from an python object with well-known international personalities
 
 python 017_ia_blip_generate_caption_face_recognition.py
-
-
-
 
 + 2.2 ia_faiss_natural_language_query:
 --- ia_faiss_natural_language_query.mov
