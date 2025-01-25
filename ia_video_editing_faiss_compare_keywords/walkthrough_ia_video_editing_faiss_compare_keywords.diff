@@ -129,14 +129,18 @@ conda info --envs
 source activate ia_using_faiss
 
 # launch the file (image description in english)
+- DESC: generate image image description in english
 python 013_ia_blip_generate_caption_generate_english.py
 
 
-# launch the file (image description in english with face_recognition from a directory of images with a boolean that let the user set the source object or directory)
+# launch the file 
+- DESC: generate image description in english with face_recognition from a directory of images with a boolean that let the user set the source either a python object or a directory with well-known international personalities
+
 python 013a_ia_blip_generate_caption_generate_english_known_faces.py
 
+# launch the file 
+- DESC: Generate image description in english with face_recognition from an python object with well-known international personalities
 
-# launch the file (image description in english with face_recognition from an object)
 python 017_ia_blip_generate_caption_face_recognition.py
 
 
