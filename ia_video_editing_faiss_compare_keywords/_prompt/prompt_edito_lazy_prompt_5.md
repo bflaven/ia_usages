@@ -1,4 +1,4 @@
-
+# prompt_edito_lazy_prompt_5.md
 
 ## prompt
 
@@ -28,7 +28,6 @@ As an editorial manager of a YouTube channel in English, follow these steps:
 - Include the names of packages and models to enhance semantic quality and improve search engine optimization (SEO) across various topics.
 
 --- SCRIPT_1
-```python
 ```python
 import streamlit as st
 import json
