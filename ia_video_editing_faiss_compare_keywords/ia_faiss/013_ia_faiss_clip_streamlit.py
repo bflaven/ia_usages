@@ -156,7 +156,9 @@ class ImageSearchApp:
         
 
     def archive_tab(self):
-        archived_queries = [            
+        archived_queries = [ 
+            "Get me Musk",           
+            "Get me Musk and the Donald",           
             "A badger in a field", # (EN)
             "Un tejón en un campo", # (ES)
             "Un blaireau dans un champs", # (FR)
