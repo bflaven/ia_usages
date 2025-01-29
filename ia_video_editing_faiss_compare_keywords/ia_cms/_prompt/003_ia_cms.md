@@ -22,7 +22,7 @@ Choix de la langue pivot anglais ou francais
 Exemple d'image
 id: 578d35ec-be0d-11ef-ada1-005056bf30b7
 id: 6094170e-bdff-11ef-ae7c-005056bfb2b6
-URL: https://bo.francemm.com/france24/ar/media/images
+URL: https://XXX.francemm.com/france24/ar/media/images
 
 
 Estimation grosse-mailles d'une date de mise en production de leur feature...
@@ -88,7 +88,7 @@ Rendre possible la traduction des textes dans une langue pivot, le français par
 **Exemple d'image :**
 - ID : 578d35ec-be0d-11ef-ada1-005056bf30b7
 - ID : 6094170e-bdff-11ef-ae7c-005056bfb2b6
-- URL : [https://bo.francemm.com/france24/ar/media/images](https://bo.francemm.com/france24/ar/media/images)
+- URL : [https://XXX.XXX.com/XXX/ar/media/images](https://XXX.XXX.com/XXX/ar/media/images)
 
 **Estimation grosse-maille d'une date de mise en production de leur feature...**
 
