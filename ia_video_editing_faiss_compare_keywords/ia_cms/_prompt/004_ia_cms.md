@@ -10,9 +10,9 @@ En gros, il faut dégager des arguments positifs sur la question "Où placer l'a
 
 ! Exemple F24 FR
 - article
-https://bo.francemm.com/france24/fr/content/MZ409275
+https://XXX.XXX.com/XXX/fr/content/MZ409275
 --- vidéo media principal de l'article
-https://bo.francemm.com/france24/fr/content/MZ409268
+https://XXX.XXX.com/XXX/fr/content/MZ409268
 
 + Présentation identique (vidéo) à l'introduction (article)
 
@@ -22,9 +22,9 @@ Lorsque que l'article est publié, la mise à jour des infos de l'article met à
 
 
 - édition
-https://bo.francemm.com/france24/fr/content/MZ409202
+https://XXX.XXX.com/XXX/fr/content/MZ409202
 --- vidéo media principal de l'edition
-https://bo.francemm.com/france24/fr/content/MZ409201
+https://XXX.XXX.com/XXX/fr/content/MZ409201
 
 + Présentation identique (vidéo) à l'introduction (édition)
 
@@ -37,18 +37,18 @@ Attention: lorsque que l'édition ou l'article est publiée, la mise à jour des
 Attention: ce n'est pas le cas chez RFI FR, lorsque que l'édition ou l'article est publiée, la mise à jour des infos de l'édition met à jour l'audio.
 
 - article
-https://bo.francemm.com/rfi/fr/content/MZ477544
+https://bo.XXX.XXX/XXX/fr/content/MZ477544
 --- audio media principal de l'article
-https://bo.francemm.com/rfi/fr/content/MZ477542
+https://XXX.XXX.com/XXX/fr/content/MZ477542
 
 + Présentation identique (audio) à l'introduction (édition)
 
 + Thématiques (audio) identique aux Thématiques (édition)
 
 - édition
-https://bo.francemm.com/rfi/fr/content/MZ477500
+https://XXX.XXX.com/rfi/fr/content/MZ477500
 --- audio media principal de l'édition
-https://bo.francemm.com/rfi/fr/content/MZ477437
+https://XXX.XXX.com/XXX/fr/content/MZ477437
 
 + Présentation identique (audio) à l'introduction (édition)
 
@@ -64,8 +64,8 @@ https://bo.francemm.com/rfi/fr/content/MZ477437
 ### Exemple F24 FR
 
 #### Article
-- [Article](https://bo.francemm.com/france24/fr/content/MZ409275)
-- [Vidéo principale de l'article](https://bo.francemm.com/france24/fr/content/MZ409268)
+- [Article](https://XXX.XXX.com/XXX/fr/content/MZ409275)
+- [Vidéo principale de l'article](https://XXX.XXX.com/XXX/fr/content/MZ409268)
 
 - **Présentation identique** : La vidéo est identique à l'introduction de l'article.
 - **Thématiques identiques** : Les thématiques de la vidéo sont identiques à celles de l'article.
@@ -73,8 +73,8 @@ https://bo.francemm.com/rfi/fr/content/MZ477437
 **Mise à jour** : Lorsque l'article est publié, la mise à jour des informations de l'article met également à jour la vidéo.
 
 #### Édition
-- [Édition](https://bo.francemm.com/france24/fr/content/MZ409202)
-- [Vidéo principale de l'édition](https://bo.francemm.com/france24/fr/content/MZ409201)
+- [Édition](https://XXX.XXX.com/XXX/fr/content/MZ409202)
+- [Vidéo principale de l'édition](https://XXX.XXX.com/XXX/fr/content/MZ409201)
 
 - **Présentation identique** : La vidéo est identique à l'introduction de l'édition.
 - **Thématiques identiques** : Les thématiques de la vidéo sont identiques à celles de l'édition.
@@ -86,15 +86,15 @@ https://bo.francemm.com/rfi/fr/content/MZ477437
 **Attention** : Contrairement à F24 FR, chez RFI FR, lorsque l'édition ou l'article est publié, la mise à jour des informations de l'édition met à jour l'audio.
 
 #### Article
-- [Article](https://bo.francemm.com/rfi/fr/content/MZ477544)
-- [Audio principal de l'article](https://bo.francemm.com/rfi/fr/content/MZ477542)
+- [Article](https://XXX.XXX.com/XXX/fr/content/MZ477544)
+- [Audio principal de l'article](https://XXX.XXX.com/XXX/fr/content/MZ477542)
 
 - **Présentation identique** : L'audio est identique à l'introduction de l'article.
 - **Thématiques identiques** : Les thématiques de l'audio sont identiques à celles de l'article.
 
 #### Édition
-- [Édition](https://bo.francemm.com/rfi/fr/content/MZ477500)
-- [Audio principal de l'édition](https://bo.francemm.com/rfi/fr/content/MZ477437)
+- [Édition](https://XXX.XXX.com/XXX/fr/content/MZ477500)
+- [Audio principal de l'édition](https://XXX.XXX.com/XXX/fr/content/MZ477437)
 
 - **Présentation identique** : L'audio est identique à l'introduction de l'édition.
 - **Thématiques identiques** : Les thématiques de l'audio sont identiques à celles de l'édition.
