@@ -1,4 +1,9 @@
-# Getting Started
+# Examples from
+
+## codecarbon
+Estimate and track carbon emissions from your computer, quantify and analyze their impact.
+See https://github.com/mlco2/codecarbon/tree/master/examples
+
 
 ## Setup
 The following examples use Keras from TensorFlow 2.0. The dependencies can be installed as follows
