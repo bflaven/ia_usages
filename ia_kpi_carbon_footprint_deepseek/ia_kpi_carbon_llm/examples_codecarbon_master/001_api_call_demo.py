@@ -37,9 +37,11 @@ cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_kpi_carbon_footprint_de
 
 
 # launch the file
-streamlit run 001_carbon_footprint_monitoring_system_streamlit.py
+python 001_api_call_demo.py
 
-Carbon Footprint Monitoring System
+CODECARBON
+Estimate and track carbon emissions from your computer, quantify and analyze their impact.
+See https://github.com/mlco2/codecarbon/tree/master/examples
 
 
 """
