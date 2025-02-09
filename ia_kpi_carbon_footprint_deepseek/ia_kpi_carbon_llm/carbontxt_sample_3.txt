@@ -1,0 +1,38 @@
+# carbon.txt for flaven.fr
+# Version: 0.2
+# Last updated: 2025-02-07
+
+[org]
+name = "Flaven.fr"
+description = "WordPress blog and personal website"
+url = "https://flaven.fr"
+industry = "digital-media"
+
+disclosures = [
+    { doc_type = "web-page", url = "https://flaven.fr/sustainability", domain = "flaven.fr" },
+    { doc_type = "metrics", url = "https://flaven.fr/carbon-metrics.json", domain = "flaven.fr" }
+]
+
+[upstream]
+services = [
+    { domain = "o2switch.fr", service_type = "shared-hosting" },
+    { domain = "cloudflare.com", service_type = "cdn" },
+    { domain = "wordpress.org", service_type = "cms" }
+]
+
+[tech]
+cms = "wordpress"
+hosting_type = "shared"
+cdn_enabled = true
+php_version = "8.2"
+db_type = "mysql"
+
+[efficiency]
+image_optimization = true
+caching_enabled = true
+minification_enabled = true
+lazy_loading = true
+gzip_compression = true
+wp_plugins_optimized = true
+db_optimization = true
+

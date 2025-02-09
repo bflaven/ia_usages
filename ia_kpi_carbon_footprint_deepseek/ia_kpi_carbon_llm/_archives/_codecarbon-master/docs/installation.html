@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installing CodeCarbon &mdash; CodeCarbon 2.8.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5e07a493"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quickstart" href="usage.html" />
+    <link rel="prev" title="Frequently Asked Questions" href="faq.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CodeCarbon
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="methodology.html">Methodology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_examples.html">Model Comparisons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing CodeCarbon</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#from-pypi-repository">From PyPi repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#from-conda-repository">From conda repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-codecarbon-as-a-linux-service">Install CodeCarbon as a Linux service</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html#configuration">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">CodeCarbon API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html">Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comet.html">Comet Integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Logging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="output.html">Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="to_logger.html">Collecting emissions to a logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualize.html">Visualize</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CodeCarbon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installing CodeCarbon</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installing-codecarbon">
+<span id="installation"></span><h1>Installing CodeCarbon<a class="headerlink" href="#installing-codecarbon" title="Link to this heading"></a></h1>
+<p>Create a virtual environment using <cite>conda</cite> for easier management of dependencies and packages.
+For installing conda, follow the instructions on the
+<a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install">official conda website</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>codecarbon
+conda<span class="w"> </span>activate<span class="w"> </span>codecarbon
+</pre></div>
+</div>
+<section id="from-pypi-repository">
+<h2>From PyPi repository<a class="headerlink" href="#from-pypi-repository" title="Link to this heading"></a></h2>
+<p>The package is hosted on the pip repository <a class="reference external" href="https://pypi.org/project/codecarbon/">here</a>.</p>
+<p>To install the package, run the following command in your terminal.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>codecarbon
+</pre></div>
+</div>
+</section>
+<section id="from-conda-repository">
+<h2>From conda repository<a class="headerlink" href="#from-conda-repository" title="Link to this heading"></a></h2>
+<p>The package is hosted on the conda repository <a class="reference external" href="https://anaconda.org/codecarbon/codecarbon">here</a>.</p>
+<p>To install the package, run the following command in your terminal.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>codecarbon<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>codecarbon
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We recommend using Python 3.8 or above.</p>
+</div>
+</section>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h2>
+<p>The following packages are used by the CodeCarbon package, and will be installed along with the package itself:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>arrow
+click
+fief-client<span class="o">[</span>cli<span class="o">]</span>
+pandas
+prometheus_client
+psutil
+py-cpuinfo
+pynvml
+rapidfuzz
+requests
+questionary
+rich
+typer
+</pre></div>
+</div>
+<p>Please refer to <a class="reference external" href="https://github.com/mlco2/codecarbon/blob/master/pyproject.toml">pyproject.toml</a> for the latest list of the packages used.</p>
+</section>
+<section id="install-codecarbon-as-a-linux-service">
+<h2>Install CodeCarbon as a Linux service<a class="headerlink" href="#install-codecarbon-as-a-linux-service" title="Link to this heading"></a></h2>
+<p>To install CodeCarbon as a Linux service, follow the instructions below. It works on Ubuntu or other Debian-based systems using systemd.</p>
+<p>Create a dedicated user:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>useradd<span class="w"> </span>-r<span class="w"> </span>-s<span class="w"> </span>/bin/false<span class="w"> </span>codecarbon
+</pre></div>
+</div>
+<p>Create a directory for the CodeCarbon service:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>mkdir<span class="w"> </span>/opt/codecarbon
+</pre></div>
+</div>
+<p>Change the ownership of the directory to the user created above:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>chown<span class="w"> </span>codecarbon:codecarbon<span class="w"> </span>/opt/codecarbon
+</pre></div>
+</div>
+<p>Create a virtual environment for CodeCarbon :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-venv
+sudo<span class="w"> </span>-u<span class="w"> </span>codecarbon<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>/opt/codecarbon/.venv
+</pre></div>
+</div>
+<p>Install CodeCarbon in the virtual environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>-u<span class="w"> </span>codecarbon<span class="w"> </span>/opt/codecarbon/.venv/bin/pip<span class="w"> </span>install<span class="w"> </span>codecarbon
+</pre></div>
+</div>
+<p>Go to <a class="reference external" href="https://dashboard.codecarbon.io/">https://dashboard.codecarbon.io/</a> and create an account to get your API key.</p>
+<p>Configure CodeCarbon:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>-u<span class="w"> </span>codecarbon<span class="w"> </span>/opt/codecarbon/.venv/bin/codecarbon<span class="w"> </span>login
+</pre></div>
+</div>
+<p>Create a systemd service file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/systemd/system/codecarbon.service<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">[Unit]</span>
+<span class="s">Description=CodeCarbon service</span>
+<span class="s">After=network.target</span>
+
+<span class="s">[Service]</span>
+<span class="s">User=codecarbon</span>
+<span class="s">Group=codecarbon</span>
+<span class="s">WorkingDirectory=/opt/codecarbon</span>
+<span class="s">ExecStart=/opt/codecarbon/.venv/bin/codecarbon monitor</span>
+<span class="s">Restart=always</span>
+
+<span class="s">[Install]</span>
+<span class="s">WantedBy=multi-user.target</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p>Give permissions to the <code class="docutils literal notranslate"><span class="pre">codecarbon</span></code> group to read the RAPL (Running Average Power Limit) information:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>root:codecarbon<span class="w"> </span>/sys/class/powercap/intel-rapl/*
+sudo<span class="w"> </span>chmod<span class="w"> </span>g+r<span class="w"> </span>-R<span class="w"> </span>/sys/class/powercap/intel-rapl/*
+
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>sysfsutils
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;mode class/powercap/intel-rapl:0/energy_uj = 0440&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/sysfs.conf
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;owner class/powercap/intel-rapl:0/energy_uj = root:codecarbon&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/sysfs.conf
+</pre></div>
+</div>
+<p>Create the configuration file for CodeCarbon:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>tee<span class="w"> </span>/opt/codecarbon/.codecarbon.config<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">[codecarbon]</span>
+<span class="s">api_endpoint = https://api.codecarbon.io</span>
+<span class="s">organization_id = &lt;organization_id&gt;</span>
+<span class="s">project_id = &lt;project_id&gt;</span>
+<span class="s">experiment_id = &lt;experiment_id&gt;</span>
+<span class="s">api_key = &lt;api_key&gt;</span>
+<span class="s"># Verbose logging</span>
+<span class="s">log_level=DEBUG</span>
+<span class="s"># Measure power every 30 seconds</span>
+<span class="s">measure_power_secs=30</span>
+<span class="s"># Send measure to API every 5 minutes (10*30 seconds)</span>
+<span class="s">api_call_interval=10</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p>Enable and start the service:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>codecarbon
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>codecarbon
+</pre></div>
+</div>
+<p>Check the traces of the service:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>journalctl<span class="w"> </span>-u<span class="w"> </span>codecarbon
+</pre></div>
+</div>
+<p>You are done, CodeCarbon is now running as a service on your machine.</p>
+<p>Wait 5 minutes for the first measure to be send to the dashboard at <a class="reference external" href="https://dashboard.codecarbon.io/">https://dashboard.codecarbon.io/</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="faq.html" class="btn btn-neutral float-left" title="Frequently Asked Questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="Quickstart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, BCG GAMMA, Comet.ml, Haverford College, MILA.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

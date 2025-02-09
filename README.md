@@ -154,6 +154,10 @@ git commit -am "add user story, code, prompt for face recognition generating des
 git commit -am "add some updates"
 git commit -am "update walkthrough_ia_video_editing_faiss_compare_keywords.diff fot YT videos"
 git commit -am "add images and other things"
+git commit -am "add files fo ia kpi carbon footprint and deepseek"
+
+
+
 
 # push to github if your branch on github is master
 # git push origin master

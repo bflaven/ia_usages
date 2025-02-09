@@ -1,0 +1,31 @@
+# carbon.txt for flaven.fr
+# Version: 0.2
+# Last updated: 2025-02-07
+
+[org]
+name = "Flaven.fr"
+description = "Personal website and blog"
+url = "https://flaven.fr"
+industry = "digital-media"
+
+disclosures = [
+    { doc_type = "web-page", url = "https://flaven.fr/sustainability", domain = "flaven.fr" },
+    { doc_type = "metrics", url = "https://flaven.fr/carbon-metrics.json", domain = "flaven.fr" }
+]
+
+[upstream]
+services = [
+    { domain = "netlify.com", service_type = "hosting" },
+    { domain = "cloudflare.com", service_type = "cdn" },
+    { domain = "github.com", service_type = "repository" }
+]
+
+[tech]
+framework = "gatsby"
+hosting_type = "static"
+cdn_enabled = true
+
+[efficiency]
+image_optimization = true
+caching_enabled = true
+minification_enabled = true

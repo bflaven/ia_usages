@@ -1,0 +1,150 @@
+.. _methodology:
+
+Methodology
+===========
+Carbon dioxide (CO₂) emissions, expressed as kilograms of CO₂-equivalents [CO₂eq], are the product of two main factors :
+
+.. code-block:: text
+
+    C = Carbon Intensity of the electricity consumed for computation: quantified as g of CO₂ emitted per kilowatt-hour of electricity.
+
+    E = Energy Consumed by the computational infrastructure: quantified as kilowatt-hours.
+
+Carbon dioxide emissions (CO₂eq) can then be calculated as ``C * E``
+
+
+Carbon Intensity
+----------------
+Carbon Intensity of the consumed electricity is calculated as a weighted average of the emissions from the different
+energy sources that are used to generate electricity, including fossil fuels and renewables. In this toolkit, the fossil fuels coal, petroleum, and natural gas are associated with specific carbon intensities: a known amount of carbon dioxide is emitted for each kilowatt-hour of electricity generated. Renewable or low-carbon fuels include solar power, hydroelectricity, biomass, geothermal, and more. The nearby energy grid contains a mixture of fossil fuels and low-carbon energy sources, called the Energy Mix. Based on the mix of energy sources in the local grid, the Carbon Intensity of the electricity consumed can be computed.
+
+.. image:: ./images/grid_energy_mix.png
+            :align: center
+            :alt: Grid Energy Mix
+            :height: 300px
+            :width: 350px
+
+When available, CodeCarbon uses global carbon intensity of electricity per cloud provider ( `here <https://github.com/mlco2/codecarbon/blob/master/codecarbon/data/cloud/impact.csv>`_ ) or per country ( `here <https://github.com/mlco2/codecarbon/blob/master/codecarbon/data/private_infra/global_energy_mix.json>`_ ).
+
+If we don't have the global carbon intensity or electricity of a country, but we have its electricity mix, we used to compute the carbon intensity of electricity using this table:
+
+.. list-table:: Carbon Intensity Across Energy Sources
+   :widths: 50 50
+   :align: center
+   :header-rows: 1
+
+   * - Energy Source
+     - Carbon Intensity (kg/MWh)
+   * - Coal
+     - 995
+   * - Petroleum
+     - 816
+   * - Natural Gas
+     - 743
+   * - Geothermal
+     - 38
+   * - Hydroelectricity
+     - 26
+   * - Nuclear
+     - 29
+   * - Solar
+     - 48
+   * - Wind
+     - 26
+
+Sources:
+ - `for fossil energies <https://github.com/responsibleproblemsolving/energy-usage#conversion-to-co2>`_
+ - `for renewables energies <http://www.world-nuclear.org/uploadedFiles/org/WNA/Publications/Working_Group_Reports/comparison_of_lifecycle.pdf>`_
+
+
+Then, for example, if the Energy Mix of the Grid Electricity is 25% Coal, 35% Petroleum, 26% Natural Gas and 14% Nuclear:
+
+.. code-block:: text
+
+    Net Carbon Intensity = 0.25 * 995 + 0.35 * 816 + 0.26 * 743 + 0.14 * 29 = 731.59 kgCO₂/kWh
+
+But it doesn't append anymore because Our World in Data now provides the global carbon intensity of electricity per country ( `source <https://ourworldindata.org/grapher/carbon-intensity-electricity#explore-the-data>`_ ). Some countries is missing data for last year, so we use the previous year data available.
+
+If ever we have neither the global carbon intensity of a country nor it's electricity mix, we apply a world average of 475 gCO2.eq/KWh ( `source <https://www.iea.org/reports/global-energy-co2-status-report-2019/emissions>`_ ).
+
+As you can see, we try to be as accurate as possible in estimating carbon intensity of electricity. Still there is room for improvement and all contributions are welcome.
+
+
+Power Usage
+-----------
+Power supply to the underlying hardware is tracked at frequent time intervals. This is a configurable parameter
+``measure_power_secs``, with default value 15 seconds, that can be passed when instantiating the emissions' tracker.
+
+Currently, the package supports the following hardware infrastructure.
+
+GPU
+~~~~
+
+Tracks Nvidia GPUs energy consumption using ``pynvml`` library (installed with the package).
+
+RAM
+~~~~
+
+CodeCarbon uses a 3 Watts for 8 GB ratio `source <https://www.crucial.com/support/articles-faq-memory/how-much-power-does-memory-use>`_ .
+This measure is not satisfying and if ever you have an idea how to enhance it please do not hesitate to contribute.
+
+CPU
+~~~~
+
+- **On Windows or Mac (Intel)**
+
+Tracks Intel processors energy consumption using the ``Intel Power Gadget``. You need to install it yourself from this `source <https://www.intel.com/content/www/us/en/developer/articles/tool/power-gadget.html>`_ .
+
+- **Apple Silicon Chips (M1, M2)**
+
+Apple Silicon Chips contain both the CPU and the GPU.
+
+Codecarbon tracks Apple Silicon Chip energy consumption using ``powermetrics``. It should be available natively on any mac.
+However, this tool is only usable with ``sudo`` rights and to our current knowledge, there are no other options to track the energy consumption of the Apple Silicon Chip without administrative rights
+(if you know of any solution for this do not hesitate and `open an issue with your proposed solution <https://github.com/mlco2/codecarbon/issues/>`_).
+
+To give sudo rights without having to enter a password each time, you can modify the sudoers file with the following command:
+
+.. code-block:: bash
+
+    sudo visudo
+
+
+Then add the following line at the end of the file:
+
+.. code-block:: bash
+
+    username ALL = (root) NOPASSWD: /usr/bin/powermetrics
+
+If you do not want to give sudo rights to your user, then CodeCarbon will fall back to constant mode to measure CPU energy consumption.
+
+- **On Linux**
+
+Tracks Intel and AMD processor energy consumption from Intel RAPL files at ``/sys/class/powercap/intel-rapl`` ( `reference <https://web.eece.maine.edu/~vweaver/projects/rapl/>`_ ).
+All CPUs listed in this directory will be tracked. `Help us improve this and make it configurable <https://github.com/mlco2/codecarbon/issues/156>`_.
+
+*Note*: The Power Consumption will be tracked only if the RAPL files exist at the above-mentioned path
+
+
+If none of the tracking tools are available on a computing resource, CodeCarbon will be switched to a fallback mode:
+ - It will first detect which CPU hardware is currently in use, and then map it to a data source listing 2000+ Intel and AMD CPUs and their corresponding thermal design powers (TDPs).
+ - If the CPU is not found in the data source, a global constant will be applied. CodeCarbon assumes that 50% of the TDP will be the average power consumption to make this approximation.
+ - We could not find any good resource showing statistical relationships between TDP and average power, so we empirically tested that 50% is a decent approximation.
+
+The net Energy Used is the net power supply consumed during the compute time, measured as ``kWh``.
+
+``Energy = Power * Time``
+
+References
+----------
+`Energy Usage Reports: Environmental awareness as part of algorithmic accountability <https://arxiv.org/pdf/1911.08354.pdf>`_
+
+
+How CodeCarbon Works
+~~~~~~~~~~~~~~~~~~~~
+
+CodeCarbon uses a scheduler that, by default, calls for a measure every 15 seconds, so it has no significant overhead.
+
+The measure itself is fast and CodeCarbon is designed to be as light as possible with a small memory footprint.
+
+The scheduler is started when the first ``start`` method is called and stopped when ``stop`` method is called.
