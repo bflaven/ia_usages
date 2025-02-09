@@ -47,7 +47,8 @@ conda update -n base -c defaults conda
 pip freeze > requirements.txt
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_kpi_carbon_footprint_deepseek/ia_kpi_carbon_llm/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_kpi_carbon_footprint_deepseek/ia_kpi_carbon_llm
+
 
 
 
