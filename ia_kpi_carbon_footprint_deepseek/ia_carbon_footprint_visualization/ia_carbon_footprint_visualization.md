@@ -1,6 +1,5 @@
 # ia_carbon_footprint_visualization.md
 
-
 ## MODEL_PROMPT_1
 As an expert in drawing, can you illustrate only with sketches that look like visual notetaking the use cases for IA: {TOPIC}. Do not use computer image, just drawing.
 
@@ -162,6 +161,258 @@ Illustrate with an icon sketch that looks like visual notetaking: the global war
 
 ## PROMPT_8
 Illustrate with an icon sketch that looks like visual notetaking: the global warming impact of intensive artificial intelligence usage in the world. Use a drawing of a thermometer and a drawing of the Earth to symbolize global warming due to AI energy consumption. Do more sketching than real drawing and more alarmist with red color like planet on fire, more stylized, but on white background and with an icon that symbolizes Artificial Intelligence. Do not use any words just icons of symbol, emphasize the connection between those symbols increase of AI usage -> temperature rising -> global warming
+
+
+
+## IMPROVE_PROMPT_9
+
+Can you refine the prompt below and print it into a ```text...``` without readme tags such as `**`, `##`... etc.
+
+As an expert in drawing and diagramming, can you write a .svg that is inspired by the diagram of the energy class of his house, a bar chart or graph with icons of domestic energy consumption. However, on the left side of the drawing, do not put a house but an icon of the AI, in the center, then you make the bar chart that borrows the gradation described below. A is green, it is excellent for the environment, it is red, it is energy-intensive, to the right of the diagram, you break down the use cases according to their energy consumption. This breakdown of use cases must be very sensible and not random, for example, the Video Transcription which is very energy-intensive must be at the level of G in red and apply this classification to all use cases. Make sure that the .svg is perfectly readable by any user, so the names of the use cases should be readable.
+
+For, the color gradation goes through shades of red to green, passing through light green and orange as we approach red.
+
+
+
+Usecases
+Abstract
+Keyword Extraction
+Translation
+Named Entity Recognition (NER)
+Audio Transcription
+Video Transcription
+SEO-type Editorial Proposal
+SMO-type Editorial Proposal
+Chaptering or Identification of Key Questions on an Audio
+Detection of the Presenter on an Audio
+Chat or Conversational Space via Prompts
+RAG or Augmented Generation of Recovery via Prompts
+Grammar and Spelling Correction
+Data Anonymization
+Sentiment Analysis
+Text Classification
+Text Translation Classification
+Background Image Remover
+
+Gradation
+CLASS;DEFINITION
+A;economical (intense green)
+B;low consumption
+C;high performance
+D;medium low
+E;medium high
+F;energy-intensive
+G;very energy-intensive (intense red)
+
+## PROMPT_9
+Create an SVG diagram inspired by an energy class diagram for a house, featuring a bar chart or graph with icons representing domestic energy consumption. On the left side, place an AI icon in the center. The bar chart should use the following color gradation:
+
+- A: Green (excellent for the environment)
+- B: Low consumption
+- C: High performance
+- D: Medium low
+- E: Medium high
+- F: Energy-intensive
+- G: Very energy-intensive (red)
+
+To the right of the diagram, break down the use cases according to their energy consumption. Ensure the breakdown is sensible and not random. For example, Video Transcription, which is very energy-intensive, should be at the level of G in red. Apply this classification to all use cases. Make sure the SVG is perfectly readable, with clearly legible use case names.
+
+Use cases:
+- Abstract
+- Keyword Extraction
+- Translation
+- Named Entity Recognition (NER)
+- Audio Transcription
+- Video Transcription
+- SEO-type Editorial Proposal
+- SMO-type Editorial Proposal
+- Chaptering or Identification of Key Questions on an Audio
+- Detection of the Presenter on an Audio
+- Chat or Conversational Space via Prompts
+- RAG or Augmented Generation of Recovery via Prompts
+- Grammar and Spelling Correction
+- Data Anonymization
+- Sentiment Analysis
+- Text Classification
+- Text Translation Classification
+- Background Image Remover
+
+Color gradation:
+- A: Economical (intense green)
+- B: Low consumption
+- C: High performance
+- D: Medium low
+- E: Medium high
+- F: Energy-intensive
+- G: Very energy-intensive (intense red)
+
+
+
+## CLAUDE_9
+
+I'll create an energy classification diagram for AI use cases using SVG.
+
+
+
+I've created an energy classification diagram that organizes the AI use cases according to their energy consumption levels. The diagram features:
+
+1. A simplified AI icon on the left
+2. A color-coded classification bar chart in the center, ranging from A (green) to G (red)
+3. Use cases distributed on the right, grouped by their energy classification level
+
+The classification of use cases is based on their typical computational requirements:
+
+- A (Most Efficient): Simple text operations like grammar correction and keyword extraction
+- B: Basic analysis tasks like text classification and sentiment analysis
+- C: More complex text processing like NER and data anonymization
+- D: Translation and abstracting, which require more processing
+- E: Interactive and audio processing tasks
+- F: Complex operations involving multiple models or image processing
+- G (Most Intensive): Video processing and complex multi-modal tasks
+
+Would you like me to adjust any of the classifications or modify the visual design?
+
+
+```html
+
+<!-- 
+
+AI Use Cases Energy Classification Diagram 
+001_ai_use_cases_energy_classification_diagram.html
+
+
+ -->
+
+
+
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+    <!-- Definitions for gradients -->
+    <defs>
+        <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" style="stop-color:#1ea362"/>
+            <stop offset="16.67%" style="stop-color:#52b788"/>
+            <stop offset="33.33%" style="stop-color:#86c49a"/>
+            <stop offset="50%" style="stop-color:#ffba08"/>
+            <stop offset="66.67%" style="stop-color:#f48c06"/>
+            <stop offset="83.33%" style="stop-color:#dc2f02"/>
+            <stop offset="100%" style="stop-color:#d00000"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Background -->
+    <rect width="800" height="600" fill="white"/>
+
+    <!-- AI Icon (simplified representation) -->
+    <g transform="translate(50, 250)">
+        <circle cx="25" cy="25" r="20" fill="#4a5568"/>
+        <path d="M15,25 L35,25 M25,15 L25,35 M20,20 L30,30 M20,30 L30,20" 
+              stroke="white" stroke-width="2" fill="none"/>
+    </g>
+
+    <!-- Energy Classification Bars -->
+    <g transform="translate(150, 100)">
+        <!-- Classification Labels -->
+        <text x="-20" y="25" text-anchor="end" font-family="Arial" font-size="14">A</text>
+        <text x="-20" y="75" text-anchor="end" font-family="Arial" font-size="14">B</text>
+        <text x="-20" y="125" text-anchor="end" font-family="Arial" font-size="14">C</text>
+        <text x="-20" y="175" text-anchor="end" font-family="Arial" font-size="14">D</text>
+        <text x="-20" y="225" text-anchor="end" font-family="Arial" font-size="14">E</text>
+        <text x="-20" y="275" text-anchor="end" font-family="Arial" font-size="14">F</text>
+        <text x="-20" y="325" text-anchor="end" font-family="Arial" font-size="14">G</text>
+
+        <!-- Bars -->
+        <rect x="0" y="10" width="200" height="30" fill="#1ea362" rx="5"/>
+        <rect x="0" y="60" width="180" height="30" fill="#52b788" rx="5"/>
+        <rect x="0" y="110" width="160" height="30" fill="#86c49a" rx="5"/>
+        <rect x="0" y="160" width="140" height="30" fill="#ffba08" rx="5"/>
+        <rect x="0" y="210" width="120" height="30" fill="#f48c06" rx="5"/>
+        <rect x="0" y="260" width="100" height="30" fill="#dc2f02" rx="5"/>
+        <rect x="0" y="310" width="80" height="30" fill="#d00000" rx="5"/>
+    </g>
+
+    <!-- Use Cases Classification -->
+    <g transform="translate(400, 50)">
+        <!-- A Class (Green) -->
+        <text x="0" y="25" font-family="Arial" font-size="12" fill="#1ea362">• Grammar and Spelling Correction</text>
+        <text x="0" y="45" font-family="Arial" font-size="12" fill="#1ea362">• Keyword Extraction</text>
+
+        <!-- B Class -->
+        <text x="0" y="75" font-family="Arial" font-size="12" fill="#52b788">• Text Classification</text>
+        <text x="0" y="95" font-family="Arial" font-size="12" fill="#52b788">• Sentiment Analysis</text>
+
+        <!-- C Class -->
+        <text x="0" y="125" font-family="Arial" font-size="12" fill="#86c49a">• Named Entity Recognition (NER)</text>
+        <text x="0" y="145" font-family="Arial" font-size="12" fill="#86c49a">• Data Anonymization</text>
+
+        <!-- D Class -->
+        <text x="0" y="175" font-family="Arial" font-size="12" fill="#ffba08">• Translation</text>
+        <text x="0" y="195" font-family="Arial" font-size="12" fill="#ffba08">• Abstract</text>
+
+        <!-- E Class -->
+        <text x="0" y="225" font-family="Arial" font-size="12" fill="#f48c06">• Chat or Conversational Space</text>
+        <text x="0" y="245" font-family="Arial" font-size="12" fill="#f48c06">• Audio Transcription</text>
+
+        <!-- F Class -->
+        <text x="0" y="275" font-family="Arial" font-size="12" fill="#dc2f02">• RAG or Augmented Generation</text>
+        <text x="0" y="295" font-family="Arial" font-size="12" fill="#dc2f02">• Background Image Remover</text>
+
+        <!-- G Class (Red) -->
+        <text x="0" y="325" font-family="Arial" font-size="12" fill="#d00000">• Video Transcription</text>
+        <text x="0" y="345" font-family="Arial" font-size="12" fill="#d00000">• Text Translation Classification</text>
+    </g>
+
+    <!-- Title -->
+    <text x="400" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">AI Use Cases Energy Classification</text>
+</svg>
+
+```
+
+
+
+## IMPROVE_PROMPT_10
+
+Can you refine the prompt below and print it into a ```text...``` without readme tags such as `**`, `##`... etc.
+Make on the left a bigger IA that symbolizes more effectively the intelligence artificial icon aka IA do not use any existing brand or logo and indicate the name intelligence artificial. Rewrite the code but do not give any explanations.
+The symbols on the left must be a little bit bigger does not overwrite on the letters A to G and keep the mention artificial intelligence. 
+
+When it is the energy balance of a house, on the side we have a stylized house that encompasses the diagram without harming the reading. Do the same but with a symbol to represent AI think symbolically about AI by making it encompass the left side of the diagram without harming the reading. For the AI icon, take inspiration from the classic icon with the word AI in the center and lines with dots that represent neurons like in a human brain. See https://www.vecteezy.com/png/32505082-artificial-intelligence-icon-design
+
+
+
+
+
+## PROMPT_10
+
+Make on the left a bigger AI symbol that effectively represents artificial intelligence. Do not use any existing brand or logo. The symbol should be a little bit bigger but should not overwrite the letters A to G. Keep the mention "artificial intelligence."
+
+When it is the energy balance of a house, on the side we have a stylized house that encompasses the diagram without harming the reading. Do the same but with a symbol to represent AI. Think symbolically about AI by making it encompass the left side of the diagram without harming the reading. For the AI icon, take inspiration from the classic icon with the word AI in the center and lines with dots that represent neurons like in a human brain. See https://www.vecteezy.com/png/32505082-artificial-intelligence-icon-design.```
+
+
+
+## ENHANCE_1
+Put the logo in the middle of the diagram, use the symbol that I have uploaded, the logo must not overwrite the diagram particularly the A and G ladder
+
+## ENHANCE_2
+Under the logo, add IA in bold, remove  artificial intelligence, change the blue color of the logo to green. The  position should be like the schema example uploaded.
+
+
+## ENHANCE_3
+Come back to the first code with the claude logo in grey, add under "AI" and make the logo bigger but the logo must not overwrite the diagram particularly the A and G ladder.
+
+## ENHANCE_4
+keep as it is add below the all diagram the legend on the right for the color gradation like so
+
+Legend:
+- A: Economical (intense green)
+- B: Low consumption
+- C: High performance
+- D: Medium low
+- E: Medium high
+- F: Energy-intensive
+
+## ENHANCE_5
+Increase the light grey round to include the label AI inside properly and diminish the size of the label, but do not  overwrite the diagram particularly the A and G ladder.
+
 
 
 
