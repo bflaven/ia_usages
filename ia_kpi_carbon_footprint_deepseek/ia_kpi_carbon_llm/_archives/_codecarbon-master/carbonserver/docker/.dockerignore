@@ -1,7 +1,0 @@
-.*
-!.coveragerc
-!.env
-!.pylintrc
-venv
-env
-/carbonserver/.tox
