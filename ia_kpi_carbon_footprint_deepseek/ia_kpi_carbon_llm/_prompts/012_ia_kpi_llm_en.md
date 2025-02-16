@@ -3,7 +3,7 @@
 
 
 
-## OUTPUT_1
+## INPUT_1
 As a specialist in market economics, human psychology, and sociologist, tries to answer the question “Why are all subscriptions around $10 or $20”, this subscription economy and platformization that is set up via disintermediation to weaken consumers and make them more vulnerable. Give references on the work carried out on human psychology and in economics, to determine the price and psychological comfort sought by providers such as Netflix, Spotify and now generalist AI providers this logic of the subscription that makes the monthly financial suck painless how is this balance achieved and according to what criteria? Give studies and books that have looked at this question?
 
 
