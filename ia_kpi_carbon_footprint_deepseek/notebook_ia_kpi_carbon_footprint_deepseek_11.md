@@ -311,14 +311,19 @@ CodeCarbon is a Python package that tracks the carbon dioxide emissions from run
 
 
 ### 3.2 Using Eco2AI
-014_carbon_footprint_eco2ai.py
+You can check the following file on my github account  014_carbon_footprint_eco2ai.py
+
+See <a href="https://github.com/bflaven/ia_usages/tree/main/ia_kpi_carbon_footprint_deepseek/ia_kpi_carbon_llm" target="_blank" rel="noopener">https://github.com/bflaven/ia_usages/tree/main/ia_kpi_carbon_footprint_deepseek/ia_kpi_carbon_llm</a></b>
+
 
 
 ### 3.3 Using carbontxt.org
-https://carbontxt.org/quickstart
-https://github.com/thegreenwebfoundation/carbon-txt-validator/
-
 Using the Green Web Foundation carbon.txt validator
+
+
+- <a href="https://github.com/thegreenwebfoundation/carbon-txt-validator/" target="_blank" rel="noopener">https://github.com/thegreenwebfoundation/carbon-txt-validator/</a>
+- <a href="https://carbontxt.org/quickstart" target="_blank" rel="noopener">https://carbontxt.org/quickstart</a>
+
 
 ### 3.4 Other tools
 Here is the extended search, on github, with the tag "co2-monitoring" and in lanaguage Python. It is much a concern. 
@@ -613,8 +618,11 @@ Let's say that the Mistral that concerns us probably takes over the dimension of
 
 At the same time, and if we dig into this "voice" of the South.
 Mistral is also the wind that sweeps Marseille and there we dive into another universe.
-It's funny... A kind of pagnolade where Pique-Bouffigue is an AI developer, Marius, Fanny and César are doing LLMs. We are far from the "cold" technique. We dive into the warm humanity of the mythical and folkloric South, between bouillabaisse, pastis and red mullet in papillote. A way of life with the little cat "la chat" who sleeps at the door of the "mas", a new farmhouse where the computing servers are humming.
-"Hey, Mistral is an AI that smells of thyme, wild thyme, savory and farigoulette".
+It's funny... A kind of pagnolade where Pique-Bouffigue is an AI developer, Marius, Fanny and César are doing LLMs. We are far from the "cold" technique. We dive into the warm humanity of the mythical and folkloric South, between bouillabaisse, pastis and red mullet in papillote. A way of life with the little cat "le Chat" who sleeps at the door of the "mas", a new farmhouse where the computing servers are humming.
+
+__"Vé, Mistral, c'est pas la "teknologie" IA qui sent bon le thym, la sarriette et la farigoulette".*__
+* "Hey, Mistral is an AI that smells wild thyme, savory and farigoulette".
+
 
 
 **The word "Claude"**
