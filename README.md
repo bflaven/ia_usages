@@ -62,6 +62,8 @@
 
 18. Breadcrumbs of Innovation: A Snapshot of AI Explorations [https://wp.me/p3Vuhl-3mP](https://wp.me/p3Vuhl-3mP)
 
+19. The 'Green' AI Myth: Carbon Costs of ML Models & Insights on GEO and DeepSeek Fine-tuning [https://wp.me/p3Vuhl-3nO](https://wp.me/p3Vuhl-3nO)
+
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
 
