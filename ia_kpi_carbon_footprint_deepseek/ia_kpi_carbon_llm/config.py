@@ -13,6 +13,13 @@ LANGUAGES = {
         'submit': 'Soumettre',
         'initiative_name': 'Nom de l\'initiative',
         'add_initiative': 'Ajouter une initiative',
+        'ranking_initiatives': 'Classement', 
+        'no_initiative': 'Aucune initiative à évaluer', 
+        'configuration_criteria': 'Configuration des critères', 
+        'weight_criteria': 'Poids des critères', 
+        # Aucune initiative à évaluer
+        # Configuration des critères
+        # Poids des critères
     },
     'en': {
         'title': 'Carbon Monitoring System',
@@ -26,6 +33,14 @@ LANGUAGES = {
         'submit': 'Submit',
         'initiative_name': 'Initiative Name',
         'add_initiative': 'Add Initiative',
+        'ranking_initiatives': 'Ranking',
+        'no_initiative': 'No initiatives to evaluate', 
+        'configuration_criteria': 'Configuration of criteria', 
+        'weight_criteria': 'Weight of criteria',
+        # No initiatives to evaluate
+        # Configuration of criteria
+        # Weight of criteria
+
     }
 }
 

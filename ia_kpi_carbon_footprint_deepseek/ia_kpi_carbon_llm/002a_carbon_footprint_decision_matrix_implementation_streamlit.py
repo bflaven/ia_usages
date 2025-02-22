@@ -100,8 +100,8 @@ class DecisionMatrixApp:
         
     def _show_config_section(self):
         """Affiche la section de configuration"""
-        with st.expander("Configuration des critères"):
-            st.subheader("Poids des critères")
+        with st.expander(f"{self.lang['configuration_criteria']}"):
+            st.subheader(f"{self.lang['weight_criteria']}")
             weights = st.session_state.matrix.config['criteria_weights']
             
             total_weight = 0
@@ -156,10 +156,11 @@ class DecisionMatrixApp:
                 
     def _show_rankings(self):
         """Affiche le classement des initiatives"""
-        st.subheader("Classement")
+        st.subheader(f"{self.lang['ranking_initiatives']}")
         
         if not st.session_state.matrix.initiatives:
-            st.info("ℹ️ Aucune initiative à évaluer")
+            # st.info("ℹ️ Aucune initiative à évaluer")
+            st.info(f"{self.lang['no_initiative']}")
             return
             
         recommendations = st.session_state.matrix.generate_recommendations()
