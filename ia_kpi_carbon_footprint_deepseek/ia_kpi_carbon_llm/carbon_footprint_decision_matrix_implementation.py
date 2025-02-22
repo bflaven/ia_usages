@@ -36,10 +36,8 @@ pip freeze > requirements.txt
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_kpi_carbon_footprint_deepseek/ia_kpi_carbon_llm
 
 
-
-
 # launch the file
-python 000a1_carbon_footprint_decision_matrix_implementation.py
+python 000a2_carbon_footprint_decision_matrix_implementation.py
 
 
 Decision Matrix Implementation
@@ -47,19 +45,43 @@ Decision Matrix Implementation
 
 """
 
-# 000a1_carbon_footprint_decision_matrix_implementation.py
+# 000a2_carbon_footprint_decision_matrix_implementation.py
 
-# Configuration des critères et options pour la matrice de décision
+# French: Configuration des critères et options pour la matrice de décision
+FRENCH_STRINGS = {
+    'matrix_config': "Configuration des critères et options pour la matrice de décision",
+    'evaluation_criteria': "Critères d'évaluation et leurs poids",
+    'implementation_cost': "Coût de mise en œuvre",
+    'emission_reduction_potential': "Potentiel de réduction des émissions",
+    'maintenance_complexity_fr': "Complexité de maintenance",
+    'evaluation_scales_fr': "Échelles d'évaluation pour chaque critère",
+    'moderate_maintenance': "Maintenance modérée",
+    'matrix_description': "Matrice de décision pour l'évaluation des initiatives de réduction carbone",
+    'init_description': "Initialisation avec la configuration par défaut ou personnalisée",
+    'add_initiative_desc': "Ajoute une initiative à évaluer",
+    'evaluations_desc': "Évaluations pour chaque critère",
+    'criteria_error': "Tous les critères doivent être évalués",
+    'calculate_score_desc': "Calcule le score pondéré pour une initiative",
+    'initiative_not_found': "Initiative non trouvée",
+    'invalid_evaluation': "Évaluation invalide pour",
+    'generate_recommendations_desc': "Génère des recommandations basées sur les scores",
+    'determine_priority_desc': "Détermine la priorité basée sur le score",
+    'create_instance': "Création d'une instance avec la configuration par défaut",
+    'add_initiatives': "Ajout d'initiatives à évaluer",
+    'generate_recommendations_fr': "Génération des recommandations"
+}
+
+# Configuration of criteria and options for the decision matrix
 CONFIG = {
-    # Critères d'évaluation et leurs poids
+    # Evaluation criteria and their weights
     'criteria_weights': {
-        'cost': 0.3,                    # Coût de mise en œuvre
-        'emission_reduction': 0.4,       # Potentiel de réduction des émissions
-        'implementation_time': 0.15,     # Temps de mise en œuvre
-        'maintenance_complexity': 0.15   # Complexité de maintenance
+        'cost': 0.3,                    # Implementation cost
+        'emission_reduction': 0.4,       # Emission reduction potential
+        'implementation_time': 0.15,     # Implementation time
+        'maintenance_complexity': 0.15   # Maintenance complexity
     },
     
-    # Échelles d'évaluation pour chaque critère
+    # Evaluation scales for each criterion
     'evaluation_scales': {
         'cost': {
             'low': 5,      # < 5000 €
@@ -72,43 +94,43 @@ CONFIG = {
             'low': 1       # < 10%
         },
         'implementation_time': {
-            'short': 5,    # < 3 mois
-            'medium': 3,   # 3-6 mois
-            'long': 1      # > 6 mois
+            'short': 5,    # < 3 months
+            'medium': 3,   # 3-6 months
+            'long': 1      # > 6 months
         },
         'maintenance_complexity': {
-            'low': 5,      # Maintenance simple
-            'medium': 3,   # Maintenance modérée
-            'high': 1      # Maintenance complexe
+            'low': 5,      # Simple maintenance
+            'medium': 3,   # Moderate maintenance
+            'high': 1      # Complex maintenance
         }
     }
 }
 
 class DecisionMatrix:
-    """Matrice de décision pour l'évaluation des initiatives de réduction carbone"""
+    """Decision matrix for evaluating carbon reduction initiatives"""
     
     def __init__(self, config=CONFIG):
-        """Initialisation avec la configuration par défaut ou personnalisée"""
+        """Initialization with default or custom configuration"""
         self.config = config
         self.initiatives = {}
         
     def add_initiative(self, name, evaluations):
         """
-        Ajoute une initiative à évaluer
+        Add an initiative to evaluate
         
         Args:
-            name (str): Nom de l'initiative
-            evaluations (dict): Évaluations pour chaque critère
+            name (str): Name of the initiative
+            evaluations (dict): Evaluations for each criterion
         """
         if not all(criterion in evaluations for criterion in self.config['criteria_weights']):
-            raise ValueError("Tous les critères doivent être évalués")
+            raise ValueError("All criteria must be evaluated")
             
         self.initiatives[name] = evaluations
         
     def calculate_score(self, initiative_name):
-        """Calcule le score pondéré pour une initiative"""
+        """Calculate weighted score for an initiative"""
         if initiative_name not in self.initiatives:
-            raise ValueError(f"Initiative non trouvée: {initiative_name}")
+            raise ValueError(f"Initiative not found: {initiative_name}")
             
         evaluations = self.initiatives[initiative_name]
         score = 0
@@ -118,14 +140,14 @@ class DecisionMatrix:
             scale = self.config['evaluation_scales'][criterion]
             
             if evaluation not in scale:
-                raise ValueError(f"Évaluation invalide pour {criterion}: {evaluation}")
+                raise ValueError(f"Invalid evaluation for {criterion}: {evaluation}")
                 
             score += scale[evaluation] * weight
             
         return score
     
     def rank_initiatives(self):
-        """Classe les initiatives par score"""
+        """Rank initiatives by score"""
         rankings = []
         
         for name in self.initiatives:
@@ -138,7 +160,7 @@ class DecisionMatrix:
         return sorted(rankings, key=lambda x: x['score'], reverse=True)
     
     def generate_recommendations(self):
-        """Génère des recommandations basées sur les scores"""
+        """Generate recommendations based on scores"""
         rankings = self.rank_initiatives()
         recommendations = []
         
@@ -156,49 +178,47 @@ class DecisionMatrix:
         return recommendations
     
     def _determine_priority(self, score):
-        """Détermine la priorité basée sur le score"""
+        """Determine priority based on score"""
         if score >= 4:
-            return "Haute"
+            return "High"
         elif score >= 3:
-            return "Moyenne"
+            return "Medium"
         else:
-            return "Basse"
+            return "Low"
 
-# Exemple d'utilisation
+# Usage example
 if __name__ == "__main__":
-    # Création d'une instance avec la configuration par défaut
+    # Create an instance with default configuration
     matrix = DecisionMatrix()
     
-    # Ajout d'initiatives à évaluer
-    matrix.add_initiative("Installation de panneaux solaires", {
+    # Add initiatives to evaluate
+    matrix.add_initiative("Solar Panel Installation", {
         'cost': 'high',
         'emission_reduction': 'high',
         'implementation_time': 'medium',
         'maintenance_complexity': 'medium'
     })
     
-    matrix.add_initiative("Optimisation du système de chauffage", {
+    matrix.add_initiative("Heating System Optimization", {
         'cost': 'medium',
         'emission_reduction': 'medium',
         'implementation_time': 'short',
         'maintenance_complexity': 'low'
     })
     
-    matrix.add_initiative("Programme de réduction des déchets", {
+    matrix.add_initiative("Waste Reduction Program", {
         'cost': 'low',
         'emission_reduction': 'low',
         'implementation_time': 'short',
         'maintenance_complexity': 'low'
     })
     
-    # Génération des recommandations
+    # Generate recommendations
     recommendations = matrix.generate_recommendations()
     
-    print("\nClassement des initiatives:")
+    print("\nInitiative Rankings:")
     for rec in recommendations:
         print(f"{rec['rank']}. {rec['name']}")
         print(f"   Score: {rec['score']:.2f}")
-        print(f"   Priorité: {rec['priority']}")
-
-
-        
+        print(f"   Priority: {rec['priority']}")
+             

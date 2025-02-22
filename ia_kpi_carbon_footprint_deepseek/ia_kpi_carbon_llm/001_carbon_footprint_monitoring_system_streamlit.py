@@ -115,7 +115,8 @@ class CarbonMonitoringApp:
         selected_period = st.date_input(
             "Période",
             value=current_date,
-            format="YYYY-MM"
+            # format="YYYY-MM"
+            format="DD/MM/YYYY" 
         ).strftime("%Y-%m")
         
         # Saisie des consommations

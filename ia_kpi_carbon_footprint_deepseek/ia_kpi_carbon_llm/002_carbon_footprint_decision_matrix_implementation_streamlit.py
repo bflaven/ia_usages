@@ -159,8 +159,10 @@ class DecisionMatrixApp:
         
         # Création d'un DataFrame pour l'affichage
         df_rankings = pd.DataFrame(recommendations)
-        df_rankings.columns = ['Rang', 'Initiative', 'Score', 'Priorité']
-        st.dataframe(df_rankings)
+        # Keep original column names to ensure compatibility with visualizations
+        display_df = df_rankings.copy()
+        display_df.columns = ['Rang', 'Initiative', 'Score', 'Priorité']
+        st.dataframe(display_df)
         
     def _show_visualization(self):
         """Affiche les visualisations"""
@@ -188,24 +190,36 @@ class DecisionMatrixApp:
         initiatives_data = []
         for name, evals in st.session_state.matrix.initiatives.items():
             data = {'Initiative': name}
-            data.update(evals)
+            for criterion, value in evals.items():
+                scale = st.session_state.matrix.config['evaluation_scales'][criterion]
+                numeric_value = scale[value]
+                data[criterion] = numeric_value
             initiatives_data.append(data)
             
         df_radar = pd.DataFrame(initiatives_data)
-        fig_radar = px.line_polar(
-            df_radar,
-            r=[1,2,3,4,5],
-            theta=list(st.session_state.matrix.config['criteria_weights'].keys()),
-            line_close=True,
-            title="Comparaison des évaluations"
-        )
-        st.plotly_chart(fig_radar)
+        
+        # Create the radar chart with matching lengths for theta and r
+        if initiatives_data:
+            # Get all criteria (columns except 'Initiative')
+            criteria = [col for col in df_radar.columns if col != 'Initiative']
+            
+            for initiative in df_radar['Initiative'].unique():
+                initiative_data = df_radar[df_radar['Initiative'] == initiative]
+                
+                # Extract the values for this initiative for all criteria
+                r_values = [initiative_data[criterion].iloc[0] for criterion in criteria]
+                
+                fig_radar = px.line_polar(
+                    r=r_values,
+                    theta=criteria,  # Use criteria as theta
+                    line_close=True,
+                    title=f"Évaluation: {initiative}"
+                )
+                st.plotly_chart(fig_radar)
         
 if __name__ == "__main__":
     app = DecisionMatrixApp()
-    app.run()
-
-    
+    app.run() 
         
         
 
