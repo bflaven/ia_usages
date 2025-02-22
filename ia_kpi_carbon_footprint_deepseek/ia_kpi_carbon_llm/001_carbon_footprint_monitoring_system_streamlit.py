@@ -39,8 +39,7 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_kpi_carbon_footprint_deepsee
 
 
 # launch the file
-python _api_call_demo.py
-
+streamlit run 001_carbon_footprint_monitoring_system_streamlit.py
 
 Carbon Footprint Monitoring System
 
