@@ -109,6 +109,7 @@ Check https://github.com/ollama/ollama/blob/main/docs/modelfile.md
 # create model with modefile
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_kpi_carbon_footprint_deepseek/ia_kpi_carbon_llm/
 
+# command to create a model based on mistral named mistral poet
 ollama create mistral-poet -f Modelfile_mistral_poet
 
 
@@ -122,7 +123,33 @@ conda info --envs
 source activate carbon_footprint
 
 # launch the file
-python 012_carbon_footprint_codecarbon_local_llm.py
+
+
+
++ webapp with streamlit
+- streamlit run 001_carbon_footprint_monitoring_system_streamlit.py
+- streamlit run 002_carbon_footprint_decision_matrix_implementation_streamlit.py
+- streamlit run 002a_carbon_footprint_decision_matrix_implementation_streamlit.py
+
+
++ carbon footprint using codecarbon
+python 004_carbon_footprint_codecarbon_basic_usage.py
+python 005_carbon_footprint_codecarbon_decorator_usage.py
+python 006_carbon_footprint_codecarbon_task_manager_usage.py
+python 007_carbon_footprint_codecarbon_site_explicit_object.py
+python 008_carbon_footprint_codecarbon_site_context_manager.py
+python 009_carbon_footprint_codecarbon_site_using_decorator.py
+python 010_carbon_footprint_codecarbon_local_llm.py
+- python 012_carbon_footprint_codecarbon_local_llm.py
+
++ carbon footprint using eco2ai
+python 014_carbon_footprint_eco2ai.py
+python 015_carbon_footprint_eco2ai.py
+python 016_carbon_footprint_eco2ai.py
+
+
+
+
 
 
 
