@@ -40,7 +40,7 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_kpi_carbon_footprint_deepsee
 
 
 # launch the file
-python 003_carbon_footprint_codecarbon_basic_usage.py
+python 004_carbon_footprint_codecarbon_basic_usage.py
 
 Codecarbon usage
 https://mlco2.github.io/codecarbon/usage.html

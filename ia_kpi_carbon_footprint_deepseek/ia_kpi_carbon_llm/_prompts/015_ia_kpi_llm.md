@@ -1,70 +1,82 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+
+# 012_ia_kpi_llm.md
 
 
+
+## INPUT_1
+rewrite the complete two files with the same and correct the error. 
+```text
+    ollama.create(model='mistral:latest', modelfile=modelfile)
+TypeError: create() got an unexpected keyword argument 'modelfile'
+```
+
+
+```python
+# PART_1
+import ollama
+from codecarbon import EmissionsTracker
+# PART_2
+
+# import gspread
+# from oauth2client.service_account import ServiceAccountCredentials
+# import pandas as pd
+
+
+## PART_1
 """
-[env]
-# Conda Environment
-conda create --name ia_debunk python=3.9.13
-conda create --name carbon_footprint python=3.9.13
-conda info --envs
-source activate ia_debunk
-source activate carbon_footprint
-conda deactivate
-
-
-# BURN AFTER READING
-source activate ia_debunk
-source activate carbon_footprint
-
-# if needed to remove
-conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
-conda env remove -n ia_debunk
-conda env remove -n carbon_footprint
-
-# install packages
-python -m pip install streamlit 
-python -m pip install codecarbon
-python -m pip install tensorflow
-python -m pip install ollama
-
-
-# update conda 
-conda update -n base -c defaults conda
-
-# to export requirements
-pip freeze > requirements.txt
-
-# [path]
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_kpi_carbon_footprint_deepseek/ia_kpi_carbon_llm
-
-
-
-
-# launch the file
-python 012_carbon_footprint_codecarbon_local_llm.py
-
-Codecarbon usage
-https://mlco2.github.io/codecarbon/usage.html
-https://asciinema.org/a/667970
-
-https://mlco2.github.io/codecarbon/examples.html#using-the-explicit-object
-https://github.com/mlco2/codecarbon/tree/master/examples
-
-# remove model
-ollama run mistral:latest
-ollama rm mistral:latest
-
-ollama run mistral-poet:latest
-ollama rm mistral-poet:latest
-
-# create model with modefile
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_kpi_carbon_footprint_deepseek/ia_kpi_carbon_llm/
-
-ollama create mistral-poet -f Modelfile_mistral_poet
-
-
+modelfile='''
+FROM llama2-uncensored
+SYSTEM You are a poet but you like to keep it simple
+PARAMETER temperature 5
+'''
 """
+
+# modelfile='''
+# FROM deepseek-r1:latest
+# SYSTEM You are a poet but you like to keep it simple
+# PARAMETER temperature 5
+# '''
+
+modelfile='''
+FROM mistral:latest
+SYSTEM You are a poet but you like to keep it simple
+PARAMETER temperature 5
+'''
+
+
+
+# ollama.create(model='deepseek-r1:latest', modelfile=modelfile)
+# tracker = EmissionsTracker(save_to_api=True, tracking_mode="process")
+# # You need to pull the model from the CLI
+# model = "deepseek-r1:latest" 
+
+
+ollama.create(model='mistral:latest', modelfile=modelfile)
+tracker = EmissionsTracker(save_to_api=True, tracking_mode="process")
+# You need to pull the model from the CLI
+model = "mistral:latest"
+
+# up to 5 
+n_poems = 1
+
+# Start tracking
+tracker.start()
+poems = []
+for i in range(n_poems):
+    response = ollama.chat(model=model, messages=[{'role': 'user', 'content': 'Write a poem for me about open source software'}])
+    poems.append(response['message']['content'])
+
+emmissions = tracker.stop()
+
+```
+
+
+
+## prompt_2
+
+Change this script to make it work with the model mistral-poet
+
+```python
 import os
 import time
 import ollama
@@ -72,14 +84,42 @@ from codecarbon import EmissionsTracker
 import json
 from typing import List, Dict
 import logging
-import warnings
 
 # Suppress the FutureWarning
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
+
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+def create_custom_model() -> bool:
+    """
+    Creates a custom model based on deepseek-r1 with specific parameters.
+    Returns True if successful, False otherwise.
+    """
+    modelfile = '''
+    FROM deepseek-r1:latest
+    SYSTEM You are a poet but you like to keep it simple
+    PARAMETER temperature 5
+    '''
+    
+    try:
+        # Write modelfile to a temporary file
+        with open('Modelfile', 'w') as f:
+            f.write(modelfile)
+        
+        # Create the model using the Modelfile
+        os.system('ollama create poetry-model -f Modelfile')
+        
+        # Clean up the temporary file
+        os.remove('Modelfile')
+        
+        logger.info("Custom model created successfully")
+        return True
+    except Exception as e:
+        logger.error(f"Error creating custom model: {e}")
+        return False
 
 def generate_poems(model: str, n_poems: int) -> List[str]:
     """
@@ -128,16 +168,18 @@ def save_results(poems: List[str], emissions: float, output_file: str = "poetry_
 
 def main():
     # Configuration
-    MODEL_NAME = "mistral-poet"  # Use the existing mistral-poet model
+    MODEL_NAME = "poetry-model"  # Our custom model name
     N_POEMS = 2
     OUTPUT_DIR = "emissions"
     
     # Create output directory if it doesn't exist
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-    # Log that we're using an existing model
-    logger.info(f"Using existing model: {MODEL_NAME}")
-    
+    # Create custom model
+    if not create_custom_model():
+        logger.error("Failed to create custom model. Exiting.")
+        return
+
     # Initialize emissions tracker with local saving only
     tracker = EmissionsTracker(
         save_to_api=False,  # Disable API saving
@@ -157,18 +199,9 @@ def main():
     emissions = tracker.stop()
     logger.info(f"Total emissions: {emissions:.4f} kg CO2eq")
     
-    # Print the generated poems
-    for i, poem in enumerate(poems):
-        print(f"\nPoem {i+1}:\n{poem}")
-    
     # Save results
     save_results(poems, emissions)
 
 if __name__ == "__main__":
     main()
-
-
-
-
-        
-
+```
