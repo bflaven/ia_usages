@@ -17,9 +17,37 @@ LANGUAGES = {
         'no_initiative': 'Aucune initiative à évaluer', 
         'configuration_criteria': 'Configuration des critères', 
         'weight_criteria': 'Poids des critères', 
+        'data_entry': 'Saisie des données', 
+        'visualizations': 'Visualisations', 
+        'recommendations': 'Recommendations', 
+        'no_data_visualization': 'Aucune donnée disponible pour la visualisation', 
+        'no_data_recommendations': 'Aucune donnée disponible pour les recommandations',
+        'no_reduction_needed': 'Aucune réduction nécessaire pour le moment',
+
+        # Classement des initiatives
         # Aucune initiative à évaluer
         # Configuration des critères
         # Poids des critères
+        'ranking_initiatives': 'Classement des initiatives',
+        'no_initiatives_evaluate': 'Aucune initiative à évaluer',
+        'configuration_criteria': 'Configuration des critères',
+        'weight_criteria': 'Poids des critères',
+
+
+
+        # 002a_carbon_footprint_decision_matrix_implementation_streamlit.py
+        # Aucune initiative à évaluer
+        # Configuration des critères
+        # Poids des critères
+        
+        # 001_carbon_footprint_monitoring_system_streamlit.py
+        # Saisie des données
+        # Visualisations
+        # Recommendations
+        # Aucune donnée disponible pour la visualisation
+
+
+
     },
     'en': {
         'title': 'Carbon Monitoring System',
@@ -37,10 +65,35 @@ LANGUAGES = {
         'no_initiative': 'No initiatives to evaluate', 
         'configuration_criteria': 'Configuration of criteria', 
         'weight_criteria': 'Weight of criteria',
+        'data_entry': 'Data Entry', 
+        'visualizations': 'Visualizations', 
+        'recommendations': 'Recommendations', 
+        'no_data_visualization': 'No data available for visualization', 
+        'no_data_recommendations': 'No data available for recommendations',
+        'no_reduction_needed': 'No reduction needed at this time',
+        
+
+        # Ranking of initiatives
+        # No initiatives to evaluate
+        # Configuration of criteria
+        # Weight of criteria
+        'ranking_initiatives': 'Ranking of initiatives',
+        'no_initiatives_evaluate': 'No initiatives to evaluate',
+        'configuration_criteria': 'Configuration of criteria',
+        'weight_criteria': 'Weight of criteria',
+
+
+
+        # 002a_carbon_footprint_decision_matrix_implementation_streamlit.py
         # No initiatives to evaluate
         # Configuration of criteria
         # Weight of criteria
 
+        # 001_carbon_footprint_monitoring_system_streamlit.py
+        # Data Entry data_entry
+        # Visualizations visualizations
+        # Recommendations recommendations
+        # No data available for visualization no_data_visualization 
     }
 }
 

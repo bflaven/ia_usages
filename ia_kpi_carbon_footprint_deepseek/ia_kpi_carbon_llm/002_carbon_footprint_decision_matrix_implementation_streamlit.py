@@ -46,6 +46,11 @@ streamlit run 002_carbon_footprint_decision_matrix_implementation_streamlit.py
 
 Carbon Footprint Monitoring System
 
+ranking_initiatives self.lang['ranking_initiatives']
+no_initiatives_evaluate self.lang['no_initiatives_evaluate']
+configuration_criteria self.lang['configuration_criteria']
+weight_criteria self.lang['weight_criteria']
+
 
 """
 
@@ -84,7 +89,7 @@ class DecisionMatrixApp:
         
         if selected_lang != st.session_state.language:
             st.session_state.language = selected_lang
-            st.experimental_rerun()
+            st.rerun()
             
         # Interface principale
         self._show_config_section()
@@ -94,12 +99,14 @@ class DecisionMatrixApp:
         
     def _show_config_section(self):
         """Affiche la section de configuration"""
-        with st.expander("Configuration des critères"):
+        with st.expander(self.lang['ranking_initiatives']):
             # Modification des poids des critères
-            st.subheader("Poids des critères")
+            st.subheader(self.lang['weight_criteria'])
             weights = st.session_state.matrix.config['criteria_weights']
             cols = st.columns(len(weights))
             
+            
+
             total_weight = 0
             for col, (criterion, weight) in zip(cols, weights.items()):
                 new_weight = col.number_input(
@@ -149,10 +156,10 @@ class DecisionMatrixApp:
                 
     def _show_rankings(self):
         """Affiche le classement des initiatives"""
-        st.subheader("Classement des initiatives")
+        st.subheader(self.lang['ranking_initiatives'])
         
         if not st.session_state.matrix.initiatives:
-            st.info("Aucune initiative à évaluer")
+            st.info(self.lang['no_initiatives_evaluate'])
             return
             
         recommendations = st.session_state.matrix.generate_recommendations()
@@ -169,7 +176,7 @@ class DecisionMatrixApp:
         if not st.session_state.matrix.initiatives:
             return
             
-        st.subheader("Visualisations")
+        st.subheader(self.lang['visualizations'])
         
         # Préparation des données
         recommendations = st.session_state.matrix.generate_recommendations()

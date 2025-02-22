@@ -43,6 +43,10 @@ streamlit run 001_carbon_footprint_monitoring_system_streamlit.py
 
 Carbon Footprint Monitoring System
 
+data_entry {self.lang['data_entry']}
+visualizations {self.lang['visualizations']}
+recommendations {self.lang['recommendations']}
+no_data_visualization {self.lang['no_data_visualization']}
 
 """
 
@@ -83,7 +87,7 @@ class CarbonMonitoringApp:
         
         if selected_lang != st.session_state.language:
             st.session_state.language = selected_lang
-            st.experimental_rerun()
+            st.rerun()
             
         # Interface principale
         self._show_config_section()
@@ -93,7 +97,7 @@ class CarbonMonitoringApp:
         
     def _show_config_section(self):
         """Affiche la section de configuration"""
-        with st.expander(self.lang['emission_factors']):
+        with st.expander(self.lang['configuration_criteria']):
             # Affichage et modification des facteurs d'émission
             factors = st.session_state.monitor.config['emission_factors']
             cols = st.columns(len(factors))
@@ -108,7 +112,7 @@ class CarbonMonitoringApp:
                 
     def _show_data_input_section(self):
         """Affiche la section de saisie des données"""
-        st.subheader("Saisie des données")
+        st.subheader(f"{self.lang['data_entry']}")
         
         # Sélection de la période
         current_date = datetime.now()
@@ -140,12 +144,12 @@ class CarbonMonitoringApp:
             
     def _show_visualization_section(self):
         """Affiche la section des visualisations"""
-        st.subheader("Visualisations")
+        st.subheader(f"{self.lang['visualizations']}")
         
         if not st.session_state.monitor.emissions_data:
-            st.warning("Aucune donnée disponible pour la visualisation")
+            st.warning(self.lang['no_data_visualization'])
             return
-            
+
         # Préparation des données pour les graphiques
         df = pd.DataFrame(st.session_state.monitor.emissions_data).T
         df.index.name = 'period'
@@ -180,7 +184,7 @@ class CarbonMonitoringApp:
         st.subheader(self.lang['recommendations'])
         
         if not st.session_state.monitor.emissions_data:
-            st.warning("Aucune donnée disponible pour les recommandations")
+            st.warning(self.lang['no_data_recommendations'])
             return
             
         # Dernière période disponible
@@ -188,7 +192,7 @@ class CarbonMonitoringApp:
         recommendations = st.session_state.monitor.generate_reduction_recommendations(latest_period)
         
         if not recommendations:
-            st.success("Aucune réduction nécessaire pour le moment")
+            st.success(self.lang['no_reduction_needed'])
             return
             
         # Affichage des recommandations
