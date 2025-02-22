@@ -45,12 +45,6 @@ Carbon Footprint Monitoring System
 
 
 """
-
-# 002_carbon_footprint_decision-matrix_implementation_streamlit.py
-
-
-# 002_carbon_footprint_decision-matrix_implementation_streamlit.py
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
