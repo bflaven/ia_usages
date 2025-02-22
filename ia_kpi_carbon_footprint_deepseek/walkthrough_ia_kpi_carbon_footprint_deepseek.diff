@@ -93,7 +93,7 @@ python _api_call_demo.py
 
 - DESC: text
 
-CODE: /Users/brunoflaven/Documents/03_git/ia_usages/ia_kpi_carbon_footprint_deepseek/ia_kpi_carbon_llm
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_kpi_carbon_footprint_deepseek/ia_kpi_carbon_llm
 
 ! CONSOLE_SCREEN (commands)
 
@@ -101,19 +101,40 @@ CODE: /Users/brunoflaven/Documents/03_git/ia_usages/ia_kpi_carbon_footprint_deep
 cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_kpi_carbon_footprint_deepseek/ia_kpi_carbon_llm
 
 
+
+
 # LAUNCH THE ENV
 conda info --envs
 source activate carbon_footprint
 
 # launch the file (simple)
-python 003_ia_cms.py
+python 010_carbon_footprint_codecarbon_local_llm.py
 
 # launch the file (complex)
-python 005_ia_cms.py
+python 012_carbon_footprint_codecarbon_local_llm.py
 
 
 + 2. ia_deepseek: Using DeepSeek with Ollama
 --- ia_deepseek.mov
+
+ollama run deepseek-r1
+# ollama run deepseek-r1:latest 
+ollama pull deepseek-r1:latest
+
+
+# list the model
+ollama list
+
+
+# when you are in the model you can use
+>>> /?
+>>> /list
+>>> /set verbose
+
+# to get out from the model
+/exit
+
+
 
 + 3. ia_carbon_footprint_visualization: Prompt for carbon footprint visualization Mistral, Grok, ChatGPT...
 --- ia_carbon_footprint_visualization.mov
