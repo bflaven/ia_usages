@@ -115,6 +115,10 @@ ollama rm mistral:latest
 ollama run mistral-poet:latest
 ollama rm mistral-poet:latest
 
+--- some queries...
+What is Mayonnaise?
+
+
 --- COMMAND How to create mistral-poet:latest (using modelfile)
 Check https://github.com/ollama/ollama/blob/main/docs/modelfile.md
 
