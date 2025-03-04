@@ -8,6 +8,9 @@
 conda create --name ia_seo_llm python=3.9.13
 conda info --envs
 source activate ia_seo_llm
+source activate carbon_footprint
+
+
 conda deactivate
 
 
