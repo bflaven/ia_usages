@@ -143,9 +143,9 @@ source activate carbon_footprint
 
 
 + webapp with streamlit
-streamlit run 001_carbon_footprint_monitoring_system_streamlit.py
-streamlit run 002_carbon_footprint_decision_matrix_implementation_streamlit.py
-streamlit run 002a_carbon_footprint_decision_matrix_implementation_streamlit.py
+--- streamlit run 001_carbon_footprint_monitoring_system_streamlit.py
+--- streamlit run 002_carbon_footprint_decision_matrix_implementation_streamlit.py
+--- streamlit run 002a_carbon_footprint_decision_matrix_implementation_streamlit.py
 
 
 + carbon footprint using codecarbon
@@ -156,12 +156,12 @@ python 007_carbon_footprint_codecarbon_site_explicit_object.py
 python 008_carbon_footprint_codecarbon_site_context_manager.py
 python 009_carbon_footprint_codecarbon_site_using_decorator.py
 python 010_carbon_footprint_codecarbon_local_llm.py
-python 012_carbon_footprint_codecarbon_local_llm.py
+--- python 012_carbon_footprint_codecarbon_local_llm.py
 
 + carbon footprint using eco2ai
 python 014_carbon_footprint_eco2ai.py
 python 015_carbon_footprint_eco2ai.py
-python 016_carbon_footprint_eco2ai.py
+--- python 016_carbon_footprint_eco2ai.py
 
 
 
