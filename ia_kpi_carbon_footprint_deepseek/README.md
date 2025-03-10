@@ -12,5 +12,17 @@ This post is also an experiment to test NotebookLM. So, here is this regular blo
 
 - [The Big Dive : The 'Green' AI Myth: Carbon Costs of ML Models & Insights on GEO and DeepSeek Fine-tuning](https://on.soundcloud.com/PVzHx8TEb5b65HHg9)
 
+## Videos
+
+- [Video #1: Measuring AI's Carbon Footprint and Impact with CodeCarbon & Eco2AI](https://www.youtube.com/watch?v=CyVOWCoZna4)[![Video #1: Measuring AI's Carbon Footprint and Impact with CodeCarbon & Eco2AI](001_carbon_footprint.jpg)](https://www.youtube.com/watch?v=CyVOWCoZna4)
+
+- [Video #2: How to Measure the Carbon Footprint of Your Local Mistral-Poet LLM Running on Ollama with CodeCarbon](https://www.youtube.com/watch?v=eq1c3FrYZvM)[![Video #2: How to Measure the Carbon Footprint of Your Local Mistral-Poet LLM Running on Ollama with CodeCarbon](002_carbon_footprint.jpg)](https://www.youtube.com/watch?v=eq1c3FrYZvM)
+
+- [Video #3: Sustainable AI: Tracking Carbon Footprints of Mistral Models with Ollama & CodeCarbon](https://www.youtube.com/watch?v=WYa6itBdbbU)[![Video #3: Sustainable AI: Tracking Carbon Footprints of Mistral Models with Ollama & CodeCarbon](003_carbon_footprint.jpg)](https://www.youtube.com/watch?v=WYa6itBdbbU)
+
+
+
+
+
 
 
