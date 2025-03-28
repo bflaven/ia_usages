@@ -18,6 +18,9 @@ source activate ia_seo_llm
 conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
 conda env remove -n ia_seo_llm
 
+
+
+
 # BURN AFTER READING
 conda env remove -n ia_seo_llm
 
