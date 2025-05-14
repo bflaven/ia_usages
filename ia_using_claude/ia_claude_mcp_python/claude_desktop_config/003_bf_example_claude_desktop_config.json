@@ -1,0 +1,40 @@
+{
+    "mcpServers": {
+        "Demo": {
+            "command": "uv",
+            "args": [
+                "run",
+                "--with",
+                "mcp[cli]",
+                "mcp",
+                "run",
+                "/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/mcp-server-demo/server.py"
+            ]
+        },
+        "count-r": {
+            "command": "uv",
+            "args": [
+                "run",
+                "--with",
+                "mcp[cli]",
+                "mcp",
+                "run",
+                "/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/002_server.py"
+            ]
+        },
+        "greeter": {
+            "command": "/Users/brunoflaven/anaconda3/envs/mcp_server_demo/bin/python",
+            "args": [
+                "/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/003_server.py"
+            ]
+        },
+        "filesystem": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-filesystem",
+                "/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/output_filesystem"
+            ]
+        }
+    }
+}

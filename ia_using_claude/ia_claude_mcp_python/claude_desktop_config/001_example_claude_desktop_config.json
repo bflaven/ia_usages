@@ -1,0 +1,22 @@
+{
+    "mcpServers": {
+        "greeter": {
+            "command": "/opt/anaconda3/envs/mcp/bin/python",
+            "args": ["/Users/apoorv/Desktop/AV/Code/MCP/greeter.py"]
+        },
+        "filecounter": {
+            "command": "/opt/anaconda3/envs/mcp/bin/python",
+            "args": ["/Users/apoorv/Desktop/AV/Code/MCP/filecounter.py"]
+        },
+        "conversationsaver": {
+            "command": "/opt/anaconda3/envs/mcp/bin/python",
+            "args": ["/Users/apoorv/Desktop/AV/Code/MCP/conversationsaver.py"]
+        },
+        "smartcontext": {
+            "command": "/opt/anaconda3/envs/mcp/bin/python",
+            "args": ["/Users/apoorv/Desktop/AV/Code/MCP/smartcontext.py"]
+        }
+    }
+}
+
+
