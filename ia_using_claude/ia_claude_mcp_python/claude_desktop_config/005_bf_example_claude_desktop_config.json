@@ -1,0 +1,73 @@
+{
+  "mcpServers": {
+    "Demo": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/mcp-server-demo/001_server.py"
+      ]
+    },
+    "count-r": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/002_server.py"
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/output_filesystem"
+      ]
+    },
+    "Greeter": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/003_server.py"
+      ]
+    },
+    "FileCounter": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/005_server.py"
+      ]
+    },
+    "ConversationSaver": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/004_server.py"
+      ]
+    },
+    "SmartContext": {
+            "command": "/Users/brunoflaven/anaconda3/envs/mcp_server_demo/bin/python",
+            "args": ["/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/006_server.py"]
+        }
+  }
+}
+
+        

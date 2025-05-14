@@ -1,0 +1,22 @@
+{
+    "mcpServers": {
+        "greeter": {
+            "command": "/Users/brunoflaven/anaconda3/envs/mcp_server_demo/bin/python",
+            "args": ["/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/003_server.py"]
+        },
+        "conversationsaver": {
+            "command": "/Users/brunoflaven/anaconda3/envs/mcp_server_demo/bin/python",
+            "args": ["/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/004_server.py"]
+        },
+        "filecounter": {
+            "command": "/Users/brunoflaven/anaconda3/envs/mcp_server_demo/bin/python",
+            "args": ["/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/005_server.py"]
+        },
+        "smartcontext": {
+            "command": "/Users/brunoflaven/anaconda3/envs/mcp_server_demo/bin/python",
+            "args": ["/Users/brunoflaven/Documents/01_work/blog_articles/000_ia_generate_slides/ia_mcp_python/006_server.py"]
+        }
+    }
+}
+
+
