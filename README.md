@@ -64,6 +64,10 @@
 
 19. The 'Green' AI Myth: Carbon Costs of ML Models & Insights on GEO and DeepSeek Fine-tuning [https://wp.me/p3Vuhl-3nO](https://wp.me/p3Vuhl-3nO)
 
+20. Maximizing Claude AI: Desktop App, MCP, Agents & Presentation Generation Guide [https://wp.me/p3Vuhl-3om](https://wp.me/p3Vuhl-3om)
+
+
+
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
 
