@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connectors</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Connectors</h2>
+        <div class="button-group">
+            <a href="/connectors/create">
+                <button type="button" class="create-connector">Create Connector</button>
+            </a>
+            <a href="/">
+                <button type="button">Back to Registry</button>
+            </a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>LLM Provider</th>
+                    <th>Model</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for connector in connectors %}
+                <tr>
+                    <td data-label="ID">{{ connector.id }}</td>
+                    <td data-label="LLM Provider">{{ connector.llm_provider }}</td>
+                    <td data-label="Model">{{ connector.model }}</td>
+                    <td data-label="Action">
+                        <a href="/connectors/edit/{{ connector.id }}">
+                            <button type="button">Edit</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

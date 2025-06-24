@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prompt Registry</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container" style="flex-direction: column;">
+        <h1>Prompt Registry</h1>
+        <p>Manage your prompt templates programmatically or through the web editor.</p>
+        
+        <!-- Action buttons -->
+        <div class="button-group">
+            <a href="/prompts/create">
+                <button type="button">Create Prompt</button>
+            </a>
+            <a href="/connectors/create">
+                <button type="button" class="create-connector">Create Connector</button>
+            </a>
+            <a href="/connectors" class="manage-connector">Manage Connectors</a>
+
+        </div>
+
+        <!-- Prompts table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>System</th>
+                    <th>User</th>
+                    <th>Keywords</th>
+                    <th>Connector</th>
+                    <th>Created</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prompt in prompts %}
+                <tr>
+                    <td data-label="System">{{ prompt.system }}</td>
+                    <td data-label="User">{{ prompt.user }}</td>
+                    <td data-label="Keywords">{{ prompt.keywords }}</td>
+                    <td data-label="Connector">
+                        {% for connector in connectors %}
+                            {% if connector.id == prompt.connector_id %}
+                                {{ connector.llm_provider }} / {{ connector.model }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td data-label="Created">{{ prompt.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                    <td data-label="Action">
+                        <a href="/prompts/edit/{{ prompt.id }}">
+                            <button type="button">Edit</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

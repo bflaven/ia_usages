@@ -162,8 +162,9 @@ git commit -am "update walkthrough_ia_video_editing_faiss_compare_keywords.diff 
 git commit -am "add images and other things"
 git commit -am "add files fo ia kpi carbon footprint and deepseek"
 git commit -am "add files svg for the global warming impact of intensive artificial intelligence usage in the world"
-
 git commit -am "add directory stage_fmm_maksim"
+git commit -am "add ia_managing_prompts"
+
 
 # push to github if your branch on github is master
 # git push origin master
