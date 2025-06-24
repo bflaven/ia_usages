@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Connector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create a New Connector</h2>
+        <form method="post" class="form-block">
+            <div class="form-group">
+                <label for="llm_provider">LLM Provider:</label>
+                <input type="text" id="llm_provider" name="llm_provider" required>
+            </div>
+            <div class="form-group">
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit">Save Connector</button>
+                <a href="/"><button type="button">Back to Registry</button></a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

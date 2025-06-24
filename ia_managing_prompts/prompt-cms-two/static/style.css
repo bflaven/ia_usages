@@ -1,0 +1,263 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6fb;
+    color: #222;
+    min-height: 100vh;
+}
+
+/* Detached, percent-based container */
+.container {
+    width: 80%;
+    max-width: 900px;
+    min-width: 300px;
+    margin: 56px auto 0 auto;
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(37,99,235,0.07), 0 1.5px 8px rgba(0,0,0,0.04);
+    padding: 36px 36px 32px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border: 0;
+}
+
+/* Header */
+h1, h2 {
+    color: #2563eb;
+    margin-bottom: 0.3em;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+
+p {
+    color: #4b5563;
+    margin-bottom: 28px;
+    font-size: 1.1em;
+}
+
+/* Button group */
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.button-group a {
+    text-decoration: none;
+}
+
+.button-group button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 22px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.07);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.button-group button.create-connector {
+    background: #16a34a;
+}
+
+.button-group button.create-connector:hover {
+    background: #15803d;
+}
+
+.button-group button:hover {
+    background: #1d4ed8;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f9fafb;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    margin-top: 8px;
+    font-size: 1em;
+}
+
+th, td {
+    padding: 14px 12px;
+    text-align: left;
+}
+
+th {
+    background: #e0e7ef;
+    color: #1e293b;
+    font-weight: 700;
+    border-bottom: 2px solid #cbd5e1;
+}
+
+td {
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
+    background: #fff;
+}
+
+tr:nth-child(even) td {
+    background: #f3f6fa;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Form styles */
+.form-block {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-weight: 500;
+    color: #2563eb;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    font-size: 1em;
+    background: #f9fafb;
+    transition: border 0.2s;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border: 1.5px solid #2563eb;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+    max-height: 180px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+button,
+.form-actions button,
+.form-actions a button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 22px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover,
+.form-actions button:hover,
+.form-actions a button:hover {
+    background: #1d4ed8;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .container {
+        width: 96%;
+        padding: 14px 2vw;
+        margin: 18px auto 0 auto;
+        min-width: unset;
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    th {
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+    }
+    tr {
+        margin-bottom: 16px;
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        background: #f9fafb;
+    }
+    td {
+        border: none;
+        position: relative;
+        padding-left: 52%;
+        min-height: 38px;
+        font-size: 1em;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    td:before {
+        position: absolute;
+        left: 18px;
+        top: 14px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #2563eb;
+        content: attr(data-label);
+    }
+}
+
+/* Miscellaneous */
+::-webkit-scrollbar {
+    width: 8px;
+    background: #e0e7ef;
+}
+::-webkit-scrollbar-thumb {
+    background: #b6c4e1;
+    border-radius: 4px;
+}
+
+.manage-connector {
+    display: inline-block;
+    background: #f97316; /* Orange */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 22px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(249,115,22,0.3);
+    transition: background 0.2s;
+}
+.manage-connector:hover {
+    background: #c2410c; /* Darker orange on hover */
+}
+
