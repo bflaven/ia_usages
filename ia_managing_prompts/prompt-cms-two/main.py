@@ -28,7 +28,7 @@ pip install fastapi sqlmodel uvicorn jinja2 python-multipart
 python -m pip install fastapi sqlmodel uvicorn jinja2 python-multipart
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/ia_managing_prompts/prompt-cms-two
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_managing_prompts
 
 
 # LAUNCH the file

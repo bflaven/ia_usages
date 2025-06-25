@@ -66,7 +66,7 @@
 
 20. Maximizing Claude AI: Desktop App, MCP, Agents & Presentation Generation Guide [https://wp.me/p3Vuhl-3om](https://wp.me/p3Vuhl-3om)
 
-
+21. AI Implementation Challenges: Strategic Considerations for Prompt Management, Data Integration, and Organizational Knowledge Sharing [https://wp.me/p3Vuhl-3ov](https://wp.me/p3Vuhl-3ov)
 
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
@@ -164,7 +164,7 @@ git commit -am "add files fo ia kpi carbon footprint and deepseek"
 git commit -am "add files svg for the global warming impact of intensive artificial intelligence usage in the world"
 git commit -am "add directory stage_fmm_maksim"
 git commit -am "add ia_managing_prompts"
-
+git commit -am "update ia_managing_prompts"
 
 # push to github if your branch on github is master
 # git push origin master
