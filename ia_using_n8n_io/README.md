@@ -2,6 +2,15 @@
 
 ## Intro
 
+
+## Human advisory
+The text has been written by Claude. It sucks a bit. It was clearly offensive and clickbait oriented with a pretty misinterpretation when the post talks more on ideas related to philosophy and politics.
+Claude will me make think that I am communist, no good for a LinkedIn post :) So, I will probalbly reinjected a certain corporate BS into it.
+
+Anyway I leave the intro as it is...
+
+## Fully AI generated intro
+
 **When AI Projects Lose Direction: Lessons from the Trenches**
 
 After three months of radio silence on my blog, I had to confront an uncomfortable truth: my AI implementation project was off the rails. Here's what I learned about getting it back on track.
