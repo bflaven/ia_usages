@@ -30,7 +30,8 @@ python -m pip install beautifulsoup4
 python -m pip install requests
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_using_n8n_io/generative_engine_optimization_llms_txt
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_n8n_io/generative_engine_optimization_llms_txt
+
 
 # LAUNCH the file
 python 003_generative_engine_optimization_llms_txt.py
