@@ -166,6 +166,7 @@ git commit -am "add directory stage_fmm_maksim"
 git commit -am "add ia_managing_prompts"
 git commit -am "update ia_managing_prompts"
 git commit -am "add ia_using_n8n_io youpi... back on track"
+git commit -am "update files"
 
 # push to github if your branch on github is master
 # git push origin master

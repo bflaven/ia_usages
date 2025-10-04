@@ -1,0 +1,74 @@
+{
+  "name": "n8N_simple_1",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "042c85eb-00d0-4e6c-bc76-03cf833fe445",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1xK9mP2nQwRt5vL8aYdFj3cHzN7bG6eUoI4pWsX1vM2A-gr4M",
+          "mode": "list",
+          "cachedResultName": "hacker_news",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xK9mP2nQwRt5vL8aYdFj3cHzN7bG6eUoI4pWsX1vM2A-gr4M/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xK9mP2nQwRt5vL8aYdFj3cHzN7bG6eUoI4pWsX1vM2A-gr4M/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        0
+      ],
+      "id": "370d628d-a41b-4f95-80a4-14bae4e3a2dc",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "DFLC6gi8suyjEXRj",
+          "name": "Good_Google_Sheets_account_3"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "feebb82b-9616-4539-b031-b8c053e8048f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "fcdca1d16e40961c5692bef7f7ce4d67ea346144dd3e8c6308f3fc28353037a4"
+  },
+  "id": "bfq8MLB6YKv8Cbr9",
+  "tags": []
+}
