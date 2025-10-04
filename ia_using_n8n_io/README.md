@@ -74,7 +74,8 @@ Full deep dive with tutorials on n8n, Ollama, MCP, and practical automation exam
 #AI #DigitalTransformation #Automation #ProductManagement #TechLeadership
 
 ## Audio version
-If I have time...
+[AI as a Product: Losing and Finding the North Star](https://soundcloud.com/bruno-flaven/ai-as-a-product-losing-and-finding-the-north-star)
+
 
 # Videos
 If I have time too...
