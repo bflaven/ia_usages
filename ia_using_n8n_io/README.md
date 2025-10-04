@@ -17,7 +17,7 @@ AI is like broccoli: if you eat it every day, it gets tiresome!
 
 Still, an interesting topic emerged a few months ago: **AI and automation, with or without n8n!** I have a passion for automation, especially in QA, because let's face it—it's the productive consecration of laziness. Al Sweigart, if you're reading this, you know what I'm talking about.
 
-So I've resumed posting and exploring.
+So I've resumed posting and exploring: "Rescuing Failed AI Implementations + Practical Explorations with n8n, Ollama & GEO"
 
 📝 Post: https://wp.me/p3Vuhl-3oO  
 💻 Code: https://bit.ly/4o1pBHb
