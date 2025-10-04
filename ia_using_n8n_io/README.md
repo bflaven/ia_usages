@@ -3,13 +3,49 @@
 ## Intro
 
 
-## Human advisory
+## 1. Human Advisory
 The text has been written by Claude. It sucks a bit. It was clearly offensive and clickbait oriented with a pretty misinterpretation when the post talks more on ideas related to philosophy and politics.
 Claude will me make think that I am communist, no good for a LinkedIn post :) So, I will probalbly reinjected a certain corporate BS into it.
 
-Anyway I leave the intro as it is...
+Anyway I leave the intro as it is... Check 3.
 
-## Fully AI generated intro
+## 2. Humanized AI Generated Intro
+
+I'd somewhat abandoned posting on LinkedIn—early symptoms of information overload, no doubt, and saturation with AI news.
+
+AI is like broccoli: if you eat it every day, it gets tiresome!
+
+Still, an interesting topic emerged a few months ago: **AI and automation, with or without n8n!** I have a passion for automation, especially in QA, because let's face it—it's the productive consecration of laziness. Al Sweigart, if you're reading this, you know what I'm talking about.
+
+So I've resumed posting and exploring.
+
+📝 Post: https://wp.me/p3Vuhl-3oO  
+💻 Code: https://bit.ly/4o1pBHb
+
+The topic is AI and automation, but I want to keep control (sovereignty, security, confidentiality). I'm willing to be AI's "slave," but I'm keeping the keys to the handcuffs.
+
+So I dove into this promising combo: **AI and Automation with n8n**. 
+
+Why n8n? Well, why reinvent the wheel! 
+
+The idea was to mix AI/Automation/n8n with some best practices: MCP, Agents, Claude Desktop, and open-source models powered by Ollama.
+
+There's more than potential here—there's what I've pompously called **the automation of white-collar work**.
+
+**Through this work, I found my next subject: AI Text Humanizer or AI Text Polisher to improve text generation.** Because if AI is going to write for us, we might as well make it sound less robotic.
+
+**But there's another shift happening: Search engines are dead, long live the LLMs.**
+
+A few explorations into this new science of **Generative Engine Optimization (GEO)**, which is nothing more than a replacement for Search Engine Optimization (SEO):
+- SEO had its own robots.txt file
+- GEO has its own llms.txt file
+
+As an actor who lost his voice-dubbing job to AI told me: *"You better deal with AI before AI deals with you."*
+
+#AI #Automation #n8n #GEO #SEO #LLM #Productivity #DigitalTransformation #OpenSource #AIAgents
+
+
+## 2. Fully AI Generated Intro
 
 **When AI Projects Lose Direction: Lessons from the Trenches**
 
