@@ -1,13 +1,4 @@
-# ia_using_n8n_io.md
+# `_prompts`
 
-## Intro
-Showcase in progress :)
-
-
-## Audio version
-If I have time...
-
-# Videos
-If I have time too...
-
+Behind the curtain...
 

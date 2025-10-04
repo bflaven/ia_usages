@@ -1,5 +1,5 @@
 
-# 083_strategy_IA_fmm.md
+# 083_strategy_IA_streamlit.md
 
 ## INPUT_1
 As a python expert, write the streamlit script named `streamlit_query_ollama.py` that will go on the top of the script `query_ollama.py` and `config.py`so as a user I can update the values `cms_section_keywords_list`, `lang`, `content`.
