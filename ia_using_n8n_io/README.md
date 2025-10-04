@@ -21,6 +21,7 @@ So I've resumed posting and exploring: "Rescuing Failed AI Implementations + Pra
 
 📝 Post: https://wp.me/p3Vuhl-3oO  
 💻 Code: https://bit.ly/4o1pBHb
+Audio : https://on.soundcloud.com/o7WQHXuu5DpPaMqPnh
 
 The topic is AI and automation, but I want to keep control (sovereignty, security, confidentiality). I'm willing to be AI's "slave," but I'm keeping the keys to the handcuffs.
 
