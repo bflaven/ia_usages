@@ -5,7 +5,7 @@
 
 ## 1. Human Advisory
 The text has been written by Claude. It sucks a bit. It was clearly offensive and clickbait oriented with a pretty misinterpretation when the post talks more on ideas related to philosophy and politics.
-Claude will me make think that I am communist, no good for a LinkedIn post :) So, I will probalbly reinjected a certain corporate BS into it.
+Claude will me make think that I am communist, no good for a LinkedIn post :) So, I will probalbly reinject a certain amount of corporate BS into it.
 
 Anyway I leave the intro as it is... Check 3.
 
