@@ -1,0 +1,334 @@
+{
+  "name": "AI-Powered-Restaurant-Review-Analyzer",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b2dab25c-9044-4167-a664-115006cc335b",
+      "name": "Translator",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "model": "life4living/ChatGPT:latest",
+        "options": {
+          "temperature": 0.1,
+          "topK": 5,
+          "topP": 0.2,
+          "numPredict": 300
+        }
+      },
+      "id": "3dfe1a06-4290-45a4-95e8-57f87f7380b4",
+      "name": "Translation Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [
+        32,
+        160
+      ],
+      "credentials": {
+        "ollamaApi": {
+          "id": "GH4BhxJ45CpR51bw",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "life4living/ChatGPT:latest",
+        "options": {
+          "temperature": 0.1,
+          "topK": 5,
+          "topP": 0.2,
+          "numPredict": 30,
+          "repeatPenalty": 1.1
+        }
+      },
+      "id": "86d1532e-63f0-4718-8ab5-0800ede1ece2",
+      "name": "Rating Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [
+        992,
+        480
+      ],
+      "credentials": {
+        "ollamaApi": {
+          "id": "GH4BhxJ45CpR51bw",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const allItems = $input.all();\nconst totalComments = allItems.length;\n\nconst combinedResponse = allItems\n  .map(item => item.json.response)\n  .join('\\n\\n');\n\nconst finalResponse = `📊 **Restaurant Rating (${totalComments} comments)**\\n\\n${combinedResponse}`;\n\nreturn [{ json: { output: finalResponse } }];"
+      },
+      "id": "a2cd7017-dad7-4a91-bb98-561563e1eb5e",
+      "name": "Aggregate Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "try {\n  const allItems = $input.all();\n  \n  return allItems.map((item, index) => {\n    const currentItem = item.json;\n    const ratingData = currentItem.output || '';\n    const commentIndex = index + 1;\n    const ratingOutput = ratingData || 'Food:N Service:N Environment:N Value:N Overall:N';\n    \n    const foodMatch = ratingOutput.match(/Food:\\s*([N\\d]+)/i);\n    const serviceMatch = ratingOutput.match(/Service:\\s*([N\\d]+)/i);\n    const environmentMatch = ratingOutput.match(/Environment:\\s*([N\\d]+)/i);\n    const valueMatch = ratingOutput.match(/Value:\\s*([N\\d]+)/i);\n    const overallMatch = ratingOutput.match(/Overall:\\s*([N\\d]+)/i);\n    \n    const parseScore = (match) => {\n      if (!match || match[1] === 'N') return 'N/A';\n      const score = parseInt(match[1]);\n      return (score >= 1 && score <= 10) ? `${score}/10` : 'N/A';\n    };\n    \n    const food = parseScore(foodMatch);\n    const service = parseScore(serviceMatch);\n    const environment = parseScore(environmentMatch);\n    const value = parseScore(valueMatch);\n    const overall = parseScore(overallMatch);\n    const response = `**Comment ${commentIndex}:**\\nFood: ${food} | Service: ${service} | Environment: ${environment} | Value: ${value} | Overall: ${overall}`;\n    \n    return {\n      json: {\n        response: response,\n        commentIndex: commentIndex,\n        scores: {\n          food: foodMatch && foodMatch[1] !== 'N' ? parseInt(foodMatch[1]) : null,\n          service: serviceMatch && serviceMatch[1] !== 'N' ? parseInt(serviceMatch[1]) : null,\n          environment: environmentMatch && environmentMatch[1] !== 'N' ? parseInt(environmentMatch[1]) : null,\n          value: valueMatch && valueMatch[1] !== 'N' ? parseInt(valueMatch[1]) : null,\n          overall: overallMatch && overallMatch[1] !== 'N' ? parseInt(overallMatch[1]) : null\n        }\n      }\n    };\n  });\n\n} catch (error) {\n  return [{ \n    json: {\n      response: `**Error processing comments:** ${error.message}`,\n      commentIndex: 1,\n      scores: { food: null, service: null, environment: null, value: null, overall: null }\n    }\n  }];\n}"
+      },
+      "id": "ad0b350c-8d7f-404b-ace9-ef747f51299a",
+      "name": "Combine Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1280,
+        320
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        672,
+        320
+      ],
+      "id": "5c176b4e-9122-441e-aa19-cbfe217d82ef",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Handle ALL items from merge and SORT by commentIndex\nconst allItems = $input.all();\n\nconst processedItems = allItems.map((item, index) => {\n  const inputData = item.json;\n  \n  let translatedText, originalComment, commentIndex, needsTranslation;\n  \n  if (inputData.output && !inputData.originalComment) {\n    // This is from translator (translated text only)\n    translatedText = inputData.output;\n    originalComment = '';\n    commentIndex = index + 1; // Generate index\n    needsTranslation = true;\n  } else {\n    // This is from direct path (English comments)\n    translatedText = inputData.processedComment || inputData.originalComment || '';\n    originalComment = inputData.originalComment || '';\n    commentIndex = inputData.commentIndex || (index + 1);\n    needsTranslation = inputData.needsTranslation || false;\n  }\n  \n  return {\n    json: {\n      output: translatedText,\n      originalComment: originalComment,\n      commentIndex: commentIndex,\n      needsTranslation: needsTranslation\n    }\n  };\n});\n\n// SORT by commentIndex to ensure correct order (1, 2, 3, 4)\nprocessedItems.sort((a, b) => (a.json.commentIndex || 0) - (b.json.commentIndex || 0));\n\nreturn processedItems;"
+      },
+      "id": "ad555c35-068c-4c3c-acd5-807920ed8b59",
+      "name": "Sort by Index",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        832,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const chatInput = $input.first().json;\nconst userInput = chatInput.chatInput || chatInput.input || '';\n\nconst comments = userInput.split('\\n')\n  .map(c => c.trim())\n  .filter(c => c.length > 0);\n\nreturn comments.map((comment, index) => {\n  const isEnglish = /^[a-zA-Z\\s.,!?'\"()-:;]+$/.test(comment.substring(0, 100));\n  \n  return {\n    json: {\n      originalComment: comment,\n      commentIndex: index + 1,\n      totalComments: comments.length,\n      needsTranslation: !isEnglish,\n      processedComment: comment\n    }\n  };\n});"
+      },
+      "id": "b6d96e0f-bf52-4f0a-963a-d8cb0d729b7c",
+      "name": "Split Comments By Newline",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -288,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "condition-1",
+              "leftValue": "={{ $json.needsTranslation }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "d01d07d4-9acb-48b5-b18c-64519eb8f693",
+      "name": "Needs Translation?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -128,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return {\n    json: {\n      processedComment: $input.first().json.output\n    }\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        272,
+        0
+      ],
+      "id": "312e2671-d5ae-464f-accf-5323d01b4d10",
+      "name": "Rename Output as processedComment"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "fieldsToMatchString": "needTranslation",
+        "joinMode": "keepEverything",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        688,
+        0
+      ],
+      "id": "ad03ccb4-5931-496f-9713-ef2023a5b698",
+      "name": "Merge Before/After"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Process merged data from Merge node\nconst allItems = $input.all();\n\n// Separate the data types\nconst input1Items = []; // From \"Needs Translation?\" \nconst input2Items = []; // From \"Translator\"\n\n// Sort items by their source structure\nallItems.forEach(item => {\n  const data = item.json;\n  \n  // Check if this item has full metadata (from input1) or just translation (from input2)\n  if (data.originalComment !== undefined && data.commentIndex !== undefined) {\n    // This is from \"Needs Translation?\" node\n    input1Items.push(data);\n  } else if (data.output !== undefined || data.processedComment !== undefined) {\n    // This is from \"Translator\" node  \n    input2Items.push(data);\n  }\n});\n\n// Sort both arrays by position to ensure proper matching\ninput1Items.sort((a, b) => (a.commentIndex || 0) - (b.commentIndex || 0));\n\n// Perform the join operation\nconst joinedResults = input1Items.map((input1Data, index) => {\n  const input2Data = input2Items[index] || {};\n  \n  return {\n    json: {\n      originalComment: input1Data.originalComment,\n      commentIndex: input1Data.commentIndex,\n      totalComments: input1Data.totalComments,\n      needsTranslation: input1Data.needsTranslation,\n      processedComment: input2Data.processedComment || input2Data.output || input1Data.processedComment\n    }\n  };\n});\n\nreturn joinedResults;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1072,
+        64
+      ],
+      "id": "9cb27628-fd81-47d9-b6e2-fcbb85453b12",
+      "name": "Update English Comment"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "9a936767-bb0a-48a9-a257-574924267ba9",
+      "name": "Comment Rater",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        992,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "AI-Powered Restaurant Review Analyzer - Send multiple comments separated by newlines!",
+        "options": {}
+      },
+      "id": "4de24ba9-e5f2-49bc-adc1-a48f71e602e7",
+      "name": "Chat Trigger",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        320
+      ],
+      "webhookId": "38606ef0-bfbe-4961-9148-93616a779e04"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Combine Results": {
+      "main": [
+        [
+          {
+            "node": "Aggregate Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Sort by Index",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Comments By Newline": {
+      "main": [
+        [
+          {
+            "node": "Needs Translation?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Needs Translation?": {
+      "main": [
+        [
+          {
+            "node": "Merge Before/After",
+            "type": "main",
+            "index": 1
+          }
+        ],
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Rename Output as processedComment": {
+      "main": [
+        [
+          {
+            "node": "Merge Before/After",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Before/After": {
+      "main": [
+        [
+          {
+            "node": "Update English Comment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update English Comment": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "60f1e685-1076-4d86-8a92-2e45f98578ed",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "fcdca1d16e40961c5692bef7f7ce4d67ea346144dd3e8c6308f3fc28353037a4"
+  },
+  "id": "o2TZXu2KbIOmtVMg",
+  "tags": []
+}

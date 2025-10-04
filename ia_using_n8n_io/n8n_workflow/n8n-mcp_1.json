@@ -1,0 +1,241 @@
+{
+  "name": "n8n-mcp_1",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "id": "ddf5263a-ade7-41fb-8ac6-76e59485904a",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -128,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "language": "javascript"
+      },
+      "id": "97914df8-acac-4906-8014-5e810e60634c",
+      "name": "Get Today's Date",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        80,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "all",
+        "limit": 500,
+        "additionalFields": {}
+      },
+      "id": "e9669cc4-3665-4f35-b75e-728ae41c0e8f",
+      "name": "Fetch HN Top Stories",
+      "type": "n8n-nodes-base.hackerNews",
+      "typeVersion": 1,
+      "position": [
+        272,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "language": "javascript"
+      },
+      "id": "b559f71a-0f37-44f2-b7ea-a7589f7725c0",
+      "name": "Filter Today's Articles",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1xK9mP2nQwRt5vL8aYdFj3cHzN7bG6eUoI4pWsX1vM2A",
+          "mode": "list",
+          "cachedResultName": "hacker_news",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xK9mP2nQwRt5vL8aYdFj3cHzN7bG6eUoI4pWsX1vM2A/edit#gid=0"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xK9mP2nQwRt5vL8aYdFj3cHzN7bG6eUoI4pWsX1vM2A/edit#gid=0"
+        },
+        "options": {}
+      },
+      "id": "544c59cd-06ae-4f1f-8700-cd2b44bc6c7d",
+      "name": "Read Existing Articles",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        272,
+        256
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "DFLC6gi8suyjEXRj",
+          "name": "Good_Google_Sheets_account_3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "javascript"
+      },
+      "id": "54a60088-d647-419f-a5be-7d34fe55f61f",
+      "name": "Compare and Filter New Articles",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        672,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1xK9mP2nQwRt5vL8aYdFj3cHzN7bG6eUoI4pWsX1vM2A",
+          "mode": "list",
+          "cachedResultName": "hacker_news",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xK9mP2nQwRt5vL8aYdFj3cHzN7bG6eUoI4pWsX1vM2A/edit#gid=0"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xK9mP2nQwRt5vL8aYdFj3cHzN7bG6eUoI4pWsX1vM2A/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "Student Name"
+          ],
+          "schema": [
+            {
+              "id": "Student Name",
+              "displayName": "Student Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Gender",
+              "displayName": "Gender",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Class Level",
+              "displayName": "Class Level",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Home State",
+              "displayName": "Home State",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Major",
+              "displayName": "Major",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Extracurricular Activity",
+              "displayName": "Extracurricular Activity",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "c0c179dc-d65f-40ed-b045-a8f3163c956b",
+      "name": "Save New Articles",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        880,
+        160
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "DFLC6gi8suyjEXRj",
+          "name": "Good_Google_Sheets_account_3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "javascript"
+      },
+      "id": "c4bebb0d-4d69-4fc2-9142-f922887a9ddf",
+      "name": "Log Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1072,
+        160
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Get Today's Date": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "d3cd4f7d-0bc9-4e76-9e1c-cea37b2c8486",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "fcdca1d16e40961c5692bef7f7ce4d67ea346144dd3e8c6308f3fc28353037a4"
+  },
+  "id": "ubR1SmafJivSaRf6",
+  "tags": []
+}

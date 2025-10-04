@@ -1,0 +1,34 @@
+# Bruno Flaven's website
+
+> Professional blog of Bruno Flaven, currently working as AI Coordinator with over 20 years' experience. More at [flaven.fr](https://flaven.fr) or [LinkedIn](https://www.linkedin.com/in/brunoflaven).
+
+## Homepage
+- [Homepage](https://flaven.fr): Bruno Flaven's personal and professional articles on AI, mobile, and digital product management.
+
+## Posts
+- [AI Implementation Challenges: Strategic Considerations for Prompt Management, Data Integration, and Organizational Knowledge Sharing](https://flaven.fr/2025/06/ai-implementation-challenges-strategic-considerations-for-prompt-management-data-integration-and-organizational-knowledge-sharing/): It is not uncommon in professional contexts to encounter significant setbacks that challenge one’s assumptions and capabilities. Such setbacks may temporarily or permanently undermine progress…Continue reading →AI Implementation Challenges: Strategic Considerations for Prompt Management, Data Integration, and Organizational Knowledge Sharing
+- [The importance of the Labeling process or annotating inside an ML pipeline plus an example on how-to train a “custom” NER for Spacy](https://flaven.fr/2023/08/the-importance-of-the-labeling-process-or-annotating-inside-an-ml-pipeline-plus-an-example-with-ner-made-for-spacy/): With AI/ML, I’m trying to go from “user” status to “maker” status. At the very beginning, like often, I am more focused on uses and…Continue reading →The importance of the Labeling process or annotating inside an ML pipeline plus an example on how-to train a “custom” NER for Spacy
+- [Improve a CMS’s photos library qualification with AI, Object Detection from images in Python with OpenCv and YOLO](https://flaven.fr/2021/03/improve-a-cmss-photos-library-qualification-with-ai-object-detection-from-images-in-python-with-opencv-and-yolo/): Still digging, in Python, on more versatile usage in object detection from images to improve a house-made CMS multimedia searches. What a sentence! So, maybe,…Continue reading →Improve a CMS’s photos library qualification with AI, Object Detection from images in Python with OpenCv and YOLO
+- [API, Postman, Newman – Create a quick API with json-server and Faker and then test it with Chai-JS, Postman and Newman](https://flaven.fr/2018/03/api-postman-newman-create-a-quick-api-with-json-server-and-faker-and-then-test-it-with-chai-js-postman-and-newman/): It is true I have given a title to this post that sounds like a user story of somebody who want to make name dropping.…Continue reading →API, Postman, Newman – Create a quick API with json-server and Faker and then test it with Chai-JS, Postman and Newman
+- [Swagger, API, Node – Documenter une API avec Swagger](https://flaven.fr/2016/04/swagger-api-node-documenter-une-api-avec-swagger/): Swagger, c’est un assortiment d’outils indispensables pour documenter une API. L’aspect le plus saisissant de cet outil est sa faculté à générer une documentation digne…Continue reading →Swagger, API, Node – Documenter une API avec Swagger
+- [Opensearch, Google News – Renforcer l’indexation de votre site par les moteurs de recherche](https://flaven.fr/2014/06/opensearch-google-news-renforcer-lindexation-de-votre-site-par-les-moteurs-de-recherche/): Selon l’activité que vous pouvez avoir sur votre site, vous pouvez bien évidemment améliorer l’indexation auprès des moteurs de recherche notamment Google en mettant à…Continue reading →Opensearch, Google News – Renforcer l’indexation de votre site par les moteurs de recherche
+- [MapBox, Google Map, API – Une des meilleurs API pour la géolocalisation et un plugin WordPress d’insertion de cartes](https://flaven.fr/2013/07/mapbox-google-map-api-une-des-meilleurs-api-pour-la-geolocalisation-et-un-plugin-wordpress-dinsertion-de-cartes/): MapBox, voila semble-t-il un très sérieux concurrent à Google Map ? Qui pourrait imaginer aujourd’hui qu’une telle concurrence fusse possible ? Eh bien MapBox l’a…Continue reading →MapBox, Google Map, API – Une des meilleurs API pour la géolocalisation et un plugin WordPress d’insertion de cartes
+- [#MySQL, #phpMyadmin, #Console, #mutualisé, les bon…](https://flaven.fr/2013/05/mysql-phpmyadmin-console-mutualise-les-bon/): #MySQL, #phpMyadmin, #Console, #mutualisé, les bonnes pratiques pour la #migration d’une base de données #MySQL, past.is/j1n8
+- [Au-de-là du nuage, yonaoshi311 – Webdoc sur la catastrophe de Fukushima deux ans après](https://flaven.fr/2013/03/au-de-la-du-nuage-yonaoshi311-webdoc-sur-la-catastrophe-de-fukushima-deux-ans-apres/): Ce film et ce webdocumentaire de Keiko Courdy reviennent sur la catastrophe nucléaire survenue lors du 11 mars 2011 à Fukushima Dai Ichi au Japon. Par une série de portraits, ce webdoc nous livre l’après par des interviews de témoins directes et indirectes de la catastrophe, de tous les âges et de tous les horizons.[…]
+- [Google TV, Android, Emulateur, Télévision connectée – Installer l’émulateur de la plate-forme  de télévision connectée, Google TV](https://flaven.fr/2013/03/google-tv-android-emulateur-television-connectee-installer-lemulateur-de-la-plate-forme-de-television-connectee-google-tv/): Quoi de plus amusant d’explorer l’écosystème de Android qui s’attaque à toutes la plates-formes et à tous les usages, après avoir découvert le SDK Android…Continue reading →Google TV, Android, Emulateur, Télévision connectée – Installer l’émulateur de la plate-forme  de télévision connectée, Google TV
+
+## Pages
+- [My resume](https://flaven.fr/bruno-flaven-resume-cv/)
+- [Publications](https://flaven.fr/publications/)
+- [Videos](https://flaven.fr/videos/)
+- [3WDOC](https://flaven.fr/about-3wdoc/)
+
+## Code
+- Shared scripts, code samples, and project demos in the articles and blog posts.
+
+## Optional
+- [LinkedIn profile](https://www.linkedin.com/in/brunoflaven)
+- [Youtube](https://www.youtube.com/channel/UCnUBoVx9Yai3wirPBvNpNQw)
+- [Github](https://github.com/bflaven/)
+- [Amazon](https://amzn.to/2WQbRpA)
+[comment]: # (Generated by Bruno for flaven.fr)

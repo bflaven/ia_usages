@@ -1,0 +1,37 @@
+# Bruno Flaven's website
+
+> Professional blog of Bruno Flaven, currently working as AI Coordinator with over 20 years' experience. More at [flaven.fr](https://flaven.fr) or [LinkedIn](https://www.linkedin.com/in/brunoflaven).
+
+## Homepage
+- [Homepage](https://flaven.fr): Bruno Flaven's personal and professional articles on AI, mobile, and digital product management.
+
+## Posts
+- [AI Implementation Challenges: Strategic Considerations for Prompt Management, Data Integration, and Organizational Knowledge Sharing](https://flaven.fr/2025/06/ai-implementation-challenges-strategic-considerations-for-prompt-management-data-integration-and-organizational-knowledge-sharing/): It is not uncommon in professional contexts to encounter significant setbacks that challenge one’s assumptions and capabilities. Such setbacks may temporarily or permanently undermine progress…Continue reading →AI Implementation Challenges: Strategic Considerations for Prompt Management, Data Integration, and Organizational Knowledge Sharing
+- [The importance of the Labeling process or annotating inside an ML pipeline plus an example on how-to train a “custom” NER for Spacy](https://flaven.fr/2023/08/the-importance-of-the-labeling-process-or-annotating-inside-an-ml-pipeline-plus-an-example-with-ner-made-for-spacy/): With AI/ML, I’m trying to go from “user” status to “maker” status. At the very beginning, like often, I am more focused on uses and…Continue reading →The importance of the Labeling process or annotating inside an ML pipeline plus an example on how-to train a “custom” NER for Spacy
+- [Improve a CMS’s photos library qualification with AI, Object Detection from images in Python with OpenCv and YOLO](https://flaven.fr/2021/03/improve-a-cmss-photos-library-qualification-with-ai-object-detection-from-images-in-python-with-opencv-and-yolo/): Still digging, in Python, on more versatile usage in object detection from images to improve a house-made CMS multimedia searches. What a sentence! So, maybe,…Continue reading →Improve a CMS’s photos library qualification with AI, Object Detection from images in Python with OpenCv and YOLO
+- [API, Postman, Newman – Create a quick API with json-server and Faker and then test it with Chai-JS, Postman and Newman](https://flaven.fr/2018/03/api-postman-newman-create-a-quick-api-with-json-server-and-faker-and-then-test-it-with-chai-js-postman-and-newman/): It is true I have given a title to this post that sounds like a user story of somebody who want to make name dropping.…Continue reading →API, Postman, Newman – Create a quick API with json-server and Faker and then test it with Chai-JS, Postman and Newman
+
+## Pages
+- [My resume](https://flaven.fr/bruno-flaven-resume-cv/)
+- [Publications](https://flaven.fr/publications/)
+- [Videos](https://flaven.fr/videos/)
+- [3WDOC](https://flaven.fr/about-3wdoc/)
+
+## Code
+- [ia_usages](https://github.com/bflaven/ia_usages): An overview of the possibilities offered by artificial intelligence (AI) to serve as a technical basis for a digital product offering: from understanding, personalization, design of machine learnin…
+- [ia_formation_tunisia](https://github.com/bflaven/ia_formation_tunisia)
+- [learning_python_for_all](https://github.com/bflaven/learning_python_for_all): A set of resources from Books, Exercises, Notebooks to discover and learn Python. It exists both in French and in English.
+- [xml_archive_wordpress](https://github.com/bflaven/xml_archive_wordpress): Parse an xml wordpress archive with python
+- [PluginWordpressForFun](https://github.com/bflaven/PluginWordpressForFun): Some plugins for wordpress, sometimes used for fun or on flaven.fr
+- [ia_usages_code_depot](https://github.com/bflaven/ia_usages_code_depot): An archive directory of all the code used for the different POCS on AI
+- [BlogArticlesExamples](https://github.com/bflaven/BlogArticlesExamples): Some code extracted from articles released on flaven.fr
+- [book-defining-testing-strategy-agile-po-codeception](https://github.com/bflaven/book-defining-testing-strategy-agile-po-codeception): Defining a testing automation strategy for a P.O. with CODECEPTION_ & WordPress
+- [methodological_survival_kit](https://github.com/bflaven/methodological_survival_kit): A set of three personal presentations in French and in PDF that provides a tiny methodological survival kit: from agile Scrum method for project management to Corporate Hacking or Culture Hacking w…
+- [new_powers_new_responsibilities_the_journalism_ai_report](https://github.com/bflaven/new_powers_new_responsibilities_the_journalism_ai_report): Une synthèse d'un excellent document disponible en ligne, relativement récent (2019) extrait du "The JournalismAI Report", nommé "New powers, new responsibilities. A global survey of journalism and…
+
+## Optional
+- [LinkedIn profile](https://www.linkedin.com/in/brunoflaven)
+- [Youtube](https://www.youtube.com/channel/UCnUBoVx9Yai3wirPBvNpNQw)
+- [Github](https://github.com/bflaven/)
+- [Amazon](https://amzn.to/2WQbRpA)
+[comment]: # (Generated by Bruno for flaven.fr)
