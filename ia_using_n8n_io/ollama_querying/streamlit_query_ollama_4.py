@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 """
-Script to request locally installed Mistral 7B model via Ollama
-All configurable variables are externalized in config.py for easy updating.
-
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_using_n8n_io/ollama_querying/
 streamlit run streamlit_query_ollama_4.py
 

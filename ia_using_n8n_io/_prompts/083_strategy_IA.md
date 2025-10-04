@@ -1,5 +1,5 @@
 
-# 083_strategy_IA_fmm.md
+# 083_strategy_IA.md
 
 As a python expert, can you rewrite the script below with the changes : 
 1. Externalize the following variables like OLLAMA_URL, MODEL_NAME, cms_section_keywords_list, lang, content, prompt_template, STREAM, OUTPUT_FILE in a python file named `config.py` 

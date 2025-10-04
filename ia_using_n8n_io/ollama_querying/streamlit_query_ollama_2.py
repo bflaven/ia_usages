@@ -1,4 +1,10 @@
-# streamlit_query_ollama.py
+#!/usr/bin/env python3
+"""
+
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_n8n_io/ollama_querying/
+streamlit run streamlit_query_ollama_2.py
+
+"""
 
 import streamlit as st
 import os

@@ -3,7 +3,7 @@
 Script to request locally installed Mistral 7B model via Ollama
 All configurable variables are externalized in config.py for easy updating.
 
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_using_n8n_io/ollama_querying/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_using_n8n_io/ollama_querying/
 python query_ollama.py
 
 """
