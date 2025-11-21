@@ -12,7 +12,9 @@ conda env remove -n tagging_entity_extraction
 
 
 - Code
-https://github.com/bflaven/BlogArticlesExamples/tree/master/ml_label_studio
+
+https://github.com/bflaven/ia_usages/tree/main/ml_label_studio
+
 
 --- Example in Portuguese
 https://medium.com/@johnidouglasmarangon/train-a-custom-named-entity-recognition-with-spacy-v3-ea48dfce67a5
@@ -35,7 +37,7 @@ I will present how to use Label Studio (https://labelstud.io/) instead of prodig
 + MAKE ANNOTATION with Label Studio
 
 - Clone the source
-git clone https://github.com/bflaven/BlogArticlesExamples.git
+git clone https://github.com/bflaven/ia_usages.git
 
 - CONSOLE_1 (red)
 - Go to the dir

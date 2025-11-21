@@ -1,7 +1,7 @@
 
 ! REQUIREMNTS
 cd /Users/brunoflaven/Documents/01_work/blog_articles/ml_label_studio/
-git clone https://github.com/bflaven/BlogArticlesExamples.git
+git clone https://github.com/bflaven/ia_usages.git
 
 
 - Only need this directory 02_using_label_studio/label_studio_ml_with_label_studio/sentiment_analysis
