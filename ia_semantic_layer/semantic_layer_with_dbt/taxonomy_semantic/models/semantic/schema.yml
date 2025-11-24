@@ -1,0 +1,10 @@
+tests:
+  - accepted_values:
+      arguments:
+        field: status
+        values: ['active', 'inactive']
+  - relationships:
+      arguments:
+        field: user_id
+        to: ref('users')
+        field: id

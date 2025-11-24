@@ -1,0 +1,9 @@
+exposures:
+  - name: tableau_dashboard
+    type: dashboard
+    url: https://tableau.yourcompany.com/workbook
+    owner:
+      name: Data Team
+      email: datateam@yourcompany.com
+    depends_on:
+      - ref('clean_bank_failures')

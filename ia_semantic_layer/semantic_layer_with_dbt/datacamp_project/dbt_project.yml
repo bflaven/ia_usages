@@ -1,0 +1,10 @@
+name: datacamp_project
+version: '1.0'
+config-version: 2
+
+profile: datacamp_project
+
+models:
+  datacamp_project:
+    bank_app:
+      +materialized: view

@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_tags
+    description: "Master dimension table for all tags with master-slave relationships"
+    columns:
+      - name: tag_key
+        description: "Surrogate key for dimension"
+        tests:
+          - unique
+          - not_null
+      
+      - name: tag_role
+        description: "MASTER or SLAVE designation"
+        tests:
+          - accepted_values:
+              values: ['MASTER', 'SLAVE']
+      
+      - name: master_tag_reference
+        description: "Reference to master tag (for slave tags only)"
+        tests:
+          arguments:
+          - relationships:
+              to: ref('dim_tags')
+              field: tag_key
+              where: "tag_role = 'SLAVE'"

@@ -1,0 +1,28 @@
+User-agent: *
+Crawl-Delay: 10
+Disallow: /wp-admin
+Disallow: /wp-includes
+Disallow: /wp-content
+Allow: /wp-admin/admin-ajax.php
+
+
+#google specific - allow google image bot to search all images
+User-agent: Mediapartners-Google
+Allow: /*
+
+#google specific - allow instruction
+User-agent: Adsbot-Google
+Allow: /*
+
+#google specific - allow instruction
+User-agent: Googlebot-Image
+Allow: /*
+
+#google specific - allow instruction
+User-agent: Googlebot-Mobile
+Allow: /*
+
+#indicate the index sitemap for google, yahoo...
+Sitemap: http://flaven.fr/sitemap.xml
+
+

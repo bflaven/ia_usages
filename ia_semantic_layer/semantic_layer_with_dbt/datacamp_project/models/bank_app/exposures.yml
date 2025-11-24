@@ -1,0 +1,15 @@
+version: 2
+
+exposures:
+  - name: streamlit_bank_failures_app
+    type: application
+    label: "Streamlit Bank Failures Dashboard"
+    description: "A Streamlit application that visualizes bank failures aggregated by state."
+    url: http://localhost:8501
+    maturity: low  # <-- valid value!
+    owner:
+      name: Bruno Flaven
+      email: your.email@domain.com
+    depends_on:
+      - ref('clean_bank_failures')
+      - ref('base_bank_failures')

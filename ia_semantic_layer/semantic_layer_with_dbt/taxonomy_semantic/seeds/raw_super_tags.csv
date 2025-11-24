@@ -1,0 +1,9 @@
+brand,language,tag_id,tag_name,tag_slug,parent_tag_id,usage_count,entity_type
+F24,FR,101,Europe,europe,,5600,GPE
+F24,EN,102,Europe,europe,,4800,GPE
+F24,FR,103,France,france,101,8900,GPE
+F24,EN,104,France,france,102,7500,GPE
+F24,FR,105,Organisations internationales,organisations-internationales,,2300,ORG
+F24,EN,106,International organizations,international-organizations,,2100,ORG
+F24,FR,107,ONU,onu,105,1850,ORG
+F24,EN,108,UN,un,106,1750,ORG

@@ -1,0 +1,50 @@
+User-agent: *
+Crawl-Delay: 10
+Disallow: /wp-admin
+Disallow: /wp-includes
+Disallow: /wp-content
+Allow: /wp-admin/admin-ajax.php
+
+# Google search/image/ad bots
+User-agent: Mediapartners-Google
+Allow: /*
+
+User-agent: Adsbot-Google
+Allow: /*
+
+User-agent: Googlebot-Image
+Allow: /*
+
+User-agent: Googlebot-Mobile
+Allow: /*
+
+# Sitemap directive
+Sitemap: http://flaven.fr/sitemap.xml
+
+# LLM/AI Bots: Allow or block as needed
+User-agent: GPTBot          # OpenAI / ChatGPT
+Disallow: /
+
+User-agent: ClaudeBot       # Anthropic Claude
+Disallow: /
+
+User-agent: PerplexityBot   # Perplexity AI
+Disallow: /
+
+User-agent: MistralBot      # Mistral AI
+Disallow: /
+
+User-agent: DeepSeekBot     # DeepSeek AI
+Disallow: /
+
+User-agent: GeminiBot       # Google Gemini AI
+Disallow: /
+
+User-agent: CCBot           # Common Crawl (used for LLM training)
+Disallow: /
+
+User-agent: Applebot-Extended   # Apple AI
+Disallow: /
+
+User-agent: MetaBot             # Meta AI / Facebook Llama
+Disallow: /

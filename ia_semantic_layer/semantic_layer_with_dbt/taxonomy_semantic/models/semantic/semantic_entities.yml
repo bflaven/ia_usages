@@ -1,0 +1,63 @@
+version: 2
+
+semantic_models:
+  - name: taxonomy_metrics
+    description: "Semantic model for taxonomy standardization and metrics"
+    model: ref('dim_tags')
+    
+    entities:
+      - name: tag
+        type: primary
+        expr: tag_key
+      
+      - name: brand
+        type: foreign
+        expr: brand
+      
+      - name: language
+        type: foreign
+        expr: language
+    
+    dimensions:
+      - name: tag_name
+        type: categorical
+        expr: tag_name
+      
+      - name: tag_slug
+        type: categorical
+        expr: tag_slug
+      
+      - name: entity_type
+        type: categorical
+        expr: entity_type
+        description: "Named entity type (PER, ORG, GPE, EVENT, etc.)"
+      
+      - name: tag_type
+        type: categorical
+        expr: tag_type
+        description: "Tag type: thematic or super"
+      
+      - name: tag_role
+        type: categorical
+        expr: tag_role
+        description: "MASTER or SLAVE tag designation"
+      
+      - name: language
+        type: categorical
+        expr: language
+    
+    measures:
+      - name: total_tags
+        agg: count
+        expr: tag_key
+        description: "Total number of tags"
+      
+      - name: total_usage
+        agg: sum
+        expr: total_usage_count
+        description: "Sum of tag usage across all content"
+      
+      - name: avg_usage_per_tag
+        agg: average
+        expr: total_usage_count
+        description: "Average usage count per tag"
