@@ -1,5 +1,5 @@
 # ia_semantic_layer
-**A real hodgepodge that includes, in no particular order:**
+**A real "hodgepodge" that includes, in no particular order:**
 
 - `_images`: AI-generated images
 
