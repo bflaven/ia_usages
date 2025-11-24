@@ -3,7 +3,7 @@ As a Python and MLflow expert, fix the script as it does not work, I do not have
 
 
 ```text
-# Mlflow VM PROD
+# MLFLOW
 MLFLOW_TRACKING_USERNAME=[username]
 MLFLOW_TRACKING_URI=[site]/mlflow
 DEFAULT_ARTIFACT_ROOT=[default_artifact_root]

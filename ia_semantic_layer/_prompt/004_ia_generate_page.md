@@ -9,14 +9,6 @@ As a PHP expert and a WordPress theme expert, can you create a template page for
 
 
 
-
-
-
-
-
-
-
-
 ## INFOS
 A tags cloud in WordPress is a visual representation of the tags you’ve assigned to posts on your website, displaying up to 100 of the most commonly used tags in varying font sizes—where the most frequently used tags appear larger. Each tag is a clickable link, usually leading visitors to an archive page listing all posts associated with that tag.[1][3][8][9]
 
