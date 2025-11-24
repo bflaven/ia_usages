@@ -70,6 +70,12 @@
 
 22. Rescuing Failed AI Implementations + Practical Explorations with n8n, Ollama & GEO [https://wp.me/p3Vuhl-3oO](https://wp.me/p3Vuhl-3oO)
 
+
+23. AI, Agentic Browsers and the End of Digital Autonomy [https://wp.me/p3Vuhl-3p9](https://wp.me/p3Vuhl-3p9)
+
+
+
+
 **And some other directories that does not have any attached to it but shows useful resources and code.**
 
 
