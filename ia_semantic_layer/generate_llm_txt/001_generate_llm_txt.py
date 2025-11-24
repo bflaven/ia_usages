@@ -30,7 +30,7 @@ python -m pip install beautifulsoup4
 python -m pip install requests
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/generate_llm_txt
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/generate_llm_txt
 
 # LAUNCH the file
 python 001_generate_llm_txt.py

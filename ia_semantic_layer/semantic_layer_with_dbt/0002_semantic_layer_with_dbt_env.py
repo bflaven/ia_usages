@@ -43,7 +43,7 @@ pip install -r requirements.txt
 
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt
 
 
 # LAUNCH the file

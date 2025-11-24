@@ -17,7 +17,7 @@ When I run dbt test, I have this error
 I have create a sub-folder and put all the files: base_bank_failures.sql, clean_bank_failures.sql, exposures.yml, metrics.yml
 
 - path
-/Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/datacamp_project/models/bank_app
+/Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/datacamp_project/models/bank_app
 
 
 - commands

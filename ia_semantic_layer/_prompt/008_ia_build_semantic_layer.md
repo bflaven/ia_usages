@@ -66,7 +66,7 @@ dbt --version
 
 ```bash
 # go to path
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/
 # Create new dbt project
 dbt init taxonomy_semantic_layer_1
 cd taxonomy_semantic_layer_1

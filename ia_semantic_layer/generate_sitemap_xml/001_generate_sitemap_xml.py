@@ -30,7 +30,7 @@ python -m pip install beautifulsoup4
 python -m pip install requests
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/generate_sitemap_xml/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/generate_sitemap_xml/
 
 # LAUNCH the file
 python 001_generate_sitemap_xml.py
