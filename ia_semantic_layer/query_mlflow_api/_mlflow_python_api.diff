@@ -1,16 +1,20 @@
 
---- details variables prompt
+--- DETAILS VARIABLES PROMPT
 Summarize the given text "{{ text }}" into a concise and coherent summary, capturing the main ideas and key points. Make sure that the summary does not exceed {{ word_count }} words.
 
-
++ PROMPT VARIABLES
+- text
 Although C. septempunctata larvae and adults mainly eat aphids, they also feed on Thysanoptera, Aleyrodidae, on the larvae of Psyllidae and Cicadellidae, and on eggs and larvae of some beetles and butterflies. There are one or two generations per year. Adults overwinter in ground litter in parks, gardens and forest edges and under tree bark and rocks. C. septempunctata has a broad ecological range, generally living wherever there are aphids for it to eat. This includes, amongst other biotopes, meadows, fields, Pontic–Caspian steppe, parkland, gardens, Western European broadleaf forests and mixed forests. In the United Kingdom, there are fears that the seven-spot ladybird is being outcompeted for food by the harlequin ladybird. An adult seven-spot ladybird may reach a body length of 7.6–12.7 mm (0.3–0.5 in). Their distinctive spots and conspicuous colours warn of their toxicity, making them unappealing to predators. The species can secrete a fluid from joints in their legs which gives them a foul taste. A threatened ladybird may both play dead and secrete the unappetising substance to protect itself. The seven-spot ladybird synthesizes the toxic alkaloids, N-oxide coccinelline and its free base precoccinelline; depending on sex and diet, the spot size and coloration can provide some indication of how toxic the individual insect is to potential predators.
 
+- word_count
 75
+--- context
 
-The objective is to cereate inisde an experumment
-Select the expermiment gold_dataset 
+The objective is to cereate inside an experiment
+Select the experiment gold_dataset 
 
-Passer
+
++ OTHER VARIABLES
 - Prompt Template
 I have an online store selling {{ stock_type }}. Write a one-sentence advertisement for use in social media.
 
@@ -31,11 +35,11 @@ bf-rumbling-slug-265
 - Output
 
 
---- SOURCE
+--- SOURCE ON MFLFLOW PYTHON API
 Test the mlflow API with a Python script. See Python API
 https://mlflow.org/docs/latest/api_reference/python_api/index.html
---- prompt
-Does it mean I have to install to make the csript working?
+
+--- REQUIREMENTS
 pip install mlflow
 pip install os
 pip install sys
