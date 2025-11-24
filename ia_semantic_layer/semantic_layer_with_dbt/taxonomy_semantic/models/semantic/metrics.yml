@@ -1,0 +1,23 @@
+version: 2
+
+metrics:
+  - name: tag_count
+    label: "Total Tag Count"
+    description: "Count of distinct tags in the taxonomy"
+    type: simple
+    type_params:
+      measure: total_tags
+  
+  - name: tag_usage_total
+    label: "Total Tag Usage"
+    description: "Sum of all tag usages across content"
+    type: simple
+    type_params:
+      measure: total_usage
+  
+  - name: tag_usage_average
+    label: "Average Tag Usage"
+    description: "Average usage per tag"
+    type: simple
+    type_params:
+      measure: avg_usage_per_tag

@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_thematic_tags
+    description: "Staging layer for thematic tags with basic cleaning"
+    columns:
+      - name: staging_key
+        description: "Surrogate key for staging records"
+        tests:
+          - unique
+          - not_null
+      
+      - name: brand
+        description: "Brand identifier (F24, RFI, MC)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['F24', 'RFI', 'MC']
+      
+      - name: language
+        description: "ISO language code"
+        tests:
+          - not_null
+      
+      - name: tag_name
+        description: "Original tag name"
+        tests:
+          - not_null
+      
+      - name: entity_type
+        description: "Named entity type for SEO"
+        tests:
+          - accepted_values:
+              values: ['PER', 'ORG', 'GPE', 'EVENT', 'UNKNOWN']
+  
+  - name: stg_super_tags
+    description: "Staging layer for super tags (hierarchical)"
+    columns:
+      - name: staging_key
+        tests:
+          - unique
+          - not_null

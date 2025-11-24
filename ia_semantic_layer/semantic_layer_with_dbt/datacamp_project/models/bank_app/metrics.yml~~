@@ -1,0 +1,21 @@
+version: 2
+models:
+  - name: clean_bank_failures
+    description: "Aggregated data about bank failures."
+    columns:
+      - name: State
+        tests:
+          - unique
+      - name: "Assets ($mil.)"
+    metrics:
+      - name: total_assets
+        label: Total Assets
+        type: sum
+        expression: "Assets ($mil.)"
+        description: "Total assets of failed banks, aggregated by state."
+
+      - name: avg_assets_per_failure
+        label: Average Assets per Failure
+        type: average
+        expression: "Assets ($mil.)"
+        description: "Average assets for each bank failure."

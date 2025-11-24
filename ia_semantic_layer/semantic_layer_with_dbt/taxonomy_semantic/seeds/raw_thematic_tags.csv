@@ -1,0 +1,13 @@
+brand,language,tag_id,tag_name,tag_slug,usage_count,created_at,entity_type
+F24,FR,1,Politique française,politique-francaise,1250,2024-01-15,GPE
+F24,EN,2,French politics,french-politics,890,2024-01-15,GPE
+F24,FR,3,Emmanuel Macron,emmanuel-macron,2100,2024-01-10,PER
+F24,EN,4,Emmanuel Macron,emmanuel-macron,1850,2024-01-10,PER
+F24,FR,5,Élections présidentielles,elections-presidentielles,980,2024-02-01,EVENT
+F24,EN,6,Presidential elections,presidential-elections,875,2024-02-01,EVENT
+RFI,FR,7,Politique française,politique-francaise,560,2024-01-20,GPE
+RFI,FR,8,politique francaise,politique-francaise,120,2024-01-20,GPE
+F24,FR,9,Ukraine,ukraine,3200,2023-11-01,GPE
+F24,EN,10,Ukraine,ukraine,2980,2023-11-01,GPE
+F24,AR,11,أوكرانيا,ukraine,1200,2023-11-01,GPE
+F24,CN,12,乌克兰,ukraine,890,2023-11-01,GPE

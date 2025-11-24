@@ -1,0 +1,42 @@
+name: 'taxonomy_semantic_layer'
+version: '1.0.0'
+config-version: 2
+
+profile: 'taxonomy_semantic_layer'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  taxonomy_semantic_layer:
+    +materialized: table
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+    marts:
+      +materialized: table
+      +schema: marts
+    semantic:
+      +materialized: table
+      +schema: semantic
+
+seeds:
+  taxonomy_semantic_layer:
+    +schema: seeds
+    +quote_columns: false
+
+vars:
+  master_language: 'FR'
+  supported_languages: ['FR', 'EN', 'AR', 'CN', 'RU', 'ES', 'DE', 'IT', 'PT', 'JA', 'KO', 'VI', 'TH', 'TR', 'PL', 'NL', 'SV', 'DA', 'NO']
+  brands: ['F24', 'RFI', 'MC']

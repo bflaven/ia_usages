@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: clean_bank_failures
+    description: "Aggregated data about bank failures by state."
+    columns:
+      - name: State
+        description: "US state"
+        tests:
+          - unique
+          - not_null
+      - name: total_failures
+        description: "Number of failed banks in the state."
+      - name: total_assets
+        description: "Sum of assets for failed banks in this state."
