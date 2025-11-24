@@ -29,7 +29,7 @@ conda update -n base -c defaults conda
 
 
 # TODO
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/
 conda create -n semantic_layer_with_dbt python=3.12
 conda activate semantic_layer_with_dbt
 pip install --upgrade pip
@@ -62,7 +62,7 @@ pip install -r requirements.txt
 
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt
 
 
 # LAUNCH the file
@@ -76,7 +76,7 @@ import duckdb
 # Connect to the database
 # conn = duckdb.connect("duckdb-demo.duckdb")
 
-conn = duckdb.connect('/Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/db/duckdb-demo.duckdb')
+conn = duckdb.connect('/Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/db/duckdb-demo.duckdb')
 print('\n--- duckdb.connect OK ---\n')
 
 

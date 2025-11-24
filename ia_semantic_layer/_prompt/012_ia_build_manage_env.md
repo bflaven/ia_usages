@@ -126,7 +126,7 @@ vars:
 ***
 
 ## 3. **Check your work and directory structure**
-- cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic
+- cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic
 - `ls ~/.dbt/profiles.yml` should exist.
 - `ls $PWD/dbt_project.yml` should exist inside your project root.
 
@@ -156,7 +156,7 @@ Let me know if you need full copy-paste commands for any step or if `dbt debug` 
 
 ## PROMPT_2
 
-Give me the command so that inside the dircetory `/Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic`, i can create these files. In the directory `/Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic/models`, I have only a directory named "example", can, I keep it?
+Give me the command so that inside the dircetory `/Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic`, i can create these files. In the directory `/Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic/models`, I have only a directory named "example", can, I keep it?
 
 ## **Step 4: Create dbt Models**
 
@@ -186,7 +186,7 @@ models/
 
 
 Here are **step-by-step commands** to create `dbt_project.yml` and set up your dbt models directory structure in  
-`/Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic`  
+`/Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic`  
 You can keep your existing `models/example` directory; it won’t interfere.
 
 ***
@@ -194,7 +194,7 @@ You can keep your existing `models/example` directory; it won’t interfere.
 ### **1. Change to your dbt project directory**
 
 ```bash
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic
 ```
 
 ***
@@ -256,7 +256,7 @@ rm -r models/example
 ### **Summary/Fast Copy-paste Block:**
 
 ```bash
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic
 
 nano dbt_project.yml
 
@@ -285,7 +285,7 @@ tree models
 **Let me know if you want boilerplate content for the `.sql` or `.yml` files, or want to automate more of the setup!**
 
 
-Give me the command so that inside the dircetory `/Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic`, I can create these files.
+Give me the command so that inside the dircetory `/Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic`, I can create these files.
 
 
 
@@ -305,14 +305,14 @@ dbt deps
 ```
 
 Here are the exact commands to create your **packages.yml** file and install the dbt utils package with `dbt deps` inside  
-`/Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic`:
+`/Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic`:
 
 ***
 
 ### 1. Change to your project directory
 
 ```bash
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic
 ```
 
 ***
@@ -373,6 +373,6 @@ Found top-level arguments to test `relationships`. Arguments to generic tests
 should be nested under the `arguments` property.`
 14:45:25  Encountered an error:
 Parsing Error
-  Invalid metrics config given in FilePath(searched_path='models', relative_path='semantic/metrics.yml', modification_time=1762871826.0206685, project_root='/Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic') @ metrics: {'name': 'tags_by_entity_type', 'label': 'Tags Grouped by Entity Type', 'description': 'Tag count segmented by NER entity type (PER, ORG, GPE, etc.)', 'type': 'simple', 'type_params': {'measure': 'total_tags'}, 'dimensions': ['entity_type']} - at path []: Additional properties are not allowed ('dimensions' was unexpected)
+  Invalid metrics config given in FilePath(searched_path='models', relative_path='semantic/metrics.yml', modification_time=1762871826.0206685, project_root='/Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/taxonomy_semantic') @ metrics: {'name': 'tags_by_entity_type', 'label': 'Tags Grouped by Entity Type', 'description': 'Tag count segmented by NER entity type (PER, ORG, GPE, etc.)', 'type': 'simple', 'type_params': {'measure': 'total_tags'}, 'dimensions': ['entity_type']} - at path []: Additional properties are not allowed ('dimensions' was unexpected)
 ```
 

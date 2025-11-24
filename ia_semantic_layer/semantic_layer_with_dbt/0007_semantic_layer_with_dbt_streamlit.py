@@ -29,7 +29,7 @@ conda update -n base -c defaults conda
 
 
 # TODO
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/
 conda create -n semantic_layer_with_dbt python=3.12
 conda activate semantic_layer_with_dbt
 pip install --upgrade pip
@@ -62,7 +62,7 @@ pip install -r requirements.txt
 
 
 # [path]
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt
 
 
 # LAUNCH the file
@@ -81,7 +81,7 @@ import os
 
 # Path to your DuckDB database (update this to match your dbt profile)
 # DUCKDB_PATH = 'path/to/your/duckdb/database.duckdb'
-DUCKDB_PATH = '/Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/db/duckdb-demo.duckdb'
+DUCKDB_PATH = '/Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/db/duckdb-demo.duckdb'
 
 # Path to your dbt schema YAML (optional: for reading metadata)
 DBT_SCHEMA_YML = 'models/bank_app/schema.yml'

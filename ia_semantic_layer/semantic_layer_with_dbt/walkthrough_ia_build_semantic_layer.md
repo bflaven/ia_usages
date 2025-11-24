@@ -34,7 +34,7 @@ dbt --version
 
 
 # real how-to
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/
 conda create -n semantic_layer_with_dbt python=3.12
 conda activate semantic_layer_with_dbt
 pip install --upgrade pip
@@ -54,7 +54,7 @@ pip install "dbt-duckdb==1.10.0" "duckdb==0.10.0" "pandas==2.2.2"
 
 ```bash
 # go to path
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_semantic_layer/semantic_layer_with_dbt/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/
 # Create new dbt project
 dbt init taxonomy_semantic_layer_1
 cd taxonomy_semantic_layer_1
