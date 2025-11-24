@@ -11,7 +11,7 @@ Here is the precise context and expectations for a structured and technical resp
 CONTEXT AND CONSTRAINTS
 - Technical environment: BACH CMS + MEZZO API (access to taxonomies by brand and language).
 
-- 19 languages supported (FR, EN, AR, CN, RU, etc.), each language corresponding to a distinct style guide.
+- 20 languages supported (FR, EN, AR, CN, RU, etc.), each language corresponding to a distinct style guide.
 
 - Main taxonomies: thematicTags and superTags, with combinations of the type BRAND_LANGUAGE (e.g., F24_FR, RFI_EN).
 
