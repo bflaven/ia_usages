@@ -6,6 +6,11 @@ Parse MLflow Batch Output to CSV
 Extracts run outputs from the batch JSON file and creates a CSV
 with columns: title, summary, keywords, supertag
 
+conda install -c conda-forge mlflow
+
+pip install beautifulsoup4
+pip install requests
+
 Author: Generated for Bruno Flaven
 Date: November 2025
 

@@ -23,6 +23,7 @@ pip freeze > requirements.txt
 # to install
 pip install -r requirements.txt
 
+conda install -c conda-forge mlflow
 pip install beautifulsoup4
 pip install requests
 
