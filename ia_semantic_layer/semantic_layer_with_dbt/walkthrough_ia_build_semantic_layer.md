@@ -1128,7 +1128,7 @@ Access documentation at: `http://localhost:8000/docs`
 5. **✅ Scalability**: DuckDB handles millions of tags efficiently
 6. **✅ Modularity**: dbt layers (staging → intermediate → marts → semantic)
 7. **✅ Data Quality**: Built-in tests for consistency
-8. **✅ API Ready**: FastAPI endpoints for MEZZO integration
+8. **✅ API Ready**: FastAPI endpoints for   integration
 9. **✅ Documentation**: Auto-generated lineage and data catalog
 
 This prototype provides a production-ready foundation for your taxonomy standardization strategy! 🚀
