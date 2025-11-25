@@ -9,7 +9,7 @@ As data enigneer and developer, how to build a prototype for a semantic layer wi
 Here is the precise context and expectations for a structured and technical response for STRATEGY FOR STANDARDIZING TAXONOMIES.
 
 CONTEXT AND CONSTRAINTS
-- Technical environment: BACH CMS + MEZZO API (access to taxonomies by brand and language).
+- Technical environment:   CMS +   API (access to taxonomies by brand and language).
 
 - 20 languages supported (FR, EN, AR, CN, RU, etc.), each language corresponding to a distinct style guide.
 
@@ -1134,7 +1134,7 @@ Access documentation at: `http://localhost:8000/docs`
 5. **✅ Scalability**: DuckDB handles millions of tags efficiently
 6. **✅ Modularity**: dbt layers (staging → intermediate → marts → semantic)
 7. **✅ Data Quality**: Built-in tests for consistency
-8. **✅ API Ready**: FastAPI endpoints for MEZZO integration
+8. **✅ API Ready**: FastAPI endpoints for   integration
 9. **✅ Documentation**: Auto-generated lineage and data catalog
 
 This prototype provides a production-ready foundation for your taxonomy standardization strategy! 🚀
@@ -1198,7 +1198,7 @@ Here are the **key suggestions and features** provided for building the Semantic
 - dbt data tests for uniqueness, accepted values, referential integrity, and relationship correctness.
 
 ### 7. **FastAPI Integration**
-- API endpoints to serve cleaned taxonomy to downstream consumers (like MEZZO or editorial tools).
+- API endpoints to serve cleaned taxonomy to downstream consumers (like   or editorial tools).
 - Endpoints for listing master tags, translations, missing translations, and metrics by entity type.
 
 ### 8. **Documentation and Lineage**
