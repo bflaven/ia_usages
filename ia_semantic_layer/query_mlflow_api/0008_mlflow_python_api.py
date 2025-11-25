@@ -2,42 +2,32 @@
 # -*- coding: utf-8 -*-
 
 """
-[check]
-pip --version
-python --version
-
 [env]
-Recommended: Use Built-in venv
+# Conda Environment
+conda create --name dbt_env python=3.9.13
+conda info --envs
+source activate dbt_env
+conda deactivate
 
-Create a new environment:
-python -m venv mlflow_python_api
-
-Activate the environment:
-source mlflow_python_api/bin/activate
-
-Install packages inside the environment:
-pip install package_name
-
-pip install mlflow
-pip install mlflow==3.3.1
-pip install requests
-python -m pip install mlflow==3.3.1
-
-python -m pip install --upgrade pip setuptools wheel
-
-brew install cmake
-brew install apache-arrow
-export CMAKE_PREFIX_PATH=$(brew --prefix apache-arrow)/lib/cmake
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n dbt_env
 
 
-Deactivate:
-deactivate
+# update conda 
+conda update -n base -c defaults conda
 
-To easily reproduce environments:
+# to export requirements
 pip freeze > requirements.txt
 
-Install everything in a new environment:
+# to install
 pip install -r requirements.txt
+
+pip install beautifulsoup4
+pip install requests
+
+python -m pip install beautifulsoup4
+python -m pip install requests
 
 
 # [path]
