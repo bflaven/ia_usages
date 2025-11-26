@@ -4,7 +4,7 @@ As a Python and MLflow expert, the script is working so keep it as it but make t
 
 1. Can you change the way you set variables like "OLD" and change it for the "NEW" version.
 
-Rewrite the entire script sio I can cut and paste
+Rewrite the entire script so I can cut and paste
 
 - NEW
 ```python
