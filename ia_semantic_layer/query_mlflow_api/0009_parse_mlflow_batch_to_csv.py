@@ -2,23 +2,46 @@
 # -*- coding: utf-8 -*-
 
 """
-Parse MLflow Batch Output to CSV
-Extracts run outputs from the batch JSON file and creates a CSV
-with columns: title, summary, keywords, supertag
+
+[env]
+# Conda Environment
+conda create --name mlflow_api_env python=3.9.13
+conda info --envs
+source activate mlflow_api_env
+conda deactivate
+
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n mlflow_api_env
+
+
+# update conda 
+conda update -n base -c defaults conda
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
 
 conda install -c conda-forge mlflow
 
 pip install beautifulsoup4
 pip install requests
 
-Author: Generated for Bruno Flaven
-Date: November 2025
+python -m pip install beautifulsoup4
+python -m pip install requests
 
 # [path]
 cd /Users/brunoflaven/Documents/02_copy/_strategy_IA_fmm/mlflow_python_api/
 
 # LAUNCH the file
 python 0009_parse_mlflow_batch_to_csv.py
+
+Parse MLflow Batch Output to CSV
+Extracts run outputs from the batch JSON file and creates a CSV
+with columns: title, summary, keywords, supertag
+
 """
 
 import json
