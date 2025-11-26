@@ -37,18 +37,7 @@ cd /Users/brunoflaven/Documents/02_copy/_strategy_IA_fmm/mlflow_python_api/
 # LAUNCH the file
 python 0003_mlflow_python_api.py
 
-MLflow Experiments Listing Script
-Connects to a remote MLflow server with HTTP Basic Authentication
-and retrieves all experiments.
 
-MLflow Version: 3.3.1
-Author: Generated for Bruno Flaven
-Date: November 2025
-
-"""
-
-#!/usr/bin/env python3
-"""
 MLflow Run Creation Script with Prompt Template
 Creates a run inside a specified MLflow experiment with configurable parameters
 for LLM prompt testing and evaluation.
