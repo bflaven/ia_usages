@@ -1,0 +1,97 @@
+! SOURCE
++ Post: AI, Agentic Browsers and the End of Digital Autonomy 
+- https://wp.me/p3Vuhl-3p9
+
++ Videos
+- https://www.youtube.com/channel/UCnUBoVx9Yai3wirPBvNpNQw
+
++ Github
+- https://github.com/bflaven/
+
+
++ Keywords
+#AI, #artificial intelligence, #agentic browsers, #Atlas, #Comet, #personal data, #privacy, #GDPR, #Google Chrome, #SEO, #natural search, #late-stage capitalism, #digital autonomy, #Product Owner, #digital transformation, #innovation theater, #organizational pathologies, #semantic layer, #dbt, #DuckDB, #taxonomies, #AI agents, #digital sovereignty, #surveillance, #Perplexity, #OpenAI, #Anthropic
+
+
+
+
+--- Intro
+You can read the article on my blog.
+Breadcrumbs of Innovation: A Snapshot of AI Explorations
+- https://wp.me/p3Vuhl-3mP
+
+
+
+--- Audio version
+This post is also an experiment to test NotebookLM. So, here is this regular blog post "Breadcrumbs of Innovation: A Snapshot of AI Explorations" converted into a podcast using NotebookLM.
+
+AI, Agentic Browsers and the End of Digital Autonomy
+- https://on.soundcloud.com/9lQDEcbCpBVQJgk5uL
+
+
+
+! VIDEOS
+
+--- create the env with anaconda
+
+"""
+[env]
+# Conda Environment
+conda create --name dbt_env python=3.9.13
+conda info --envs
+source activate dbt_env
+conda deactivate
+
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n dbt_env
+
+
+# update conda 
+conda update -n base -c defaults conda
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
+
+conda activate semantic_layer_with_dbt
+
+# pip install --upgrade pip
+# pip install "mashumaro[msgpack]>=3.9,<3.15"
+# pip install dbt-duckdb duckdb pandas
+# dbt --version
+
+
+
+"""
+
++ 1. Video #1 (Coming soon)
+--- video_filename
+--- video_filename.mov
+
+- DESC: Coming soon
+
+CODE: link
+
+! CONSOLE_SCREEN (commands)
+
+# GO TO DIR
+cd [path]
+
+
+# LAUNCH THE ENV
+conda info --envs
+source activate dbt_env
+
+# launch the file (simple)
+python 0001_semantic_layer_with_dbt_env.py
+
+
+
+
+
+
+
+
