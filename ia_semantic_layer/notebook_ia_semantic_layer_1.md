@@ -1,7 +1,3 @@
-Here is a structured and engaging **README.md** version of your HTML post, formatted for clarity, readability, and actionability. It preserves your voice and the depth of your reflections while making it easier for readers to navigate and engage with your content.
-
----
-
 # AI, Browsers, and the Paradox of Agency: A Reflection on Semantic Layers, Privacy, and Organizational Pathologies
 
 > *"Contemporary work is defined by two major characteristics: performance and productivity. Artificial intelligence now fits into this logic as an optimization tool meant to amplify our cognitive capacities."*
