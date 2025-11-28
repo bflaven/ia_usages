@@ -2,71 +2,42 @@
 # -*- coding: utf-8 -*-
 
 """
-[check]
-pip --version
-python --version
-
 [env]
+# Conda Environment
+conda create --name dbt_env python=3.9.13
+conda info --envs
+source activate dbt_env
+conda deactivate
 
-pip install --upgrade pip
-
-
-# 1. Install virtualenvwrapper:
-pip install virtualenvwrapper
-
-# 2. Add to your shell config (e.g., `~/.zshrc` or `~/.bashrc`):
-export WORKON_HOME=$HOME/.virtualenvs
-
-## Source the shell config or restart terminal afterward.
-source $(which virtualenvwrapper.sh)
-
-# 3. Commands for environment management:
-
-## Create and activate a new environment
-mkvirtualenv myenv
-vcreate semantic_layer_with_dbt
-
-## Deactivate (always use `deactivate` command)
-vdeactivate
-
-## Reactivate environment
-workon myenv
-vactivate semantic_layer_with_dbt
-
-## Remove an environment
-rmvirtualenv myenv
-vremove semantic_layer_with_dbt
-
-## List all environments
-vlist
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n dbt_env
 
 
-# Install packages inside the environment:
-pip install package_name
+# update conda 
+conda update -n base -c defaults conda
 
-pip install package_name
-pip install package_name==3.3.1
-python -m pip install package_name==3.3.1
-python -m pip install --upgrade pip setuptools wheel
-
-
-# To easily reproduce environments:
+# to export requirements
 pip freeze > requirements.txt
 
-#Install everything in a new environment:
+# to install
 pip install -r requirements.txt
 
+conda activate semantic_layer_with_dbt
+
+# pip install --upgrade pip
+# pip install "mashumaro[msgpack]>=3.9,<3.15"
+# pip install dbt-duckdb duckdb pandas
+# dbt --version
 
 # [path]
-cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_semantic_layer/semantic_layer_with_dbt/
 
 
 # LAUNCH the file
 python 0001_semantic_layer_with_dbt_env.py
 
 """
-
-""" """
 
 try:
     import dbt.adapters.duckdb
