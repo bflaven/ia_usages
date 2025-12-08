@@ -107,6 +107,7 @@ git status
 git add .
 
 # add a commit with a message
+git commit -am "add readme and repo named ia-bf"
 git commit -am "add usecase"
 git commit -am "add files"
 git commit -am "update files"
