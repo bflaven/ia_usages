@@ -85,7 +85,7 @@ import torchvision
 # model = "meta-llama/Llama-2-7b-chat-hf"
 model = "daryl149/llama-2-7b-chat-hf"
 
-your_token="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"
+your_token="XXX"
 
 
 tokenizer = AutoTokenizer.from_pretrained(model, token=your_token)
