@@ -1,0 +1,700 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Visual Composer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-16 12:53+0300\n"
+"PO-Revision-Date: 2012-04-09 14:05+0100\n"
+"Last-Translator: peaco <peaco@freenet.de>\n"
+"Language-Team: WPBakery <hello@wpbakery.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: /Users/mmihey/Sites/framework/wp-content/plugins/js_composer\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: js_composer.php:36
+#: js_composer.php:38
+#: js_composer_settings_menu.php:49
+msgid "Visual Composer Settings"
+msgstr "Visual Composer Einstellungen"
+
+#: js_composer.php:36
+#: js_composer.php:38
+#: js_composer.php:73
+msgid "Visual Composer"
+msgstr "Visual Composer"
+
+#: js_composer.php:157
+msgid "Popular Layouts (Columns)"
+msgstr "Populäre Layouts (Spalten)"
+
+#: js_composer.php:174
+msgid "Content Elements"
+msgstr "Inhaltselemente"
+
+#: js_composer.php:365
+msgid "Added"
+msgstr "hinzugefügt"
+
+#: js_composer_markup.php:139
+msgid "Delete %element%"
+msgstr "%element% löschen"
+
+#: js_composer_markup.php:220
+msgid "Save"
+msgstr "Speichern"
+
+#: js_composer_markup.php:236
+msgid "Upload/Insert"
+msgstr "Hochladen/Einfügen"
+
+#: js_composer_markup.php:236
+msgid "Add an Image"
+msgstr "Bild hinzufügen"
+
+#: js_composer_markup.php:236
+msgid "Switch Editors"
+msgstr "Editor umschalten"
+
+#: js_composer_markup.php:258
+#: map.php:102
+msgid "Message text"
+msgstr "Nachrichtentext"
+
+#: js_composer_markup.php:283
+msgid "Add images"
+msgstr "Bilder hinzufügen"
+
+#: js_composer_settings_menu.php:55
+msgid "Content types"
+msgstr "Inahltstypen"
+
+#: js_composer_settings_menu.php:58
+#: map.php:296
+msgid "Post types"
+msgstr "Artikeltypen"
+
+#: js_composer_settings_menu.php:79
+msgid "Select for which content types Visual Composer should be available during post creation/editing."
+msgstr "Bitte wählen für welche Inhaltstypen Visual Composer verfügbar sein soll."
+
+#: js_composer_settings_menu.php:85
+msgid "Custom Grid"
+msgstr "Eigenes Raster"
+
+#: js_composer_settings_menu.php:106
+msgid "Grid details"
+msgstr "Rasterdetails"
+
+#: js_composer_settings_menu.php:108
+msgid "Container width"
+msgstr "Kontainerbreite"
+
+#: js_composer_settings_menu.php:109
+msgid "Gap between columns"
+msgstr "Raum zwischen den Spalten"
+
+#: js_composer_settings_menu.php:110
+msgid "CSS rule prefix. Example (.class-name or #id)"
+msgstr "CSS Präfix. Beispiel (.klassen-name oder #id)"
+
+#: js_composer_settings_menu.php:119
+msgid "Hint: Grid width should be a number in pixels, this is contents inner width value. CSS prefix is useful if you want to generate multiple grids. Eg. one for fullwidth page, one for page with column."
+msgstr "Tip: Das Raster sollte eine Zahl in Pixel sein um den innere Breite des Inhaltes zu bestimmen. Praktisch wenn mehrere Gitter erstellt werden sollen, z.B. für eine Seite mit voller Breite und einer Seite mit mehreren Spalten."
+
+#: js_composer_settings_menu.php:129
+msgid "Thank you"
+msgstr "Vielen Dank"
+
+#: js_composer_settings_menu.php:130
+msgid "Visual Composer will save you a lot of time while working with your sites content."
+msgstr "Visual Composer spart mächtig Zeit beim erstellen von Seiteninhalten aller Art."
+
+#: js_composer_settings_menu.php:131
+msgid "If you have comments or simply want to say \"Hi\", please check <a href=\"http://wpbakery.com/vc/\" title=\"\" target=\"_blank\">plugins homepage</a>."
+msgstr "Wenn Sie einen Kommentar hinterlassen wollen dann besuchen sie doch bitte unsere Seite unter  <a href=\"http://wpbakery.com/vc/\" title=\"\" target=\"_blank\">plugins homepage</a>."
+
+#: map.php:12
+msgid "Text block"
+msgstr "Textblock"
+
+#: map.php:21
+#: map.php:471
+msgid "Text"
+msgstr "Text"
+
+#: map.php:23
+msgid "<p>I am text block. click the edit button to change this text.</p>"
+msgstr "<p>Ich bin ein Textblock. Bitte den Stift oben rechts klicken um mich zu bearbeiten.</p>"
+
+#: map.php:24
+#: map.php:474
+msgid "Enter your content."
+msgstr "Inhalt eingeben."
+
+#: map.php:28
+#: map.php:66
+#: map.php:308
+msgid "Extra class name"
+msgstr "Extra Klassenname"
+
+#: map.php:31
+#: map.php:69
+msgid "If you wish to style particular text block differently, then use this field to add a class name and then refer to it in your css file."
+msgstr "Wenn ein spezieller Block einen anderen Stil haben soll dann bitte dieses feld benutzen um die CSS Klasse einzutragen. Die selbe Klasse muss jedoch auch in einem CSS File referenziert sein."
+
+#: map.php:39
+msgid "Twitter widget"
+msgstr "Twitter Widget"
+
+#: map.php:45
+#: map.php:183
+#: map.php:240
+msgid "Widget title"
+msgstr "Widget Titel"
+
+#: map.php:48
+#: map.php:186
+msgid "What text use as widget title. Leave blank if no title is needed."
+msgstr "Widget Titeltext. Leer lassen falls kein Bedarf."
+
+#: map.php:52
+msgid "Twitter name"
+msgstr "Twittername"
+
+#: map.php:55
+msgid "Type in twitter profile name from which load tweets."
+msgstr "Hier Twitterprofilnamen vom Account eingeben, von dem die Nachrichten erscheinen sollen."
+
+#: map.php:59
+msgid "Tweets count"
+msgstr "Tweetsanzahl"
+
+#: map.php:62
+msgid "How many recent tweets to load."
+msgstr "Wieviele neue Tweets laden"
+
+#: map.php:77
+msgid "Separator (Divider)"
+msgstr "Trenner"
+
+#: map.php:86
+msgid "Message box"
+msgstr "Nachrichtenbox"
+
+#: map.php:93
+msgid "Message box type"
+msgstr "Nachrichtenbox Typ"
+
+#: map.php:95
+msgid "Informational"
+msgstr "Informationell"
+
+#: map.php:95
+msgid "Warning"
+msgstr "Warnung"
+
+#: map.php:95
+msgid "Success"
+msgstr "Erfolg"
+
+#: map.php:96
+msgid "Select message type."
+msgstr "Nachrichtentyp auswählen"
+
+#: map.php:104
+msgid "I am message box. click the edit button to change this text."
+msgstr "Ich bin eine Nachrichtenbox. Klicke auf den Stift rechts oben um mich zu bearbeiten."
+
+#: map.php:105
+msgid "Message text."
+msgstr "Nachrichtentext"
+
+#: map.php:113
+msgid "Facebook like"
+msgstr "Facebook 'mag ich'"
+
+#: map.php:120
+#: map.php:137
+msgid "Button type"
+msgstr "Buttontyp"
+
+#: map.php:122
+msgid "Standard"
+msgstr "Standard"
+
+#: map.php:122
+msgid "Button count"
+msgstr "Buttonanzahl"
+
+#: map.php:122
+msgid "Box count"
+msgstr "Boxanzahl"
+
+#: map.php:123
+#: map.php:140
+msgid "Select button type."
+msgstr "Buttontyp wählen"
+
+#: map.php:131
+msgid "Tweetmeme button"
+msgstr "Tweetmeme button"
+
+#: map.php:148
+msgid "FAQ (Toggle)"
+msgstr "FAQ (Toggle)"
+
+#: map.php:157
+#: map.php:159
+msgid "Toggle title"
+msgstr "Toggletitel"
+
+#: map.php:160
+msgid "Toggle block title."
+msgstr "Toggle Blocktitel"
+
+#: map.php:166
+msgid "Toggle content"
+msgstr "Toggle Inhalt"
+
+#: map.php:168
+msgid "<p>Toggle content goes here, click the edit button.</p>"
+msgstr "<p>Der Toggle Inhalt erscheint hier, Bitte den Bearbeitenstift rechts oben klicken um zu bearbeiten</p>"
+
+#: map.php:169
+msgid "Toggle block content."
+msgstr "Toggleblock Inhalt"
+
+#: map.php:177
+msgid "Gallery"
+msgstr "Galerie"
+
+#: map.php:190
+msgid "Gallery type"
+msgstr "Galerietyp"
+
+#: map.php:193
+#: map.php:200
+msgid "Select gallery type."
+msgstr "Galerietyp wählen"
+
+#: map.php:197
+msgid "On click"
+msgstr "Bei Klick"
+
+#: map.php:204
+msgid "Image size"
+msgstr "Bildgröße"
+
+#: map.php:207
+msgid "Enter image size in pixels. Example: 500x200 (Width x Height)."
+msgstr "Bildgröße in Pixel. Beispiel: 500x200 (höhe x breite)"
+
+#: map.php:211
+msgid "Images"
+msgstr "Bilder"
+
+#: map.php:225
+msgid "Tabs"
+msgstr "Tabs"
+
+#: map.php:234
+msgid "Teaser grid"
+msgstr "Anrisstext Gitter"
+
+#: map.php:243
+msgid "Heading text. Leave it empty if not needed."
+msgstr "Überschrift. Leer lassen falls kein Bedarf."
+
+#: map.php:247
+msgid "Columns count"
+msgstr "Spaltenanzahl Nummer"
+
+#: map.php:250
+msgid "Select columns count."
+msgstr "Spaltenanzahl wählen"
+
+#: map.php:254
+msgid "Teaser count"
+msgstr "Anrisstext Zähler"
+
+#: map.php:257
+msgid "How many teasers to show? Enter number or \"All\"."
+msgstr "Wieviele Anrisstexte anzeigen ? "
+
+#: map.php:261
+msgid "Content"
+msgstr "Inhalt"
+
+#: map.php:263
+msgid "Teaser (Excerpt)"
+msgstr "Anrisstext"
+
+#: map.php:263
+msgid "Full Content"
+msgstr "Gesamter Inhalt"
+
+#: map.php:264
+#: map.php:285
+msgid "Teaser layout template."
+msgstr "Anrisstext Template"
+
+#: map.php:268
+msgid "Layout"
+msgstr "Layout"
+
+#: map.php:270
+msgid "Title + Thumbnail + Text"
+msgstr "Titel, Vorschaubild und Text"
+
+#: map.php:270
+msgid "Thumbnail + Title + Text"
+msgstr "Vorschaubild + Titel und Text"
+
+#: map.php:270
+msgid "Thumbnail + Text"
+msgstr "Vorschaubild + Text"
+
+#: map.php:270
+msgid "Thumbnail only"
+msgstr "Nur Vorschaubild"
+
+#: map.php:270
+msgid "Title + Text"
+msgstr "Titel + Text"
+
+#: map.php:271
+msgid "Teaser layout."
+msgstr "Anrisstext Layout"
+
+#: map.php:275
+msgid "Link"
+msgstr "Link"
+
+#: map.php:277
+msgid "Link to post"
+msgstr "Link zum Artikel"
+
+#: map.php:277
+msgid "Link to bigger image"
+msgstr "Link zu größerem Bild"
+
+#: map.php:277
+msgid "Thumbnail to bigger image, title to post"
+msgstr "Vorschaubild zu größerem Bild, Titel zum Artikel"
+
+#: map.php:277
+msgid "No link"
+msgstr "Kein Link"
+
+#: map.php:278
+msgid "Link type."
+msgstr "Linktyp"
+
+#: map.php:282
+msgid "Template"
+msgstr "Template"
+
+#: map.php:284
+msgid "Grid"
+msgstr "Gitter"
+
+#: map.php:284
+msgid "Carousel"
+msgstr "Karusell"
+
+#: map.php:289
+msgid "Thumbnail size"
+msgstr "Bildvorschau größe"
+
+#: map.php:292
+msgid "Enter image thumbnail size in pixels. Example: 200x100 (Width x Height)."
+msgstr "Hier die Größe des Vorschaubildes bestimmen. Beispiel: 200x100 (breite x höhe)"
+
+#: map.php:298
+msgid "Select categories to populate teasers from."
+msgstr "Kategorien wählen um Überschriften zu erzeugen."
+
+#: map.php:302
+msgid "Categories"
+msgstr "Kategorien"
+
+#: map.php:304
+msgid "If you want to narrow output, enter category names here. Note: Only listed categories will be included. Divide categories with linebreaks (Enter)."
+msgstr "Wenn der Inhalt zusammen gefasst werden soll dann bitte Kategorienamen hier eingeben. Nur gelistete Kategorien werden inkludiert. Kategorien bitte zeilenweise angeben."
+
+#: map.php:311
+msgid "If you wish to style particular posts grid differently, then use this field to add a class name and then refer to it in your css file."
+msgstr "Wenn Sie spezielle Artikelgitter auf eine andere Art gestalten möchten, dann bitte dieses Feld benutzen um den Klassennamen zu bestimmen. Dieser muss in Ihrer CSS Datei auch referenziert sein !"
+
+#: map.php:319
+msgid "Widgetised Sidebar"
+msgstr "Widget Seitenleiste"
+
+#: map.php:326
+msgid "Sidebar"
+msgstr "Seitenleiste"
+
+#: map.php:329
+msgid "Select which widget area output."
+msgstr "Widgetplatz zum anzeigen wählen"
+
+#: map.php:339
+msgid "None"
+msgstr "Nichts"
+
+#: map.php:340
+msgid "Address book icon"
+msgstr "Adressbuch icon"
+
+#: map.php:341
+msgid "Alarm clock icon"
+msgstr "Alarmuhr icon"
+
+#: map.php:342
+msgid "Anchor icon"
+msgstr "Anker icon"
+
+#: map.php:343
+msgid "Application Image icon"
+msgstr "Bildanwendung icon"
+
+#: map.php:344
+msgid "Arrow icon"
+msgstr "Pfeil icon"
+
+#: map.php:345
+msgid "Asterisk icon"
+msgstr "Stern icon"
+
+#: map.php:346
+msgid "Hammer icon"
+msgstr "Hammer icon"
+
+#: map.php:347
+msgid "Balloon icon"
+msgstr "Ballon icon"
+
+#: map.php:348
+msgid "Balloon Buzz icon"
+msgstr "Ballon Buzz icon"
+
+#: map.php:349
+msgid "Balloon Facebook icon"
+msgstr "Ballon Facebook icon"
+
+#: map.php:350
+msgid "Balloon Twitter icon"
+msgstr "Ballon Twitter icon"
+
+#: map.php:351
+msgid "Battery icon"
+msgstr "Batterie icon"
+
+#: map.php:352
+msgid "Binocular icon"
+msgstr "Fernglas icon"
+
+#: map.php:353
+msgid "Document Excel icon"
+msgstr "Excel icon"
+
+#: map.php:354
+msgid "Document Image icon"
+msgstr "Bild icon"
+
+#: map.php:355
+msgid "Document Music icon"
+msgstr "Musik icon"
+
+#: map.php:356
+msgid "Document Office icon"
+msgstr "Office icon"
+
+#: map.php:357
+msgid "Document PDF icon"
+msgstr "PDF icon"
+
+#: map.php:358
+msgid "Document Powerpoint icon"
+msgstr "Powerpoint icon"
+
+#: map.php:359
+msgid "Document Word icon"
+msgstr "Word icon"
+
+#: map.php:360
+msgid "Bookmark icon"
+msgstr "Bookmark icon"
+
+#: map.php:361
+msgid "Camcorder icon"
+msgstr "Camcorder icon"
+
+#: map.php:362
+msgid "Camera icon"
+msgstr "Foto icon"
+
+#: map.php:363
+msgid "Chart icon"
+msgstr "Chart icon"
+
+#: map.php:364
+msgid "Chart pie icon"
+msgstr "Chart Stück icon"
+
+#: map.php:365
+msgid "Clock icon"
+msgstr "Uhr icon"
+
+#: map.php:366
+msgid "Fire icon"
+msgstr "Feuer icon"
+
+#: map.php:367
+msgid "Heart icon"
+msgstr "Herz icon"
+
+#: map.php:368
+msgid "Mail icon"
+msgstr "Mail icon"
+
+#: map.php:369
+msgid "Play icon"
+msgstr "Play icon"
+
+#: map.php:370
+msgid "Shield icon"
+msgstr "Schild icon"
+
+#: map.php:371
+msgid "Video icon"
+msgstr "Video icon"
+
+#: map.php:374
+msgid "Grey"
+msgstr "Grau"
+
+#: map.php:374
+msgid "Yellow"
+msgstr "Gelb"
+
+#: map.php:374
+msgid "Green"
+msgstr "Grün"
+
+#: map.php:374
+msgid "Blue"
+msgstr "Blau"
+
+#: map.php:374
+msgid "Red"
+msgstr "Rot"
+
+#: map.php:374
+msgid "Orange"
+msgstr "Orange"
+
+#: map.php:376
+msgid "Same window"
+msgstr "Gleiches Fenster"
+
+#: map.php:376
+msgid "New window"
+msgstr "Neues Fenster"
+
+#: map.php:379
+msgid "Button"
+msgstr "Button"
+
+#: map.php:386
+#: map.php:389
+#: map.php:429
+#: map.php:431
+#: shortcodes.php:454
+#: shortcodes.php:476
+msgid "Text on the button"
+msgstr "Text auf dem Button"
+
+#: map.php:390
+#: map.php:432
+msgid "Text on the button."
+msgstr "Text des Buttons"
+
+#: map.php:394
+#: map.php:436
+msgid "URL (Link)"
+msgstr "Linkpfad"
+
+#: map.php:397
+#: map.php:439
+msgid "Button link."
+msgstr "Buttonlink"
+
+#: map.php:401
+#: map.php:443
+msgid "Color"
+msgstr "Farbe"
+
+#: map.php:404
+#: map.php:446
+msgid "Button color."
+msgstr "Buttonfarbe."
+
+#: map.php:408
+#: map.php:450
+msgid "Icon"
+msgstr "Icon"
+
+#: map.php:414
+#: map.php:456
+msgid "Target"
+msgstr "Ziel"
+
+#: map.php:422
+msgid "Call to action button"
+msgstr "Aktionsbutton"
+
+#: map.php:462
+msgid "Button position"
+msgstr "Buttonposition"
+
+#: map.php:464
+msgid "Align right"
+msgstr "Ausrichtung rechts"
+
+#: map.php:464
+msgid "Align left"
+msgstr "Ausrichtung links"
+
+#: map.php:464
+msgid "Align bottom"
+msgstr "Untere Ausrichtung"
+
+#: map.php:465
+msgid "Select button alignment."
+msgstr "Buttonausrichtung wählen"
+
+#: map.php:473
+msgid "click the edit button to change this text."
+msgstr "Bitte den Bearbeiten Button klicken um diesen Text zu ändern."
+
+#: shortcodes.php:160
+msgid "Read more"
+msgstr "mehr lesen"
+
+#: shortcodes.php:287
+msgid "Click to toggle"
+msgstr "Klicken zum Umschalten"
+
+#: shortcodes.php:332
+msgid "Follow us on twitter"
+msgstr "Folge uns bei Twitter"
+
+#: shortcodes.php:352
+msgid "Tweet"
+msgstr "Tweet"
+

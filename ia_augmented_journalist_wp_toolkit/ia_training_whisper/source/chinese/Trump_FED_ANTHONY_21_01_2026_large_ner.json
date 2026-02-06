@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "language": "zh",
+    "language_name": "Chinese (Simplified)",
+    "model_size": "large",
+    "transcript_file": "source/chinese/Trump_FED_ANTHONY_21_01_2026_large.txt",
+    "tags_file": "source_thema/RFI_CN_thematicTags.py",
+    "ner_model": "Davlan/xlm-roberta-base-wikiann-ner"
+  },
+  "statistics": {
+    "transcript_length": 482,
+    "total_entities": 2,
+    "unique_entities": 2,
+    "matched_tags_count": 1,
+    "unmatched_count": 1
+  },
+  "transcript": "美国最高法院星期三就特朗普总统试图解雇美联储理事美联储利率制定委员会的关键成员库克的案子进行听证会这个案子可能对美联储的独立性产生深远的影响保守派占多数的美国最高法院阻止了特朗普立刻解雇库克允许他继续留任直到法院审理解雇他的诉讼布雷特·卡瓦诺大法官表示担心设定极低的解雇理由门槛可能让总统可以随意解雇美联储理事从而削弱甚至摧毁美联储的独立性卡瓦诺说如果2029年1月20号是美国民主党总统就职日那么现任总统任命的所有官员都可能因故被解雇特朗普曾多次批评美联储拒绝了他要求更积极地降低利率的请求他在去年8月份就想要解雇利沙·库克通过罢免库克特朗普可能会在美联储理事会中增加一个声音方便将利率朝着他希望的方向调整特朗普指控库克犯有抵押贷款欺诈罪库克否认了这些指控美联储主席杰罗姆·鲍威尔预计将亲自出席星期三的最高法院听证会以表示这个案子的重要性以及人民对库克的支持库克并没有被拒绝他也没有被指控犯罪而且所说的虚假陈述发生在他担任现在的职务之前他于2022年就任美联储理事并且于2023年再次被任命为理事这里是LFE法国国际广播电台我是安东尼欢迎您继续收听本台的新闻节目",
+  "entities": [
+    {
+      "text": "诺",
+      "matched_tag": "诺贝尔奖",
+      "type": "PER",
+      "score": 0.5747297406196594,
+      "start": 120,
+      "end": 121
+    },
+    {
+      "text": "法国国际广播电台",
+      "matched_tag": null,
+      "type": "ORG",
+      "score": 0.6696449518203735,
+      "start": 455,
+      "end": 463
+    }
+  ],
+  "matched_tags": [
+    "诺贝尔奖"
+  ],
+  "entities_by_type": {
+    "PER": [
+      "诺"
+    ],
+    "ORG": [
+      "法国国际广播电台"
+    ]
+  }
+}

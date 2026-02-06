@@ -1,0 +1,2637 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Zaatar\n"
+"POT-Creation-Date: 2020-07-15 13:30+0200\n"
+"PO-Revision-Date: 2020-07-15 13:31+0200\n"
+"Last-Translator: \n"
+"Language-Team: Bruno Flaven\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+"X-Poedit-SearchPathExcluded-2: vendor\n"
+"X-Poedit-SearchPathExcluded-3: src\n"
+"X-Poedit-SearchPathExcluded-4: dist\n"
+"X-Poedit-SearchPathExcluded-5: js\n"
+"X-Poedit-SearchPathExcluded-6: webfonts\n"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "¡Uy! Esta página no se puede encontrar."
+
+#: archive-bf_quotes_manager.php:26 archive-product_for_sale.php:24
+#: archive.php:24 home.php:40 index.php:24
+#: taxonomy-bf_quotes_manager_author.php:24
+#: taxonomy-bf_quotes_manager_flavor.php:24
+#: taxonomy-product_for_sale_author.php:24
+#: taxonomy-product_for_sale_genre.php:25 taxonomy-product_for_sale_kw.php:23
+msgid "Nothing Found"
+msgstr "No encontramos nada!"
+
+#: comments.php:38
+#, php-format
+msgctxt "comments title"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:50
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:66 comments.php:86
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:68 comments.php:88
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:69 comments.php:89
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:102
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:86
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:87
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:149
+msgid "Main Sidebar"
+msgstr ""
+
+#: functions.php:151
+msgid "Add widgets here to appear in your sidebar."
+msgstr ""
+
+#: functions.php:259
+msgid "Cover"
+msgstr ""
+
+#: functions.php:260 functions.php:681 functions.php:799 functions.php:952
+#: functions.php:975 functions.php:998 functions.php:1021 functions.php:1044
+#: functions.php:1068 functions.php:1108 functions.php:1258
+#: inc/page-builder/composer/lib/shortcodes/default.php:143
+msgid "Title"
+msgstr ""
+
+#: functions.php:261
+msgid "Asin"
+msgstr ""
+
+#: functions.php:263
+msgid "Genre(s)"
+msgstr ""
+
+#: functions.php:264
+msgid "Auteur(s)"
+msgstr ""
+
+#: functions.php:265
+msgid "Edition(s)"
+msgstr ""
+
+#: functions.php:269 functions.php:687 functions.php:803 functions.php:958
+#: functions.php:981 functions.php:1004 functions.php:1027 functions.php:1050
+#: functions.php:1074 functions.php:1114 functions.php:1262
+msgid "Vue(s)"
+msgstr ""
+
+#: functions.php:295 functions.php:413 functions.php:442 functions.php:708
+#: functions.php:731 functions.php:819 functions.php:831 functions.php:847
+#: functions.php:895 functions.php:1350
+msgid "Unknown"
+msgstr ""
+
+#: functions.php:299
+#, php-format
+msgid "%s "
+msgstr ""
+
+#: functions.php:331 functions.php:1302
+msgid "No Genres"
+msgstr ""
+
+#: functions.php:364
+msgid "No Author(s)"
+msgstr ""
+
+#: functions.php:396
+msgid "No Edition(s)"
+msgstr ""
+
+#: functions.php:418
+#, php-format
+msgid ""
+"<textarea rows=\"3\" cols=\"15\" wrap=\"hard\">[amazon_product_single posts="
+"\"%s\"]</textarea>"
+msgstr ""
+
+#: functions.php:446
+msgid "<img alt=\"%t\" src=\"%s\" width=\"%w\" height=\"%h\"> "
+msgstr ""
+
+#: functions.php:526
+msgid "Title:"
+msgstr ""
+
+#: functions.php:530
+msgid "ID:"
+msgstr ""
+
+#: functions.php:534
+msgid "Show excerpt:"
+msgstr ""
+
+#: functions.php:679 functions.php:797 functions.php:950 functions.php:973
+#: functions.php:996 functions.php:1019 functions.php:1042 functions.php:1066
+#: functions.php:1106
+msgid "ID"
+msgstr ""
+
+#: functions.php:680 functions.php:798 functions.php:951 functions.php:974
+#: functions.php:997 functions.php:1020 functions.php:1043 functions.php:1067
+#: functions.php:1107 functions.php:1257 inc/page-builder/config/map.php:424
+msgid "Thumbnail"
+msgstr ""
+
+#: functions.php:682 functions.php:953 functions.php:976 functions.php:999
+#: functions.php:1022 functions.php:1045 functions.php:1069 functions.php:1109
+#: inc/shortcodes.php:385
+msgid "Categories"
+msgstr ""
+
+#: functions.php:683 functions.php:954 functions.php:977 functions.php:1000
+#: functions.php:1023 functions.php:1046 functions.php:1070 functions.php:1110
+#: template-parts/content/content-404.php:64
+msgid "Tags"
+msgstr ""
+
+#: functions.php:684 functions.php:801 functions.php:955 functions.php:978
+#: functions.php:1001 functions.php:1024 functions.php:1047 functions.php:1071
+#: functions.php:1111
+msgid "<span class=\"vers\"><img src=\""
+msgstr ""
+
+#: functions.php:685 functions.php:802 functions.php:956 functions.php:979
+#: functions.php:1002 functions.php:1025 functions.php:1048 functions.php:1072
+#: functions.php:1112
+msgid "Date"
+msgstr ""
+
+#: functions.php:686 functions.php:800 functions.php:957 functions.php:980
+#: functions.php:1003 functions.php:1026 functions.php:1049 functions.php:1073
+#: functions.php:1113
+msgid "Auteur"
+msgstr ""
+
+#: functions.php:688 functions.php:804 functions.php:959 functions.php:982
+#: functions.php:1005 functions.php:1028 functions.php:1051 functions.php:1075
+#: functions.php:1115
+msgid "Attachments"
+msgstr ""
+
+#: functions.php:736 functions.php:900
+msgid " Files"
+msgstr ""
+
+#: functions.php:821 functions.php:833
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: functions.php:1259
+msgid "Author(s)"
+msgstr ""
+
+#: functions.php:1260
+msgid "Flavors(s)"
+msgstr ""
+
+#: functions.php:1335
+msgid "No Flavor(s)"
+msgstr ""
+
+#: functions.php:1355
+#, php-format
+msgid ""
+"<textarea rows=\"3\" cols=\"15\" wrap=\"hard\">[bf_quotes_manager_single "
+"posts=\"%s\"]</textarea>"
+msgstr ""
+
+#: image.php:24
+msgid "Previous Image"
+msgstr ""
+
+#: image.php:25
+msgid "Next Image"
+msgstr ""
+
+#: inc/customizer/customizer-core.php:17
+msgctxt "Read More Label"
+msgid "Read More"
+msgstr ""
+
+#: inc/customizer/customizer-core.php:22
+msgid "&copy; Copyright"
+msgstr ""
+
+#: inc/customizer/customizer-core.php:22
+msgid "Y"
+msgstr ""
+
+#: inc/customizer/customizer.php:24
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer/customizer.php:32
+msgid "General Options"
+msgstr ""
+
+#: inc/customizer/customizer.php:35
+msgid "Personalize the general settings of your theme."
+msgstr ""
+
+#: inc/customizer/customizer.php:46
+msgid "Read More Label"
+msgstr ""
+
+#: inc/customizer/customizer.php:59
+#: inc/page-builder/composer/lib/shortcodes/blog.php:362
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:387
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:252
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:393
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:285
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:221
+msgid "Excerpt Length"
+msgstr ""
+
+#: inc/customizer/customizer.php:60
+msgid "Zero (0) length will not show the excerpt."
+msgstr ""
+
+#: inc/customizer/customizer.php:73
+msgid "Display Featured Image at Single Posts"
+msgstr ""
+
+#: inc/customizer/customizer.php:83
+msgid "Layout Options"
+msgstr ""
+
+#: inc/customizer/customizer.php:86
+msgid "Personalize the layout settings of your theme."
+msgstr ""
+
+#: inc/customizer/customizer.php:96
+msgid "Theme Layout"
+msgstr ""
+
+#: inc/customizer/customizer.php:97
+msgid "Box layout will be visible at minimum 1200px display"
+msgstr ""
+
+#: inc/customizer/customizer.php:102
+msgid "Wide"
+msgstr ""
+
+#: inc/customizer/customizer.php:103
+msgid "Box"
+msgstr ""
+
+#: inc/customizer/customizer.php:114
+msgid "Main Sidebar Position (if active)"
+msgstr ""
+
+#: inc/customizer/customizer.php:119
+msgid "Right"
+msgstr ""
+
+#: inc/customizer/customizer.php:120
+msgid "Left"
+msgstr ""
+
+#: inc/customizer/customizer.php:128
+msgid "Footer Options"
+msgstr ""
+
+#: inc/customizer/customizer.php:131
+msgid "Personalize the footer settings of your theme."
+msgstr ""
+
+#: inc/customizer/customizer.php:142
+msgid "Copyright"
+msgstr ""
+
+#: inc/customizer/customizer.php:156
+msgid "Display Designer Credit"
+msgstr ""
+
+#: inc/customizer/customizer.php:166
+msgid "Support Options"
+msgstr ""
+
+#: inc/customizer/customizer.php:167
+msgid ""
+"Thanks for your interest in Zaatar! To share your feedback and for any "
+"support query you can reach us at"
+msgstr ""
+
+#: inc/customizer/customizer.php:182
+msgid "Zaatar Support"
+msgstr ""
+
+#: inc/customizer/customizer.php:198
+msgid "Add Your Review"
+msgstr ""
+
+#: inc/customizer/customizer.php:199
+msgid ""
+"Why not leave us a review on WordPress.org? Your review on WordPress will be "
+"highly appreciated, as it encourages us to keep updating and supporting the "
+"product."
+msgstr ""
+
+#: inc/customizer/customizer.php:214
+msgid "Review on WordPress.org"
+msgstr ""
+
+#: inc/page-builder/composer/build.php:183
+msgid "Swift Page Builder"
+msgstr ""
+
+#: inc/page-builder/composer/lib/helpers.php:12
+msgid "Wrong wpb_map object. Base attribute is required"
+msgstr ""
+
+#: inc/page-builder/composer/lib/helpers.php:222
+#: inc/page-builder/composer/lib/helpers.php:242
+msgid "Added"
+msgstr ""
+
+#: inc/page-builder/composer/lib/layouts.php:15
+msgid "Wrong layout params"
+msgstr ""
+
+#: inc/page-builder/composer/lib/layouts.php:88
+#: inc/page-builder/composer/lib/shortcodes.php:301
+#: inc/page-builder/composer/lib/shortcodes.php:491
+msgid "Save"
+msgstr ""
+
+#: inc/page-builder/composer/lib/layouts.php:89
+msgid "Save current page as a Template"
+msgstr ""
+
+#: inc/page-builder/composer/lib/layouts.php:91
+#, fuzzy
+#| msgid "TemplateLens"
+msgid "Load Template"
+msgstr "TemplateLens"
+
+#: inc/page-builder/composer/lib/layouts.php:100
+msgid "No custom templates yet."
+msgstr ""
+
+#: inc/page-builder/composer/lib/layouts.php:160
+msgid "Choose Elements"
+msgstr ""
+
+#: inc/page-builder/composer/lib/layouts.php:169
+#, fuzzy
+#| msgid "TemplateLens"
+msgid "Templates"
+msgstr "TemplateLens"
+
+#: inc/page-builder/composer/lib/layouts.php:200
+#: inc/page-builder/composer/lib/layouts.php:225
+msgid "- or -"
+msgstr ""
+
+#: inc/page-builder/composer/lib/layouts.php:216
+#: inc/page-builder/composer/lib/layouts.php:241
+#: inc/page-builder/composer/lib/media_tab.php:118
+msgid "Loading, please wait..."
+msgstr ""
+
+#: inc/page-builder/composer/lib/layouts.php:219
+msgid "This is your visual preview area."
+msgstr ""
+
+#: inc/page-builder/composer/lib/layouts.php:220
+msgid "You don’t have any content at the moment."
+msgstr ""
+
+#: inc/page-builder/composer/lib/layouts.php:223
+msgid "Step 1:"
+msgstr ""
+
+#: inc/page-builder/composer/lib/layouts.php:229
+msgid "Step 2:"
+msgstr ""
+
+#: inc/page-builder/composer/lib/layouts.php:230
+msgid "Click the pencil icon on the content element to change its properties."
+msgstr ""
+
+#: inc/page-builder/composer/lib/mapper.php:25
+#: inc/page-builder/composer/lib/mapper.php:68
+msgid "Wrong name for shortcode:"
+msgstr ""
+
+#: inc/page-builder/composer/lib/mapper.php:27
+msgid "Wrong base for shortcode:"
+msgstr ""
+
+#: inc/page-builder/composer/lib/mapper.php:70
+msgid "Wrong attribute for '"
+msgstr ""
+
+#: inc/page-builder/composer/lib/media_tab.php:29
+#, fuzzy
+#| msgid "Pages:"
+msgid "WPB Images"
+msgstr "Pages:"
+
+#: inc/page-builder/composer/lib/media_tab.php:111
+msgid "&laquo;"
+msgstr ""
+
+#: inc/page-builder/composer/lib/media_tab.php:112
+msgid "&raquo;"
+msgstr ""
+
+#: inc/page-builder/composer/lib/media_tab.php:158
+msgid ""
+"Click image from media library or drag it to the \"Selected images\" area"
+msgstr ""
+
+#: inc/page-builder/composer/lib/media_tab.php:170
+msgid "or add images from your computer."
+msgstr ""
+
+#: inc/page-builder/composer/lib/media_tab.php:188
+msgid "Save all changes"
+msgstr ""
+
+#: inc/page-builder/composer/lib/media_tab.php:229
+msgid "Selected images"
+msgstr ""
+
+#: inc/page-builder/composer/lib/media_tab.php:230
+msgid ""
+"Use your mouse to drag images around to place them in the desired order."
+msgstr ""
+
+#: inc/page-builder/composer/lib/media_tab.php:238
+msgid "Update files list"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes.php:191
+msgid "Decrease width"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes.php:191
+msgid "Increase width"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes.php:193
+#: inc/page-builder/composer/lib/shortcodes.php:286
+#: inc/page-builder/composer/lib/shortcodes.php:476
+#: template-parts/content/content-image-attachment.php:64
+msgid "Edit"
+msgstr "Editer"
+
+#: inc/page-builder/composer/lib/shortcodes.php:194
+msgid "Pop up"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes.php:195
+msgid "Clone"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes.php:195
+msgid "Delete"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes.php:388
+msgid "Add images"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes.php:403
+msgid "Add image"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes.php:491
+msgid "Cancel"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/accordion.php:16
+#: inc/page-builder/composer/lib/shortcodes/accordion.php:35
+msgid "Section"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:235
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:176
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:152
+#, php-format
+msgid "By %1$s on %2$s"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:243
+#: inc/page-builder/composer/lib/shortcodes/teaser_grid.php:138
+msgid "Read more"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:312
+msgid "Blog"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:319
+#: inc/page-builder/composer/lib/shortcodes/clients.php:130
+#: inc/page-builder/composer/lib/shortcodes/code-snippet.php:47
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:88
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:106
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:103
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:338
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:209
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:344
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:228
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:192
+#: inc/page-builder/composer/lib/shortcodes/sitemap.php:44
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:162
+#: inc/page-builder/composer/lib/shortcodes/team.php:107
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:116
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:135
+#: inc/page-builder/config/map.php:18 inc/page-builder/config/map.php:69
+#: inc/page-builder/config/map.php:554 inc/page-builder/config/map.php:671
+#: inc/page-builder/config/map.php:1163 inc/page-builder/config/map.php:1209
+msgid "Widget title"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:322
+#: inc/page-builder/composer/lib/shortcodes/clients.php:133
+#: inc/page-builder/composer/lib/shortcodes/code-snippet.php:50
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:91
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:109
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:106
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:341
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:212
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:347
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:231
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:195
+#: inc/page-builder/composer/lib/shortcodes/sitemap.php:47
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:165
+#: inc/page-builder/composer/lib/shortcodes/team.php:110
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:119
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:138
+#: inc/page-builder/config/map.php:21 inc/page-builder/config/map.php:72
+#: inc/page-builder/config/map.php:1166 inc/page-builder/config/map.php:1212
+msgid "Heading text. Leave it empty if not needed."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:326
+msgid "Blog type"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:328
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:354
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:360
+#: inc/page-builder/config/map.php:159 inc/page-builder/config/map.php:563
+#: inc/page-builder/config/map.php:680 inc/page-builder/config/map.php:985
+msgid "Standard"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:328
+msgid "Mini"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:328
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:347
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:353
+msgid "Masonry"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:329
+msgid "Select the display type for the blog."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:334
+#: inc/page-builder/composer/lib/shortcodes/clients.php:138
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:121
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:111
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:395
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:217
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:401
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:236
+#: inc/page-builder/composer/lib/shortcodes/posts-ticker.php:83
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:200
+#: inc/page-builder/composer/lib/shortcodes/showcase.php:88
+#: inc/page-builder/composer/lib/shortcodes/team.php:115
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:131
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:150
+msgid "Number of items"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:337
+#: inc/page-builder/composer/lib/shortcodes/posts-ticker.php:86
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:203
+msgid "The number of blog items to show per page."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:341
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:207
+msgid "Blog category"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:344
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:246
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:210
+msgid "Choose the category for the blog items."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:348
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:250
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:214
+msgid "Exclude categories"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:351
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:253
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:217
+msgid ""
+"If you would like to exclude categories from the blog list, then enter the "
+"category IDs here with a \"-\" infront of them, seperated by a comma (no "
+"spaces or quotes). E.g. \"-1,-7,-23\"."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:355
+msgid "Content Output"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:357
+msgid "Excerpt"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:357
+msgid "Full Content"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:358
+msgid ""
+"Choose whether to display the excerpt or the full content for the post. Full "
+"content is not available for the masonry view."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:365
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:390
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:255
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:396
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:288
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:224
+msgid "The length of the excerpt for the posts."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:369
+#: inc/page-builder/composer/lib/shortcodes/clients.php:152
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:132
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:416
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:422
+#: inc/page-builder/composer/lib/shortcodes/team.php:129
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:171
+msgid "Pagination"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:371
+#: inc/page-builder/composer/lib/shortcodes/clients.php:154
+#: inc/page-builder/composer/lib/shortcodes/code-snippet.php:65
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:144
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:134
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:62
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:69
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:76
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:368 2013-03-25).php:375 2013-03-25).php:382
+#: 2013-03-25).php:411 2013-03-25).php:418
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:374
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:381
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:388
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:417
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:424
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:259
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:266
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:273
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:280
+#: inc/page-builder/composer/lib/shortcodes/search.php:66
+#: inc/page-builder/composer/lib/shortcodes/search.php:73
+#: inc/page-builder/composer/lib/shortcodes/search.php:80
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:178
+#: inc/page-builder/composer/lib/shortcodes/team.php:131
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:154
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:173
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:180
+#: inc/page-builder/config/map.php:36 inc/page-builder/config/map.php:43
+#: inc/page-builder/config/map.php:94 inc/page-builder/config/map.php:438
+#: inc/page-builder/config/map.php:445 inc/page-builder/config/map.php:466
+#: inc/page-builder/config/map.php:1062 inc/page-builder/config/map.php:1125
+#: inc/page-builder/config/map.php:1132 inc/page-builder/config/map.php:1139
+#: inc/page-builder/config/map.php:1186 inc/page-builder/config/map.php:1252
+msgid "Yes"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:371
+#: inc/page-builder/composer/lib/shortcodes/clients.php:154
+#: inc/page-builder/composer/lib/shortcodes/code-snippet.php:65
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:144
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:134
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:62
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:69
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:76
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:368 2013-03-25).php:375 2013-03-25).php:382
+#: 2013-03-25).php:411 2013-03-25).php:418
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:374
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:381
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:388
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:417
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:424
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:259
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:266
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:273
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:280
+#: inc/page-builder/composer/lib/shortcodes/search.php:66
+#: inc/page-builder/composer/lib/shortcodes/search.php:73
+#: inc/page-builder/composer/lib/shortcodes/search.php:80
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:178
+#: inc/page-builder/composer/lib/shortcodes/team.php:131
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:154
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:173
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:180
+#: inc/page-builder/config/map.php:36 inc/page-builder/config/map.php:43
+#: inc/page-builder/config/map.php:94 inc/page-builder/config/map.php:438
+#: inc/page-builder/config/map.php:445 inc/page-builder/config/map.php:466
+#: inc/page-builder/config/map.php:1062 inc/page-builder/config/map.php:1125
+#: inc/page-builder/config/map.php:1132 inc/page-builder/config/map.php:1139
+#: inc/page-builder/config/map.php:1186 inc/page-builder/config/map.php:1252
+msgid "No"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:372
+msgid "Show pagination."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:376
+#: inc/page-builder/composer/lib/shortcodes/clients.php:159
+#: inc/page-builder/composer/lib/shortcodes/code-snippet.php:70
+#: inc/page-builder/composer/lib/shortcodes/faqs.php:100
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:137
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:149
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:139
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:81
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:423
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:259
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:429
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:292
+#: inc/page-builder/composer/lib/shortcodes/posts-ticker.php:97
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:228
+#: inc/page-builder/composer/lib/shortcodes/search.php:85
+#: inc/page-builder/composer/lib/shortcodes/showcase.php:95
+#: inc/page-builder/composer/lib/shortcodes/showcase.php:151
+#: inc/page-builder/composer/lib/shortcodes/sitemap.php:51
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:183
+#: inc/page-builder/composer/lib/shortcodes/team.php:136
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:159
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:185
+#: inc/page-builder/config/map.php:48 inc/page-builder/config/map.php:99
+#: inc/page-builder/config/map.php:171 inc/page-builder/config/map.php:198
+#: inc/page-builder/config/map.php:271 inc/page-builder/config/map.php:398
+#: inc/page-builder/config/map.php:568 inc/page-builder/config/map.php:685
+#: inc/page-builder/config/map.php:1144 inc/page-builder/config/map.php:1191
+#: inc/page-builder/config/map.php:1257
+msgid "Extra class name"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/blog.php:379
+#: inc/page-builder/composer/lib/shortcodes/clients.php:162
+#: inc/page-builder/composer/lib/shortcodes/code-snippet.php:73
+#: inc/page-builder/composer/lib/shortcodes/faqs.php:103
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:140
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:152
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:142
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:84
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:426
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:262
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:432
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:295
+#: inc/page-builder/composer/lib/shortcodes/posts-ticker.php:100
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:231
+#: inc/page-builder/composer/lib/shortcodes/search.php:88
+#: inc/page-builder/composer/lib/shortcodes/showcase.php:98
+#: inc/page-builder/composer/lib/shortcodes/showcase.php:154
+#: inc/page-builder/composer/lib/shortcodes/sitemap.php:54
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:186
+#: inc/page-builder/composer/lib/shortcodes/team.php:139
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:162
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:188
+#: inc/page-builder/config/map.php:51 inc/page-builder/config/map.php:102
+#: inc/page-builder/config/map.php:174 inc/page-builder/config/map.php:201
+#: inc/page-builder/config/map.php:274 inc/page-builder/config/map.php:401
+#: inc/page-builder/config/map.php:571 inc/page-builder/config/map.php:688
+#: inc/page-builder/config/map.php:1147 inc/page-builder/config/map.php:1194
+#: inc/page-builder/config/map.php:1260
+msgid ""
+"If you wish to style particular content element differently, then use this "
+"field to add a class name and then refer to it in your css file."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/buttons.php:70
+#: inc/page-builder/config/map.php:1067 inc/page-builder/config/map.php:1069
+msgid "Text on the button"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/clients.php:123
+msgid "Clients"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/clients.php:141
+msgid ""
+"The number of clients to show per page. Leave blank to show ALL clients."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/clients.php:145
+msgid "Clients category"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/clients.php:148
+msgid "Choose the category for the client items."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/clients.php:155
+msgid "Show clients pagination."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/code-snippet.php:40
+msgid "Code Snippet"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/code-snippet.php:56
+#: inc/page-builder/composer/lib/shortcodes/example.php:111
+#: inc/page-builder/config/map.php:27 inc/page-builder/config/map.php:78
+#: inc/page-builder/config/map.php:1116
+msgid "Text"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/code-snippet.php:58
+msgid "<p>Add your code snippet here.</p>"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/code-snippet.php:59
+msgid "Enter your code snippet."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/code-snippet.php:63
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:60
+#: inc/page-builder/composer/lib/shortcodes/search.php:64
+#: inc/page-builder/config/map.php:34 inc/page-builder/config/map.php:92
+msgid "Margin below widget"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/code-snippet.php:66
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:63
+#: inc/page-builder/composer/lib/shortcodes/search.php:67
+#: inc/page-builder/config/map.php:37 inc/page-builder/config/map.php:95
+msgid "Add a bottom margin to the widget."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/default.php:179
+msgid "Click to toggle"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/example.php:94
+msgid "Hello World"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/example.php:102
+msgid "Foo attribute"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/example.php:104
+msgid "I'm foo attribute"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/example.php:105
+msgid "Enter foo value."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/example.php:113
+msgid "I'm hello world"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/example.php:114
+#: inc/page-builder/config/map.php:30 inc/page-builder/config/map.php:81
+#: inc/page-builder/config/map.php:1119
+msgid "Enter your content."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/example.php:118
+msgid "Drop down example"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/example.php:121
+msgid "One, two or three?"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/faqs.php:23
+msgid "Browse F.A.Q. Topics"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/faqs.php:91
+msgid "FAQs"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:81
+msgid "Google Chart"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:95
+msgid "Chart title"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:98
+msgid "Chart title text. Leave it empty if not needed."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:102
+msgid "Chart type"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:104
+msgid "Line"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:104
+msgid "Pie"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:104
+msgid "Pie 2D"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:104
+msgid "XY Line"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:104
+msgid "Scatter"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:105
+msgid "Choose the type of chart you'd like to display."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:109
+msgid "Chart labels"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:112
+msgid ""
+"Enter the chart labels here, e.g. First+Label|Second+Label|Third+Label|Fourth"
+"+Label"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:116
+msgid "Chart data"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:119
+msgid "Enter the chart data here, e.g. 41.12,32.35,21.52,5.01"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:123
+msgid "Chart data colours"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:126
+msgid ""
+"Enter the chart data colours here (hex without the #), e.g. "
+"D73030,329E4A,415FB4,DFD32F"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:130
+msgid "Advanced chart data"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/googlechart.php:133
+msgid "Enter the any advanced chart data here"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/images_galleries.php:187
+msgid "No image yet! Click here to select it now."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:75
+msgid "View all vacancies"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:97
+msgid "Jobs Overview"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:113
+msgid "Intro Text"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:116
+msgid "Enter the intro text for the jobs overview."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:124
+msgid ""
+"The number of jobs to show in the overview list. Leave blank to show ALL "
+"jobs."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:128
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:118
+msgid "Jobs Order"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:130
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:120
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:140
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:159
+msgid "Random"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:130
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:120
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:140
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:159
+msgid "Latest"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:131
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:121
+msgid "Choose the order of the jobs."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:135
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:125
+msgid "Jobs category"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:138
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:128
+msgid "Choose the category for the jobs."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:142
+msgid "View all link"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs-overview.php:145
+msgid ""
+"Show the view all jobs link. Make sure you have selected the page within "
+"theme options for this to work."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:94
+msgid "Jobs"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:114
+msgid "The number of jobs to show per page. Leave blank to show ALL jobs."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/jobs.php:135
+msgid "Show jobs pagination."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:46
+msgid "Latest Tweet Bar"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:53
+msgid "Twitter username"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:56
+msgid ""
+"The twitter username you'd like to show the latest tweet for. Make sure to "
+"not include the @."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:67
+#: inc/page-builder/composer/lib/shortcodes/search.php:71
+#: inc/page-builder/config/map.php:41
+msgid "Border below widget"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:70
+#: inc/page-builder/composer/lib/shortcodes/search.php:74
+#: inc/page-builder/config/map.php:44
+msgid "Add a bottom border to the widget."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:74
+#: inc/page-builder/composer/lib/shortcodes/search.php:78
+msgid "Border above widget"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/latest-tweet-bar.php:77
+#: inc/page-builder/composer/lib/shortcodes/search.php:81
+msgid "Add a top border to the widget."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:29 2013-03-25).php:409
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:29
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:415
+msgid "Filter"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:31
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:31
+msgid "All"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:331
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:337
+msgid "Portfolio"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:345
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:351
+msgid "Portfolio type"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:347
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:353
+msgid "Default"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:348 2013-03-25).php:355
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:354
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:361
+msgid "Select the type of portfolio you'd like to show."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:352
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:358
+msgid "Display type"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:354
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:360
+msgid "Bordered"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:354
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:360
+msgid "Gallery"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:354
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:360
+msgid "Bordered gallery"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:359
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:365
+msgid "Column count"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:362
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:368
+msgid "How many portfolio columns to display."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:366
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:231
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:372
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:257
+msgid "Show title text"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:369
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:234
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:375
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:260
+msgid "Show the item title text."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:373
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:238
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:379
+msgid "Show client text"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:376
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:241
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:382
+msgid "Show the item client text."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:380
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:245
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:386
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:264
+msgid "Show item excerpt"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:383
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:248
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:389
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:267
+msgid "Show the item excerpt text."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:398
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:404
+msgid ""
+"The number of portfolio items to show per page. Leave blank to show ALL "
+"portfolio items."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:402
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:224
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:408
+msgid "Portfolio category"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:405
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:411
+msgid "Choose the category from which you'd like to show the portfolio items."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:412
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:418
+msgid "Show the portfolio category filter above the items."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio (Kristian Klamar's
+#: conflicted copy 2013-03-25).php:419
+#: inc/page-builder/composer/lib/shortcodes/portfolio.php:425
+msgid "Show portfolio pagination."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:202
+msgid "Portfolio Carousel"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:220
+msgid "The number of portfolio items to show in the carousel."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/portfolio-carousel.php:227
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:172
+#: inc/page-builder/composer/lib/shortcodes/team.php:125
+msgid "Choose the category for the portfolio items."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:221
+msgid "Posts Carousel"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:239
+msgid "The number of blog items to show in the carousel."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:243
+#: inc/page-builder/composer/lib/shortcodes/posts-ticker.php:90
+msgid "Posts category"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:271
+msgid "Show item details"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:274
+msgid "Show the item details."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:278
+#: inc/page-builder/config/map.php:464 inc/page-builder/config/map.php:1137
+#: inc/page-builder/config/map.php:1184 inc/page-builder/config/map.php:1250
+msgid "Show bottom shadow"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/posts-carousel.php:281
+#: inc/page-builder/config/map.php:467 inc/page-builder/config/map.php:1187
+#: inc/page-builder/config/map.php:1253
+msgid "Show a shadow below the asset."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/posts-ticker.php:35
+msgid "Latest:"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/posts-ticker.php:75
+msgid "Posts Ticker"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/posts-ticker.php:93
+msgid "Choose the category for the post items."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/posts_slider.php:150
+msgid "No Featured image set."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/posts_slider.php:155
+#: inc/page-builder/composer/lib/shortcodes/teaser_grid.php:138
+#: inc/page-builder/composer/lib/shortcodes/teaser_grid.php:159
+#: inc/page-builder/composer/lib/shortcodes/teaser_grid.php:160
+#: inc/page-builder/composer/lib/shortcodes/teaser_grid.php:178
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/posts_slider.php:188
+#: inc/page-builder/composer/lib/shortcodes/teaser_grid.php:263
+#, fuzzy
+#| msgid "Nothing Found"
+msgid "Nothing found."
+msgstr "On a rien trouvé"
+
+#: inc/page-builder/composer/lib/shortcodes/recent-posts.php:185
+#: template-parts/content/content-404.php:35
+msgid "Recent Posts"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/search.php:50
+#: template-parts/content/content-404.php:21
+msgid "Search"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/search.php:57
+msgid "Input placeholder text"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/search.php:60
+msgid "Enter the text that appearas as default in the search input."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/showcase.php:80
+msgid "Showcase"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/showcase.php:91
+msgid "The number of showcase items to show."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/showcase.php:137
+msgid "Revolution Slider"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/showcase.php:144
+msgid "Revolution Slider Alias"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/showcase.php:147
+msgid ""
+"Enter the Revolution Slider alias here for the one that you wish to show. "
+"This can be found within the Revolution Slider Admin Panel."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/sitemap.php:35
+msgid "Sitemap"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/social.php:27
+msgid "Follow us on twitter"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/social.php:57
+msgid "Tweet"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/tabs.php:8
+#: inc/page-builder/composer/lib/shortcodes/tabs.php:20
+msgid "Tab"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/tabs.php:142
+msgid "Previous slide"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/tabs.php:142
+msgid "Next slide"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:116
+#: inc/page-builder/composer/lib/shortcodes/team.php:59
+msgid "Find out more"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:126
+msgid "Show Bios"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:126
+msgid "Hide Bios"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:155
+msgid "Team Carousel"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:169
+#: inc/page-builder/composer/lib/shortcodes/team.php:122
+msgid "Team category"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:176
+msgid "Show / Hide Bios Button"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/team-carousel.php:179
+msgid "Include a button to show/hide the team member bios."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/team.php:100
+msgid "Team"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/team.php:118
+msgid "The number of team members to show per page."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/team.php:132
+msgid "Show testimonial pagination."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:78
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:78
+msgid "More"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:108
+msgid "Testimonials Carousel"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:123
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:142
+msgid "Text size"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:125
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:144
+msgid "Normal"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:125
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:144
+#: inc/page-builder/config/map.php:424 inc/page-builder/config/map.php:983
+msgid "Large"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:126
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:145
+msgid "Choose the size of the text."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:134
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:153
+msgid ""
+"The number of testimonials to show per page. Leave blank to show ALL "
+"testimonials."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:138
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:157
+msgid "Testimonials Order"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:141
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:160
+msgid "Choose the order of the testimonials."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:145
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:164
+msgid "Testimonials category"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:148
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:167
+msgid "Choose the category for the testimonials."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:152
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:178
+msgid "Testimonials page link"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial-carousel.php:155
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:181
+msgid ""
+"Include a link to the testimonials page (which you must choose in the theme "
+"options)."
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:126
+msgid "Testimonials"
+msgstr ""
+
+#: inc/page-builder/composer/lib/shortcodes/testimonial.php:174
+msgid "Show testimonial pagination (1/1 width element only)."
+msgstr ""
+
+#: inc/page-builder/composer/settings/js_composer_settings_menu.php:37
+msgid "Swift Page Builder Settings VVVervsion"
+msgstr ""
+
+#: inc/page-builder/composer/settings/js_composer_settings_menu.php:43
+msgid "Content types"
+msgstr ""
+
+#: inc/page-builder/composer/settings/js_composer_settings_menu.php:46
+msgid "Post types"
+msgstr ""
+
+#: inc/page-builder/composer/settings/js_composer_settings_menu.php:67
+msgid ""
+"Select for which content types Swift Page Builder should be available during "
+"post creation/editing."
+msgstr ""
+
+#: inc/page-builder/composer/settings/js_composer_settings_menu.php:80
+msgid "Thank you"
+msgstr ""
+
+#: inc/page-builder/composer/settings/js_composer_settings_menu.php:81
+msgid ""
+"Swift Page Builder will save you a lot of time while working with your sites "
+"content."
+msgstr ""
+
+#: inc/page-builder/config/map.php:9
+msgid "Text block"
+msgstr ""
+
+#: inc/page-builder/config/map.php:29
+msgid "<p>I am text block. click the edit button to change this text.</p>"
+msgstr ""
+
+#: inc/page-builder/config/map.php:60
+msgid "Boxed content"
+msgstr ""
+
+#: inc/page-builder/config/map.php:80
+msgid ""
+"<p>I am boxed content block. click the edit button to change this text.</p>"
+msgstr ""
+
+#: inc/page-builder/config/map.php:85
+msgid "Box type"
+msgstr ""
+
+#: inc/page-builder/config/map.php:87
+msgid "Coloured"
+msgstr ""
+
+#: inc/page-builder/config/map.php:87
+msgid "White with stroke"
+msgstr ""
+
+#: inc/page-builder/config/map.php:88
+msgid "Choose the surrounding box type for this content"
+msgstr ""
+
+#: inc/page-builder/config/map.php:149
+msgid "Divider"
+msgstr ""
+
+#: inc/page-builder/config/map.php:157
+msgid "Divider type"
+msgstr ""
+
+#: inc/page-builder/config/map.php:159
+msgid "Thin"
+msgstr ""
+
+#: inc/page-builder/config/map.php:159
+msgid "Dotted"
+msgstr ""
+
+#: inc/page-builder/config/map.php:159
+msgid "Go to top (text)"
+msgstr ""
+
+#: inc/page-builder/config/map.php:159
+msgid "Go to top (Icon 1)"
+msgstr ""
+
+#: inc/page-builder/config/map.php:159
+msgid "Go to top (Icon 2)"
+msgstr ""
+
+#: inc/page-builder/config/map.php:160
+msgid "Select divider type."
+msgstr ""
+
+#: inc/page-builder/config/map.php:164
+msgid "Go to top text"
+msgstr ""
+
+#: inc/page-builder/config/map.php:166
+msgid "Go to top"
+msgstr ""
+
+#: inc/page-builder/config/map.php:167
+msgid "The text for the 'Go to top (text)' divider type."
+msgstr ""
+
+#: inc/page-builder/config/map.php:183
+msgid "Blank Spacer"
+msgstr ""
+
+#: inc/page-builder/config/map.php:191
+msgid "Height"
+msgstr ""
+
+#: inc/page-builder/config/map.php:193
+msgid "30px"
+msgstr ""
+
+#: inc/page-builder/config/map.php:194
+msgid "The height of the spacer, in px (required)."
+msgstr ""
+
+#: inc/page-builder/config/map.php:246
+msgid "Message box"
+msgstr ""
+
+#: inc/page-builder/config/map.php:255
+msgid "Message box type"
+msgstr ""
+
+#: inc/page-builder/config/map.php:257
+msgid "Informational"
+msgstr ""
+
+#: inc/page-builder/config/map.php:257
+msgid "Warning"
+msgstr ""
+
+#: inc/page-builder/config/map.php:257
+msgid "Success"
+msgstr ""
+
+#: inc/page-builder/config/map.php:257
+msgid "Error"
+msgstr ""
+
+#: inc/page-builder/config/map.php:258
+msgid "Select message type."
+msgstr ""
+
+#: inc/page-builder/config/map.php:264
+msgid "Message text"
+msgstr ""
+
+#: inc/page-builder/config/map.php:266
+msgid "<p>I am message box. click the edit button to change this text.</p>"
+msgstr ""
+
+#: inc/page-builder/config/map.php:267
+msgid "Message text."
+msgstr ""
+
+#: inc/page-builder/config/map.php:366
+msgid "Toggle"
+msgstr ""
+
+#: inc/page-builder/config/map.php:375 inc/page-builder/config/map.php:377
+msgid "Toggle title"
+msgstr ""
+
+#: inc/page-builder/config/map.php:378
+msgid "Toggle block title."
+msgstr ""
+
+#: inc/page-builder/config/map.php:384
+msgid "Toggle content"
+msgstr ""
+
+#: inc/page-builder/config/map.php:386
+msgid "<p>Toggle content goes here, click the edit button.</p>"
+msgstr ""
+
+#: inc/page-builder/config/map.php:387
+msgid "Toggle block content."
+msgstr ""
+
+#: inc/page-builder/config/map.php:391
+msgid "Default state"
+msgstr ""
+
+#: inc/page-builder/config/map.php:393
+msgid "Closed"
+msgstr ""
+
+#: inc/page-builder/config/map.php:393
+msgid "Open"
+msgstr ""
+
+#: inc/page-builder/config/map.php:394
+msgid "Select this if you want toggle to be open by default."
+msgstr ""
+
+#: inc/page-builder/config/map.php:408
+msgid "Single image"
+msgstr ""
+
+#: inc/page-builder/config/map.php:415
+msgid "Image"
+msgstr ""
+
+#: inc/page-builder/config/map.php:422
+msgid "Image Size"
+msgstr ""
+
+#: inc/page-builder/config/map.php:424
+msgid "Full"
+msgstr ""
+
+#: inc/page-builder/config/map.php:424 inc/page-builder/config/map.php:983
+msgid "Medium"
+msgstr ""
+
+#: inc/page-builder/config/map.php:425
+msgid ""
+"Select the source size for the image (NOTE: this doesn't affect it's size on "
+"the front-end, only the quality)."
+msgstr ""
+
+#: inc/page-builder/config/map.php:429
+msgid "Image Frame"
+msgstr ""
+
+#: inc/page-builder/config/map.php:431
+msgid "No Frame"
+msgstr ""
+
+#: inc/page-builder/config/map.php:431
+msgid "Border Frame"
+msgstr ""
+
+#: inc/page-builder/config/map.php:431
+msgid "Glow Frame"
+msgstr ""
+
+#: inc/page-builder/config/map.php:431
+msgid "Shadow Frame"
+msgstr ""
+
+#: inc/page-builder/config/map.php:432
+msgid "Select a frame for the image."
+msgstr ""
+
+#: inc/page-builder/config/map.php:436
+msgid "Full width"
+msgstr ""
+
+#: inc/page-builder/config/map.php:439
+msgid ""
+"Select if you want the image to be the full width of the page. (Make sure "
+"the element width is 1/1 too)."
+msgstr ""
+
+#: inc/page-builder/config/map.php:443
+msgid "Enable lightbox link"
+msgstr ""
+
+#: inc/page-builder/config/map.php:446
+msgid "Select if you want the image to open in a lightbox on click"
+msgstr ""
+
+#: inc/page-builder/config/map.php:450
+msgid "Add link to image"
+msgstr ""
+
+#: inc/page-builder/config/map.php:453
+msgid ""
+"If you would like the image to link to a URL, then enter it here. NOTE: this "
+"will override the lightbox functionality if you have enabled it."
+msgstr ""
+
+#: inc/page-builder/config/map.php:457
+msgid "Link opens in new window?"
+msgstr ""
+
+#: inc/page-builder/config/map.php:459
+msgid "Self"
+msgstr ""
+
+#: inc/page-builder/config/map.php:459
+msgid "New Window"
+msgstr ""
+
+#: inc/page-builder/config/map.php:460
+msgid "Select if you want the link to open in a new window"
+msgstr ""
+
+#: inc/page-builder/config/map.php:546
+msgid "Tabs"
+msgstr ""
+
+#: inc/page-builder/config/map.php:557 inc/page-builder/config/map.php:674
+msgid "What text use as widget title. Leave blank if no title is needed."
+msgstr ""
+
+#: inc/page-builder/config/map.php:561
+msgid "Tabs type"
+msgstr ""
+
+#: inc/page-builder/config/map.php:563 inc/page-builder/config/map.php:680
+msgid "Minimal"
+msgstr ""
+
+#: inc/page-builder/config/map.php:564
+msgid "Select tabs type."
+msgstr ""
+
+#: inc/page-builder/config/map.php:576
+msgid "Add tab"
+msgstr ""
+
+#: inc/page-builder/config/map.php:577
+msgid "Edit current tab title"
+msgstr ""
+
+#: inc/page-builder/config/map.php:578
+msgid "Delete current tab"
+msgstr ""
+
+#: inc/page-builder/config/map.php:586
+msgid "Tab 1"
+msgstr ""
+
+#: inc/page-builder/config/map.php:587
+msgid "Tab 2"
+msgstr ""
+
+#: inc/page-builder/config/map.php:591 inc/page-builder/config/map.php:595
+#: inc/page-builder/config/map.php:706 inc/page-builder/config/map.php:714
+msgid "I am text block. click the edit button to change this text."
+msgstr ""
+
+#: inc/page-builder/config/map.php:662
+msgid "Accordion section"
+msgstr ""
+
+#: inc/page-builder/config/map.php:678
+msgid "Accordion type"
+msgstr ""
+
+#: inc/page-builder/config/map.php:681
+msgid "Select the type of accordion you'd like to show."
+msgstr ""
+
+#: inc/page-builder/config/map.php:693
+msgid "Add section"
+msgstr ""
+
+#: inc/page-builder/config/map.php:694
+msgid "Edit current section title"
+msgstr ""
+
+#: inc/page-builder/config/map.php:695
+msgid "Delete current section"
+msgstr ""
+
+#: inc/page-builder/config/map.php:703
+msgid "Section 1"
+msgstr ""
+
+#: inc/page-builder/config/map.php:711
+msgid "Section 2"
+msgstr ""
+
+#: inc/page-builder/config/map.php:945
+msgid "None"
+msgstr ""
+
+#: inc/page-builder/config/map.php:946
+msgid "Address book icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:947
+msgid "Alarm clock icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:948
+msgid "Anchor icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:949
+msgid "Application Image icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:950
+msgid "Arrow icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:951
+msgid "Asterisk icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:952
+msgid "Hammer icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:953
+msgid "Balloon icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:954
+msgid "Balloon Buzz icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:955
+msgid "Balloon Facebook icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:956
+msgid "Balloon Twitter icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:957
+msgid "Battery icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:958
+msgid "Binocular icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:959
+msgid "Document Excel icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:960
+msgid "Document Image icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:961
+msgid "Document Music icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:962
+msgid "Document Office icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:963
+msgid "Document PDF icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:964
+msgid "Document Powerpoint icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:965
+msgid "Document Word icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:966
+msgid "Bookmark icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:967
+msgid "Camcorder icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:968
+msgid "Camera icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:969
+msgid "Chart icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:970
+msgid "Chart pie icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:971
+msgid "Clock icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:972
+msgid "Fire icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:973
+msgid "Heart icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:974
+msgid "Mail icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:975
+msgid "Play icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:976
+msgid "Shield icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:977
+msgid "Video icon"
+msgstr ""
+
+#: inc/page-builder/config/map.php:981
+msgid "Accent"
+msgstr ""
+
+#: inc/page-builder/config/map.php:981
+msgid "Blue"
+msgstr ""
+
+#: inc/page-builder/config/map.php:981
+msgid "Grey"
+msgstr ""
+
+#: inc/page-builder/config/map.php:981
+msgid "Light grey"
+msgstr ""
+
+#: inc/page-builder/config/map.php:981
+msgid "Purple"
+msgstr ""
+
+#: inc/page-builder/config/map.php:981
+msgid "Light Blue"
+msgstr ""
+
+#: inc/page-builder/config/map.php:981
+msgid "Green"
+msgstr ""
+
+#: inc/page-builder/config/map.php:981
+msgid "Lime Green"
+msgstr ""
+
+#: inc/page-builder/config/map.php:981
+msgid "Turquoise"
+msgstr ""
+
+#: inc/page-builder/config/map.php:981
+msgid "Pink"
+msgstr ""
+
+#: inc/page-builder/config/map.php:981
+msgid "Orange"
+msgstr ""
+
+#: inc/page-builder/config/map.php:983
+msgid "Small"
+msgstr ""
+
+#: inc/page-builder/config/map.php:985
+msgid "Square with arrow"
+msgstr ""
+
+#: inc/page-builder/config/map.php:985
+msgid "Slightly rounded"
+msgstr ""
+
+#: inc/page-builder/config/map.php:985
+msgid "Slightly rounded with arrow"
+msgstr ""
+
+#: inc/page-builder/config/map.php:985
+msgid "Rounded"
+msgstr ""
+
+#: inc/page-builder/config/map.php:985
+msgid "Rounded with arrow"
+msgstr ""
+
+#: inc/page-builder/config/map.php:985
+msgid "Outer glow effect"
+msgstr ""
+
+#: inc/page-builder/config/map.php:985
+msgid "Drop shadow effect"
+msgstr ""
+
+#: inc/page-builder/config/map.php:988
+msgid "Same window"
+msgstr ""
+
+#: inc/page-builder/config/map.php:988
+msgid "New window"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1052
+msgid "Impact Text + Button"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1060
+msgid "Include button"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1063
+msgid "Include a button in the asset."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1070
+msgid "Text on the button."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1074
+msgid "URL (Link)"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1077
+msgid "Button link."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1081
+msgid "Color"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1084
+msgid "Button color."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1088
+msgid "Size"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1091
+msgid "Button size."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1095
+msgid "Type"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1101
+msgid "Target"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1107
+msgid "Button position"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1109
+msgid "Align right"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1109
+msgid "Align left"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1109
+msgid "Align bottom"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1110 inc/page-builder/config/map.php:1233
+msgid "Select button alignment."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1118
+msgid "click the edit button to change this text."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1123
+msgid "Include top border"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1126
+msgid "Include a top border to the impact text."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1130
+msgid "Include bottom border"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1133
+msgid "Include a bottom border to the impact text."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1140
+msgid "Show a shadow below the asset (this will override the border)."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1156
+msgid "Video player"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1170
+msgid "Video link"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1173
+msgid ""
+"Link to the video. More about supported formats at <a href=\"http://codex."
+"wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F\" target="
+"\"_blank\">WordPress codex page</a>."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1177
+msgid "Video size"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1180
+msgid "Enter video size in pixels. Example: 200x100 (Width x Height)."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1202
+msgid "Google maps"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1216
+msgid "Address"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1219
+msgid ""
+"Enter the address that you would like to show on the map here, i.e. "
+"\"Cupertino\"."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1223
+msgid "Map height"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1226
+msgid "Enter map height in pixels. Example: 300)."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1230
+msgid "Map type"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1232
+msgid "Map"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1232
+msgid "Satellite"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1232
+msgid "Hybrid"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1232
+msgid "Terrain"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1237
+msgid "Map Zoom"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1239
+msgid "14 - Default"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1243
+msgid "Custom Map Pin"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1266
+msgid "Raw html"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1277
+msgid "Raw HTML"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1280
+msgid "Enter your HTML content."
+msgstr ""
+
+#: inc/page-builder/config/map.php:1286 inc/page-builder/config/map.php:1297
+msgid "Raw js"
+msgstr ""
+
+#: inc/page-builder/config/map.php:1300
+msgid "Enter your Js."
+msgstr ""
+
+#: inc/shortcodes.php:363
+#, fuzzy
+#| msgid "Pages:"
+msgid "Pages"
+msgstr "Pages:"
+
+#: inc/shortcodes.php:374
+msgid "Posts"
+msgstr ""
+
+#: inc/shortcodes.php:392 template-parts/content/content-404.php:49
+msgid "Archives"
+msgstr ""
+
+#: inc/template-functions.php:25
+msgctxt "Nunito Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/template-functions.php:33
+msgctxt "Roboto font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/template-functions.php:41
+msgctxt "Add new subset (cyrillic, greek, devanagari, vietnamese)"
+msgid "no-subset"
+msgstr ""
+
+#. translators: %1$s is Theme / Designer Name ( Zaatar ), %2$s is WordPress
+#: inc/template-functions.php:264
+#, php-format
+msgid "%1$s &sdot; Powered by %2$s"
+msgstr ""
+
+#: inc/template-tags.php:20
+msgid "Previous Page"
+msgstr ""
+
+#: inc/template-tags.php:21
+msgid "Next Page"
+msgstr ""
+
+#: inc/template-tags.php:22
+msgid "Page"
+msgstr ""
+
+#: inc/template-tags.php:39
+msgid "Next"
+msgstr ""
+
+#: inc/template-tags.php:40
+msgid "Prev"
+msgstr ""
+
+#: inc/template-tags.php:72
+msgctxt "post date"
+msgid "Posted on"
+msgstr ""
+
+#. translators: %s: post author
+#: inc/template-tags.php:115
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#: inc/template-tags.php:149
+msgctxt "sticky post label"
+msgid "Featured"
+msgstr ""
+
+#: inc/template-tags.php:181
+msgctxt "post edit link label"
+msgid "Edit"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:277
+msgctxt "Used between category, there is a space after the comma."
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:282
+msgid "Posted in:"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:288
+msgctxt "Used between tag, there is a space after the comma."
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:293
+msgid "Tags:"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers.
+#: inc/template-tags.php:304
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: inc/template-tags.php:624
+msgid "No Comments"
+msgstr ""
+
+#: inc/template-tags.php:624
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:624
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:725 inc/template-tags.php:745
+msgid "Read More"
+msgstr ""
+
+#: inc/template-tags.php:792
+msgid "Related Posts"
+msgstr ""
+
+#: inc/template-tags.php:857 inc/template-tags.php:871
+#, php-format
+msgid "Continue reading &rarr; %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:895
+msgid " #"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: inc/template-tags.php:904
+#, fuzzy, php-format
+#| msgid "Edit"
+msgid "Edit %s"
+msgstr "Editer"
+
+#: search.php:17
+msgid "Search Results for:"
+msgstr ""
+
+#: searchform.php:11 searchform.php:12
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:12
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:14
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: template-parts/content/content-404.php:14
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: template-parts/content/content-bf_quotes_manager.php:51
+#: template-parts/content/content-books-author.php:44
+#: template-parts/content/content-books-genre.php:47
+#: template-parts/content/content-books-kw.php:45
+#: template-parts/content/content-clients.php:38
+#: template-parts/content/content-image-attachment.php:54
+#: template-parts/content/content-page-gg.php:36
+#: template-parts/content/content-page.php:29
+#: template-parts/content/content-quotes-authors.php:49
+#: template-parts/content/content-quotes-flavors.php:44
+#: template-parts/content/content-single.php:32
+msgid "Pages:"
+msgstr "Pages:"
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content/content-none.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content/content-none.php:33
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content/content-none.php:38
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/header/site-navigation.php:12
+msgid "Skip to content"
+msgstr ""
+
+#: template-parts/header/site-navigation.php:14
+#: template-parts/header/site-navigation.php:15
+msgid "Menu"
+msgstr ""
+
+#. translators: %1$s: post author
+#: template-parts/post/author-bio.php:28
+#, php-format
+msgid "Published by %1$s"
+msgstr ""
+
+#. translators: %1$s: post author
+#: template-parts/post/author-bio.php:41
+#, php-format
+msgid "View all posts by %1$s"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Zaatar"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+#. Author URI of the plugin/theme
+#, fuzzy
+#| msgid "https://templatelens.com"
+msgid "https://flaven.fr/"
+msgstr "https://templatelens.com"
+
+#. Description of the plugin/theme
+msgid ""
+"Zaatar. The purple is 4F1993. Inspired by Allium (TemplateLens), Totomo "
+"(GretaThemes) & Supreme (Swift Ideas). Zaatar is a clean and minimalist "
+"theme that allows your reader to focus on your content. Zaatar is designed "
+"for news agencies, travel websites, business magazine, food recipes, health "
+"magazine, technology sites and all type of publishing or review site. Zaatar "
+"theme is fully compatible with Gutenberg content editor. Easy to use, no "
+"coding!"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Bruno Flaven, TemplateLens, GretaThemes & Swift Ideas"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "QuotesCloudSaveurs"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "GgAchab"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Home Zaatar"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "QuotesFlavors"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Clients Showcases"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "QuotesAuthors"
+msgstr ""

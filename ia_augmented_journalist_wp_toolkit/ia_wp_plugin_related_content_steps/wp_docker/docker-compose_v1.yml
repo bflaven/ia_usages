@@ -1,0 +1,52 @@
+services:
+  db:
+    image: mysql:8.0
+    platform: linux/arm64  # Explicit ARM64 for M4 Max
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      # MYSQL_DATABASE: wordpress
+      MYSQL_DATABASE: wordpress2
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3307:3306"  # Host:3307 → Container:3306
+
+  wordpress:
+    image: wordpress:latest
+    platform: linux/arm64  # ARM64 compatible
+    depends_on:
+      - db
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      # WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_NAME: wordpress2
+    ports:
+      - "8080:80"
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+
+  phpmyadmin:
+    image: linuxserver/phpmyadmin:latest  # Native ARM64 support
+    depends_on:
+      - db
+    restart: unless-stopped
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root
+      PUID: 1000
+      PGID: 1000
+    ports:
+      - "8081:80"
+    volumes:
+      - ./config/phpmyadmin:/config
+
+volumes:
+  db_data:
