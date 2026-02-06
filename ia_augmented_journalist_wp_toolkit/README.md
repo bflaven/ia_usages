@@ -38,12 +38,7 @@ This section focuses on adapting Whisper to under‑represented African language
   Training and fine‑tuning environment for Whisper (datasets, configs, and scripts) targeting African languages, including utilities for data curation, LoRA/finetune experiments, and evaluation (WER, CER) to measure gains over base models.
 
 
-## Introducing semantic clustering with the help of IA  into Wordpress via a plugin
 
-- ia_wp_plugin_related_content_embedding_tags_semantic_clustering: 
-- ia_wp_plugin_related_content_steps: 
-- ia_wp_plugin_tags: 
-- wp_plugin_related_content_steps: 
 
 
 
