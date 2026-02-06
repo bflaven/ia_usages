@@ -64,7 +64,7 @@ llm=HuggingFaceHub(repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",
 
 
 --- token form HF
-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
+hf_xxx-jhjkhj-xxx
 
 Get approval from Meta
 Get approval from HF
