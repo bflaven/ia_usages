@@ -66,6 +66,7 @@ llm=HuggingFaceHub(repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",
 --- token form HF
 hf_xxx-jhjkhj-xxx
 
+
 Get approval from Meta
 Get approval from HF
 Create a read token from here : https://huggingface.co/settings/tokens
