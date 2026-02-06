@@ -1,0 +1,1303 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Visual Composer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-14 14:13+0100\n"
+"PO-Revision-Date: 2012-04-14 14:18+0100\n"
+"Last-Translator: Bartosz Arendt <info@digitalfactory.pl>\n"
+"Language-Team: Digital Factory <info@digitalfactory.pl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2\n"
+"X-Poedit-Basepath: /Users/mmihey/Sites/framework/wp-content/plugins/js_composer\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../helper_functions.php:177
+#: ../helper_functions.php:197
+msgid "Added"
+msgstr "Dodano"
+
+#: ../js_composer.php:62
+#: ../js_composer_settings_menu.php:30
+msgid "Visual Composer Settings"
+msgstr "Ustawienia Edytora wizualnego"
+
+#: ../js_composer.php:62
+#: ../js_composer.php:91
+msgid "Visual Composer"
+msgstr "Edytor wizualny"
+
+#: ../js_composer.php:172
+#: ../js_composer.php:182
+msgid "Loading, please wait..."
+msgstr "Ładuję, proszę czekać..."
+
+#: ../js_composer.php:197
+msgid "Popular Layouts"
+msgstr "Popularne szablony"
+
+#: ../js_composer.php:203
+msgid "Content Elements"
+msgstr "Elementy treści"
+
+#: ../js_composer.php:212
+msgid "Templates"
+msgstr "Szablony"
+
+#: ../js_composer.php:379
+#: ../shortcodes_backend.php:339
+msgid "Edit"
+msgstr "Edytuj"
+
+#: ../js_composer.php:394
+#: ../template_system.php:6
+msgid "Save"
+msgstr "Zapisz"
+
+#: ../js_composer.php:473
+msgid "Add images"
+msgstr "Dodaj obrazki"
+
+#: ../js_composer_settings_menu.php:36
+msgid "Content types"
+msgstr "Rodzaje treści"
+
+#: ../js_composer_settings_menu.php:39
+#: ../map.php:579
+#: ../map.php:691
+msgid "Post types"
+msgstr "Typy wpisów"
+
+#: ../js_composer_settings_menu.php:60
+msgid "Select for which content types Visual Composer should be available during post creation/editing."
+msgstr "Wybierz dla jakiego rodzaju treści chcesz używać Edytoar wizualnego."
+
+#: ../js_composer_settings_menu.php:73
+msgid "Thank you"
+msgstr "Dziękujemy"
+
+#: ../js_composer_settings_menu.php:74
+msgid "Visual Composer will save you a lot of time while working with your sites content."
+msgstr "Edytor wizualny zaoszczędzi Ci mnóstwo czasu w pracy nad zawartością strony www."
+
+#: ../js_composer_settings_menu.php:75
+msgid "If you have comments or simply want to say \"Hi\", please check <a href=\"http://wpbakery.com/vc/\" title=\"\" target=\"_blank\">plugins homepage</a>."
+msgstr "Jeśli masz jakiekolwiek uwagi lub po prostu chesz powiedzieć \"Cześć\", odwiedź <a href=\"http://wpbakery.com/vc/\" title=\"\" target=\"_blank\">naszą stronę.</a>."
+
+#: ../map.php:12
+msgid "Text block"
+msgstr "Blok tekstowy"
+
+#: ../map.php:22
+#: ../map.php:927
+msgid "Text"
+msgstr "Tekst"
+
+#: ../map.php:24
+msgid "<p>I am text block. click the edit button to change this text.</p>"
+msgstr "<p>To jest blok tekstowy. Kliknij przycisk Edytuj aby zmienić ten tekst.</p>"
+
+#: ../map.php:25
+#: ../map.php:930
+msgid "Enter your content."
+msgstr "Wpisz treść."
+
+#: ../map.php:29
+#: ../map.php:67
+#: ../map.php:109
+#: ../map.php:145
+#: ../map.php:268
+#: ../map.php:333
+#: ../map.php:370
+#: ../map.php:428
+#: ../map.php:478
+#: ../map.php:619
+#: ../map.php:724
+#: ../map.php:756
+#: ../map.php:860
+#: ../map.php:934
+#: ../map.php:973
+#: ../map.php:1024
+msgid "Extra class name"
+msgstr "Dodaj dodatkową klasę CSS"
+
+#: ../map.php:32
+#: ../map.php:70
+#: ../map.php:112
+#: ../map.php:148
+#: ../map.php:271
+#: ../map.php:336
+#: ../map.php:373
+#: ../map.php:431
+#: ../map.php:481
+#: ../map.php:622
+#: ../map.php:727
+#: ../map.php:759
+#: ../map.php:863
+#: ../map.php:937
+#: ../map.php:976
+#: ../map.php:1027
+msgid "If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file."
+msgstr "Jeśli chcesz aby dany element wyglądał inaczej niż inne, użyj tego pola aby nadać mu klasę CSS i móc z niej skorzystać w pliku .css"
+
+#: ../map.php:40
+msgid "Twitter widget"
+msgstr "Blok Twitter"
+
+#: ../map.php:46
+#: ../map.php:285
+#: ../map.php:356
+#: ../map.php:414
+#: ../map.php:471
+#: ../map.php:523
+#: ../map.php:636
+#: ../map.php:742
+#: ../map.php:952
+#: ../map.php:990
+msgid "Widget title"
+msgstr "Nazwa bloku"
+
+#: ../map.php:49
+#: ../map.php:288
+#: ../map.php:359
+#: ../map.php:417
+#: ../map.php:474
+#: ../map.php:745
+msgid "What text use as widget title. Leave blank if no title is needed."
+msgstr "Wpisz tytuł dla tego bloku lub pozostaw puste, jeśli tytuł nie jest potrzebny."
+
+#: ../map.php:53
+msgid "Twitter name"
+msgstr "Nazwa profilu"
+
+#: ../map.php:56
+msgid "Type in twitter profile name from which load tweets."
+msgstr "Podaj nazwę profilu na Twitte'rze z którego ma być wgrywana treść."
+
+#: ../map.php:60
+msgid "Tweets count"
+msgstr "Liczba wpisów"
+
+#: ../map.php:63
+msgid "How many recent tweets to load."
+msgstr "Podaj ile wpisów z Twitter'a ma być wyświetlanych"
+
+#: ../map.php:78
+msgid "Separator (Divider)"
+msgstr "Separator"
+
+#: ../map.php:87
+msgid "Separator (Divider) with text"
+msgstr "Separator z tekstem"
+
+#: ../map.php:94
+#: ../map.php:97
+#: ../map.php:607
+#: ../map.php:712
+#: ../shortcodes.php:135
+msgid "Title"
+msgstr "Tytuł"
+
+#: ../map.php:98
+msgid "Separator title."
+msgstr "Tytuł separatora."
+
+#: ../map.php:102
+msgid "Title position"
+msgstr "Wybierz pozycję tytułu"
+
+#: ../map.php:104
+msgid "Align center"
+msgstr "Do środka"
+
+#: ../map.php:104
+#: ../map.php:920
+msgid "Align left"
+msgstr "Do lewej"
+
+#: ../map.php:104
+#: ../map.php:920
+msgid "Align right"
+msgstr "Do prawej"
+
+#: ../map.php:105
+msgid "Select title location."
+msgstr "Wybierz miejsce tytułu"
+
+#: ../map.php:121
+msgid "Message box"
+msgstr "Wiadomość tekstowa"
+
+#: ../map.php:129
+msgid "Message box type"
+msgstr "Typ wiadomości tekstowej"
+
+#: ../map.php:131
+msgid "Informational"
+msgstr "Informacja"
+
+#: ../map.php:131
+msgid "Warning"
+msgstr "Ostrzeżenie"
+
+#: ../map.php:131
+msgid "Success"
+msgstr "Powodzenie"
+
+#: ../map.php:131
+msgid "Error"
+msgstr "Błąd"
+
+#: ../map.php:132
+msgid "Select message type."
+msgstr "Wybierz rodzaj wiadomości."
+
+#: ../map.php:138
+msgid "Message text"
+msgstr "Wiadomość tekstowa"
+
+#: ../map.php:140
+msgid "I am message box. click the edit button to change this text."
+msgstr "To jest wiadomość tekstowa. Kliknij przycisk Edytuj aby zmienić ten tekst."
+
+#: ../map.php:141
+msgid "Message text."
+msgstr "Treść wiadomości."
+
+#: ../map.php:157
+msgid "Facebook like"
+msgstr "Przycisk Lubię z Facebook'a"
+
+#: ../map.php:164
+#: ../map.php:182
+msgid "Button type"
+msgstr "Rodzaj przycisku"
+
+#: ../map.php:166
+#: ../map.php:202
+msgid "Standard"
+msgstr "Standardowy"
+
+#: ../map.php:166
+msgid "Button count"
+msgstr "Przycisk z liczbą Like'ów"
+
+#: ../map.php:166
+msgid "Box count"
+msgstr "Blok z liczbą Like'ów"
+
+#: ../map.php:167
+#: ../map.php:185
+#: ../map.php:203
+#: ../map.php:228
+msgid "Select button type."
+msgstr "Wybierz typ przycisku."
+
+#: ../map.php:175
+msgid "Tweetmeme button"
+msgstr "Przycisk Twitter'a"
+
+#: ../map.php:184
+#: ../map.php:227
+msgid "Horizontal"
+msgstr "Heoryzontalnie"
+
+#: ../map.php:184
+#: ../map.php:227
+msgid "Vertical"
+msgstr "Wertykalnie"
+
+#: ../map.php:184
+#: ../map.php:209
+#: ../map.php:768
+msgid "None"
+msgstr "Brak"
+
+#: ../map.php:193
+msgid "Google+ button"
+msgstr "Przycisk Google+"
+
+#: ../map.php:200
+msgid "Button size"
+msgstr "Wielkość przycisku"
+
+#: ../map.php:202
+#: ../map.php:806
+msgid "Small"
+msgstr "Mały"
+
+#: ../map.php:202
+msgid "Medium"
+msgstr "Średni"
+
+#: ../map.php:202
+msgid "Tall"
+msgstr "Wysoki"
+
+#: ../map.php:207
+msgid "Annotation"
+msgstr "Notatka"
+
+#: ../map.php:209
+msgid "Inline"
+msgstr "W linii"
+
+#: ../map.php:209
+msgid "Bubble"
+msgstr "Chmurka"
+
+#: ../map.php:210
+msgid "Select annotation type."
+msgstr "Wybierz typ notatki."
+
+#: ../map.php:218
+msgid "Pinterest button"
+msgstr "Przycisk Pinterest"
+
+#: ../map.php:225
+msgid "Button layout"
+msgstr "Szablon przycisku"
+
+#: ../map.php:227
+msgid "No count"
+msgstr "Nie zliczaj"
+
+#: ../map.php:236
+msgid "FAQ (Toggle)"
+msgstr "FAQ (Rozwijany)"
+
+#: ../map.php:245
+#: ../map.php:247
+msgid "Toggle title"
+msgstr "Tutuł rozwijanego blogu"
+
+#: ../map.php:248
+msgid "Toggle block title."
+msgstr "Tytuł rozwijanego bloku."
+
+#: ../map.php:254
+msgid "Toggle content"
+msgstr "Rozwijana treść"
+
+#: ../map.php:256
+msgid "<p>Toggle content goes here, click the edit button.</p>"
+msgstr "<p>Tu powinna znaleźć się treść rozwijanego bloku.</p>"
+
+#: ../map.php:257
+msgid "Toggle block content."
+msgstr "Blok z treścią rozwijanego przycisku."
+
+#: ../map.php:261
+msgid "Default state"
+msgstr "Stan domyśłny"
+
+#: ../map.php:263
+msgid "Closed"
+msgstr "Zamknięte"
+
+#: ../map.php:263
+msgid "Open"
+msgstr "Otwóz"
+
+#: ../map.php:264
+msgid "Select this if you want toggle to be open by default."
+msgstr "Zaznacz to jeśli chcesz aby było domyślnie otwarte."
+
+#: ../map.php:279
+msgid "Image gallery"
+msgstr "Galeria obrazków"
+
+#: ../map.php:292
+msgid "Gallery type"
+msgstr "Typ galerii"
+
+#: ../map.php:294
+msgid "Flex slider fade"
+msgstr "Flex slider zanikanie"
+
+#: ../map.php:294
+msgid "Flex slider slide"
+msgstr "Flex slider przesuwanie"
+
+#: ../map.php:294
+msgid "Nivo slider"
+msgstr "Nivo slider"
+
+#: ../map.php:294
+msgid "Image grid"
+msgstr "Siatka obrazków"
+
+#: ../map.php:295
+msgid "Select gallery type. Note: Nivo slider is not fully responsive."
+msgstr "Wybierz rodzaj galerii."
+
+#: ../map.php:299
+#: ../map.php:363
+#: ../map.php:421
+#: ../map.php:657
+msgid "Auto rotate slides"
+msgstr "Automatycznie zmieniaj slajdy"
+
+#: ../map.php:302
+#: ../map.php:366
+#: ../map.php:424
+#: ../map.php:660
+msgid "Auto rotate slides each X seconds. Select 0 to disable."
+msgstr "Automatycznie zmieniaj slajdy co X sekund. Wybierz 0 aby wyłączyć tę funkcję."
+
+#: ../map.php:306
+msgid "On click"
+msgstr "Po kliknięciu"
+
+#: ../map.php:308
+msgid "Open prettyPhoto"
+msgstr "Otwórz prettyPhoto"
+
+#: ../map.php:308
+msgid "Do nothing"
+msgstr "Nie rób nic"
+
+#: ../map.php:308
+#: ../map.php:673
+msgid "Open custom link"
+msgstr "Otwóz własny link"
+
+#: ../map.php:309
+msgid "What to do when slide is clicked?."
+msgstr "Co robić po kliknięciu w slajd?"
+
+#: ../map.php:313
+msgid "Image size"
+msgstr "Wielkość obrazka"
+
+#: ../map.php:316
+msgid "Enter image size. Example: thumbnail, medium, large, full or other sizes defined by current theme. Alternatively enter image size in pixels: 200x100 (Width x Height). Leave empty to use 'thumbnail' size."
+msgstr "Wpisz rozmiar obrazka. Przykład: miniatura, średni, duży, pełny lub inne wielkości określone w używanym motywie. Alternatywnie możesz wpisać rozmiar w pikselach: 200x100 (szerokość x wysokość). Jeśli zostawisz to pole puste zostanie zastosowana wielkość miniatury."
+
+#: ../map.php:320
+msgid "Images"
+msgstr "Obrazki"
+
+#: ../map.php:327
+#: ../map.php:678
+msgid "Custom links"
+msgstr "Własne linki"
+
+#: ../map.php:329
+msgid "Select \"Open custom link\" in \"On click\" parameter and then enter links for each slide here. Divide links with linebreaks (Enter)."
+msgstr "Wybierz \"Otwórz własny link\" lub parametr \"Po kliknięciu\" i dodaj linki dla każdego ze slajdów. Każdy link napisz w oddzielnym rzędzie."
+
+#: ../map.php:349
+msgid "Tabs"
+msgstr "Zakładki"
+
+#: ../map.php:378
+msgid "Add tab"
+msgstr "Dodaj zakłądkę"
+
+#: ../map.php:379
+msgid "Edit current tab title"
+msgstr "Edytuj tytuł aktualnej zakłądki"
+
+#: ../map.php:380
+msgid "Delete current tab"
+msgstr "Usuń aktualną zakładkę"
+
+#: ../map.php:388
+msgid "Tab 1"
+msgstr "Zakładka 1"
+
+#: ../map.php:389
+msgid "Tab 2"
+msgstr "Zakładka 2"
+
+#: ../map.php:393
+#: ../map.php:397
+#: ../map.php:451
+#: ../map.php:455
+#: ../map.php:499
+#: ../map.php:507
+msgid "I am text block. click the edit button to change this text."
+msgstr "To jest blok tekstowy. Kliknij przycisk Edytuj aby zmienić ten tekst."
+
+#: ../map.php:406
+msgid "Tour section"
+msgstr "Sposób nawigacji"
+
+#: ../map.php:436
+msgid "Add slide"
+msgstr "Dodaj slajd"
+
+#: ../map.php:437
+msgid "Edit current slide title"
+msgstr "Edytuj tytuł aktualnego slajdu"
+
+#: ../map.php:438
+msgid "Delete current slide"
+msgstr "Usuń aktualny slajd"
+
+#: ../map.php:446
+msgid "Slide 1"
+msgstr "Slajd 1"
+
+#: ../map.php:447
+msgid "Slide 2"
+msgstr "Slajd 2"
+
+#: ../map.php:463
+msgid "Accordion section"
+msgstr "Dział zwijany"
+
+#: ../map.php:486
+msgid "Add section"
+msgstr "Dodaj dział"
+
+#: ../map.php:487
+msgid "Edit current section title"
+msgstr "Edytuj tytuł zaznaczenia"
+
+#: ../map.php:488
+msgid "Delete current section"
+msgstr "Usuń aktualne zaznaczenie"
+
+#: ../map.php:496
+msgid "Section 1"
+msgstr "Dział 1"
+
+#: ../map.php:504
+msgid "Section 2"
+msgstr "Dział 2"
+
+#: ../map.php:517
+msgid "Teaser (posts) grid"
+msgstr "Lista wpisów"
+
+#: ../map.php:526
+#: ../map.php:639
+#: ../map.php:955
+#: ../map.php:993
+msgid "Heading text. Leave it empty if not needed."
+msgstr "Treść nagłówka. Pozostaw to pole puste, jeśli tytuł nie jest potrzebny."
+
+#: ../map.php:530
+msgid "Columns count"
+msgstr "Liczba kolumn."
+
+#: ../map.php:533
+msgid "Select columns count."
+msgstr "Wybierz liczbę kolumn."
+
+#: ../map.php:537
+msgid "Teaser count"
+msgstr "Liczba wpisów"
+
+#: ../map.php:540
+msgid "How many teasers to show? Enter number or \"All\"."
+msgstr "Wpisz ile wpisów pokazać. Wpisz liczbę lub określenie \"All\"."
+
+#: ../map.php:544
+msgid "Content"
+msgstr "Treść"
+
+#: ../map.php:546
+#: ../map.php:666
+msgid "Teaser (Excerpt)"
+msgstr "Wypis"
+
+#: ../map.php:546
+msgid "Full Content"
+msgstr "Cała treść"
+
+#: ../map.php:547
+#: ../map.php:568
+msgid "Teaser layout template."
+msgstr "Wybierz szablon listy wpisów."
+
+#: ../map.php:551
+msgid "Layout"
+msgstr "Szablon"
+
+#: ../map.php:553
+msgid "Title + Thumbnail + Text"
+msgstr "Tytuł + miniatura + tekst"
+
+#: ../map.php:553
+msgid "Thumbnail + Title + Text"
+msgstr "Miniatura + tytuł + tekst"
+
+#: ../map.php:553
+msgid "Thumbnail + Text"
+msgstr "Miniatura + tekst"
+
+#: ../map.php:553
+msgid "Thumbnail + Title"
+msgstr "Miniatura + tytuł"
+
+#: ../map.php:553
+msgid "Thumbnail only"
+msgstr "Tylko miniatura"
+
+#: ../map.php:553
+msgid "Title + Text"
+msgstr "Tytuł + tekst"
+
+#: ../map.php:554
+msgid "Teaser layout."
+msgstr "Wybierz sposób wyświetlania wpisów."
+
+#: ../map.php:558
+#: ../map.php:671
+msgid "Link"
+msgstr "Link"
+
+#: ../map.php:560
+#: ../map.php:673
+msgid "Link to post"
+msgstr "Link do wpisu"
+
+#: ../map.php:560
+#: ../map.php:673
+msgid "Link to bigger image"
+msgstr "Link do powiększonego obrazka"
+
+#: ../map.php:560
+msgid "Thumbnail to bigger image, title to post"
+msgstr "Miniatura to link powiększonego obrazka, tytuł link do wpisu"
+
+#: ../map.php:560
+#: ../map.php:673
+msgid "No link"
+msgstr "Brak linku"
+
+#: ../map.php:561
+#: ../map.php:674
+msgid "Link type."
+msgstr "Rodzaj linku."
+
+#: ../map.php:565
+msgid "Template"
+msgstr "Szablon"
+
+#: ../map.php:567
+msgid "Grid"
+msgstr "Tabela"
+
+#: ../map.php:567
+msgid "Carousel"
+msgstr "Karuzela"
+
+#: ../map.php:572
+#: ../map.php:684
+msgid "Thumbnail size"
+msgstr "Wielkość miniatury"
+
+#: ../map.php:575
+#: ../map.php:687
+msgid "Enter thumbnail size. Example: thumbnail, medium, large, full or other sizes defined by current theme. Alternatively enter image size in pixels: 200x100 (Width x Height)."
+msgstr "Wpisz rozmiar miniatury. Przykład: miniatura, średni, duży, pełny lub inne wielkości określone w używanym motywie. Alternatywnie możesz wpisać rozmiar w pikselach: 200x100 (szerokość x wysokość)."
+
+#: ../map.php:581
+#: ../map.php:693
+msgid "Select post types to populate posts from."
+msgstr "Wybierztypy wpisów z których mają być wyświetlane wpisy."
+
+#: ../map.php:585
+#: ../map.php:697
+msgid "Post/Page IDs"
+msgstr "ID wpisu/strony"
+
+#: ../map.php:588
+msgid "Fill this field with page/posts IDs separated by commas (,) to retrieve only them. Use this in conjunction with \"Post types\" field."
+msgstr "Wypełnij to pole numerami ID stron/wpisów oddzielając je przecinkami. Użyj tej funkcji w połączeniu z polem \"Typy wpisów\""
+
+#: ../map.php:592
+msgid "Exclude Post/Page IDs"
+msgstr "Wyklucz ID wpisu/strony"
+
+#: ../map.php:595
+msgid "Fill this field with page/posts IDs separated by commas (,) to exclude them from query."
+msgstr "Wypełnij to pole numerami ID stron/wpisów oddzielając je przecinkami, aby wykluczyć je z zapytania."
+
+#: ../map.php:599
+#: ../map.php:704
+msgid "Categories"
+msgstr "Kategorie"
+
+#: ../map.php:601
+#: ../map.php:706
+msgid "If you want to narrow output, enter category names here. Note: Only listed categories will be included. Divide categories with linebreaks (Enter)."
+msgstr "Jeśli chcesz ograniczyć wyświetlanie do kilku kategorii podaj tu ich nazwy. Uwaga: tylko wpisy z podanych kategorii będą wyświetlane. Każda kategoria powinna być podana w oddzielnym wierszu!"
+
+#: ../map.php:605
+#: ../map.php:612
+#: ../map.php:710
+#: ../map.php:717
+msgid "Order by"
+msgstr "Sortuj wg"
+
+#: ../map.php:607
+#: ../map.php:712
+msgid "Date"
+msgstr "Daty"
+
+#: ../map.php:607
+#: ../map.php:712
+msgid "ID"
+msgstr "ID"
+
+#: ../map.php:607
+#: ../map.php:712
+msgid "Author"
+msgstr "Autora"
+
+#: ../map.php:607
+#: ../map.php:712
+msgid "Modified"
+msgstr "Daty modyfikacji"
+
+#: ../map.php:607
+#: ../map.php:712
+msgid "Random"
+msgstr "Losowo"
+
+#: ../map.php:607
+#: ../map.php:712
+msgid "Comment count"
+msgstr "Liczba komentarzy"
+
+#: ../map.php:607
+#: ../map.php:712
+msgid "Menu order"
+msgstr "Kolejności w menu"
+
+#: ../map.php:608
+#: ../map.php:713
+msgid "Select how to sort retrieved posts. More at <a href=\"http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters\" target=\"_blank\">WordPress codex page</a>."
+msgstr "Zaznacz jak chcesz posortować wpisy."
+
+#: ../map.php:614
+#: ../map.php:719
+msgid "Descending"
+msgstr "Malejąco"
+
+#: ../map.php:614
+#: ../map.php:719
+msgid "Ascending"
+msgstr "Rosnąco"
+
+#: ../map.php:615
+#: ../map.php:720
+msgid "Designates the ascending or descending order. More at <a href=\"http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters\" target=\"_blank\">WordPress codex page</a>."
+msgstr "Określa rosnący lub malejący kierunek sortowania. "
+
+#: ../map.php:630
+msgid "Posts slider"
+msgstr "Pokaz slajdów wpisów"
+
+#: ../map.php:643
+msgid "Slider type"
+msgstr "Typ pokazu slajdów"
+
+#: ../map.php:646
+msgid "Select slider type. Note: Nivo slider is not fully responsive."
+msgstr "Wybierz rodzaj pokazu slajdów."
+
+#: ../map.php:650
+msgid "Slides count"
+msgstr "Liczba slajdów"
+
+#: ../map.php:653
+msgid "How many slides to show? Enter number or \"All\"."
+msgstr "Ile slajdów ma być wyświetlonych. Wpisz liczbę lub wybierz \"Wszystkie\"."
+
+#: ../map.php:664
+msgid "Description"
+msgstr "Opis"
+
+#: ../map.php:666
+msgid "No description"
+msgstr "Brak opisu"
+
+#: ../map.php:667
+msgid "Some sliders support description text, what content use for it?"
+msgstr "Niektóre pokazy slajdów umożłiwiają dodanie opisu. Wybierz jaka ma być jego zawartość?"
+
+#: ../map.php:680
+msgid "Select \"Open custom link\" in \"Link\" parameter and then enter links for each slide here. Divide links with linebreaks (Enter)."
+msgstr "Wybierz \"Otwórz własny link\" w parametrze \"Link\" i dodaj linki dla każdego ze slajdów. Każdy link napisz w oddzielnym rzędzie."
+
+#: ../map.php:700
+msgid "Fill this field with page/posts IDs separated by commas (,), to retrieve only them. Use this in conjunction with \"Post types\" field."
+msgstr "Wypełnij to pole numerami ID stron/wpisów oddzielając je przecinkami. Użyj tej funkcji w połączeniu z polem \"Typy wpisów\""
+
+#: ../map.php:735
+msgid "Widgetised Sidebar"
+msgstr "Panel boczny z widgetami"
+
+#: ../map.php:749
+msgid "Sidebar"
+msgstr "Panel boczny"
+
+#: ../map.php:752
+msgid "Select which widget area output."
+msgstr "Wybierz z jakiego pola mają być wyświetlane widgety."
+
+#: ../map.php:769
+msgid "Address book icon"
+msgstr "Książka adresowa"
+
+#: ../map.php:770
+msgid "Alarm clock icon"
+msgstr "Budzik"
+
+#: ../map.php:771
+msgid "Anchor icon"
+msgstr "Kotwica"
+
+#: ../map.php:772
+msgid "Application Image icon"
+msgstr "Aplikacja"
+
+#: ../map.php:773
+msgid "Arrow icon"
+msgstr "Strzałka"
+
+#: ../map.php:774
+msgid "Asterisk icon"
+msgstr "Asterisk"
+
+#: ../map.php:775
+msgid "Hammer icon"
+msgstr "Młot"
+
+#: ../map.php:776
+msgid "Balloon icon"
+msgstr "Chmurka"
+
+#: ../map.php:777
+msgid "Balloon Buzz icon"
+msgstr "Chmurka Chrome"
+
+#: ../map.php:778
+msgid "Balloon Facebook icon"
+msgstr "Chmurka Facebook"
+
+#: ../map.php:779
+msgid "Balloon Twitter icon"
+msgstr "Chmurka Twitter"
+
+#: ../map.php:780
+msgid "Battery icon"
+msgstr "Bateria"
+
+#: ../map.php:781
+msgid "Binocular icon"
+msgstr "Lornetka"
+
+#: ../map.php:782
+msgid "Document Excel icon"
+msgstr "Dokument Excel'a"
+
+#: ../map.php:783
+msgid "Document Image icon"
+msgstr "Dokument z obrazkiem"
+
+#: ../map.php:784
+msgid "Document Music icon"
+msgstr "Dokument z muzyką"
+
+#: ../map.php:785
+msgid "Document Office icon"
+msgstr "Dukument Office'a"
+
+#: ../map.php:786
+msgid "Document PDF icon"
+msgstr "Dokument PDF"
+
+#: ../map.php:787
+msgid "Document Powerpoint icon"
+msgstr "Dokument PowerPoint'a"
+
+#: ../map.php:788
+msgid "Document Word icon"
+msgstr "Dokument Word'a"
+
+#: ../map.php:789
+msgid "Bookmark icon"
+msgstr "Bookmark"
+
+#: ../map.php:790
+msgid "Camcorder icon"
+msgstr "Kamera"
+
+#: ../map.php:791
+msgid "Camera icon"
+msgstr "Aparat"
+
+#: ../map.php:792
+msgid "Chart icon"
+msgstr "Wykres"
+
+#: ../map.php:793
+msgid "Chart pie icon"
+msgstr "Wykres kołowy"
+
+#: ../map.php:794
+msgid "Clock icon"
+msgstr "Zegar"
+
+#: ../map.php:795
+msgid "Fire icon"
+msgstr "Ogień"
+
+#: ../map.php:796
+msgid "Heart icon"
+msgstr "Serce"
+
+#: ../map.php:797
+msgid "Mail icon"
+msgstr "E-mail"
+
+#: ../map.php:798
+msgid "Play icon"
+msgstr "Odtwarzaj"
+
+#: ../map.php:799
+msgid "Shield icon"
+msgstr "Tarcza"
+
+#: ../map.php:800
+msgid "Video icon"
+msgstr "Video"
+
+#: ../map.php:804
+msgid "Grey"
+msgstr "Szary"
+
+#: ../map.php:804
+msgid "Blue"
+msgstr "Niebieski"
+
+#: ../map.php:804
+msgid "Turquoise"
+msgstr "Turkusowy"
+
+#: ../map.php:804
+msgid "Green"
+msgstr "Zielony"
+
+#: ../map.php:804
+msgid "Orange"
+msgstr "Pomarańczowy"
+
+#: ../map.php:804
+msgid "Red"
+msgstr "Czerwony"
+
+#: ../map.php:804
+msgid "Black"
+msgstr "Czarny"
+
+#: ../map.php:806
+msgid "Regular size"
+msgstr "Rozmiar normalny"
+
+#: ../map.php:806
+msgid "Large"
+msgstr "Duży"
+
+#: ../map.php:806
+msgid "Mini"
+msgstr "Mini"
+
+#: ../map.php:808
+msgid "Same window"
+msgstr "W tym samym oknie"
+
+#: ../map.php:808
+msgid "New window"
+msgstr "W nowym oknie"
+
+#: ../map.php:811
+msgid "Button"
+msgstr "Przycisk"
+
+#: ../map.php:818
+#: ../map.php:822
+#: ../map.php:878
+#: ../map.php:880
+#: ../shortcodes.php:298
+#: ../shortcodes.php:343
+msgid "Text on the button"
+msgstr "Tekst przycisku."
+
+#: ../map.php:823
+#: ../map.php:881
+msgid "Text on the button."
+msgstr "Tekst przycisku."
+
+#: ../map.php:827
+#: ../map.php:885
+msgid "URL (Link)"
+msgstr "Adres URL (link)"
+
+#: ../map.php:830
+#: ../map.php:888
+msgid "Button link."
+msgstr "Link przycisku."
+
+#: ../map.php:834
+#: ../map.php:892
+msgid "Color"
+msgstr "Kolor"
+
+#: ../map.php:837
+#: ../map.php:895
+msgid "Button color."
+msgstr "Kolor przycisku."
+
+#: ../map.php:841
+#: ../map.php:899
+msgid "Size"
+msgstr "Rozmiar"
+
+#: ../map.php:844
+#: ../map.php:902
+msgid "Button size."
+msgstr "Wielkość przycisku."
+
+#: ../map.php:848
+#: ../map.php:906
+msgid "Icon"
+msgstr "Ikona"
+
+#: ../map.php:854
+#: ../map.php:912
+msgid "Target"
+msgstr "Otwórz w"
+
+#: ../map.php:871
+msgid "Call to action button"
+msgstr "Przycisk akcji"
+
+#: ../map.php:918
+msgid "Button position"
+msgstr "Pozycja przycisku"
+
+#: ../map.php:920
+msgid "Align bottom"
+msgstr "Do dołu"
+
+#: ../map.php:921
+#: ../map.php:1014
+msgid "Select button alignment."
+msgstr "Wybierz rodzaj wyrównania przycisku."
+
+#: ../map.php:929
+msgid "click the edit button to change this text."
+msgstr "Kliknij przycisk edytuj aby zmienić ten tekst."
+
+#: ../map.php:946
+msgid "Video player"
+msgstr "Odtwarzacz wideo"
+
+#: ../map.php:959
+msgid "Video link"
+msgstr "Link do pliku video"
+
+#: ../map.php:962
+msgid "Link to the video. More about supported formats at <a href=\"http://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F\" target=\"_blank\">WordPress codex page</a>."
+msgstr "Link do pliku video."
+
+#: ../map.php:966
+msgid "Video size"
+msgstr "Rozmiar video"
+
+#: ../map.php:969
+msgid "Enter video size in pixels. Example: 200x100 (Width x Height)."
+msgstr "Podaj wielkość video w pikselach, np. 200x100 (szerokość x wysokość)."
+
+#: ../map.php:984
+msgid "Google maps"
+msgstr "Mapy Google"
+
+#: ../map.php:997
+msgid "Google map link"
+msgstr "Link do mapy Google"
+
+#: ../map.php:1000
+msgid "Link to your map. Visit <a href=\"http://maps.google.com\" target=\"_blank\">Google maps</a> find your address and then click \"Link\" button to obtain your map link."
+msgstr "Link do Twojej mapy."
+
+#: ../map.php:1004
+msgid "Map height"
+msgstr "Wysokość mapy"
+
+#: ../map.php:1007
+msgid "Enter map height in pixels. Example: 200)."
+msgstr "Podaj wysokość mapy w pikselach, np. 200."
+
+#: ../map.php:1011
+msgid "Map type"
+msgstr "Rodzaj mapy"
+
+#: ../map.php:1013
+msgid "Map"
+msgstr "Mapa"
+
+#: ../map.php:1013
+msgid "Satellite"
+msgstr "Satelita"
+
+#: ../map.php:1013
+msgid "Map + Terrain"
+msgstr "Mapa + teren"
+
+#: ../map.php:1018
+msgid "Map Zoom"
+msgstr "Powiększenie mapy"
+
+#: ../map.php:1020
+msgid "14 - Default"
+msgstr "14 - domyślne"
+
+#: ../shortcodes.php:110
+msgid "Follow us on twitter"
+msgstr "Śledź nas na Twitterze"
+
+#: ../shortcodes.php:182
+msgid "Tweet"
+msgstr "Tweet"
+
+#: ../shortcodes.php:236
+msgid "Click to toggle"
+msgstr "Kliknij aby rozwinąć"
+
+#: ../shortcodes.php:462
+msgid "Previous slide"
+msgstr "Poprzedni slajd"
+
+#: ../shortcodes.php:462
+msgid "Next slide"
+msgstr "Nastęny slajd"
+
+#: ../shortcodes.php:475
+#: ../shortcodes_backend.php:145
+msgid "Tab"
+msgstr "Zakłądka"
+
+#: ../shortcodes.php:520
+#: ../shortcodes_backend.php:203
+msgid "Section"
+msgstr "Dział"
+
+#: ../shortcodes.php:698
+msgid "Read more"
+msgstr "Zobacz więcej"
+
+#: ../shortcodes.php:824
+#: ../shortcodes.php:1034
+msgid "Nothing found."
+msgstr "Nie znaleziono."
+
+#: ../shortcodes.php:996
+msgid "No Featured image set."
+msgstr "Ikona wpisu nie została wybrana."
+
+#: ../shortcodes_backend.php:337
+msgid "Decrease width"
+msgstr "Zmiejsz wysokość"
+
+#: ../shortcodes_backend.php:337
+msgid "Increase width"
+msgstr "Zwiększ szerokość"
+
+#: ../shortcodes_backend.php:340
+msgid "Pop up"
+msgstr "Wyskakujące okno"
+
+#: ../shortcodes_backend.php:341
+msgid "Clone"
+msgstr "Klonuj"
+
+#: ../shortcodes_backend.php:341
+msgid "Delete"
+msgstr "Usuń"
+
+#: ../shortcodes_backend.php:342
+msgid "Delete %element%"
+msgstr "Skasuj %element%"
+
+#: ../template_system.php:7
+msgid "Save current page as a Template"
+msgstr "Zapisz obecną stronę jako szablon"
+
+#: ../template_system.php:9
+msgid "Load Template"
+msgstr "Wczytaj szablon"
+
+#: ../template_system.php:27
+msgid "No custom templates yet."
+msgstr "Brak własnych szablonów."
+
+#~ msgid "Upload/Insert"
+#~ msgstr "Wgraj/Wstaw"
+
+#~ msgid "Add an Image"
+#~ msgstr "Dodaj obrazek"
+
+#~ msgid "Switch Editors"
+#~ msgstr "Zmień edytor"
+
+#~ msgid "Grid details"
+#~ msgstr "Szczegóły szablonu"
+
+#~ msgid "Gap between columns"
+#~ msgstr "Przerwa pomiędzy kolumnami"
+
+#~ msgid "CSS rule prefix. Example (.class-name or #id)"
+#~ msgstr "Własna klasa CSS, np. (.nazwa-klasy lub #id)"
+
+#~ msgid ""
+#~ "If you will leave Custom grid settings empty, then percent based values "
+#~ "will be used instead."
+#~ msgstr ""
+#~ "Jeśli zostawisz własne ustawienia szablonu puste, zostaną zastosowane "
+#~ "wartości procentowe."
+
+#~ msgid ""
+#~ "Hint: Grid width should be a number in pixels, this is contents inner "
+#~ "width value. CSS prefix is useful if you want to generate multiple grids. "
+#~ "Eg. one for fullwidth page, one for page with column."
+#~ msgstr ""
+#~ "Podpowiedź: Długość szablonu powinna być określona w pikselach. Dodanie "
+#~ "klasy CSS będzie przydatne, jeżeli chcesz zdefiniować kilka różnych "
+#~ "szablonów, np. jeden dla strony na całą szerokość, drugi dla strony z "
+#~ "kilkoma kolumnami."
+
+#~ msgid "Gallery"
+#~ msgstr "Galeria"
+
+#~ msgid "Select gallery type."
+#~ msgstr "Wybierz typ galerii."
+
+#~ msgid ""
+#~ "Enter image thumbnail size in pixels. Example: 200x100 (Width x Height)."
+#~ msgstr ""
+#~ "Wpisz wielkość miniatury w pikselach, np. 200 x 100 (szerokość x "
+#~ "wysokość)."
+
+#~ msgid ""
+#~ "If you wish to style particular posts grid differently, then use this "
+#~ "field to add a class name and then refer to it in your css file."
+#~ msgstr ""
+#~ "Jeśli chcesz aby ten szablon wyglądał inaczej niż inne, użyj tego pola "
+#~ "aby nadać mu klasę CSS i móc z niej skorzystać w pliku .css"
+
+#~ msgid "Yellow"
+#~ msgstr "Żółty"

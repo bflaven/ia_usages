@@ -1,0 +1,101 @@
+======================================================================
+NER RESULTS
+======================================================================
+
+Language: Portuguese (Brazilian) (pt)
+Model size: large
+Transcript file: source/brazilian/LINHA_DIRETA_22_1_large.txt
+Tags file: source_thema/RFI_BR_thematicTags.py
+
+Total entity mentions: 47
+Unique entities: 39
+Matched to thematic tags: 32
+Unmatched entities: 6
+
+======================================================================
+ENTITIES BY TYPE
+======================================================================
+
+LOC (28 mentions):
+  • faixa de Gaza → Faixa de Gaza (confidence: 0.98)
+  • Israel → Israel (confidence: 0.97)
+  • reconstru → Reconstrução (confidence: 0.69)
+  • de Gaza → Faixa de Gaza (confidence: 0.93)
+  • A → Parteiras (confidence: 1.00)
+  • rábia Saudita → Arábia Saudita (confidence: 0.86)
+  • Argentina → Argentina (confidence: 1.00)
+  • Turquia → Turquia (confidence: 1.00)
+  • Egito → Egito (confidence: 1.00)
+  • Jordânia → Jordânia (confidence: 1.00)
+  • Indonésia → Indonésia (confidence: 1.00)
+  • Paquistão → Paquistão (confidence: 1.00)
+  • Catar → Catar (confidence: 0.99)
+  • Emirados Árabes Unidos → Emirados Árabes Unidos (confidence: 1.00)
+  • Bahrein → Bahrein (confidence: 1.00)
+  • Albânia → Albânia (confidence: 1.00)
+  • Armênia → Armênia (confidence: 1.00)
+  • Azerbaijão (confidence: 0.99)
+  • Belarus → Belarus (confidence: 1.00)
+  • Hungria → Hungria (confidence: 1.00)
+  • Ca → Canadá (confidence: 1.00)
+  • zaquistão → Cazaquistão (confidence: 0.97)
+  • Kosovo → Kosovo (confidence: 1.00)
+  • Marrocos → Marrocos (confidence: 0.91)
+  • Vietnã → Vietnã (confidence: 0.99)
+  • Estado → Grupo Estado Islâmico (confidence: 0.91)
+
+ORG (12 mentions):
+  • Conselho da Paz (confidence: 1.00)
+  • Casa Branca → Casa Branca (confidence: 0.97)
+  • Hamas → Hamas (confidence: 0.78)
+  • Associated Press (confidence: 0.97)
+  • Branca → Casa Branca (confidence: 0.79)
+  • de → Geert Wilders (confidence: 0.45)
+  • pontos (confidence: 0.48)
+  • de Gaza → Faixa de Gaza (confidence: 0.67)
+  • autoridade → Autoridade Palestina (confidence: 0.77)
+  • a → Parteiras (confidence: 0.72)
+
+PER (7 mentions):
+  • Donald Trump → Donald Trump (confidence: 0.99)
+  • Casa → Casais (confidence: 0.51)
+  • plano → Plano (confidence: 0.74)
+  • 20 → Golden Globes 2014 (confidence: 0.42)
+  • de Trump (confidence: 0.71)
+
+======================================================================
+MATCHED THEMATIC TAGS
+======================================================================
+
+    1. Albânia
+    2. Argentina
+    3. Armênia
+    4. Arábia Saudita
+    5. Autoridade Palestina
+    6. Bahrein
+    7. Belarus
+    8. Canadá
+    9. Casa Branca
+   10. Casais
+   11. Catar
+   12. Cazaquistão
+   13. Donald Trump
+   14. Egito
+   15. Emirados Árabes Unidos
+   16. Faixa de Gaza
+   17. Geert Wilders
+   18. Golden Globes 2014
+   19. Grupo Estado Islâmico
+   20. Hamas
+   21. Hungria
+   22. Indonésia
+   23. Israel
+   24. Jordânia
+   25. Kosovo
+   26. Marrocos
+   27. Paquistão
+   28. Parteiras
+   29. Plano
+   30. Reconstrução
+   31. Turquia
+   32. Vietnã

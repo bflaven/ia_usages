@@ -1,0 +1,30 @@
+======================================================================
+NER RESULTS
+======================================================================
+
+Language: Kiswahili (sw)
+Model size: Whisper Large
+Transcript file: source/kiswahili/SIHA_NJEMA13-01-26_OK_whisper_large_kiswahili.txt
+Tags file: source_thema/RFI_SW_thematicTags.py
+
+Total entity mentions: 4
+Unique entities: 4
+Matched to thematic tags: 2
+Unmatched entities: 1
+
+======================================================================
+ENTITIES BY TYPE
+======================================================================
+
+ORG (4 mentions):
+  • Muziki → Muziki (confidence: 0.74)
+  • Muziki Muziki Muziki Muziki Muziki Muzikiенное Muziki Muziki Muziki Muziki Muziki Muziki Muziki Muziki Muziki → Muziki (confidence: 0.86)
+  • Sistemi (confidence: 0.85)
+  • nye → Nicholas Musonye (confidence: 0.74)
+
+======================================================================
+MATCHED THEMATIC TAGS
+======================================================================
+
+    1. Muziki
+    2. Nicholas Musonye

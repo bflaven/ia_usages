@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1570,
+    "count": 1,
+    "description": "",
+    "link": "https://flaven.fr/tag/18daysinegypt/",
+    "name": "#18DaysInEgypt",
+    "slug": "18daysinegypt",
+    "taxonomy": "post_tag",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://flaven.fr/wp-json/wp/v2/tags/1570",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://flaven.fr/wp-json/wp/v2/tags"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://flaven.fr/wp-json/wp/v2/taxonomies/post_tag"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://flaven.fr/wp-json/wp/v2/posts?tags=1570"
+        },
+        {
+          "href": "https://flaven.fr/wp-json/wp/v2/clients?tags=1570"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

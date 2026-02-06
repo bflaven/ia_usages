@@ -1,0 +1,485 @@
+{
+  "metadata": {
+    "language": "pt",
+    "language_name": "Portuguese (Brazilian)",
+    "model_size": "large",
+    "transcript_file": "source/brazilian/LINHA_DIRETA_22_1_large.txt",
+    "tags_file": "source_thema/RFI_BR_thematicTags.py",
+    "ner_model": "Davlan/xlm-roberta-base-wikiann-ner"
+  },
+  "statistics": {
+    "transcript_length": 4819,
+    "total_entities": 47,
+    "unique_entities": 39,
+    "matched_tags_count": 32,
+    "unmatched_count": 6
+  },
+  "transcript": "Linha Direta Originalmente, se é que a gente pode usar esse termo, do que se trata o Conselho da Paz criado por Donald Trump? Especificamente na faixa de Gaza, a Casa Branca afirma que o objetivo do Conselho da Paz é colocar em prática os 20 pontos do plano de Donald Trump que estabeleceu em outubro do ano passado o cessar-fogo entre Israel e Hamas. Apesar de acusações de violações entre as partes e da fragilidade da situação, a guerra parou. O plano de Trump para a faixa de Gaza tem metas importantes. Como a desmilitarização do território, a retirada das tropas israelenses, a introdução de uma força internacional de estabilização, o desarmamento do Hamas e a reconstrução de Gaza. Segundo uma fonte com a qual a RFI conversou, uma das principais dúvidas em Israel é em relação ao momento em que cada uma dessas metas passará a ser cumprida. Ou seja, se cada um desses passos será dado de forma escalonada e em qual ordem, ou se todos eles vão ocorrer ao mesmo tempo. Arábia Saudita, Argentina, Turquia, Egito, Jordânia, Indonésia, Paquistão, Catar, Emirados Árabes Unidos, Bahrein, Albânia, Armênia, Azerbaijão, Belarus, Hungria, Israel, Cazaquistão, Kosovo, Marrocos e Vietnã aceitaram o convite de Donald Trump para integrar a entidade. Segundo a Associated Press, um oficial da Casa Branca disse que a expectativa é que cerca de 30 países façam parte do conselho. Até agora, 50 foram convidados pelos Estados Unidos. E, Henry, qual é o projeto deste conselho para os palestinos? O Conselho da Paz tem como documento a cumprir o plano de 20 pontos de Trump. O item 19 do plano determina que, à medida que o processo de reconstrução de Gaza avança e o programa de reformas da autoridade palestina é implementado, as condições poderão finalmente estar reunidas para um caminho possível rumo ao... ...autodeterminação e a formação de um Estado palestino que reconhecemos como aspiração do povo palestino. No item seguinte, os Estados Unidos se comprometem a estabelecer um diálogo entre Israel e os palestinos para que concordem sobre um horizonte político para coexistência próspera e pacífica. A questão desses dois itens é que não há prazos para que eles aconteçam. Não há cronogramas específicos nem a divisão desses objetivos ...em metas mais profundas. ...em metas mais palpáveis. Neste momento, a expectativa mais imediata da população em Gaza é sobre a atuação do governo de 15 tecnocratas palestinos, que também é resultado do plano de Trump. Este governo de transição, que deverá substituir o Hamas na administração do território, será supervisionado pelo Conselho da Paz. No último domingo, famílias e clãs palestinos na faixa de Gaza endossaram publicamente este governo de transição. A declaração de apoio ocorreu... ...durante uma manifestação de solidariedade no Hospital dos Mártires de Al-Aqsa em Deir al-Balagh, na região central de Gaza. Uma das grandes questões que se apresentam ao Conselho da Paz é se ele será capaz de iniciar um movimento para desarmar o Hamas. E, se isso acontecer, qual será a reação do grupo extremista palestino. Agora, Henri Galsky, qual é a visão de Israel sobre o Conselho da Paz? A avaliação em Israel é similar à de boa parte da comunidade internacional, ...de que, por meio do Conselho da Paz, a reação do grupo extremista palestino será a reação de Israel sobre o Conselho da Paz. Por meio do Conselho da Paz, Trump está em busca de criar uma espécie de alternativa às Nações Unidas. De acordo com a imprensa local, o primeiro-ministro Netanyahu decidiu aceitar o convite para participar da entidade... ...cerca de 24 horas antes do anúncio oficial sobre a criação do mecanismo em Davos, na Suíça. A decisão foi tomada após discussões intensas a partir de três pontos fundamentais. Rejeitar o convite poderia causar algum embaraço ao presidente Trump... ...porque o governo de Israel não tem influência no Conselho da Paz. Agora, aceitar o convite, como de fato ocorreu, deixa claro que Israel vai sentar-se ao lado de Turquia, Catar... ...e outros países com direito a voto em iguais condições para definir as decisões sobre o futuro da Faixa de Gaza... ...e, no final das contas, sobre a segurança de Israel. Ou seja, na prática, Israel legitima as presenças de países como Turquia e Catar... ...que o governo israelense havia deixado claro que não poderiam fazer parte das decisões... ...sobre o chamado dia seguinte em Gaza. Embora Israel tenha divulgado um comunicado público de que o país não foi consultado pelos Estados Unidos... ...sobre os membros do Conselho da Paz, a informação da imprensa local é de que o texto foi redigido... ...para servir como resposta interna aos membros da própria coalizão de governo... ...e não com o objetivo real de alterar as decisões do presidente Donald Trump. O presidente Trump participou do Linha Direta de hoje.",
+  "entities": [
+    {
+      "text": "Conselho da Paz",
+      "matched_tag": null,
+      "type": "ORG",
+      "score": 0.9960291981697083,
+      "start": 85,
+      "end": 100
+    },
+    {
+      "text": "Donald Trump",
+      "matched_tag": "Donald Trump",
+      "type": "PER",
+      "score": 0.992999255657196,
+      "start": 112,
+      "end": 124
+    },
+    {
+      "text": "faixa de Gaza",
+      "matched_tag": "Faixa de Gaza",
+      "type": "LOC",
+      "score": 0.9831097722053528,
+      "start": 145,
+      "end": 158
+    },
+    {
+      "text": "Casa Branca",
+      "matched_tag": "Casa Branca",
+      "type": "ORG",
+      "score": 0.9683791995048523,
+      "start": 162,
+      "end": 173
+    },
+    {
+      "text": "Conselho da Paz",
+      "matched_tag": null,
+      "type": "ORG",
+      "score": 0.9825771450996399,
+      "start": 199,
+      "end": 214
+    },
+    {
+      "text": "Donald Trump",
+      "matched_tag": "Donald Trump",
+      "type": "PER",
+      "score": 0.8540387153625488,
+      "start": 261,
+      "end": 273
+    },
+    {
+      "text": "Israel",
+      "matched_tag": "Israel",
+      "type": "LOC",
+      "score": 0.9691948294639587,
+      "start": 336,
+      "end": 342
+    },
+    {
+      "text": "Hamas",
+      "matched_tag": "Hamas",
+      "type": "ORG",
+      "score": 0.7758466005325317,
+      "start": 345,
+      "end": 350
+    },
+    {
+      "text": "Hamas",
+      "matched_tag": "Hamas",
+      "type": "ORG",
+      "score": 0.73732590675354,
+      "start": 658,
+      "end": 663
+    },
+    {
+      "text": "reconstru",
+      "matched_tag": "Reconstrução",
+      "type": "LOC",
+      "score": 0.6935071349143982,
+      "start": 668,
+      "end": 677
+    },
+    {
+      "text": "de Gaza",
+      "matched_tag": "Faixa de Gaza",
+      "type": "LOC",
+      "score": 0.9332414865493774,
+      "start": 681,
+      "end": 688
+    },
+    {
+      "text": "Israel",
+      "matched_tag": "Israel",
+      "type": "LOC",
+      "score": 0.9846010804176331,
+      "start": 766,
+      "end": 772
+    },
+    {
+      "text": "A",
+      "matched_tag": "Parteiras",
+      "type": "LOC",
+      "score": 0.9998365640640259,
+      "start": 976,
+      "end": 977
+    },
+    {
+      "text": "rábia Saudita",
+      "matched_tag": "Arábia Saudita",
+      "type": "LOC",
+      "score": 0.8579243421554565,
+      "start": 977,
+      "end": 990
+    },
+    {
+      "text": "Argentina",
+      "matched_tag": "Argentina",
+      "type": "LOC",
+      "score": 0.9998997449874878,
+      "start": 992,
+      "end": 1001
+    },
+    {
+      "text": "Turquia",
+      "matched_tag": "Turquia",
+      "type": "LOC",
+      "score": 0.9951506853103638,
+      "start": 1003,
+      "end": 1010
+    },
+    {
+      "text": "Egito",
+      "matched_tag": "Egito",
+      "type": "LOC",
+      "score": 0.9986422657966614,
+      "start": 1012,
+      "end": 1017
+    },
+    {
+      "text": "Jordânia",
+      "matched_tag": "Jordânia",
+      "type": "LOC",
+      "score": 0.9964659214019775,
+      "start": 1019,
+      "end": 1027
+    },
+    {
+      "text": "Indonésia",
+      "matched_tag": "Indonésia",
+      "type": "LOC",
+      "score": 0.9998992681503296,
+      "start": 1029,
+      "end": 1038
+    },
+    {
+      "text": "Paquistão",
+      "matched_tag": "Paquistão",
+      "type": "LOC",
+      "score": 0.9971197843551636,
+      "start": 1040,
+      "end": 1049
+    },
+    {
+      "text": "Catar",
+      "matched_tag": "Catar",
+      "type": "LOC",
+      "score": 0.9937112331390381,
+      "start": 1051,
+      "end": 1056
+    },
+    {
+      "text": "Emirados Árabes Unidos",
+      "matched_tag": "Emirados Árabes Unidos",
+      "type": "LOC",
+      "score": 0.99958735704422,
+      "start": 1058,
+      "end": 1080
+    },
+    {
+      "text": "Bahrein",
+      "matched_tag": "Bahrein",
+      "type": "LOC",
+      "score": 0.9989951848983765,
+      "start": 1082,
+      "end": 1089
+    },
+    {
+      "text": "Albânia",
+      "matched_tag": "Albânia",
+      "type": "LOC",
+      "score": 0.9974853992462158,
+      "start": 1091,
+      "end": 1098
+    },
+    {
+      "text": "Armênia",
+      "matched_tag": "Armênia",
+      "type": "LOC",
+      "score": 0.9958989024162292,
+      "start": 1100,
+      "end": 1107
+    },
+    {
+      "text": "Azerbaijão",
+      "matched_tag": null,
+      "type": "LOC",
+      "score": 0.9938676357269287,
+      "start": 1109,
+      "end": 1119
+    },
+    {
+      "text": "Belarus",
+      "matched_tag": "Belarus",
+      "type": "LOC",
+      "score": 0.9988752007484436,
+      "start": 1121,
+      "end": 1128
+    },
+    {
+      "text": "Hungria",
+      "matched_tag": "Hungria",
+      "type": "LOC",
+      "score": 0.9990403056144714,
+      "start": 1130,
+      "end": 1137
+    },
+    {
+      "text": "Israel",
+      "matched_tag": "Israel",
+      "type": "LOC",
+      "score": 0.9998670816421509,
+      "start": 1139,
+      "end": 1145
+    },
+    {
+      "text": "Ca",
+      "matched_tag": "Canadá",
+      "type": "LOC",
+      "score": 0.9988629817962646,
+      "start": 1147,
+      "end": 1149
+    },
+    {
+      "text": "zaquistão",
+      "matched_tag": "Cazaquistão",
+      "type": "LOC",
+      "score": 0.9668489098548889,
+      "start": 1149,
+      "end": 1158
+    },
+    {
+      "text": "Kosovo",
+      "matched_tag": "Kosovo",
+      "type": "LOC",
+      "score": 0.9987167119979858,
+      "start": 1160,
+      "end": 1166
+    },
+    {
+      "text": "Marrocos",
+      "matched_tag": "Marrocos",
+      "type": "LOC",
+      "score": 0.9142277240753174,
+      "start": 1168,
+      "end": 1176
+    },
+    {
+      "text": "Vietnã",
+      "matched_tag": "Vietnã",
+      "type": "LOC",
+      "score": 0.9938047528266907,
+      "start": 1179,
+      "end": 1185
+    },
+    {
+      "text": "Donald Trump",
+      "matched_tag": "Donald Trump",
+      "type": "PER",
+      "score": 0.8111631870269775,
+      "start": 1209,
+      "end": 1221
+    },
+    {
+      "text": "Associated Press",
+      "matched_tag": null,
+      "type": "ORG",
+      "score": 0.9692367315292358,
+      "start": 1258,
+      "end": 1274
+    },
+    {
+      "text": "Casa",
+      "matched_tag": "Casais",
+      "type": "PER",
+      "score": 0.5124083161354065,
+      "start": 1290,
+      "end": 1294
+    },
+    {
+      "text": "Branca",
+      "matched_tag": "Casa Branca",
+      "type": "ORG",
+      "score": 0.7907934188842773,
+      "start": 1295,
+      "end": 1301
+    },
+    {
+      "text": "plano",
+      "matched_tag": "Plano",
+      "type": "PER",
+      "score": 0.7404534816741943,
+      "start": 1540,
+      "end": 1545
+    },
+    {
+      "text": "de",
+      "matched_tag": "Geert Wilders",
+      "type": "ORG",
+      "score": 0.4521888494491577,
+      "start": 1546,
+      "end": 1548
+    },
+    {
+      "text": "20",
+      "matched_tag": "Golden Globes 2014",
+      "type": "PER",
+      "score": 0.42190954089164734,
+      "start": 1549,
+      "end": 1551
+    },
+    {
+      "text": "pontos",
+      "matched_tag": null,
+      "type": "ORG",
+      "score": 0.481845498085022,
+      "start": 1552,
+      "end": 1558
+    },
+    {
+      "text": "de Trump",
+      "matched_tag": null,
+      "type": "PER",
+      "score": 0.7067326307296753,
+      "start": 1559,
+      "end": 1567
+    },
+    {
+      "text": "de Gaza",
+      "matched_tag": "Faixa de Gaza",
+      "type": "ORG",
+      "score": 0.6707438826560974,
+      "start": 1643,
+      "end": 1650
+    },
+    {
+      "text": "autoridade",
+      "matched_tag": "Autoridade Palestina",
+      "type": "ORG",
+      "score": 0.7739652395248413,
+      "start": 1686,
+      "end": 1696
+    },
+    {
+      "text": "a",
+      "matched_tag": "Parteiras",
+      "type": "ORG",
+      "score": 0.7235710024833679,
+      "start": 1705,
+      "end": 1706
+    },
+    {
+      "text": "Estado",
+      "matched_tag": "Grupo Estado Islâmico",
+      "type": "LOC",
+      "score": 0.9147468209266663,
+      "start": 1845,
+      "end": 1851
+    }
+  ],
+  "matched_tags": [
+    "Albânia",
+    "Argentina",
+    "Armênia",
+    "Arábia Saudita",
+    "Autoridade Palestina",
+    "Bahrein",
+    "Belarus",
+    "Canadá",
+    "Casa Branca",
+    "Casais",
+    "Catar",
+    "Cazaquistão",
+    "Donald Trump",
+    "Egito",
+    "Emirados Árabes Unidos",
+    "Faixa de Gaza",
+    "Geert Wilders",
+    "Golden Globes 2014",
+    "Grupo Estado Islâmico",
+    "Hamas",
+    "Hungria",
+    "Indonésia",
+    "Israel",
+    "Jordânia",
+    "Kosovo",
+    "Marrocos",
+    "Paquistão",
+    "Parteiras",
+    "Plano",
+    "Reconstrução",
+    "Turquia",
+    "Vietnã"
+  ],
+  "entities_by_type": {
+    "ORG": [
+      "Conselho da Paz",
+      "Casa Branca",
+      "Conselho da Paz",
+      "Hamas",
+      "Hamas",
+      "Associated Press",
+      "Branca",
+      "de",
+      "pontos",
+      "de Gaza",
+      "autoridade",
+      "a"
+    ],
+    "PER": [
+      "Donald Trump",
+      "Donald Trump",
+      "Donald Trump",
+      "Casa",
+      "plano",
+      "20",
+      "de Trump"
+    ],
+    "LOC": [
+      "faixa de Gaza",
+      "Israel",
+      "reconstru",
+      "de Gaza",
+      "Israel",
+      "A",
+      "rábia Saudita",
+      "Argentina",
+      "Turquia",
+      "Egito",
+      "Jordânia",
+      "Indonésia",
+      "Paquistão",
+      "Catar",
+      "Emirados Árabes Unidos",
+      "Bahrein",
+      "Albânia",
+      "Armênia",
+      "Azerbaijão",
+      "Belarus",
+      "Hungria",
+      "Israel",
+      "Ca",
+      "zaquistão",
+      "Kosovo",
+      "Marrocos",
+      "Vietnã",
+      "Estado"
+    ]
+  }
+}

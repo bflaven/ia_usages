@@ -1,0 +1,55 @@
+services:
+  wordpress:
+    image: wordpress:latest
+    container_name: wp_docker-wordpress-1
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DEBUG: '1'
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: root
+      WORDPRESS_DB_NAME: wordpress2
+    volumes:
+      - ./wordpress:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - wpnetwork
+
+  db:
+    image: mysql:8.0
+    container_name: wp_docker-db-1
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress2
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - wpnetwork
+
+  phpmyadmin:
+    image: linuxserver/phpmyadmin:latest
+    container_name: wp_docker-phpmyadmin-1
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+    depends_on:
+      - db
+    networks:
+      - wpnetwork
+
+volumes:
+  db_data:
+
+networks:
+  wpnetwork:
+    driver: bridge

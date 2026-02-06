@@ -1,0 +1,30 @@
+======================================================================
+NER RESULTS
+======================================================================
+
+Language: sw
+Total entities detected: 5
+Matched to thematic tags: 3
+
+======================================================================
+ENTITIES BY TYPE
+======================================================================
+
+LOC:
+  • Uganda → Uganda (confidence: 0.60)
+
+ORG:
+  • di Arasi (confidence: 0.40)
+
+PER:
+  • Shi (confidence: 0.42)
+  • Rais → Uchaguzi wa urais Urusi 2018 (confidence: 0.63)
+  • Museveni → Yoweri Museveni (confidence: 0.80)
+
+======================================================================
+MATCHED THEMATIC TAGS
+======================================================================
+
+  ✓ Uchaguzi wa urais Urusi 2018
+  ✓ Uganda
+  ✓ Yoweri Museveni

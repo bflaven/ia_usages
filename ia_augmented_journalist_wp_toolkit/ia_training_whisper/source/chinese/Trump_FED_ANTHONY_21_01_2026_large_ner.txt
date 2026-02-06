@@ -1,0 +1,29 @@
+======================================================================
+NER RESULTS
+======================================================================
+
+Language: Chinese (Simplified) (zh)
+Model size: large
+Transcript file: source/chinese/Trump_FED_ANTHONY_21_01_2026_large.txt
+Tags file: source_thema/RFI_CN_thematicTags.py
+
+Total entity mentions: 2
+Unique entities: 2
+Matched to thematic tags: 1
+Unmatched entities: 1
+
+======================================================================
+ENTITIES BY TYPE
+======================================================================
+
+ORG (1 mentions):
+  • 法国国际广播电台 (confidence: 0.67)
+
+PER (1 mentions):
+  • 诺 → 诺贝尔奖 (confidence: 0.57)
+
+======================================================================
+MATCHED THEMATIC TAGS
+======================================================================
+
+    1. 诺贝尔奖

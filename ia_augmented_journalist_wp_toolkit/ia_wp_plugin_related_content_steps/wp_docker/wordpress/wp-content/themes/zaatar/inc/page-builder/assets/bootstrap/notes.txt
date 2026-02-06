@@ -1,0 +1,20 @@
+.container should be commented out
+
+http://twitter.github.com/bootstrap/download.html
+
+Only this elements are included in bootstrap.css file
+ - Normalize and reset
+ - Grid System
+
+ - Buttons
+ - Icons
+
+ - Navbar
+ - Thumbnails
+ - Alerts
+
+ - Dropdowns
+
+ - Responsive layouts
+
+ - Dropdowns

@@ -1,0 +1,413 @@
+/*!
+Theme Name: Zaatar
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+/*--------------------------------------------------------------
+1.0 Normalize
+--------------------------------------------------------------*/
+body {
+  direction: rtl;
+  unicode-bidi: embed;
+}
+caption, th, td {
+  text-align: right;
+}
+
+/*--------------------------------------------------------------
+3.5 Blockquote
+--------------------------------------------------------------*/
+blockquote {
+  border-right: 6px solid #2d93ff;
+  border-left: none;
+}
+
+/*--------------------------------------------------------------
+4.2 List
+--------------------------------------------------------------*/
+ul, ol {
+  margin: 0 26px 26px 0;
+  margin: 0 1.625rem 1.625rem 0;
+}
+li > ul,
+li > ol {
+  margin-left: 0;
+  margin-right: 26px;
+  margin-right: 1.625rem;
+}
+
+/*--------------------------------------------------------------
+5.0 Accessibility
+--------------------------------------------------------------*/
+.screen-reader-text:focus {
+  right: 5px;
+  left: 0;
+}
+.site .skip-link {
+  left: 0;
+  right: -9999em;
+}
+.site .skip-link:focus {
+  left: 0;
+  right: 6px;
+}
+
+/*--------------------------------------------------------------
+8.3 Header Menu Responsive
+--------------------------------------------------------------*/
+
+/* Site Header Menu Responsive */
+.site-header-menu-responsive {
+  left: 0;
+  right: -280px;
+}
+.site-header-menu-responsive.show {
+  left: auto;
+  right: 0;
+}
+.site-header-menu-responsive .header-menu-responsive-close {
+  left: 15px;
+  right: auto;
+}
+
+/* Responsive Menu: (375px) and up */
+@media (min-width: 23.4375em) {
+  .site-header-menu-responsive {
+    left: 0;
+    right: -335px;
+  }
+}
+/* Responsive Menu: (414px) and up */
+@media (min-width: 25.875em) {
+  .site-header-menu-responsive {
+    left: 0;
+    right: -375px;
+  }
+}
+
+/* Header Menu Responsive */
+.header-menu-responsive ul {
+  margin-left: 0;
+  margin-right: 24px;
+  margin-right: 1.5rem;
+}
+.header-menu-responsive .dropdown-toggle {
+  left: 0;
+  right: auto;
+}
+.header-menu-responsive .page_item_has_children > a,
+.header-menu-responsive .menu-item-has-children > a {
+  padding-left: 40px;
+  padding-left: 2.5rem;
+  padding-right: 0;
+}
+
+/*--------------------------------------------------------------
+9.1 Navigation Archives
+--------------------------------------------------------------*/
+.pagination .prev.page-numbers:before {
+  content: "\f054";
+}
+.pagination .next.page-numbers:after {
+  content: "\f053";
+}
+
+/*--------------------------------------------------------------
+9.5 Navigation Common Styles: Comments, Attachments
+--------------------------------------------------------------*/
+.comment-navigation .nav-previous a:before,
+.image-navigation .nav-previous a:before {
+  content: "\f054";
+  margin: 0 0 0 5px;
+  margin: 0 0 0 0.3125rem;
+}
+.comment-navigation .nav-next a:after,
+.image-navigation .nav-next a:after {
+  content: "\f053";
+  margin: 0 5px 0 0;
+  margin: 0 0.3125rem 0 0;
+}
+
+/*--------------------------------------------------------------
+11.2 Page Links
+--------------------------------------------------------------*/
+.page-links .page-links-title {
+  padding: 0 0 0 7px;
+  padding: 0 0 0 0.4375rem;
+}
+
+/*--------------------------------------------------------------
+11.3 - More Link
+--------------------------------------------------------------*/
+.more-link-wrapper .more-link:after,
+.more-link-wrapper .more-link:visited:after {
+  content: "\f30a";
+  right: auto;
+  left: -25px;
+}
+
+/*--------------------------------------------------------------
+11.4 Entry Meta
+--------------------------------------------------------------*/
+.entry-meta > span {
+  margin: 0 0 0 12px;
+  margin: 0 0 0 0.75rem;
+}
+.entry-meta .entry-meta-icon:before {
+  margin: 0 0 0 5px;
+  margin: 0 0 0 0.3125rem;
+}
+.entry-meta .entry-meta-icon a:before {
+  margin: 0 0 0 5px;
+  margin: 0 0 0 0.3125rem;
+}
+
+/* Category and Tags */
+.cat-links-single:after,
+.logged-in .tags-links-single:after {
+  margin: 0 7px 0 0;
+  margin: 0 0.4375rem 0 0;
+}
+
+/*--------------------------------------------------------------
+11.6 Comments
+--------------------------------------------------------------*/
+/* Comment Meta */
+.comment-list .edit-link {
+  margin-left: 0;
+  margin-right: 15px;
+  margin-right: 0.9375rem;
+}
+/* Comment Form */
+.comment-respond #cancel-comment-reply-link {
+  right: auto;
+  left: 0;
+}
+
+/*--------------------------------------------------------------
+12.0 Widgets
+--------------------------------------------------------------*/
+.widget li > ul,
+.widget li > ol {
+  margin-left: 0;
+  margin-right: 24px;
+  margin-right: 1.5rem;
+}
+
+/*--------------------------------------------------------------
+12.1 Search Form Widget
+--------------------------------------------------------------*/
+.search-form .search-field {
+  text-align: right;
+}
+.search-form .search-submit {
+  float: left;
+}
+
+/*--------------------------------------------------------------
+12.2 Tag Cloud Widget
+--------------------------------------------------------------*/
+.widget_tag_cloud a, .widget_tag_cloud a:visited {
+  float: right;
+}
+.widget_tag_cloud a:after {
+  content: '،';
+  margin: 0 0 0 6px;
+  margin: 0 0 0 0.375rem;
+}
+
+/*--------------------------------------------------------------
+17.0 Media Queries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+17.1 Small devices (landscape phones, 576px and up)
+--------------------------------------------------------------*/
+@media (min-width: 544px) {
+
+  /* Typography: Blockquote */
+  .sidebar blockquote {
+    padding-right: 20px;
+    padding-left: 0;
+  }
+
+  /* Navigation Menus: Header Menu Responsive */
+  .site-header-menu-responsive {
+    left: 0;
+    right: -400px;
+  }
+
+  /* Navigation Misc: Navigation Post */
+  .post-navigation .nav-previous {
+    text-align: right;
+  }
+  .post-navigation .nav-next {
+    text-align: left;
+  }
+
+  /* Content: Comments */
+  /* Comment Body */
+  .comment-list > li > .comment-body {
+    padding-left: auto;
+    padding-right: 83px;
+    padding-right: 5.1875rem;
+  }
+  .comment-list > li > .children .comment-body {
+    padding-left: auto;
+    padding-right: 65px;
+    padding-right: 4.0625rem;
+  }
+  .comment-list .bypostauthor .comment-body {
+    padding-left: auto;
+    padding-right: 98px;
+    padding-right: 6.125rem;
+  }
+  .comment-list > li > .children .bypostauthor .comment-body {
+    padding-left: auto;
+    padding-right: 80px;
+    padding-right: 5rem;
+  }
+  .comment-list .pingback .comment-body {
+    padding-right: 0;
+    padding-left: auto;
+  }
+
+  /* Comment Avatar */
+  .comment-list > li > .comment-body .comment-author .avatar,
+  .comment-list > li > .children .comment-body .comment-author .avatar {
+    right: 0;
+    left: auto;
+  }
+  .comment-list > li.bypostauthor > .comment-body .comment-author .avatar,
+  .comment-list > li > .children li.bypostauthor > .comment-body .comment-author .avatar {
+    right: 15px;
+    left: auto;
+  }
+
+}
+
+/*--------------------------------------------------------------
+17.2 Medium devices (tablets, 768px and up)
+--------------------------------------------------------------*/
+@media (min-width: 768px) {
+
+  /* Elements: List */
+  ul, ol {
+    margin: 0 36px 32px 0;
+    margin: 0 2.25rem 2rem 0;
+  }
+
+  /* Navigation Menus: Header Menu */
+  /* Essential Styles */
+  .sf-menu ul {
+	left: auto;
+	right: 0;
+  }
+  .sf-menu > li > ul {
+    left: auto;
+    right: -19px;
+  }
+  .sf-menu ul ul {
+	left: auto;
+	right: 105%;
+  }
+
+  /* Menu Skin */
+  .sf-menu ul {
+	text-align: right;
+  }
+
+  /* Last & Second Last Child Drop Down Menu Second Level */
+  .sf-menu > li:last-child > ul,
+  .sf-menu > li:nth-last-child(2) > ul {
+    right: auto;
+    left: 0;
+  }
+
+  /* Last & Second Last Child Drop Down Menu Third Level */
+  .sf-menu > li:last-child > ul ul,
+  .sf-menu > li:nth-last-child(2) > ul ul {
+    right: auto;
+    left: 105%;
+  }
+
+  /* Parent Anchors Arrow */
+  .sf-arrows .sf-with-ul:after {
+    right: auto;
+    left: 0;
+  }
+
+   /* Child Anchors Arrow */
+  .sf-arrows ul .sf-with-ul:after {
+    content: "\f104";
+    right: auto;
+    left: 0;
+  }
+
+  /* Social Menus: Social Menu Header */
+  .site-social-menu-header ul li {
+    margin: 0 0 0 20px;
+    margin: 0 0 0 1.25rem;
+  }
+
+  /* Content: Comments */
+  /* Comment Body */
+  .comment-list .bypostauthor .comment-body {
+    padding: 30px 123px 30px 30px;
+    padding: 1.875rem 7.6875rem 1.875rem 1.875rem;
+  }
+  .comment-list > li > .children .bypostauthor .comment-body {
+    padding: 30px 94px 30px 30px;
+    padding: 1.875rem 5.875rem 1.875rem 1.875rem;
+  }
+  /* Comment Avatar */
+  .comment-list > li.bypostauthor > .comment-body .comment-author .avatar,
+  .comment-list > li > .children li.bypostauthor > .comment-body .comment-author .avatar {
+    right: 30px;
+    left: auto;
+  }
+
+}
+
+/*--------------------------------------------------------------
+17.3 Large devices (desktops, 992px and up)
+--------------------------------------------------------------*/
+@media (min-width: 992px) {
+
+  /* Navigation Menus: Header Menu */
+  /* Parent Anchors */
+  .sf-menu > li:last-child a:not(.sf-with-ul), .sf-menu > li:last-child a:not(.sf-with-ul):visited {
+    padding-right: 0.9375rem;
+    padding-left: 0;
+  }
+
+}
+
+/*--------------------------------------------------------------
+17.4 Extra large devices (large desktops, 1200px and up)
+--------------------------------------------------------------*/
+@media (min-width: 1200px) {
+
+  /* Navigation Menus: Header Menu */
+  .has-site-branding .sf-menu,
+  .wp-custom-logo .sf-menu {
+    text-align: left;
+  }
+
+  /* Parent Anchors */
+  .sf-menu > li:last-child a:not(.sf-with-ul), .sf-menu > li:last-child a:not(.sf-with-ul):visited {
+    padding-right: 1.0625rem;
+    padding-left: 0;
+  }
+
+  /* Skeleton: Site Header */
+  .has-site-branding .site-header .site-header-inside-wrapper .site-branding-wrapper,
+  .wp-custom-logo .site-header .site-header-inside-wrapper .site-branding-wrapper {
+    text-align: right;
+  }
+
+}
