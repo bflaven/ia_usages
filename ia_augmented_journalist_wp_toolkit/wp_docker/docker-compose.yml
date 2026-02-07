@@ -1,3 +1,16 @@
+### USAGE ### 
+
+### START
+# cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_augmented_journalist_wp_toolkit/wp_docker
+# docker compose down
+# docker compose up -d
+
+### CHECK
+# WordPress: 
+# http://localhost:8080
+# phpMyAdmin: 
+# http://localhost:8081
+
 services:
   wordpress:
     image: wordpress:latest
