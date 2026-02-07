@@ -4,6 +4,8 @@
 
 - images_illustrations: illusration fr the main post
 - prompt: directory with all the prompts.
+- wp_docker: Docker-based WordPress staging environment for testing the Semaphore plugin and related content clustering features.
+
 
 ## Introducing semantic clustering with IA in WordPress via a plugin
 
