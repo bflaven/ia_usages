@@ -16,7 +16,7 @@
 #!/bin/bash
 # Set your GitHub project directory
 # TARGET_DIR="/Users/brunoflaven/Documents/03_git/ia_usages"
-TARGET_DIR="/Users/brunoflaven/Documents/03_git/ia_usages/ia_augmented_journalist_wp_toolkit"
+TARGET_DIR="/Users/brunoflaven/Documents/03_git/ia_usages/"
 
 # Navigate to the target directory
 cd "$TARGET_DIR"
