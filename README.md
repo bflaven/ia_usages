@@ -73,7 +73,7 @@
 
 23. AI, Agentic Browsers and the End of Digital Autonomy [https://wp.me/p3Vuhl-3p9](https://wp.me/p3Vuhl-3p9)
 
-24. AI-Augmented Journalism: Practical Implementation of Semantic Clustering, Multilingual Transcription, and WordPress Automation[https://wp.me/p3Vuhl-3q4](https://wp.me/p3Vuhl-3q4)
+24. AI-Augmented Journalism: Practical Implementation of Semantic Clustering, Multilingual Transcription, and WordPress Automation [https://wp.me/p3Vuhl-3q4](https://wp.me/p3Vuhl-3q4)
 
 
 
