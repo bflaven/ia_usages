@@ -11,7 +11,7 @@
 
 
 ## == Description ==
-Zaatar is a clean and minimalist theme that allows your reader to focus on your content. Zaatar is designed for news agencies, travel websites, business magazine, food recipes, health magazine, technology sites and all type of publishing or review site. Zaatar theme is fully compatible with Gutenberg content editor. Easy to use, no coding! Add some IA feature 01/02/26. Inspired by Allium &
+- Zaatar is a clean and minimalist theme that allows your reader to focus on your content. Zaatar is designed for news agencies, travel websites, business magazine, food recipes, health magazine, technology sites and all type of publishing or review site. Zaatar theme is fully compatible with Gutenberg content editor. Easy to use, no coding! Add some IA feature 01/02/26. Inspired by Allium &
 Totomo.
 
 
@@ -26,13 +26,6 @@ Totomo.
 
 - Totomo is a free and responsive blog theme for WordPress and based on Bootstrap. It makes you stand out of the crowd.
 blog, custom-logo, custom-menu, editor-style, featured-images, food-and-drink, microformats, one-column, photography, post-formats, sticky-post, threaded-comments, translation-ready, wide-blocks
-
-
-
-
-
-
-
 
 
 
@@ -51,66 +44,66 @@ blog, custom-logo, custom-menu, editor-style, featured-images, food-and-drink, m
 
 ## == Copyright ==
 
-Zaatar WordPress Theme, Copyright 2019 TemplateLens.com
-Zaatar is distributed under the terms of the GNU GPL
+- Zaatar WordPress Theme, Copyright 2019 TemplateLens.com for allium and GretaThemes for totomo
 
-This program is free software: you can redistribute it and/or modify
+- Zaatar is distributed under the terms of the GNU GPL
+
+- This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
 (at your option) any later version.
 
-This program is distributed in the hope that it will be useful,
+- This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 ## == LICENSES ==
 
-Bundled resources in the theme are licensed under GPL or MIT (or both).
-Please see the file headers for more information.
+- Bundled resources in the theme are licensed under GPL or MIT (or both). Please see the file headers for more information.
 
 ## = FONTS =
 
-Font Awesome Free 5.6.3
-Copyright: Dave Gandy, https://twitter.com/davegandy
-License: https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
-Source: https://fontawesome.com - @fontawesome
+* Font Awesome Free 5.6.3
+* Copyright: Dave Gandy, https://twitter.com/davegandy
+* License: https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: * SIL OFL 1.1, Code: MIT License)
+* Source: https://fontawesome.com - @fontawesome
 
 ## = CSS =
 
-Bootstrap v4.1.3
-Copyright 2011-2018 The Bootstrap Authors
-Copyright 2011-2018 Twitter, Inc.
-License: MIT
-Source: http://getbootstrap.com
+* Bootstrap v4.1.3
+* Copyright 2011-2018 The Bootstrap Authors
+* Copyright 2011-2018 Twitter, Inc.
+* License: MIT
+* Source: http://getbootstrap.com
 
 ## = JS =
 
-Awesome Media Queries in JavaScript v2.1.6
-Copyright (c) 2017 Nick Williams
-License: MIT
-Source: https://github.com/WickyNilliams/enquire.js
+* Awesome Media Queries in JavaScript v2.1.6
+* Copyright (c) 2017 Nick Williams
+* License: MIT
+* Source: https://github.com/WickyNilliams/enquire.js
 
-FitVids v1.1
-Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
-License: WTFPL
-Source: https://github.com/davatron5000/FitVids.js
+* FitVids v1.1
+* Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+* License: WTFPL
+* Source: https://github.com/davatron5000/FitVids.js
 
-hoverIntent r7
-Copyright 2007, 2013 Brian Cherne
-License: MIT
-Source: http://cherne.net/brian/resources/jquery.hoverIntent.html
+* hoverIntent r7
+* Copyright 2007, 2013 Brian Cherne
+* License: MIT
+* Source: http://cherne.net/brian/resources/jquery.hoverIntent.html
 
-jQuery Superfish Menu Plugin v1.7.10
-Copyright (c) 2018 Joel Birch
-Licenses: MIT/GPL
-Source: https://github.com/joeldbirch/superfish
+* jQuery Superfish Menu Plugin v1.7.10
+* Copyright (c) 2018 Joel Birch
+* Licenses: MIT/GPL
+* Source: https://github.com/joeldbirch/superfish
 
 ## = IMAGES =
 
-Image used in screenshot.png
-Licensed under the terms of CC0
-Source: https://stocksnap.io/
+* mage used in screenshot.png
+* Licensed under the terms of CC0
+* Source: https://stocksnap.io/
 
 - https://stocksnap.io/photo/CBAV1C95EO
 - https://stocksnap.io/photo/2XXA0XX9G0
@@ -140,4 +133,4 @@ Released: February 10, 2019
 * Read More Label option added.
 
 ### = 1.0 =
-Released: February 7, 2019
+* Released: February 7, 2019
