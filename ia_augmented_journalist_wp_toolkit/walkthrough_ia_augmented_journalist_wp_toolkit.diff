@@ -1,0 +1,92 @@
+! SOURCE
++ Article
+- https://flaven.fr/2026/02/ai-augmented-journalism-practical-implementation-of-semantic-clustering-multilingual-transcription-and-wordpress-automation/
+- https://wp.me/p3Vuhl-3q4
+
+
++ Videos
+- https://www.youtube.com/channel/UCnUBoVx9Yai3wirPBvNpNQw
+
++ Github
+- https://github.com/bflaven/
+
++ Abstract
+The code below is extracted from this post from my blog:
+AI-Augmented Journalism: Practical Implementation of Semantic Clustering, Multilingual Transcription, and WordPress Automation
+
+This work is part of a broader exploration of AI applications in journalism, focusing on practical implementation rather than theoretical possibilities.
+
++ Keywords
+#AI #Journalism #NLP #WordPress #SemanticWeb #Multilingual #Python #Docker #GEO #SEO
+
+--- Intro
+You can read the article on my blog.
+The ‘Green’ AI Myth: Carbon Costs of ML Models & Insights on GEO and DeepSeek Fine-tuning
+- https://wp.me/p3Vuhl-3nO
+
+
+
+--- Audio version
+This post is also an experiment to test NotebookLM. So, here is this regular blog post "The ‘Green’ AI Myth: Carbon Costs of ML Models & Insights on GEO and DeepSeek Fine-tuning" converted into a podcast using NotebookLM.
+
+
+The Big Dive : The 'Green' AI Myth: Carbon Costs of ML Models & Insights on GEO and DeepSeek Fine-tuning
+- https://on.soundcloud.com/PVzHx8TEb5b65HHg9
+
+
+! VIDEOS
+
+--- create the env with anaconda
+
+"""
+[env]
+# Conda Environment
+conda create --name mistral_ocr python=3.9.13
+conda info --envs
+source activate mistral_ocr
+conda deactivate
+
+
+# BURN AFTER READING
+source activate mistral_ocr
+
+
+
+# if needed to remove
+conda env remove -n [NAME_OF_THE_CONDA_ENVIRONMENT]
+conda env remove -n mistral_ocr
+
+# BURN AFTER READING
+conda env remove -n mistral_ocr
+
+
+# update conda 
+conda update -n base -c defaults conda
+
+# to export requirements
+pip freeze > requirements.txt
+
+# to install
+pip install -r requirements.txt
+
+# manual install
+pip install mistralai python-dotenv datauri
+
+python -m pip install mistralai python-dotenv datauri
+
+
+# [path]
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_augmented_journalist_wp_toolkit/ia_mistral_ocr
+
+# launch the file
+python 001_grab_content_mistral_ocr.py
+"""
+
+
+
+
+
+
+
+
+
