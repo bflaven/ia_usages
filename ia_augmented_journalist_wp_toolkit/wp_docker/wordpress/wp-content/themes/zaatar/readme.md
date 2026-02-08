@@ -1,5 +1,5 @@
 ## === Zaatar ===
-Contributors: Bruno Flaven, TemplateLens
+Contributors: Bruno Flaven, TemplateLens, totomo, allium
 Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
 Requires at least: WordPress 4.9
 Tested up to: WordPress 5.1.1
@@ -11,7 +11,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 ## == Description ==
-Zaatar is a clean and minimalist theme that allows your reader to focus on your content. Zaatar is designed for news agencies, travel websites, business magazine, food recipes, health magazine, technology sites and all type of publishing or review site. Zaatar theme is fully compatible with Gutenberg content editor. Easy to use, no coding! Add some IA feature 01/02/26
+Zaatar is a clean and minimalist theme that allows your reader to focus on your content. Zaatar is designed for news agencies, travel websites, business magazine, food recipes, health magazine, technology sites and all type of publishing or review site. Zaatar theme is fully compatible with Gutenberg content editor. Easy to use, no coding! Add some IA feature 01/02/26. Inspired by Allium &
+Totomo.
 
 
 
@@ -20,7 +21,19 @@ Zaatar is a clean and minimalist theme that allows your reader to focus on your 
 * Custom Header
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
-For more information about Zaatar please go to https://templatelens.com/allium
+
+- For more information about Zaatar please go to https://templatelens.com/allium, it has been a source of inspiration. The theme has taken inspiration from Totomo WordPress Theme
+
+- Totomo is a free and responsive blog theme for WordPress and based on Bootstrap. It makes you stand out of the crowd.
+blog, custom-logo, custom-menu, editor-style, featured-images, food-and-drink, microformats, one-column, photography, post-formats, sticky-post, threaded-comments, translation-ready, wide-blocks
+
+
+
+
+
+
+
+
 
 
 ## == Notes ==
