@@ -1,0 +1,65 @@
+# ANACONDA ENVIRONMENT NAMED "tags_treatment"
+annotated-types @ file:///home/conda/feedstock_root/build_artifacts/annotated-types_1733247046149/work
+blis==1.3.3
+brotlicffi @ file:///opt/miniconda3/conda-bld/brotlicffi_1761745169121/work
+catalogue==2.0.10
+certifi @ file:///opt/miniconda3/conda-bld/certifi_1759786064139/work/certifi
+cffi @ file:///opt/miniconda3/conda-bld/cffi_1760098029095/work
+charset-normalizer @ file:///opt/miniconda3/conda-bld/charset-normalizer_1761744843696/work
+click==8.1.8
+cloudpathlib==0.23.0
+confection==0.1.5
+cymem==2.0.13
+dotenv==0.9.9
+en_core_web_md @ https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.8.0/en_core_web_md-3.8.0-py3-none-any.whl#sha256=5e6329fe3fecedb1d1a02c3ea2172ee0fede6cea6e4aefb6a02d832dba78a310
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl#sha256=1932429db727d4bff3deed6b34cfc05df17794f4a52eeb26cf8928f7c1a0fb85
+filelock==3.19.1
+fr_core_news_md @ https://github.com/explosion/spacy-models/releases/download/fr_core_news_md-3.8.0/fr_core_news_md-3.8.0-py3-none-any.whl#sha256=8a70d090a54ef77525c3ffa6a6195b9d365f2cf369ae1cd84ede93f3d709079e
+fr_core_news_sm @ https://github.com/explosion/spacy-models/releases/download/fr_core_news_sm-3.8.0/fr_core_news_sm-3.8.0-py3-none-any.whl#sha256=7d6ad14cd5078e53147bfbf70fb9d433c6a3865b695fda2657140bbc59a27e29
+fsspec==2025.10.0
+hdbscan==0.8.41
+hf-xet==1.2.0
+huggingface-hub==0.36.0
+idna @ file:///opt/miniconda3/conda-bld/idna_1761911990848/work
+Jinja2==3.1.6
+joblib==1.5.3
+MarkupSafe==3.0.3
+mpmath==1.3.0
+murmurhash==1.0.15
+networkx==3.2.1
+numpy==2.0.2
+packaging==26.0
+pillow==11.3.0
+preshed==3.0.12
+pycparser @ file:///opt/miniconda3/conda-bld/pycparser_1757496095003/work
+pydantic @ file:///home/conda/feedstock_root/build_artifacts/pydantic_1749927112905/work
+pydantic_core @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_9d3ads2bae/croot/pydantic-core_1750754745671/work
+PySocks @ file:///opt/miniconda3/conda-bld/pysocks_1761753009935/work
+pyspellchecker==0.8.4
+python-dotenv @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_python-dotenv_1750789290/work
+PyYAML==6.0.3
+regex==2026.1.15
+requests @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_ef59rwwti1/croot/requests_1756709671417/work
+safetensors==0.7.0
+scikit-learn==1.6.1
+scipy==1.13.1
+sentence-transformers==5.1.2
+smart_open==7.5.0
+spacy==3.8.11
+spacy-legacy==3.0.12
+spacy-loggers==1.0.5
+srsly==2.5.2
+sympy==1.14.0
+thinc==8.3.9
+threadpoolctl==3.6.0
+tokenizers==0.22.2
+torch==2.8.0
+tqdm==4.67.1
+transformers==4.57.6
+typer-slim==0.21.1
+typing-inspection @ file:///home/conda/feedstock_root/build_artifacts/typing-inspection_1747870647094/work
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_typing_extensions_1751643513/work
+urllib3 @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_95v32ztwo_/croot/urllib3_1750775480393/work
+wasabi==1.1.3
+weasel==0.4.3
+wrapt==2.0.1
