@@ -1,5 +1,11 @@
 # ia_augmented_journalist_wp_toolkit.md
 
+The code below is extracted from this post from my blog:
+AI-Augmented Journalism: Practical Implementation of Semantic Clustering, Multilingual Transcription, and WordPress Automation [https://wp.me/p3Vuhl-3q4](https://wp.me/p3Vuhl-3q4)
+
+
+
+
 **List of all the directories:**
 
 - images_illustrations: illusration fr the main post
@@ -38,6 +44,35 @@ This section focuses on adapting Whisper to under‑represented African language
 
 - ia_training_whisper:  
   Training and fine‑tuning environment for Whisper (datasets, configs, and scripts) targeting African languages, including utilities for data curation, LoRA/finetune experiments, and evaluation (WER, CER) to measure gains over base models.
+
+
+## Audio version
+I have made again an experiment with NotebookLM, using the post's content. So, here is this regular blog post "AI-Augmented Journalism: Practical Implementation of Semantic Clustering, Multilingual Transcription, and WordPress Automation" [https://wp.me/p3Vuhl-3q4](https://wp.me/p3Vuhl-3q4) converted into a podcast using NotebookLM.
+
+- [AI-Augmented Journalism: Practical Implementation of Semantic Clustering, Multilingual Transcription, and WordPress Automation](https://on.soundcloud.com/AqNjInTzRbPoD7Hyv9)
+
+**Summary made by NotebookLM**
+```
+This text reflects on the **critical intersection of artificial intelligence, digital sovereignty, and linguistic diversity**, specifically focusing on how global technology often neglects non-Western languages. The author explores the paradox of advocating for **responsible AI** while being dependent on major foreign models, emphasizing the importance of **cultural independence** through local model training. Practical technical projects are detailed, including **Whisper transcription experiments** for African languages like Wolof and Swahili, as well as the development of **WordPress plugins** for semantic clustering. The narrative highlights the phenomenon of **code-switching** in multilingual societies and the necessity of tailoring AI to recognize these complex speech patterns. Ultimately, the collection serves as both a **technical roadmap** and a philosophical argument for using AI to preserve **linguistic identity** and take control of one's digital destiny.
+```
+
+
+
+
+
+
+## Video
+Coming soon
+
+<!-- [text_XXX](https://www.youtube.com/watch?v=xxx)[![text_XXX](image_XXX.png)](https://www.youtube.com/watch?v=xxx) -->
+
+
+
+
+
+
+
+
 
 
 
