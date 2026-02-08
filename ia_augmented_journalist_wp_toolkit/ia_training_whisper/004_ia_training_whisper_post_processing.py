@@ -103,23 +103,22 @@ LANGUAGE_CONFIGS = {
 }
 
 # Select language and model
-# LANGUAGE = "sw"  # Change this to: sw, pt, zh, ha, or vi
-# MODEL_SIZE = "small"  # Options: tiny, base, small, medium, large
-# BASE_FILENAME = "APPELS_ACTU_14-01-26" # Base filename (without model suffix)
+LANGUAGE = "sw"  # Change this to: sw, pt, zh, ha, or vi
+MODEL_SIZE = "small"  # Options: tiny, base, small, medium, large
+BASE_FILENAME = "APPELS_ACTU_14-01-26_large.txt" # Base filename (without model suffix)
 
 # LANGUAGE = "pt"  # Change this to: sw, pt, zh, ha, or vi
 # MODEL_SIZE = "large"  # Options: tiny, base, small, medium, large
-# BASE_FILENAME = "LINHA_DIRETA_22_1" # Base filename (without model suffix)
+# BASE_FILENAME = "LINHA_DIRETA_22_1_large.txt" # Base filename (without model suffix)
 
 # LANGUAGE = "zh"  # Change this to: sw, pt, zh, ha, or vi
 # MODEL_SIZE = "large"  # Options: tiny, base, small, medium, large
-# BASE_FILENAME = "Trump_FED_ANTHONY_21_01_2026" # Base filename (without model suffix)
+# BASE_FILENAME = "Trump_FED_ANTHONY_21_01_2026_large.txt" # Base filename (without model suffix)
 
 
-LANGUAGE = "sw"  # Change this to: sw, pt, zh, ha, or vi
-MODEL_SIZE = "Whisper Large"  # Options: tiny, base, small, medium, large
-BASE_FILENAME = "SIHA_NJEMA13-01-26_OK_whisper_large_kiswahili.txt" # Base filename (without model suffix)
-
+# LANGUAGE = "sw"  # Change this to: sw, pt, zh, ha, or vi
+# MODEL_SIZE = "Whisper Large"  # Options: tiny, base, small, medium, large
+# BASE_FILENAME = "SIHA_NJEMA13-01-26_OK_whisper_large_kiswahili.txt" # Base filename (without model suffix)
 
 
 # Auto-configure paths
