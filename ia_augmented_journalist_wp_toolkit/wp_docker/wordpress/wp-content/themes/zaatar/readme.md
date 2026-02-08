@@ -104,9 +104,9 @@ Source: https://stocksnap.io/
 - https://stocksnap.io/photo/PF3QF43DKH
 - https://stocksnap.io/photo/B3M57Q3I7H
 
-== Changelog ==
+## == Changelog ==
 
-= 1.0.3 =
+### = 1.0.3 =
 Released: March 17, 2019
 
 * Display Featured Image at Single Posts option added.
@@ -114,17 +114,17 @@ Released: March 17, 2019
 * Code updated.
 * POT file updated.
 
-= 1.0.2 =
+### = 1.0.2 =
 Released: March 3, 2019
 
 * Top Menu added (It will support one level).
 * Text domain fixed.
 * POT file updated.
 
-= 1.0.1 =
+### = 1.0.1 =
 Released: February 10, 2019
 
 * Read More Label option added.
 
-= 1.0 =
+### = 1.0 =
 Released: February 7, 2019
