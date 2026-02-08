@@ -1,13 +1,13 @@
 ## === Zaatar ===
-Contributors: Bruno Flaven, TemplateLens, totomo, allium
-Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
-Requires at least: WordPress 4.9
-Tested up to: WordPress 5.1.1
-Requires PHP: 5.6
-Stable tag: 1.1
-Description: 
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+- Contributors: Bruno Flaven, TemplateLens, totomo, allium
+- Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
+- Requires at least: WordPress 4.9
+- Tested up to: WordPress 5.1.1
+- Requires PHP: 5.6
+- Stable tag: 1.1
+- Description: Zaatar is a clean and minimalist theme
+- License: GPLv2 or later
+- License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 ## == Description ==
