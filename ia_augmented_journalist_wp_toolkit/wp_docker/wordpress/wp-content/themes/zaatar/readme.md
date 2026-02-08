@@ -72,31 +72,31 @@ GNU General Public License for more details.
 ## = CSS =
 
 * Bootstrap v4.1.3
-* Copyright 2011-2018 The Bootstrap Authors
-* Copyright 2011-2018 Twitter, Inc.
-* License: MIT
-* Source: http://getbootstrap.com
+	* Copyright 2011-2018 The Bootstrap Authors
+	* Copyright 2011-2018 Twitter, Inc.
+	* License: MIT
+	* Source: http://getbootstrap.com
 
 ## = JS =
 
 * Awesome Media Queries in JavaScript v2.1.6
-* Copyright (c) 2017 Nick Williams
-* License: MIT
-* Source: https://github.com/WickyNilliams/enquire.js
+	* Copyright (c) 2017 Nick Williams
+	* License: MIT
+	* Source: https://github.com/WickyNilliams/enquire.js
 
 * FitVids v1.1
-* Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
-* License: WTFPL
-* Source: https://github.com/davatron5000/FitVids.js
+	* Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+	* License: WTFPL
+	* Source: https://github.com/davatron5000/FitVids.js
 
 * hoverIntent r7
-* Copyright 2007, 2013 Brian Cherne
-* License: MIT
-* Source: http://cherne.net/brian/resources/jquery.hoverIntent.html
+	* Copyright 2007, 2013 Brian Cherne
+	* License: MIT
+	* Source: http://cherne.net/brian/resources/jquery.hoverIntent.html
 
 * jQuery Superfish Menu Plugin v1.7.10
-* Copyright (c) 2018 Joel Birch
-* Licenses: MIT/GPL
+	* Copyright (c) 2018 Joel Birch
+	* Licenses: MIT/GPL
 * Source: https://github.com/joeldbirch/superfish
 
 ## = IMAGES =
