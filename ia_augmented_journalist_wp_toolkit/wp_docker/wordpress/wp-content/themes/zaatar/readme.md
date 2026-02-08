@@ -97,18 +97,18 @@ GNU General Public License for more details.
 * jQuery Superfish Menu Plugin v1.7.10
 	* Copyright (c) 2018 Joel Birch
 	* Licenses: MIT/GPL
-* Source: https://github.com/joeldbirch/superfish
+	* Source: https://github.com/joeldbirch/superfish
 
 ## = IMAGES =
 
-* mage used in screenshot.png
-* Licensed under the terms of CC0
-* Source: https://stocksnap.io/
+* Image used in screenshot.png
+	* Licensed under the terms of CC0
+	* Source: https://stocksnap.io/
 
-- https://stocksnap.io/photo/CBAV1C95EO
-- https://stocksnap.io/photo/2XXA0XX9G0
-- https://stocksnap.io/photo/PF3QF43DKH
-- https://stocksnap.io/photo/B3M57Q3I7H
+	- https://stocksnap.io/photo/CBAV1C95EO
+	- https://stocksnap.io/photo/2XXA0XX9G0
+	- https://stocksnap.io/photo/PF3QF43DKH
+	- https://stocksnap.io/photo/B3M57Q3I7H
 
 ## == Changelog ==
 
