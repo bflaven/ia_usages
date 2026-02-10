@@ -134,7 +134,8 @@ class EmbeddingConfig:
         normalize_str = os.getenv("EMBEDDING_NORMALIZE", "true").lower()
         normalize_embeddings = normalize_str in {"1", "true", "yes"}
 
-        sqlite_path = Path(os.getenv("EMBEDDING_SQLITE_PATH", "related_posts_embeddings.sqlite"))
+        # CAUTION : SQLITE_FLE e.g related_posts_embeddings_youtube_1
+        sqlite_path = Path(os.getenv("EMBEDDING_SQLITE_PATH", "related_posts_embeddings_youtube_1.sqlite"))
 
         top_k_str = os.getenv("RELATED_TOP_K", "5")
         try:

@@ -95,7 +95,8 @@ class EmbeddingConfig:
     include_slug: bool = False
     normalize_embeddings: bool = True
 
-    sqlite_path: Path = Path("related_posts_embeddings_settings.sqlite")
+    # CAUTION : SQLITE_FLE e.g related_posts_embeddings_settings_youtube_1
+    sqlite_path: Path = Path("related_posts_embeddings_settings_youtube_1.sqlite")
 
     # EDIT HERE: how many related posts per anchor (top-K)
     post_number_against: int = 10

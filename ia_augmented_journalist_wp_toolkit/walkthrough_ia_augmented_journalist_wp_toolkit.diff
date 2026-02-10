@@ -19,23 +19,24 @@ This work is part of a broader exploration of AI applications in journalism, foc
 + Keywords
 #AI #Journalism #NLP #WordPress #SemanticWeb #Multilingual #Python #Docker #GEO #SEO
 
+AI Journalism NLP WordPress SemanticWeb Multilingual Python Docker GEO SEO
+
+
+
 --- Intro
 You can read the article on my blog.
-The ‘Green’ AI Myth: Carbon Costs of ML Models & Insights on GEO and DeepSeek Fine-tuning
-- https://wp.me/p3Vuhl-3nO
+AI-Augmented Journalism: Practical Implementation of Semantic Clustering, Multilingual Transcription, and WordPress Automation
+- https://wp.me/p3Vuhl-3q4
 
 
 
 --- Audio version
-This post is also an experiment to test NotebookLM. So, here is this regular blog post "The ‘Green’ AI Myth: Carbon Costs of ML Models & Insights on GEO and DeepSeek Fine-tuning" converted into a podcast using NotebookLM.
-
-
-The Big Dive : The 'Green' AI Myth: Carbon Costs of ML Models & Insights on GEO and DeepSeek Fine-tuning
-- https://on.soundcloud.com/PVzHx8TEb5b65HHg9
+- DESC
+This post is also an experiment to test NotebookLM. So, here is this regular blog post "AI-Augmented Journalism: Practical Implementation of Semantic Clustering, Multilingual Transcription, and WordPress Automation" converted into a podcast using NotebookLM.
+- https://on.soundcloud.com/AqNjInTzRbPoD7Hyv9
 
 
 ! VIDEOS
-
 --- create the env with anaconda
 
 """
@@ -82,6 +83,111 @@ cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_augmented_journalist_w
 python 001_grab_content_mistral_ocr.py
 """
 
+- path
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_augmented_journalist_wp_toolkit/
+
++ 1. CASE_1 :: IA_MISTRAL_OCR
+--- 001_ia_mistral_ocr.mov
+- DESC
+Python/Node tooling and example scripts for calling the Mistral OCR API, extracting structured text from PDFs or images, and preparing the output (cleaned text, layout-aware blocks) for downstream tasks such as embeddings, search, or clustering.
+
+- path
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_augmented_journalist_wp_toolkit/ia_mistral_ocr/
+
+- files
+python 001_grab_content_mistral_ocr.py
+python 002_grab_content_mistral_ocr.py
+--- python 003_grab_content_mistral_ocr.py
+--- python 004_grab_content_mistral_ocr.py
+--- python 005_grab_content_mistral_ocr_clean_readme.py
+
+
+- doc
+See https://docs.mistral.ai/capabilities/document_ai/basic_ocr
+
+
++ 2. CASE_2 :: IA_TRAINING_WHISPER
+--- 002_ia_training_whisper.mov
+- DESC
+Training and fine‑tuning environment for Whisper (datasets, 
+	configs, and scripts) targeting African languages, 
+including utilities for data curation, LoRA/finetune experiments, 
+and evaluation (WER, CER) to measure gains over base models.
+
+using wispher and get transcripiton to handle languages beyond European ones (English, Spanish, French) and test performance on languages like Brazilian Portuguese, Chinese, Hausa, Kiswahili, Vietnamese, Wolof, Mandinka, Fulfulde, and Swahili
+
+
+
+- path
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_augmented_journalist_wp_toolkit/ia_training_whisper
+
+
+- check files
+--- 001_ia_training_whisper.py
+--- 006_ia_training_wolof.py
+--- 008_ia_training_detected_language.py
+--- 009_ia_training_kiswahili.py
+--- 005_ia_training_check_loading_thema.py
+--- 004_ia_training_whisper_post_processing.py
+002_ia_training_whisper.py
+007_ia_training_detected_language.py
+010_ia_training_kiswahili_more_models.py
+
+
+- doc
+See https://whisperai.com/
+
+
++ 3. CASE_3 :: IA_WP_PLUGIN_RELATED_CONTENT_EMBEDDING_TAGS_SEMANTIC_CLUSTERING
+--- 003_ia_wp_plugin_related_content_embedding_tags_semantic_clustering.mov
+- DESC: 
+Core experimental plugin that computes embeddings for posts, pages, and taxonomy terms, then performs semantic clustering to build related-content groups and tag suggestions directly in WordPress.
+
+! SEE RESULTS ON WP
+- path
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_augmented_journalist_wp_toolkit/ia_wp_plugin_related_content_steps
+
+
+- - check files
+001_parsing_posts.py
+002_parsing_posts_extended.py
+003_parsing_posts_vectorize_per_post.py
+004_parsing_posts_choose_embedding_model.py
+005_parsing_posts_vectorization_api.py
+006_parsing_posts_vectorization_batching.py
+007_parsing_posts_reproducibility_config.py
+008_parsing_posts_similarity_sqlite.py
+009_parsing_posts_similarity_sqlite_settings.py
+010_parsing_posts_similarity_sqlite_export_sqlite_csv.py
+
+- content created
+related_posts_embeddings_settings_csv_1.csv
+related_posts_embeddings_settings_csv_2.csv
+related_posts_embeddings_settings_csv_3.csv
+related_posts_embeddings_settings_csv_4.csv
+related_posts_embeddings_settings_csv_5.csv
+related_posts_embeddings_settings_csv.sqlite
+related_posts_embeddings_settings.sqlite
+related_posts_embeddings.sqlite
+
+
+
+! SEE RESULTS ON WP Check wp_docker
+- path
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_augmented_journalist_wp_toolkit/wp_docker/
+
+```
+### START
+# cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_augmented_journalist_wp_toolkit/wp_docker
+# docker compose down
+# docker compose up -d
+```
+
+- Other directories
+--- ia_wp_plugin_related_content_embedding_tags_semantic_clustering
+--- ia_wp_plugin_related_content_steps
+--- ia_wp_plugin_tags
+--- wp_plugin_related_content_steps
 
 
 
