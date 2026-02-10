@@ -147,20 +147,20 @@ Core experimental plugin that computes embeddings for posts, pages, and taxonomy
 - path
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_augmented_journalist_wp_toolkit/ia_wp_plugin_related_content_steps
 
++ LOOK FOR CAUTION
 
-- - check files
-001_parsing_posts.py
-002_parsing_posts_extended.py
-003_parsing_posts_vectorize_per_post.py
-004_parsing_posts_choose_embedding_model.py
-005_parsing_posts_vectorization_api.py
-006_parsing_posts_vectorization_batching.py
-007_parsing_posts_reproducibility_config.py
-008_parsing_posts_similarity_sqlite.py
-009_parsing_posts_similarity_sqlite_settings.py
-010_parsing_posts_similarity_sqlite_export_sqlite_csv.py
+- CHECK FILES
+- 001_parsing_posts.py
+- 003_parsing_posts_vectorize_per_post.py
+--- 004_parsing_posts_choose_embedding_model.py
+--- 005_parsing_posts_vectorization_api.py
+--- 006_parsing_posts_vectorization_batching.py
+--- 007_parsing_posts_reproducibility_config.py
+- 008_parsing_posts_similarity_sqlite.py
+- 009_parsing_posts_similarity_sqlite_settings.py (increase to ten related post)
+- 010_parsing_posts_similarity_sqlite_export_sqlite_csv.py
 
-- content created
+- CONTENT CREATED
 related_posts_embeddings_settings_csv_1.csv
 related_posts_embeddings_settings_csv_2.csv
 related_posts_embeddings_settings_csv_3.csv
@@ -176,11 +176,35 @@ related_posts_embeddings.sqlite
 - path
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_augmented_journalist_wp_toolkit/wp_docker/
 
+--- WordPress: 
+- Semaphore – Related Posts Embeddings
+http://localhost:8080/wp-admin/options-general.php?page=semaphore-related
+
+- Semaphore – Tag Families CSV
+http://localhost:8080/wp-admin/options-general.php?page=semaphore-families-csv
+
+- Semaphore – Tag Families Manager
+http://localhost:8080/wp-admin/options-general.php?page=semaphore-dashboard
+
+--- phpMyAdmin
+Check the plugin table in wp_related_posts_embeddings and wp_tag_families
+http://localhost:8081/index.php?route=/database/structure&db=wordpress2
+
+
+
 ```
+### USAGE ### 
+
 ### START
 # cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_augmented_journalist_wp_toolkit/wp_docker
 # docker compose down
 # docker compose up -d
+
+### CHECK
+# WordPress: 
+# http://localhost:8080
+# phpMyAdmin: 
+# http://localhost:8081
 ```
 
 - Other directories
