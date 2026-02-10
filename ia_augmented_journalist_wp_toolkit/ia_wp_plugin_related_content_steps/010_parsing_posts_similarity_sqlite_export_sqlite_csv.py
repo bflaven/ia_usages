@@ -103,6 +103,7 @@ class EmbeddingConfig:
     normalize_embeddings: bool = True
 
     # SQLite DB for intermediate storage
+    # CAUTION : SQLITE_FLE e.g related_posts_embeddings_settings_csv_youtube_1
     sqlite_path: Path = Path("related_posts_embeddings_settings_csv.sqlite")
 
 
@@ -111,7 +112,8 @@ class EmbeddingConfig:
     threshold_for_similarity: float = 0.40  # minimum cosine similarity
 
     # CSV output
-    csv_output_path: Path = Path("related_posts_embeddings_settings_csv.csv")
+    # CAUTION : SQLITE_FLE e.g related_posts_embeddings_settings_csv_youtube_1
+    csv_output_path: Path = Path("related_posts_embeddings_settings_csv_youtube_1.csv")
 
 
 # --------------------------------------------------------------------

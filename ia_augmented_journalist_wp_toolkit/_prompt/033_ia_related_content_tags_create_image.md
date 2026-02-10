@@ -25,18 +25,17 @@ Key Features of the Toolkit:
 The toolkit is not just for journalists—it’s for anyone who thinks, synthesizes, writes, and communicates in an AI-augmented world. By integrating these plugins and approaches, we aim to empower professionals to work smarter, faster, and with greater precision.
 
 ## PROMPT_2
-Redo the image, this is fucking cliché. Please, do not use any poeple, any cheesy easy futur and space illustration, take robert crumb as model for drawing.
+Redo the image, this is fucking cliché. Please, do not use any people, any cheesy easy future and space illustration, take robert crumb as model for drawing.
 Use orange for background
 
 
 ## PROMPT_3
-Redo the image, this is fucking cliché. Please, do not use any poeple, any cheesy easy futur and space illustration, take robert crumb as model for drawing.
-Use orange for background with scrachy style and no text only illusration.
+Redo the image, this is fucking cliché. Please, do not use any people, any cheesy easy futur and space illustration, take robert crumb as model for drawing.
+Use orange for the background with scratchy style and no text only illustration.
 
 
-## PROMPT_4
-Redo the image, this is fucking cliché. Please, do not use any poeple, any cheesy easy futur and space illustration, take robert crumb as model for drawing.
-Use orange for background with scrachy style and no text only illusration.
+
+
 
 
 
