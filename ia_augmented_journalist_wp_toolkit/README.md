@@ -62,12 +62,14 @@ This text reflects on the **critical intersection of artificial intelligence, di
 
 
 ## Video
-Coming soon
 
-<!-- [text_XXX](https://www.youtube.com/watch?v=xxx)[![text_XXX](image_XXX.png)](https://www.youtube.com/watch?v=xxx) -->
-
+[#1: Quick Discovering mistral-ocr, Quick & Simple](https://www.youtube.com/watch?v=JCl6a0jCXbM)[![#1: Quick Discovering mistral-ocr, Quick & Simple](001_ia_mistral_ocr.png)](https://www.youtube.com/watch?v=JCl6a0jCXbM)
 
 
+[#2: From French to Fulfulde: How Well Does Whisper Handle Low-Resource Languages?](https://www.youtube.com/watch?v=uks871Gzd7o)[![#2: From French to Fulfulde: How Well Does Whisper Handle Low-Resource Languages?](002_ia_training_whisper.png)](https://www.youtube.com/watch?v=uks871Gzd7o)
+
+
+[#3: AI in WordPress: How Embeddings & Semantic Clustering Can Transform Your Content Strategy](https://www.youtube.com/watch?v=OgDX58N3GXk)[![#3: AI in WordPress: How Embeddings & Semantic Clustering Can Transform Your Content Strategy](003_ia_wp_plugin_related_content_embedding_tags_semantic_clustering.png)](https://www.youtube.com/watch?v=OgDX58N3GXk)
 
 
 
