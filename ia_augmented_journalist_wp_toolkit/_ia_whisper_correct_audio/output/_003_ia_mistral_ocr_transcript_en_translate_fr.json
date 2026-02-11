@@ -1,0 +1,539 @@
+{
+  "text": "Bienvenue dans ce nouveau tutoriel. Je m'appelle Bruno Slaven. J'ai écrit un article sur le journalisme augmenté, la mise en œuvre pratique du clustering sémantique, la transcription multilingue et l'automatisation de certains sites WordPress, car je souhaitais appliquer le clustering sémantique. Nous allons donc commencer par passer en revue quelques détails afin que vous puissiez lire l'article si vous le souhaitez et le télécharger sur mon GitHub éléments. Je vais donc essayer. Je commencerais par Mistral OCR. Ensuite, j'utiliserai TrainingWhisper, qui est différent. Il s'agit plutôt d'apprendre à utiliser Whisper sur des langues peu documentées, comme Pour m'éloigner du du français, de l'anglais et de l'espagnol, et aborder des langues plus rares, comme par exemple Je dirais que c'est comme ça, en langage africain, etc. Bref, Commençons. J'ai tout préparé dans le fichier de configuration. disponible sur GitHub. Ensuite, je vais le faire manuellement devant vous. J'utilise par exemple… Bon, c'est peut-être un peu long. Je suis myope, c'est pour ça. Donc, pour l'instant, nous… Je vais y aller. Je vais donc commencer par le premier. J'ai tout commenté, vous avez donc beaucoup de choses à faire. Je vais donc utiliser cet environnement. Vous voyez, il a changé. Je suis passé de : de la base à Mistral OCR. Je ne vous le donne pas, mais vous avez tous les prérequis : dont vous avez besoin. Prenons celui-ci par exemple. Nous allons utiliser ceci comme source et il va… Prenez ce petit PDF et montrez-le-moi. Par exemple, son contenu. Vous voyez, c'est un faux PDF, juste pour vous montrer. la capacité de Mistral OCR à extraire le contenu d'un PDF très simple, mais nous passerons à un PDF plus complexe ensuite, et il vous faudra un fichier Mistral. APK. Par exemple, je ne vais pas ouvrir mon fichier AMP, car vous verriez mon APK mais il vous faut un fichier APK. Heureusement, c'est un service payant, mais il a un très bon comme je le dis c'est très intéressant. Ce n'est pas ce que je dis, mais ce qu'ils ont fait, c'est une compréhension de pointe des documents complexes, nativement multilingue et Multimodal, ce qui est très intéressant pour moi et que vous pouvez également Également une organisation auto-hébergée traitant d'informations hautement sensibles et classifiées qui relèvent de la souveraineté, un élément essentiel dans un parce que si vous travaillez sur des sujets journalistiques vraiment radioactifs, vous devez vous assurer que le contenu ne sera pas partagé. disons que vous voyez… oups, pardon, je crois que je me suis trompé. Oui, je me suis trompé. « Au fait, je devrais peut-être mettre à jour celui-ci. OK, c'était correct. » « Alors, faisons-le. Et vous voyez, il a donné… » Oui, ils peuvent. Oui, oui, voir une page. Et ensuite, il affiche le texte, ce qui signifie que vous pouvez afficher le texte. Dans le format de votre choix. Disons que… Voilà, vous savez, je vous ai donné… Je vous présente simplement… Quelques fichiers : le trois, le quatre et le cinq. Je les ai déjà ouverts, car c’est plus rapide de faire le… Tutoriel. Mais vous pouvez aussi utiliser ce que j’ai créé. Disons le trois. le Quatre. Désolé, c'est un autre cas d'utilisation. Je vais donc vérifier si je suis au bon endroit. Oui, je suis toujours au bon endroit. Je vérifie juste que les commandes que j'ai saisies sont correctes. Le commentaire… désolé. Donc, celui-ci va prendre, par exemple, un élément plus grand. Allons-y. Je pense que vous pouvez voir une certaine quantité de français, et surtout du français. Anglais. Alors, restons-en là. Je dois prendre celui-ci. C'est l'édition flocon de neige. IA générative et langage de l'apprentissage. Vous verrez, je suppose, un certain nombre de pages : presque 44, puis le texte, puis le texte, puis le texte, puis chacun de ces éléments sera dans l'ordre de trois, puis le texte, puis beaucoup de choses, parfois très complexes, notamment avec trois pages de texte. et ensuite, il faut passer aux pages quatre, cinq et… Donc, vous avez les trois pages et les quatre, je suppose, et plein d'autres choses comme ça. Bref, on va créer quelque chose, alors je suis… Je vais utiliser YouTube 3. Je pense avoir fait quelques essais et ça devrait fonctionner tout de suite. Vous voyez, vous avez… YouTube 3, de YouTube à YouTube, parce que j'ai fait des tests et cette fois, ça va tout récupérer. À partir de ce PDF, ça prendra un peu de temps et ça devrait fonctionner. Oui, c'est ça, il a donc fait trois Voyons voir, il y a trois éléments. Vous avez beaucoup de choses, ce qui est presque le contenu est correct tel quel en anglais. C'est même mieux, mais vous devriez essayer aussi en espagnol, en français, et dans n'importe quelle autre langue si nécessaire. pour instance Je veux et ensuite vous pouvez retirer ces informations par exemple je n'ai pas besoin de cette image, je veux juste m'en débarrasser, donc je vais suivre ceci Je fais un nettoyage, vous savez, en effectuant quelques opérations. J'essaie de trouver… du contenu structuré à partir d'un PDF, puis je fais de la post-production ou… un post-traitement. Par exemple, pour celui-ci, vous allez récupérer… tout ce qui ressemble à une image et il va nettoyer le tout. Donc… Disons que c'est le troisième élément. Je dirais trois. OK, donc voilà. Il va prendre le document que nous avons créé et il va tout nettoyer à l'intérieur. Vous pouvez ajouter des éléments, des entrées de registre ou autres, et nettoyer vos Il a terminé le travail, vous voyez, c'est assez rapide. Ensuite, vous verrez si Vous comparez, vous avez ceci qui a disparu parce que je n'en avais pas besoin. C'est plus propre et vous pouvez donc détecter des motifs à l'intérieur du texte, quel qu'il soit, et ensuite, je veux dire, consolider votre contenu. À quoi sert-il ? Pour n'importe quel but, comme faire un essai, explorer, etc. Si vous ne faites rien, faites ce que vous voulez. C'est une façon très intéressante de En cours Avec différentes combinaisons de documents, vous disposez d'une documentation très complète, n'est-ce pas ? Ici, je n'ai exploré que les bases. Monsieur Ossier, vous avez de nombreuses possibilités ; c'est plutôt bien documenté. Sauf qu'il faut payer, ce n'est pas si cher, mais quand même… Il faut traiter des milliers de documents, et cela coûte cher. Je vais donc vous présenter cette vidéo. Nous allons examiner le cas suivant : « Training Whisper », qui n'est pas vraiment une formation. Je devrais… Je devrais modifier le texte. « Au début, c'était une de mes idées, mais je voulais… » Test Plusieurs langues différentes, c'est exactement ce que je disais dans ma file d'attente. C'est un projet multilingue qui m'intéresse et si besoin, j'ai aussi… Quelques notions sur l'alternance codique, d'accord ? Mais on verra ça dans la deuxième vidéo. Si mon travail vous plaît, abonnez-vous à ma chaîne ! On se retrouve dans une prochaine vidéo. N'oubliez pas de vous abonner à ma chaîne YouTube, par exemple, juste ici. Vous pourrez ainsi accéder au contenu et lire l'article si besoin. À bientôt ! Au revoir ! Vous",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.0,
+      "end": 17.28,
+      "text": "Bienvenue dans ce nouveau tutoriel. Je m'appelle Bruno Slaven. J'ai écrit un article"
+    },
+    {
+      "id": 1,
+      "start": 17.28,
+      "end": 21.6,
+      "text": "sur le journalisme augmenté, la mise en œuvre pratique du clustering sémantique,"
+    },
+    {
+      "id": 2,
+      "start": 21.6,
+      "end": 25.72,
+      "text": "la transcription multilingue et l'automatisation de certains sites WordPress, car je souhaitais"
+    },
+    {
+      "id": 3,
+      "start": 25.72,
+      "end": 30.56,
+      "text": "appliquer le clustering sémantique. Nous allons donc commencer par passer en revue quelques"
+    },
+    {
+      "id": 4,
+      "start": 30.56,
+      "end": 35.28,
+      "text": "détails afin que vous puissiez lire l'article si vous le souhaitez et le télécharger sur mon GitHub"
+    },
+    {
+      "id": 5,
+      "start": 35.28,
+      "end": 41.56,
+      "text": "éléments. Je vais donc essayer. Je commencerais par Mistral OCR."
+    },
+    {
+      "id": 6,
+      "start": 41.56,
+      "end": 46.18,
+      "text": "Ensuite, j'utiliserai TrainingWhisper, qui est différent."
+    },
+    {
+      "id": 7,
+      "start": 46.18,
+      "end": 53.42,
+      "text": "Il s'agit plutôt d'apprendre à utiliser Whisper sur des langues peu documentées, comme"
+    },
+    {
+      "id": 8,
+      "start": 53.42,
+      "end": 55.7,
+      "text": "Pour m'éloigner du"
+    },
+    {
+      "id": 9,
+      "start": 55.7,
+      "end": 62.46,
+      "text": "du français, de l'anglais et de l'espagnol, et aborder des langues plus rares, comme par exemple"
+    },
+    {
+      "id": 10,
+      "start": 62.46,
+      "end": 66.32,
+      "text": "Je dirais que c'est comme ça, en langage africain, etc. Bref,"
+    },
+    {
+      "id": 11,
+      "start": 66.32,
+      "end": 72.74,
+      "text": "Commençons. J'ai tout préparé dans le fichier de configuration."
+    },
+    {
+      "id": 12,
+      "start": 72.74,
+      "end": 80.94,
+      "text": "disponible sur GitHub. Ensuite, je vais le faire manuellement devant vous."
+    },
+    {
+      "id": 13,
+      "start": 80.94,
+      "end": 84.74,
+      "text": "J'utilise par exemple… Bon, c'est peut-être un peu long."
+    },
+    {
+      "id": 14,
+      "start": 84.74,
+      "end": 89.06,
+      "text": "Je suis myope, c'est pour ça. Donc, pour l'instant, nous… Je vais y aller."
+    },
+    {
+      "id": 15,
+      "start": 89.06,
+      "end": 94.1,
+      "text": "Je vais donc commencer par le premier. J'ai tout commenté, vous avez donc beaucoup de choses à faire."
+    },
+    {
+      "id": 16,
+      "start": 94.1,
+      "end": 100.1,
+      "text": "Je vais donc utiliser cet environnement. Vous voyez, il a changé. Je suis passé de :"
+    },
+    {
+      "id": 17,
+      "start": 100.1,
+      "end": 104.5,
+      "text": "de la base à Mistral OCR. Je ne vous le donne pas, mais vous avez tous les prérequis :"
+    },
+    {
+      "id": 18,
+      "start": 104.5,
+      "end": 105.3,
+      "text": "dont vous avez besoin."
+    },
+    {
+      "id": 19,
+      "start": 105.3,
+      "end": 110.36,
+      "text": "Prenons celui-ci par exemple. Nous allons utiliser ceci comme source et il va…"
+    },
+    {
+      "id": 20,
+      "start": 110.36,
+      "end": 113.96,
+      "text": "Prenez ce petit PDF et montrez-le-moi."
+    },
+    {
+      "id": 21,
+      "start": 114.74,
+      "end": 119.78,
+      "text": "Par exemple, son contenu. Vous voyez, c'est un faux PDF, juste pour vous montrer."
+    },
+    {
+      "id": 22,
+      "start": 119.78,
+      "end": 126.02,
+      "text": "la capacité de Mistral OCR à extraire le contenu d'un PDF très simple, mais"
+    },
+    {
+      "id": 23,
+      "start": 126.02,
+      "end": 131.78,
+      "text": "nous passerons à un PDF plus complexe ensuite, et il vous faudra un fichier Mistral."
+    },
+    {
+      "id": 24,
+      "start": 131.78,
+      "end": 137.0,
+      "text": "APK. Par exemple, je ne vais pas ouvrir mon fichier AMP, car vous verriez mon APK"
+    },
+    {
+      "id": 25,
+      "start": 137.0,
+      "end": 142.18,
+      "text": "mais il vous faut un fichier APK. Heureusement, c'est un service payant, mais il"
+    },
+    {
+      "id": 26,
+      "start": 142.18,
+      "end": 143.6,
+      "text": "a un très bon"
+    },
+    {
+      "id": 27,
+      "start": 143.6,
+      "end": 144.74,
+      "text": "comme je le dis"
+    },
+    {
+      "id": 28,
+      "start": 144.74,
+      "end": 149.54,
+      "text": "c'est très intéressant. Ce n'est pas ce que je dis, mais ce qu'ils ont fait, c'est"
+    },
+    {
+      "id": 29,
+      "start": 149.54,
+      "end": 153.36,
+      "text": "une compréhension de pointe des documents complexes, nativement multilingue et"
+    },
+    {
+      "id": 30,
+      "start": 153.36,
+      "end": 157.94,
+      "text": "Multimodal, ce qui est très intéressant pour moi et que vous pouvez également"
+    },
+    {
+      "id": 31,
+      "start": 157.94,
+      "end": 161.72,
+      "text": "Également une organisation auto-hébergée traitant d'informations hautement sensibles et classifiées"
+    },
+    {
+      "id": 32,
+      "start": 161.72,
+      "end": 166.4,
+      "text": "qui relèvent de la souveraineté, un élément essentiel dans un"
+    },
+    {
+      "id": 33,
+      "start": 166.4,
+      "end": 170.3,
+      "text": "parce que si vous travaillez sur des sujets journalistiques vraiment"
+    },
+    {
+      "id": 34,
+      "start": 170.3,
+      "end": 174.74,
+      "text": "radioactifs, vous devez vous assurer que le contenu ne sera pas partagé."
+    },
+    {
+      "id": 35,
+      "start": 174.74,
+      "end": 183.08,
+      "text": "disons que vous voyez… oups, pardon, je crois que je me suis trompé. Oui, je me suis trompé."
+    },
+    {
+      "id": 36,
+      "start": 183.08,
+      "end": 193.62,
+      "text": "« Au fait, je devrais peut-être mettre à jour celui-ci. OK, c'était correct. »"
+    },
+    {
+      "id": 37,
+      "start": 193.62,
+      "end": 201.32,
+      "text": "« Alors, faisons-le. Et vous voyez, il a donné… » Oui, ils peuvent. Oui, oui, voir une page."
+    },
+    {
+      "id": 38,
+      "start": 201.32,
+      "end": 204.54,
+      "text": "Et ensuite, il affiche le texte, ce qui signifie que vous pouvez afficher le texte."
+    },
+    {
+      "id": 39,
+      "start": 204.54,
+      "end": 211.42,
+      "text": "Dans le format de votre choix. Disons que… Voilà, vous savez, je vous ai donné… Je vous présente simplement…"
+    },
+    {
+      "id": 40,
+      "start": 211.42,
+      "end": 216.14,
+      "text": "Quelques fichiers : le trois, le quatre et le cinq. Je les ai déjà ouverts, car c’est plus rapide de faire le…"
+    },
+    {
+      "id": 41,
+      "start": 216.14,
+      "end": 222.54,
+      "text": "Tutoriel. Mais vous pouvez aussi utiliser ce que j’ai créé. Disons le trois. le"
+    },
+    {
+      "id": 42,
+      "start": 222.54,
+      "end": 229.58,
+      "text": "Quatre. Désolé, c'est un autre cas d'utilisation. Je vais donc vérifier si je suis au bon endroit."
+    },
+    {
+      "id": 43,
+      "start": 229.58,
+      "end": 233.98,
+      "text": "Oui, je suis toujours au bon endroit. Je vérifie juste que les commandes que j'ai saisies sont correctes."
+    },
+    {
+      "id": 44,
+      "start": 233.98,
+      "end": 240.54,
+      "text": "Le commentaire… désolé. Donc, celui-ci va prendre, par exemple, un élément plus grand."
+    },
+    {
+      "id": 45,
+      "start": 240.54,
+      "end": 249.58,
+      "text": "Allons-y. Je pense que vous pouvez voir une certaine quantité de français, et surtout du français."
+    },
+    {
+      "id": 46,
+      "start": 249.58,
+      "end": 255.5,
+      "text": "Anglais. Alors, restons-en là. Je dois prendre celui-ci. C'est l'édition flocon de neige."
+    },
+    {
+      "id": 47,
+      "start": 255.5,
+      "end": 262.86,
+      "text": "IA générative et langage de l'apprentissage. Vous verrez, je suppose, un certain nombre de pages :"
+    },
+    {
+      "id": 48,
+      "start": 262.86,
+      "end": 263.96,
+      "text": "presque 44, puis le texte, puis le texte, puis le texte, puis"
+    },
+    {
+      "id": 49,
+      "start": 263.96,
+      "end": 264.94,
+      "text": "chacun de ces éléments sera dans l'ordre de trois, puis le texte, puis"
+    },
+    {
+      "id": 50,
+      "start": 264.94,
+      "end": 265.76,
+      "text": "beaucoup de choses, parfois très complexes, notamment avec trois pages de texte."
+    },
+    {
+      "id": 51,
+      "start": 265.76,
+      "end": 269.76,
+      "text": "et ensuite, il faut passer aux pages quatre, cinq et… Donc, vous avez les trois pages et les quatre, je suppose, et plein d'autres choses comme ça. Bref, on va créer quelque chose, alors je suis…"
+    },
+    {
+      "id": 52,
+      "start": 269.76,
+      "end": 277.12,
+      "text": "Je vais utiliser YouTube 3. Je pense avoir fait quelques essais et ça devrait fonctionner tout de suite. Vous voyez, vous avez…"
+    },
+    {
+      "id": 53,
+      "start": 277.12,
+      "end": 283.12,
+      "text": "YouTube 3, de YouTube à YouTube, parce que j'ai fait des tests et cette fois, ça va tout récupérer."
+    },
+    {
+      "id": 54,
+      "start": 283.12,
+      "end": 293.36,
+      "text": "À partir de ce PDF, ça prendra un peu de temps et ça devrait fonctionner. Oui, c'est ça, il a donc fait"
+    },
+    {
+      "id": 55,
+      "start": 293.36,
+      "end": 293.76,
+      "text": "trois"
+    },
+    {
+      "id": 56,
+      "start": 293.96,
+      "end": 299.84,
+      "text": "Voyons voir, il y a trois éléments. Vous avez beaucoup de choses, ce qui est presque"
+    },
+    {
+      "id": 57,
+      "start": 299.84,
+      "end": 305.0,
+      "text": "le contenu est correct tel quel en anglais. C'est même mieux, mais vous devriez"
+    },
+    {
+      "id": 58,
+      "start": 305.0,
+      "end": 309.26,
+      "text": "essayer aussi en espagnol, en français, et dans n'importe quelle autre langue si nécessaire. pour"
+    },
+    {
+      "id": 59,
+      "start": 309.26,
+      "end": 314.12,
+      "text": "instance Je veux et ensuite vous pouvez retirer ces informations par exemple"
+    },
+    {
+      "id": 60,
+      "start": 314.12,
+      "end": 319.7,
+      "text": "je n'ai pas besoin de cette image, je veux juste m'en débarrasser, donc je vais suivre ceci"
+    },
+    {
+      "id": 61,
+      "start": 319.7,
+      "end": 324.86,
+      "text": "Je fais un nettoyage, vous savez, en effectuant quelques opérations. J'essaie de trouver…"
+    },
+    {
+      "id": 62,
+      "start": 324.86,
+      "end": 330.02,
+      "text": "du contenu structuré à partir d'un PDF, puis je fais de la post-production ou…"
+    },
+    {
+      "id": 63,
+      "start": 330.02,
+      "end": 334.58,
+      "text": "un post-traitement. Par exemple, pour celui-ci, vous allez récupérer…"
+    },
+    {
+      "id": 64,
+      "start": 334.58,
+      "end": 338.9,
+      "text": "tout ce qui ressemble à une image et il va nettoyer le tout. Donc…"
+    },
+    {
+      "id": 65,
+      "start": 338.9,
+      "end": 345.66,
+      "text": "Disons que c'est le troisième élément. Je dirais trois. OK, donc voilà. Il va prendre le document que nous avons créé et il va tout nettoyer à l'intérieur."
+    },
+    {
+      "id": 66,
+      "start": 345.66,
+      "end": 349.7,
+      "text": "Vous pouvez ajouter des éléments, des entrées de registre ou autres, et nettoyer vos"
+    },
+    {
+      "id": 68,
+      "start": 354.68,
+      "end": 360.2,
+      "text": "Il a terminé le travail, vous voyez, c'est assez rapide. Ensuite, vous verrez si"
+    },
+    {
+      "id": 69,
+      "start": 360.2,
+      "end": 364.1,
+      "text": "Vous comparez, vous avez ceci qui a disparu parce que je n'en avais pas besoin."
+    },
+    {
+      "id": 70,
+      "start": 364.1,
+      "end": 369.08,
+      "text": "C'est plus propre et vous pouvez donc détecter des motifs à l'intérieur du"
+    },
+    {
+      "id": 71,
+      "start": 369.08,
+      "end": 376.1,
+      "text": "texte, quel qu'il soit, et ensuite, je veux dire, consolider votre contenu. À quoi sert-il ?"
+    },
+    {
+      "id": 72,
+      "start": 376.1,
+      "end": 379.64,
+      "text": "Pour n'importe quel but, comme faire un essai, explorer, etc."
+    },
+    {
+      "id": 73,
+      "start": 379.7,
+      "end": 384.92,
+      "text": "Si vous ne faites rien, faites ce que vous voulez. C'est une façon très intéressante de En cours"
+    },
+    {
+      "id": 74,
+      "start": 384.92,
+      "end": 390.44,
+      "text": "Avec différentes combinaisons de documents, vous disposez d'une documentation très complète, n'est-ce pas ?"
+    },
+    {
+      "id": 75,
+      "start": 390.44,
+      "end": 394.28,
+      "text": "Ici, je n'ai exploré que les bases."
+    },
+    {
+      "id": 76,
+      "start": 394.28,
+      "end": 399.52,
+      "text": "Monsieur Ossier, vous avez de nombreuses possibilités ; c'est plutôt bien documenté."
+    },
+    {
+      "id": 77,
+      "start": 399.52,
+      "end": 406.58,
+      "text": "Sauf qu'il faut payer, ce n'est pas si cher, mais quand même…"
+    },
+    {
+      "id": 78,
+      "start": 406.58,
+      "end": 409.58,
+      "text": "Il faut traiter des milliers de documents, et cela coûte cher."
+    },
+    {
+      "id": 79,
+      "start": 409.7,
+      "end": 414.56,
+      "text": "Je vais donc vous présenter cette vidéo. Nous allons examiner le cas suivant :"
+    },
+    {
+      "id": 80,
+      "start": 414.56,
+      "end": 418.52,
+      "text": "« Training Whisper », qui n'est pas vraiment une formation. Je devrais… Je devrais modifier le texte."
+    },
+    {
+      "id": 81,
+      "start": 418.52,
+      "end": 422.84,
+      "text": "« Au début, c'était une de mes idées, mais je voulais… » Test"
+    },
+    {
+      "id": 82,
+      "start": 422.84,
+      "end": 428.46,
+      "text": "Plusieurs langues différentes, c'est exactement ce que je disais dans ma file d'attente."
+    },
+    {
+      "id": 83,
+      "start": 428.46,
+      "end": 433.2,
+      "text": "C'est un projet multilingue qui m'intéresse et si besoin, j'ai aussi…"
+    },
+    {
+      "id": 84,
+      "start": 433.2,
+      "end": 439.1,
+      "text": "Quelques notions sur l'alternance codique, d'accord ? Mais on verra ça dans la deuxième vidéo."
+    },
+    {
+      "id": 85,
+      "start": 439.1,
+      "end": 439.68,
+      "text": "Si mon travail vous plaît, abonnez-vous à ma chaîne ! On se retrouve dans une prochaine vidéo."
+    },
+    {
+      "id": 86,
+      "start": 439.7,
+      "end": 445.52,
+      "text": "N'oubliez pas de vous abonner à ma chaîne YouTube, par exemple, juste ici."
+    },
+    {
+      "id": 87,
+      "start": 445.52,
+      "end": 452.12,
+      "text": "Vous pourrez ainsi accéder au contenu et lire l'article si besoin. À bientôt !"
+    },
+    {
+      "id": 88,
+      "start": 452.12,
+      "end": 454.48,
+      "text": "Au revoir !"
+    },
+    {
+      "id": 89,
+      "start": 469.7,
+      "end": 471.76,
+      "text": "Vous"
+    }
+  ]
+}

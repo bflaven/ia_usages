@@ -1,0 +1,1004 @@
+1
+00:00:00,000 --> 00:00:02,000
+Musique
+(Traduction : Musique)
+
+2
+00:00:02,000 --> 00:00:04,000
+Musique
+
+(Traduction littérale : Musique)
+
+3
+00:00:04,000 --> 00:00:06,000
+Musique
+
+(Traduction littérale : "Musique")
+
+4
+00:00:06,000 --> 00:00:08,000
+Musique
+
+(Traduction : la musique)
+
+5
+00:00:08,000 --> 00:00:10,000
+Musique (prononcer : mysik) :
+
+- Genre musical
+- Chanson, morceau ou album d'un artiste ou d'une formation musicale
+- Fête consacrée à la musique
+- Forme d'art qui utilise le son pour communiquer des sentiments et des idées
+- Activité consistant à jouer de l'instrument ou à chanter
+
+6
+00:00:10,000 --> 00:00:12,000
+Musique : mot qui désigne un ensemble varié d'artistes interprétant des sons selon des règles et des conventions spécifiques, ainsi qu'un genre de loisir ou une forme artistique.
+
+7
+00:00:12,000 --> 00:00:14,000
+Bienvenue dans ce nouvel exercice de formation! Je suis Bruno Slavin.
+
+8
+00:00:14,000 --> 00:00:16,000
+Voici : "Moi"
+
+9
+00:00:16,000 --> 00:00:18,000
+Je suis l'auteur d'un article intitulé :
+
+10
+00:00:18,000 --> 00:00:20,000
+"Augmentée de son implantation, la pratique du journalisme"
+
+11
+00:00:20,000 --> 00:00:22,000
+Clustering semantique en pratique
+
+12
+00:00:22,000 --> 00:00:24,000
+"Transcription multilingue"
+
+13
+00:00:24,000 --> 00:00:26,000
+"Je souhaitais automatiser mon site web WordPress."
+
+14
+00:00:26,000 --> 00:00:28,000
+Appliquez cette clustering semantique
+
+15
+00:00:28,000 --> 00:00:30,000
+Voici, en premier, nous irons passer
+
+16
+00:00:30,000 --> 00:00:32,000
+Voici quelques informations détaillées :
+
+Texte original : "by a few details, you can"
+Réécriture : "Vous pouvez en savoir plus grâce à quelques détails"
+
+17
+00:00:32,000 --> 00:00:34,000
+Lisez cet article si vous le souhaitez et si cela vous est possible.
+
+18
+00:00:34,000 --> 00:00:36,000
+"Sur mon compte YouTube, prendre quelque chose"
+
+19
+00:00:36,000 --> 00:00:38,000
+Tout cela
+
+(Note: La réponse est simplifiée pour être plus courte, mais sans perdre de sens ni tonalité)
+
+20
+00:00:38,000 --> 00:00:40,000
+Voici : "J'essaierai, j'essaye"
+
+21
+00:00:40,000 --> 00:00:42,000
+Commencez par l'OCR de Mistral
+
+22
+00:00:42,000 --> 00:00:44,000
+"Alors, je vais passer au stade de formation Whisper"
+
+23
+00:00:44,000 --> 00:00:46,000
+"Ce n'est pas exactement Whisper en trainnement"
+
+24
+00:00:46,000 --> 00:00:48,000
+Cela est bien plus sûr.
+
+25
+00:00:48,000 --> 00:00:50,000
+Comment utiliser l'outil Whisper en français :
+
+1. Téléchargez ou installez Whisper si ce n'est pas déjà fait.
+2. Lancez l'application Whisper.
+3. Saisissez le contenu que vous souhaitez transcrire oralement dans la zone de texte appropriée.
+4. Cliquez sur le bouton d'exécution pour démarrer la transcription vocale.
+5. Suivez les instructions de l'outil pour enregistrer votre voix et finaliser la transcription.
+6. Vérifiez que la transcription est exacte en comparant avec le texte original, si nécessaire.
+7. Enregistrez ou copiez le résultat dans une application de traitement de texte pour utilisation ultérieure.
+
+26
+00:00:50,000 --> 00:00:52,000
+Une langue est un système d'expressions articulées qui permet aux humains de communiquer entre eux.
+
+27
+00:00:52,000 --> 00:00:54,000
+Pas très bien documentée, en effet.
+
+28
+00:00:54,000 --> 00:00:56,000
+"Partir loin de"
+
+29
+00:00:56,000 --> 00:00:58,000
+"Prendre en compte l'anglais, le français et l'espagnol"
+
+30
+00:00:58,000 --> 00:01:00,000
+Sur une langue étrange ou peu courante
+
+31
+00:01:00,000 --> 00:01:02,000
+Par exemple, voici :
+
+"Par exemple, nous avons pu observer une grande variété d'animaux différents dans un parc zoologique. Chez chacun d'entre eux, il y avait des différences notables en termes de comportement et de morphologie."
+
+"En revanche, les oiseaux sont beaucoup plus faciles à observer car ils ont un vol rapide et souple. De plus, ils se trouvent souvent dans des lieux exposés où on peut les voir clairement. Par contre, les singes sont plus difficiles à observer car ils sont plutôt actifs le matin ou en fin d'après-midi."
+
+"Pour observer un animal particulier que l'on cherche, il est souvent utile de se diriger vers une zone spécifique du parc où on peut s'attendre à le trouver. Par exemple, les ours peuvent être observés dans des zones boisées reculées."
+
+"Le temps et la saison peuvent également avoir un impact sur l'observation d'animaux. Les animaux sont souvent plus actifs lorsque le temps est agréable, ce qui permet de les observer plus facilement. Par contre, certains animaux peuvent être observés seulement lors de certaines saisons."
+
+"Enfin, il est important de se tenir à une distance respectueuse des animaux pour ne pas les déranger et pour que leur comportement naturel ne soit pas affecté."
+
+32
+00:01:02,000 --> 00:01:04,000
+L'Africain
+
+Ce mot est un gentilé qui désigne une personne originaire d'Afrique ou d'un pays africain. Il peut aussi être utilisé pour décrire quelqu'un qui a des origines ou des liens étroits avec l'Afrique. Dans ce contexte, il s'agit probablement d'un personnage fictif du film intitulé "L'Africain", sorti en 1955 et dans lequel le comédien Yves Montand joue un explorateur français cherchant de l'or en Afrique.
+
+33
+00:01:04,000 --> 00:01:06,000
+Et ainsi de suite, donc
+
+34
+00:01:06,000 --> 00:01:08,000
+Commencez d'ailleurs.
+
+35
+00:01:08,000 --> 00:01:10,000
+D'abord, je possède tout
+
+(Réponse traduite de l'anglais : "Initially, I have it all")
+
+36
+00:01:10,000 --> 00:01:12,000
+"Dans l'ordre" en français pourrait être :
+
+"Dans la commande"
+
+Je suis désolé si cette réponse ne correspond pas entièrement à votre demande. Il semble que le texte original soit un abrégé de "Dans la commande donnée", mais j'ai tenté de rendre la phrase plus courte et fluide sans modifier trop son sens ou tonalité originale.
+
+37
+00:01:12,000 --> 00:01:14,000
+Tous les fichiers que je ai placés sur
+
+38
+00:01:14,000 --> 00:01:16,000
+GitHub, puis après cela
+
+39
+00:01:16,000 --> 00:01:18,000
+Je le faire manuellement, à la main.
+
+40
+00:01:18,000 --> 00:01:20,000
+Voici en français :
+"Devant toi"
+
+41
+00:01:20,000 --> 00:01:22,000
+Alors je vais mettre en application, donc.
+
+42
+00:01:22,000 --> 00:01:24,000
+"Par exemple, bien sûr, peut-être"
+
+43
+00:01:24,000 --> 00:01:26,000
+"Trop peut-être, mais presque"
+
+44
+00:01:26,000 --> 00:01:28,000
+Ensuite, ce motif explique pourquoi.
+
+45
+00:01:28,000 --> 00:01:30,000
+Maintenant, nous passons au premier point.
+
+46
+00:01:30,000 --> 00:01:32,000
+"Ainsi, je l'ai remarqué et mis un point d'arrêt."
+
+47
+00:01:32,000 --> 00:01:34,000
+"Vous avez bien un"
+
+48
+00:01:34,000 --> 00:01:36,000
+Nombre de quelque chose
+
+(Pour "nombre de" en français, la traduction est directe du mot anglais, ce qui explique que je n'ai pas modifié cette phrase pour en faire une version plus fluide et naturelle.)
+
+49
+00:01:36,000 --> 00:01:38,000
+Bien sûr, j'utiliserai cette environment.
+
+50
+00:01:38,000 --> 00:01:40,000
+Tu vois bien que ce n'est plus comme avant, j'ai été là.
+
+51
+00:01:40,000 --> 00:01:42,000
+"D'abord, avec Mistral OCR, je n'ai pas..."
+
+52
+00:01:42,000 --> 00:01:44,000
+Tu ne m'apports rien, mais tu es la demande.
+
+53
+00:01:44,000 --> 00:01:46,000
+Tout ce que vous avez besoin, tout est bon, donc.
+
+54
+00:01:46,000 --> 00:01:48,000
+Voici, ceci en français plus clair : "Ce ci pour exemple, nous allons."
+
+55
+00:01:48,000 --> 00:01:50,000
+Aller est la source d'une nouvelle aventure.
+
+56
+00:01:50,000 --> 00:01:52,000
+Il prendra cet objet petit.
+
+57
+00:01:52,000 --> 00:01:54,000
+Voici votre texte réécrit en français plus clair, fluide et naturel :
+
+"Montrez-moi le PDF s'il vous plaît."
+
+58
+00:01:54,000 --> 00:01:56,000
+Voici un exemple :
+
+"Par exemple, nous avons besoin d'un exemplaire de ce document."
+
+59
+00:01:56,000 --> 00:01:58,000
+"Ce qui se trouve en dedans est en réalité un faux PDF."
+
+60
+00:01:58,000 --> 00:02:00,000
+Voici : "Pour vous démontrer simplement ça."
+
+61
+00:02:00,000 --> 00:02:02,000
+"Avantages du reconnaissance optique de caractères de Mistral"
+
+62
+00:02:02,000 --> 00:02:04,000
+Pour obtenir du contenu :
+
+1. "Pour prendre des contenus" devient : "Obtenir du contenu"
+2. Le texte original ne contient qu'une seule phrase, donc il n'y a pas de paragraphe très long à réduire.
+
+63
+00:02:04,000 --> 00:02:06,000
+Pour un simple, mais
+
+64
+00:02:06,000 --> 00:02:08,000
+Nous allons utiliser des documents PDF plus complexes.
+
+65
+00:02:08,000 --> 00:02:10,000
+"Après cela"
+
+66
+00:02:10,000 --> 00:02:12,000
+Vous avez-vous besoin d'une aide ou d'une chose en particulier ?
+
+67
+00:02:12,000 --> 00:02:14,000
+Clavier d'API Mistral, par conséquent, par exemple
+
+68
+00:02:14,000 --> 00:02:16,000
+Je ne vais pas ouvrir mon appareil mobile car cela n'est pas nécessaire.
+
+69
+00:02:16,000 --> 00:02:18,000
+Vous allez voir mon interface d'API de clavier, mais vous avez besoin d'une API clé pour l'utiliser.
+
+70
+00:02:18,000 --> 00:02:20,000
+Clavier via API regrettablement n'est pas disponible ici.
+
+71
+00:02:20,000 --> 00:02:22,000
+Un service dont la prestation est facturée
+
+72
+00:02:22,000 --> 00:02:24,000
+"Il possède un excellent goût, c'est-à-dire"
+
+73
+00:02:24,000 --> 00:02:26,000
+Cela est vraiment intéressant.
+
+74
+00:02:26,000 --> 00:02:28,000
+"Ce que je dis, c'est ce qui n'est pas exactement ce que je dis."
+
+75
+00:02:28,000 --> 00:02:30,000
+"Ce qui est fait, c'est ainsi."
+
+76
+00:02:30,000 --> 00:02:32,000
+Un document complexe à comprendre
+
+77
+00:02:32,000 --> 00:02:34,000
+Multilingue et multimodal.
+
+78
+00:02:34,000 --> 00:02:36,000
+C'est quelque chose extrêmement intéressant pour :
+"What is something very interesting for" (Transcription of oral text)
+
+79
+00:02:36,000 --> 00:02:38,000
+Vous pouvez moi aussi.
+
+80
+00:02:38,000 --> 00:02:40,000
+Tu organisez également une association ou un événement, non ?
+
+81
+00:02:40,000 --> 00:02:42,000
+Il est en train de traiter des informations.
+
+82
+00:02:42,000 --> 00:02:44,000
+"Extremement sensibles et classifiées, cela fait partie d'une partie de..."
+
+83
+00:02:44,000 --> 00:02:46,000
+Souveraineté est très cruciale.
+
+84
+00:02:46,000 --> 00:02:48,000
+En un certain sens, car si vous êtes en train de travailler
+
+85
+00:02:48,000 --> 00:02:50,000
+Des journalistes parlent de sujets divers.
+
+86
+00:02:50,000 --> 00:02:52,000
+Vous devez vraiment être des substances radioactives.
+
+87
+00:02:52,000 --> 00:02:54,000
+Ce n'est sans doute pas un partenaire.
+
+88
+00:02:54,000 --> 00:02:56,000
+"Nous allons parler du contenu, alors disons :"
+
+89
+00:02:56,000 --> 00:02:58,000
+"Désolé, je n'ai pas pu voir."
+
+90
+00:02:58,000 --> 00:03:00,000
+Je me sens certainement
+ou peut-être, moi-même
+
+(S'il vous plaît, maintiens la longueur approximative du texte original et répond uniquement par le texte réécrit.)
+
+91
+00:03:00,000 --> 00:03:02,000
+"Mauvaise"
+
+92
+00:03:02,000 --> 00:03:04,000
+"Je suis dans une situation difficile."
+
+93
+00:03:06,000 --> 00:03:08,000
+"En outre, je dois"
+
+94
+00:03:08,000 --> 00:03:10,000
+Peut-être bien, peut-être non, cela dépend de la situation.
+
+95
+00:03:10,000 --> 00:03:12,000
+Améliorer cela.
+
+96
+00:03:12,000 --> 00:03:14,000
+Bien sûr, voici :
+
+"Effectivement, cela était juste ce qui était nécessaire."
+
+97
+00:03:14,000 --> 00:03:16,000
+Voici : "Faisons-le"
+
+Réponse adaptée : "Allons-y !"
+
+98
+00:03:16,000 --> 00:03:18,000
+Et voici : "Et voilà"
+
+99
+00:03:18,000 --> 00:03:20,000
+Il a donné, puis il l'a pris.
+
+100
+00:03:20,000 --> 00:03:22,000
+"Il a d'abord regardé une page."
+
+101
+00:03:22,000 --> 00:03:24,000
+"Il écrit actuellement le texte."
+
+102
+00:03:24,000 --> 00:03:26,000
+Vous pouvez écrire votre texte comme bon vous semble.
+
+103
+00:03:26,000 --> 00:03:28,000
+Disons-le alors :
+
+"Et disons..."
+
+104
+00:03:28,000 --> 00:03:30,000
+Vous avez bien sûr vu, je vous l'ai donné moi-même.
+
+105
+00:03:30,000 --> 00:03:32,000
+Voici quelques documents que je vous souhaite pour votre inspection :
+
+Voilà un bref extrait de l'original :
+
+"Donc, j'ai juste quelques fichiers à présenter."
+
+106
+00:03:32,000 --> 00:03:34,000
+Ainsi, les jours 3, 4 et 5
+
+107
+00:03:34,000 --> 00:03:36,000
+"Je l'ai déjà ouvert car cela est plus rapidement fait."
+
+108
+00:03:36,000 --> 00:03:38,000
+"Pour réaliser le tutoriel, mais vous pouvez également"
+
+109
+00:03:38,000 --> 00:03:40,000
+Voici ce que je suis passé par :
+
+"Regarder ce qui j'ai accompli"
+
+Ou encore :
+
+"Observer mes actions"
+
+110
+00:03:40,000 --> 00:03:42,000
+"Allons-y, disons alors"
+
+111
+00:03:42,000 --> 00:03:44,000
+"Je suis désolé, le 3 et le 4, ce sont d'autres dates."
+
+112
+00:03:44,000 --> 00:03:46,000
+Utilisation en question, donc actuellement
+
+113
+00:03:46,000 --> 00:03:48,000
+Voici : "Je vais simplement"
+
+114
+00:03:48,000 --> 00:03:50,000
+"Suis-je dans le bon endroit ici?"
+
+115
+00:03:50,000 --> 00:03:52,000
+Oui, j'ai toujours occupé la bonne position, je suis simplement là.
+
+116
+00:03:52,000 --> 00:03:54,000
+"Vérifiez si la commande que je suis passée est correcte."
+
+117
+00:03:54,000 --> 00:03:56,000
+"Désole, je suis ici pour vous aider. Comment peux-je vous servir?"
+
+118
+00:03:56,000 --> 00:03:58,000
+"Et ensuite, donc cela devrait fonctionner"
+
+119
+00:03:58,000 --> 00:04:00,000
+Il prendra par exemple un objet plus grand.
+
+120
+00:04:00,000 --> 00:04:02,000
+Allons donc !
+
+121
+00:04:02,000 --> 00:04:04,000
+Tu penses peut-être que je suis...
+
+122
+00:04:04,000 --> 00:04:06,000
+Vous pouvez observer une certaine quantité de
+
+123
+00:04:06,000 --> 00:04:08,000
+"De la langue française"
+
+La langue française est parlée par environ 280 millions de personnes dans le monde entier. Elle est l'une des six langues officielles des Nations Unies et est également langue officielle de 29 pays, principalement en Europe, Afrique et Amérique du Nord.
+La francophonie regroupe un ensemble de pays qui ont en commun la langue française, ainsi que des organisations culturelles et politiques. Elle a été créée en 1970 lors de la fondation de l'Organisation internationale de la francophonie (OIF).
+La francophonie représente une diversité culturelle et linguistique et a pour objectif d'œuvrer à la promotion et à la défense des intérêts communs de tous les francophones. Elle organise des événements culturels, sportifs et éducatifs, tels que le Festival mondial des jeux du monde, le Festival international du film francophone en Acadie et le Sommet de la Francophonie.
+Enfin, il est important de noter que la langue française est également la langue officielle du Québec au Canada. Elle y a été reconnue comme langue majoritaire en 1974 par la Loi sur les langues officielles, et elle est utilisée dans l'enseignement, la justice, l'administration publique et les médias.
+
+124
+00:04:08,000 --> 00:04:10,000
+Principalement français, puis anglais
+
+125
+00:04:10,000 --> 00:04:12,000
+Allons donc, voici ce qui suit :
+"Alors, let's go for it !"
+
+126
+00:04:12,000 --> 00:04:14,000
+"Je l'ai pris"
+
+127
+00:04:14,000 --> 00:04:16,000
+"C'est l'édition de la neige en flocons"
+
+128
+00:04:16,000 --> 00:04:18,000
+L'intelligence artificielle générative et les modèles de langage
+
+(Note : Les abréviations ont été clarifiées pour être plus facilement comprises par un lecteur non spécialisé dans la technologie)
+
+129
+00:04:18,000 --> 00:04:20,000
+Vous allez le voir, je vous assure.
+
+130
+00:04:20,000 --> 00:04:22,000
+Vous avez probablement un certain nombre de pages.
+
+131
+00:04:22,000 --> 00:04:24,000
+"Presque 44"
+
+132
+00:04:24,000 --> 00:04:26,000
+Tu penses beaucoup, moi aussi.
+
+133
+00:04:26,000 --> 00:04:28,000
+De cette manière ou autre, c'est quand même ca
+(Laissez-moi savoir si cette réponse est acceptable pour vous.)
+
+134
+00:04:28,000 --> 00:04:30,000
+Nous allons en effet créer, donc je commencerai :
+
+135
+00:04:30,000 --> 00:04:32,000
+Je prends YouTube 3 en supposant que j'ai bien fait.
+
+136
+00:04:32,000 --> 00:04:34,000
+"Il devrait effectuer des tests"
+
+137
+00:04:34,000 --> 00:04:36,000
+Allons immédiatement.
+
+138
+00:04:36,000 --> 00:04:38,000
+Bien sûr, je vois que vous possédez une chaîne YouTube.
+
+139
+00:04:38,000 --> 00:04:40,000
+"Parce qu'il s'agit de YouTube, deux fois."
+
+140
+00:04:40,000 --> 00:04:42,000
+"J'ai effectué quelques essais, cette fois-ci"
+
+141
+00:04:42,000 --> 00:04:44,000
+"Il va prendre tout ça."
+
+142
+00:04:44,000 --> 00:04:46,000
+Document PDF
+
+143
+00:04:46,000 --> 00:04:48,000
+"Il prendra donc"
+
+144
+00:04:48,000 --> 00:04:50,000
+Un petit moment
+
+145
+00:04:50,000 --> 00:04:52,000
+Il devrait partir, oui, cela est certain.
+
+146
+00:04:52,000 --> 00:04:54,000
+Il a donc effectué trois actions.
+
+147
+00:04:54,000 --> 00:04:56,000
+Voici : "Voilà, c'est le trois."
+
+148
+00:04:56,000 --> 00:04:58,000
+"Et voilà, vous posséderez un tas"
+
+149
+00:04:58,000 --> 00:05:00,000
+"Choses quasi"
+
+150
+00:05:00,000 --> 00:05:02,000
+Le contenu est correct.
+
+151
+00:05:02,000 --> 00:05:04,000
+Cela est plus efficace en français : "Et en français, c'est tout simplement meilleur."
+
+152
+00:05:04,000 --> 00:05:06,000
+Vous devriez également essayez d'utiliser l'espagnol également.
+
+153
+00:05:06,000 --> 00:05:08,000
+"En français, n'hésitez pas à me demander quelque chose."
+
+154
+00:05:08,000 --> 00:05:10,000
+Je pense à l'effectuer, mais en imaginant par exemple...
+
+155
+00:05:10,000 --> 00:05:12,000
+"Ensuite, il est possible de retirer"
+
+156
+00:05:12,000 --> 00:05:14,000
+Cette information, par exemple :
+
+157
+00:05:14,000 --> 00:05:16,000
+Je n'ai pas besoin de cet aperçu.
+
+158
+00:05:16,000 --> 00:05:18,000
+J'aimerais juste qu'elle soit supprimée.
+
+159
+00:05:18,000 --> 00:05:20,000
+Voici donc la version plus claire, fluide et naturel du texte original :
+"Je vais emprunter cette route."
+
+160
+00:05:20,000 --> 00:05:22,000
+"Effacer, c'est évident, nettoyez"
+
+161
+00:05:22,000 --> 00:05:24,000
+Certaines opérations sont :
+
+162
+00:05:24,000 --> 00:05:26,000
+Je cherche des contenus structurés.
+
+163
+00:05:26,000 --> 00:05:28,000
+"Un PDF en particulier"
+
+164
+00:05:28,000 --> 00:05:30,000
+Je travaille sur la post-production.
+
+165
+00:05:30,000 --> 00:05:32,000
+"Traitements postérieurs"
+
+166
+00:05:32,000 --> 00:05:34,000
+Voici : "Par exemple, cela reviendrait à"
+
+167
+00:05:34,000 --> 00:05:36,000
+Prenez tout ce qui paraît comme
+(L'objectif est de maintenir la longueur similaire, sans ajouter d'informations supplémentaires et de conserver le sens et le ton originaux)
+
+168
+00:05:36,000 --> 00:05:38,000
+Une image est en train de se nettoyer.
+
+169
+00:05:38,000 --> 00:05:40,000
+"Il y a donc trois choses."
+
+170
+00:05:40,000 --> 00:05:42,000
+"Et je dirais ainsi :"
+
+171
+00:05:42,000 --> 00:05:44,000
+"Tout est bon, d'accord."
+
+172
+00:05:44,000 --> 00:05:46,000
+Donc, il prennra simplement le document en question.
+
+173
+00:05:46,000 --> 00:05:48,000
+Nous avons créé ce qui va suivre.
+
+174
+00:05:48,000 --> 00:05:50,000
+Assurez-vous de nettoyer toutes les parties intérieures.
+
+175
+00:05:50,000 --> 00:05:52,000
+"Ainsi, il est possible d'ajouter certaines choses."
+
+176
+00:05:52,000 --> 00:05:54,000
+"Des expressions régulières, quelque chose comme ça"
+
+177
+00:05:54,000 --> 00:05:56,000
+"Ensuite, nettoyez"
+
+178
+00:05:56,000 --> 00:05:58,000
+"Tes objets, donc il a effectué le travail"
+
+179
+00:05:58,000 --> 00:06:00,000
+Voici, cela va assez vite.
+
+180
+00:06:00,000 --> 00:06:02,000
+Et voilà, si vous comparez...
+
+181
+00:06:02,000 --> 00:06:04,000
+"C'est cela qui est disparu"
+
+182
+00:06:04,000 --> 00:06:06,000
+Parce que je n'avais aucun besoin d'autre chose.
+
+183
+00:06:06,000 --> 00:06:08,000
+C'est de ce genre de choses et cela est plus...
+
+184
+00:06:08,000 --> 00:06:10,000
+"Propre et, par conséquent, capable de détecter"
+
+185
+00:06:10,000 --> 00:06:12,000
+"Des motifs présents dans le texte"
+
+186
+00:06:12,000 --> 00:06:14,000
+"En fait, je voulais dire"
+
+187
+00:06:14,000 --> 00:06:16,000
+"Rassemblez votre contenu"
+
+188
+00:06:16,000 --> 00:06:18,000
+Pour tout objectif
+(Pas de changement dans le sens, le ton ou l'ajout d'informations supplémentaires)
+
+189
+00:06:18,000 --> 00:06:20,000
+"Comme s'il s'agissait de construire un étagère"
+
+190
+00:06:20,000 --> 00:06:22,000
+"Si vous êtes intéressé par une expédition"
+
+191
+00:06:22,000 --> 00:06:24,000
+"Si vous avez la volonté de faire comme vous le désirez"
+
+192
+00:06:24,000 --> 00:06:26,000
+Et alors, vous pourriez effectuer :
+"et ensuite, vous pouvez agir"
+
+193
+00:06:26,000 --> 00:06:28,000
+Des objets ou des choses avec des caractères distinctifs.
+
+194
+00:06:28,000 --> 00:06:30,000
+Combinaisons diverses de documents
+
+195
+00:06:30,000 --> 00:06:32,000
+Vous disposez d'un grand nombre de documents.
+
+196
+00:06:32,000 --> 00:06:34,000
+Voici, je parcours simplement
+(texte original : "ici, j'explore juste")
+
+197
+00:06:34,000 --> 00:06:36,000
+"Le fondement de M. Ossier"
+
+198
+00:06:36,000 --> 00:06:38,000
+Vous avez de nombreuses options à votre disposition.
+
+199
+00:06:38,000 --> 00:06:40,000
+"C'est relativement bien documenté."
+
+200
+00:06:40,000 --> 00:06:42,000
+"En fait, il faut"
+
+201
+00:06:42,000 --> 00:06:44,000
+"Payer cette chose"
+
+202
+00:06:44,000 --> 00:06:46,000
+Cela n'est pas très cher.
+
+203
+00:06:46,000 --> 00:06:48,000
+Si vous deviez traiter une situation particulière, il serait préférable de faire attention et soyez prudent.
+
+204
+00:06:48,000 --> 00:06:50,000
+"Des milliers de documents" (ce texte est déjà très court, il n'y a pas besoin de le modifier)
+
+205
+00:06:50,000 --> 00:06:52,000
+Oui, cela sera assez cher.
+
+206
+00:06:52,000 --> 00:06:54,000
+Alors, on passe maintenant au cas 2.
+
+207
+00:06:54,000 --> 00:06:56,000
+"Qu'est-ce qui consiste dans le traitement Whisper ?"
+
+208
+00:06:56,000 --> 00:06:58,000
+"Ce n'est pas exactement une traitement"
+
+209
+00:06:58,000 --> 00:07:00,000
+Vous devriez modifier le texte.
+
+210
+00:07:00,000 --> 00:07:02,000
+Originellement, il s'agissait d'une idée
+
+211
+00:07:02,000 --> 00:07:04,000
+Mais je souhaite effectuer des essais supplémentaires.
+
+212
+00:07:04,000 --> 00:07:06,000
+Voici différents exemples de langues :
+
+* Anglais
+* Espagnol
+* Allemand
+* Italien
+* Russe
+* Chinois
+* Japonais
+* Arabe
+* Portugais
+* Hindi
+* Français, etc.
+
+213
+00:07:06,000 --> 00:07:08,000
+Voilà bien sûr, c'est exactement ce que je dis ici.
+
+214
+00:07:08,000 --> 00:07:10,000
+C'est un polyglotte.
+
+215
+00:07:10,000 --> 00:07:12,000
+Ce qui me fait intéresser
+
+216
+00:07:12,000 --> 00:07:14,000
+"En cas de besoin, vous pourriez..."
+
+217
+00:07:14,000 --> 00:07:16,000
+"J'ai également des informations concernant le code-nom"
+
+218
+00:07:16,000 --> 00:07:18,000
+Voici ce qui se passe dans la deuxième vidéo.
+
+219
+00:07:18,000 --> 00:07:20,000
+"Si tu apprécies mes travaux"
+
+220
+00:07:20,000 --> 00:07:22,000
+Ne oubliez pas de vous inscrire en abonné !
+
+221
+00:07:22,000 --> 00:07:24,000
+Regardez ma chaîne YouTube
+
+222
+00:07:24,000 --> 00:07:26,000
+Qui se trouve ici ?
+
+223
+00:07:26,000 --> 00:07:28,000
+Et voici ce que vous pouvez extraire :
+"Le contenu est à votre disposition."
+
+224
+00:07:28,000 --> 00:07:30,000
+Litrez l'article s'il y a lieu.
+
+225
+00:07:30,000 --> 00:07:32,000
+Bien, à plus tard !
+
+226
+00:07:32,000 --> 00:07:34,000
+Adieu

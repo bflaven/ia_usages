@@ -1,0 +1,357 @@
+1
+00:00:12,100 --> 00:00:17,280
+Bienvenue dans ce nouveau tutoriel. Je m'appelle Bruno Slaven. J'ai écrit un article
+
+2
+00:00:17,280 --> 00:00:21,600
+sur le journalisme augmenté, la mise en œuvre pratique du clustering sémantique,
+
+3
+00:00:21,600 --> 00:00:25,720
+la transcription multilingue et l'automatisation de certains sites WordPress, car je souhaitais
+
+4
+00:00:25,720 --> 00:00:30,560
+appliquer le clustering sémantique. Nous allons donc commencer par passer en revue quelques
+
+5
+00:00:30,560 --> 00:00:35,280
+détails afin que vous puissiez lire l'article si vous le souhaitez et le télécharger sur mon GitHub
+
+6
+00:00:35,280 --> 00:00:41,560
+éléments. Je vais donc essayer. Je commencerais par Mistral OCR.
+
+7
+00:00:41,560 --> 00:00:46,180
+Ensuite, j'utiliserai TrainingWhisper, qui est différent.
+
+8
+00:00:46,180 --> 00:00:53,420
+Il s'agit plutôt d'apprendre à utiliser Whisper sur des langues peu documentées, comme
+
+9
+00:00:53,420 --> 00:00:55,700
+Pour m'éloigner du
+
+10
+00:00:55,700 --> 00:01:02,460
+du français, de l'anglais et de l'espagnol, et aborder des langues plus rares, comme par exemple
+
+
+11
+00:01:02,460 --> 00:01:06,320
+Je dirais que c'est comme ça, en langage africain, etc. Bref,
+
+12
+00:01:06,320 --> 00:01:12,740
+Commençons. J'ai tout préparé dans le fichier de configuration.
+
+13
+00:01:12,740 --> 00:01:20,940
+disponible sur GitHub. Ensuite, je vais le faire manuellement devant vous.
+
+14
+00:01:20,940 --> 00:01:24,740
+J'utilise par exemple... Bon, c'est peut-être un peu long.
+
+15
+00:01:24,740 --> 00:01:29,060
+Je suis myope, c'est pour ça. Donc, pour l'instant, nous... Je vais y aller.
+
+16
+00:01:29,060 --> 00:01:34,100
+Je vais donc commencer par le premier. J'ai tout commenté, vous avez donc beaucoup de choses à faire.
+
+17
+00:01:34,100 --> 00:01:40,10 0
+Je vais donc utiliser cet environnement. Vous voyez, il a changé. Je suis passé de :
+
+18
+00:01:40,100 --> 00:01:44,50 0
+de la base à Mistral OCR. Je ne vous le donne pas, mais vous avez tous les prérequis :
+
+19
+00:01:44,500 --> 00:01:45,30 0
+dont vous avez besoin.
+
+20
+00:01:45,300 --> 00:01:50,36 0
+Prenons celui-ci par exemple. Nous allons utiliser ceci comme source et il va...
+
+21
+00:01:50,360 --> 00:01:53,960
+Prenez ce petit PDF et montrez-le-moi.
+
+22
+00:01:54,740 --> 00:01:59,780
+Par exemple, son contenu. Vous voyez, c'est un faux PDF, juste pour vous montrer.
+
+23
+00:01:59,780 --> 00:02:06,020
+la capacité de Mistral OCR à extraire le contenu d'un PDF très simple, mais
+
+24
+00:02:06,020 --> 00:02:11,780
+nous passerons à un PDF plus complexe ensuite, et il vous faudra un fichier Mistral.
+
+25
+00:02:11,780 --> 00:02:17,000
+APK. Par exemple, je ne vais pas ouvrir mon fichier AMP, car vous verriez mon APK
+
+26
+00:02:17,000 --> 00:02:22,180
+mais il vous faut un fichier APK. Heureusement, c'est un service payant, mais il
+
+27
+00:02:22,180 --> 00:02:23,600
+a un très bon
+
+28
+00:02:23,600 --> 00:02:24,74 0
+comme je le dis
+
+29
+00:02:24,740 --> 00:02:29,54 0
+c'est très intéressant. Ce n'est pas ce que je dis, mais ce qu'ils ont fait, c'est
+
+30
+00:02:29,540 --> 00:02:33,360
+une compréhension de pointe des documents complexes, nativement multilingue et
+
+31
+00:02:33,360 --> 00:02:37,94 0
+Multimodal, ce qui est très intéressant pour moi et que vous pouvez également
+
+32
+00:02:37,940 --> 00:02:41,72 0
+Également une organisation auto-hébergée traitant d'informations hautement sensibles et classifiées
+
+33
+00:02:41,720 --> 00:02:46,40 0
+qui relèvent de la souveraineté, un élément essentiel dans un
+
+34
+00:02:46,400 --> 00:02:50,300
+parce que si vous travaillez sur des sujets journalistiques vraiment
+
+35
+00:02:50,300 --> 00:02:54,740
+radioactifs, vous devez vous assurer que le contenu ne sera pas partagé.
+
+36
+00:02:54,740 --> 00:03:03,080
+disons que vous voyez... oups, pardon, je crois que je me suis trompé. Oui, je me suis trompé.
+
+37
+00:03:03,080 --> 00:03:13,620
+"Au fait, je devrais peut-être mettre à jour celui-ci. OK, c'était correct."
+
+38
+00:03:13,620 --> 00:03:21,320
+"Alors, faisons-le. Et vous voyez, il a donné... "Oui, ils peuvent. Oui, oui, voir une page.
+
+39
+00:03:21,320 --> 00:03:24,540
+Et ensuite, il affiche le texte, ce qui signifie que vous pouvez afficher le texte.
+
+40
+00:03:24,540 --> 00:03:31,420
+Dans le format de votre choix. Disons que... Voilà, vous savez, je vous ai donné... Je vous présente simplement...
+
+41
+00:03:31,420 --> 00:03:36,14 0
+Quelques fichiers : le trois, le quatre et le cinq. Je les ai déjà ouverts, car c’est plus rapide de faire le...
+
+42
+00:03:36,140 --> 00:03:42,54 0
+Tutoriel. Mais vous pouvez aussi utiliser ce que j’ai créé. Disons le trois. le
+
+43
+00:03:42,540 --> 00:03:49,58 0
+Quatre. Désolé, c'est un autre cas d'utilisation. Je vais donc vérifier si je suis au bon endroit.
+
+44
+00:03:49,580 --> 00:03:53,98 0
+Oui, je suis toujours au bon endroit. Je vérifie juste que les commandes que j'ai saisies sont correctes.
+
+45
+00:03:53,980 --> 00:04:00,54 0
+Le commentaire... désolé. Donc, celui-ci va prendre, par exemple, un élément plus grand.
+
+46
+00:04:00,540 --> 00:04:09,58 0
+Allons-y. Je pense que vous pouvez voir une certaine quantité de français, et surtout du français.
+
+47
+00:04:09,580 --> 00:04:15,50 0
+Anglais. Alors, restons-en là. Je dois prendre celui-ci. C'est l'édition flocon de neige.
+
+48
+00:04:15,500 --> 00:04:22,86 0
+IA générative et langage de l'apprentissage. Vous verrez, je suppose, un certain nombre de pages :
+
+49
+00:04:22,860 --> 00:04:23,960
+presque 44, puis le texte, puis le texte, puis le texte, puis
+
+50
+00:04:23,960 --> 00:04:24,940
+chacun de ces éléments sera dans l'ordre de trois, puis le texte, puis
+
+51
+00:04:24,940 --> 00:04:25,76 0
+beaucoup de choses, parfois très complexes, notamment avec trois pages de texte.
+
+52
+00:04:25,760 --> 00:04:29,760
+et ensuite, il faut passer aux pages quatre, cinq et... Donc, vous avez les trois pages et les quatre, je suppose, et plein d'autres choses comme ça. Bref, on va créer quelque chose, alors je suis...
+
+53
+00:04:29,760 --> 00:04:37,120
+Je vais utiliser YouTube 3. Je pense avoir fait quelques essais et ça devrait fonctionner tout de suite. Vous voyez, vous avez...
+
+54
+00:04:37,120 --> 00:04:43,120
+YouTube 3, de YouTube à YouTube, parce que j'ai fait des tests et cette fois, ça va tout récupérer.
+
+55
+00:04:43,120 --> 00:04:53,36 0
+À partir de ce PDF, ça prendra un peu de temps et ça devrait fonctionner. Oui, c'est ça, il a donc fait
+
+56
+00:04:53,360 --> 00:04:53,760
+trois
+
+57
+00:04:53,960 --> 00:04:59,84 0
+Voyons voir, il y a trois éléments. Vous avez beaucoup de choses, ce qui est presque
+
+58
+00:04:59,840 --> 00:05:05,000
+le contenu est correct tel quel en anglais. C'est même mieux, mais vous devriez
+
+59
+00:05:05,000 --> 00:05:09,260
+essayer aussi en espagnol, en français, et dans n'importe quelle autre langue si nécessaire. pour
+
+60
+00:05:09,260 --> 00:05:14,120
+instance Je veux et ensuite vous pouvez retirer ces informations par exemple
+
+61
+00:05:14,120 --> 00:05:19,700
+je n'ai pas besoin de cette image, je veux juste m'en débarrasser, donc je vais suivre ceci
+
+62
+00:05:19,700 --> 00:05:24,86 0
+Je fais un nettoyage, vous savez, en effectuant quelques opérations. J'essaie de trouver...
+
+63
+00:05:24,860 --> 00:05:30,020
+du contenu structuré à partir d'un PDF, puis je fais de la post-production ou...
+
+64
+00:05:30,020 --> 00:05:34,580
+un post-traitement. Par exemple, pour celui-ci, vous allez récupérer...
+
+65
+00:05:34,580 --> 00:05:38,900
+tout ce qui ressemble à une image et il va nettoyer le tout. Donc...
+
+66
+00:05:38,900 --> 00:05:45,66 0
+Disons que c'est le troisième élément. Je dirais trois. OK, donc voilà. Il va prendre le document que nous avons créé et il va tout nettoyer à l'intérieur.
+
+67
+00:05:45,660 --> 00:05:49,70 0
+Vous pouvez ajouter des éléments, des entrées de registre ou autres, et nettoyer vos
+
+69
+00:05:54,680 --> 00:06:00,20 0
+Il a terminé le travail, vous voyez, c'est assez rapide. Ensuite, vous verrez si
+
+70
+00:06:00,200 --> 00:06:04,10 0
+Vous comparez, vous avez ceci qui a disparu parce que je n'en avais pas besoin.
+
+71
+00:06:04,100 --> 00:06:09,08 0
+C'est plus propre et vous pouvez donc détecter des motifs à l'intérieur du
+
+72
+00:06:09,080 --> 00:06:16,100
+texte, quel qu'il soit, et ensuite, je veux dire, consolider votre contenu. À quoi sert-il ?
+
+73
+00:06:16,100 --> 00:06:19,640
+Pour n'importe quel but, comme faire un essai, explorer, etc.
+
+74
+00:06:19,700 --> 00:06:24,920
+Si vous ne faites rien, faites ce que vous voulez. C'est une façon très intéressante de En cours
+
+75
+00:06:24,920 --> 00:06:30,44 0
+Avec différentes combinaisons de documents, vous disposez d'une documentation très complète, n'est-ce pas ?
+
+76
+00:06:30,440 --> 00:06:34,280
+Ici, je n'ai exploré que les bases.
+
+77
+00:06:34,280 --> 00:06:39,520
+Monsieur Ossier, vous avez de nombreuses possibilités ; c'est plutôt bien documenté.
+
+78
+00:06:39,520 --> 00:06:46,580
+Sauf qu'il faut payer, ce n'est pas si cher, mais quand même...
+
+79
+00:06:46,580 --> 00:06:49,580
+Il faut traiter des milliers de documents, et cela coûte cher.
+
+80
+00:06:49,700 --> 00:06:54,560
+Je vais donc vous présenter cette vidéo. Nous allons examiner le cas suivant :
+
+81
+00:06:54,560 --> 00:06:58,520
+"Training Whisper ", qui n'est pas vraiment une formation. Je devrais... Je devrais modifier le texte.
+
+82
+00:06:58,520 --> 00:07:02,840
+"Au début, c'était une de mes idées, mais je voulais... "Test
+
+83
+00:07:02,840 --> 00:07:08,460
+Plusieurs langues différentes, c'est exactement ce que je disais dans ma file d'attente.
+
+84
+00:07:08,460 --> 00:07:13,200
+C'est un projet multilingue qui m'intéresse et si besoin, j'ai aussi...
+
+85
+00:07:13,200 --> 00:07:19,100
+Quelques notions sur l'alternance codique, d'accord ? Mais on verra ça dans la deuxième vidéo.
+
+86
+00:07:19,100 --> 00:07:19,680
+Si mon travail vous plaît, abonnez-vous à ma chaîne ! On se retrouve dans une prochaine vidéo.
+
+87
+00:07:19,700 --> 00:07:25,520
+N'oubliez pas de vous abonner à ma chaîne YouTube, par exemple, juste ici.
+
+88
+00:07:25,520 --> 00:07:32,120
+Vous pourrez ainsi accéder au contenu et lire l'article si besoin. À bientôt !
+
+89
+00:07:32,120 --> 00:07:34,480
+Au revoir !
+
+90
+00:07:49,700 --> 00:07:51,760
+Vous
+

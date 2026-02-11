@@ -1,0 +1,903 @@
+1
+00:00:00,000 --> 00:00:02,000
+Musique
+
+2
+00:00:02,000 --> 00:00:04,000
+Musique
+
+3
+00:00:04,000 --> 00:00:06,000
+Musique
+
+4
+00:00:06,000 --> 00:00:08,000
+Musique
+
+5
+00:00:08,000 --> 00:00:10,000
+Musique
+
+6
+00:00:10,000 --> 00:00:12,000
+Musique
+
+7
+00:00:12,000 --> 00:00:14,000
+Bienvenue dans ce nouveau tutoriel, je m'appelle Bruno Slavin
+
+8
+00:00:14,000 --> 00:00:16,000
+Je
+
+9
+00:00:16,000 --> 00:00:18,000
+ai écrit un article sur
+
+10
+00:00:18,000 --> 00:00:20,000
+l'implémentation augmentée du journalisme
+
+11
+00:00:20,000 --> 00:00:22,000
+en pratique de la clustration sémantique
+
+12
+00:00:22,000 --> 00:00:24,000
+de transcription multilingue et
+
+13
+00:00:24,000 --> 00:00:26,000
+de l'automation WordPress car j'ai voulu
+
+14
+00:00:26,000 --> 00:00:28,000
+appliquer cette clustration sémantique
+
+15
+00:00:28,000 --> 00:00:30,000
+Donc, d'abord nous allons passer
+
+16
+00:00:30,000 --> 00:00:32,000
+par quelques détails, vous pouvez
+
+17
+00:00:32,000 --> 00:00:34,000
+lire l'article si vous voulez et vous pouvez
+
+18
+00:00:34,000 --> 00:00:36,000
+prendre sur ma carte YouTube
+
+19
+00:00:36,000 --> 00:00:38,000
+tous ces éléments
+
+20
+00:00:38,000 --> 00:00:40,000
+Je vais essayer, je vais
+
+21
+00:00:40,000 --> 00:00:42,000
+commencer par Mistral OCR
+
+22
+00:00:42,000 --> 00:00:44,000
+puis je vais passer à Training Whisper
+
+23
+00:00:44,000 --> 00:00:46,000
+qui n'est pas exactement Training Whisper
+
+24
+00:00:46,000 --> 00:00:48,000
+c'est beaucoup plus sur
+
+25
+00:00:48,000 --> 00:00:50,000
+comment utiliser Whisper sur
+
+26
+00:00:50,000 --> 00:00:52,000
+une langue
+
+27
+00:00:52,000 --> 00:00:54,000
+non bien documentée, comme
+
+28
+00:00:54,000 --> 00:00:56,000
+aller loin de
+
+29
+00:00:56,000 --> 00:00:58,000
+l'anglais, français et espagnol et prendre
+
+30
+00:00:58,000 --> 00:01:00,000
+sur une langue rare
+
+31
+00:01:00,000 --> 00:01:02,000
+comme par exemple
+
+32
+00:01:02,000 --> 00:01:04,000
+l'africain
+
+33
+00:01:04,000 --> 00:01:06,000
+et des choses comme ça, donc
+
+34
+00:01:06,000 --> 00:01:08,000
+de toute façon, commençons
+
+35
+00:01:08,000 --> 00:01:10,000
+d'abord, j'ai tout
+
+36
+00:01:10,000 --> 00:01:12,000
+en commande dans
+
+37
+00:01:12,000 --> 00:01:14,000
+tous les fichiers que j'ai mis sur
+
+38
+00:01:14,000 --> 00:01:16,000
+GitHub et ensuite
+
+39
+00:01:16,000 --> 00:01:18,000
+je le ferai manuellement
+
+40
+00:01:18,000 --> 00:01:20,000
+devant vous
+
+41
+00:01:20,000 --> 00:01:22,000
+donc je vais utiliser
+
+42
+00:01:22,000 --> 00:01:24,000
+par exemple, bon, c'est peut-être
+
+43
+00:01:24,000 --> 00:01:26,000
+trop, je suis à peu près
+
+44
+00:01:26,000 --> 00:01:28,000
+à la fin, c'est la raison pour laquelle, donc
+
+45
+00:01:28,000 --> 00:01:30,000
+maintenant, nous allons passer au premier
+
+46
+00:01:30,000 --> 00:01:32,000
+donc j'ai commenté
+
+47
+00:01:32,000 --> 00:01:34,000
+tout, donc vous avez un
+
+48
+00:01:34,000 --> 00:01:36,000
+nombre de
+
+49
+00:01:36,000 --> 00:01:38,000
+donc je vais utiliser cet environnement
+
+50
+00:01:38,000 --> 00:01:40,000
+vous voyez, il a changé, je suis allé
+
+51
+00:01:40,000 --> 00:01:42,000
+de base à Mistral OCR, je ne
+
+52
+00:01:42,000 --> 00:01:44,000
+vous donne pas, mais vous avez le requêt
+
+53
+00:01:44,000 --> 00:01:46,000
+tout ce que vous avez besoin, OK, donc
+
+54
+00:01:46,000 --> 00:01:48,000
+celui-ci par exemple, nous allons
+
+55
+00:01:48,000 --> 00:01:50,000
+aller, c'est source et
+
+56
+00:01:50,000 --> 00:01:52,000
+il va prendre ce petit
+
+57
+00:01:52,000 --> 00:01:54,000
+PDF et me montrer
+
+58
+00:01:54,000 --> 00:01:56,000
+par exemple
+
+59
+00:01:56,000 --> 00:01:58,000
+ce qui est à l'intérieur, donc vous voyez, c'est un PDF faux
+
+60
+00:01:58,000 --> 00:02:00,000
+et c'est juste pour vous montrer
+
+61
+00:02:00,000 --> 00:02:02,000
+l'avantage de Mistral OCR
+
+62
+00:02:02,000 --> 00:02:04,000
+pour prendre des contenus
+
+63
+00:02:04,000 --> 00:02:06,000
+pour un très simple, mais
+
+64
+00:02:06,000 --> 00:02:08,000
+nous allons aller avec des PDF plus complexes
+
+65
+00:02:08,000 --> 00:02:10,000
+après, et le fait
+
+66
+00:02:10,000 --> 00:02:12,000
+que vous avez besoin d'un
+
+67
+00:02:12,000 --> 00:02:14,000
+clavier Mistral API, donc par exemple
+
+68
+00:02:14,000 --> 00:02:16,000
+je ne vais pas ouvrir mon AMP parce que vous
+
+69
+00:02:16,000 --> 00:02:18,000
+verrez mon clavier API, mais vous avez besoin d'un
+
+70
+00:02:18,000 --> 00:02:20,000
+clavier API, malheureusement, c'est
+
+71
+00:02:20,000 --> 00:02:22,000
+un service payé, mais
+
+72
+00:02:22,000 --> 00:02:24,000
+il a une très bonne, ce que
+
+73
+00:02:24,000 --> 00:02:26,000
+je dis, c'est très intéressant
+
+74
+00:02:26,000 --> 00:02:28,000
+ce que je dis, ce n'est pas ce que je dis, mais
+
+75
+00:02:28,000 --> 00:02:30,000
+ce qu'ils ont fait, c'est comme
+
+76
+00:02:30,000 --> 00:02:32,000
+un document complexe de compréhension
+
+77
+00:02:32,000 --> 00:02:34,000
+multilingue et multimodal,
+
+78
+00:02:34,000 --> 00:02:36,000
+ce qui est une chose qui est très intéressante pour
+
+79
+00:02:36,000 --> 00:02:38,000
+moi, et aussi, vous pouvez
+
+80
+00:02:38,000 --> 00:02:40,000
+vous aussi hoste une organisation qui
+
+81
+00:02:40,000 --> 00:02:42,000
+est en train de gérer des informations
+
+82
+00:02:42,000 --> 00:02:44,000
+très sensibles et classifiées, ce qui est une partie de la
+
+83
+00:02:44,000 --> 00:02:46,000
+souveraineté, ce qui est très important
+
+84
+00:02:46,000 --> 00:02:48,000
+d'une certaine manière, parce que si vous travaillez
+
+85
+00:02:48,000 --> 00:02:50,000
+sur des journalistes de choses qui sont
+
+86
+00:02:50,000 --> 00:02:52,000
+vraiment radioactifs, vous devez être
+
+87
+00:02:52,000 --> 00:02:54,000
+sûr que ce n'est pas un partenaire
+
+88
+00:02:54,000 --> 00:02:56,000
+du contenu, donc disons
+
+89
+00:02:56,000 --> 00:02:58,000
+que vous voyez, oups, désolé
+
+90
+00:02:58,000 --> 00:03:00,000
+je pense que je suis
+
+91
+00:03:00,000 --> 00:03:02,000
+dans le mauvais
+
+92
+00:03:02,000 --> 00:03:04,000
+je suis dans le mauvais directeur
+
+93
+00:03:06,000 --> 00:03:08,000
+par ailleurs, je devrais
+
+94
+00:03:08,000 --> 00:03:10,000
+peut-être
+
+95
+00:03:10,000 --> 00:03:12,000
+l'améliorer,
+
+96
+00:03:12,000 --> 00:03:14,000
+ok, c'était le bon point, donc
+
+97
+00:03:14,000 --> 00:03:16,000
+faisons-le
+
+98
+00:03:16,000 --> 00:03:18,000
+et vous voyez
+
+99
+00:03:18,000 --> 00:03:20,000
+donc il a donné, il a pris
+
+100
+00:03:20,000 --> 00:03:22,000
+il a vu une page et ensuite
+
+101
+00:03:22,000 --> 00:03:24,000
+il est en train d'écrire le texte, ce qui signifie que
+
+102
+00:03:24,000 --> 00:03:26,000
+vous pouvez écrire le texte dans ce que vous voulez
+
+103
+00:03:26,000 --> 00:03:28,000
+et disons
+
+104
+00:03:28,000 --> 00:03:30,000
+vous avez vu, vous savez, j'ai donné
+
+105
+00:03:30,000 --> 00:03:32,000
+donc je présente juste quelques fichiers
+
+106
+00:03:32,000 --> 00:03:34,000
+donc le 3, le 4 et le 5
+
+107
+00:03:34,000 --> 00:03:36,000
+j'ai déjà ouvert parce que c'est plus rapide
+
+108
+00:03:36,000 --> 00:03:38,000
+pour faire le tutoriel mais vous pouvez aussi
+
+109
+00:03:38,000 --> 00:03:40,000
+voir les choses que j'ai faites
+
+110
+00:03:40,000 --> 00:03:42,000
+alors disons que
+
+111
+00:03:42,000 --> 00:03:44,000
+le 3, le 4 désolé, c'est un autre
+
+112
+00:03:44,000 --> 00:03:46,000
+cas d'utilisation, donc maintenant
+
+113
+00:03:46,000 --> 00:03:48,000
+je vais juste
+
+114
+00:03:48,000 --> 00:03:50,000
+voir si je suis dans le bon endroit
+
+115
+00:03:50,000 --> 00:03:52,000
+oui, je suis toujours dans le bon endroit, je suis juste
+
+116
+00:03:52,000 --> 00:03:54,000
+vérifier que le commande que j'ai fait est ok
+
+117
+00:03:54,000 --> 00:03:56,000
+le comment, désolé
+
+118
+00:03:56,000 --> 00:03:58,000
+et ensuite, donc ceci va faire
+
+119
+00:03:58,000 --> 00:04:00,000
+il va prendre par exemple un plus grand
+
+120
+00:04:00,000 --> 00:04:02,000
+alors allons-y
+
+121
+00:04:02,000 --> 00:04:04,000
+je pense que vous avez
+
+122
+00:04:04,000 --> 00:04:06,000
+vous pouvez voir une certaine quantité de
+
+123
+00:04:06,000 --> 00:04:08,000
+de français
+
+124
+00:04:08,000 --> 00:04:10,000
+et principalement français et ensuite anglais
+
+125
+00:04:10,000 --> 00:04:12,000
+alors allons-y, ceci
+
+126
+00:04:12,000 --> 00:04:14,000
+j'ai pris ceci
+
+127
+00:04:14,000 --> 00:04:16,000
+c'est une édition de Snowflake sur
+
+128
+00:04:16,000 --> 00:04:18,000
+l'AI génératif et l'LM
+
+129
+00:04:18,000 --> 00:04:20,000
+et vous verrez, vous avez
+
+130
+00:04:20,000 --> 00:04:22,000
+je pense que vous avez une certaine quantité de pages
+
+131
+00:04:22,000 --> 00:04:24,000
+ce qui est presque 44
+
+132
+00:04:24,000 --> 00:04:26,000
+je pense et vous avez beaucoup
+
+133
+00:04:26,000 --> 00:04:28,000
+de choses comme ça, de toute façon
+
+134
+00:04:28,000 --> 00:04:30,000
+nous allons créer, donc je vais
+
+135
+00:04:30,000 --> 00:04:32,000
+prendre Youtube 3, je pense que j'ai fait
+
+136
+00:04:32,000 --> 00:04:34,000
+des tests et il devrait
+
+137
+00:04:34,000 --> 00:04:36,000
+aller tout de suite
+
+138
+00:04:36,000 --> 00:04:38,000
+donc vous voyez, vous avez Youtube
+
+139
+00:04:38,000 --> 00:04:40,000
+3, Youtube 2, Youtube, parce que
+
+140
+00:04:40,000 --> 00:04:42,000
+j'ai fait des tests et cette fois
+
+141
+00:04:42,000 --> 00:04:44,000
+il va prendre tout de ce
+
+142
+00:04:44,000 --> 00:04:46,000
+PDF
+
+143
+00:04:46,000 --> 00:04:48,000
+donc il va prendre
+
+144
+00:04:48,000 --> 00:04:50,000
+un peu de temps
+
+145
+00:04:50,000 --> 00:04:52,000
+et il devrait aller, oui c'est vrai
+
+146
+00:04:52,000 --> 00:04:54,000
+donc il a fait 3
+
+147
+00:04:54,000 --> 00:04:56,000
+voyons, c'est 3
+
+148
+00:04:56,000 --> 00:04:58,000
+et vous voyez, vous avez un tas
+
+149
+00:04:58,000 --> 00:05:00,000
+de choses qui sont presque
+
+150
+00:05:00,000 --> 00:05:02,000
+le contenu, c'est correct
+
+151
+00:05:02,000 --> 00:05:04,000
+comme c'est en anglais, c'est encore mieux
+
+152
+00:05:04,000 --> 00:05:06,000
+mais vous devriez aussi essayer en espagnol
+
+153
+00:05:06,000 --> 00:05:08,000
+en français et quoi que ce soit si vous avez besoin
+
+154
+00:05:08,000 --> 00:05:10,000
+de le faire, mais par exemple, je veux
+
+155
+00:05:10,000 --> 00:05:12,000
+et puis vous pouvez retraiter
+
+156
+00:05:12,000 --> 00:05:14,000
+cette information, par exemple
+
+157
+00:05:14,000 --> 00:05:16,000
+je n'ai pas besoin de cette image
+
+158
+00:05:16,000 --> 00:05:18,000
+je veux juste qu'elle soit éliminée
+
+159
+00:05:18,000 --> 00:05:20,000
+donc je vais passer par celle-ci
+
+160
+00:05:20,000 --> 00:05:22,000
+et nettoyer, vous savez, faire
+
+161
+00:05:22,000 --> 00:05:24,000
+certaines opérations qui sont
+
+162
+00:05:24,000 --> 00:05:26,000
+en train de trouver des contenus structurés
+
+163
+00:05:26,000 --> 00:05:28,000
+de PDF et puis
+
+164
+00:05:28,000 --> 00:05:30,000
+je fais des post-production ou
+
+165
+00:05:30,000 --> 00:05:32,000
+des post-traitements
+
+166
+00:05:32,000 --> 00:05:34,000
+donc par exemple, celle-ci va
+
+167
+00:05:34,000 --> 00:05:36,000
+prendre tout ce qui ressemble à
+
+168
+00:05:36,000 --> 00:05:38,000
+une image et va nettoyer
+
+169
+00:05:38,000 --> 00:05:40,000
+les choses, donc je dirais que c'est 3
+
+170
+00:05:40,000 --> 00:05:42,000
+et je dirais
+
+171
+00:05:42,000 --> 00:05:44,000
+3, ok
+
+172
+00:05:44,000 --> 00:05:46,000
+donc il va prendre juste le document
+
+173
+00:05:46,000 --> 00:05:48,000
+que nous avons créé et il va
+
+174
+00:05:48,000 --> 00:05:50,000
+nettoyer tout ce qui est dedans
+
+175
+00:05:50,000 --> 00:05:52,000
+donc vous pouvez ajouter des choses
+
+176
+00:05:52,000 --> 00:05:54,000
+des regex ou quoi que ce soit
+
+177
+00:05:54,000 --> 00:05:56,000
+et puis vous pouvez nettoyer
+
+178
+00:05:56,000 --> 00:05:58,000
+vos choses, donc il a fait le travail
+
+179
+00:05:58,000 --> 00:06:00,000
+vous voyez, c'est assez rapide
+
+180
+00:06:00,000 --> 00:06:02,000
+et puis vous voyez, si vous comparez
+
+181
+00:06:02,000 --> 00:06:04,000
+vous avez ceci qui a disparu
+
+182
+00:06:04,000 --> 00:06:06,000
+parce que je n'avais pas besoin
+
+183
+00:06:06,000 --> 00:06:08,000
+de ce genre de chose et c'est plus
+
+184
+00:06:08,000 --> 00:06:10,000
+propre, et donc vous pouvez détecter
+
+185
+00:06:10,000 --> 00:06:12,000
+des patterns dans le texte
+
+186
+00:06:12,000 --> 00:06:14,000
+et puis je veux dire
+
+187
+00:06:14,000 --> 00:06:16,000
+consolider votre contenu
+
+188
+00:06:16,000 --> 00:06:18,000
+pour n'importe quel but
+
+189
+00:06:18,000 --> 00:06:20,000
+comme si vous voulez faire un rack
+
+190
+00:06:20,000 --> 00:06:22,000
+si vous voulez faire une exploration
+
+191
+00:06:22,000 --> 00:06:24,000
+si vous voulez faire ce que vous voulez
+
+192
+00:06:24,000 --> 00:06:26,000
+et puis vous pouvez faire
+
+193
+00:06:26,000 --> 00:06:28,000
+des choses avec des
+
+194
+00:06:28,000 --> 00:06:30,000
+différentes combinaisons de documents
+
+195
+00:06:30,000 --> 00:06:32,000
+vous avez beaucoup de documentation
+
+196
+00:06:32,000 --> 00:06:34,000
+ici, j'explore juste
+
+197
+00:06:34,000 --> 00:06:36,000
+le basique de Mr. Ossier
+
+198
+00:06:36,000 --> 00:06:38,000
+mais vous avez beaucoup de possibilités
+
+199
+00:06:38,000 --> 00:06:40,000
+c'est assez bien documenté
+
+200
+00:06:40,000 --> 00:06:42,000
+sauf que vous devez
+
+201
+00:06:42,000 --> 00:06:44,000
+payer pour cela
+
+202
+00:06:44,000 --> 00:06:46,000
+ce n'est pas si cher
+
+203
+00:06:46,000 --> 00:06:48,000
+mais si vous devez traiter
+
+204
+00:06:48,000 --> 00:06:50,000
+des milliers de documents
+
+205
+00:06:50,000 --> 00:06:52,000
+oui, ça coûtera beaucoup
+
+206
+00:06:52,000 --> 00:06:54,000
+donc nous allons passer au cas 2
+
+207
+00:06:54,000 --> 00:06:56,000
+qui est le traitement de Whisper
+
+208
+00:06:56,000 --> 00:06:58,000
+qui n'est pas exactement un traitement
+
+209
+00:06:58,000 --> 00:07:00,000
+je devrais changer le texte
+
+210
+00:07:00,000 --> 00:07:02,000
+mais à l'origine c'était une idée
+
+211
+00:07:02,000 --> 00:07:04,000
+mais je veux tester plus
+
+212
+00:07:04,000 --> 00:07:06,000
+différentes langues
+
+213
+00:07:06,000 --> 00:07:08,000
+c'est exactement ce que je dis ici
+
+214
+00:07:08,000 --> 00:07:10,000
+c'est un multilingue
+
+215
+00:07:10,000 --> 00:07:12,000
+qui m'intéresse
+
+216
+00:07:12,000 --> 00:07:14,000
+et si vous en avez besoin
+
+217
+00:07:14,000 --> 00:07:16,000
+j'ai aussi des choses sur le codename
+
+218
+00:07:16,000 --> 00:07:18,000
+mais voyons ça dans la seconde vidéo
+
+219
+00:07:18,000 --> 00:07:20,000
+si vous aimez mon travail
+
+220
+00:07:20,000 --> 00:07:22,000
+n'oubliez pas de vous abonner
+
+221
+00:07:22,000 --> 00:07:24,000
+et de regarder mon chaîne YouTube
+
+222
+00:07:24,000 --> 00:07:26,000
+qui est ici
+
+223
+00:07:26,000 --> 00:07:28,000
+et vous pouvez prendre le contenu
+
+224
+00:07:28,000 --> 00:07:30,000
+et lire l'article si besoin
+
+225
+00:07:30,000 --> 00:07:32,000
+ok, à bientôt
+
+226
+00:07:32,000 --> 00:07:34,000
+au revoir
