@@ -1,0 +1,1581 @@
+### SEGMENT 0
+ORIGINAL:
+Musique
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 1
+ORIGINAL:
+Musique
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 2
+ORIGINAL:
+Musique
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 3
+ORIGINAL:
+Musique
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 4
+ORIGINAL:
+Musique
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 5
+ORIGINAL:
+Musique
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 6
+ORIGINAL:
+Bienvenue dans ce nouveau tutoriel, je m'appelle Bruno Slavin
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 7
+ORIGINAL:
+Je
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 8
+ORIGINAL:
+ai écrit un article sur
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 9
+ORIGINAL:
+l'implémentation augmentée du journalisme
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 10
+ORIGINAL:
+en pratique de la clustration sémantique
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 11
+ORIGINAL:
+de transcription multilingue et
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 12
+ORIGINAL:
+de l'automation WordPress car j'ai voulu
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 13
+ORIGINAL:
+appliquer cette clustration sémantique
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 14
+ORIGINAL:
+Donc, d'abord nous allons passer
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 15
+ORIGINAL:
+par quelques détails, vous pouvez
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 16
+ORIGINAL:
+lire l'article si vous voulez et vous pouvez
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 17
+ORIGINAL:
+prendre sur ma carte YouTube
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 18
+ORIGINAL:
+tous ces éléments
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 19
+ORIGINAL:
+Je vais essayer, je vais
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 20
+ORIGINAL:
+commencer par Mistral OCR
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 21
+ORIGINAL:
+puis je vais passer à Training Whisper
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 22
+ORIGINAL:
+qui n'est pas exactement Training Whisper
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 23
+ORIGINAL:
+c'est beaucoup plus sur
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 24
+ORIGINAL:
+comment utiliser Whisper sur
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 25
+ORIGINAL:
+une langue
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 26
+ORIGINAL:
+non bien documentée, comme
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 27
+ORIGINAL:
+aller loin de
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 28
+ORIGINAL:
+l'anglais, français et espagnol et prendre
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 29
+ORIGINAL:
+sur une langue rare
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 30
+ORIGINAL:
+comme par exemple
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 31
+ORIGINAL:
+l'africain
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 32
+ORIGINAL:
+et des choses comme ça, donc
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 33
+ORIGINAL:
+de toute façon, commençons
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 34
+ORIGINAL:
+d'abord, j'ai tout
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 35
+ORIGINAL:
+en commande dans
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 36
+ORIGINAL:
+tous les fichiers que j'ai mis sur
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 37
+ORIGINAL:
+GitHub et ensuite
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 38
+ORIGINAL:
+je le ferai manuellement
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 39
+ORIGINAL:
+devant vous
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 40
+ORIGINAL:
+donc je vais utiliser
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 41
+ORIGINAL:
+par exemple, bon, c'est peut-être
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 42
+ORIGINAL:
+trop, je suis à peu près
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 43
+ORIGINAL:
+à la fin, c'est la raison pour laquelle, donc
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 44
+ORIGINAL:
+maintenant, nous allons passer au premier
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 45
+ORIGINAL:
+donc j'ai commenté
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 46
+ORIGINAL:
+tout, donc vous avez un
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 47
+ORIGINAL:
+nombre de
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 48
+ORIGINAL:
+donc je vais utiliser cet environnement
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 49
+ORIGINAL:
+vous voyez, il a changé, je suis allé
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 50
+ORIGINAL:
+de base à Mistral OCR, je ne
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 51
+ORIGINAL:
+vous donne pas, mais vous avez le requêt
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 52
+ORIGINAL:
+tout ce que vous avez besoin, OK, donc
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 53
+ORIGINAL:
+celui-ci par exemple, nous allons
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 54
+ORIGINAL:
+aller, c'est source et
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 55
+ORIGINAL:
+il va prendre ce petit
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 56
+ORIGINAL:
+PDF et me montrer
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 57
+ORIGINAL:
+par exemple
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 58
+ORIGINAL:
+ce qui est à l'intérieur, donc vous voyez, c'est un PDF faux
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 59
+ORIGINAL:
+et c'est juste pour vous montrer
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 60
+ORIGINAL:
+l'avantage de Mistral OCR
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 61
+ORIGINAL:
+pour prendre des contenus
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 62
+ORIGINAL:
+pour un très simple, mais
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 63
+ORIGINAL:
+nous allons aller avec des PDF plus complexes
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 64
+ORIGINAL:
+après, et le fait
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 65
+ORIGINAL:
+que vous avez besoin d'un
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 66
+ORIGINAL:
+clavier Mistral API, donc par exemple
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 67
+ORIGINAL:
+je ne vais pas ouvrir mon AMP parce que vous
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 68
+ORIGINAL:
+verrez mon clavier API, mais vous avez besoin d'un
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 69
+ORIGINAL:
+clavier API, malheureusement, c'est
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 70
+ORIGINAL:
+un service payé, mais
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 71
+ORIGINAL:
+il a une très bonne, ce que
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 72
+ORIGINAL:
+je dis, c'est très intéressant
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 73
+ORIGINAL:
+ce que je dis, ce n'est pas ce que je dis, mais
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 74
+ORIGINAL:
+ce qu'ils ont fait, c'est comme
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 75
+ORIGINAL:
+un document complexe de compréhension
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 76
+ORIGINAL:
+multilingue et multimodal,
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 77
+ORIGINAL:
+ce qui est une chose qui est très intéressante pour
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 78
+ORIGINAL:
+moi, et aussi, vous pouvez
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 79
+ORIGINAL:
+vous aussi hoste une organisation qui
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 80
+ORIGINAL:
+est en train de gérer des informations
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 81
+ORIGINAL:
+très sensibles et classifiées, ce qui est une partie de la
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 82
+ORIGINAL:
+souveraineté, ce qui est très important
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 83
+ORIGINAL:
+d'une certaine manière, parce que si vous travaillez
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 84
+ORIGINAL:
+sur des journalistes de choses qui sont
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 85
+ORIGINAL:
+vraiment radioactifs, vous devez être
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 86
+ORIGINAL:
+sûr que ce n'est pas un partenaire
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 87
+ORIGINAL:
+du contenu, donc disons
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 88
+ORIGINAL:
+que vous voyez, oups, désolé
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 89
+ORIGINAL:
+je pense que je suis
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 90
+ORIGINAL:
+dans le mauvais
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 91
+ORIGINAL:
+je suis dans le mauvais directeur
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 92
+ORIGINAL:
+par ailleurs, je devrais
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 93
+ORIGINAL:
+peut-être
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 94
+ORIGINAL:
+l'améliorer,
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 95
+ORIGINAL:
+ok, c'était le bon point, donc
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 96
+ORIGINAL:
+faisons-le
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 97
+ORIGINAL:
+et vous voyez
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 98
+ORIGINAL:
+donc il a donné, il a pris
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 99
+ORIGINAL:
+il a vu une page et ensuite
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 100
+ORIGINAL:
+il est en train d'écrire le texte, ce qui signifie que
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 101
+ORIGINAL:
+vous pouvez écrire le texte dans ce que vous voulez
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 102
+ORIGINAL:
+et disons
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 103
+ORIGINAL:
+vous avez vu, vous savez, j'ai donné
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 104
+ORIGINAL:
+donc je présente juste quelques fichiers
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 105
+ORIGINAL:
+donc le 3, le 4 et le 5
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 106
+ORIGINAL:
+j'ai déjà ouvert parce que c'est plus rapide
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 107
+ORIGINAL:
+pour faire le tutoriel mais vous pouvez aussi
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 108
+ORIGINAL:
+voir les choses que j'ai faites
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 109
+ORIGINAL:
+alors disons que
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 110
+ORIGINAL:
+le 3, le 4 désolé, c'est un autre
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 111
+ORIGINAL:
+cas d'utilisation, donc maintenant
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 112
+ORIGINAL:
+je vais juste
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 113
+ORIGINAL:
+voir si je suis dans le bon endroit
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 114
+ORIGINAL:
+oui, je suis toujours dans le bon endroit, je suis juste
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 115
+ORIGINAL:
+vérifier que le commande que j'ai fait est ok
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 116
+ORIGINAL:
+le comment, désolé
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 117
+ORIGINAL:
+et ensuite, donc ceci va faire
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 118
+ORIGINAL:
+il va prendre par exemple un plus grand
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 119
+ORIGINAL:
+alors allons-y
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 120
+ORIGINAL:
+je pense que vous avez
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 121
+ORIGINAL:
+vous pouvez voir une certaine quantité de
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 122
+ORIGINAL:
+de français
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 123
+ORIGINAL:
+et principalement français et ensuite anglais
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 124
+ORIGINAL:
+alors allons-y, ceci
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 125
+ORIGINAL:
+j'ai pris ceci
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 126
+ORIGINAL:
+c'est une édition de Snowflake sur
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 127
+ORIGINAL:
+l'AI génératif et l'LM
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 128
+ORIGINAL:
+et vous verrez, vous avez
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 129
+ORIGINAL:
+je pense que vous avez une certaine quantité de pages
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 130
+ORIGINAL:
+ce qui est presque 44
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 131
+ORIGINAL:
+je pense et vous avez beaucoup
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 132
+ORIGINAL:
+de choses comme ça, de toute façon
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 133
+ORIGINAL:
+nous allons créer, donc je vais
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 134
+ORIGINAL:
+prendre Youtube 3, je pense que j'ai fait
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 135
+ORIGINAL:
+des tests et il devrait
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 136
+ORIGINAL:
+aller tout de suite
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 137
+ORIGINAL:
+donc vous voyez, vous avez Youtube
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 138
+ORIGINAL:
+3, Youtube 2, Youtube, parce que
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 139
+ORIGINAL:
+j'ai fait des tests et cette fois
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 140
+ORIGINAL:
+il va prendre tout de ce
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 141
+ORIGINAL:
+PDF
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 142
+ORIGINAL:
+donc il va prendre
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 143
+ORIGINAL:
+un peu de temps
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 144
+ORIGINAL:
+et il devrait aller, oui c'est vrai
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 145
+ORIGINAL:
+donc il a fait 3
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 146
+ORIGINAL:
+voyons, c'est 3
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 147
+ORIGINAL:
+et vous voyez, vous avez un tas
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 148
+ORIGINAL:
+de choses qui sont presque
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 149
+ORIGINAL:
+le contenu, c'est correct
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 150
+ORIGINAL:
+comme c'est en anglais, c'est encore mieux
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 151
+ORIGINAL:
+mais vous devriez aussi essayer en espagnol
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 152
+ORIGINAL:
+en français et quoi que ce soit si vous avez besoin
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 153
+ORIGINAL:
+de le faire, mais par exemple, je veux
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 154
+ORIGINAL:
+et puis vous pouvez retraiter
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 155
+ORIGINAL:
+cette information, par exemple
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 156
+ORIGINAL:
+je n'ai pas besoin de cette image
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 157
+ORIGINAL:
+je veux juste qu'elle soit éliminée
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 158
+ORIGINAL:
+donc je vais passer par celle-ci
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 159
+ORIGINAL:
+et nettoyer, vous savez, faire
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 160
+ORIGINAL:
+certaines opérations qui sont
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 161
+ORIGINAL:
+en train de trouver des contenus structurés
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 162
+ORIGINAL:
+de PDF et puis
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 163
+ORIGINAL:
+je fais des post-production ou
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 164
+ORIGINAL:
+des post-traitements
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 165
+ORIGINAL:
+donc par exemple, celle-ci va
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 166
+ORIGINAL:
+prendre tout ce qui ressemble à
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 167
+ORIGINAL:
+une image et va nettoyer
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 168
+ORIGINAL:
+les choses, donc je dirais que c'est 3
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 169
+ORIGINAL:
+et je dirais
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 170
+ORIGINAL:
+3, ok
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 171
+ORIGINAL:
+donc il va prendre juste le document
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 172
+ORIGINAL:
+que nous avons créé et il va
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 173
+ORIGINAL:
+nettoyer tout ce qui est dedans
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 174
+ORIGINAL:
+donc vous pouvez ajouter des choses
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 175
+ORIGINAL:
+des regex ou quoi que ce soit
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 176
+ORIGINAL:
+et puis vous pouvez nettoyer
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 177
+ORIGINAL:
+vos choses, donc il a fait le travail
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 178
+ORIGINAL:
+vous voyez, c'est assez rapide
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 179
+ORIGINAL:
+et puis vous voyez, si vous comparez
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 180
+ORIGINAL:
+vous avez ceci qui a disparu
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 181
+ORIGINAL:
+parce que je n'avais pas besoin
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 182
+ORIGINAL:
+de ce genre de chose et c'est plus
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 183
+ORIGINAL:
+propre, et donc vous pouvez détecter
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 184
+ORIGINAL:
+des patterns dans le texte
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 185
+ORIGINAL:
+et puis je veux dire
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 186
+ORIGINAL:
+consolider votre contenu
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 187
+ORIGINAL:
+pour n'importe quel but
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 188
+ORIGINAL:
+comme si vous voulez faire un rack
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 189
+ORIGINAL:
+si vous voulez faire une exploration
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 190
+ORIGINAL:
+si vous voulez faire ce que vous voulez
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 191
+ORIGINAL:
+et puis vous pouvez faire
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 192
+ORIGINAL:
+des choses avec des
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 193
+ORIGINAL:
+différentes combinaisons de documents
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 194
+ORIGINAL:
+vous avez beaucoup de documentation
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 195
+ORIGINAL:
+ici, j'explore juste
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 196
+ORIGINAL:
+le basique de Mr. Ossier
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 197
+ORIGINAL:
+mais vous avez beaucoup de possibilités
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 198
+ORIGINAL:
+c'est assez bien documenté
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 199
+ORIGINAL:
+sauf que vous devez
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 200
+ORIGINAL:
+payer pour cela
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 201
+ORIGINAL:
+ce n'est pas si cher
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 202
+ORIGINAL:
+mais si vous devez traiter
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 203
+ORIGINAL:
+des milliers de documents
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 204
+ORIGINAL:
+oui, ça coûtera beaucoup
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 205
+ORIGINAL:
+donc nous allons passer au cas 2
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 206
+ORIGINAL:
+qui est le traitement de Whisper
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 207
+ORIGINAL:
+qui n'est pas exactement un traitement
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 208
+ORIGINAL:
+je devrais changer le texte
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 209
+ORIGINAL:
+mais à l'origine c'était une idée
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 210
+ORIGINAL:
+mais je veux tester plus
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 211
+ORIGINAL:
+différentes langues
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 212
+ORIGINAL:
+c'est exactement ce que je dis ici
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 213
+ORIGINAL:
+c'est un multilingue
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 214
+ORIGINAL:
+qui m'intéresse
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 215
+ORIGINAL:
+et si vous en avez besoin
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 216
+ORIGINAL:
+j'ai aussi des choses sur le codename
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 217
+ORIGINAL:
+mais voyons ça dans la seconde vidéo
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 218
+ORIGINAL:
+si vous aimez mon travail
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 219
+ORIGINAL:
+n'oubliez pas de vous abonner
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 220
+ORIGINAL:
+et de regarder mon chaîne YouTube
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 221
+ORIGINAL:
+qui est ici
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 222
+ORIGINAL:
+et vous pouvez prendre le contenu
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 223
+ORIGINAL:
+et lire l'article si besoin
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 224
+ORIGINAL:
+ok, à bientôt
+
+EDITED:
+(edit this block with your new text)
+
+### SEGMENT 225
+ORIGINAL:
+au revoir
+
+EDITED:
+(edit this block with your new text)
