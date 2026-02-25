@@ -4,6 +4,10 @@
 *Using the french acronym "Intelligence Artificielle" (IA) instead of the english one "Artificial intelligence" (AI) for the directory name.*
 
 
+*This repository contains part of the thinking, experiments, and use cases that informed the design and conception of DENIA (Direction des Environnements Numériques et IA) — an AI microservices orchestrator designed and deployed at France Médias Monde to process multilingual content — transcription, translation, summarisation, and semantic categorisation — across 15+ languages, 61 editorial programmes, and ~2000 users, built on Mistral 7B open source with a routing architecture enabling seamless switching to paid APIs.*
+
+
+
 **All the latest posts dedicated to artificial intelligence usages are brought together in this repository for convenience.**
 
 
