@@ -9,7 +9,7 @@
 ### DENIA the project behind this repository
 *This repository contains part of the thinking, experiments, and use cases that informed the design and conception of DENIA (Direction des Environnements Numériques et IA) — an AI microservices orchestrator designed and deployed at France Médias Monde to process multilingual content — transcription, translation, summarisation, and semantic categorisation — across 15+ languages, 61 editorial programmes, and ~2000 users, built on Mistral 7B open source with a routing architecture enabling seamless switching to paid APIs.*
 
-### DENIA video preseting the project behind
+### DENIA video presenting the project behind
 *Here is a video presenting DENIA, an AI Microservices Orchestrator: How France Médias Monde Scales Multilingual News in 15+ Languages*
 
 
