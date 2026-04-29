@@ -1,0 +1,368 @@
+/* ============================================================
+   RAG Semantic Search — Front-end styles
+   BEM-style classes: .rss-* to avoid conflicts with any theme.
+   ============================================================ */
+
+/* ── Wrapper ─────────────────────────────────────────────────────────────── */
+
+.rss-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    font-family: inherit;
+}
+
+/* ── Search form ─────────────────────────────────────────────────────────── */
+
+.rss-form-wrap {
+    margin-bottom: 32px;
+}
+
+.rss-search-form__input-row {
+    display: flex;
+    gap: 0;
+    border: 2px solid #4F1993;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.rss-search-form__input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 16px;
+    height: 50px;
+    font-size: 1rem;
+    background: #fff;
+    color: #1d2327;
+    min-width: 0;
+}
+
+.rss-search-form__input::placeholder {
+    color: #a0a5aa;
+}
+
+.rss-search-form__submit {
+    border: none;
+    background: #4F1993;
+    color: #fff;
+    padding: 0 22px;
+    height: 50px;
+    flex-shrink: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+}
+
+.rss-search-form__submit:hover {
+    background: #3c1370;
+}
+
+/* ── Mode toggle pills ───────────────────────────────────────────────────── */
+
+.rss-search-form__modes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.rss-mode-label {
+    font-size: 0.85rem;
+    color: #646970;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.rss-mode-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border: 1.5px solid #c3c4c7;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #50575e;
+    cursor: pointer;
+    background: #fff;
+    transition: border-color 0.15s, background 0.15s, color 0.15s;
+    user-select: none;
+}
+
+.rss-mode-pill input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.rss-mode-pill:hover {
+    border-color: #4F1993;
+    color: #4F1993;
+}
+
+.rss-mode-pill--active {
+    border-color: #4F1993;
+    background: #4F1993;
+    color: #fff;
+    font-weight: 600;
+}
+
+.rss-mode-pill--active:hover {
+    background: #3c1370;
+    border-color: #3c1370;
+    color: #fff;
+}
+
+/* ── Results header ──────────────────────────────────────────────────────── */
+
+.rss-results__header {
+    font-size: 0.95rem;
+    color: #50575e;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
+}
+
+.rss-results__header em {
+    font-style: normal;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+/* ── Results list ────────────────────────────────────────────────────────── */
+
+.rss-results__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ── Result card ─────────────────────────────────────────────────────────── */
+
+.rss-result-card {
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 8px;
+    padding: 20px 24px;
+    transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.rss-result-card:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-color: #b5b5b7;
+}
+
+/* Score bar */
+.rss-result-card__score-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.rss-result-card__score-bar {
+    flex: 1;
+    height: 5px;
+    background: #f0f0f1;
+    border-radius: 3px;
+    overflow: hidden;
+    max-width: 180px;
+}
+
+.rss-result-card__score-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4F1993 0%, #9b6dd0 100%);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.rss-result-card__score-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4F1993;
+    font-variant-numeric: tabular-nums;
+    min-width: 28px;
+}
+
+/* Title */
+.rss-result-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 6px;
+    line-height: 1.35;
+}
+
+.rss-result-card__title a {
+    color: #1d2327;
+    text-decoration: none;
+}
+
+.rss-result-card__title a:hover {
+    color: #4F1993;
+    text-decoration: underline;
+}
+
+/* Meta */
+.rss-result-card__meta {
+    font-size: 0.82rem;
+    color: #787c82;
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rss-result-card__sep {
+    color: #c3c4c7;
+}
+
+/* Snippet */
+.rss-result-card__snippet {
+    font-size: 0.92rem;
+    color: #3c434a;
+    line-height: 1.6;
+    margin: 0 0 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Read more link */
+.rss-result-card__link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4F1993;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.rss-result-card__link:hover {
+    color: #3c1370;
+    text-decoration: underline;
+}
+
+/* ── Promotional banner (rag_semantic_search() — theme / search.php) ─────── */
+
+.rss-promo-banner {
+    padding: 14px 20px;
+    background: #f8f4ff;
+    border: 1px solid #c9b3e8;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #3c434a;
+    line-height: 1.6;
+    margin: 16px 0;
+}
+
+.rss-promo-banner a {
+    color: #4F1993;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.rss-promo-banner a:hover {
+    text-decoration: underline;
+}
+
+/* ── Language notice ─────────────────────────────────────────────────────── */
+
+.rss-lang-notice {
+    margin-top: 24px;
+    padding: 10px 16px;
+    border-left: 4px solid #4F1993;
+    background: #f8f4ff;
+    font-size: 0.85rem;
+    color: #3c434a;
+    border-radius: 0 4px 4px 0;
+}
+
+/* ── Empty / hint states ─────────────────────────────────────────────────── */
+
+.rss-no-results,
+.rss-hint {
+    background: #f6f7f7;
+    border: 1px dashed #c3c4c7;
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+    color: #646970;
+    font-size: 0.95rem;
+}
+
+/* ── RAG Semantic Search sidebar widget (.rss-widget-form) ──────────────── */
+
+.rss-widget-form {
+    margin: 0;
+}
+
+.rss-widget-form__row {
+    display: flex;
+    border: 2px solid #4F1993;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.rss-widget-form__input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 12px;
+    height: 50px;
+    font-size: 0.95rem;
+    background: #fff;
+    color: #1d2327;
+    min-width: 0;
+}
+
+.rss-widget-form__input::placeholder {
+    color: #a0a5aa;
+}
+
+.rss-widget-form__submit {
+    border: none;
+    background: #4F1993;
+    color: #fff;
+    padding: 0 16px;
+    height: 50px;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+}
+
+.rss-widget-form__submit:hover {
+    background: #3c1370;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media ( max-width: 600px ) {
+    .rss-result-card {
+        padding: 16px;
+    }
+
+    .rss-search-form__input {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+
+    .rss-search-form__submit {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    .rss-result-card__title {
+        font-size: 1rem;
+    }
+}

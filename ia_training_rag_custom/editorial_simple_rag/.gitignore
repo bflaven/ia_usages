@@ -1,0 +1,201 @@
+# =============================================================================
+# .gitignore — 004_ai_powered_tender_document_evaluation
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+.Python
+
+# Claude
+.claude/
+
+# Wolf
+.wolf/
+
+
+# Virtualenvs
+.venv/
+venv/
+env/
+ENV/
+.env/
+virtualenv/
+
+# -----------------------------------------------------------------------------
+# Node.js / JavaScript
+# -----------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnp/
+.pnp.js
+
+# -----------------------------------------------------------------------------
+# Environment & Secrets
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.env
+secrets/
+config/local.py
+config/secrets.yml
+credentials.json
+service_account.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# -----------------------------------------------------------------------------
+# Documents & Uploads (tender files — données sensibles)
+# -----------------------------------------------------------------------------
+data/uploads/
+data/input/
+data/processed/
+uploads/
+documents/
+tenders/
+*.pdf
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.odt
+*.ods
+# Exceptions : garder les fixtures de test
+!tests/fixtures/*.pdf
+!tests/fixtures/*.docx
+
+# -----------------------------------------------------------------------------
+# AI / ML — modèles, embeddings, caches
+# -----------------------------------------------------------------------------
+models/
+*.bin
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.pickle
+*.h5
+*.safetensors
+embeddings/
+vector_store/
+chroma_db/
+faiss_index/
+*.index
+mlruns/
+mlflow/
+.mlflow/
+
+# Cache LLM / API responses (local mocking)
+cache/
+.cache/
+response_cache/
+*.cache.json
+
+# -----------------------------------------------------------------------------
+# Docker
+# -----------------------------------------------------------------------------
+.docker/
+docker-compose.override.yml
+docker-compose.local.yml
+
+# -----------------------------------------------------------------------------
+# Bases de données locales
+# -----------------------------------------------------------------------------
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+postgres_data/
+redis_data/
+
+# -----------------------------------------------------------------------------
+# Logs & rapports
+# -----------------------------------------------------------------------------
+logs/
+*.log
+*.log.*
+reports/output/
+evaluation_results/
+*.csv
+# Exceptions : garder les exemples de rapport
+!docs/examples/*.csv
+
+# -----------------------------------------------------------------------------
+# IDEs & éditeurs
+# -----------------------------------------------------------------------------
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# -----------------------------------------------------------------------------
+# Tests & couverture
+# -----------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+nosetests.xml
+test-results/
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+
+# -----------------------------------------------------------------------------
+# CI / CD
+# -----------------------------------------------------------------------------
+.terraform/
+*.tfstate
+*.tfstate.backup
+.vagrant/
+
+# -----------------------------------------------------------------------------
+# Jupyter Notebooks — outputs & checkpoints
+# -----------------------------------------------------------------------------
+.ipynb_checkpoints/
+*.ipynb
+# Décommenter pour versionner les notebooks :
+# !notebooks/*.ipynb
+
+# -----------------------------------------------------------------------------
+# Fichiers temporaires
+# -----------------------------------------------------------------------------
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
+*.swp

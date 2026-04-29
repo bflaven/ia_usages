@@ -1,0 +1,65 @@
+# config/chunking_rules.yaml
+# Business rules for step 2 (chunking).
+# Only used when chunking.enable_business_rules: true in config.yaml.
+
+defaults:
+  size: 150          # conservative default — keeps all chunks under 1500-char embed cap
+  overlap: 0.1
+  min_tokens: 30
+  strip_headers: true
+
+document_types:
+
+  - id: "rfp_public_tender"
+    # Matches any file whose path contains "rfp", "ao_", "marche", or "dce"
+    # (case-insensitive — the matcher lowercases the full path).
+    # This catches all RFP corpus files regardless of their individual filename.
+    match:
+      any_path_contains: ["rfp", "ao_", "marche", "dce"]
+    chunking:
+      size: 150           # 150 words × ~7 chars/word ≈ 1050 chars, under 1500-char cap
+      overlap: 0.15       # RFP PDFs have dense tables with high BPE expansion
+    keep_together_patterns:
+      - regex: "^Article\\s+[0-9IVX]+"
+      - regex: "^Objet du march"
+      - regex: "^Object of the contract"
+    drop_patterns:
+      - regex: "^Page \\d+ / \\d+"
+      - regex: "^\\s*$"
+
+  - id: "hr_cv"
+    match:
+      any_path_contains: ["hr", "cv", "candidates"]
+    chunking:
+      size: 150
+      overlap: 0.1
+    keep_together_patterns:
+      - regex: "^Exp[eé]rience"
+      - regex: "^Education"
+      - regex: "^Formation"
+      - regex: "^Comp[eé]tences"
+    drop_patterns:
+      - regex: "^\\s*$"
+
+  - id: "editorial_article"
+    match:
+      any_extension: ["json"]
+      any_path_contains: ["editorial", "cms"]
+    chunking:
+      size: 150
+      overlap: 0.1
+    keep_together_patterns:
+      - regex: "^##\\s"
+    drop_patterns:
+      - regex: "^\\s*$"
+
+  - id: "journalist_article"
+    match:
+      any_path_contains: ["journalist"]
+    chunking:
+      size: 150
+      overlap: 0.15      # slightly more overlap — dense government text benefits from context continuity
+    keep_together_patterns: []
+    drop_patterns:
+      - regex: "^\\s*$"
+      - regex: "^\\d+$"  # drop standalone page/line numbers
