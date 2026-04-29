@@ -1,0 +1,27 @@
+use_cases:
+  editorial:
+    corpus_dir: "data/corpora/editorial/CMS_EXPORT_2026_2"
+    index_dir: "data/indexes/editorial/CMS_EXPORT_2026_2"
+    checkpoint_dir: "data/checkpoints/editorial/CMS_EXPORT_2026_2"
+
+  rfp:
+    corpus_dir: "data/corpora/rfp/AO_2025_003"
+    index_dir: "data/indexes/rfp/AO_2025_003"
+    checkpoint_dir: "data/checkpoints/rfp/AO_2025_003"
+
+  hr:
+    corpus_dir: "data/corpora/hr/04_JOB_OFFER_8779878"
+    index_dir: "data/indexes/hr/04_JOB_OFFER_8779878"
+    checkpoint_dir: "data/checkpoints/hr/04_JOB_OFFER_8779878"
+  
+  journalist:
+    corpus_dir: "data/corpora/journalist/EPSTEIN_FILES_20K_1"
+    index_dir: "data/indexes/journalist/EPSTEIN_FILES_20K_1"
+    checkpoint_dir: "data/checkpoints/journalist/EPSTEIN_FILES_20K_1"
+    
+logs_dir: "logs"
+database_path: "data/rag_cache.db"
+
+
+
+

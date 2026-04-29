@@ -1,0 +1,113 @@
+/* RAG Semantic Search — Admin styles */
+
+/* ── Layout ──────────────────────────────────────────────────────────────── */
+
+.rss-admin__title .dashicons {
+    font-size: 1.6rem;
+    vertical-align: middle;
+    margin-right: 6px;
+    color: #4F1993;
+}
+
+.rss-section {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px 24px;
+    margin-top: 20px;
+    max-width: 760px;
+}
+
+.rss-section h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+}
+
+.rss-section--danger {
+    border-color: #d63638;
+}
+
+.rss-section--danger h2 {
+    color: #d63638;
+}
+
+/* ── Status cards ────────────────────────────────────────────────────────── */
+
+.rss-status-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.rss-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 18px 32px;
+    min-width: 160px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.rss-card__count {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #4F1993;
+    line-height: 1.1;
+}
+
+.rss-card__label {
+    font-size: 0.85rem;
+    color: #646970;
+    margin-top: 4px;
+}
+
+.rss-card__table {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 6px;
+    background: none;
+    padding: 0;
+}
+
+/* ── Form ────────────────────────────────────────────────────────────────── */
+
+.rss-form {
+    margin-top: 12px;
+}
+
+.rss-form__row {
+    margin-bottom: 14px;
+}
+
+.rss-form__label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.rss-form__file {
+    display: block;
+}
+
+/* ── Danger button ───────────────────────────────────────────────────────── */
+
+.rss-section--danger .button-delete,
+.rss-section--danger input[type="submit"].button-delete {
+    background: #d63638;
+    border-color: #b32d2e;
+    color: #fff;
+}
+
+.rss-section--danger .button-delete:hover,
+.rss-section--danger input[type="submit"].button-delete:hover {
+    background: #b32d2e;
+    border-color: #8a2122;
+    color: #fff;
+}

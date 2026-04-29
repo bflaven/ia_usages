@@ -1,0 +1,77 @@
+# rfp | hr | screenwriting | journalism | support | editorial
+
+active_use_case: "journalist" 
+# active_use_case: "editorial"   
+# active_use_case: "rfp"   
+# active_use_case: "hr"   
+
+# ---------------------------------------------------------------------------
+# spaCy — sentence-boundary chunking (Step 2)
+# ---------------------------------------------------------------------------
+# Installed models (ia_achats conda env):
+#   en_core_web_trf  — English transformer  (accurate, slower)   ✔
+#   en_core_web_md   — English medium       (faster, good)       ✔
+#   fr_dep_news_trf  — French transformer   (accurate, slower)   ✔
+#   fr_core_news_md  — French medium        (faster, good)       ✔
+#
+# Swap the model value to change quality/speed trade-off for a language.
+# The fallback is used when the document language is not in `models`.
+# Rebuilding the index (steps 2 → 4) is required after any change here.
+
+spacy:
+  models:
+    en: "en_core_web_md"     # swap to "en_core_web_trf" for accuracy
+    fr: "fr_dep_news_trf"    # swap to "fr_core_news_md" for speed
+  fallback: "en_core_web_md" # unknown-language fallback
+  # Per-document language detection via langdetect (pip install langdetect).
+  # Leave empty for mixed-language corpora — each post is detected individually.
+  # Set to "fr" or "en" to force one language for the entire corpus (single-language only).
+  default_language: "en"
+
+embeddings:
+  provider: "ollama"               # "ollama" | "azure"
+  model: "nomic-embed-text"        # local default, dim 768
+  azure_deployment: null           # "text-embedding-3-large" if provider="azure"
+  ollama_num_ctx: 8192             # nomic-embed-text native max; Ollama defaults to 2048 — override here
+
+chunking:
+  size: 150          # conservative — all rules override this; kept in sync with chunking_rules.yaml defaults
+  overlap: 0.1
+  min_tokens: 30
+  strip_headers: true
+  enable_business_rules: true      # uses chunking_rules.yaml if true
+
+retrieval:
+  k: 5
+  score_threshold: 0.2
+  rerank:
+    enabled: true
+    model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  enable_business_rules: true      # uses retrieval_rules.yaml if true
+
+llm:
+  # "ollama" | "azure"
+  # provider: "ollama"
+  # model: "llama3.1"
+  provider: "azure"                 
+  azure_deployment: "gpt-4.1"
+
+memory:
+  enabled: true
+  max_turns: 5
+
+azure:
+  endpoint_env: "ENDPOINT"                  # env var holding the Azure endpoint URL
+  endpoint: ""                              # fallback if env var is not set
+  api_key_env: "API_KEY"                   # env var holding the API key
+  api_version: "2024-12-01-preview"        # use a recent preview for gpt-4.1
+
+ollama:
+  host: "http://localhost:11434"
+
+database:
+  enabled: true
+  path: "data/rag_cache.db"
+  cleanup:
+    enabled: true
+    days: 30

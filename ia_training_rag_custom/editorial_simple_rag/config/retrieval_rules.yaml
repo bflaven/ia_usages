@@ -1,0 +1,62 @@
+# config/retrieval_rules.yaml
+# Business rules for step 5 (query/retrieval).
+# Only used when retrieval.enable_business_rules: true in config.yaml.
+
+rules:
+
+  - id: "rfp_pricing"
+    # Readers set doc_type to the file format ("pdf", "tsv", "xlsx") not to the
+    # use-case type. No doc_type filter here — the rfp index only contains rfp
+    # documents anyway. Boost TSV/XLSX because they carry the pricing tables.
+    when:
+      query_contains_any: ["cost", "price", "budget", "BPU", "amount", "total",
+                           "coût", "prix", "montant", "tarif", "devis"]
+    params:
+      k: 8
+      score_threshold: 0.15
+    boost:
+      source_extension:
+        tsv: 2.5
+        xlsx: 2.0
+
+  - id: "hr_screening"
+    when:
+      query_contains_any: ["experience", "skills", "candidate", "years of", "compétences"]
+    filters:
+      doc_type: ["hr_cv"]
+    params:
+      k: 6
+      score_threshold: 0.2
+
+  - id: "editorial_topic"
+    when:
+      # "journalist" removed — would fire on journalist-corpus queries and block
+      # journalist_article chunks via the editorial_article doc_type filter
+      query_contains_any: ["article", "published", "coverage", "wrote", "report", "publié", "écrit"]
+    filters:
+      doc_type: ["editorial_article"]
+    params:
+      k: 10
+      score_threshold: 0.15
+    boost:
+      metadata_field:
+        recency: 1.3
+
+  - id: "journalist_article"
+    # Broad catch-all for the journalist corpus — no keyword trigger needed,
+    # this rule is activated by the journalist index itself (no doc_type filter
+    # so it returns all journalist_article chunks). Lower threshold handles the
+    # variable quality of raw government document text.
+    when:
+      query_contains_any: ["epstein", "maxwell", "ghislaine", "jeffrey", "abuse",
+                           "trafficking", "island", "accusation", "victim", "court",
+                           "document", "file", "testimony", "deposition", "allegation",
+                           "underage", "minor", "settlement", "investigation", "fbi",
+                           "congress", "hearing", "oversight"]
+    params:
+      k: 15
+      score_threshold: 0.1
+
+defaults:
+  k: 10
+  score_threshold: 0.1

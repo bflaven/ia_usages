@@ -100,6 +100,7 @@
 
 24. AI-Augmented Journalism: Practical Implementation of Semantic Clustering, Multilingual Transcription, and WordPress Automation [https://wp.me/p3Vuhl-3q4](https://wp.me/p3Vuhl-3q4)
 
+25. Claude Code, CLAUDE.md, and Token Optimization: Practical Tips for RAG Development Without Burning Your Credits [https://wp.me/p3Vuhl-3qO](https://wp.me/p3Vuhl-3qO)
 
 
 **And some other directories that does not have any attached to it but shows useful resources and code.**

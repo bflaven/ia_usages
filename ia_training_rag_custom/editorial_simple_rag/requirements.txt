@@ -1,0 +1,22 @@
+# 005_multi_usage_rag — Dépendances
+# Environnement Anaconda : ia_achats (Python 3.11)
+
+# Core
+pyyaml>=6.0
+python-dotenv>=1.0
+
+# Ingestion
+pypdf2>=3.0          # lecture PDF
+pymupdf>=1.23        # lecture PDF avancée (fitz)
+python-docx>=1.1     # lecture DOCX
+
+# Embeddings & Vector Store
+faiss-cpu>=1.7.4     # index FAISS (CPU)
+numpy>=1.24
+
+# LLM
+ollama>=0.2          # client Ollama local
+openai>=1.30         # client Azure OpenAI
+
+# Interface (optionnel — step_7)
+streamlit>=1.35

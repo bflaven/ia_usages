@@ -1,0 +1,42 @@
+# config/bridge_wp.yaml
+# Configuration for the WordPress / MariaDB bridge.
+# All bridge scripts read from this file.
+
+wordpress:
+  # Set to true only when you want to pull posts live from the WP REST API.
+  # When false, all scripts use the local JSON file defined in bridge.local_source.
+  enabled: false
+  # REST API base URL — example: https://flaven.fr/wp-json/wp/v2
+  api_url: "https://your-site.com/wp-json/wp/v2"
+  # Authentication (leave empty for public endpoints)
+  auth_user: ""
+  auth_password: ""          # Application Password (WP 5.6+)
+  # Fetch settings
+  per_page: 100              # posts per API page (max 100)
+  post_status: "publish"     # publish | draft | any
+  post_type: "posts"         # posts | pages | custom_post_type
+
+mariadb:
+  host: "localhost"
+  port: 3306
+  database: "wordpress"      # your WP database name
+  user: "wp_user"
+  password_env: "WP_DB_PASSWORD"   # env var holding the password
+  charset: "utf8mb4"
+
+bridge:
+  # Table names (prefixed to avoid clashing with WP tables)
+  posts_table: "rag_posts"
+  results_table: "rag_results"
+  # Local source file (used when wordpress.enabled = false)
+  local_source: "data/corpora/editorial/CMS_EXPORT_2026/sample_posts.json"
+  # Output exchange file written by bridge_export.py, read by the WP plugin
+  exchange_file: "data/bridge/rag_bridge.json"
+  # Chunking (optional — set to false to index full article as one row)
+  chunk_content: false
+  chunk_size: 800
+  # Search
+  fulltext_mode: "BOOLEAN"   # BOOLEAN | NATURAL LANGUAGE
+  max_results: 10
+  # Result storage TTL in days (older rows are purged on each run)
+  results_ttl_days: 7
