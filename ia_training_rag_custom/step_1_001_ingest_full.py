@@ -84,8 +84,8 @@ POSTS_ENDPOINT: str = "/wp-json/wp/v2/posts"
 
 # HTTP Basic Auth credentials (for .htaccess protection)
 # IMPORTANT: replace with your real credentials before running.
-BASIC_AUTH_USERNAME: str = "happyclient"
-BASIC_AUTH_PASSWORD: str = "8OrR0D6*nJ7R7lnP"
+BASIC_AUTH_USERNAME: str = "your_username"
+BASIC_AUTH_PASSWORD: str = "your_pasword"
 
 # Pagination settings
 PER_PAGE: int = 10        # number of posts per request
