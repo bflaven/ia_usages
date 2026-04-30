@@ -1,7 +1,7 @@
 /**
  * Plugin Name: Semaphore
  * Description: Semantic clustering plugin (related posts, tag families, sidebar, breadcrumbs & schemas).
- * Version: 1.2.2
+ * Version: 1.2.3
  * Author: Bruno Flaven & IA
  * Text Domain: semaphore
  */
