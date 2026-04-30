@@ -4,7 +4,7 @@
  * Plugin URI:   https://github.com/bflaven
  * Description:  Imports RAG bridge data (rag_bridge.json) into WordPress and
  *               exposes semantic search results via a shortcode [rag_search].
- * Version:      1.0.10
+ * Version:      1.0.11
  * Author:       Bruno Flaven
  * License:      GPL-2.0-or-later
  * Text Domain:  rag-semantic-search
@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 
 // ── 1. Constants ─────────────────────────────────────────────────────────────
 
-define( 'RSS_VERSION',    '1.0.10' );
+define( 'RSS_VERSION',    '1.0.11' );
 define( 'RSS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'RSS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
@@ -104,6 +104,29 @@ add_action( 'widgets_init', 'rss_register_widget' );
 
 function rss_register_widget(): void {
     register_widget( 'RSS_Widget' );
+}
+
+// ── 6. Export handler (admin_init — must run before any output) ───────────────
+
+add_action( 'admin_init', 'rss_handle_export' );
+
+function rss_handle_export(): void {
+    if ( ! isset( $_POST['rss_action'] ) || $_POST['rss_action'] !== 'export' ) {
+        return;
+    }
+    if ( ! current_user_can( 'manage_options' ) ) {
+        wp_die( esc_html__( 'You do not have permission to perform this action.', 'rag-semantic-search' ) );
+    }
+    check_admin_referer( 'rss_export_nonce', 'rss_nonce' );
+
+    $posts = RSS_DB::export_posts();
+    $json  = wp_json_encode( $posts, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES );
+
+    header( 'Content-Type: application/json; charset=utf-8' );
+    header( 'Content-Disposition: attachment; filename="rag_bridge_export_' . gmdate( 'Y-m-d' ) . '.json"' );
+    header( 'Content-Length: ' . strlen( $json ) );
+    echo $json; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    exit;
 }
 
 // ── 7. Admin menu ─────────────────────────────────────────────────────────────

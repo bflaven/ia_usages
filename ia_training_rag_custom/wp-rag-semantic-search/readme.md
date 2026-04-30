@@ -1,6 +1,6 @@
 # RAG Semantic Search — WordPress Plugin
 
-**Version:** 1.0.10
+**Version:** 1.0.11
 **Author:** Bruno Flaven
 **Requires:** WordPress 5.6+, PHP 7.4+, MySQL 8.0+ / MariaDB 10.3+
 
@@ -186,6 +186,12 @@ Upload `rag_bridge.json`. The importer:
 - Inserts new records, updates existing ones (`ON DUPLICATE KEY UPDATE`).
 - Reports: inserted / updated / skipped / errors.
 
+**Clear before import checkbox** — when checked, all rows in `wp_rag_posts` are deleted before the new file is processed. Use this for a full replacement instead of an upsert. Unchecked by default.
+
+### Export section
+
+**Export posts** — downloads the full contents of `wp_rag_posts` as a `rag_bridge_export_YYYY-MM-DD.json` file. The exported schema is identical to the import format (`id`, `title`, `url`, `date`, `slug`, `excerpt`, `text`), so the file can be edited and re-imported without any transformation. The current post count is shown so you can confirm data is present before exporting.
+
 ### Search cache section
 
 **Clear search cache** — deletes all rows from `wp_rag_results` only. Posts in `wp_rag_posts` are untouched. The current cache row count is displayed so you can judge whether a flush is warranted. Use this if the cache has grown unexpectedly large or you want to force fresh FULLTEXT results for all queries.
@@ -205,9 +211,9 @@ WP Admin → Plugins → RAG Semantic Search → **Delete**.
 On deletion, `uninstall.php` runs automatically and:
 - Drops `wp_rag_results` (results first, due to FK dependency).
 - Drops `wp_rag_posts`.
-- Removes the `rss_db_version` option.
+- Removes all plugin options from `wp_options`: `rss_db_version`, `rss_semantic_enabled`, `rss_promo_text`, `rss_lang_notice`, `rss_cache_ttl_days`.
 
-> **Deactivating** the plugin does NOT delete any data. Tables and records are preserved.
+> **Deactivating** the plugin does NOT delete any data. Tables and records are preserved until the plugin is fully deleted.
 
 ---
 
@@ -223,7 +229,8 @@ rag-semantic-search/
 │
 ├── includes/
 │   ├── class-db.php                 ← RSS_DB: create_tables, drop_tables,
-│   │                                   empty_tables, get_counts, purge_expired_results,
+│   │                                   empty_tables, empty_results, empty_posts,
+│   │                                   export_posts, get_counts, purge_expired_results,
 │   │                                   save_results, get_cached_results
 │   ├── class-importer.php           ← RSS_Importer: import_from_upload,
 │   │                                   import_records, upsert_post (idempotent)
@@ -235,7 +242,8 @@ rag-semantic-search/
 │
 ├── admin/
 │   ├── admin-page.php               ← Admin UI: status cards, settings toggle,
-│   │                                   import form, empty-tables button
+│   │                                   import form (with clear-before-import checkbox),
+│   │                                   export button, cache-clear button, empty-tables button
 │   └── admin.css                    ← Admin styles (#4F1993 purple theme)
 │
 ├── templates/
@@ -346,6 +354,7 @@ Full spec: `../data/bridge/rag_bridge_schema.json`
 
 | Version | Changes |
 |---|---|
+| 1.0.11 | **Import checkbox + Export + Uninstall fix.** (1) "Clear all existing posts before importing" checkbox added to the Import section — when checked, `wp_rag_posts` is truncated before the new file is processed (full replacement instead of upsert). (2) New "Export posts to JSON" section: downloads the full `wp_rag_posts` table as a `rag_bridge_export_YYYY-MM-DD.json` file in the same schema as the import format, ready to edit and re-import. Handled via `admin_init` so file headers are sent cleanly. New `RSS_DB::export_posts()` and `RSS_DB::empty_posts()` methods. (3) `uninstall.php` rewritten to be fully self-contained — no longer requires plugin classes (which WordPress does not load during uninstall). Now also deletes all five plugin options (`rss_db_version`, `rss_semantic_enabled`, `rss_promo_text`, `rss_lang_notice`, `rss_cache_ttl_days`) in addition to dropping the tables. |
 | 1.0.10 | **"Clear search cache" button added.** New `RSS_DB::empty_results()` method deletes all rows from `wp_rag_results` without touching `wp_rag_posts`. New "Search cache" section in the admin page shows the current cache row count and a one-click flush button (no confirmation required — posts are safe). Separate from the Danger zone which wipes both tables. |
 | 1.0.9 | **Result caching implemented.** `wp_rag_results` was never written to in prior versions — every search ran a live FULLTEXT query and discarded the results. `RSS_DB::save_results()` and `RSS_DB::get_cached_results()` added; shortcode now checks cache first (SHA-256 key, 7-day TTL) then falls back to live search and persists results. `RSS_Search::format_cached()` added to reconstruct result objects from cached rows. `make_snippet()` changed `private` → `public`. Version constant and plugin header updated. |
 | 1.0.8 | `plugins_loaded` upgrade hook; `rss_disable_block_widgets` to force classic widget editor; `rss_lang_notice` and `rss_promo_text` content options added to admin |
