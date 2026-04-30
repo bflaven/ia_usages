@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Semaphore
  * Description: Semantic clustering plugin (related posts, tag families, sidebar, breadcrumbs & schemas).
- * Version: 1.2.2
+ * Version: 1.2.4
  * Author: Bruno Flaven & IA
  * Text Domain: semaphore
  */
@@ -16,7 +16,7 @@ require_once __DIR__ . '/inc/tag-families-usage-sync.php';
 
 
 
-define( 'SEMAPHORE_VERSION', '1.2.0' );
+define( 'SEMAPHORE_VERSION', '1.2.4' );
 
 /**
  * One-shot admin repair for usage_count on production.
@@ -123,25 +123,12 @@ function semaphore_activate() {
 }
 register_activation_hook( __FILE__, 'semaphore_activate' );
 
-function semaphore_uninstall() {
-    global $wpdb;
-
-    $wpdb->query( "DROP TABLE IF EXISTS `{$wpdb->prefix}related_posts_embeddings`" );
-    $wpdb->query( "DROP TABLE IF EXISTS `{$wpdb->prefix}tag_families`" );
-
-    delete_option( 'semaphore_debug' );
-    delete_option( 'semaphore_enable_sidebar' );
-    delete_option( 'semaphore_enable_footer' );
-    delete_option( 'semaphore_enable_breadcrumbs' );
-    delete_option( 'semaphore_enable_schema' );
-}
-register_uninstall_hook( __FILE__, 'semaphore_uninstall' );
 
 function semaphore_activation_notice() {
     if ( get_transient( 'semaphore_activation_notice' ) ) {
         delete_transient( 'semaphore_activation_notice' );
         echo '<div class="notice notice-success is-dismissible">';
-        echo '<p><strong>Semaphore:</strong> Tables created. Go to Settings → Semaphore to import CSV and configure options.</p>';
+        echo '<p><strong>Semaphore:</strong> Tables created. Go to <strong>Semaphore → Settings</strong> in the sidebar to import CSV and configure options.</p>';
         echo '</div>';
     }
 }
@@ -180,10 +167,22 @@ function semaphore_register_settings() {
 add_action( 'admin_init', 'semaphore_register_settings' );
 
 function semaphore_admin_menu() {
-    // Main settings.
-    add_options_page(
+    // Top-level menu entry in the sidebar.
+    add_menu_page(
         'Semaphore',
         'Semaphore',
+        'manage_options',
+        'semaphore',
+        'semaphore_render_settings_page',
+        'dashicons-chart-area',
+        81
+    );
+
+    // Rename the auto-generated first submenu item.
+    add_submenu_page(
+        'semaphore',
+        'Semaphore',
+        'Settings',
         'manage_options',
         'semaphore',
         'semaphore_render_settings_page'
@@ -191,9 +190,9 @@ function semaphore_admin_menu() {
 
     // Related embeddings CSV.
     add_submenu_page(
-        'options-general.php',
+        'semaphore',
         'Semaphore – Related Embeddings',
-        'Semaphore: Related Embeddings',
+        'Related Embeddings',
         'manage_options',
         'semaphore-related',
         'semaphore_re_render_csv_page'
@@ -201,9 +200,9 @@ function semaphore_admin_menu() {
 
     // Families CSV (legacy import).
     add_submenu_page(
-        'options-general.php',
+        'semaphore',
         'Semaphore – Tag Families CSV',
-        'Semaphore: Tag Families CSV',
+        'Tag Families CSV',
         'manage_options',
         'semaphore-families-csv',
         'semaphore_tf_render_csv_page'
@@ -211,9 +210,9 @@ function semaphore_admin_menu() {
 
     // Tag Families manager UI.
     add_submenu_page(
-        'options-general.php',
-        'Semaphore – Tag Families',
-        'Semaphore: Tag Families',
+        'semaphore',
+        'Semaphore – Tag Families Manager',
+        'Tag Families Manager',
         'manage_options',
         'semaphore-dashboard',
         'semaphore_render_dashboard_page'
@@ -286,7 +285,7 @@ function semaphore_render_settings_page() {
         <h3>Install</h3>
         <ul>
             <li>Activate this plugin; tables are created automatically.</li>
-            <li>Import CSVs via Settings → Semaphore: Related Embeddings / Semaphore: Tag Families CSV.</li>
+            <li>Import CSVs via <strong>Semaphore → Related Embeddings</strong> or <strong>Semaphore → Tag Families CSV</strong>.</li>
             <li>Use shortcodes <code>[semaphore_related_posts]</code>, <code>[semaphore_related_tags]</code>, <code>[semaphore_sidebar]</code> where needed.</li>
         </ul>
 
@@ -778,6 +777,40 @@ function semaphore_re_handle_csv_import() {
     add_settings_error( 'semaphore_re_messages', 'semaphore_re_import_success', $message, 'updated' );
 }
 
+function semaphore_re_handle_csv_export() {
+    if ( ! isset( $_POST['semaphore_re_export_submit'] ) ) {
+        return;
+    }
+    check_admin_referer( 'semaphore_re_export_csv', 'semaphore_re_export_nonce' );
+    if ( ! current_user_can( 'manage_options' ) ) {
+        wp_die( 'Forbidden' );
+    }
+
+    global $wpdb;
+    $table = semaphore_re_table_name();
+    $rows  = $wpdb->get_results(
+        "SELECT post_id, related_post_id, similarity, `rank` FROM `{$table}` ORDER BY post_id, `rank`",
+        ARRAY_A
+    );
+
+    $filename = 'related_posts_embeddings_' . gmdate( 'Y-m-d' ) . '.csv';
+
+    header( 'Content-Type: text/csv; charset=UTF-8' );
+    header( 'Content-Disposition: attachment; filename="' . $filename . '"' );
+    header( 'Pragma: no-cache' );
+    header( 'Expires: 0' );
+
+    $out = fopen( 'php://output', 'w' );
+    fputs( $out, "\xEF\xBB\xBF" ); // UTF-8 BOM for Excel.
+    fputcsv( $out, array( 'post_id', 'related_post_id', 'similarity', 'rank' ) );
+    foreach ( $rows as $row ) {
+        fputcsv( $out, array( $row['post_id'], $row['related_post_id'], $row['similarity'], $row['rank'] ) );
+    }
+    fclose( $out );
+    exit;
+}
+add_action( 'admin_init', 'semaphore_re_handle_csv_export' );
+
 function semaphore_re_render_csv_page() {
     global $wpdb;
 
@@ -840,6 +873,17 @@ function semaphore_re_render_csv_page() {
 
             <?php submit_button( 'Import CSV', 'primary', 'semaphore_re_import_submit' ); ?>
         </form>
+
+        <h2>CSV Export</h2>
+        <p>Download the current contents of <code><?php echo esc_html( $table ); ?></code> as a CSV file.</p>
+        <?php if ( $table_exist !== $table || $row_count === 0 ) : ?>
+            <p><em>Table is empty or missing — nothing to export.</em></p>
+        <?php else : ?>
+        <form method="post">
+            <?php wp_nonce_field( 'semaphore_re_export_csv', 'semaphore_re_export_nonce' ); ?>
+            <?php submit_button( 'Export CSV (' . number_format( $row_count ) . ' rows)', 'secondary', 'semaphore_re_export_submit' ); ?>
+        </form>
+        <?php endif; ?>
     </div>
     <?php
 }
@@ -1084,6 +1128,49 @@ function semaphore_tf_handle_csv_import() {
     add_settings_error( 'semaphore_tf_messages', 'semaphore_tf_import_success', $message, 'updated' );
 }
 
+function semaphore_tf_handle_csv_export() {
+    if ( ! isset( $_POST['semaphore_tf_export_submit'] ) ) {
+        return;
+    }
+    check_admin_referer( 'semaphore_tf_export_csv', 'semaphore_tf_export_nonce' );
+    if ( ! current_user_can( 'manage_options' ) ) {
+        wp_die( 'Forbidden' );
+    }
+
+    global $wpdb;
+    $table = semaphore_tf_table_name();
+    $rows  = $wpdb->get_results(
+        "SELECT family_id, canonical_tag_id, canonical_label, tag_id, tag_label, similarity_to_canonical, usage_count, entity_label FROM `{$table}` ORDER BY family_id, tag_id",
+        ARRAY_A
+    );
+
+    $filename = 'tag_families_' . gmdate( 'Y-m-d' ) . '.csv';
+
+    header( 'Content-Type: text/csv; charset=UTF-8' );
+    header( 'Content-Disposition: attachment; filename="' . $filename . '"' );
+    header( 'Pragma: no-cache' );
+    header( 'Expires: 0' );
+
+    $out = fopen( 'php://output', 'w' );
+    fputs( $out, "\xEF\xBB\xBF" ); // UTF-8 BOM for Excel.
+    fputcsv( $out, array( 'family_id', 'canonical_tag_id', 'canonical_label', 'tag_id', 'tag_label', 'similarity_to_canonical', 'usage_count', 'entity_label' ) );
+    foreach ( $rows as $row ) {
+        fputcsv( $out, array(
+            $row['family_id'],
+            $row['canonical_tag_id'],
+            $row['canonical_label'],
+            $row['tag_id'],
+            $row['tag_label'],
+            $row['similarity_to_canonical'],
+            $row['usage_count'],
+            $row['entity_label'],
+        ) );
+    }
+    fclose( $out );
+    exit;
+}
+add_action( 'admin_init', 'semaphore_tf_handle_csv_export' );
+
 function semaphore_tf_render_csv_page() {
     global $wpdb;
 
@@ -1146,6 +1233,17 @@ function semaphore_tf_render_csv_page() {
 
             <?php submit_button( 'Import CSV', 'primary', 'semaphore_tf_import_submit' ); ?>
         </form>
+
+        <h2>CSV Export</h2>
+        <p>Download the current contents of <code><?php echo esc_html( $table ); ?></code> as a CSV file.</p>
+        <?php if ( $table_exist !== $table || $row_count === 0 ) : ?>
+            <p><em>Table is empty or missing — nothing to export.</em></p>
+        <?php else : ?>
+        <form method="post">
+            <?php wp_nonce_field( 'semaphore_tf_export_csv', 'semaphore_tf_export_nonce' ); ?>
+            <?php submit_button( 'Export CSV (' . number_format( $row_count ) . ' rows)', 'secondary', 'semaphore_tf_export_submit' ); ?>
+        </form>
+        <?php endif; ?>
     </div>
     <?php
 }
@@ -1235,7 +1333,7 @@ function semaphore_tagfamilies_table() {
 }
 
 function semaphore_admin_enqueue( $hook ) {
-    if ( $hook !== 'settings_page_semaphore-dashboard' ) {
+    if ( $hook !== 'semaphore_page_semaphore-dashboard' ) {
         return;
     }
 
@@ -1251,7 +1349,7 @@ function semaphore_admin_enqueue( $hook ) {
         'semaphore-families-manager',
         plugins_url( 'assets/js/semaphore-families-manager.js', __FILE__ ),
         array( 'jquery' ),
-        '1.2.1',
+        '1.2.3',
         true
     );
 
