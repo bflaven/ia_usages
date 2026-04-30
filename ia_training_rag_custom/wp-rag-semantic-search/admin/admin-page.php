@@ -45,6 +45,10 @@ if ( isset( $_POST['rss_action'] ) && $_POST['rss_action'] === 'import' ) {
         $notice       = __( 'Please select a JSON file before importing.', 'rag-semantic-search' );
         $notice_class = 'notice-error';
     } else {
+        if ( isset( $_POST['rss_clear_before_import'] ) ) {
+            RSS_DB::empty_posts();
+        }
+
         $stats = RSS_Importer::import_from_upload( $_FILES['rss_json'] ); // phpcs:ignore
 
         if ( ! empty( $stats['errors'] ) && $stats['imported'] === 0 && $stats['updated'] === 0 ) {
@@ -251,6 +255,20 @@ $lang_notice      = get_option( 'rss_lang_notice', '' );
             </div>
 
             <div class="rss-form__row">
+                <label>
+                    <input
+                        type="checkbox"
+                        name="rss_clear_before_import"
+                        value="1"
+                    >
+                    <?php esc_html_e( 'Clear all existing posts before importing', 'rag-semantic-search' ); ?>
+                </label>
+                <p class="description" style="margin-top:4px;">
+                    <?php esc_html_e( 'When checked, all rows in wp_rag_posts are deleted before the new file is inserted. Use this for a full replacement instead of an upsert.', 'rag-semantic-search' ); ?>
+                </p>
+            </div>
+
+            <div class="rss-form__row">
                 <?php submit_button(
                     __( 'Import posts', 'rag-semantic-search' ),
                     'primary',
@@ -261,7 +279,37 @@ $lang_notice      = get_option( 'rss_lang_notice', '' );
         </form>
     </section>
 
-    <!-- ── 5. Clear search cache ──────────────────────────────────────── -->
+    <!-- ── 5. Export ──────────────────────────────────────────────────── -->
+    <section class="rss-section">
+        <h2><?php esc_html_e( 'Export posts to JSON', 'rag-semantic-search' ); ?></h2>
+        <p class="description">
+            <?php esc_html_e(
+                'Download all posts currently stored in wp_rag_posts as a rag_bridge.json-compatible file. ' .
+                'You can edit the exported file and re-import it to add or update entries.',
+                'rag-semantic-search'
+            ); ?>
+        </p>
+        <p class="description" style="margin-top:6px;">
+            <?php printf(
+                /* translators: %d: number of posts available for export */
+                esc_html__( 'Posts available for export: %d.', 'rag-semantic-search' ),
+                (int) $counts['posts']
+            ); ?>
+        </p>
+
+        <form method="post" class="rss-form" style="margin-top:12px;">
+            <?php wp_nonce_field( 'rss_export_nonce', 'rss_nonce' ); ?>
+            <input type="hidden" name="rss_action" value="export">
+            <?php submit_button(
+                __( 'Export posts', 'rag-semantic-search' ),
+                'secondary',
+                'rss_submit_export',
+                false
+            ); ?>
+        </form>
+    </section>
+
+    <!-- ── 6. Clear search cache ──────────────────────────────────────── -->
     <section class="rss-section">
         <h2><?php esc_html_e( 'Search cache', 'rag-semantic-search' ); ?></h2>
         <p class="description">

@@ -106,6 +106,45 @@ class RSS_DB {
         return (int) $wpdb->query( 'DELETE FROM ' . rss_table_results() ); // phpcs:ignore
     }
 
+    /**
+     * Delete all rows from rag_posts only — results cache is untouched.
+     * Called when the admin chooses "clear before import".
+     *
+     * @return int Number of rows deleted.
+     */
+    public static function empty_posts(): int {
+        global $wpdb;
+        return (int) $wpdb->query( 'DELETE FROM ' . rss_table_posts() ); // phpcs:ignore
+    }
+
+    // ── Export ────────────────────────────────────────────────────────────────
+
+    /**
+     * Return all rows from rag_posts as a plain array suitable for JSON export.
+     * The schema matches the rag_bridge.json import format exactly so the file
+     * can be edited and re-imported without transformation.
+     *
+     * @return array  List of associative arrays (id, title, url, date, slug, excerpt, text).
+     */
+    public static function export_posts(): array {
+        global $wpdb;
+
+        $rows = $wpdb->get_results( // phpcs:ignore
+            'SELECT id, title, url, date, slug, excerpt, text FROM ' . rss_table_posts() . ' ORDER BY id ASC',
+            ARRAY_A
+        );
+
+        if ( ! $rows ) {
+            return [];
+        }
+
+        foreach ( $rows as &$row ) {
+            $row['id'] = (int) $row['id'];
+        }
+
+        return $rows;
+    }
+
     // ── Status ────────────────────────────────────────────────────────────────
 
     /**
