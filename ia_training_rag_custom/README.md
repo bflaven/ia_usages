@@ -1,7 +1,7 @@
 # ia_training_rag_custom
 
 ## Intro (human made)
-The initial goal was to create a chatbot using RAG and custom data from simple user scenarios.
+The initial goal was to create a chatbot using RAG and custom data from simple User Stories.
 
 I targeted five markets likely to be interested: RFP (request for proposal), HR (human resources), screenwriting, and journalism.
 
