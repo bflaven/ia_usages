@@ -15,6 +15,8 @@ Furthermore, a RAG is great, but what other assets/products can be derived from 
 
 Then, finally, after completing all this work, I have been thinking more abstractly about the future of work in the age of AI.
 
+https://wp.me/p3Vuhl-3qO
+
 
 
 ## Intro (IA made)
