@@ -5,6 +5,8 @@ The initial goal was to create a chatbot using RAG and custom data from simple U
 
 I targeted five markets likely to be interested: RFP (request for proposal), HR (human resources), screenwriting, and journalism.
 
+The main core benefit is that RAG allows a human expert to navigate a dense corpus naturally, while maintaining a chain of traceability.
+
 This project also provided the perfect opportunity for a true experiment with Claude Code, from design to final presentation, including complete development. A complete project, from start to finish, with no assistance other than Claude Code.
 
 Consequently, a quick strategy was needed to safeguard the valuable Claude Code tokens so work could continue.
