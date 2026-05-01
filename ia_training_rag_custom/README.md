@@ -11,7 +11,7 @@ Consequently, a quick strategy was needed to safeguard the valuable Claude Code 
 
 Furthermore, a RAG is great, but what other assets/products can be derived from the RAG product? Therefore, I repurposed part of the pipeline to create a semantic search based on the corpus of data used. To put it simply, imagine you're an HR Director. You have a Responsible Job Search Tool (RJS) that allows you to filter CVs using a search engine to determine if they match the job posting you've published. At the same time, you index all the CVs you receive using a semantic search. It's undoubtedly useful and not actually that complicated. Since I'm not an HR Director but a Product Owner (PO), I use it in my own articles and, with Claude Claude, I created a plugin to implement it on WordPress.
 
-Then, finally, after completing all this work, I realized I probably wouldn't have a job anymore because of AI.
+Then, finally, after completing all this work, I have been thinking more abstractly about the future of work in the age of AI.
 
 
 
