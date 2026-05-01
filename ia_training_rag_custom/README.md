@@ -1,6 +1,21 @@
 # ia_training_rag_custom
 
-## Intro
+## Intro (human made)
+The initial goal was to create a chatbot using RAG and custom data from simple user scenarios.
+
+I targeted five markets likely to be interested: RFP (request for proposal), HR (human resources), screenwriting, and journalism.
+
+This project also provided the perfect opportunity for a true experiment with Claude Code, from design to final presentation, including complete development. A complete project, from start to finish, with no assistance other than Claude Code.
+
+Consequently, a quick strategy was needed to safeguard the valuable Claude Code tokens so work could continue.
+
+Furthermore, a RAG is great, but what other assets/products can be derived from the RAG product? Therefore, I repurposed part of the pipeline to create a semantic search based on the corpus of data used. To put it simply, imagine you're an HR Director. You have a Responsible Job Search Tool (RJS) that allows you to filter CVs using a search engine to determine if they match the job posting you've published. At the same time, you index all the CVs you receive using a semantic search. It's undoubtedly useful and not actually that complicated. Since I'm not an HR Director but a Product Owner (PO), I use it in my own articles and, with Claude Claude, I created a plugin to implement it on WordPress.
+
+Then, finally, after completing all this work, I realized I probably wouldn't have a job anymore because of AI.
+
+
+
+## Intro (IA made)
 This post is a personal and reflective essay by a Product Owner and AI Coordinator who uses Claude Code to build a RAG (Retrieval-Augmented Generation) application. The author weaves together two distinct threads: a practical account of building with Claude Code (including the painful discovery of token limits, the CLAUDE.md discipline, and tools like OpenWolf to manage token consumption), and a philosophical meditation on what AI means for human labor, identity, and society. The central practical insight is that Claude Code burns tokens voraciously if left unconstrained, and that a smart developer must treat tokens as a scarce resource — using other LLMs (Mistral, Perplexity) for documentation tasks and reserving Claude Code for thinking and coding. The philosophical thread questions whether AI augments or replaces human cognition, invokes Alex Karp's provocation about who survives the AI era, and critiques the ideology of individual empowerment that AI platforms sell — concluding that behind the optimism lies a logic of domination inherited from liberal capitalism.
 
 **You can read the article on my blog**
@@ -9,7 +24,7 @@ This post is a personal and reflective essay by a Product Owner and AI Coordinat
 
 ## editorial_simple_rag : 
 
-The RAG's project for Human Ressources, Screenwriting, Journalism / Investigative, Support Journalism.
+The RAG's project for The RAG’s project for rfp (request for proposal) | hr (human ressource) | screenwriting | journalism.
 
 ```text
 # US-001 — Procurement (RFP)
