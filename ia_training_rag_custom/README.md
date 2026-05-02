@@ -60,7 +60,12 @@ The design approach is clear:
 RAG = enable a human expert to navigate a dense corpus naturally, while maintaining a chain of traceability.
 
 ## wp-rag-semantic-search:
-How to leverage on the RAG just to grab a semantic searhc and imeplent it in WP.
+How to leverage on the RAG just to grab a semantic search and implement it in WP.
+
+
+
+
+
 
 
 
