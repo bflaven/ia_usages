@@ -27,9 +27,11 @@ One without the other is either chaos or conformity.
 
 
 
+**A clean, smooth, methodical painting studio — optimized process, predictable output, bland results. This is convergent thinking taken to its logical extreme.**
+- 🖼️ ![](convergent_thinking_painting.jpg) 
 
-- 🖼️ ![](convergent_thinking_painting.jpg) A clean, smooth, methodical painting studio — optimized process, predictable output, bland results. This is convergent thinking taken to its logical extreme.
-🖼️ ![](divergent_thinking_painting.jpg) Francis Bacon's studio — a legendary, magnificent chaos. No visible process. Just masterpieces. This is what divergent thinking looks like from the outside.
+**Francis Bacon's studio — a legendary, magnificent chaos. No visible process. Just masterpieces. This is what divergent thinking looks like from the outside.**
+- 🖼️ ![](divergent_thinking_painting.jpg) 
 
 AI excels at convergence. The challenge — and the responsibility — is not to surrender divergence.
 
