@@ -160,3 +160,10 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 ia_training_rag_custom/editorial_simple_rag/data/
+
+
+# remove files in error
+ia_training_rag_custom/editorial_simple_rag/data/checkpoints/journalist/EPSTEIN_FILES_20K_1/step_1_documents.json \
+ia_training_rag_custom/editorial_simple_rag/data/checkpoints/journalist/EPSTEIN_FILES_20K_1/step_2_chunks.json \
+ia_training_rag_custom/editorial_simple_rag/data/checkpoints/journalist/EPSTEIN_FILES_20K_1/step_3_embeddings.npy \
+ia_training_rag_custom/editorial_simple_rag/data/indexes/journalist/EPSTEIN_FILES_20K_1/index.faiss
