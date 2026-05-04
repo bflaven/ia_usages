@@ -66,6 +66,19 @@ def get_checkpoint_dir(use_case: str = None) -> Path:
     return _PROJECT_ROOT / paths["use_cases"][uc]["checkpoint_dir"]
 
 
+def get_search_index_dir(use_case: str = None) -> Path:
+    """Return the FAISS index dir used by the SEARCH tab.
+
+    Falls back to index_dir when search_index_dir is absent from workflow_paths.yaml,
+    so the key is optional — only set it when you want SEARCH to query a different index.
+    """
+    cfg = load_config()
+    paths = load_paths()
+    uc = use_case or cfg["active_use_case"]
+    uc_paths = paths["use_cases"][uc]
+    return _PROJECT_ROOT / uc_paths.get("search_index_dir", uc_paths["index_dir"])
+
+
 def get_logs_dir() -> Path:
     paths = load_paths()
     return _PROJECT_ROOT / paths["logs_dir"]

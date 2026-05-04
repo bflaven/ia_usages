@@ -22,7 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from src.llm.embeddings import EmbeddingClient
 from src.llm.llm_client import LLMClient
 from src.memory.conversation import ConversationMemory
-from src.utils.config import load_config, get_index_dir, get_logs_dir
+from src.utils.config import load_config, get_index_dir, get_search_index_dir, get_logs_dir
 from src.utils.db_manager import DBManager
 from src.vector_store.faiss_store import FAISSStore
 
@@ -212,11 +212,20 @@ def run_streamlit(config: dict, use_case: str) -> None:
             return _load_retrieval_rules(_RETRIEVAL_RULES_PATH)
         return None
 
+    @st.cache_resource
+    def load_search_store():
+        return FAISSStore.load(get_search_index_dir())
+
     try:
         store = load_store()
     except FileNotFoundError:
         st.error("Index not found. Run `python scripts/step_4_001_index.py` first.")
         st.stop()
+
+    try:
+        search_store = load_search_store()
+    except FileNotFoundError:
+        search_store = store  # graceful fallback to the RAG index
 
     embedding_client = load_embedding_client()
     llm_client = load_llm_client()
@@ -272,8 +281,8 @@ def run_streamlit(config: dict, use_case: str) -> None:
     # -----------------------------------------------------------------------
     # Tabs
     # -----------------------------------------------------------------------
-    tab_rag, tab_history, tab_debug, tab_defs = st.tabs(
-        ["💬 RAG", "📋 History", "🔧 Debug", "📖 Definitions"]
+    tab_rag, tab_search, tab_history, tab_debug, tab_defs = st.tabs(
+        ["💬 RAG", "🔍 Search", "📋 History", "🔧 Debug", "📖 Definitions"]
     )
 
     # ===== TAB 1: RAG =======================================================
@@ -343,7 +352,118 @@ def run_streamlit(config: dict, use_case: str) -> None:
                 "rewritten": rewritten_q,
             })
 
-    # ===== TAB 2: HISTORY ===================================================
+    # ===== TAB 2: SEARCH ====================================================
+    with tab_search:
+        st.header("Semantic Search")
+        st.caption(
+            "Pure retrieval — no LLM, no generation cost. "
+            "Results come directly from the FAISS index (cosine similarity). "
+            "Proves the **R** in RAG: the retrieval layer alone delivers useful answers."
+        )
+
+        search_same = search_store is store
+        if not search_same:
+            search_idx_dir = get_search_index_dir()
+            st.info(
+                f"Search index: `{search_idx_dir}`  ({search_store.size} chunks)  "
+                f"— different from the RAG index ({store.size} chunks)"
+            )
+
+        col_q, col_k, col_thr = st.columns([5, 1, 1])
+        with col_q:
+            search_query = st.text_input(
+                "Query", placeholder="e.g. climate policy 2026", label_visibility="collapsed"
+            )
+        with col_k:
+            search_k = st.number_input("Results (k)", min_value=1, max_value=50, value=10)
+        with col_thr:
+            search_threshold = st.slider(
+                "Min similarity", min_value=0.0, max_value=1.0, value=0.10, step=0.01
+            )
+
+        search_rerank = st.toggle(
+            "Cross-encoder re-rank (E2)",
+            value=False,
+            help="Slower but more precise — re-scores every (query, chunk) pair.",
+        )
+
+        if search_query:
+            with st.spinner("Searching…"):
+                search_results = run_query(
+                    search_query,
+                    config,
+                    search_store,
+                    embedding_client,
+                    retrieval_rules=retrieval_rules,
+                    force_k=search_k,
+                    force_threshold=search_threshold,
+                    rerank=search_rerank,
+                )
+
+            if not search_results:
+                st.warning("No results above the similarity threshold. Try lowering it.")
+            else:
+                st.success(
+                    f"**{len(search_results)} result(s)** — sorted by similarity, "
+                    f"highest first — index: {search_store.size} chunks total"
+                )
+                for rank, r in enumerate(search_results, 1):
+                    meta = r.metadata
+                    title = meta.get("title") or r.source
+                    author = meta.get("author", "")
+                    raw_date = meta.get("published_at") or meta.get("date", "")
+                    date = raw_date[:10] if raw_date else ""
+                    tags: list = meta.get("tags", []) or []
+                    categories: list = meta.get("categories", []) or []
+                    entities: dict = meta.get("entities", {}) or {}
+
+                    if r.score >= 0.5:
+                        score_icon = "🟢"
+                    elif r.score >= 0.25:
+                        score_icon = "🟡"
+                    else:
+                        score_icon = "🔴"
+
+                    col_rank, col_body = st.columns([1, 7])
+                    with col_rank:
+                        st.metric(f"#{rank}", f"{r.score:.4f}", label_visibility="visible")
+                        st.caption(score_icon)
+                    with col_body:
+                        st.markdown(f"**{title}**")
+
+                        meta_parts = []
+                        if author:
+                            meta_parts.append(f"*{author}*")
+                        if date:
+                            meta_parts.append(date)
+                        if meta_parts:
+                            st.caption("  ·  ".join(meta_parts))
+
+                        st.caption(f"`{r.source}`")
+
+                        if tags or categories:
+                            all_tags = list(tags) + [c for c in categories if c not in tags]
+                            st.markdown("  ".join(f"`{t}`" for t in all_tags[:10]))
+
+                        if entities:
+                            ent_items = []
+                            for etype, names in entities.items():
+                                name_list = names if isinstance(names, list) else [names]
+                                for n in name_list[:3]:
+                                    ent_items.append(f"**{etype}** {n}")
+                            if ent_items:
+                                st.caption("Entities: " + "  ·  ".join(ent_items[:12]))
+
+                        with st.expander("Text preview"):
+                            preview = r.text[:1200]
+                            if len(r.text) > 1200:
+                                preview += "…"
+                            st.markdown(preview)
+                            st.caption(f"chunk `{r.chunk_id}`  ·  {len(r.text)} chars")
+
+                    st.divider()
+
+    # ===== TAB 3: HISTORY ===================================================
     with tab_history:
         st.header("Query history")
 
@@ -369,7 +489,7 @@ def run_streamlit(config: dict, use_case: str) -> None:
                     st.markdown(row["answer"])
                     _render_sources(row["sources"])
 
-    # ===== TAB 3: DEBUG =====================================================
+    # ===== TAB 4: DEBUG =====================================================
     with tab_debug:
         st.header("Debug — checkpoints")
 

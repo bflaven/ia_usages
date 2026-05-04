@@ -1,7 +1,7 @@
 # rfp | hr | screenwriting | journalism | support | editorial
 
-active_use_case: "journalist" 
-# active_use_case: "editorial"   
+# active_use_case: "journalist" 
+active_use_case: "editorial"   
 # active_use_case: "rfp"   
 # active_use_case: "hr"   
 

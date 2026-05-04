@@ -7,6 +7,39 @@ Use case: Editorial / CMS JSON export
 
 ## Changelog
 
+### v1.7 — 2026-05-02 · SEARCH tab — pure retrieval (R without G)
+
+**New tab: 🔍 Search**
+- `scripts/step_7_001_interface.py` — **SEARCH** tab inserted between RAG and History (UI now has 5 tabs).
+- The tab runs `step_5_001_query.py` directly — no LLM call, no synthesis, no generation cost.
+- Results are displayed highest → lowest cosine similarity with a colour-coded score icon (🟢 ≥ 0.5 · 🟡 ≥ 0.25 · 🔴 < 0.25).
+- Per-result display: title, author, date, source URL, tags/categories, named entities (E4), expandable text preview with chunk ID and char count.
+- Controls: query text input, k (1–50), min similarity slider (0.0–1.0), optional cross-encoder re-rank toggle (E2).
+- Design rationale: **proves the R in RAG** — the retrieval layer alone (FAISS cosine search) delivers useful, sourced results at near-zero cost. Useful for demos, parameter tuning, and cost justification.
+
+**Configurable search index (`search_index_dir`)**
+- `config/workflow_paths.yaml` — new optional key `search_index_dir` per use case.
+  - When set to a **different path** than `index_dir`, the SEARCH tab queries that index while the RAG tab queries the main one — enabling direct side-by-side comparison.
+  - When absent or identical to `index_dir`, both tabs use the same index (no overhead).
+- `src/utils/config.py` — `get_search_index_dir()` added; returns `search_index_dir` when present, falls back to `index_dir` transparently.
+
+**Example `workflow_paths.yaml` with separate indexes:**
+
+```yaml
+use_cases:
+  editorial:
+    corpus_dir: "data/corpora/editorial/CMS_EXPORT_2026_2"
+    index_dir:  "data/indexes/editorial/CMS_EXPORT_2026_2"          # RAG tab
+    checkpoint_dir: "data/checkpoints/editorial/CMS_EXPORT_2026_2"
+    search_index_dir: "data/indexes/editorial/CMS_EXPORT_2026_2"    # SEARCH tab (same here)
+```
+
+To compare two different indexes (e.g. one built with chunk size 150 vs 300):
+
+```yaml
+search_index_dir: "data/indexes/editorial/CMS_EXPORT_2026_2_alt"
+```
+
 ### v1.5 — 2026-04-10 · Azure config + retrieval fix + multilingual editorial
 
 **Azure OpenAI — `.env` auto-loading**
@@ -121,7 +154,7 @@ Use case: Editorial / CMS JSON export
 - Semantic cache (E1) — SQLite, cosine similarity threshold 0.92
 - Conversational memory (E7) — follow-up detection + LLM rewrite
 - LLM-as-a-judge evaluation (E6) — faithfulness, relevance, context precision
-- Streamlit UI: 4 tabs (RAG, History, Debug, Definitions)
+- Streamlit UI: 4 tabs (RAG, History, Debug, Definitions) — Search tab added in v1.7
 - All 5 levers controlled exclusively via YAML — no hard-coded parameters
 
 ---
@@ -621,16 +654,33 @@ python scripts/step_8_001_evaluate.py --use-case editorial --limit 10
 
 ---
 
-## Streamlit UI — 4 tabs
+## Streamlit UI — 5 tabs
 
 | Tab | Content |
 |-----|---------|
 | 💬 RAG | Chat interface — question + answer + sources + E7 rewrite notification + E1 cache badge + **🗑️ Clear** button |
+| 🔍 Search | **Pure retrieval** — FAISS cosine search with no LLM. Results ranked by similarity (high → low) with score icon, source, entities (E4), tags/categories, and text preview. Optional E2 re-rank. Proves the R in RAG at near-zero cost. |
 | 📋 History | All queries filterable by use case and tier — full answer and source detail |
 | 🔧 Debug | Checkpoint inspector (steps 1–3) + FAISS index stats |
 | 📖 Definitions | Glossary: chunking, embeddings, FAISS, re-ranking, LLM tiers, E1/E2/E7 |
 
 **To clear the visible chat:** click **🗑️ Clear** (top-right of the RAG tab). This wipes the chat display and resets E7 conversational memory.
+
+**SEARCH tab controls:**
+- **Query** — free-text input
+- **k** — number of results to return (1–50, default 10)
+- **Min similarity** — score threshold slider (0.0–1.0, default 0.10)
+- **Cross-encoder re-rank (E2)** — off by default (faster); enable for higher precision
+
+**SEARCH vs RAG — when to use each:**
+
+| | SEARCH tab | RAG tab |
+|---|---|---|
+| LLM call | ❌ None | ✅ Yes (Tier 1/2/3) |
+| Answer text | ❌ No synthesis | ✅ Generated answer |
+| Sources | ✅ Ranked chunks | ✅ Cited sources |
+| Cost | Near zero | Depends on tier |
+| Use for | Exploring corpus, tuning retrieval | Final answers, reports |
 
 **Sidebar controls:**
 - LLM tier selector (Auto / Tier 1 / 2 / 3)
