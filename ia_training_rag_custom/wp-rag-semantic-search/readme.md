@@ -18,6 +18,10 @@ A WordPress plugin that imports a RAG-processed article corpus and exposes seman
 6. **Admin toggle** — enable or disable semantic search from the plugin admin page without touching any code.
 7. **Exports** An export process into JSON exchange files that extracted data from two custom MySQL tables because you may want to update manually the results.
 
+
+
+
+
 ---
 
 ## Requirements
