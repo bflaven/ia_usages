@@ -1,5 +1,22 @@
 # ia_training_rag_custom
 
+You can read the post at https://wp.me/p3Vuhl-3qO
+
+Here is a short description for each directory:
+
+- **editorial_simple_rag**: The RAG’s project for: rfp (request for proposal) | hr (human ressource) | screenwriting | journalism. The main core benefit is that RAG allows a human expert to navigate a dense corpus naturally, while maintaining a chain of traceability. I add a Search tab to see what asset can be leveraged on the R (research) of the RAG without the G (generation).
+
+- **wp-rag-semantic-search**: How to leverage on the R (research) from the RAG just to grab a semantic search and implement it in WP and add it to the native search of a wordpress blog. The feature is available on my website flaven.fr
+
+- **images_generated**: some illustrations and prompts made for the post https://wp.me/p3Vuhl-3qO, with Grok. Ugly!
+
+- **images_convergent_thinking_vs_divergent_thinking_illustration_with _painting**: See the readme, that is what pop-up in my mind when I read the quote of Alex Karp, Palantir CEO, to illustrate convergent thinking versus divergent thinking process and maybe the combination of the two! 
+
+
+
+
+
+
 ## Intro (human made)
 The initial goal was to create a chatbot using RAG and custom data from simple User Stories.
 
@@ -15,7 +32,7 @@ Furthermore, a RAG is great, but what other assets/products can be derived from 
 
 Then, finally, after completing all this work, I have been thinking more abstractly about the future of work in the age of AI.
 
-https://wp.me/p3Vuhl-3qO
+
 
 
 
