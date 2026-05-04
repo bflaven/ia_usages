@@ -175,3 +175,7 @@ ia_training_rag_custom/editorial_simple_rag/data/indexes/
 # Ignore generated data
 ia_training_rag_custom/editorial_simple_rag/data/checkpoints/
 ia_training_rag_custom/editorial_simple_rag/data/indexes/
+
+# Ignore generated data
+ia_training_rag_custom/editorial_simple_rag/data/checkpoints/
+ia_training_rag_custom/editorial_simple_rag/data/indexes/
