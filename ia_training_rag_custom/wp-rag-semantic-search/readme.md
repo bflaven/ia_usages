@@ -16,6 +16,7 @@ A WordPress plugin that imports a RAG-processed article corpus and exposes seman
 4. **Offers a mode toggle** on the search page — Standard search (native WP) or Semantic search (this plugin).
 5. **Provides a sidebar widget** — drag it into any widget area to put a semantic search box in the sidebar, footer, or anywhere else.
 6. **Admin toggle** — enable or disable semantic search from the plugin admin page without touching any code.
+7. **Exports** An export process into JSON exchange files that extracted data from two custom MySQL tables because you may want to update manually the results.
 
 ---
 
