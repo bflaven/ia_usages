@@ -169,7 +169,9 @@ You can also inspect these locations manually and remove any OpenWolf-specific e
 - `rm -R` works, but `rm -rf` is safer for scripted cleanup because it avoids prompts and removes directories recursively.
 - If Claude Code still mentions OpenWolf after deletion, it usually means another config file is reintroducing it on startup. [openwolf](https://openwolf.com/how-it-works)
 
-
-
+- Do not forget to change also with VS code to avoid silence errors
+```text
+code ~/.claude/settings.json
+```text
 
 
