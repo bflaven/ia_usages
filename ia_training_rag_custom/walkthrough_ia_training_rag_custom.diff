@@ -1,0 +1,119 @@
+! SOURCE
++ Article
+- https://flaven.fr/2025/02/the-green-ai-myth-carbon-costs-of-ml-models-insights-on-geo-and-deepseek-fine-tuning/
+
++ Videos
+- https://www.youtube.com/channel/UCnUBoVx9Yai3wirPBvNpNQw
+
++ Github
+- https://github.com/bflaven/
+
++ Abstract
+
+
+
++ Keywords
+
+--- Intro
+You can read the article on my blog.
+- https://wp.me/p3Vuhl-3qO
+
+
+! VIDEOS
+
+--- create the env with anaconda
+
+"""
+[env]
+# Conda Environment
+conda create --name ia_achats python=3.9.13
+conda info --envs
+source activate ia_achats
+conda deactivate
+
+
+# [path]
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_training_rag_custom
+
+"""
+
+! WALKTHROUGH
+
+- QUERIES
+What are the frameworks to test a web application?
+Do you know the expression Augmented Journalism?
+Tell me more on AI ecological impact?
+
+
+
+- HOW-TO
+# Path to project root 
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/
+
+# Navigate to project root
+--- cd editorial_simple_rag
+cd editorial_simple_rag_semantic_search
+
+
+# Activate environment
+conda activate ia_achats
+
+# 1. Drop your CMS JSON files into the corpus directory
+#    data/corpora/editorial/CMS_EXPORT_2026/
+
+# 2a. Build the index — one-liner orchestrator (steps 1 → 4)
+python run_pipeline.py --build
+python run_pipeline.py --build --dry-run
+
+
+# 2b. Or run each step individually
+python scripts/step_1_001_ingest.py
+python scripts/step_2_001_parse.py
+python scripts/step_3_001_embed.py
+python scripts/step_4_001_index.py
+
+# 3. Verify everything is coherent
+python check_status.py
+python validate_pipeline.py
+
+# 4a. Interactive CLI
+python scripts/step_7_001_interface.py
+
+# 4b. Streamlit web UI
+streamlit run scripts/step_7_001_interface.py -- --streamlit
+
+
+
++ REQUIREMENTS
+
+
+--- env
+conda activate ia_achats          # Python 3.11
+
+--- Ollama
+# Ollama (required for embeddings and Tier 2 LLM)
+ollama serve                      # in a dedicated terminal
+ollama pull nomic-embed-text      # embedding model (768 dim, 2048-token context)
+ollama pull llama3.1              # local LLM (Tier 2)
+
+# Verify the embedding model context window
+ollama show nomic-embed-text
+# Expected: context length 2048 (nomic-bert architecture hard limit)
+# num_ctx may show 8192 in Parameters — this is Ollama's target, but the
+# architecture caps at 2048. Chunk sizes in chunking_rules.yaml are set
+# accordingly (150 words ≈ 300 BPE tokens, safely under the 2048 limit).
+
+--- spaCy models:
+# English
+python -m spacy download en_core_web_md
+python -m spacy download en_core_web_trf
+
+# French
+python -m spacy download fr_core_news_md
+python -m spacy download fr_dep_news_trf
+
+
+
+
+
+

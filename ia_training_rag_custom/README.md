@@ -81,8 +81,90 @@ How to leverage on the RAG just to grab a semantic search and implement it in WP
 
 
 
+```text
+# US-001 — Procurement (RFP)
+As a public procurement officer, I want to query tender documents using natural language to quickly identify relevant passages without reading each document in its entirety.
 
+# US-002 — HR
+As a recruitment officer, I want to query a corpus of resumes using natural language to find profiles matching a given criterion (skills, language, experience).
 
+# US-003 — Writing / Documentary
+As a screenwriter, I want to explore a thematic corpus (archives, notes, sources) using natural language to find connections between subjects, characters, or events.
+
+# US-004 — Journalism / Investigation
+As a journalist, I want to query a corpus of sensitive documents (e.g., the Epstein Files) using natural language to identify facts, names, dates, or connections relevant to my investigation.
+
+# US-005 — Support
+As a customer support agent, I want to query a corpus of tickets, FAQs, and internal knowledge using natural language, in order to quickly identify relevant answers and key snippets without rereading all the databases.
+```
+
+## how-to for installing and uninstalling OpenWolf in Claude Code
+
+It is including cleanup of the leftover files and cache. The key cleanup targets are `~/.openwolf`, `~/.wolf`, Claude Code config files, and the Claude Code cache directory. [youtube](https://www.youtube.com/watch?v=Al2W3WNL93s)
+
+###  OpenWolf for Claude Code
+
+OpenWolf adds project memory, hooks, and state files to Claude Code through the `.wolf/` directory and Claude Code settings. [openwolf](https://openwolf.com/how-it-works)
+If you uninstall it, Claude Code may still keep references in config or cached state, so a full cleanup matters. [youtube](https://www.youtube.com/watch?v=Al2W3WNL93s)
+
+####  Install
+
+1. Install OpenWolf globally:
+   ```bash
+   npm install -g openwolf
+   ```
+2. Verify the installation:
+   ```bash
+   openwolf --version
+   ```
+3. Initialize OpenWolf inside your project:
+   ```bash
+   openwolf init
+   ```
+4. Confirm that the project now contains a `.wolf/` directory and that Claude Code picks up the OpenWolf hooks and instructions. [openwolf](https://openwolf.com/how-it-works)
+
+####  Uninstall
+
+1. Uninstall the global package:
+   ```bash
+   npm uninstall -g openwolf
+   ```
+2. Remove OpenWolf project and user data:
+   ```bash
+   rm -rf ~/.openwolf
+   rm -rf ~/.wolf
+   ```
+3. Check for leftover files:
+   ```bash
+   ls -la ~/.openwolf
+   ls -la ~/.wolf
+   ```
+4. Remove OpenWolf references from Claude Code config and memory files:
+   ```bash
+   rm -f ~/.claude/rules/openwolf.md
+   rm -f ~/CLAUDE.md
+   rm -f ~/.wolf/OPENWOLF.md
+   ```
+5. Clear Claude Code cache if needed:
+   ```bash
+   rm -rf ~/Library/Caches/claude-code
+   ```
+6. Restart Claude Code and run `/context` to confirm OpenWolf paths no longer appear.
+
+###  What to check
+
+If OpenWolf still shows up after uninstall, the remaining references are usually in Claude Code rules, project memory, or cached state. [youtube](https://www.youtube.com/watch?v=Al2W3WNL93s)
+You can also inspect these locations manually and remove any OpenWolf-specific entries if they still exist:
+
+- `~/.claude/rules/openwolf.md`
+- `~/CLAUDE.md`
+- `~/.wolf/OPENWOLF.md`
+- `~/Library/Caches/claude-code`
+
+####  Notes
+
+- `rm -R` works, but `rm -rf` is safer for scripted cleanup because it avoids prompts and removes directories recursively.
+- If Claude Code still mentions OpenWolf after deletion, it usually means another config file is reintroducing it on startup. [openwolf](https://openwolf.com/how-it-works)
 
 
 
