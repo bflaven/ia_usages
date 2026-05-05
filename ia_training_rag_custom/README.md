@@ -156,10 +156,13 @@ If you uninstall it, Claude Code may still keep references in config or cached s
 If OpenWolf still shows up after uninstall, the remaining references are usually in Claude Code rules, project memory, or cached state. [youtube](https://www.youtube.com/watch?v=Al2W3WNL93s)
 You can also inspect these locations manually and remove any OpenWolf-specific entries if they still exist:
 
-- `~/.claude/rules/openwolf.md`
-- `~/CLAUDE.md`
-- `~/.wolf/OPENWOLF.md`
-- `~/Library/Caches/claude-code`
+```text
+~/.claude/rules/openwolf.md
+# There is a file indeed name CLAUDE.md that change the behaviour of claude-code
+~/CLAUDE.md
+~/.wolf/OPENWOLF.md
+~/Library/Caches/claude-code
+```
 
 ####  Notes
 
