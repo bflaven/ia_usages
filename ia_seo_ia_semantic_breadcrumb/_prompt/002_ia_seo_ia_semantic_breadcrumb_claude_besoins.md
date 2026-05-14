@@ -108,6 +108,8 @@ A compléter.... avec les autres étapes necessaire au WORKFLOW
 1. Sans doute faire un backup des table originales des tags et des catégories du WP avant de faire des changements et que le traitement puisse se faire dans des tables séparées pour éviter pour le moment de modifier les tables originales.
  
 2. Voici la liste des entités nommés qui pourrait être selctionne via un menu déroulant, donner un exmmle pour chque type d'entité e.g PERSON Nelson Mandela
+
+```text
 --- name entities from Spacy
 PERSON:      People, including fictional.
 NORP:        Nationalities or religious or political groups.
@@ -128,5 +130,5 @@ QUANTITY:    Measurements, as of weight or distance.
 ORDINAL:     “first”, “second”, etc.
 CARDINAL:    Numerals that do not fall under another type.
 
-
+```
 
