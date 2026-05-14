@@ -17,6 +17,10 @@ Peux-tu écrire un fichier claude.md pour ce projet, en organisant les élément
 3. Il existe un docker complet du wordpress avec l'ensemble de la base du wordpress afin  d'avoir un environnment de staging.
 
 
+```bash
+# command coming soon
+
+```
 ## RÉGLES
 
 ### 1. GROUPE PRIMAIRE
@@ -26,13 +30,15 @@ Les tags issus de taxonomy=category
 - Sous-Rubrique
 ex: Home › AI 
 
-
 - IMPACT SUR URL ET BREADCRUMB
 URL : Voir si je renomme les url via le label et le slug, il faudrait que je puisse faire une table de redirection.
 
+```text
 URL: https://flaven.fr/category/ux-experience-utilisateur/ (KO)
 URL: https://flaven.fr/category/ux-user-experience/ (OK)
 Breadcrumb: Home › UX
+```
+
 
 Fil d'Ariane : création du fil d'ariane le plus pertinent
 Tout est fait pour générer un fil d'ariane cohérent Cf. articulation taxonomy=category et taxonomy=post_tag
@@ -63,6 +69,7 @@ Home › AI › Claude Code (OK)
 - ajouter un texte de description soit écrit manuellement soit émanant de wikidata, une fois que l'identification du tag est sans équivoque,  sur la page frontend category pour améliorer la performance de référencement naturel
 - ajouter un texte de description sur la page frontend category pour améliorer la performance de référencement naturel
 
+```text
 --- taxonomy=category)
 URL: https://flaven.fr/category/agile/ 
 Breadcrumb: Home › Agile
@@ -81,6 +88,7 @@ Breadcrumb: Home › Technologie › python
 URL: https://flaven.fr/tag/php/
 Breadcrumb: Home › Wordpress › PHP
 etc...
+```
 
 
 ## WORKFLOW STEP BY STEP
