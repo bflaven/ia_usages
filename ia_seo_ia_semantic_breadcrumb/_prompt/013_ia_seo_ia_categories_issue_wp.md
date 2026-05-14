@@ -4,7 +4,7 @@
 rollback to tag 1.1.0
 remove all what belongs to 1.2.0
 
-## PROMPT_3 (emergency)
+## PROMPT_3
 Fix it 
 The tab Migration is empty, no loading what whatsoever 
 Reduction, idem, empty
