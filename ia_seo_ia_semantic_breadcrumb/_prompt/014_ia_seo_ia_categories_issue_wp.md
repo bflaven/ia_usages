@@ -1,5 +1,9 @@
 
+## using the template
+```bash
+# some random words from tags
 Wolof, Wordpress, Yoruba, Zulu
+```
 
 
 

@@ -1,4 +1,5 @@
 
+## PROMPT_6
 Make the input file based on what I have given you. I will check manulla after.
 WP_CATEGORIES_CSV = BASE_DIR / "wp_categories_export.csv"
 EDITORIAL_MAPPING_CSV = BASE_DIR / "mapping_editorial.csv"
