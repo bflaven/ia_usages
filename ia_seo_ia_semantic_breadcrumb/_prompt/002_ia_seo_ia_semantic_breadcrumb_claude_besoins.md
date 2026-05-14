@@ -16,11 +16,6 @@ Peux-tu écrire un fichier claude.md pour ce projet, en organisant les élément
 
 3. Il existe un docker complet du wordpress avec l'ensemble de la base du wordpress afin  d'avoir un environnment de staging.
 
-
-```bash
-# command coming soon
-
-```
 ## RÉGLES
 
 ### 1. GROUPE PRIMAIRE
@@ -28,7 +23,9 @@ Tag catégorie
 Les tags issus de taxonomy=category
 
 - Sous-Rubrique
+```text
 ex: Home › AI 
+```
 
 - IMPACT SUR URL ET BREADCRUMB
 URL : Voir si je renomme les url via le label et le slug, il faudrait que je puisse faire une table de redirection.
@@ -49,7 +46,9 @@ Tag thématiques
 Les tags issus de taxonomy=post_tag
 
 - Le tag thématique est attaché editorialement à une categorie
+```text
 ex: Home › AI › Claude Code
+```
 Note: le tag thématique est attaché à un tag de section. 
 
 
@@ -57,15 +56,12 @@ Note: le tag thématique est attaché à un tag de section.
 Il faut pouvoir via le plugin en cas de création de tags dans taxonomy=post_tag, taxonomy=category mener via le plugin plusieurs operations manuellemny afin de pouvoir enrichir la tag :
 - affecter un wikidata_id
 - affecter une des 18 entités nommés de Spacy
-- simuler la fil d'ariane avant validation et publication? Les fil d'ariane doit être cliquable 
-
-
-Il faut que je puisse changer, créer des categories au besoin pour avoir le meilleur fil d'ariane possible et le classemnt SEO optimal.
-
+- simuler la fil d'ariane avant validation et publication? Les fil d'ariane doit être cliquable
+- changer, créer des categories au besoin pour avoir le meilleur fil d'ariane possible et le classemnt SEO optimal.
+```text
 Home › Agile › Claude Code (KO)
 Home › AI › Claude Code (OK)
-
-
+```
 - ajouter un texte de description soit écrit manuellement soit émanant de wikidata, une fois que l'identification du tag est sans équivoque,  sur la page frontend category pour améliorer la performance de référencement naturel
 - ajouter un texte de description sur la page frontend category pour améliorer la performance de référencement naturel
 
@@ -93,14 +89,15 @@ etc...
 
 ## WORKFLOW STEP BY STEP
 
-+ STEP_1 : 
+
+`+ STEP_1 :` 
 Lister les taxonomies Categories et Tags (taxonomy=category et taxonomy=post_tag) des posts (post) en français et avoir la possibilité de les traduire en anglais. Indiquer l'id et le nombre de contenu attaché à chaque tag catégorie.
 
-+ STEP_2 : 
+`+ STEP_2 :` 
 Extraire avec l'aide de Spacy les entités nommés de ces taxonomies Categories et Tags
 
 
-+ STEP_3 : 
+`+ STEP_3 :`
 Faire un recherche sur Wikidata à partir du label du tag afin eventulementy de l'enrichir.
 
 A compléter.... avec les autres étapes necessaire au WORKFLOW 
