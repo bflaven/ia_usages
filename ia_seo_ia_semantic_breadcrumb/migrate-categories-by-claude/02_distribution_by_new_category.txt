@@ -1,0 +1,172 @@
+DISTRIBUTION OF OLD CATEGORIES BY NEW CATEGORY
+================================================
+Post counts from original taxonomy shown in parentheses.
+Total old posts referenced: ~2,318
+
+
+NEW CATEGORY: AI & Machine Learning ID -> 3438
+-------------------------------------
+  AI                          (31)
+  NLP                         (4)
+  SUBTOTAL                    35
+
+
+NEW CATEGORY: APIs & Integration ID -> xxx
+----------------------------------
+  API                         (13)
+  JSON                        (60)
+  SUBTOTAL                    73
+
+
+NEW CATEGORY: Business & Case Studies ID -> xxx
+---------------------------------------
+  Business & Case Studies     (85)
+  Ecommerce                   (9)
+  SUBTOTAL                    94
+
+
+NEW CATEGORY: Cloud & Infrastructure ID -> xxx
+--------------------------------------
+  Cloud                       (18)
+  Hébergement                 (25)
+  Linux, Apache               (10)
+  SUBTOTAL                    53
+
+
+NEW CATEGORY: Data & Analytics ID -> xxx
+--------------------------------
+  Big data                    (6)
+  Statistiques et Tracking    (12)
+  SUBTOTAL                    18
+
+
+NEW CATEGORY: Digital Storytelling & Webdocs ID -> xxx
+----------------------------------------------
+  Digital Storytelling & Webdocs (139)
+  SUBTOTAL                    139
+
+
+NEW CATEGORY: Journalism & Writing ID -> xxx
+------------------------------------
+  Meilleurs blogs             (67)
+  SUBTOTAL                    67
+
+
+NEW CATEGORY: Miscellaneous / Other ID -> xxx
+-------------------------------------
+  Autres                      (25)
+  Divers                      (226)
+  Non classé                  (38)
+  SUBTOTAL                    289
+
+
+NEW CATEGORY: Mobile & Devices ID -> xxx
+--------------------------------
+  Android                     (33)
+  iOS                         (2)
+  Iphone, mobile              (32)
+  SUBTOTAL                    67
+
+
+NEW CATEGORY: Multimedia & Video ID -> xxx
+----------------------------------
+  L'encodage des médias       (5)
+  photo                       (34)
+  Vidéo                       (56)
+  SUBTOTAL                    95
+
+
+NEW CATEGORY: Programming & Databases ID -> xxx
+---------------------------------------
+  Développement               (138)
+  Flash, Actionscript, Flex   (15)
+  Flex                        (10)
+  Framework                   (31)
+  Javascript, Ajax            (57)
+  MySQL                       (4)
+  PHP, MYSQL                  (128)
+  Python                      (48)
+  Ruby on Rails               (7)
+  SUBTOTAL                    438
+
+
+NEW CATEGORY: SEO & Web Marketing ID -> xxx
+-----------------------------------
+  Marketing Web               (42)
+  Référencement, SEO          (35)
+  SUBTOTAL                    77
+
+
+NEW CATEGORY: Social Media & Community ID -> xxx
+----------------------------------------
+  Réseaux sociaux             (24)
+  Social TV                   (5)
+  SUBTOTAL                    29
+
+
+NEW CATEGORY: Technology & Trends ID -> xxx
+-----------------------------------
+  Google                      (34)
+  HbbTV                       (6)
+  Technologie                 (158)
+  TV connéctée                (7)
+  SUBTOTAL                    205
+
+
+NEW CATEGORY: Tools & Productivity ID -> xxx
+------------------------------------
+  Agile                       (69)
+  Mac                         (70)
+  SaaS                        (9)
+  Widget, Gadget              (26)
+  SUBTOTAL                    174
+
+
+NEW CATEGORY: Tutorials & How-to ID -> xxx
+----------------------------------
+  Tutoriaux                   (218)
+  SUBTOTAL                    218
+
+
+NEW CATEGORY: UX & Product Design ID -> xxx
+-----------------------------------
+  Accessibilité               (26)
+  UX                          (87)
+  Wireframe & Mock-up         (19)
+  SUBTOTAL                    132
+
+
+NEW CATEGORY: Web Design & Front-end ID -> xxx
+--------------------------------------
+  CSS3                        (12)
+  HTML5                       (87)
+  Image, Graphisme, Photoshop (40)
+  jQuery                      (16)
+  Style                       (11)
+  Webdesign                   (48)
+  WebGL                       (7)
+  XHTML CSS                   (58)
+  SUBTOTAL                    279
+
+
+NEW CATEGORY: Web Development ID -> xxx
+-------------------------------
+  Création de site web        (110)
+  Web Development             (97)
+  SUBTOTAL                    207
+
+
+NEW CATEGORY: WordPress & CMS ID -> xxx
+-------------------------------
+  CMS                         (101)
+  Drupal                      (18)
+  Joomla, Virtuemart          (7)
+  Wordpress                   (90)
+  SUBTOTAL                    216
+
+
+================================================
+GRAND TOTAL (sum of subtotals)    ~2,809
+Note: grand total exceeds post count because
+posts can belong to multiple old categories.
+================================================

@@ -1,0 +1,32 @@
+database:
+  host: "127.0.0.1"
+  port: 3307
+  user: "root"
+  password: "root"
+  database: "wordpress2"
+  prefix: "wp_"
+
+pipeline:
+  default_limit: 10
+  dry_run_default: true
+  export_dir: "source/pipeline/exports/"
+  timestamp_format: "%Y%m%dT%H%M"
+
+spacy:
+  model: "fr_core_news_md"
+  fallback_model: "fr_core_news_sm"
+  entity_types:
+    - "PERSON"
+    - "ORG"
+    - "GPE"
+    - "LOC"
+    - "PRODUCT"
+    - "EVENT"
+
+wikidata:
+  endpoint: "https://www.wikidata.org/w/api.php"
+  search_limit: 3
+  languages:
+    - "fr"
+    - "en"
+  request_timeout: 10

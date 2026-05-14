@@ -1,0 +1,172 @@
+DISTRIBUTION OF OLD CATEGORIES BY NEW CATEGORY
+================================================
+Post counts from original taxonomy shown in parentheses.
+Total old posts referenced: ~2,318
+
+-DONE--  NEW CATEGORY: Programming & Databases ID -> 3444 (programming-databases)
+---------------------------------------
+---  Développement               (138)
+---  Flash, Actionscript, Flex   (15)
+---  Flex                        (10)
+---  Framework                   (31)
+---  Javascript, Ajax            (57)
+---  MySQL                       (4)
+---  PHP, MYSQL                  (128)
+---  Python                      (48)
+--- Ruby on Rails               (7)
+  SUBTOTAL                    438
+
+-DONE--  NEW CATEGORY: Technology & Trends ID -> 3447 (technology-trends)
+-----------------------------------
+--- Google                      (34)
+---  HbbTV                       (6)
+---  Technologie                 (158)
+---  TV connéctée                (7)
+  SUBTOTAL                    205
+
+
+-DONE--  NEW CATEGORY: Tools & Productivity ID -> 3448 (tools-productivity)
+------------------------------------
+--- Agile                       (69)
+---   Mac                         (70)
+---  SaaS                        (9)
+---  Widget, Gadget              (26)
+  SUBTOTAL                    174
+
+
+-DONE--  NEW CATEGORY: AI & Machine Learning ID -> 3438 (ai-machine-learning)
+-------------------------------------
+  AI                          (31)
+  NLP                         (4)
+  SUBTOTAL                    35
+
+
+-DONE-- NEW CATEGORY: APIs & Integration ID -> 3439 (apis-integration) 
+----------------------------------
+  API                         (13)
+  JSON                        (60)
+  SUBTOTAL                    73
+
+
+-DONE-- NEW CATEGORY: Business & Case Studies ID -> 3437 (business-case-studies)
+---------------------------------------
+  Business & Case Studies     (85)
+  Ecommerce                   (9)
+  SUBTOTAL                    94
+
+
+-DONE-- NEW CATEGORY: Cloud & Infrastructure ID -> 3440 (cloud-infrastructure)
+--------------------------------------
+  Cloud                       (18)
+  Hébergement                 (25)
+  Linux, Apache               (10)
+  SUBTOTAL                    53
+
+
+-DONE-- NEW CATEGORY: Data & Analytics ID -> 3441 (data-analytics)
+--------------------------------
+  Big data                    (6)
+  Statistiques et Tracking    (12)
+  SUBTOTAL                    18
+
+
+-DONE-- NEW CATEGORY: Digital Storytelling & Webdocs ID -> 3436 (digital-storytelling-webdocs)
+----------------------------------------------
+  Digital Storytelling & Webdocs (139)
+  SUBTOTAL                    139
+
+
+-DONE-- NEW CATEGORY: Journalism & Writing ID -> 3454 (journalism-writing)
+------------------------------------
+---  Meilleurs blogs             (67)
+  SUBTOTAL                    67
+
+
+-DONE-- NEW CATEGORY: Miscellaneous / Other ID -> 3453 (miscellaneous-other)
+-------------------------------------
+--- Autres                      (25)
+--- Divers                      (226)
+--- Non classé                  (38)
+  SUBTOTAL                    289
+
+
+-DONE-- NEW CATEGORY: Mobile & Devices ID -> 3442 (mobile-devices)
+--------------------------------
+--- Android                     (33)
+---  iOS                         (2)
+--- Iphone, mobile              (32)
+  SUBTOTAL                    67
+
+
+-DONE-- NEW CATEGORY: Multimedia & Video ID -> 3443 (multimedia-video)
+----------------------------------
+--- L'encodage des médias       (5)
+--- photo                       (34)
+--- Vidéo                       (56)
+  SUBTOTAL                    95
+
+
+-DONE-- NEW CATEGORY: SEO & Web Marketing ID -> 3445 (seo-web-marketing)
+-----------------------------------
+  Marketing Web               (42)
+  Référencement, SEO          (35)
+  SUBTOTAL                    77
+
+
+-DONE-- NEW CATEGORY: Social Media & Community ID -> 3446 (social-media-community)
+----------------------------------------
+  Réseaux sociaux             (24)
+  Social TV                   (5)
+  SUBTOTAL                    29
+
+
+
+
+-DONE-- NEW CATEGORY: Tutorials & How-to ID -> 3449 (tutorials-how-to)
+----------------------------------
+---  Tutoriaux                   (218)
+  SUBTOTAL                    218
+
+
+-DONE-- NEW CATEGORY: UX & Product Design ID -> 3450 (ux-product-design)
+-----------------------------------
+--- Accessibilité               (26)
+--- UX                          (87)
+--- Wireframe & Mock-up         (19)
+  SUBTOTAL                    132
+
+
+-DONE-- NEW CATEGORY: Web Design & Front-end ID -> 3451 (web-design-front-end)
+--------------------------------------
+---  CSS3                        (12)
+--- HTML5                       (87)
+--- Image, Graphisme, Photoshop (40)
+---  jQuery                      (16)
+--- Style                       (11)
+--- Webdesign                   (48)
+--- WebGL                       (7)
+--- XHTML CSS                   (58)
+  SUBTOTAL                    279
+
+
+-DONE-- NEW CATEGORY: Web Development ID -> 3435 (web-development)
+-------------------------------
+--- Création de site web        (110)
+--- Web Development             (97)
+  SUBTOTAL                    207
+
+
+-DONE-- NEW CATEGORY: WordPress & CMS ID -> 3452 (wordpress-cms)
+-------------------------------
+--- CMS                         (101)
+--- Drupal                      (18)
+---  Joomla, Virtuemart          (7)
+---  Wordpress                   (90)
+  SUBTOTAL                    216
+
+
+================================================
+GRAND TOTAL (sum of subtotals)    ~2,809
+Note: grand total exceeds post count because
+posts can belong to multiple old categories.
+================================================

@@ -1,0 +1,12 @@
+# Breadcrumb migration pipeline
+# Conda env: tags_treatment (already installed — use as reference)
+# Actual installed versions from pip freeze
+
+spacy==3.8.11
+fr_core_news_md @ https://github.com/explosion/spacy-models/releases/download/fr_core_news_md-3.8.0/fr_core_news_md-3.8.0-py3-none-any.whl
+fr_core_news_sm @ https://github.com/explosion/spacy-models/releases/download/fr_core_news_sm-3.8.0/fr_core_news_sm-3.8.0-py3-none-any.whl
+pandas==2.3.3
+requests==2.31.0
+PyYAML==6.0.3
+mysql-connector-python==9.4.0
+python-dotenv==1.0.0

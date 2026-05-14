@@ -1,0 +1,446 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+// ── Guards ─────────────────────────────────────────────────────────────────────
+
+function bm_verify_request(): void {
+	check_ajax_referer( 'bm_nonce', 'nonce' );
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error( [ 'message' => 'Insufficient permissions.' ], 403 );
+	}
+}
+
+// ── Validate / Reject ──────────────────────────────────────────────────────────
+
+function bm_ajax_validate_proposal(): void {
+	bm_verify_request();
+
+	$proposal_id = absint( $_POST['proposal_id'] ?? 0 );
+	$action_type = sanitize_text_field( $_POST['action_type'] ?? '' );
+
+	if ( ! $proposal_id || ! in_array( $action_type, [ 'approve', 'reject', 'reset' ], true ) ) {
+		wp_send_json_error( [ 'message' => 'Invalid parameters.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	if ( $action_type === 'reset' ) {
+		$updated = $wpdb->update(
+			$t['proposals'],
+			[
+				'validation_state' => 'pending',
+				'validated_by'     => null,
+				'validated_at'     => null,
+			],
+			[ 'id' => $proposal_id ]
+		);
+		$state = 'pending';
+	} else {
+		$state = $action_type === 'approve' ? 'approved' : 'rejected';
+		$updated = $wpdb->update(
+			$t['proposals'],
+			[
+				'validation_state' => $state,
+				'validated_by'     => get_current_user_id(),
+				'validated_at'     => current_time( 'mysql' ),
+			],
+			[ 'id' => $proposal_id ]
+		);
+	}
+
+	if ( $updated === false ) {
+		wp_send_json_error( [ 'message' => 'DB update failed.' ] );
+	}
+
+	wp_send_json_success( [
+		'proposal_id' => $proposal_id,
+		'state'       => $state,
+		'label'       => ucfirst( $state ),
+	] );
+}
+
+// ── Simulate breadcrumb ────────────────────────────────────────────────────────
+
+function bm_ajax_simulate_breadcrumb(): void {
+	bm_verify_request();
+
+	$term_id = absint( $_POST['term_id'] ?? 0 );
+	if ( ! $term_id ) {
+		wp_send_json_error( [ 'message' => 'Missing term_id.' ] );
+	}
+
+	$html = bm_render_breadcrumb( $term_id );
+	wp_send_json_success( [ 'html' => $html ] );
+}
+
+// ── Inline edit proposal ───────────────────────────────────────────────────────
+
+function bm_ajax_update_proposal(): void {
+	bm_verify_request();
+
+	$proposal_id = absint( $_POST['proposal_id'] ?? 0 );
+	if ( ! $proposal_id ) {
+		wp_send_json_error( [ 'message' => 'Missing proposal_id.' ] );
+	}
+
+	$raw_spacy = sanitize_text_field( $_POST['spacy_entity'] ?? '' );
+	$allowed_entities = [
+		'PERSON', 'NORP', 'FAC', 'ORG', 'GPE', 'LOC', 'PRODUCT', 'EVENT',
+		'WORK_OF_ART', 'LAW', 'LANGUAGE', 'DATE', 'TIME', 'PERCENT',
+		'MONEY', 'QUANTITY', 'ORDINAL', 'CARDINAL',
+	];
+	$spacy_entity = in_array( $raw_spacy, $allowed_entities, true ) ? $raw_spacy : null;
+
+	$fields = [
+		'proposed_name'        => sanitize_text_field( $_POST['proposed_name']        ?? '' ),
+		'proposed_slug'        => sanitize_title(      $_POST['proposed_slug']         ?? '' ),
+		'proposed_description' => sanitize_textarea_field( $_POST['proposed_description'] ?? '' ),
+		'spacy_entity'         => $spacy_entity,
+		'wikidata_id'          => sanitize_text_field( $_POST['wikidata_id']    ?? '' ) ?: null,
+		'wikidata_label'       => sanitize_text_field( $_POST['wikidata_label'] ?? '' ) ?: null,
+	];
+
+	global $wpdb;
+	$t = bm_tables();
+
+	// ── Tag parent-category reassignment ───────────────────────────────────────
+	// When a post_tag proposal gets a parent category selected, rebuild the
+	// proposed_breadcrumb so the middle crumb is the real category name
+	// (clickable via bm_breadcrumb_output) instead of the generic "Tag" label.
+	$tag_parent_category_id = absint( $_POST['tag_parent_category_id'] ?? 0 );
+	$proposed_breadcrumb    = null;
+
+	$term_info = $wpdb->get_row( $wpdb->prepare(
+		"SELECT t.original_name, t.taxonomy
+		   FROM {$t['proposals']} p
+		   JOIN {$t['terms']} t ON t.id = p.term_id
+		  WHERE p.id = %d",
+		$proposal_id
+	) );
+
+	if ( $term_info && $term_info->taxonomy === 'post_tag' ) {
+		$fields['proposed_parent_id'] = $tag_parent_category_id ?: null;
+
+		if ( $tag_parent_category_id ) {
+			$cat = get_term( $tag_parent_category_id, 'category' );
+			if ( $cat && ! is_wp_error( $cat ) ) {
+				$crumbs              = [ 'Home', $cat->name, $term_info->original_name ];
+				$proposed_breadcrumb = wp_json_encode( $crumbs );
+				$fields['proposed_breadcrumb'] = $proposed_breadcrumb;
+			}
+		} else {
+			// Cleared: reset to generic tag breadcrumb
+			$crumbs              = [ 'Home', 'Tags', $term_info->original_name ];
+			$proposed_breadcrumb = wp_json_encode( $crumbs );
+			$fields['proposed_breadcrumb'] = $proposed_breadcrumb;
+		}
+	}
+
+	$updated = $wpdb->update( $t['proposals'], $fields, [ 'id' => $proposal_id ] );
+
+	if ( $updated === false ) {
+		wp_send_json_error( [ 'message' => 'DB update failed.' ] );
+	}
+
+	// ── Sync to live WP term if already published ──────────────────────────────
+	$wp_synced  = false;
+	$sync_error = '';
+
+	$term_row = $wpdb->get_row( $wpdb->prepare(
+		"SELECT t.wp_term_id, t.taxonomy, t.status AS term_status
+		   FROM {$t['proposals']} p
+		   JOIN {$t['terms']} t ON t.id = p.term_id
+		  WHERE p.id = %d",
+		$proposal_id
+	) );
+
+	if ( $term_row && $term_row->term_status === 'published' ) {
+		$update_args = [];
+		if ( ! empty( $fields['proposed_name'] ) ) {
+			$update_args['name'] = $fields['proposed_name'];
+		}
+		if ( ! empty( $fields['proposed_slug'] ) ) {
+			$update_args['slug'] = $fields['proposed_slug'];
+		}
+		if ( isset( $fields['proposed_description'] ) ) {
+			$update_args['description'] = $fields['proposed_description'];
+		}
+
+		if ( $update_args ) {
+			$result    = wp_update_term( (int) $term_row->wp_term_id, $term_row->taxonomy, $update_args );
+			$wp_synced = ! is_wp_error( $result );
+			if ( is_wp_error( $result ) ) {
+				$sync_error = $result->get_error_message();
+			}
+		}
+	}
+
+	wp_send_json_success( [
+		'proposal_id'         => $proposal_id,
+		'fields'              => $fields,
+		'proposed_breadcrumb' => $proposed_breadcrumb,
+		'wp_synced'           => $wp_synced,
+		'sync_error'          => $sync_error,
+	] );
+}
+
+// ── Empty all tables (Danger Zone) ────────────────────────────────────────────
+
+function bm_ajax_empty_tables(): void {
+	bm_verify_request();
+
+	global $wpdb;
+	$t = bm_tables();
+
+	// Delete in FK-safe order: proposals → redirects → terms
+	$wpdb->query( "DELETE FROM {$t['proposals']}" ); // phpcs:ignore
+	$p = $wpdb->rows_affected;
+	$wpdb->query( "DELETE FROM {$t['redirects']}" );  // phpcs:ignore
+	$r = $wpdb->rows_affected;
+	$wpdb->query( "DELETE FROM {$t['terms']}" );      // phpcs:ignore
+	$te = $wpdb->rows_affected;
+
+	wp_send_json_success( [
+		'message' => sprintf(
+			/* translators: 1: proposals, 2: redirects, 3: terms */
+			__( 'Deleted: %1$d proposal(s), %2$d redirect(s), %3$d term(s).', 'breadcrumb-migration' ),
+			$p, $r, $te
+		),
+		'counts'  => [ 'proposals' => $p, 'redirects' => $r, 'terms' => $te ],
+	] );
+}
+
+// ── Wikidata label search (proxy) ─────────────────────────────────────────────
+
+function bm_ajax_search_wikidata(): void {
+	bm_verify_request();
+
+	$query = sanitize_text_field( $_POST['query'] ?? '' );
+	if ( ! $query ) {
+		wp_send_json_error( [ 'message' => 'Empty query.' ] );
+	}
+
+	$bm_settings = get_option( 'bm_settings', [] );
+	$lang        = $bm_settings['wikidata_lang'] ?? 'en';
+
+	$api_url = add_query_arg( [
+		'action'   => 'wbsearchentities',
+		'search'   => $query,
+		'language' => $lang,
+		'uselang'  => $lang,
+		'type'     => 'item',
+		'limit'    => 5,
+		'format'   => 'json',
+	], 'https://www.wikidata.org/w/api.php' );
+
+	$response = wp_remote_get( $api_url, [
+		'timeout'    => 8,
+		'user-agent' => 'BreadcrumbMigrationPlugin/1.8.0 (WordPress; ' . get_bloginfo( 'url' ) . ')',
+	] );
+
+	if ( is_wp_error( $response ) ) {
+		wp_send_json_error( [ 'message' => 'Wikidata unreachable: ' . $response->get_error_message() ] );
+	}
+
+	$body = json_decode( wp_remote_retrieve_body( $response ), true );
+
+	if ( ! isset( $body['search'] ) ) {
+		wp_send_json_error( [ 'message' => 'Unexpected Wikidata API response.' ] );
+	}
+
+	$results = array_map( function ( $item ) {
+		return [
+			'id'          => $item['id']          ?? '',
+			'label'       => $item['label']       ?? '',
+			'description' => $item['description'] ?? '',
+		];
+	}, $body['search'] );
+
+	wp_send_json_success( [ 'results' => $results ] );
+}
+
+// ── Delta: scan new tags ───────────────────────────────────────────────────────
+
+function bm_ajax_scan_delta(): void {
+	bm_verify_request();
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$rows = $wpdb->get_results( // phpcs:ignore
+		"SELECT tt.term_id AS wp_term_id, t.name, t.slug, tt.count
+		 FROM {$wpdb->term_taxonomy} tt
+		 JOIN {$wpdb->terms} t ON t.term_id = tt.term_id
+		 WHERE tt.taxonomy = 'post_tag'
+		   AND tt.term_id NOT IN (
+		       SELECT wp_term_id FROM {$t['terms']} WHERE taxonomy = 'post_tag'
+		   )
+		 ORDER BY t.name ASC",
+		ARRAY_A
+	);
+
+	$rows = $rows ?: [];
+	wp_send_json_success( [ 'tags' => $rows, 'count' => count( $rows ) ] );
+}
+
+// ── Delta: add single new tag to migration ─────────────────────────────────────
+
+function bm_ajax_add_delta_term(): void {
+	bm_verify_request();
+
+	$wp_term_id = absint( $_POST['wp_term_id'] ?? 0 );
+	if ( ! $wp_term_id ) {
+		wp_send_json_error( [ 'message' => 'Missing wp_term_id.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$exists = $wpdb->get_var( $wpdb->prepare( // phpcs:ignore
+		"SELECT id FROM {$t['terms']} WHERE wp_term_id = %d AND taxonomy = 'post_tag'",
+		$wp_term_id
+	) );
+	if ( $exists ) {
+		wp_send_json_error( [ 'message' => 'Term already tracked.' ] );
+	}
+
+	$wp_term = get_term( $wp_term_id, 'post_tag' );
+	if ( ! $wp_term || is_wp_error( $wp_term ) ) {
+		wp_send_json_error( [ 'message' => 'WP term not found.' ] );
+	}
+
+	$wpdb->insert( $t['terms'], [
+		'wp_term_id'         => $wp_term_id,
+		'taxonomy'           => 'post_tag',
+		'original_name'      => $wp_term->name,
+		'original_slug'      => $wp_term->slug,
+		'original_parent_id' => $wp_term->parent ?: null,
+		'content_count'      => $wp_term->count,
+		'language'           => 'fr',
+		'status'             => 'original',
+	] );
+	$term_internal_id = (int) $wpdb->insert_id;
+
+	$proposed_name        = sanitize_text_field( $_POST['proposed_name'] ?? $wp_term->name );
+	$proposed_slug        = sanitize_title( $_POST['proposed_slug'] ?? $wp_term->slug );
+	$proposed_description = sanitize_textarea_field( $_POST['proposed_description'] ?? '' );
+	$spacy_entity         = sanitize_text_field( $_POST['spacy_entity'] ?? '' );
+	$wikidata_id          = sanitize_text_field( $_POST['wikidata_id'] ?? '' );
+	$wikidata_label       = sanitize_text_field( $_POST['wikidata_label'] ?? '' );
+	$wikidata_description = sanitize_textarea_field( $_POST['wikidata_description'] ?? '' );
+	$tag_parent_cat_id    = absint( $_POST['tag_parent_category_id'] ?? 0 );
+
+	$crumbs = [ 'Home', 'Tags', $wp_term->name ];
+	if ( $tag_parent_cat_id ) {
+		$cat = get_term( $tag_parent_cat_id, 'category' );
+		if ( $cat && ! is_wp_error( $cat ) ) {
+			$crumbs[1] = $cat->name;
+		}
+	}
+
+	$wpdb->insert( $t['proposals'], [
+		'term_id'              => $term_internal_id,
+		'proposed_name'        => $proposed_name,
+		'proposed_slug'        => $proposed_slug,
+		'proposed_description' => $proposed_description ?: null,
+		'proposed_parent_id'   => $tag_parent_cat_id ?: null,
+		'proposed_language'    => 'fr',
+		'spacy_entity'         => $spacy_entity ?: null,
+		'wikidata_id'          => $wikidata_id ?: null,
+		'wikidata_label'       => $wikidata_label ?: null,
+		'wikidata_description' => $wikidata_description ?: null,
+		'proposed_breadcrumb'  => wp_json_encode( $crumbs ),
+		'validation_state'     => 'pending',
+	] );
+
+	wp_send_json_success( [
+		'term_id'    => $term_internal_id,
+		'wp_term_id' => $wp_term_id,
+		'message'    => sprintf( '"%s" added to migration.', $wp_term->name ),
+	] );
+}
+
+// ── Publish to WordPress ───────────────────────────────────────────────────────
+
+function bm_ajax_publish_term(): void {
+	bm_verify_request();
+
+	$proposal_id = absint( $_POST['proposal_id'] ?? 0 );
+	if ( ! $proposal_id ) {
+		wp_send_json_error( [ 'message' => 'Missing proposal_id.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	// Load proposal + term (only approved proposals)
+	$row = $wpdb->get_row( $wpdb->prepare(
+		"SELECT p.*, t.wp_term_id, t.taxonomy, t.id AS term_internal_id
+		 FROM {$t['proposals']} p
+		 JOIN {$t['terms']} t ON t.id = p.term_id
+		 WHERE p.id = %d AND p.validation_state = 'approved'",
+		$proposal_id
+	) );
+
+	if ( ! $row ) {
+		wp_send_json_error( [ 'message' => 'Proposal not found or not approved.' ] );
+	}
+
+	// Capture old URL before update
+	$old_term = get_term( (int) $row->wp_term_id, $row->taxonomy );
+	if ( is_wp_error( $old_term ) || ! $old_term ) {
+		wp_send_json_error( [ 'message' => 'WP term not found.' ] );
+	}
+	$old_url = get_term_link( $old_term );
+
+	// Update WP term
+	$update_args = [ 'name' => $row->proposed_name ];
+	if ( ! empty( $row->proposed_slug ) ) {
+		$update_args['slug'] = $row->proposed_slug;
+	}
+	if ( ! empty( $row->proposed_description ) ) {
+		$update_args['description'] = $row->proposed_description;
+	}
+
+	$result = wp_update_term( (int) $row->wp_term_id, $row->taxonomy, $update_args );
+
+	if ( is_wp_error( $result ) ) {
+		wp_send_json_error( [ 'message' => $result->get_error_message() ] );
+	}
+
+	// New URL after slug change
+	$new_term = get_term( (int) $row->wp_term_id, $row->taxonomy );
+	$new_url  = get_term_link( $new_term );
+
+	// Store redirect if URL changed
+	if ( ! is_wp_error( $old_url ) && ! is_wp_error( $new_url ) && $old_url !== $new_url ) {
+		$wpdb->insert( $t['redirects'], [
+			'original_url'  => $old_url,
+			'new_url'       => $new_url,
+			'term_id'       => (int) $row->term_internal_id,
+			'taxonomy'      => $row->taxonomy,
+			'redirect_type' => '301',
+			'is_active'     => 1,
+		] );
+	}
+
+	// Mark term as published
+	$wpdb->update(
+		$t['terms'],
+		[ 'status' => 'published', 'updated_at' => current_time( 'mysql' ) ],
+		[ 'id' => (int) $row->term_internal_id ]
+	);
+
+	wp_send_json_success( [
+		'proposal_id' => $proposal_id,
+		'new_url'     => is_wp_error( $new_url ) ? '' : $new_url,
+		'message'     => sprintf(
+			/* translators: %s: term name */
+			__( '"%s" published successfully.', 'breadcrumb-migration' ),
+			$row->proposed_name
+		),
+	] );
+}

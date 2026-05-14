@@ -1,0 +1,108 @@
+taxonomy,id,name,slug,post_count,parent_id
+category,1118,"3WDOC - Tutorials",3wdoc-tutorials,3,0
+category,3339,"aaa-new-cat-order",aaa-new-cat-order,2,0
+category,2586,"AI &amp; Machine Learning",ai-machine-learning,29,0
+category,8,"APIs &amp; Integration",apis-integration,13,0
+category,783,"applications",applications-et-web-applications,70,0
+category,2083,"Big data",big-data,4,0
+category,2090,"Bigdata",bigdata,5,0
+category,1688,"Business &amp; Case Studies",business-case-studies,102,0
+category,36,"Cloud &amp; Infrastructure",cloud-infrastructure,18,0
+category,120,"Création de site web",creation-de-site-web,110,0
+category,668,"Data &amp; Analytics",data-analytics,93,0
+category,1222,"demos",demos,17,0
+category,75,"Développement",developpement-digital,136,0
+category,738,"Digital Storytelling &amp; Webdocs",digital-storytelling-webdocs,119,0
+category,266,"Divers",divers,224,0
+category,124,"Drupal",drupal,18,0
+category,671,"écriture",ecriture,100,0
+category,151,"Flash, Actionscript, Flex",flash-actionscript-flex,15,0
+category,168,"Flex",flex,10,0
+category,91,"Framework",framework,31,0
+category,1649,"Gestion d'un projet",2-saas-gestion-dun-projet,1,0
+category,1648,"Gestion d'une séquence",3-saas-gestion-dune-sequence,1,0
+category,1146,"Gestion de l'audio",6-gestion-de-laudio,1,0
+category,1124,"Gestion des boutons et des actions",8-gestion-des-boutons-et-des-actions,5,0
+category,1659,"Gestion des effets",8-saas-gestion-des-effets,1,0
+category,1644,"Gestion des événements",9-saas-gestion-des-evenements,4,0
+category,1137,"Gestion des images",4-gestion-des-images,1,0
+category,1656,"Gestion des images",4-saas-gestion-des-images,1,0
+category,1653,"Gestion des médias de plateformes tierces",91-saas-gestion-des-medias-13,1,0
+category,1650,"Gestion des sons",6-saas-gestion-des-sons,1,0
+category,1147,"Gestion des textes",5-gestion-des-textes,2,0
+category,1138,"Gestion des vidéos",7-gestion-des-videos,1,0
+category,1655,"Gestion des vidéos",5-saas-gestion-des-videos,1,0
+category,1661,"Gestion du Style",92-saas-gestion-du-style,1,0
+category,855,"HbbTV",hbbtv-connected-tv,6,0
+category,87,"Hébergement",hebergement,25,0
+category,12,"HTML5",html5,87,0
+category,125,"Image, Graphisme, Photoshop",image-graphisme-photoshop,40,0
+category,683,"information",information,114,0
+category,739,"interactif",interactif,66,0
+category,2445,"iOS",ios,2,0
+category,225,"Iphone, mobile",iphone-mobile,32,0
+category,191,"Javascript, Ajax",javascript-ajax,57,0
+category,174,"Joomla, Virtuemart",joomla-virtuemart,7,0
+category,669,"Journalism &amp; Writing",journalism-writing,86,0
+category,675,"journalisme",journalisme,82,0
+category,26,"jQuery",jquery,16,0
+category,1886,"JSON",json-2,58,0
+category,1121,"L'encodage des médias",2-lencodage-des-medias,5,0
+category,215,"Linux, Apache",linux-apache,10,0
+category,76,"Mac",mac,68,0
+category,102,"Marketing Web",marketing-web,42,0
+category,1,"Miscellaneous / Other",miscellaneous-other,6,0
+category,248,"Mobile &amp; Devices",mobile-devices,33,0
+category,1665,"Mon compte",1-saas-mon-compte,1,0
+category,1115,"Mon Compte sur 3WDOC",1-mon-compte-sur-3wdoc,5,0
+category,681,"Multimedia &amp; Video",multimedia-video,77,0
+category,672,"narration",narration,94,0
+category,3335,"new-cat-1-change",new-cat-1-change,4,0
+category,3336,"new-cat-2",new-cat-2,3,0
+category,2585,"NLP",nlp,4,0
+category,572,"Non classé",non-classe,38,0
+category,1134,"Nos derniers WDOC",nos-derniers-wdoc,4,0
+category,1668,"Notions de Base",0-saas-notions-de-base,2,0
+category,297,"photo",photo,34,0
+category,78,"PHP, MYSQL",php-mysql,128,0
+category,769,"presse",presse-et-revue-de-presse,35,0
+category,77,"Programming &amp; Databases",programming-databases,4,0
+category,1218,"Publication",publication,3,0
+category,1671,"Publication",93-publication,2,0
+category,2584,"Python",python,46,0
+category,88,"Référencement, SEO",referencement-seo,35,0
+category,96,"Ruby on Rails",ruby-on-rails,7,0
+category,352,"SaaS",saas,9,0
+category,101,"SEO &amp; Web Marketing",seo-web-marketing,9,0
+category,117,"Social Media &amp; Community",social-media-community,24,0
+category,652,"Social TV",social-tv,5,0
+category,115,"Statistiques et Tracking",statistiques-et-tracking,12,0
+category,741,"storytelling",storytelling-digital,52,0
+category,1154,"Style",9-style,11,0
+category,474,"technique",technique,62,0
+category,132,"Technologie",technologie,156,0
+category,128,"Technology &amp; Trends",technology-trends,67,0
+category,2503,"telecommuting",telecommuting,0,0
+category,2504,"teleworking",teleworking,0,0
+category,86,"Tools &amp; Productivity",tools-productivity,34,0
+category,1269,"Tutorials &amp; How-to",tutorials-how-to,5,0
+category,79,"Tutoriaux",tutoriaux,216,0
+category,1117,"tutoriels",tutoriels,37,0
+category,1647,"Tutoriels SaaS",tutorials-saas,37,0
+category,856,"TV connéctée",tv-connectee-social-tv,7,0
+category,28,"UX",ux-experience-utilisateur,85,0
+category,219,"UX &amp; Product Design",ux-product-design,26,0
+category,85,"Vidéo",video,56,0
+category,486,"Web Design &amp; Front-end",web-design-front-end,12,0
+category,29,"Web Development",web-development,67,0
+category,35,"Webdesign",webdesign-responsive-agile,48,0
+category,679,"webdoc",webdoc,100,0
+category,3332,"webdoc-new-category",webdoc-new-category,1,0
+category,680,"webdocumentaire",webdocumentaire-digital-storytelling,99,0
+category,708,"webfiction",webfiction,13,0
+category,922,"WebGL",webgl,7,0
+category,190,"Widget, Gadget",widget-gadget,26,0
+category,476,"Wireframe &amp; Mock-up",wireframe-mock-up,19,0
+category,108,"Wordpress",wordpress,90,0
+category,104,"WordPress &amp; CMS",wordpress-cms,101,0
+category,109,"XHTML CSS",xhtml-css,58,0

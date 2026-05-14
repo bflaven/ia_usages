@@ -1,0 +1,27 @@
+old_name;new_category;status;redirect_type
+3WDOC - Tutorials;3WDOC - Tutorials;keep;
+AI &amp; Machine Learning;AI & Machine Learning;keep;
+APIs &amp; Integration;APIs & Integration;keep;
+Business &amp; Case Studies;Business & Case Studies;keep;
+Cloud &amp; Infrastructure;Cloud & Infrastructure;keep;
+Data &amp; Analytics;Data & Analytics;keep;
+Digital Storytelling &amp; Webdocs;Digital Storytelling & Webdocs;keep;
+Journalism &amp; Writing;Journalism & Writing;keep;
+Miscellaneous / Other;Miscellaneous / Other;keep;
+Mobile &amp; Devices;Mobile & Devices;keep;
+Multimedia &amp; Video;Multimedia & Video;keep;
+Programming &amp; Databases;Programming & Databases;keep;
+SEO &amp; Web Marketing;SEO & Web Marketing;keep;
+Social Media &amp; Community;Social Media & Community;keep;
+Technology &amp; Trends;Technology & Trends;keep;
+Tools &amp; Productivity;Tools & Productivity;keep;
+Tutorials &amp; How-to;Tutorials & How-to;keep;
+UX &amp; Product Design;UX & Product Design;keep;
+Web Design &amp; Front-end;Web Design & Front-end;keep;
+Web Development;Web Development;keep;
+Wireframe &amp; Mock-up;Web Design & Front-end;merge;301
+WordPress &amp; CMS;WordPress & CMS;keep;
+aaa-new-cat-order;Web Development;drop;410
+new-cat-1-change;Web Development;drop;410
+new-cat-2;Web Development;drop;410
+webdoc-new-category;Digital Storytelling & Webdocs;merge;301

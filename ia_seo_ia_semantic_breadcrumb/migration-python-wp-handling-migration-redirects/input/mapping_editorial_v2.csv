@@ -1,0 +1,102 @@
+old_name;new_category;status;redirect_type
+Accessibilité;UX & Product Design;migrate;301
+Agile;Web Development;migrate;301
+AI;AI & Machine Learning;migrate;301
+analyse;Data & Analytics;migrate;301
+Android;Mobile & Devices;migrate;301
+API;APIs & Integration;migrate;301
+applications;Web Development;migrate;301
+Astuce du jour;Tutorials & How-to;migrate;301
+audiovisuel;Multimedia & Video;migrate;301
+auteurs;Journalism & Writing;migrate;301
+Autres;Miscellaneous / Other;migrate;301
+Big data;Data & Analytics;migrate;301
+Bigdata;Data & Analytics;merge;301
+Cloud;Cloud & Infrastructure;migrate;301
+CMS;WordPress & CMS;migrate;301
+Configuration d'une séquence;3WDOC - Tutorials;migrate;301
+Création de site web;Web Development;migrate;301
+CSS3;Web Design & Front-end;migrate;301
+demos;Tutorials & How-to;migrate;301
+Développement;Web Development;migrate;301
+Divers;Miscellaneous / Other;migrate;301
+Drupal;WordPress & CMS;migrate;301
+Ecommerce;SEO & Web Marketing;migrate;301
+écriture;Journalism & Writing;migrate;301
+Etudes de cas;Business & Case Studies;migrate;301
+expériences;Digital Storytelling & Webdocs;migrate;301
+Flash, Actionscript, Flex;Web Development;migrate;301
+Flex;Web Development;merge;301
+Framework;Web Development;migrate;301
+Gestion d'un projet;3WDOC - Tutorials;migrate;301
+Gestion d'une séquence;3WDOC - Tutorials;migrate;301
+Gestion de l'audio;3WDOC - Tutorials;migrate;301
+Gestion des boutons et des actions;3WDOC - Tutorials;migrate;301
+Gestion des effets;3WDOC - Tutorials;migrate;301
+Gestion des événements;3WDOC - Tutorials;migrate;301
+Gestion des images;3WDOC - Tutorials;migrate;301
+Gestion des médias de plateformes tierces;3WDOC - Tutorials;migrate;301
+Gestion des sons;3WDOC - Tutorials;migrate;301
+Gestion des textes;3WDOC - Tutorials;migrate;301
+Gestion des vidéos;3WDOC - Tutorials;migrate;301
+Gestion du Style;3WDOC - Tutorials;migrate;301
+Google;Tools & Productivity;migrate;301
+HbbTV;Multimedia & Video;migrate;301
+Hébergement;Cloud & Infrastructure;migrate;301
+HTML5;Web Design & Front-end;migrate;301
+Image, Graphisme, Photoshop;Web Design & Front-end;migrate;301
+information;Journalism & Writing;migrate;301
+interactif;Digital Storytelling & Webdocs;migrate;301
+iOS;Mobile & Devices;migrate;301
+Iphone, mobile;Mobile & Devices;migrate;301
+Javascript, Ajax;Web Development;migrate;301
+Joomla, Virtuemart;WordPress & CMS;migrate;301
+journalisme;Journalism & Writing;migrate;301
+jQuery;Web Development;migrate;301
+JSON;APIs & Integration;migrate;301
+L'encodage des médias;3WDOC - Tutorials;merge;301
+Linux, Apache;Cloud & Infrastructure;migrate;301
+Mac;Tools & Productivity;migrate;301
+Marketing Web;SEO & Web Marketing;migrate;301
+Meilleurs blogs;Technology & Trends;migrate;301
+Mon compte;3WDOC - Tutorials;migrate;301
+Mon Compte sur 3WDOC;3WDOC - Tutorials;migrate;301
+MySQL;Programming & Databases;migrate;301
+narration;Digital Storytelling & Webdocs;migrate;301
+NLP;AI & Machine Learning;migrate;301
+Non classé;Miscellaneous / Other;migrate;301
+Nos derniers WDOC;3WDOC - Tutorials;merge;301
+Notions de Base;3WDOC - Tutorials;merge;301
+photo;Web Design & Front-end;migrate;301
+PHP, MYSQL;Programming & Databases;migrate;301
+presse;Journalism & Writing;migrate;301
+Publication;Tutorials & How-to;migrate;301
+Publication;Tutorials & How-to;merge;301
+Python;Programming & Databases;migrate;301
+Référencement, SEO;SEO & Web Marketing;migrate;301
+Réseaux sociaux;Social Media & Community;migrate;301
+Ruby on Rails;Web Development;migrate;301
+SaaS;Cloud & Infrastructure;migrate;301
+Social TV;Social Media & Community;migrate;301
+Statistiques et Tracking;Data & Analytics;migrate;301
+storytelling;Digital Storytelling & Webdocs;migrate;301
+Style;Web Design & Front-end;migrate;301
+technique;Technology & Trends;migrate;301
+Technologie;Technology & Trends;migrate;301
+telecommuting;Business & Case Studies;migrate;301
+teleworking;Business & Case Studies;migrate;301
+Tutoriaux;Tutorials & How-to;migrate;301
+tutoriels;Tutorials & How-to;migrate;301
+Tutoriels SaaS;Tutorials & How-to;migrate;301
+TV connéctée;Multimedia & Video;migrate;301
+UX;UX & Product Design;migrate;301
+Vidéo;Multimedia & Video;migrate;301
+Webdesign;Web Design & Front-end;migrate;301
+webdoc;Digital Storytelling & Webdocs;migrate;301
+webdocumentaire;Digital Storytelling & Webdocs;migrate;301
+webfiction;Digital Storytelling & Webdocs;migrate;301
+WebGL;Web Development;migrate;301
+Widget, Gadget;Mobile & Devices;migrate;301
+Wireframe & Mock-up;Web Design & Front-end;migrate;301
+Wordpress;WordPress & CMS;migrate;301
+XHTML CSS;Web Design & Front-end;migrate;301

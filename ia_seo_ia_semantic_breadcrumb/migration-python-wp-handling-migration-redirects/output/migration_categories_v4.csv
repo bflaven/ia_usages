@@ -1,0 +1,101 @@
+old_name;new_category;old_name_slug;new_category_slug;status;redirect_type
+Accessibilité;UX & Product Design;/category/accessibilite/;/category/ux-product-design/;migrate;301
+Agile;Web Development;/category/agile/;/category/web-development/;migrate;301
+AI;AI & Machine Learning;/category/ai/;/category/ai-machine-learning/;migrate;301
+analyse;Data & Analytics;/category/analyse/;/category/data-analytics/;migrate;301
+Android;Mobile & Devices;/category/android/;/category/mobile-devices/;migrate;301
+API;APIs & Integration;/category/api/;/category/apis-integration/;migrate;301
+applications;Web Development;/category/applications-et-web-applications/;/category/web-development/;migrate;301
+Astuce du jour;Tutorials & How-to;/category/astuce-du-jour-logiciel/;/category/tutorials-how-to/;migrate;301
+audiovisuel;Multimedia & Video;/category/audiovisuel/;/category/multimedia-video/;migrate;301
+auteurs;Journalism & Writing;/category/auteurs/;/category/journalism-writing/;migrate;301
+Autres;Miscellaneous / Other;/category/autres/;/category/miscellaneous-other/;migrate;301
+Big data;Data & Analytics;/category/big-data/;/category/data-analytics/;migrate;301
+Bigdata;Data & Analytics;/category/bigdata/;/category/data-analytics/;merge;301
+Cloud;Cloud & Infrastructure;/category/cloud/;/category/cloud-infrastructure/;migrate;301
+CMS;WordPress & CMS;/category/cms/;/category/wordpress-cms/;migrate;301
+Configuration d'une séquence;3WDOC - Tutorials;/category/3-configuration-dune-sequence/;/category/3wdoc-tutorials/;migrate;301
+Création de site web;Web Development;/category/creation-de-site-web/;/category/web-development/;migrate;301
+CSS3;Web Design & Front-end;/category/css3/;/category/web-design-front-end/;migrate;301
+demos;Tutorials & How-to;/category/demos/;/category/tutorials-how-to/;migrate;301
+Développement;Web Development;/category/developpement-digital/;/category/web-development/;migrate;301
+Divers;Miscellaneous / Other;/category/divers/;/category/miscellaneous-other/;migrate;301
+Drupal;WordPress & CMS;/category/drupal/;/category/wordpress-cms/;migrate;301
+Ecommerce;SEO & Web Marketing;/category/ecommerce/;/category/seo-web-marketing/;migrate;301
+écriture;Journalism & Writing;/category/ecriture/;/category/journalism-writing/;migrate;301
+Etudes de cas;Business & Case Studies;/category/0-saas-etudes-de-cas/;/category/business-case-studies/;migrate;301
+expériences;Digital Storytelling & Webdocs;/category/experiences/;/category/digital-storytelling-webdocs/;migrate;301
+Flash, Actionscript, Flex;Web Development;/category/flash-actionscript-flex/;/category/web-development/;migrate;301
+Flex;Web Development;/category/flex/;/category/web-development/;merge;301
+Framework;Web Development;/category/framework/;/category/web-development/;migrate;301
+Gestion d'un projet;3WDOC - Tutorials;/category/2-saas-gestion-dun-projet/;/category/3wdoc-tutorials/;migrate;301
+Gestion d'une séquence;3WDOC - Tutorials;/category/3-saas-gestion-dune-sequence/;/category/3wdoc-tutorials/;migrate;301
+Gestion de l'audio;3WDOC - Tutorials;/category/6-gestion-de-laudio/;/category/3wdoc-tutorials/;migrate;301
+Gestion des boutons et des actions;3WDOC - Tutorials;/category/8-gestion-des-boutons-et-des-actions/;/category/3wdoc-tutorials/;migrate;301
+Gestion des effets;3WDOC - Tutorials;/category/8-saas-gestion-des-effets/;/category/3wdoc-tutorials/;migrate;301
+Gestion des événements;3WDOC - Tutorials;/category/9-saas-gestion-des-evenements/;/category/3wdoc-tutorials/;migrate;301
+Gestion des images;3WDOC - Tutorials;/category/4-saas-gestion-des-images/;/category/3wdoc-tutorials/;migrate;301
+Gestion des médias de plateformes tierces;3WDOC - Tutorials;/category/91-saas-gestion-des-medias-13/;/category/3wdoc-tutorials/;migrate;301
+Gestion des sons;3WDOC - Tutorials;/category/6-saas-gestion-des-sons/;/category/3wdoc-tutorials/;migrate;301
+Gestion des textes;3WDOC - Tutorials;/category/5-gestion-des-textes/;/category/3wdoc-tutorials/;migrate;301
+Gestion des vidéos;3WDOC - Tutorials;/category/5-saas-gestion-des-videos/;/category/3wdoc-tutorials/;migrate;301
+Gestion du Style;3WDOC - Tutorials;/category/92-saas-gestion-du-style/;/category/3wdoc-tutorials/;migrate;301
+Google;Tools & Productivity;/category/google/;/category/tools-productivity/;migrate;301
+HbbTV;Multimedia & Video;/category/hbbtv-connected-tv/;/category/multimedia-video/;migrate;301
+Hébergement;Cloud & Infrastructure;/category/hebergement/;/category/cloud-infrastructure/;migrate;301
+HTML5;Web Design & Front-end;/category/html5/;/category/web-design-front-end/;migrate;301
+Image, Graphisme, Photoshop;Web Design & Front-end;/category/image-graphisme-photoshop/;/category/web-design-front-end/;migrate;301
+information;Journalism & Writing;/category/information/;/category/journalism-writing/;migrate;301
+interactif;Digital Storytelling & Webdocs;/category/interactif/;/category/digital-storytelling-webdocs/;migrate;301
+iOS;Mobile & Devices;/category/ios/;/category/mobile-devices/;migrate;301
+Iphone, mobile;Mobile & Devices;/category/iphone-mobile/;/category/mobile-devices/;migrate;301
+Javascript, Ajax;Web Development;/category/javascript-ajax/;/category/web-development/;migrate;301
+Joomla, Virtuemart;WordPress & CMS;/category/joomla-virtuemart/;/category/wordpress-cms/;migrate;301
+journalisme;Journalism & Writing;/category/journalisme/;/category/journalism-writing/;migrate;301
+jQuery;Web Development;/category/jquery/;/category/web-development/;migrate;301
+JSON;APIs & Integration;/category/json-2/;/category/apis-integration/;migrate;301
+L'encodage des médias;3WDOC - Tutorials;/category/2-lencodage-des-medias/;/category/3wdoc-tutorials/;merge;301
+Linux, Apache;Cloud & Infrastructure;/category/linux-apache/;/category/cloud-infrastructure/;migrate;301
+Mac;Tools & Productivity;/category/mac/;/category/tools-productivity/;migrate;301
+Marketing Web;SEO & Web Marketing;/category/marketing-web/;/category/seo-web-marketing/;migrate;301
+Meilleurs blogs;Technology & Trends;/category/meilleurs-blogs/;/category/technology-trends/;migrate;301
+Mon compte;3WDOC - Tutorials;/category/1-saas-mon-compte/;/category/3wdoc-tutorials/;migrate;301
+Mon Compte sur 3WDOC;3WDOC - Tutorials;/category/1-mon-compte-sur-3wdoc/;/category/3wdoc-tutorials/;migrate;301
+MySQL;Programming & Databases;/category/mysql/;/category/programming-databases/;migrate;301
+narration;Digital Storytelling & Webdocs;/category/narration/;/category/digital-storytelling-webdocs/;migrate;301
+NLP;AI & Machine Learning;/category/nlp/;/category/ai-machine-learning/;migrate;301
+Non classé;Miscellaneous / Other;/category/non-classe/;/category/miscellaneous-other/;migrate;301
+Nos derniers WDOC;3WDOC - Tutorials;/category/nos-derniers-wdoc/;/category/3wdoc-tutorials/;merge;301
+Notions de Base;3WDOC - Tutorials;/category/0-saas-notions-de-base/;/category/3wdoc-tutorials/;merge;301
+photo;Web Design & Front-end;/category/photo/;/category/web-design-front-end/;migrate;301
+PHP, MYSQL;Programming & Databases;/category/php-mysql/;/category/programming-databases/;migrate;301
+presse;Journalism & Writing;/category/presse-et-revue-de-presse/;/category/journalism-writing/;migrate;301
+Publication;Tutorials & How-to;/category/93-publication/;/category/tutorials-how-to/;merge;301
+Python;Programming & Databases;/category/python/;/category/programming-databases/;migrate;301
+Référencement, SEO;SEO & Web Marketing;/category/referencement-seo/;/category/seo-web-marketing/;migrate;301
+Réseaux sociaux;Social Media & Community;/category/reseaux-sociaux/;/category/social-media-community/;migrate;301
+Ruby on Rails;Web Development;/category/ruby-on-rails/;/category/web-development/;migrate;301
+SaaS;Cloud & Infrastructure;/category/saas/;/category/cloud-infrastructure/;migrate;301
+Social TV;Social Media & Community;/category/social-tv/;/category/social-media-community/;migrate;301
+Statistiques et Tracking;Data & Analytics;/category/statistiques-et-tracking/;/category/data-analytics/;migrate;301
+storytelling;Digital Storytelling & Webdocs;/category/storytelling-digital/;/category/digital-storytelling-webdocs/;migrate;301
+Style;Web Design & Front-end;/category/9-style/;/category/web-design-front-end/;migrate;301
+technique;Technology & Trends;/category/technique/;/category/technology-trends/;migrate;301
+Technologie;Technology & Trends;/category/technologie/;/category/technology-trends/;migrate;301
+telecommuting;Business & Case Studies;/category/telecommuting/;/category/business-case-studies/;migrate;301
+teleworking;Business & Case Studies;/category/teleworking/;/category/business-case-studies/;migrate;301
+Tutoriaux;Tutorials & How-to;/category/tutoriaux/;/category/tutorials-how-to/;migrate;301
+tutoriels;Tutorials & How-to;/category/tutoriels/;/category/tutorials-how-to/;migrate;301
+Tutoriels SaaS;Tutorials & How-to;/category/tutorials-saas/;/category/tutorials-how-to/;migrate;301
+TV connéctée;Multimedia & Video;/category/tv-connectee-social-tv/;/category/multimedia-video/;migrate;301
+UX;UX & Product Design;/category/ux-experience-utilisateur/;/category/ux-product-design/;migrate;301
+Vidéo;Multimedia & Video;/category/video/;/category/multimedia-video/;migrate;301
+Webdesign;Web Design & Front-end;/category/webdesign-responsive-agile/;/category/web-design-front-end/;migrate;301
+webdoc;Digital Storytelling & Webdocs;/category/webdoc/;/category/digital-storytelling-webdocs/;migrate;301
+webdocumentaire;Digital Storytelling & Webdocs;/category/webdocumentaire-digital-storytelling/;/category/digital-storytelling-webdocs/;migrate;301
+webfiction;Digital Storytelling & Webdocs;/category/webfiction/;/category/digital-storytelling-webdocs/;migrate;301
+WebGL;Web Development;/category/webgl/;/category/web-development/;migrate;301
+Widget, Gadget;Mobile & Devices;/category/widget-gadget/;/category/mobile-devices/;migrate;301
+Wireframe & Mock-up;Web Design & Front-end;/category/wireframe-mock-up/;/category/web-design-front-end/;migrate;301
+Wordpress;WordPress & CMS;/category/wordpress/;/category/wordpress-cms/;migrate;301
+XHTML CSS;Web Design & Front-end;/category/xhtml-css/;/category/web-design-front-end/;migrate;301
