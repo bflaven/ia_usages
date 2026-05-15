@@ -39,58 +39,128 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_training_rag_custom
 
 ! WALKTHROUGH
 
-- QUERIES
-What are the frameworks to test a web application?
-Do you know the expression Augmented Journalism?
-Tell me more on AI ecological impact?
+--- NOTES
+
+Four terminal to see all in action
+- TERMINAL_1 (RAG DATA)
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/editorial_simple_rag
+
+- TERMINAL_2 (RAG OLLAMA)
+cd /Users/brunoflaven/
+ollama serve
+
+- TERMINAL_3 (RAG STREAMLIT)
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/editorial_simple_rag
+streamlit run scripts/step_7_001_interface.py -- --streamlit
+
+- TERMINAL_4 (WP DOCKER)
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/wp_docker
+docker compose down
+docker compose up -d
 
 
++ 1. RAG
 
-- HOW-TO
-# Path to project root 
+--- OBJECTIVE 
+! Create a RAG from any corpus. I have used my 74 posts in english. 
+
+--- STEP_1 HOW-TO FOR RAG : PREPARE DATA
+
+
+- # Path to project root 
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/
 
-# Navigate to project root
---- cd editorial_simple_rag
-cd editorial_simple_rag_semantic_search
+- # Navigate to project root
+cd editorial_simple_rag
 
-
-# Activate environment
+- # Activate environment
 conda activate ia_achats
 
-# 1. Drop your CMS JSON files into the corpus directory
-#    data/corpora/editorial/CMS_EXPORT_2026/
+- # Prepare the corpus
+change path in workflow_paths.yaml to create e.g data/indexes/editorial/CMS_EXPORT_2026_3 for values like corpus_dir, index_dir, checkpoint_dir, search_index_dir
 
-# 2a. Build the index — one-liner orchestrator (steps 1 → 4)
-python run_pipeline.py --build
+! IT SHOULD BE KO
+- # Verify everything is coherent
+python check_status.py
+python validate_pipeline.py
+- # Check FAISS index integrity (null vectors, metadata)
+python test_index.py
+
+--- STEP_1 HOW-TO FOR RAG : READY TO LAUNCH
+- # 2a. Build the index — one-liner orchestrator (steps 1 → 4)
 python run_pipeline.py --build --dry-run
 
 
-# 2b. Or run each step individually
+- CAUTION the killing command
+python run_pipeline.py --build
+
+! IT SHOULD BE OK
+- # Verify everything is coherent
+python check_status.py
+python validate_pipeline.py
+- # Check FAISS index integrity (null vectors, metadata)
+python test_index.py
+
+- # 2b. Or run each step individually
 python scripts/step_1_001_ingest.py
 python scripts/step_2_001_parse.py
 python scripts/step_3_001_embed.py
 python scripts/step_4_001_index.py
 
-# 3. Verify everything is coherent
+- # 3. Verify everything is coherent
 python check_status.py
 python validate_pipeline.py
 
-# 4a. Interactive CLI
+- # 4a. Interactive CLI
 python scripts/step_7_001_interface.py
 
-# 4b. Streamlit web UI
+- # 4b. Streamlit web UI
 streamlit run scripts/step_7_001_interface.py -- --streamlit
 
+--- QUERIES FOR QUERIES FOR
+What are the frameworks to test a web application?
+Do you know the expression Augmented Journalism?
+Tell me more on AI ecological impact?
+
++ 2. SEMANTIC SEARCH IN WP
+--- OBJECTIVE 
+
+! Add the function of semantic search to a CMS like WP to take advantage of the work on the RAG. I have used my 74 posts in english.
+
+--- HOW-TO
+- command to create the export file 74 posts in english from the rag to convert into json file for WP using the wp-rag-semantic-search
+python bridge_export.py --source data/corpora/editorial/CMS_EXPORT_2026_3/sample_posts_3.json --out data/bridge/rag_bridge_sample_posts_3.json
 
 
-+ REQUIREMENTS
+- check on front
+http://localhost:8080/semantic-search/
 
 
---- env
+--- QUERIES FOR SEMANTIC SEARCH
+Testing web application
+Augmented Journalism
+Ecological
+
+- to see cache in action 
+Augmented
+Journalism
+Augmented Journalism tips
+Augmented Journalism info
+
+--- wp
+http://localhost:8080/wp-admin/admin.php?page=rag-semantic-search
+--- db
+http://localhost:8081/index.php?route=/sql&db=wordpress2&table=wp_rag_results&pos=0
+
++ 3. REQUIREMENTS
+
+--- docker (if you need to test locally on a wp before prodcution, required)
+docker with a WP installation so you can safely activete the plugin "rag-semantic-search" and see the search in action.
+
+--- env (python managed via anaconda, required)
 conda activate ia_achats          # Python 3.11
 
---- Ollama
+--- Ollama (some LLM managed via ollama, required)
 # Ollama (required for embeddings and Tier 2 LLM)
 ollama serve                      # in a dedicated terminal
 ollama pull nomic-embed-text      # embedding model (768 dim, 2048-token context)
@@ -103,7 +173,7 @@ ollama show nomic-embed-text
 # architecture caps at 2048. Chunk sizes in chunking_rules.yaml are set
 # accordingly (150 words ≈ 300 BPE tokens, safely under the 2048 limit).
 
---- spaCy models:
+--- spaCy models (for some operation in the rag, required)
 # English
 python -m spacy download en_core_web_md
 python -m spacy download en_core_web_trf
