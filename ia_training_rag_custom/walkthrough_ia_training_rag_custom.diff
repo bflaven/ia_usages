@@ -21,10 +21,7 @@ You can read the article on my blog.
 ! VIDEOS
 
 --- videos filenames
-001_step_1_rag_prepare_data.mov
-002_step_2_rag_ready_to_launch.mov
-003_step_3_rag_queries_for_rag.mov
-004_step_4_rag_queries_for_rag.mov
+001_step_1_rag_complete.mov
 005_rag_semantic_search_wp.mov
 
 
@@ -172,7 +169,7 @@ Tell me more on AI ecological impact?
 
 --- HOW-TO
 ! command to create the export file 74 posts in english from the rag to convert into json file for WP using the wp-rag-semantic-search
-python bridge_export.py --source data/corpora/editorial/CMS_EXPORT_2026_3/sample_posts_3.json --out data/bridge/rag_bridge_sample_posts_3.json
+python bridge_export.py --source data/corpora/editorial/CMS_EXPORT_2026_4/sample_posts_youtube.json --out data/bridge/rag_bridge_sample_posts_youtube_4.json
 
 
 - check on front
