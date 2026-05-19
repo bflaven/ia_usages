@@ -51,12 +51,19 @@ ollama serve
 
 - TERMINAL_3 (RAG STREAMLIT)
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/editorial_simple_rag
+conda activate ia_achats
 streamlit run scripts/step_7_001_interface.py -- --streamlit
 
 - TERMINAL_4 (WP DOCKER)
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/wp_docker
 docker compose down
 docker compose up -d
+
+# WordPress: 
+http://localhost:8080
+# phpMyAdmin: 
+http://localhost:8081
+
 
 
 + 1. RAG
@@ -65,7 +72,6 @@ docker compose up -d
 ! Create a RAG from any corpus. I have used my 74 posts in english. 
 
 --- STEP_1 HOW-TO FOR RAG : PREPARE DATA
-
 
 - # Path to project root 
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/
@@ -86,7 +92,7 @@ python validate_pipeline.py
 - # Check FAISS index integrity (null vectors, metadata)
 python test_index.py
 
---- STEP_1 HOW-TO FOR RAG : READY TO LAUNCH
+--- STEP_2 HOW-TO FOR RAG : READY TO LAUNCH
 - # 2a. Build the index — one-liner orchestrator (steps 1 → 4)
 python run_pipeline.py --build --dry-run
 
@@ -117,10 +123,12 @@ python scripts/step_7_001_interface.py
 - # 4b. Streamlit web UI
 streamlit run scripts/step_7_001_interface.py -- --streamlit
 
---- QUERIES FOR QUERIES FOR
+--- STEP_3 QUERIES FOR QUERIES FOR
 What are the frameworks to test a web application?
 Do you know the expression Augmented Journalism?
 Tell me more on AI ecological impact?
+
+
 
 + 2. SEMANTIC SEARCH IN WP
 --- OBJECTIVE 
