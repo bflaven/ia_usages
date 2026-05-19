@@ -1,6 +1,6 @@
 ! SOURCE
 + Article
-- https://flaven.fr/2025/02/the-green-ai-myth-carbon-costs-of-ml-models-insights-on-geo-and-deepseek-fine-tuning/
+- https://flaven.fr/2026/04/claude-code-claude-md-and-token-optimization-practical-tips-for-rag-development-without-burning-your-credits/
 
 + Videos
 - https://www.youtube.com/channel/UCnUBoVx9Yai3wirPBvNpNQw
@@ -57,6 +57,7 @@ cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/ed
 - TERMINAL_2 (RAG OLLAMA)
 cd /Users/brunoflaven/
 ollama serve
+See https://ollama.com/
 
 - TERMINAL_3 (RAG STREAMLIT)
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/editorial_simple_rag
@@ -67,6 +68,8 @@ streamlit run scripts/step_7_001_interface.py -- --streamlit
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/wp_docker
 docker compose down
 docker compose up -d
+
+See https://www.docker.com/
 
 # WordPress: 
 http://localhost:8080
