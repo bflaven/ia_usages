@@ -21,6 +21,15 @@ You can read the article on my blog.
 
 ! VIDEOS
 
+--- videos filenames
+001_step_1_rag_prepare_data.mov
+002_step_2_rag_ready_to_launch.mov
+003_step_3_rag_queries_for_rag.mov
+004_step_4_rag_queries_for_rag.mov
+005_rag_semantic_search_wp.mov
+
+
+
 --- create the env with anaconda
 
 """
@@ -123,7 +132,7 @@ python scripts/step_7_001_interface.py
 - # 4b. Streamlit web UI
 streamlit run scripts/step_7_001_interface.py -- --streamlit
 
---- STEP_3 QUERIES FOR QUERIES FOR
+--- STEP_3 QUERIES FOR RAG 
 ! Some queries to test the accuracy of the RAG
 What are the frameworks to test a web application?
 Do you know the expression Augmented Journalism?
