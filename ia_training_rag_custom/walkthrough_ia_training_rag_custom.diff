@@ -52,6 +52,7 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_training_rag_custom
 Four terminal to see all in action
 - TERMINAL_1 (RAG DATA)
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/editorial_simple_rag
+conda activate ia_achats
 
 - TERMINAL_2 (RAG OLLAMA)
 cd /Users/brunoflaven/
