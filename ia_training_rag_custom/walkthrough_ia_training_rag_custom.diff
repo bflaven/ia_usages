@@ -51,24 +51,46 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_training_rag_custom
 
 Four terminal to see all in action
 - TERMINAL_1 (RAG DATA)
+--- path
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/editorial_simple_rag
+--- commands
 conda activate ia_achats
+conda deactivate
+conda info --envs
+
+--- source
+https://www.anaconda.com/download
 
 - TERMINAL_2 (RAG OLLAMA)
+--- path
 cd /Users/brunoflaven/
+--- commands
 ollama serve
+
+--- source
 See https://ollama.com/
 
 - TERMINAL_3 (RAG STREAMLIT)
+--- path
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/editorial_simple_rag
+--- commands
 conda activate ia_achats
+conda deactivate
+conda info --envs
+
+--- commands
 streamlit run scripts/step_7_001_interface.py -- --streamlit
 
+--- source
+https://streamlit.io/
+
 - TERMINAL_4 (WP DOCKER)
+--- path
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_training_rag_custom/wp_docker
+--- commands
 docker compose down
 docker compose up -d
-
+--- source
 See https://www.docker.com/
 
 # WordPress: 
