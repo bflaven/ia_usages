@@ -83,7 +83,7 @@ cd editorial_simple_rag
 conda activate ia_achats
 
 - # Prepare the corpus
-change path in workflow_paths.yaml to create e.g data/indexes/editorial/CMS_EXPORT_2026_3 for values like corpus_dir, index_dir, checkpoint_dir, search_index_dir
+! change path in workflow_paths.yaml to create e.g data/indexes/editorial/CMS_EXPORT_2026_3 for values like corpus_dir, index_dir, checkpoint_dir, search_index_dir
 
 ! IT SHOULD BE KO
 - # Verify everything is coherent
@@ -124,6 +124,7 @@ python scripts/step_7_001_interface.py
 streamlit run scripts/step_7_001_interface.py -- --streamlit
 
 --- STEP_3 QUERIES FOR QUERIES FOR
+! Some queries to test the accuracy of the RAG
 What are the frameworks to test a web application?
 Do you know the expression Augmented Journalism?
 Tell me more on AI ecological impact?
@@ -136,7 +137,7 @@ Tell me more on AI ecological impact?
 ! Add the function of semantic search to a CMS like WP to take advantage of the work on the RAG. I have used my 74 posts in english.
 
 --- HOW-TO
-- command to create the export file 74 posts in english from the rag to convert into json file for WP using the wp-rag-semantic-search
+! command to create the export file 74 posts in english from the rag to convert into json file for WP using the wp-rag-semantic-search
 python bridge_export.py --source data/corpora/editorial/CMS_EXPORT_2026_3/sample_posts_3.json --out data/bridge/rag_bridge_sample_posts_3.json
 
 
