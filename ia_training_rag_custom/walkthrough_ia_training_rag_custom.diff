@@ -19,11 +19,33 @@ You can read the article on my blog.
 
 
 ! VIDEOS
++ VIDEO FILENAMES & DESCRIPTION
+- 001_step_1_rag_complete.mov
+Using a RAG for multipurpose from Journalist to Human ressources. Rag integrally built by Claude Code. 
 
---- videos filenames
-001_step_1_rag_complete.mov
-005_rag_semantic_search_wp.mov
 
+- 005_rag_semantic_search_wp.mov
+Extract the RAG research corpus from a WordPress Posts to implement a semantic search via a plugin to extend native WP research functionality. Plugin integrally built by Claude Code.  
+
++ YOUTUBE VIDEO TITLES
+
+--- Clickbait
+I Built a Powerful RAG with Claude Code (Journalism → HR Use Cases)
+Turn WordPress into an AI Search Engine with a RAG Plugin (Claude Code)
+
+--- Technical
+Building a Multi-Domain RAG with Claude Code (Journalism, HR, and More)
+WordPress Semantic Search Plugin Powered by RAG (Built with Claude Code)
+
+
+--- SEO Optimized
+RAG with Claude Code: Full Tutorial for a Multi-Purpose AI Assistant
+WordPress RAG Tutorial: Build an AI Semantic Search Plugin with Claude Code
+
+
+--- Hybrid (SEO + engaging)
+Build a RAG with Claude Code: AI Assistant for Journalism and HR
+WordPress Semantic Search with RAG: Build an AI Plugin with Claude Code
 
 
 --- create the env with anaconda
@@ -225,5 +247,30 @@ python -m spacy download fr_dep_news_trf
 
 
 
+! ILLUSTRATIONS
 
+- PROMPT_1 generate an image
+Create a drawing illustration to illustrate this video subject: Using a RAG for multipurpose from Journalist to Human ressources and extract the research corpus from WordPress Posts to implement a semantic search via a plugin to extend native WP research functionality. 
+
+- PROMPT_2 generate an image
+Redo the image, please, as an expert in drawing, stylize an illustration. Remove the text that describe usage keep only: rag engine, wordpress logo and enhanced semantic search do not use any people, any cheesy easy future and space illustration, take robert crumb as model for drawing. Use purple for background.
+The use cases were that mean that the RAG was market agnostic : rfp | hr | screenwriting | journalism | support | editorial.
+Illustrate that the rag has been totally created by Claude Code.
+
+- PROMPT_3 generate an image
+As an expert in drawing, stylize an illustration, create a drawing illustration to illustrate this video subject: Using a RAG for multipurpose from Journalist to Human ressources and extract the research corpus from WordPress Posts to implement a semantic search via a plugin to extend native WP research functionality. Use Basil Wolverton’s Ink Work style or take robert crumb as model for drawing. Remove the text that describe usage keep only: rag engine, wordpress logo and enhanced semantic search do not use any people, any cheesy easy future and space illustration. Use purple for background.
+
+
+--- links to generate an image
+Leonardo.ai, https://app.leonardo.ai/
+ArtSmart.ai, https://artsmart.ai/
+Midjourney, https://www.midjourney.com/home
+Google Nano Banana (Gemini), https://gemini.google.com/app
+Flux.2, https://bfl.ai/
+ChatGPT Images, https://chatgpt.com/images/
+JasperArt, https://www.jasper.ai/
+DreamLab, https://www.canva.com/ 
+Grok, https://x.ai/
+Janus Pro Deepseek, https://janusai.pro/
+Qwen, https://chat.qwen.ai/
 
