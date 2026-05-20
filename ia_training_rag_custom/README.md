@@ -32,9 +32,11 @@ Then, finally, after completing all this work, I have been thinking more abstrac
 ## VIDEOS
 
 - Video #1 — Build a RAG with Claude Code: From User Stories to a Multi-Domain AI Assistant
+
 https://youtu.be/MGYMwq3fAfU
 
 - Video #2 — WordPress Semantic Search with RAG: Turning Research into a Plugin
+
 https://youtu.be/ptUjEFYxSiM
 
 
