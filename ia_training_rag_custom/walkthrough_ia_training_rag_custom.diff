@@ -274,3 +274,74 @@ Grok, https://x.ai/
 Janus Pro Deepseek, https://janusai.pro/
 Qwen, https://chat.qwen.ai/
 
+
+Here are two clean, ready-to-paste YouTube descriptions aligned with your post, repo, and positioning.
+
+! YOUTUBE DESCRIPTIONS
+
++ Video #1 — 001_step_1_rag_complete
+--- https://youtu.be/MGYMwq3fAfU
+
+Build a RAG with Claude Code: From User Stories to a Multi-Domain AI Assistant
+
+***
+
+In this video, I walk through the complete setup of a Retrieval-Augmented Generation (RAG) system built entirely with Claude Code, from initial idea to working prototype.
+
+The project starts from simple user stories and evolves into a practical AI assistant usable across multiple domains:
+- Journalism
+- Human Resources (HR)
+- RFP (Request for Proposal)
+- Screenwriting
+
+The key idea behind this RAG is not just answering questions, but enabling a human expert to navigate a dense corpus of information while preserving traceability of sources.
+
+This video focuses on:
+- Structuring a RAG pipeline from scratch
+- Using Claude Code as the sole development assistant
+- Managing token consumption efficiently during development
+- Transforming raw content into a usable knowledge base
+
+This is part of a broader experiment: building a complete AI product without traditional coding workflows, relying fully on Claude Code.
+
+Resources:
+- Full article: https://wp.me/p3Vuhl-3qO  
+- GitHub repo: https://github.com/bflaven/ia_usages/tree/main/ia_training_rag_custom  
+
+***
+
++ Video #2 — 002_rag_semantic_search_wp
+--- https://youtu.be/ptUjEFYxSiM
+
+WordPress Semantic Search with RAG: Turning Research into a Plugin
+
+***
+
+In this video, I extend the RAG project into a concrete product: a semantic search engine integrated into WordPress via a custom plugin, fully built with Claude Code.
+
+Instead of limiting the RAG to a chatbot, I reuse its research corpus to create a powerful semantic search layer on top of WordPress content.
+
+The idea is simple:
+- Extract and structure the RAG knowledge base
+- Index it using embeddings
+- Enable semantic search directly inside WordPress
+
+A practical use case:
+An HR Director filtering CVs against job descriptions using semantic matching instead of keyword search.
+
+In my case, I apply it to content and articles, enhancing WordPress native search with AI-driven relevance.
+
+This video covers:
+- Extracting the RAG corpus
+- Designing a semantic search pipeline
+- Building a WordPress plugin powered by embeddings
+- Extending WordPress search capabilities with AI
+
+This demonstrates how a RAG project can evolve into multiple usable products beyond chat.
+
+Resources:
+- Full article: https://wp.me/p3Vuhl-3qO  
+- GitHub repo: https://github.com/bflaven/ia_usages/tree/main/ia_training_rag_custom  
+
+
+

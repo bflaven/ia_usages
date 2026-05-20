@@ -14,9 +14,6 @@ Here is a short description for each directory:
 
 
 
-
-
-
 ## Intro (human made)
 The initial goal was to create a chatbot using RAG and custom data from simple User Stories.
 
@@ -32,8 +29,13 @@ Furthermore, a RAG is great, but what other assets/products can be derived from 
 
 Then, finally, after completing all this work, I have been thinking more abstractly about the future of work in the age of AI.
 
+## VIDEOS
 
+- Video #1 — Build a RAG with Claude Code: From User Stories to a Multi-Domain AI Assistant
+https://youtu.be/MGYMwq3fAfU
 
+- Video #2 — WordPress Semantic Search with RAG: Turning Research into a Plugin
+https://youtu.be/ptUjEFYxSiM
 
 
 ## Intro (IA made)
