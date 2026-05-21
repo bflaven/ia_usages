@@ -1,6 +1,6 @@
-=== Breadcrumb Category Migration ===
+## === Breadcrumb Category Migration ===
 Contributors: brunoflaven
-Donate link: https://www.brunoflaven.com/
+Donate link: https://flaven.fr/
 Tags: categories, migration, taxonomy, breadcrumbs, redirects, drag and drop, multi-select, multicategorization, htaccess
 Requires at least: 5.0
 Tested up to: 6.5
@@ -9,9 +9,11 @@ Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
+*** 
+
 Two-tab admin tool for progressive taxonomy management. **Migration tab**: drag & drop (with multi-select) to add target categories to posts while keeping source categories intact — enabling multi-categorization. **Reduction tab**: point-and-click generator for `Redirect 301` .htaccess directives — pair a source category with a target, accumulate all lines, copy them in one shot. Optionally delete empty old categories.
 
-== Description ==
+## == Description ==
 
 **Breadcrumb Category Migration** provides an interactive admin tool to help you clean up and migrate your category taxonomy gradually, instead of doing everything in one shot via CSV or SQL.
 
@@ -33,7 +35,7 @@ This is especially useful when:
 
 The plugin does *not* automatically manage redirects on the frontend; instead, it generates the `Redirect 301` / `Redirect 410` snippets for you to paste into `.htaccess`.
 
-== Features ==
+## == Features ==
 
 - Admin page at `Tools → Breadcrumb Migration` (slug: `breadcrumb-migration-category-migration`).
 - Left column: list of **source categories** (non‑pillar or legacy categories).
