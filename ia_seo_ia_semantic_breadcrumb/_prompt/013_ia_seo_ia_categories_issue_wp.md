@@ -1,15 +1,10 @@
-
-## PROMPT_3a (emergency)
-
 rollback to tag 1.1.0
 remove all what belongs to 1.2.0
 
-## PROMPT_3
-Fix it 
-The tab Migration is empty, no loading what whatsoever 
+
+Fix it
+The tab Migration is empty, no laoding waht whatsover
 Reduction, idem, empty
-
-
 
 
 ## PROMPT_2

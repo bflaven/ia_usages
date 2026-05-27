@@ -1,4 +1,4 @@
-## PROMPT_8
+
 
 I think I do not understand, can we proceed on a single line
 I have 2 post attached to category "aaa-new-cat-order", I want them to go be removed the category "aaa-new-cat-order"

@@ -1,6 +1,6 @@
 
 ## PROMPT_6
-I am about to do the changes on the staging aka the wp in docker so the best thing to do is to create a plugin :
+I am about to do the chnages on the staging aka the wp in docker so the best thing to do is to create a plugin :
 
 1. It will make a backup with the same structure so I can rollback to the situaion adn redo the orpation if necessary and change the categories and the slug based on the correct files that are: bck_migration_categories_v4_[timestamp].csv, bck_redirects_categories_v4_[timestamp].csv
 
