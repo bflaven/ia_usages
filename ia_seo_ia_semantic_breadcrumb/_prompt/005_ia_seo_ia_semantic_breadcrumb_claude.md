@@ -1,7 +1,5 @@
 ## PROMPT_12
 
-
-
 1. Error, when the category is affected it is not more clickable but is working for the Tags but there is a regression.
 2. When the tag has Approved I cannot edit it anymore and reaffect the default category can you add an button that send it back  Pending status
 
