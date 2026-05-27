@@ -1,11 +1,11 @@
 
+
+
+
 ## PROMPT_8
 Ok for Q2 and add also what you have said in Q1 — Verify manifest injection per page type. No coding needed — explain the verification. I need to have in context such explanations when I activate the plugin.
 
 Update readme.md us the changelog way, claude.md and plugin version 
-
-
-
 
 
 ## PROMPT_8
