@@ -1,4 +1,4 @@
-# ia_seo_ia_semantic_breadcrumb
+# ia_seo_ia_semantic_breadcrumb_webmcp
 
 ## Breadcrumb Migration Pipeline + wp plugin
 - `_prompt`
