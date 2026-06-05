@@ -1,5 +1,9 @@
 # ia_seo_ia_semantic_breadcrumb_webmcp
 
+WebMCP, the End of Clicks, and the Semantic Upgrade Your WordPress Site Actually Needs [https://wp.me/p3Vuhl-3rb](https://wp.me/p3Vuhl-3rb)
+
+
+
 ## Breadcrumb Migration Pipeline + wp plugin
 - `_prompt`
 - `breadcrumb-migration-pipeline`
