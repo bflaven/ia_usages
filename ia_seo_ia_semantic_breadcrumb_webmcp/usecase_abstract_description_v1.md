@@ -64,3 +64,46 @@ AI-assisted taxonomy migration for a French-English WordPress tech blog flaven.f
 ## Keywords
 
 AI, Claude, WordPress, SEO, taxonomy, breadcrumb, category migration, editorial, NLP, spaCy, NER, Wikidata, knowledge graph, semantic enrichment, Python, MySQL, Docker, WordPress plugin, 301 redirect, htaccess, URL migration, content taxonomy, tag management, primary category, schema markup, pipeline, automation, flaven.fr
+
+
+---
+
+## YouTube Series Proposals (IA Claude code propositions)
+
+**Series title:** *AI-Powered WordPress Taxonomy Migration — From Chaos to Clean SEO*
+
+**Total: 10 videos.** Episodes 3–9 are hands-on/demo; 1, 2, 10 are concept/strategy. Natural split: 3-episode mini-series on pipeline (4–6), 2-episode mini-series on plugins + redirects (8–9).
+
+---
+
+**#1 — The Problem: Why 103 French Categories Was an SEO Disaster**
+Overview of the starting point: legacy French taxonomy, duplicate categories, broken URLs, SEO dilution. Sets the stakes and the roadmap for the whole series. No code, pure editorial thinking.
+
+**#2 — Using Claude to Redesign Your Category Taxonomy**
+Live walkthrough of the AI-assisted consolidation: prompts used, how Claude proposed the old→new mapping, how to validate the output editorially. Covers the `_prompt` and `migrate-categories-by-claude` directories.
+
+**#3 — Spinning Up a Local WordPress Lab with Docker**
+Practical episode: `docker-compose.yml` walkthrough, import a production DB dump, update site URLs, verify everything works at `localhost:8080`. Covers `breadcrumb-migration-pipeline-wp_docker`.
+
+**#4 — Build a Taxonomy Inventory Pipeline with Python and WordPress**
+Step 1 of the pipeline: connect Python to a WordPress MySQL DB, fetch all tags and categories with post counts, export to CSV. Covers `001_step_1_list_tags_categories_wp.py`.
+
+**#5 — Named Entity Recognition on Your WordPress Tags with spaCy**
+Step 2: run spaCy NER on taxonomy terms, detect entity types (ORG, PERSON, GPE, PRODUCT…), understand what your tags actually mean semantically. Covers `002_step_2_spacy_ner.py`.
+
+**#6 — Enrich WordPress Terms with Wikidata**
+Step 3: query Wikidata API to attach canonical IDs, labels, and descriptions to each term. Why knowledge graphs matter for SEO. Covers `003_step_3_wikidata_enrich.py`.
+
+**#7 — Generate Breadcrumb Proposals and Store Them in MySQL**
+Step 4 + SQL schema: write enriched proposals to custom tables, validate state machine (pending → approved → published), JSON breadcrumb array structure. Covers `004_step_4_breadcrumb_proposal.py` and `create_tables.sql`.
+
+**#8 — Four WordPress Plugins That Wire the Pipeline to Your Site**
+Plugin tour: taxonomy exporter, breadcrumb publisher, category migration drag-and-drop UI, primary category setter. Demo in the Docker environment. Covers `breadcrumb-migration-pipeline-wp_plugins_breadcrumb`.
+
+**#9 — 301 Redirects at Scale: No Old URL Left Behind**
+Generate `.htaccess` redirect rules from category mapping CSVs with Python. Why this step is non-negotiable for SEO. Covers `migration-python-wp-handling-migration-redirects`.
+
+**#10 — WebMCP: Exposing Your WordPress Site as AI Agent Tools**
+Bonus/forward-looking episode: what WebMCP is, why structured content exposure matters for AI agents, how this project connects to the broader agentic web trend.
+
+  

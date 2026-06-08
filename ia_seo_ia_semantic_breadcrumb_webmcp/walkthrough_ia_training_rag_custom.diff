@@ -9,10 +9,15 @@
 + Github
 - https://github.com/bflaven/
 
++ Title
+! AI-Powered WordPress Taxonomy Migration — From Chaos to Clean SEO
+
+
 + Abstract
 ! AI-assisted taxonomy migration for a French-English WordPress tech blog flaven.fr (~600 posts). A 4-step Python pipeline fetches WordPress terms, enriches them with spaCy NER and Wikidata, then writes structured breadcrumb proposals to MySQL. Four companion WordPress plugins handle the site-side work: exporting terms, importing validated proposals, re-categorising posts, and generating 301 redirects. Claude drove the editorial consolidation of 103 French categories into a leaner English-only taxonomy. Docker provides a local staging environment throughout. The result is an end-to-end, reproducible workflow for taxonomy migration that preserves SEO equity.
 
 + Keywords
+! AI, Claude, WordPress, SEO, taxonomy, breadcrumb, category migration, editorial, NLP, spaCy, NER, Wikidata, knowledge graph, semantic enrichment, Python, MySQL, Docker, WordPress plugin, 301 redirect, htaccess, URL migration, content taxonomy, tag management, primary category, schema markup, pipeline, automation, flaven.fr
 
 --- Intro
 You can read the article on my blog.
@@ -66,74 +71,76 @@ conda info --envs
 https://www.anaconda.com/download
 
 
-! working version
-- step_1
-# check post_tag
+! WORKING VERSION
+
+- step_0
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_seo_ia_semantic_breadcrumb_webmcp/
+
++ FOR TAGS
+
+- STEP_1
 python source/pipeline/001_step_1_list_tags_categories_wp.py \
-  --limit 30 \
+  --limit 50 \
   --taxonomy post_tag \
   --no-dry-run
 
+
+- STEP_2 (NO LIMIT)
+python source/pipeline/002_step_2_spacy_ner.py \
+  --limit 50 \
+  --taxonomy post_tag \
+  --no-dry-run
+
+
+
+- STEP_3 (careful limit)
+python source/pipeline/003_step_3_wikidata_enrich.py \
+  --limit 50 \
+  --taxonomy post_tag \
+  --no-dry-run
+
+
+- STEP_4
+# check post_tag
+python source/pipeline/004_step_4_breadcrumb_proposal.py \
+  --limit 50 \
+  --taxonomy post_tag \
+  --no-dry-run
+
+
++ FOR CATEGORY
+
+
+- STEP_1
 python source/pipeline/001_step_1_list_tags_categories_wp.py \
-  --limit 30 \
+  --limit 50 \
   --taxonomy category \
   --no-dry-run
 
-python source/pipeline/001_step_1_list_tags_categories_wp.py \
-  --limit 103 \
+
+- STEP_2 (NO LIMIT)
+# check post_tag
+python source/pipeline/002_step_2_spacy_ner.py \
+  --limit 50 \
   --taxonomy category \
   --no-dry-run
 
 
 
-- step_2 (no limit)
-# check post_tag
-python source/pipeline/002_step_2_spacy_ner.py \
-  --limit 30 \
-  --taxonomy post_tag \
-  --no-dry-run
-
-
-python source/pipeline/002_step_2_spacy_ner.py \
-  --limit 2495 \
-  --taxonomy post_tag \
-  --no-dry-run
-
-
-
-
-
-- step_3 (careful limit)
+- STEP_3 (careful limit)
 # check post_tag
 python source/pipeline/003_step_3_wikidata_enrich.py \
-  --limit 30 \
-  --taxonomy post_tag \
-  --no-dry-run
-
-python source/pipeline/003_step_3_wikidata_enrich.py \
-  --limit 2495 \
-  --taxonomy post_tag \
+  --limit 50 \
+  --taxonomy category \
   --no-dry-run
 
 
-- step_4
+- STEP_4
 # check post_tag
 python source/pipeline/004_step_4_breadcrumb_proposal.py \
-  --limit 30 \
-  --taxonomy post_tag \
+  --limit 50 \
+  --taxonomy category \
   --no-dry-run
-
-python source/pipeline/004_step_4_breadcrumb_proposal.py \
-  --limit 100 \
-  --taxonomy post_tag \
-  --no-dry-run
-
-
-python source/pipeline/004_step_4_breadcrumb_proposal.py \
-  --limit 2495 \
-  --taxonomy post_tag \
-  --no-dry-run
-
 
 
 
