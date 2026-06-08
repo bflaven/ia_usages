@@ -1,0 +1,234 @@
+! SOURCE
++ Article
+- WebMCP, the End of Clicks, and the Semantic Upgrade Your WordPress Site Actually Needs 
+- https://wp.me/p3Vuhl-3rb
+
++ Videos
+- https://www.youtube.com/channel/UCnUBoVx9Yai3wirPBvNpNQw
+
++ Github
+- https://github.com/bflaven/
+
++ Abstract
+! text
+
++ Keywords
+
+--- Intro
+You can read the article on my blog.
+- https://wp.me/p3Vuhl-3rb
+
+
+! VIDEOS
++ VIDEO FILENAMES & DESCRIPTION
+- 001_ia_seo_ia_semantic_breadcrumb_webmcp.mov
+
+
+- 002_ia_seo_ia_semantic_breadcrumb_webmcp.mov
+
++ YOUTUBE VIDEO TITLES
+
+
+
+--- create the env with anaconda
+
+"""
+[env]
+# Conda Environment
+conda create --name ia_achats python=3.9.13
+conda info --envs
+source activate ia_achats
+conda deactivate
+
+
+# [path]
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_seo_ia_semantic_breadcrumb_webmcp
+
+
+"""
+
+! WALKTHROUGH
+
+
+--- NOTES
+
+Two terminal to see all in action
+- TERMINAL_1 (PYTHON PIPELINE)
+--- path
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_seo_ia_semantic_breadcrumb_webmcp
+
+--- commands
+conda activate tags_treatment
+conda deactivate
+conda info --envs
+
+--- source
+https://www.anaconda.com/download
+
+
+! working version
+- step_1
+# check post_tag
+python source/pipeline/001_step_1_list_tags_categories_wp.py \
+  --limit 30 \
+  --taxonomy post_tag \
+  --no-dry-run
+
+python source/pipeline/001_step_1_list_tags_categories_wp.py \
+  --limit 30 \
+  --taxonomy category \
+  --no-dry-run
+
+python source/pipeline/001_step_1_list_tags_categories_wp.py \
+  --limit 103 \
+  --taxonomy category \
+  --no-dry-run
+
+
+
+- step_2 (no limit)
+# check post_tag
+python source/pipeline/002_step_2_spacy_ner.py \
+  --limit 30 \
+  --taxonomy post_tag \
+  --no-dry-run
+
+
+python source/pipeline/002_step_2_spacy_ner.py \
+  --limit 2495 \
+  --taxonomy post_tag \
+  --no-dry-run
+
+
+
+
+
+- step_3 (careful limit)
+# check post_tag
+python source/pipeline/003_step_3_wikidata_enrich.py \
+  --limit 30 \
+  --taxonomy post_tag \
+  --no-dry-run
+
+python source/pipeline/003_step_3_wikidata_enrich.py \
+  --limit 2495 \
+  --taxonomy post_tag \
+  --no-dry-run
+
+
+- step_4
+# check post_tag
+python source/pipeline/004_step_4_breadcrumb_proposal.py \
+  --limit 30 \
+  --taxonomy post_tag \
+  --no-dry-run
+
+python source/pipeline/004_step_4_breadcrumb_proposal.py \
+  --limit 100 \
+  --taxonomy post_tag \
+  --no-dry-run
+
+
+python source/pipeline/004_step_4_breadcrumb_proposal.py \
+  --limit 2495 \
+  --taxonomy post_tag \
+  --no-dry-run
+
+
+
+
+- TERMINAL_2 (WP DOCKER)
+--- path
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_seo_ia_semantic_breadcrumb_webmcp/wp_docker
+
+--- commands
+docker compose down
+docker compose up -d
+--- source
+See https://www.docker.com/
+
+# WordPress: 
+http://localhost:8080
+# phpMyAdmin: 
+http://localhost:8081
+
+
+
++ 1. PIPELINE
+
+--- OBJECTIVE 
+! text 
+
+--- STEP_1 HOW-TO FOR RAG : PREPARE DATA
+
+- Path to project root 
+
+- Navigate to project root
+
+- Activate environment
+conda activate tags_treatment
+
++ 2. SEMANTIC BREADCRUMB WEBMCP IN WP
+--- OBJECTIVE 
+
+! text
+
+--- HOW-TO
+! text
+
+
+
+- check on front
+http://localhost:8080//
+
+
++ 3. WEBMCP IN WP
+
+
+
+
++ 4. REQUIREMENTS
+
+--- docker (if you need to test locally on a wp before prodcution, required)
+docker with a WP installation so you can safely activate the plugins and see the enrichment of tags in action.
+
+--- env (python managed via anaconda, required)
+conda activate tags_treatment          # Python 3.11
+
+
+--- spaCy models (for some operation in the rag, required)
+# English
+python -m spacy download en_core_web_md
+python -m spacy download en_core_web_trf
+
+# French
+python -m spacy download fr_core_news_md
+python -m spacy download fr_dep_news_trf
+
+
+
+
+! ILLUSTRATIONS
+
+- PROMPT_1 generate an image
+
+
+- PROMPT_2 generate an image
+
+
+- PROMPT_3 generate an image
+
+
+
+
+! YOUTUBE DESCRIPTIONS
+
++ Video #1 — xxx
+--- https://youtu.be/XXX
+
+
+
++ Video #2 — xxx
+--- https://youtu.be/xxx
+
+
