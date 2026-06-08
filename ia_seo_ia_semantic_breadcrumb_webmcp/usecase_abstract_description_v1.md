@@ -40,7 +40,8 @@ Project index. Links the two main themes of the repository — (1) the Breadcrum
 
 ## Overall Abstract
 
-This repository documents a full content-taxonomy migration for a French tech blog (~2,300 posts) running on WordPress, using AI-assisted tooling at every stage.
+This repository documents a full content-taxonomy migration for 
+French-English WordPress tech blog flaven.fr (~600 posts) running on WordPress, using AI-assisted tooling at every stage.
 
 The core problem: a legacy taxonomy of 103 French-language categories had become an SEO liability. The solution spans three concerns:
 
@@ -51,3 +52,15 @@ The core problem: a legacy taxonomy of 103 French-language categories had become
 **3. WordPress-side tooling:** Four companion plugins (`breadcrumb-migration-pipeline-wp_plugins_breadcrumb`) handle the WordPress end: exporting terms for the pipeline, importing validated proposals back, re-assigning posts to new categories without data loss, managing primary categories, and generating `.htaccess` 301 redirects. A standalone Python script (`migration-python-wp-handling-migration-redirects`) also produces redirect rule sets from the category mapping CSVs.
 
 Together, the directories form an end-to-end, reproducible workflow for migrating a content site's taxonomy while preserving SEO equity — combining classical NLP (spaCy), knowledge-graph enrichment (Wikidata), AI-assisted editorial judgment (Claude), and WordPress plugin development.
+
+---
+
+## Short Abstract
+
+AI-assisted taxonomy migration for a French-English WordPress tech blog flaven.fr (~600 posts). A 4-step Python pipeline fetches WordPress terms, enriches them with spaCy NER and Wikidata, then writes structured breadcrumb proposals to MySQL. Four companion WordPress plugins handle the site-side work: exporting terms, importing validated proposals, re-categorising posts, and generating 301 redirects. Claude drove the editorial consolidation of 103 French categories into a leaner English-only taxonomy. Docker provides a local staging environment throughout. The result is an end-to-end, reproducible workflow for taxonomy migration that preserves SEO equity.
+
+---
+
+## Keywords
+
+AI, Claude, WordPress, SEO, taxonomy, breadcrumb, category migration, editorial, NLP, spaCy, NER, Wikidata, knowledge graph, semantic enrichment, Python, MySQL, Docker, WordPress plugin, 301 redirect, htaccess, URL migration, content taxonomy, tag management, primary category, schema markup, pipeline, automation, flaven.fr

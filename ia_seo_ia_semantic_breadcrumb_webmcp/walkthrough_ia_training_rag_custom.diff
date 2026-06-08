@@ -10,7 +10,7 @@
 - https://github.com/bflaven/
 
 + Abstract
-! text
+! AI-assisted taxonomy migration for a French-English WordPress tech blog flaven.fr (~600 posts). A 4-step Python pipeline fetches WordPress terms, enriches them with spaCy NER and Wikidata, then writes structured breadcrumb proposals to MySQL. Four companion WordPress plugins handle the site-side work: exporting terms, importing validated proposals, re-categorising posts, and generating 301 redirects. Claude drove the editorial consolidation of 103 French categories into a leaner English-only taxonomy. Docker provides a local staging environment throughout. The result is an end-to-end, reproducible workflow for taxonomy migration that preserves SEO equity.
 
 + Keywords
 
