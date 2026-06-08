@@ -78,30 +78,28 @@ cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_seo_ia_semantic_breadc
 
 + FOR TAGS
 
-- STEP_1
+- STEP_1: check the --taxonomy post_tag, retrieve a certain amount of tags with parameter --limit
 python source/pipeline/001_step_1_list_tags_categories_wp.py \
   --limit 50 \
   --taxonomy post_tag \
   --no-dry-run
 
 
-- STEP_2 (NO LIMIT)
+- STEP_2: run spacy against the tags found
 python source/pipeline/002_step_2_spacy_ner.py \
   --limit 50 \
   --taxonomy post_tag \
   --no-dry-run
 
 
-
-- STEP_3 (careful limit)
+- STEP_3: run wikidata against the tags found
 python source/pipeline/003_step_3_wikidata_enrich.py \
   --limit 50 \
   --taxonomy post_tag \
   --no-dry-run
 
 
-- STEP_4
-# check post_tag
+- STEP_4: finalize the breadcrumb_proposition for the tags found
 python source/pipeline/004_step_4_breadcrumb_proposal.py \
   --limit 50 \
   --taxonomy post_tag \
@@ -118,8 +116,7 @@ python source/pipeline/001_step_1_list_tags_categories_wp.py \
   --no-dry-run
 
 
-- STEP_2 (NO LIMIT)
-# check post_tag
+- STEP_2
 python source/pipeline/002_step_2_spacy_ner.py \
   --limit 50 \
   --taxonomy category \
@@ -127,8 +124,7 @@ python source/pipeline/002_step_2_spacy_ner.py \
 
 
 
-- STEP_3 (careful limit)
-# check post_tag
+- STEP_3
 python source/pipeline/003_step_3_wikidata_enrich.py \
   --limit 50 \
   --taxonomy category \
@@ -136,7 +132,6 @@ python source/pipeline/003_step_3_wikidata_enrich.py \
 
 
 - STEP_4
-# check post_tag
 python source/pipeline/004_step_4_breadcrumb_proposal.py \
   --limit 50 \
   --taxonomy category \
