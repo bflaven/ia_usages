@@ -13,7 +13,7 @@
 ! AI-Powered WordPress Taxonomy Migration — From Chaos to Clean SEO
 
 + Abstract
-- To move from SEO (Generative Engine Optimization) to GEO (Generative Engine Optimization) to improve the natural referencing of your website in chatbots or LLMs.
+- To move from SEO (Search Engine Optimization) to GEO (Generative Engine Optimization) to improve the natural referencing of your website in chatbots or LLMs. eg. The shift from search to response is already underway. Search on Bruno Flaven
 
 ! AI-assisted taxonomy migration for a French-English WordPress tech blog flaven.fr (~600 posts). A 4-step Python pipeline fetches WordPress terms, enriches them with spaCy NER and Wikidata, then writes structured breadcrumb proposals to MySQL. Four companion WordPress plugins handle the site-side work: exporting terms, importing validated proposals, re-categorising posts, and generating 301 redirects. Claude drove the editorial consolidation of 103 French categories into a leaner English-only taxonomy. Docker provides a local staging environment throughout. The result is an end-to-end, reproducible workflow for taxonomy migration that preserves SEO equity.
 
@@ -27,7 +27,8 @@ You can read the article on my blog.
 
 ! VIDEOS
 + VIDEO FILENAMES & DESCRIPTION
-- 001_ia_seo_ia_semantic_breadcrumb_webmcp.mov
+- 001_a_ia_seo_ia_semantic_breadcrumb_webmcp.mov
+- 001_b_ia_seo_ia_semantic_breadcrumb_webmcp.mov
 - 002_ia_seo_ia_semantic_breadcrumb_webmcp.mov
 
 + YOUTUBE VIDEO TITLES
@@ -108,7 +109,7 @@ http://localhost:8081
 
 ! STEP_4: write enriched proposals to custom tables, validate state machine (pending → approved → published), JSON breadcrumb array structure. Covers `004_step_4_breadcrumb_proposal.py` and `create_tables.sql`.
 
-+ COMMANDS FOR TAGS e.g Adolph Zukor
++ COMMANDS FOR TAGS e.g Adolph Zukor, Afghanistan, Airbnb, Algérie, Amazon...
 
 - STEP_1: check the --taxonomy post_tag, retrieve a certain amount of tags with parameter --limit
 python source/pipeline/001_step_1_list_tags_categories_wp.py \
@@ -116,8 +117,18 @@ python source/pipeline/001_step_1_list_tags_categories_wp.py \
   --taxonomy post_tag \
   --no-dry-run
 
+--- STAGING
+http://localhost:8080/tag/adolph-zukor/
+http://localhost:8080/tag/afghanistan/
+http://localhost:8080/tag/airbnb/
+http://localhost:8080/tag/algerie/
+http://localhost:8080/tag/amazon/
 
-- STEP_2: run spacy against the tags to define Name Entities Recognition for each tag
+--- PRODUCTION
+https://flaven.fr/tag/adolph-zukor/
+https://flaven.fr/tag/afghanistan/
+
+- STEP_2: run Spacy against the tags to define Name Entities Recognition for each tag
 python source/pipeline/002_step_2_spacy_ner.py \
   --limit 100 \
   --taxonomy post_tag \
@@ -126,14 +137,14 @@ python source/pipeline/002_step_2_spacy_ner.py \
 
 - STEP_3: run wikidata against the tags found to define enrich with contxt for each tag
 python source/pipeline/003_step_3_wikidata_enrich.py \
-  --limit 50 \
+  --limit 100 \
   --taxonomy post_tag \
   --no-dry-run
 
 
 - STEP_4: finalize the breadcrumb proposition for the tags found in order to implement on WordPress.
 python source/pipeline/004_step_4_breadcrumb_proposal.py \
-  --limit 50 \
+  --limit 100 \
   --taxonomy post_tag \
   --no-dry-run
 
