@@ -181,10 +181,9 @@ python source/pipeline/004_step_4_breadcrumb_proposal.py \
   --no-dry-run
 
 
-+ 2. SEMANTIC BREADCRUMB WEBMCP IN WP
++ 2. SEMANTIC BREADCRUMB IN WP
 --- OBJECTIVE 
 ! Plugin tour: taxonomy exporter, breadcrumb publisher, category migration drag-and-drop UI, primary category setter. Demo in the Docker environment. Covers `breadcrumb-migration-pipeline-wp_plugins_breadcrumb`.
-
 ! Generate `.htaccess` redirect rules from category mapping CSVs with Python. Why this step is non-negotiable for SEO. Covers `migration-python-wp-handling-migration-redirects`.
 
 
