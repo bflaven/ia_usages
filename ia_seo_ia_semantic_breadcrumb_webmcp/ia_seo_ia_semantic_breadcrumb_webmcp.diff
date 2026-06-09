@@ -217,8 +217,6 @@ http://localhost:8080/wp-admin/
 --- OBJECTIVE 
 ! Bonus/forward-looking episode: what WebMCP is, why structured content exposure matters for AI agents, how this project connects to the broader agentic web trend.
 
-
-
 + 4. REQUIREMENTS
 
 --- to manage environments
@@ -232,12 +230,6 @@ https://www.anaconda.com/
 https://www.wikidata.org/
 - It gives the ability to perform Name Entities Recognition for tags:
 https://spacy.io/
-
-
-
-
-
-
 
 --- docker (if you need to test locally on a wp before prodcution, required)
 docker with a WP installation so you can safely activate the plugins and see the enrichment of tags in action.
@@ -255,31 +247,5 @@ python -m spacy download en_core_web_trf
 # French
 python -m spacy download fr_core_news_md
 python -m spacy download fr_dep_news_trf
-
-
-
-
-! ILLUSTRATIONS
-
-- PROMPT_1 generate an image
-
-
-- PROMPT_2 generate an image
-
-
-- PROMPT_3 generate an image
-
-
-
-
-! YOUTUBE DESCRIPTIONS
-
-+ Video #1 — xxx
---- https://youtu.be/XXX
-
-
-
-+ Video #2 — xxx
---- https://youtu.be/xxx
 
 
