@@ -166,7 +166,7 @@ Optimization): making your content legible to LLMs and AI agents, not
 just to search-engine crawlers.
 
 Full article: https://wp.me/p3Vuhl-3rb
-GitHub: https://github.com/bflaven/
+GitHub: https://github.com/bflaven/ia_usages/tree/main/ia_seo_ia_semantic_breadcrumb_webmcp
 
 Continue in Part 2 (001_b): Wikidata results + breadcrumb JSON +
 WordPress plugin demo.
@@ -183,9 +183,9 @@ automation, conda Python environment, Wikidata WordPress
 
 **Best Hashtags for YouTube:**
 ```
-#WordPress #SEO #Python #spaCy #NLP #NER #Docker #taxonomy #breadcrumb
-#GEO #AI #WordPressDev #ContentStrategy #Wikidata #MachineLearning
-#SemanticSEO #PythonTutorial #WordPressPlugin #MySQL #Anaconda
+#WordPress, #SEO, #Python, #spaCy, #NLP, #NER, #Docker, #taxonomy, #breadcrumb
+#GEO, #AI, #WordPressDev, #ContentStrategy, #Wikidata, #MachineLearning
+#SemanticSEO, #PythonTutorial, #WordPressPlugin, #MySQL, #Anaconda
 ```
 
 ---
@@ -245,7 +245,7 @@ making your content usable by LLMs that reason over structured knowledge,
 not free-form HTML.
 
 Full article: https://wp.me/p3Vuhl-3rb
-GitHub: https://github.com/bflaven/
+GitHub: https://github.com/bflaven/ia_usages/tree/main/ia_seo_ia_semantic_breadcrumb_webmcp
 
 Missed Part 1? Watch the setup + Steps 1 and 2 first.
 ```
@@ -262,10 +262,10 @@ migration WordPress, spaCy Wikidata pipeline
 
 **Best Hashtags for YouTube:**
 ```
-#WordPress #SEO #Wikidata #KnowledgeGraph #breadcrumb #Python #MySQL
-#WordPressPlugin #taxonomy #schemaMarkup #GEO #AI #contentMigration
-#structuredData #Docker #SemanticSEO #JSONSchema #WordPressDev
-#NLP #TaxonomyMigration
+#WordPress, #SEO, #Wikidata, #KnowledgeGraph, #breadcrumb, #Python, #MySQL, 
+#WordPressPlugin,  #taxonomy,  #schemaMarkup,  #GEO , #AI , #contentMigration
+#structuredData , #Docker , #SemanticSEO , #JSONSchema , #WordPressDev
+#NLP , #TaxonomyMigration
 ```
 
 ---
@@ -318,7 +318,7 @@ Stack used:
 - Docker local WordPress environment
 
 Full article: https://wp.me/p3Vuhl-3rb
-GitHub: https://github.com/bflaven/
+GitHub: https://github.com/bflaven/ia_usages/tree/main/ia_seo_ia_semantic_breadcrumb_webmcp
 
 Watch Parts 1 and 2 for the Python pipeline that creates the structured
 taxonomy data this layer exposes.
@@ -335,10 +335,10 @@ AI discoverability, WordPress structured data, MCP tutorial
 
 **Best Hashtags for YouTube:**
 ```
-#WebMCP #MCP #WordPress #AI #GEO #AIAgents #SEO #structuredData
-#schemaMarkup #WordPressPlugin #LLM #GenerativeAI #ContentStrategy
-#ModelContextProtocol #AgenticWeb #WordPress2025 #SemanticWeb
-#AISearch #WordPressDev #FutureOfSEO
+#WebMCP,#MCP,#WordPress,#AI,#GEO,#AIAgents,#SEO,#structuredData,
+#schemaMarkup,#WordPressPlugin,#LLM,#GenerativeAI,#ContentStrategy,
+#ModelContextProtocol, #AgenticWeb, #WordPress2025, #SemanticWeb,
+#AISearch, #WordPressDev, #FutureOfSEO
 ```
 
 ---

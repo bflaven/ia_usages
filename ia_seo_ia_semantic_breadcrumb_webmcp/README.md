@@ -75,4 +75,16 @@ The core problem: a legacy taxonomy of 103 French-language categories had become
 Together, the directories form an end-to-end, reproducible workflow for migrating a content site's taxonomy while preserving SEO equity — combining classical NLP (spaCy), knowledge-graph enrichment (Wikidata), AI-assisted editorial judgment (Claude), and WordPress plugin development.
 
 
+## Video
+
+[WordPress Taxonomy Pipeline Pt.1: Fetch Tags + spaCy NER in Python & Docker](https://www.youtube.com/watch?v=WX5Tka6zKHQ)[![WordPress Taxonomy Pipeline Pt.1: Fetch Tags + spaCy NER in Python & Docker](001_a_ia_seo_ia_semantic_breadcrumb_webmcp.png)](https://www.youtube.com/watch?v=WX5Tka6zKHQ)
+
+[WordPress Taxonomy Pipeline Pt.2: Wikidata + Breadcrumb JSON & WP Plugin Demo](https://www.youtube.com/watch?v=CGPBNdB7ggs)[![WordPress Taxonomy Pipeline Pt.2: Wikidata + Breadcrumb JSON & WP Plugin Demo](001_b_ia_seo_ia_semantic_breadcrumb_webmcp.png)](https://www.youtube.com/watch?v=CGPBNdB7ggs)
+
+
+[WebMCP Explained: Turn Your WordPress Site into Tools for AI Agents](https://www.youtube.com/watch?v=No3-A_4TubU)[![WebMCP Explained: Turn Your WordPress Site into Tools for AI Agents](002_ia_seo_ia_semantic_breadcrumb_webmcp.png)](https://www.youtube.com/watch?v=No3-A_4TubU)
+
+
+
+
 
