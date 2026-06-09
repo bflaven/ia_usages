@@ -393,7 +393,7 @@ Semantically enriched tags are the first layer of that signal.
 Stack: Python 3.9 · Anaconda · Docker (WordPress + MySQL + phpMyAdmin)
 · spaCy en_core_web_md
 
-▶ Video (Part 1 of 2): [YouTube link]
+▶ Video (Part 1 of 2): https://youtu.be/WX5Tka6zKHQ
 📖 Full article: https://wp.me/p3Vuhl-3rb
 
 #WordPress #SEO #Python #NLP #GEO
@@ -401,7 +401,7 @@ Stack: Python 3.9 · Anaconda · Docker (WordPress + MySQL + phpMyAdmin)
 
 **Best LinkedIn Hashtags:**
 ```
-#WordPress #SEO #Python #NLP #GEO
+#IA #ClaudeCode #WordPress #SEO #Python #NLP #GEO
 ```
 
 ---
@@ -452,7 +452,7 @@ more every month as AI-first search grows.
 Stack: Python · Wikidata REST API · MySQL · breadcrumb-migration WP plugin
 · Docker
 
-▶ Video (Part 2 of 2): [YouTube link]
+▶ Video (Part 2 of 2): https://youtu.be/CGPBNdB7ggs
 📖 Full article: https://wp.me/p3Vuhl-3rb
 
 #WordPress #Wikidata #SEO #StructuredData #AI
@@ -509,7 +509,7 @@ WebMCP is one concrete infrastructure step to get there on WordPress.
 
 Stack: WordPress · WebMCP plugin · MCP (Model Context Protocol) · Docker
 
-▶ Video: [YouTube link]
+▶ Video: https://youtu.be/No3-A_4TubU
 📖 Full article: https://wp.me/p3Vuhl-3rb
 
 #WebMCP #AI #WordPress #GEO #MCP
@@ -518,4 +518,104 @@ Stack: WordPress · WebMCP plugin · MCP (Model Context Protocol) · Docker
 **Best LinkedIn Hashtags:**
 ```
 #WebMCP #AI #WordPress #GEO #MCP
+```
+
+---
+
+## LinkedIn — Single Post Covering All 3 Videos
+
+> One post to promote the full video series. Main blog post promo already published separately.
+
+**Hook / Title line:**
+```
+I turned 100 messy WordPress tags into structured, AI-readable knowledge-graph entities — automatically. 3 videos showing the full process.
+```
+
+**Full LinkedIn Post (single post, all 3 videos):**
+```
+There's nothing like selling fear, so I'll get in on it too.
+For those we do not read anymore: https://wp.me/p3Vuhl-3rb
+Leave the post and watch the videos ! It is about the shift from search to response is already underway that may amplified the zero-click traffic and the ruin of dismantling audience/advertising model 
+
+I turned ~2000 messy WordPress tags into structured, AI-readable
+knowledge-graph entities — automatically.
+
+All plugins and pipeline made with Claude Code :) Why shoudl I reinvent the wheel! Soon, the video editing will be made by Claude Code buyt for now it is still my Broken English  and my not always crystal clear explanations but at least I try.
+
+
+3 videos. One pipeline. Here is what the series covers.
+
+─────────────────────────────────────────
+📹 Video 1 — The Pipeline Starts (Steps 1 & 2)
+─────────────────────────────────────────
+
+Python connects directly to WordPress MySQL — no plugin, no REST API.
+
+Step 1 fetches 100 tags with post counts.
+Step 2 runs spaCy Named Entity Recognition on every tag:
+  "Airbnb"      → ORG
+  "Afghanistan" → GPE
+  "Adolph Zukor" → PERSON
+
+Your taxonomy has semantic identity now instead of being a list of strings.
+
+Step 3 (Wikidata enrichment) starts — 100 API calls take a few minutes,
+so I leave it running and continue in Video 2.
+
+─────────────────────────────────────────
+📹 Video 2 — The Pipeline Completes (Steps 3 & 4 + WP Plugin)
+─────────────────────────────────────────
+
+Step 3 done: every tag now carries a Wikidata Q-number, multilingual
+labels, and a human-readable description from the world's largest open
+knowledge graph.
+
+Step 4 writes structured JSON breadcrumb proposals into custom MySQL
+tables alongside WordPress core — nothing in WP core is modified:
+  [
+    {"label": "Home",         "url": "/"},
+    {"label": "Film History", "url": "/category/film-history"},
+    {"label": "Adolph Zukor", "url": "/tag/adolph-zukor"}
+  ]
+
+The breadcrumb-migration WordPress plugin then reads these proposals
+and publishes enriched breadcrumbs on tag archive pages automatically.
+Zero manual entry.
+
+─────────────────────────────────────────
+📹 Video 3 — WebMCP: The Next Layer
+─────────────────────────────────────────
+
+Clean taxonomy is only half the job.
+
+Clicks are dying. AI agents don't browse — they query structured data
+sources and synthesise answers. If your WordPress content isn't
+machine-readable, it is already invisible to this layer.
+
+WebMCP (a WordPress plugin built on the Model Context Protocol) exposes
+your posts, categories, and enriched tags as callable tools that AI
+agents can query directly. This is what GEO — Generative Engine
+Optimization — looks like in practice.
+
+─────────────────────────────────────────
+The full chain:
+
+Raw WP tags
+  → spaCy NER (semantic classification)
+  → Wikidata enrichment (canonical identity)
+  → JSON breadcrumbs in MySQL (structured proposals)
+  → WordPress plugin (published to the site)
+  → WebMCP exposure (AI-agent-readable endpoints)
+
+Stack: Python · spaCy · Wikidata · Docker · WordPress · MySQL · MCP
+
+📖 Full article: https://wp.me/p3Vuhl-3rb
+▶ Videos: https://www.youtube.com/channel/UCnUBoVx9Yai3wirPBvNpNQw
+
+#WordPress #SEO #GEO #AI #WebMCP
+```
+
+**Best LinkedIn Hashtags (single post):**
+```
+#WordPress #SEO #GEO #AI #WebMCP
 ```

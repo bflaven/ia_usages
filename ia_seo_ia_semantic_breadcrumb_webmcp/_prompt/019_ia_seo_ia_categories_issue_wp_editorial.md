@@ -1,6 +1,14 @@
+## PROMPT_7
+
+As a linkedin editor, I want to publish a single LinkedIn Post on these 3 videos . I do not want 3 posts, I want one post. I have already publish promote the post on linkedin "WebMCP, the End of Clicks, and the Semantic Upgrade Your WordPress Site Actually Needs". See https://wp.me/p3Vuhl-3rb.
+
+Append the single linkedin post the file `usecase_abstract_description_v1.md` for each video : best title for youtube, best description for youtube, best keywords and hashtags for youtube.
+
+Caution : Before coding, summarize in bullets points that you understand from the given instructions.
+
 
 ## PROMPT_6
-As a linkedin editor, I want to publish a post on these 3 videos. Ihave already publish pormote the post on linkedin "WebMCP, the End of Clicks, and the Semantic Upgrade Your WordPress Site Actually Needs". See https://wp.me/p3Vuhl-3rb. Here is the information. Be as educational as possible.
+As a linkedin editor, I want to publish a post on these 3 videos. I have already publish promote the post on linkedin "WebMCP, the End of Clicks, and the Semantic Upgrade Your WordPress Site Actually Needs". See https://wp.me/p3Vuhl-3rb. Here is the information. Be as educational as possible.
 
 Append in the file `usecase_abstract_description_v1.md` for each video : best title for youtube, best description for youtube, best keywords and hashtags for youtube.
 
