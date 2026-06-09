@@ -33,16 +33,14 @@ You can read the article on my blog.
 
 + YOUTUBE VIDEO TITLES
 
-
-
---- create the env with anaconda
+--- create the env with anaconda, mine is called tags_treatment
 
 """
 [env]
 # Conda Environment
-conda create --name ia_achats python=3.9.13
+conda create --name tags_treatment python=3.9.13
 conda info --envs
-source activate ia_achats
+source activate tags_treatment
 conda deactivate
 
 
@@ -73,10 +71,45 @@ https://www.anaconda.com/download
 
 ! WORKING VERSION
 
-- step_0
+- step_0 go to the directory
 cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_seo_ia_semantic_breadcrumb_webmcp/
 
-+ FOR TAGS
+- step_1 Activate environment
+conda activate tags_treatment
+
+
+
+- TERMINAL_2 (WP DOCKER)
+--- path
+cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_seo_ia_semantic_breadcrumb_webmcp/wp_docker
+
+--- commands
+docker compose down
+docker compose up -d
+--- source
+See https://www.docker.com/
+
+# WordPress: 
+http://localhost:8080
+# phpMyAdmin: 
+http://localhost:8081
+
+
+
++ 1. PIPELINE
+
+--- OBJECTIVE 
+! We will go through 4 steps of the pipeline to grab, enrich and generate a enriched breadcrumb for a website made with the CLMS wordpress. I works for tags and categories bu I will focus on tags.
+
+! STEP_1: connect Python to a WordPress MySQL DB, fetch all tags and categories with post counts, export to CSV. Covers `001_step_1_list_tags_categories_wp.py`.
+
+! STEP_2: run spaCy NER on taxonomy terms, detect entity types (ORG, PERSON, GPE, PRODUCT…), understand what your tags actually mean semantically. Covers `002_step_2_spacy_ner.py`.
+
+! STEP_3: query Wikidata API to attach canonical IDs, labels, and descriptions to each term. Why knowledge graphs matter for SEO. Covers `003_step_3_wikidata_enrich.py`.
+
+! STEP_4: write enriched proposals to custom tables, validate state machine (pending → approved → published), JSON breadcrumb array structure. Covers `004_step_4_breadcrumb_proposal.py` and `create_tables.sql`.
+
++ COMMANDS FOR TAGS
 
 - STEP_1: check the --taxonomy post_tag, retrieve a certain amount of tags with parameter --limit
 python source/pipeline/001_step_1_list_tags_categories_wp.py \
@@ -106,7 +139,7 @@ python source/pipeline/004_step_4_breadcrumb_proposal.py \
   --no-dry-run
 
 
-+ FOR CATEGORY
++ COMMANDS FOR CATEGORY
 
 
 - STEP_1
@@ -138,46 +171,11 @@ python source/pipeline/004_step_4_breadcrumb_proposal.py \
   --no-dry-run
 
 
-
-- TERMINAL_2 (WP DOCKER)
---- path
-cd /Users/brunoflaven/Documents/01_work/blog_articles/_ia_seo_ia_semantic_breadcrumb_webmcp/wp_docker
-
---- commands
-docker compose down
-docker compose up -d
---- source
-See https://www.docker.com/
-
-# WordPress: 
-http://localhost:8080
-# phpMyAdmin: 
-http://localhost:8081
-
-
-
-+ 1. PIPELINE
-
---- OBJECTIVE 
-! text 
-
---- STEP_1 HOW-TO FOR RAG : PREPARE DATA
-
-- Path to project root 
-
-- Navigate to project root
-
-- Activate environment
-conda activate tags_treatment
-
 + 2. SEMANTIC BREADCRUMB WEBMCP IN WP
 --- OBJECTIVE 
+! Plugin tour: taxonomy exporter, breadcrumb publisher, category migration drag-and-drop UI, primary category setter. Demo in the Docker environment. Covers `breadcrumb-migration-pipeline-wp_plugins_breadcrumb`.
 
-! text
-
---- HOW-TO
-! text
-
+! Generate `.htaccess` redirect rules from category mapping CSVs with Python. Why this step is non-negotiable for SEO. Covers `migration-python-wp-handling-migration-redirects`.
 
 
 - check on front
@@ -185,17 +183,37 @@ http://localhost:8080//
 
 
 + 3. WEBMCP IN WP
-
+--- OBJECTIVE 
+! Bonus/forward-looking episode: what WebMCP is, why structured content exposure matters for AI agents, how this project connects to the broader agentic web trend.
 
 
 
 + 4. REQUIREMENTS
 
+--- to manage environments
+- Manage WordPress locally : 
+https://www.docker.com/
+- Manage Python environment locally: 
+https://www.anaconda.com/
+
+--- What are the sources used in the pipeline to enrich tags:
+- It gives the ability to give context information and disambiguation: 
+https://www.wikidata.org/
+- It gives the ability to perform Name Entities Recognition for tags:
+https://spacy.io/
+
+
+
+
+
+
+
 --- docker (if you need to test locally on a wp before prodcution, required)
 docker with a WP installation so you can safely activate the plugins and see the enrichment of tags in action.
 
 --- env (python managed via anaconda, required)
-conda activate tags_treatment          # Python 3.11
+# Python 3.11
+conda activate tags_treatment          
 
 
 --- spaCy models (for some operation in the rag, required)
