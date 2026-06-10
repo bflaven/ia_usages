@@ -7,11 +7,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function bm_render_tabs( string $base_url, string $current ): void {
 	$tabs = [
-		'proposals' => __( 'Proposals', 'breadcrumb-migration' ),
-		'delta'     => __( 'Delta — New Tags', 'breadcrumb-migration' ),
-		'import'    => __( 'Import & Export', 'breadcrumb-migration' ),
-		'settings'  => __( 'Settings', 'breadcrumb-migration' ),
-		'danger'    => __( 'Danger Zone', 'breadcrumb-migration' ),
+		'proposals'    => __( 'Proposals', 'breadcrumb-migration' ),
+		'delta'        => __( 'Delta — New Tags', 'breadcrumb-migration' ),
+		'bulk_assign'  => __( 'Bulk Assign', 'breadcrumb-migration' ),
+		'import'       => __( 'Import & Export', 'breadcrumb-migration' ),
+		'settings'     => __( 'Settings', 'breadcrumb-migration' ),
+		'danger'       => __( 'Danger Zone', 'breadcrumb-migration' ),
 	];
 	echo '<nav class="nav-tab-wrapper bm-tab-nav">';
 	foreach ( $tabs as $slug => $label ) {
@@ -51,6 +52,8 @@ function bm_render_admin_page(): void {
 		<?php
 		if ( $current_tab === 'delta' ) {
 			bm_render_tab_delta();
+		} elseif ( $current_tab === 'bulk_assign' ) {
+			bm_render_tab_bulk_assign();
 		} elseif ( $current_tab === 'import' ) {
 			bm_render_tab_import();
 		} elseif ( $current_tab === 'settings' ) {
@@ -193,6 +196,59 @@ function bm_render_tab_delta(): void {
 			<?php esc_html_e( 'Scan for new tags', 'breadcrumb-migration' ); ?>
 		</button>
 		<div id="bm-delta-results" style="margin-top: 16px;"></div>
+	</div>
+	<?php
+}
+
+// ── Bulk Assign tab ────────────────────────────────────────────────────────────
+
+function bm_render_tab_bulk_assign(): void {
+	$all_cats = get_terms( [
+		'taxonomy'   => 'category',
+		'hide_empty' => false,
+		'orderby'    => 'name',
+		'number'     => 0,
+	] );
+	?>
+	<div class="bm-section">
+		<h2><?php esc_html_e( 'Bulk Assign Category', 'breadcrumb-migration' ); ?></h2>
+		<p class="description">
+			<?php esc_html_e( 'Paste keywords (one per line or comma-separated). Select a parent category, then click Assign. Each keyword will be matched by name against post_tag terms in the migration database and assigned the selected category as breadcrumb parent.', 'breadcrumb-migration' ); ?>
+		</p>
+
+		<div class="bm-bulk-form">
+			<div class="bm-bulk-form__field">
+				<label for="bm-bulk-keywords">
+					<strong><?php esc_html_e( 'Keywords', 'breadcrumb-migration' ); ?></strong>
+					<span class="description"><?php esc_html_e( 'One per line or comma-separated', 'breadcrumb-migration' ); ?></span>
+				</label>
+				<textarea id="bm-bulk-keywords" rows="14" class="bm-bulk-keywords"
+					placeholder="<?php esc_attr_e( 'One keyword per line, e.g.&#10;Adolph Zukor&#10;Brand content&#10;Hollywood', 'breadcrumb-migration' ); ?>"></textarea>
+			</div>
+
+			<div class="bm-bulk-form__field">
+				<label for="bm-bulk-category">
+					<strong><?php esc_html_e( 'Parent Category', 'breadcrumb-migration' ); ?></strong>
+					<span class="description"><?php esc_html_e( 'Will be set as breadcrumb parent for all matched keywords', 'breadcrumb-migration' ); ?></span>
+				</label>
+				<select id="bm-bulk-category" class="bm-bulk-category">
+					<option value="0"><?php esc_html_e( '— select a category —', 'breadcrumb-migration' ); ?></option>
+					<?php foreach ( $all_cats as $cat ) : ?>
+						<option value="<?php echo esc_attr( $cat->term_id ); ?>">
+							<?php echo esc_html( $cat->name ); ?>
+						</option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+
+			<div class="bm-bulk-form__actions">
+				<button type="button" class="button button-primary bm-btn-bulk-assign">
+					<?php esc_html_e( 'Assign Category to Selected Keywords', 'breadcrumb-migration' ); ?>
+				</button>
+			</div>
+		</div>
+
+		<div id="bm-bulk-results" style="display:none;" class="bm-bulk-results"></div>
 	</div>
 	<?php
 }
@@ -447,10 +503,25 @@ function bm_render_term_card( object $row ): void {
 							<th><?php esc_html_e( 'Name', 'breadcrumb-migration' ); ?></th>
 							<td class="bm-editable" data-field="proposed_name"><?php echo esc_html( $row->proposed_name ?? '—' ); ?></td>
 						</tr>
-						<tr>
-							<th><?php esc_html_e( 'Slug', 'breadcrumb-migration' ); ?></th>
-							<td class="bm-editable" data-field="proposed_slug"><code><?php echo esc_html( $row->proposed_slug ?? '—' ); ?></code></td>
-						</tr>
+<!-- V2 -->	
+		<tr>
+	<th><?php esc_html_e( 'Slug', 'breadcrumb-migration' ); ?></th>
+	<td class="bm-editable" data-field="proposed_slug">
+		<?php if ( ! empty( $row->proposed_slug ) ) : ?>
+			<code><?php echo esc_html( $row->proposed_slug ); ?></code>
+			<?php
+			$tag_url = home_url( '/tag/' . trailingslashit( sanitize_title( $row->proposed_slug ) ) );
+			?>
+			&nbsp;
+			<a href="<?php echo esc_url( $tag_url ); ?>" target="_blank" rel="noopener noreferrer">
+				<?php esc_html_e( 'View tag', 'breadcrumb-migration' ); ?>
+			</a>
+		<?php else : ?>
+			<code>&mdash;</code>
+		<?php endif; ?>
+	</td>
+</tr>				
+
 						<tr>
 							<th><?php esc_html_e( 'spaCy', 'breadcrumb-migration' ); ?></th>
 							<td><?php echo $row->spacy_entity ? '<span class="bm-entity">' . esc_html( $row->spacy_entity ) . '</span>' : '—'; ?></td>

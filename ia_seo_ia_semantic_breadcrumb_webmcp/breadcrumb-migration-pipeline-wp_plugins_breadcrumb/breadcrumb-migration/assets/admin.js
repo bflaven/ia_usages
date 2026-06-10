@@ -314,6 +314,150 @@
 	} );
 
 
+	// ── Bulk Assign ───────────────────────────────────────────────────────────
+
+	$( document ).on( 'click', '.bm-btn-bulk-assign', function () {
+		const $btn     = $( this );
+		const keywords = $( '#bm-bulk-keywords' ).val().trim();
+		const catId    = $( '#bm-bulk-category' ).val();
+		const $results = $( '#bm-bulk-results' );
+
+		if ( ! keywords ) {
+			flashNotice( 'Enter at least one keyword.', 'error' );
+			return;
+		}
+		if ( ! catId || catId === '0' ) {
+			flashNotice( 'Select a parent category.', 'error' );
+			return;
+		}
+
+		$btn.addClass( 'bm-loading' ).text( 'Assigning…' );
+		$results.hide().empty();
+
+		post( 'bm_bulk_assign', { keywords, category_id: catId } )
+			.done( function ( res ) {
+				if ( res.success ) {
+					const { results, updated, skipped, total, category } = res.data;
+
+					let html = `<h3 class="bm-bulk-results__title">Results — assigned to <strong>${ escHtml( category ) }</strong></h3>`;
+					html += `<p class="bm-bulk-results__summary">`;
+					html += `<span class="bm-bulk-ok">${ updated } updated</span> · `;
+					html += `<span class="bm-bulk-skip">${ skipped } skipped</span> · `;
+					html += `${ total } total</p>`;
+					html += '<table class="widefat striped bm-bulk-table"><thead><tr>';
+					html += '<th class="bm-bulk-col-cb"><label><input type="checkbox" id="bm-select-all-bulk"> All</label></th>';
+					html += '<th>Keyword</th><th>Status</th><th>Breadcrumb</th>';
+					html += '</tr></thead><tbody>';
+
+					let hasSelectable = false;
+
+					results.forEach( function ( r ) {
+						const cls = r.status === 'updated'   ? 'bm-bulk-row--ok'
+								  : r.status === 'created'   ? 'bm-bulk-row--created'
+								  : r.status === 'not_found' ? 'bm-bulk-row--skip'
+								  : 'bm-bulk-row--err';
+						const label = r.status === 'updated'   ? 'Updated'
+									: r.status === 'created'   ? 'Created'
+									: r.status === 'not_found' ? 'Not found'
+									: 'Error';
+						const canSelect = ( r.status === 'updated' || r.status === 'created' ) && r.proposal_id;
+						if ( canSelect ) hasSelectable = true;
+						html += `<tr class="${ cls }">`;
+						html += `<td class="bm-bulk-col-cb">${ canSelect
+							? `<input type="checkbox" class="bm-bulk-publish-cb" value="${ escHtml( String( r.proposal_id ) ) }" checked>`
+							: '' }</td>`;
+						html += `<td><strong>${ escHtml( r.keyword ) }</strong></td>`;
+						html += `<td><span class="bm-bulk-status bm-bulk-status--${ escHtml( r.status ) }">${ label }</span></td>`;
+						html += `<td>${ r.breadcrumb
+							? escHtml( r.breadcrumb )
+							: ( r.message ? `<em>${ escHtml( r.message ) }</em>` : '—' ) }</td>`;
+						html += '</tr>';
+					} );
+
+					html += '</tbody></table>';
+
+					if ( hasSelectable ) {
+						html += `<div class="bm-bulk-publish-actions">
+							<button type="button" class="button button-primary bm-btn-bulk-publish">
+								Publish Selected to WordPress
+							</button>
+							<span class="bm-bulk-publish-note description">
+								Approves &amp; publishes each selected tag — breadcrumb goes live on the frontend.
+							</span>
+						</div>`;
+					}
+
+					$results.html( html ).slideDown( 200 );
+					flashNotice( `Bulk assign done: ${ updated } updated, ${ skipped } skipped.` );
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+				}
+			} )
+			.fail( () => flashNotice( i18n.error, 'error' ) )
+			.always( () => $btn.removeClass( 'bm-loading' ).text( 'Assign Category to Selected Keywords' ) );
+	} );
+
+	// ── Bulk Publish — select all ─────────────────────────────────────────────
+
+	$( document ).on( 'change', '#bm-select-all-bulk', function () {
+		const checked = $( this ).prop( 'checked' );
+		$( '#bm-bulk-results .bm-bulk-publish-cb:not(:disabled)' ).prop( 'checked', checked );
+	} );
+
+	// ── Bulk Publish — publish selected ──────────────────────────────────────
+
+	$( document ).on( 'click', '.bm-btn-bulk-publish', function () {
+		const $btn     = $( this );
+		const $results = $( '#bm-bulk-results' );
+
+		const proposalIds = [];
+		$results.find( '.bm-bulk-publish-cb:checked' ).each( function () {
+			proposalIds.push( $( this ).val() );
+		} );
+
+		if ( ! proposalIds.length ) {
+			flashNotice( 'Select at least one keyword to publish.', 'error' );
+			return;
+		}
+
+		if ( ! window.confirm(
+			`Publish ${ proposalIds.length } tag(s) to WordPress? This will update the live taxonomy and make breadcrumbs available on the frontend.`
+		) ) return;
+
+		$btn.addClass( 'bm-loading' ).text( 'Publishing…' );
+
+		post( 'bm_bulk_publish', { proposal_ids: proposalIds } )
+			.done( function ( res ) {
+				if ( res.success ) {
+					const { results, published, errors } = res.data;
+					results.forEach( function ( r ) {
+						if ( r.status === 'published' ) {
+							const $cb  = $results.find( `.bm-bulk-publish-cb[value="${ r.proposal_id }"]` );
+							const $row = $cb.closest( 'tr' );
+							$cb.prop( 'disabled', true );
+							$row.find( '.bm-bulk-status' )
+								.attr( 'class', 'bm-bulk-status bm-bulk-status--published' )
+								.text( 'Published' );
+							$row.removeClass( 'bm-bulk-row--ok bm-bulk-row--created' )
+								.addClass( 'bm-bulk-row--published' );
+						}
+					} );
+					$btn.removeClass( 'bm-loading' ).text( 'Publish Selected to WordPress' );
+					if ( errors === 0 ) {
+						$btn.prop( 'disabled', true ).addClass( 'bm-btn-done' );
+					}
+					flashNotice( `Bulk publish done: ${ published } published${ errors ? ', ' + errors + ' error(s).' : '.' }` );
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+					$btn.removeClass( 'bm-loading' ).text( 'Publish Selected to WordPress' );
+				}
+			} )
+			.fail( () => {
+				flashNotice( i18n.error, 'error' );
+				$btn.removeClass( 'bm-loading' ).text( 'Publish Selected to WordPress' );
+			} );
+	} );
+
 	// ── Delta — New Tags ──────────────────────────────────────────────────────
 
 	function escHtml( str ) {

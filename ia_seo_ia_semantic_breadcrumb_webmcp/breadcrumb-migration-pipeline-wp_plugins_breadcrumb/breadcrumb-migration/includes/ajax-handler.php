@@ -363,6 +363,238 @@ function bm_ajax_add_delta_term(): void {
 	] );
 }
 
+// ── Bulk Assign category to keywords ──────────────────────────────────────────
+
+function bm_ajax_bulk_assign(): void {
+	bm_verify_request();
+
+	$raw_keywords = sanitize_textarea_field( $_POST['keywords'] ?? '' );
+	$category_id  = absint( $_POST['category_id'] ?? 0 );
+
+	if ( ! $raw_keywords ) {
+		wp_send_json_error( [ 'message' => 'No keywords provided.' ] );
+	}
+	if ( ! $category_id ) {
+		wp_send_json_error( [ 'message' => 'No category selected.' ] );
+	}
+
+	$cat = get_term( $category_id, 'category' );
+	if ( ! $cat || is_wp_error( $cat ) ) {
+		wp_send_json_error( [ 'message' => 'Category not found.' ] );
+	}
+
+	// Support newline and/or comma separation
+	$lines    = preg_split( '/[\r\n,]+/', $raw_keywords );
+	$keywords = [];
+	foreach ( $lines as $line ) {
+		$kw = trim( $line );
+		if ( $kw !== '' ) {
+			$keywords[] = $kw;
+		}
+	}
+	$keywords = array_unique( $keywords );
+
+	if ( empty( $keywords ) ) {
+		wp_send_json_error( [ 'message' => 'No valid keywords after parsing.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$results = [];
+	$updated = 0;
+	$skipped = 0;
+
+	foreach ( $keywords as $keyword ) {
+		$term_row = $wpdb->get_row( $wpdb->prepare(
+			"SELECT id, original_name FROM {$t['terms']}
+			 WHERE taxonomy = 'post_tag' AND LOWER(original_name) = LOWER(%s)
+			 LIMIT 1",
+			$keyword
+		) );
+
+		if ( ! $term_row ) {
+			$results[] = [
+				'keyword' => $keyword,
+				'status'  => 'not_found',
+				'message' => 'Not found in migration DB.',
+			];
+			$skipped++;
+			continue;
+		}
+
+		$term_internal_id = (int) $term_row->id;
+		$crumbs           = [ 'Home', $cat->name, $term_row->original_name ];
+		$breadcrumb_json  = wp_json_encode( $crumbs );
+
+		$proposal = $wpdb->get_row( $wpdb->prepare(
+			"SELECT id FROM {$t['proposals']} WHERE term_id = %d LIMIT 1",
+			$term_internal_id
+		) );
+
+		$result_proposal_id = 0;
+
+		if ( $proposal ) {
+			$ok = $wpdb->update(
+				$t['proposals'],
+				[
+					'proposed_parent_id'  => $category_id,
+					'proposed_breadcrumb' => $breadcrumb_json,
+				],
+				[ 'id' => (int) $proposal->id ]
+			);
+			$status = ( $ok !== false ) ? 'updated' : 'error';
+			if ( $status === 'updated' ) {
+				$result_proposal_id = (int) $proposal->id;
+			}
+		} else {
+			$ok = $wpdb->insert( $t['proposals'], [
+				'term_id'             => $term_internal_id,
+				'proposed_name'       => $term_row->original_name,
+				'proposed_slug'       => sanitize_title( $term_row->original_name ),
+				'proposed_parent_id'  => $category_id,
+				'proposed_language'   => 'fr',
+				'proposed_breadcrumb' => $breadcrumb_json,
+				'validation_state'    => 'pending',
+			] );
+			$status = ( $ok !== false ) ? 'created' : 'error';
+			if ( $status === 'created' ) {
+				$result_proposal_id = (int) $wpdb->insert_id;
+			}
+		}
+
+		if ( $status !== 'error' ) {
+			$updated++;
+		} else {
+			$skipped++;
+		}
+
+		$results[] = [
+			'keyword'     => $keyword,
+			'status'      => $status,
+			'breadcrumb'  => implode( ' › ', $crumbs ),
+			'proposal_id' => $result_proposal_id,
+		];
+	}
+
+	wp_send_json_success( [
+		'results'  => $results,
+		'updated'  => $updated,
+		'skipped'  => $skipped,
+		'total'    => count( $keywords ),
+		'category' => $cat->name,
+	] );
+}
+
+// ── Bulk Publish (approve + publish in one step) ──────────────────────────────
+
+function bm_ajax_bulk_publish(): void {
+	bm_verify_request();
+
+	$raw_ids = isset( $_POST['proposal_ids'] ) ? (array) $_POST['proposal_ids'] : [];
+	if ( empty( $raw_ids ) ) {
+		wp_send_json_error( [ 'message' => 'No proposal IDs provided.' ] );
+	}
+
+	$proposal_ids = array_values( array_filter( array_map( 'absint', $raw_ids ) ) );
+	if ( empty( $proposal_ids ) ) {
+		wp_send_json_error( [ 'message' => 'No valid proposal IDs.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$results   = [];
+	$published = 0;
+	$errors    = 0;
+
+	foreach ( $proposal_ids as $proposal_id ) {
+		// Approve
+		$wpdb->update(
+			$t['proposals'],
+			[
+				'validation_state' => 'approved',
+				'validated_by'     => get_current_user_id(),
+				'validated_at'     => current_time( 'mysql' ),
+			],
+			[ 'id' => $proposal_id ]
+		);
+
+		// Load proposal + linked term
+		$row = $wpdb->get_row( $wpdb->prepare(
+			"SELECT p.*, t.wp_term_id, t.taxonomy, t.id AS term_internal_id
+			 FROM {$t['proposals']} p
+			 JOIN {$t['terms']} t ON t.id = p.term_id
+			 WHERE p.id = %d",
+			$proposal_id
+		) );
+
+		if ( ! $row ) {
+			$results[] = [ 'proposal_id' => $proposal_id, 'status' => 'error', 'message' => 'Proposal not found.' ];
+			$errors++;
+			continue;
+		}
+
+		$old_term = get_term( (int) $row->wp_term_id, $row->taxonomy );
+		if ( is_wp_error( $old_term ) || ! $old_term ) {
+			$results[] = [ 'proposal_id' => $proposal_id, 'status' => 'error', 'message' => 'WP term not found.' ];
+			$errors++;
+			continue;
+		}
+
+		$old_url     = get_term_link( $old_term );
+		$update_args = [ 'name' => $row->proposed_name ];
+		if ( ! empty( $row->proposed_slug ) ) {
+			$update_args['slug'] = $row->proposed_slug;
+		}
+		if ( ! empty( $row->proposed_description ) ) {
+			$update_args['description'] = $row->proposed_description;
+		}
+
+		$result = wp_update_term( (int) $row->wp_term_id, $row->taxonomy, $update_args );
+		if ( is_wp_error( $result ) ) {
+			$results[] = [ 'proposal_id' => $proposal_id, 'status' => 'error', 'message' => $result->get_error_message() ];
+			$errors++;
+			continue;
+		}
+
+		$new_term = get_term( (int) $row->wp_term_id, $row->taxonomy );
+		$new_url  = get_term_link( $new_term );
+
+		if ( ! is_wp_error( $old_url ) && ! is_wp_error( $new_url ) && $old_url !== $new_url ) {
+			$wpdb->insert( $t['redirects'], [
+				'original_url'  => $old_url,
+				'new_url'       => $new_url,
+				'term_id'       => (int) $row->term_internal_id,
+				'taxonomy'      => $row->taxonomy,
+				'redirect_type' => '301',
+				'is_active'     => 1,
+			] );
+		}
+
+		$wpdb->update(
+			$t['terms'],
+			[ 'status' => 'published', 'updated_at' => current_time( 'mysql' ) ],
+			[ 'id' => (int) $row->term_internal_id ]
+		);
+
+		$results[] = [
+			'proposal_id' => $proposal_id,
+			'status'      => 'published',
+			'name'        => $row->proposed_name,
+			'new_url'     => is_wp_error( $new_url ) ? '' : $new_url,
+		];
+		$published++;
+	}
+
+	wp_send_json_success( [
+		'results'   => $results,
+		'published' => $published,
+		'errors'    => $errors,
+		'total'     => count( $proposal_ids ),
+	] );
+}
+
 // ── Publish to WordPress ───────────────────────────────────────────────────────
 
 function bm_ajax_publish_term(): void {

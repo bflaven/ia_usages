@@ -402,6 +402,14 @@ Home > Tags > 17 octobre 1961      ← "Tags" links to /tags/ (WP page with slug
 
 ## Changelog
 
+### v1.12.0 — 2026-06-10
+- **Feature**: **Bulk Publish** step in the Bulk Assign tab — after assigning keywords to a category, the results table now shows a checkbox on the right of each successfully `updated` or `created` row; a **Select All** checkbox in the column header toggles all checkboxes at once
+- A **"Publish Selected to WordPress"** button appears below the results table whenever there is at least one selectable row; clicking it sends all checked proposal IDs to the new `bm_bulk_publish` AJAX endpoint
+- `bm_ajax_bulk_publish()` in `ajax-handler.php`: new endpoint that, for each proposal ID, sets `validation_state = 'approved'`, calls `wp_update_term()`, stores a 301 redirect if the slug changed, and marks `status = 'published'` in `wp_breadcrumb_terms` — making the breadcrumb available on the frontend in one step
+- `bm_ajax_bulk_assign()` in `ajax-handler.php`: now includes `proposal_id` in each result item so the JS can wire up checkboxes
+- `admin.js`: bulk-assign results handler updated — checkbox column with Select All logic; `bm-btn-bulk-publish` click handler collects checked IDs, confirms, posts to `bm_bulk_publish`, then updates each published row's status badge to "Published" inline without page reload
+- `admin.css`: added `.bm-bulk-status--published`, `.bm-bulk-row--published`, `.bm-bulk-col-cb`, `.bm-bulk-publish-actions`, `.bm-bulk-publish-note` styles
+
 ### v1.10.0 — 2026-05-13
 - **Feature**: **Full spaCy NER entity list** — extended from 6 to 18 types everywhere the select appears: Proposals edit form, Delta new-tag form, and the AJAX allowlist validator
 - New entities added: `NORP`, `FAC`, `WORK_OF_ART`, `LAW`, `LANGUAGE`, `DATE`, `TIME`, `PERCENT`, `MONEY`, `QUANTITY`, `ORDINAL`, `CARDINAL`
