@@ -595,6 +595,156 @@ function bm_ajax_bulk_publish(): void {
 	] );
 }
 
+// ── Fetch Wikidata description by QID (Bulk Description tab) ─────────────────
+
+function bm_ajax_fetch_wikidata_description(): void {
+	bm_verify_request();
+
+	$proposal_id = absint( $_POST['proposal_id'] ?? 0 );
+	$raw_id      = sanitize_text_field( $_POST['wikidata_id'] ?? '' );
+	$wikidata_id = strtoupper( trim( $raw_id ) );
+
+	if ( ! $proposal_id || ! $wikidata_id ) {
+		wp_send_json_error( [ 'message' => 'Missing parameters.' ] );
+	}
+
+	if ( ! preg_match( '/^Q\d+$/', $wikidata_id ) ) {
+		wp_send_json_error( [ 'message' => 'Invalid Wikidata ID. Use Q followed by digits (e.g. Q42).' ] );
+	}
+
+	$bm_settings = get_option( 'bm_settings', [] );
+	$lang        = $bm_settings['wikidata_lang'] ?? 'en';
+
+	$api_url = add_query_arg( [
+		'action'    => 'wbgetentities',
+		'ids'       => $wikidata_id,
+		'props'     => 'descriptions|labels',
+		'languages' => $lang . '|en',
+		'format'    => 'json',
+	], 'https://www.wikidata.org/w/api.php' );
+
+	$response = wp_remote_get( $api_url, [
+		'timeout'    => 8,
+		'user-agent' => 'BreadcrumbMigrationPlugin/1.13.0 (WordPress; ' . get_bloginfo( 'url' ) . ')',
+	] );
+
+	if ( is_wp_error( $response ) ) {
+		wp_send_json_error( [ 'message' => 'Wikidata unreachable: ' . $response->get_error_message() ] );
+	}
+
+	$body        = json_decode( wp_remote_retrieve_body( $response ), true );
+	$entity_data = $body['entities'][ $wikidata_id ] ?? null;
+
+	if ( ! $entity_data || isset( $entity_data['missing'] ) ) {
+		wp_send_json_error( [ 'message' => 'Entity not found on Wikidata.' ] );
+	}
+
+	$description = $entity_data['descriptions'][ $lang ]['value']
+		?? $entity_data['descriptions']['en']['value']
+		?? '';
+
+	$label = $entity_data['labels'][ $lang ]['value']
+		?? $entity_data['labels']['en']['value']
+		?? '';
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$wpdb->update(
+		$t['proposals'],
+		[
+			'wikidata_id'          => $wikidata_id,
+			'wikidata_description' => $description ?: null,
+			'wikidata_label'       => $label ?: null,
+		],
+		[ 'id' => $proposal_id ]
+	);
+
+	wp_send_json_success( [
+		'proposal_id' => $proposal_id,
+		'wikidata_id' => $wikidata_id,
+		'description' => $description,
+		'label'       => $label,
+	] );
+}
+
+// ── Bulk save Wikidata description → proposed_description + WP term ───────────
+
+function bm_ajax_bulk_save_description(): void {
+	bm_verify_request();
+
+	$raw_ids = isset( $_POST['proposal_ids'] ) ? (array) $_POST['proposal_ids'] : [];
+	if ( empty( $raw_ids ) ) {
+		wp_send_json_error( [ 'message' => 'No proposal IDs provided.' ] );
+	}
+
+	$proposal_ids = array_values( array_filter( array_map( 'absint', $raw_ids ) ) );
+	if ( empty( $proposal_ids ) ) {
+		wp_send_json_error( [ 'message' => 'No valid proposal IDs.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$results = [];
+	$saved   = 0;
+	$errors  = 0;
+
+	foreach ( $proposal_ids as $proposal_id ) {
+		$row = $wpdb->get_row( $wpdb->prepare(
+			"SELECT p.wikidata_description, t.wp_term_id, t.taxonomy
+			   FROM {$t['proposals']} p
+			   JOIN {$t['terms']} t ON t.id = p.term_id
+			  WHERE p.id = %d AND p.validation_state = 'approved'",
+			$proposal_id
+		) );
+
+		if ( ! $row ) {
+			$results[] = [ 'proposal_id' => $proposal_id, 'status' => 'error', 'message' => 'Proposal not found or not approved.' ];
+			$errors++;
+			continue;
+		}
+
+		if ( empty( $row->wikidata_description ) ) {
+			$results[] = [ 'proposal_id' => $proposal_id, 'status' => 'skipped', 'message' => 'No Wikidata description to save.' ];
+			$errors++;
+			continue;
+		}
+
+		$ok = $wpdb->update(
+			$t['proposals'],
+			[ 'proposed_description' => $row->wikidata_description ],
+			[ 'id' => $proposal_id ]
+		);
+
+		if ( $ok === false ) {
+			$results[] = [ 'proposal_id' => $proposal_id, 'status' => 'error', 'message' => 'DB update failed.' ];
+			$errors++;
+			continue;
+		}
+
+		$result = wp_update_term( (int) $row->wp_term_id, $row->taxonomy, [
+			'description' => $row->wikidata_description,
+		] );
+
+		if ( is_wp_error( $result ) ) {
+			$results[] = [ 'proposal_id' => $proposal_id, 'status' => 'error', 'message' => 'WP sync failed: ' . $result->get_error_message() ];
+			$errors++;
+			continue;
+		}
+
+		$results[] = [ 'proposal_id' => $proposal_id, 'status' => 'saved', 'description' => $row->wikidata_description ];
+		$saved++;
+	}
+
+	wp_send_json_success( [
+		'results' => $results,
+		'saved'   => $saved,
+		'errors'  => $errors,
+		'total'   => count( $proposal_ids ),
+	] );
+}
+
 // ── Publish to WordPress ───────────────────────────────────────────────────────
 
 function bm_ajax_publish_term(): void {

@@ -766,6 +766,105 @@
 	color: #50575e;
 }
 
+/* ── Bulk Description tab ──────────────────────────────────────────────────── */
+
+.bm-bulk-desc-caution {
+	margin: 0 0 16px !important;
+}
+
+.bm-bulk-desc-actions-top,
+.bm-bulk-desc-actions-bottom {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin-bottom: 12px;
+}
+
+.bm-bulk-desc-actions-bottom {
+	margin-top: 14px;
+	margin-bottom: 0;
+	padding: 12px 14px;
+	background: #f0f6fc;
+	border: 1px solid #c8dff0;
+	border-radius: 4px;
+}
+
+.bm-bulk-desc-table {
+	margin-top: 4px;
+	font-size: 13px;
+}
+
+.bm-bulk-desc-table td,
+.bm-bulk-desc-table th {
+	padding: 8px 10px;
+	vertical-align: top;
+}
+
+.bm-desc-td-wikidata-id {
+	white-space: nowrap;
+}
+
+.bm-desc-wikidata-id-wrap {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	flex-wrap: nowrap;
+}
+
+.bm-desc-wikidata-id {
+	width: 80px;
+	height: 26px;
+	padding: 0 6px;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	font-size: 12px;
+	font-family: monospace;
+	box-sizing: border-box;
+}
+
+.bm-desc-wikidata-text {
+	color: #50575e;
+	font-size: 12px;
+	font-style: italic;
+	max-width: 300px;
+	word-break: break-word;
+}
+
+.bm-desc-actual-text {
+	font-size: 12px;
+	max-width: 300px;
+	word-break: break-word;
+}
+
+.bm-bulk-desc-row--saved { background: #f0fdf4; }
+.bm-bulk-desc-row--err   { background: #fef2f2; }
+
+.bm-bulk-desc-filters {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+	padding: 10px 14px;
+	background: #f6f7f7;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	font-size: 13px;
+}
+
+.bm-bulk-desc-filters label {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	font-weight: 400;
+	cursor: pointer;
+}
+
+.bm-bulk-desc-filters strong {
+	white-space: nowrap;
+}
+
 /* ── Loading state ─────────────────────────────────────────────────────────── */
 
 .bm-loading {

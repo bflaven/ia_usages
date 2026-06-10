@@ -181,6 +181,8 @@ http://localhost:8080/wp-admin/admin.php?page=breadcrumb-migration
 | **Import** | `admin_post_bm_import` | Upload `.json` or `.csv` from pipeline Step 4 → upsert terms + proposals. |
 | **Export Proposals / Terms / Redirects** | `admin_post_bm_export` | Download table as CSV (`bm_{table}_{date}.csv`). |
 | **Empty all tables** | `bm_empty_tables` | DELETE proposals → redirects → terms (FK-safe). Requires typing `CONFIRM`. |
+| **Fetch** _(Bulk Description)_ | `bm_fetch_wikidata_description` | Looks up a specific QID via `wbgetentities`, updates `wikidata_id` + `wikidata_description` + `wikidata_label` in DB, refreshes cell live. Respects configured language with English fallback. |
+| **Save Description to WordPress** _(Bulk Description)_ | `bm_bulk_save_description` | For each selected approved proposal: copies `wikidata_description` → `proposed_description` in DB, calls `wp_update_term()` to push description to live WP tag. |
 
 ### Tabs
 
@@ -188,6 +190,8 @@ http://localhost:8080/wp-admin/admin.php?page=breadcrumb-migration
 |---|---|---|
 | **Proposals** | `?page=breadcrumb-migration` | Two-column card list with filters and pagination |
 | **Delta — New Tags** | `?page=breadcrumb-migration&tab=delta` | Scan, Wikidata-search, and manually enrich tags added after pipeline ran |
+| **Bulk Assign** | `?page=breadcrumb-migration&tab=bulk_assign` | Assign a parent category to a list of keywords in one step |
+| **Bulk Description** | `?page=breadcrumb-migration&tab=bulk_description` | Review, fetch, and save Wikidata descriptions to WordPress for all approved tags |
 | **Import & Export** | `?page=breadcrumb-migration&tab=import` | File upload form + 3 CSV/JSON download buttons |
 | **Settings** | `?page=breadcrumb-migration&tab=settings` | Plugin options: Wikidata search language |
 | **Danger Zone** | `?page=breadcrumb-migration&tab=danger` | Empty all tables action with row counts |
@@ -401,6 +405,18 @@ Home > Tags > 17 octobre 1961      ← "Tags" links to /tags/ (WP page with slug
 ---
 
 ## Changelog
+
+### v1.13.0 — 2026-06-10
+- **Feature**: **Bulk Description** tab — new tab placed after "Bulk Assign"; lists all approved proposals and lets admin review, fetch, and save Wikidata descriptions to WordPress in bulk
+- Table columns: checkbox (with Select All in header), editable Wikidata ID with Fetch button and ↗ Wikidata link, Slug with "View tag" link, Description from Wikidata, Actual Description (current `proposed_description`)
+- **Wikidata ID edit + Fetch**: user can correct the Wikidata ID inline; clicking "Fetch" calls the new `bm_ajax_fetch_wikidata_description()` handler which queries `wbgetentities` for the specific QID, updates `wikidata_id`, `wikidata_description`, and `wikidata_label` in `wp_breadcrumb_proposals`, and refreshes the cell live — respects the configured `wikidata_lang` with English fallback
+- **Save Description to WordPress**: select rows with checkboxes, click button → `bm_ajax_bulk_save_description()` copies `wikidata_description` → `proposed_description` in DB for each selected proposal, then calls `wp_update_term()` to push the description to the live WP tag — result is immediately visible in WP Admin → Edit Tag → Description field and on the frontend tag archive page
+- Rows with empty `wikidata_description` are skipped with error status; saved rows turn green, skipped/error rows turn red
+- `admin-page.php`: new `bulk_description` tab entry + `bm_render_tab_bulk_description()` function
+- `ajax-handler.php`: `bm_ajax_fetch_wikidata_description()` and `bm_ajax_bulk_save_description()`
+- `breadcrumb-migration.php`: two new `wp_ajax_*` hooks registered; version bumped to `1.13.0`
+- `admin.js`: select-all, fetch, and bulk-save handlers for Bulk Description tab
+- `admin.css`: `.bm-bulk-desc-*` styles
 
 ### v1.12.0 — 2026-06-10
 - **Feature**: **Bulk Publish** step in the Bulk Assign tab — after assigning keywords to a category, the results table now shows a checkbox on the right of each successfully `updated` or `created` row; a **Select All** checkbox in the column header toggles all checkboxes at once

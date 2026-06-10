@@ -458,6 +458,139 @@
 			} );
 	} );
 
+	// ── Bulk Description tab ─────────────────────────────────────────────────
+
+	// ── Bulk Description — row filter ────────────────────────────────────────
+
+	function bmDescApplyFilters() {
+		const filterWdId     = $( '#bm-filter-wd-id-empty' ).prop( 'checked' );
+		const filterWdDesc   = $( '#bm-filter-wd-desc-empty' ).prop( 'checked' );
+		const filterActDesc  = $( '#bm-filter-actual-desc-empty' ).prop( 'checked' );
+		const anyActive      = filterWdId || filterWdDesc || filterActDesc;
+
+		$( '#bm-bulk-desc-table tbody .bm-bulk-desc-row' ).each( function () {
+			const $row = $( this );
+
+			if ( ! anyActive ) {
+				$row.show();
+				return;
+			}
+
+			let show = true;
+			if ( filterWdId    && $row.attr( 'data-wd-id-empty' )       !== '1' ) { show = false; }
+			if ( filterWdDesc  && $row.attr( 'data-wd-desc-empty' )     !== '1' ) { show = false; }
+			if ( filterActDesc && $row.attr( 'data-actual-desc-empty' ) !== '1' ) { show = false; }
+
+			$row.toggle( show );
+		} );
+	}
+
+	$( document ).on( 'change', '.bm-desc-filter', bmDescApplyFilters );
+
+	$( document ).on( 'click', '#bm-desc-filter-reset', function () {
+		$( '#bm-filter-wd-id-empty, #bm-filter-wd-desc-empty, #bm-filter-actual-desc-empty' ).prop( 'checked', false );
+		bmDescApplyFilters();
+	} );
+
+	$( document ).on( 'change', '#bm-desc-select-all', function () {
+		const checked = $( this ).prop( 'checked' );
+		$( '#bm-bulk-desc-table .bm-desc-cb:not(:disabled)' ).prop( 'checked', checked );
+	} );
+
+	$( document ).on( 'click', '.bm-btn-fetch-wikidata-desc', function () {
+		const $btn       = $( this );
+		const proposalId = $btn.data( 'proposal-id' );
+		const $row       = $btn.closest( 'tr' );
+		const wikidataId = $row.find( '.bm-desc-wikidata-id' ).val().trim().toUpperCase();
+
+		if ( ! wikidataId ) {
+			flashNotice( 'Enter a Wikidata ID first (e.g. Q42).', 'error' );
+			return;
+		}
+
+		$btn.addClass( 'bm-loading' ).text( '…' );
+
+		post( 'bm_fetch_wikidata_description', { proposal_id: proposalId, wikidata_id: wikidataId } )
+			.done( function ( res ) {
+				if ( res.success ) {
+					const desc = res.data.description || '';
+					$row.find( '.bm-desc-wikidata-text' ).text( desc );
+
+					// Update the Wikidata link href in case the ID was corrected
+					const $link = $row.find( '.bm-desc-wd-link' );
+					if ( $link.length ) {
+						$link.attr( 'href', 'https://www.wikidata.org/wiki/' + encodeURIComponent( res.data.wikidata_id ) );
+					} else if ( res.data.wikidata_id ) {
+						$row.find( '.bm-desc-wikidata-id-wrap' ).append(
+							`<a href="https://www.wikidata.org/wiki/${ encodeURIComponent( res.data.wikidata_id ) }"
+								target="_blank" rel="noopener noreferrer"
+								class="bm-wikidata-ext-link bm-desc-wd-link">↗</a>`
+						);
+					}
+
+					// Sync data attributes so filters stay accurate
+					$row.attr( 'data-wd-id-empty',   res.data.wikidata_id ? '0' : '1' );
+					$row.attr( 'data-wd-desc-empty',  desc ? '0' : '1' );
+					bmDescApplyFilters();
+
+					if ( desc ) {
+						$row.find( '.bm-desc-wikidata-text' ).addClass( 'bm-field-filled' );
+						setTimeout( () => $row.find( '.bm-desc-wikidata-text' ).removeClass( 'bm-field-filled' ), 1500 );
+					}
+					flashNotice( 'Wikidata description fetched.' + ( res.data.label ? ' Label: ' + res.data.label : '' ) );
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+				}
+			} )
+			.fail( () => flashNotice( i18n.error, 'error' ) )
+			.always( () => $btn.removeClass( 'bm-loading' ).text( 'Fetch' ) );
+	} );
+
+	$( document ).on( 'click', '.bm-btn-bulk-save-desc', function () {
+		const $btn       = $( this );
+		const proposalIds = [];
+
+		$( '#bm-bulk-desc-table .bm-desc-cb:checked' ).each( function () {
+			proposalIds.push( $( this ).val() );
+		} );
+
+		if ( ! proposalIds.length ) {
+			flashNotice( 'Select at least one tag.', 'error' );
+			return;
+		}
+
+		if ( ! window.confirm(
+			`Save Wikidata description for ${ proposalIds.length } tag(s) to WordPress? This updates the live tag Description field.`
+		) ) return;
+
+		$btn.addClass( 'bm-loading' ).text( 'Saving…' );
+
+		post( 'bm_bulk_save_description', { proposal_ids: proposalIds } )
+			.done( function ( res ) {
+				if ( res.success ) {
+					const { results, saved, errors } = res.data;
+					results.forEach( function ( r ) {
+						const $cb  = $( `#bm-bulk-desc-table .bm-desc-cb[value="${ r.proposal_id }"]` );
+						const $row = $cb.closest( 'tr' );
+						if ( r.status === 'saved' ) {
+							$cb.prop( 'disabled', true ).prop( 'checked', false );
+							$row.find( '.bm-desc-actual-text' ).text( r.description );
+							$row.attr( 'data-actual-desc-empty', '0' );
+							$row.addClass( 'bm-bulk-desc-row--saved' ).removeClass( 'bm-bulk-desc-row--err' );
+						} else {
+							$row.addClass( 'bm-bulk-desc-row--err' );
+						}
+					} );
+					bmDescApplyFilters();
+					flashNotice( `Bulk description saved: ${ saved } saved${ errors ? ', ' + errors + ' skipped/error(s).' : '.' }` );
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+				}
+			} )
+			.fail( () => flashNotice( i18n.error, 'error' ) )
+			.always( () => $btn.removeClass( 'bm-loading' ).text( 'Save Description to WordPress' ) );
+	} );
+
 	// ── Delta — New Tags ──────────────────────────────────────────────────────
 
 	function escHtml( str ) {

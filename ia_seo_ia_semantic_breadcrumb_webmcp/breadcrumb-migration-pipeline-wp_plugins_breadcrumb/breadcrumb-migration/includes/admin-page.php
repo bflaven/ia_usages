@@ -7,12 +7,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function bm_render_tabs( string $base_url, string $current ): void {
 	$tabs = [
-		'proposals'    => __( 'Proposals', 'breadcrumb-migration' ),
-		'delta'        => __( 'Delta — New Tags', 'breadcrumb-migration' ),
-		'bulk_assign'  => __( 'Bulk Assign', 'breadcrumb-migration' ),
-		'import'       => __( 'Import & Export', 'breadcrumb-migration' ),
-		'settings'     => __( 'Settings', 'breadcrumb-migration' ),
-		'danger'       => __( 'Danger Zone', 'breadcrumb-migration' ),
+		'proposals'        => __( 'Proposals', 'breadcrumb-migration' ),
+		'delta'            => __( 'Delta — New Tags', 'breadcrumb-migration' ),
+		'bulk_assign'      => __( 'Bulk Assign', 'breadcrumb-migration' ),
+		'bulk_description' => __( 'Bulk Description', 'breadcrumb-migration' ),
+		'import'           => __( 'Import & Export', 'breadcrumb-migration' ),
+		'settings'         => __( 'Settings', 'breadcrumb-migration' ),
+		'danger'           => __( 'Danger Zone', 'breadcrumb-migration' ),
 	];
 	echo '<nav class="nav-tab-wrapper bm-tab-nav">';
 	foreach ( $tabs as $slug => $label ) {
@@ -54,6 +55,8 @@ function bm_render_admin_page(): void {
 			bm_render_tab_delta();
 		} elseif ( $current_tab === 'bulk_assign' ) {
 			bm_render_tab_bulk_assign();
+		} elseif ( $current_tab === 'bulk_description' ) {
+			bm_render_tab_bulk_description();
 		} elseif ( $current_tab === 'import' ) {
 			bm_render_tab_import();
 		} elseif ( $current_tab === 'settings' ) {
@@ -249,6 +252,157 @@ function bm_render_tab_bulk_assign(): void {
 		</div>
 
 		<div id="bm-bulk-results" style="display:none;" class="bm-bulk-results"></div>
+	</div>
+	<?php
+}
+
+// ── Bulk Description tab ───────────────────────────────────────────────────────
+
+function bm_render_tab_bulk_description(): void {
+	global $wpdb;
+	$t = bm_tables();
+
+	$rows = $wpdb->get_results( // phpcs:ignore
+		"SELECT p.id AS proposal_id, p.wikidata_id, p.wikidata_description,
+		        p.proposed_description, p.proposed_slug,
+		        t.wp_term_id, t.original_name
+		 FROM {$t['proposals']} p
+		 JOIN {$t['terms']} t ON t.id = p.term_id
+		 WHERE p.validation_state = 'approved'
+		 ORDER BY t.original_name ASC"
+	);
+	?>
+	<div class="bm-section">
+		<h2><?php esc_html_e( 'Bulk Description', 'breadcrumb-migration' ); ?></h2>
+		<div class="notice notice-warning inline bm-bulk-desc-caution">
+			<p>
+				<strong><?php esc_html_e( 'Use after Bulk Assign:', 'breadcrumb-migration' ); ?></strong>
+				<?php esc_html_e( 'Each approved tag needs a breadcrumb parent category assigned (via the Bulk Assign tab) before saving a description. Without it the breadcrumb shows the generic "Tag" crumb instead of a real category.', 'breadcrumb-migration' ); ?>
+			</p>
+		</div>
+
+		<p class="description">
+			<?php esc_html_e( 'For each approved tag, review the Wikidata description and save it as the WordPress tag description. Edit the Wikidata ID if incorrect, click Fetch to retrieve the description, then select rows and click "Save Description to WordPress".', 'breadcrumb-migration' ); ?>
+		</p>
+
+		<?php if ( empty( $rows ) ) : ?>
+			<p class="bm-no-data"><?php esc_html_e( 'No approved tags found. Approve proposals in the Proposals tab first.', 'breadcrumb-migration' ); ?></p>
+		<?php else : ?>
+			<div class="bm-bulk-desc-actions-top">
+				<button type="button" class="button button-primary bm-btn-bulk-save-desc">
+					<?php esc_html_e( 'Save Description to WordPress', 'breadcrumb-migration' ); ?>
+				</button>
+				<span class="description">
+					<?php esc_html_e( 'Copies Wikidata description → tag Description field for all selected rows.', 'breadcrumb-migration' ); ?>
+				</span>
+			</div>
+
+			<div class="bm-bulk-desc-filters" id="bm-bulk-desc-filters">
+				<strong><?php esc_html_e( 'Show only:', 'breadcrumb-migration' ); ?></strong>
+				<label>
+					<input type="checkbox" id="bm-filter-wd-id-empty" class="bm-desc-filter">
+					<?php esc_html_e( 'Wikidata ID empty', 'breadcrumb-migration' ); ?>
+				</label>
+				<label>
+					<input type="checkbox" id="bm-filter-wd-desc-empty" class="bm-desc-filter">
+					<?php esc_html_e( 'Description from Wikidata empty', 'breadcrumb-migration' ); ?>
+				</label>
+				<label>
+					<input type="checkbox" id="bm-filter-actual-desc-empty" class="bm-desc-filter">
+					<?php esc_html_e( 'Actual Description empty', 'breadcrumb-migration' ); ?>
+				</label>
+				<button type="button" class="button button-small" id="bm-desc-filter-reset">
+					<?php esc_html_e( 'Show all', 'breadcrumb-migration' ); ?>
+				</button>
+			</div>
+
+			<table class="widefat striped bm-bulk-desc-table" id="bm-bulk-desc-table">
+				<thead>
+					<tr>
+						<th class="bm-bulk-col-cb">
+							<label>
+								<input type="checkbox" id="bm-desc-select-all">
+								<?php esc_html_e( 'All', 'breadcrumb-migration' ); ?>
+							</label>
+						</th>
+						<th><?php esc_html_e( 'Wikidata ID', 'breadcrumb-migration' ); ?></th>
+						<th><?php esc_html_e( 'Slug', 'breadcrumb-migration' ); ?></th>
+						<th><?php esc_html_e( 'Description from Wikidata', 'breadcrumb-migration' ); ?></th>
+						<th><?php esc_html_e( 'Actual Description', 'breadcrumb-migration' ); ?></th>
+					</tr>
+				</thead>
+				<tbody>
+				<?php foreach ( $rows as $row ) :
+					$proposal_id = (int) $row->proposal_id;
+					$tag_url     = $row->proposed_slug
+						? home_url( '/tag/' . trailingslashit( sanitize_title( $row->proposed_slug ) ) )
+						: '';
+				?>
+					<tr class="bm-bulk-desc-row"
+						data-proposal-id="<?php echo esc_attr( $proposal_id ); ?>"
+						data-wd-id-empty="<?php echo empty( $row->wikidata_id ) ? '1' : '0'; ?>"
+						data-wd-desc-empty="<?php echo empty( $row->wikidata_description ) ? '1' : '0'; ?>"
+						data-actual-desc-empty="<?php echo empty( $row->proposed_description ) ? '1' : '0'; ?>">
+						<td class="bm-bulk-col-cb">
+							<input type="checkbox" class="bm-desc-cb"
+								value="<?php echo esc_attr( $proposal_id ); ?>">
+						</td>
+						<td class="bm-desc-td-wikidata-id">
+							<div class="bm-desc-wikidata-id-wrap">
+								<input type="text" class="bm-desc-wikidata-id"
+									value="<?php echo esc_attr( $row->wikidata_id ?? '' ); ?>"
+									placeholder="Q42"
+									data-proposal-id="<?php echo esc_attr( $proposal_id ); ?>">
+								<button type="button" class="button button-small bm-btn-fetch-wikidata-desc"
+									data-proposal-id="<?php echo esc_attr( $proposal_id ); ?>">
+									<?php esc_html_e( 'Fetch', 'breadcrumb-migration' ); ?>
+								</button>
+								<?php if ( $row->wikidata_id ) : ?>
+									<a href="<?php echo esc_url( 'https://www.wikidata.org/wiki/' . $row->wikidata_id ); ?>"
+										target="_blank" rel="noopener noreferrer"
+										class="bm-wikidata-ext-link bm-desc-wd-link">↗</a>
+								<?php endif; ?>
+							</div>
+						</td>
+						<td>
+							<?php if ( $row->proposed_slug ) : ?>
+								<code><?php echo esc_html( $row->proposed_slug ); ?></code>
+								<?php if ( $tag_url ) : ?>
+									&nbsp;<a href="<?php echo esc_url( $tag_url ); ?>"
+										target="_blank" rel="noopener noreferrer">
+										<?php esc_html_e( 'View tag', 'breadcrumb-migration' ); ?>
+									</a>
+								<?php endif; ?>
+							<?php else : ?>
+								<code>—</code>
+							<?php endif; ?>
+						</td>
+						<td class="bm-desc-wikidata-text">
+							<?php echo esc_html( $row->wikidata_description ?? '' ); ?>
+						</td>
+						<td class="bm-desc-actual-text">
+							<?php if ( ! empty( $row->proposed_description ) ) :
+								echo esc_html( $row->proposed_description );
+							else : ?>
+								<em class="bm-no-data"><?php esc_html_e( 'Empty', 'breadcrumb-migration' ); ?></em>
+							<?php endif; ?>
+						</td>
+					</tr>
+				<?php endforeach; ?>
+				</tbody>
+			</table>
+
+			<div class="bm-bulk-desc-actions-bottom">
+				<button type="button" class="button button-primary bm-btn-bulk-save-desc">
+					<?php esc_html_e( 'Save Description to WordPress', 'breadcrumb-migration' ); ?>
+				</button>
+				<span class="description">
+					<?php esc_html_e( 'Copies Wikidata description → tag Description field for all selected rows.', 'breadcrumb-migration' ); ?>
+				</span>
+			</div>
+
+			<div id="bm-bulk-desc-results" style="display:none; margin-top:16px;"></div>
+		<?php endif; ?>
 	</div>
 	<?php
 }

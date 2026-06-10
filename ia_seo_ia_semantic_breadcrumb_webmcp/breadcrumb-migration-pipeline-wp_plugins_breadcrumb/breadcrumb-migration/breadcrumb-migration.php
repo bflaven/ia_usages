@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Breadcrumb Migration
  * Description: Validate spaCy/Wikidata pipeline proposals and publish enriched taxonomy terms.
- * Version:     1.12.0
+ * Version:     1.13.0
  * Author:      Bruno Flaven + Claude Code
  * Text Domain: breadcrumb-migration
  * Domain Path: /languages
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BM_VERSION',       '1.12.0' );
+define( 'BM_VERSION',       '1.13.0' );
 define( 'BM_PLUGIN_DIR',    plugin_dir_path( __FILE__ ) );
 define( 'BM_PLUGIN_URL',    plugin_dir_url( __FILE__ ) );
 
@@ -47,7 +47,9 @@ add_action( 'wp_ajax_bm_scan_delta',         'bm_ajax_scan_delta' );
 add_action( 'wp_ajax_bm_add_delta_term',     'bm_ajax_add_delta_term' );
 add_action( 'wp_ajax_bm_search_wikidata',    'bm_ajax_search_wikidata' );
 add_action( 'wp_ajax_bm_bulk_assign',        'bm_ajax_bulk_assign' );
-add_action( 'wp_ajax_bm_bulk_publish',       'bm_ajax_bulk_publish' );
+add_action( 'wp_ajax_bm_bulk_publish',            'bm_ajax_bulk_publish' );
+add_action( 'wp_ajax_bm_fetch_wikidata_description', 'bm_ajax_fetch_wikidata_description' );
+add_action( 'wp_ajax_bm_bulk_save_description',      'bm_ajax_bulk_save_description' );
 
 // admin-post — file import + CSV export + settings save
 add_action( 'admin_post_bm_import',         'bm_handle_import' );
