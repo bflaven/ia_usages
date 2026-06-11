@@ -625,7 +625,7 @@ function bm_ajax_fetch_wikidata_description(): void {
 
 	$response = wp_remote_get( $api_url, [
 		'timeout'    => 8,
-		'user-agent' => 'BreadcrumbMigrationPlugin/1.13.0 (WordPress; ' . get_bloginfo( 'url' ) . ')',
+		'user-agent' => 'BreadcrumbMigrationPlugin/1.14.0 (WordPress; ' . get_bloginfo( 'url' ) . ')',
 	] );
 
 	if ( is_wp_error( $response ) ) {
@@ -742,6 +742,111 @@ function bm_ajax_bulk_save_description(): void {
 		'saved'   => $saved,
 		'errors'  => $errors,
 		'total'   => count( $proposal_ids ),
+	] );
+}
+
+// ── Sync WP descriptions → proposed_description ───────────────────────────────
+
+function bm_ajax_sync_descriptions(): void {
+	bm_verify_request();
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$rows = $wpdb->get_results( // phpcs:ignore
+		"SELECT p.id AS proposal_id, p.proposed_description, p.wikidata_description,
+		        t.wp_term_id, t.taxonomy
+		 FROM {$t['proposals']} p
+		 JOIN {$t['terms']} t ON t.id = p.term_id
+		 WHERE p.validation_state = 'approved'"
+	);
+
+	$updated      = 0;
+	$skipped      = 0;
+	$descriptions = [];
+
+	foreach ( $rows as $row ) {
+		$pid           = (int) $row->proposal_id;
+		$proposed_desc = $row->proposed_description ?? '';
+		$wikidata_desc = $row->wikidata_description ?? '';
+
+		// Skip manually written descriptions — user authored content takes priority.
+		$is_manual = $proposed_desc !== '' && ( $wikidata_desc === '' || $proposed_desc !== $wikidata_desc );
+		if ( $is_manual ) {
+			$descriptions[ $pid ] = [ 'description' => $proposed_desc, 'is_manual' => true, 'skipped' => true ];
+			$skipped++;
+			continue;
+		}
+
+		$term = get_term( (int) $row->wp_term_id, $row->taxonomy );
+		if ( ! $term || is_wp_error( $term ) ) {
+			continue;
+		}
+
+		$wp_desc = $term->description ?? '';
+
+		$wpdb->update(
+			$t['proposals'],
+			[ 'proposed_description' => $wp_desc ?: null ],
+			[ 'id' => $pid ]
+		);
+
+		$descriptions[ $pid ] = [ 'description' => $wp_desc, 'is_manual' => false, 'skipped' => false ];
+		$updated++;
+	}
+
+	wp_send_json_success( [
+		'descriptions' => $descriptions,
+		'updated'      => $updated,
+		'skipped'      => $skipped,
+	] );
+}
+
+// ── Refresh single row description from WordPress ─────────────────────────────
+
+function bm_ajax_refresh_single_description(): void {
+	bm_verify_request();
+
+	$proposal_id = absint( $_POST['proposal_id'] ?? 0 );
+	if ( ! $proposal_id ) {
+		wp_send_json_error( [ 'message' => 'Missing proposal_id.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$row = $wpdb->get_row( $wpdb->prepare(
+		"SELECT p.wikidata_description, t.wp_term_id, t.taxonomy
+		 FROM {$t['proposals']} p
+		 JOIN {$t['terms']} t ON t.id = p.term_id
+		 WHERE p.id = %d AND p.validation_state = 'approved'",
+		$proposal_id
+	) );
+
+	if ( ! $row ) {
+		wp_send_json_error( [ 'message' => 'Proposal not found or not approved.' ] );
+	}
+
+	$term = get_term( (int) $row->wp_term_id, $row->taxonomy );
+	if ( ! $term || is_wp_error( $term ) ) {
+		wp_send_json_error( [ 'message' => 'WordPress term not found.' ] );
+	}
+
+	$wp_desc      = $term->description ?? '';
+	$wikidata_desc = $row->wikidata_description ?? '';
+
+	$wpdb->update(
+		$t['proposals'],
+		[ 'proposed_description' => $wp_desc ?: null ],
+		[ 'id' => $proposal_id ]
+	);
+
+	$is_manual = $wp_desc !== '' && ( $wikidata_desc === '' || $wp_desc !== $wikidata_desc );
+
+	wp_send_json_success( [
+		'proposal_id' => $proposal_id,
+		'description' => $wp_desc,
+		'is_manual'   => $is_manual,
 	] );
 }
 

@@ -865,6 +865,216 @@
 	white-space: nowrap;
 }
 
+/* ── Bulk Description — search + sync bar ─────────────────────────────────── */
+
+.bm-desc-search-bar {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 12px;
+	flex-wrap: wrap;
+}
+
+.bm-desc-name-search {
+	height: 30px;
+	padding: 0 10px;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	font-size: 13px;
+	min-width: 220px;
+}
+
+/* ── Bulk Description — tag filter textarea ────────────────────────────────── */
+
+.bm-desc-tag-filter {
+	margin-bottom: 12px;
+	padding: 12px 14px;
+	background: #f0f6fc;
+	border: 1px solid #c8dff0;
+	border-radius: 4px;
+}
+
+.bm-desc-tag-filter > label {
+	display: block;
+	margin-bottom: 8px;
+	font-size: 13px;
+}
+
+.bm-desc-tag-filter > label .description {
+	font-weight: 400;
+	margin-left: 6px;
+}
+
+.bm-desc-tag-filter-row {
+	display: flex;
+	gap: 10px;
+	align-items: flex-start;
+}
+
+.bm-desc-tag-filter-row textarea {
+	flex: 1;
+	height: 60px;
+	padding: 6px 8px;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	font-size: 13px;
+	font-family: monospace;
+	resize: vertical;
+	box-sizing: border-box;
+}
+
+.bm-desc-tag-filter-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	flex-shrink: 0;
+}
+
+/* ── Bulk Description — Tag column ────────────────────────────────────────── */
+
+.bm-desc-td-tag {
+	min-width: 140px;
+}
+
+.bm-desc-tag-name {
+	display: block;
+	font-size: 13px;
+	margin-bottom: 2px;
+}
+
+.bm-desc-td-tag code {
+	display: inline-block;
+	margin-bottom: 4px;
+}
+
+.bm-desc-tag-meta {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	flex-wrap: wrap;
+	margin-top: 4px;
+}
+
+.bm-desc-wp-id {
+	width: 54px;
+	height: 22px;
+	padding: 0 4px;
+	border: 1px solid #c3c4c7;
+	border-radius: 3px;
+	font-size: 11px;
+	font-family: monospace;
+	color: #50575e;
+	background: #f6f7f7;
+	box-sizing: border-box;
+	cursor: default;
+}
+
+.bm-desc-edit-link {
+	font-size: 11px;
+	color: #2271b1;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.bm-desc-edit-link:hover {
+	text-decoration: underline;
+	color: #135e96;
+}
+
+/* ── Bulk Description — copy button + wd-copy-wrap ────────────────────────── */
+
+.bm-desc-wd-copy-wrap {
+	margin-top: 5px;
+}
+
+.bm-btn-copy-wd-desc {
+	font-size: 11px !important;
+	padding: 0 6px !important;
+	height: 22px !important;
+	line-height: 20px !important;
+}
+
+/* ── Bulk Description — actual description cell ────────────────────────────── */
+
+.bm-desc-actual-content {
+	display: block;
+	margin-bottom: 4px;
+	word-break: break-word;
+}
+
+.bm-desc-actual-actions {
+	margin-top: 4px;
+}
+
+/* ── Section panels (v1.15.0) ──────────────────────────────────────────────── */
+
+.bm-panel {
+	margin: 20px 0;
+	padding: 16px 20px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+}
+
+.bm-panel__title {
+	margin: 0 0 12px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #1d2327;
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 8px;
+}
+
+.bm-panel--requirements {
+	border-left: 4px solid #2271b1;
+}
+
+.bm-requirements-intro {
+	margin: 0 0 8px;
+	font-weight: 500;
+}
+
+.bm-requirements-list {
+	margin: 0;
+	padding-left: 20px;
+}
+
+.bm-requirements-list li {
+	margin-bottom: 6px;
+	line-height: 1.5;
+}
+
+/* ── Description source badges ─────────────────────────────────────────────── */
+
+.bm-desc-actual-badge {
+	display: inline-block;
+	margin-bottom: 4px;
+	padding: 2px 6px;
+	border-radius: 3px;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.bm-desc-actual-badge--manual {
+	background: #fef3c7;
+	color: #92400e;
+	border: 1px solid #fcd34d;
+}
+
+.bm-desc-actual-badge--wikidata {
+	background: #dbeafe;
+	color: #1e40af;
+	border: 1px solid #93c5fd;
+}
+
+/* ── Per-row refresh button ─────────────────────────────────────────────────── */
+
+.bm-btn-refresh-single-desc {
+	margin-right: 4px;
+	min-width: 28px;
+}
+
 /* ── Loading state ─────────────────────────────────────────────────────────── */
 
 .bm-loading {

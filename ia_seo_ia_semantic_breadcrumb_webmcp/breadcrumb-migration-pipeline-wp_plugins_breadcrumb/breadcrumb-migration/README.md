@@ -406,6 +406,33 @@ Home > Tags > 17 octobre 1961      ← "Tags" links to /tags/ (WP page with slug
 
 ## Changelog
 
+### v1.15.0 — 2026-06-11
+- **UX**: **Bulk Description — 4 named sections** — tab now split into `<section class="bm-panel">` wrappers: **Requirements**, **Quick Find**, **Batch Filter**, **Tag Descriptions**; each has a visible `<h3>` title and bordered card layout
+- **UX**: **Requirements section** replaces the old vague caution notice — explicit numbered checklist: (1) Proposal must be Approved (link → Proposals tab), (2) Parent category must be assigned (link → Bulk Assign tab); old `<p class="description">` paragraph removed
+- **Feature**: **Manual description badge** — Actual Description cell now shows `✍ Written` (amber) when `proposed_description` is non-empty and differs from `wikidata_description` (user-authored); shows `Wikidata` (blue) when both match; no schema change — derived from existing fields at render time
+- **Feature**: **`data-desc-source`** attribute (`manual` / `wikidata` / `empty`) added to every `<tr>` for client-side filtering
+- **Feature**: **"Written (manual) only" filter checkbox** added to the "Show only:" filter bar — hides all non-manual rows
+- **Feature**: **Per-row `↺` refresh button** in the Actual Description cell — reads current WP tag description for that specific row via new AJAX handler `bm_ajax_refresh_single_description()`, updates cell and badge in-place without page reload
+- **Feature**: **Sync protection** — global "↺ Synchronize from WordPress" button now skips rows where `proposed_description` is non-empty and differs from `wikidata_description`; flash notice reports `N refreshed, N skipped (manually written)`
+- `admin-page.php`: `bm_render_tab_bulk_description()` rewritten — 4 `<section>` panels, Requirements checklist with `add_query_arg()` tab links, `$desc_source` computation per row, badge HTML, refresh button, `data-desc-source` attribute, "Written (manual) only" checkbox
+- `ajax-handler.php`: `bm_ajax_sync_descriptions()` rewritten — queries `proposed_description` + `wikidata_description`, skips manual rows, returns `{description, is_manual, skipped}` objects + `skipped` count; new `bm_ajax_refresh_single_description()` function
+- `breadcrumb-migration.php`: `wp_ajax_bm_refresh_single_description` hook registered; version bumped to `1.15.0`
+- `admin.js`: `bmSetActualBadge()` helper centralises badge + content DOM updates; sync handler updated for new response format; bulk-save and copy-to-actual handlers use `bmSetActualBadge`; per-row `↺` click handler added; `bmDescApplyFilters()` and reset handler wired to `#bm-filter-manual-only`
+- `admin.css`: `.bm-panel`, `.bm-panel__title`, `.bm-panel--requirements`, `.bm-requirements-intro`, `.bm-requirements-list`, `.bm-desc-actual-badge`, `.bm-desc-actual-badge--manual` (amber `#fef3c7`/`#92400e`), `.bm-desc-actual-badge--wikidata` (blue `#dbeafe`/`#1e40af`), `.bm-btn-refresh-single-desc` styles added
+
+### v1.14.0 — 2026-06-11
+- **Feature**: **Bulk Description — live search** — text input above the table filters visible rows by tag name in real-time (case-insensitive substring match); clears on "Clear" button
+- **Feature**: **Bulk Description — tag filter textarea** — paste a comma or newline-separated list of tag names (e.g. `Apidoc, Chai, cheerio, CRUD`); click "Apply Filter" to narrow rows to exact case-insensitive matches; "Clear" restores all rows and resets the search input
+- **Feature**: **Bulk Description — Synchronize from WordPress** button — reads the current `description` from each live WP tag via `get_term()`, writes it back to `proposed_description` in the migration DB, and refreshes all "Actual Description" cells in-place without a page reload; new AJAX handler `bm_ajax_sync_descriptions()`
+- **Feature**: **Bulk Description — per-row "→ Copy to Actual" button** — appears in the "Description from Wikidata" column whenever `wikidata_description` is filled; clicking copies it to `proposed_description` + pushes to the live WP tag (reuses `bm_bulk_save_description`); button is also added dynamically after a successful "Fetch"
+- **Feature**: **Bulk Description — Tag column** (replaces bare "Slug" column) — shows `original_name` (bold) + `proposed_slug` (code) + `wp_term_id` as a readonly text input + **✏ Edit** link opening `wp-admin/term.php?taxonomy=post_tag&tag_ID={id}&post_type=post` in a new tab + **↗** frontend view link
+- **Feature**: **Bulk Description — ✏ Edit in WP link** in the "Actual Description" cell — same edit-tag admin URL, allows jumping directly from any row to the WP tag edit screen
+- `admin-page.php`: `bm_render_tab_bulk_description()` — added search bar, tag filter section, `data-tag-name` attribute on rows, Tag column, copy button in Wikidata desc cell, edit links; inner spans `.bm-desc-actual-content` and `.bm-desc-wikidata-content` added for targeted JS updates
+- `ajax-handler.php`: new `bm_ajax_sync_descriptions()`
+- `breadcrumb-migration.php`: `wp_ajax_bm_sync_descriptions` hook registered; version bumped to `1.14.0`
+- `admin.js`: 4 new handlers (live search, filter apply/clear, sync, per-row copy); existing fetch-wikidata handler updated to use `.bm-desc-wikidata-content` span and dynamically insert/remove copy button; bulk-save handler targets `.bm-desc-actual-content` span
+- `admin.css`: `.bm-desc-search-bar`, `.bm-desc-tag-filter`, `.bm-desc-td-tag`, `.bm-desc-tag-meta`, `.bm-desc-wp-id`, `.bm-desc-edit-link`, `.bm-desc-wd-copy-wrap`, `.bm-btn-copy-wd-desc`, `.bm-desc-actual-content`, `.bm-desc-actual-actions` styles
+
 ### v1.13.0 — 2026-06-10
 - **Feature**: **Bulk Description** tab — new tab placed after "Bulk Assign"; lists all approved proposals and lets admin review, fetch, and save Wikidata descriptions to WordPress in bulk
 - Table columns: checkbox (with Select All in header), editable Wikidata ID with Fetch button and ↗ Wikidata link, Slug with "View tag" link, Description from Wikidata, Actual Description (current `proposed_description`)

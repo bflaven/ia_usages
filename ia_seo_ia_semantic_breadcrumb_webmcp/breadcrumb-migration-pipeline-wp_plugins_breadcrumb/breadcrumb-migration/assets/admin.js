@@ -462,11 +462,45 @@
 
 	// ── Bulk Description — row filter ────────────────────────────────────────
 
+	function bmSetActualBadge( $row, desc, isManual ) {
+		const $cell  = $row.find( '.bm-desc-actual-text' );
+		const $span  = $cell.find( '.bm-desc-actual-content' );
+		let   $badge = $cell.find( '.bm-desc-actual-badge' );
+
+		if ( desc ) {
+			$span.text( desc );
+			$row.attr( 'data-actual-desc-empty', '0' );
+		} else {
+			$span.html( '<em class="bm-no-data">Empty</em>' );
+			$row.attr( 'data-actual-desc-empty', '1' );
+		}
+
+		if ( isManual && desc ) {
+			if ( $badge.length ) {
+				$badge.attr( 'class', 'bm-desc-actual-badge bm-desc-actual-badge--manual' ).html( '✍ Written' );
+			} else {
+				$cell.prepend( '<span class="bm-desc-actual-badge bm-desc-actual-badge--manual">✍ Written</span>' );
+			}
+			$row.attr( 'data-desc-source', 'manual' );
+		} else if ( ! isManual && desc ) {
+			if ( $badge.length ) {
+				$badge.attr( 'class', 'bm-desc-actual-badge bm-desc-actual-badge--wikidata' ).text( 'Wikidata' );
+			} else {
+				$cell.prepend( '<span class="bm-desc-actual-badge bm-desc-actual-badge--wikidata">Wikidata</span>' );
+			}
+			$row.attr( 'data-desc-source', 'wikidata' );
+		} else {
+			$badge.remove();
+			$row.attr( 'data-desc-source', 'empty' );
+		}
+	}
+
 	function bmDescApplyFilters() {
 		const filterWdId     = $( '#bm-filter-wd-id-empty' ).prop( 'checked' );
 		const filterWdDesc   = $( '#bm-filter-wd-desc-empty' ).prop( 'checked' );
 		const filterActDesc  = $( '#bm-filter-actual-desc-empty' ).prop( 'checked' );
-		const anyActive      = filterWdId || filterWdDesc || filterActDesc;
+		const filterManual   = $( '#bm-filter-manual-only' ).prop( 'checked' );
+		const anyActive      = filterWdId || filterWdDesc || filterActDesc || filterManual;
 
 		$( '#bm-bulk-desc-table tbody .bm-bulk-desc-row' ).each( function () {
 			const $row = $( this );
@@ -480,6 +514,7 @@
 			if ( filterWdId    && $row.attr( 'data-wd-id-empty' )       !== '1' ) { show = false; }
 			if ( filterWdDesc  && $row.attr( 'data-wd-desc-empty' )     !== '1' ) { show = false; }
 			if ( filterActDesc && $row.attr( 'data-actual-desc-empty' ) !== '1' ) { show = false; }
+			if ( filterManual  && $row.attr( 'data-desc-source' )       !== 'manual' ) { show = false; }
 
 			$row.toggle( show );
 		} );
@@ -488,7 +523,7 @@
 	$( document ).on( 'change', '.bm-desc-filter', bmDescApplyFilters );
 
 	$( document ).on( 'click', '#bm-desc-filter-reset', function () {
-		$( '#bm-filter-wd-id-empty, #bm-filter-wd-desc-empty, #bm-filter-actual-desc-empty' ).prop( 'checked', false );
+		$( '#bm-filter-wd-id-empty, #bm-filter-wd-desc-empty, #bm-filter-actual-desc-empty, #bm-filter-manual-only' ).prop( 'checked', false );
 		bmDescApplyFilters();
 	} );
 
@@ -513,8 +548,20 @@
 		post( 'bm_fetch_wikidata_description', { proposal_id: proposalId, wikidata_id: wikidataId } )
 			.done( function ( res ) {
 				if ( res.success ) {
-					const desc = res.data.description || '';
-					$row.find( '.bm-desc-wikidata-text' ).text( desc );
+					const desc    = res.data.description || '';
+					const $wdCell = $row.find( '.bm-desc-wikidata-text' );
+					$wdCell.find( '.bm-desc-wikidata-content' ).text( desc );
+
+					// Add or remove per-row copy button based on whether desc is now filled
+					if ( desc ) {
+						if ( ! $wdCell.find( '.bm-desc-wd-copy-wrap' ).length ) {
+							$wdCell.append(
+								`<div class="bm-desc-wd-copy-wrap"><button type="button" class="button button-small bm-btn-copy-wd-desc" data-proposal-id="${ escHtml( String( proposalId ) ) }">→ Copy to Actual</button></div>`
+							);
+						}
+					} else {
+						$wdCell.find( '.bm-desc-wd-copy-wrap' ).remove();
+					}
 
 					// Update the Wikidata link href in case the ID was corrected
 					const $link = $row.find( '.bm-desc-wd-link' );
@@ -534,8 +581,8 @@
 					bmDescApplyFilters();
 
 					if ( desc ) {
-						$row.find( '.bm-desc-wikidata-text' ).addClass( 'bm-field-filled' );
-						setTimeout( () => $row.find( '.bm-desc-wikidata-text' ).removeClass( 'bm-field-filled' ), 1500 );
+						$wdCell.addClass( 'bm-field-filled' );
+						setTimeout( () => $wdCell.removeClass( 'bm-field-filled' ), 1500 );
 					}
 					flashNotice( 'Wikidata description fetched.' + ( res.data.label ? ' Label: ' + res.data.label : '' ) );
 				} else {
@@ -574,8 +621,7 @@
 						const $row = $cb.closest( 'tr' );
 						if ( r.status === 'saved' ) {
 							$cb.prop( 'disabled', true ).prop( 'checked', false );
-							$row.find( '.bm-desc-actual-text' ).text( r.description );
-							$row.attr( 'data-actual-desc-empty', '0' );
+							bmSetActualBadge( $row, r.description, false );
 							$row.addClass( 'bm-bulk-desc-row--saved' ).removeClass( 'bm-bulk-desc-row--err' );
 						} else {
 							$row.addClass( 'bm-bulk-desc-row--err' );
@@ -804,6 +850,132 @@
 		);
 
 		$result.closest( '.bm-wikidata-results' ).slideUp( 200 );
+	} );
+
+	// ── Bulk Description — live name search ──────────────────────────────────────
+
+	$( document ).on( 'input', '#bm-desc-name-search', function () {
+		const query = $( this ).val().trim().toLowerCase();
+		$( '#bm-bulk-desc-table tbody .bm-bulk-desc-row' ).each( function () {
+			const name = $( this ).attr( 'data-tag-name' ) || '';
+			$( this ).toggle( ! query || name.indexOf( query ) !== -1 );
+		} );
+	} );
+
+	// ── Bulk Description — tag filter textarea ───────────────────────────────────
+
+	$( document ).on( 'click', '#bm-desc-tag-filter-apply', function () {
+		const raw  = $( '#bm-desc-tag-list' ).val();
+		const tags = raw.split( /[,\n\r]+/ )
+			.map( t => t.trim().toLowerCase() )
+			.filter( t => t.length > 0 );
+
+		if ( ! tags.length ) {
+			flashNotice( 'Enter at least one tag name.', 'error' );
+			return;
+		}
+
+		let visible = 0;
+		$( '#bm-bulk-desc-table tbody .bm-bulk-desc-row' ).each( function () {
+			const name  = $( this ).attr( 'data-tag-name' ) || '';
+			const match = tags.indexOf( name ) !== -1;
+			$( this ).toggle( match );
+			if ( match ) visible++;
+		} );
+
+		flashNotice( `Filter applied: ${ visible } tag(s) visible.` );
+	} );
+
+	$( document ).on( 'click', '#bm-desc-tag-filter-clear', function () {
+		$( '#bm-desc-tag-list' ).val( '' );
+		$( '#bm-desc-name-search' ).val( '' );
+		$( '#bm-bulk-desc-table tbody .bm-bulk-desc-row' ).show();
+		bmDescApplyFilters();
+	} );
+
+	// ── Bulk Description — synchronize descriptions from WordPress ───────────────
+
+	$( document ).on( 'click', '#bm-sync-descriptions', function () {
+		const $btn = $( this );
+		$btn.addClass( 'bm-loading' ).text( '↺ Syncing…' );
+
+		post( 'bm_sync_descriptions', {} )
+			.done( function ( res ) {
+				if ( res.success ) {
+					const descs = res.data.descriptions;
+					Object.keys( descs ).forEach( function ( pid ) {
+						const entry = descs[ pid ];
+						if ( entry.skipped ) return;
+						const $cb  = $( `#bm-bulk-desc-table .bm-desc-cb[value="${ pid }"]` );
+						const $row = $cb.closest( 'tr' );
+						bmSetActualBadge( $row, entry.description, entry.is_manual );
+					} );
+					bmDescApplyFilters();
+					const skipped = res.data.skipped || 0;
+					const notice  = skipped
+						? `Synchronized: ${ res.data.updated } refreshed, ${ skipped } skipped (manually written).`
+						: `Synchronized: ${ res.data.updated } tag(s) refreshed from WordPress.`;
+					flashNotice( notice );
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+				}
+			} )
+			.fail( () => flashNotice( i18n.error, 'error' ) )
+			.always( () => $btn.removeClass( 'bm-loading' ).text( '↺ Synchronize from WordPress' ) );
+	} );
+
+	// ── Bulk Description — copy Wikidata desc → Actual (per row) ────────────────
+
+	$( document ).on( 'click', '.bm-btn-copy-wd-desc', function () {
+		const $btn       = $( this );
+		const proposalId = $btn.data( 'proposal-id' );
+		const $row       = $btn.closest( 'tr' );
+
+		$btn.addClass( 'bm-loading' ).text( '…' );
+
+		post( 'bm_bulk_save_description', { proposal_ids: [ proposalId ] } )
+			.done( function ( res ) {
+				if ( res.success ) {
+					const r = res.data.results[ 0 ];
+					if ( r && r.status === 'saved' ) {
+						bmSetActualBadge( $row, r.description, false );
+						$row.find( '.bm-desc-cb' ).prop( 'disabled', true ).prop( 'checked', false );
+						$row.addClass( 'bm-bulk-desc-row--saved' ).removeClass( 'bm-bulk-desc-row--err' );
+						bmDescApplyFilters();
+						flashNotice( 'Description copied to Actual.' );
+					} else {
+						flashNotice( ( r && r.message ) ? r.message : i18n.error, 'error' );
+						$row.addClass( 'bm-bulk-desc-row--err' );
+					}
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+				}
+			} )
+			.fail( () => flashNotice( i18n.error, 'error' ) )
+			.always( () => $btn.removeClass( 'bm-loading' ).text( '→ Copy to Actual' ) );
+	} );
+
+	// ── Bulk Description — per-row refresh from WordPress ───────────────────────
+
+	$( document ).on( 'click', '.bm-btn-refresh-single-desc', function () {
+		const $btn       = $( this );
+		const proposalId = $btn.data( 'proposal-id' );
+		const $row       = $btn.closest( 'tr' );
+
+		$btn.addClass( 'bm-loading' ).text( '…' );
+
+		post( 'bm_refresh_single_description', { proposal_id: proposalId } )
+			.done( function ( res ) {
+				if ( res.success ) {
+					bmSetActualBadge( $row, res.data.description, res.data.is_manual );
+					bmDescApplyFilters();
+					flashNotice( res.data.is_manual ? 'Description refreshed — marked as Written.' : 'Description refreshed from WordPress.' );
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+				}
+			} )
+			.fail( () => flashNotice( i18n.error, 'error' ) )
+			.always( () => $btn.removeClass( 'bm-loading' ).text( '↺' ) );
 	} );
 
 } )( jQuery );
