@@ -1,3 +1,68 @@
+## PROMPT_5
+just say what I have to do i do not care about explanations, say if it is used by or uses
+
+## A_PROMPT_5
+Use **used by**, not uses.
+
+CLAUDE.md
+
+markdown configuration file read by Claude Code at the start of each session to provide persistent project instructions and context to the AI coding agent
+
+Aliases: Claude memory file | CLAUDE.local.md
+
+Statements:
+subclass of (P279) -> configuration file (Q1571814)
+subclass of (P279) -> Markdown (Q1193600)
+used by (P1535) -> Claude Code (Q138457287)
+developer (P178) -> Anthropic (Q116758847)
+
+Reference for each statement:
+reference URL (P854) -> https://code.claude.com/docs/en/memory
+retrieved (P813) -> 11 June 2026
+
+## PROMPT_4
+I don't get your sentence, bad or good to create CLAUDE.md. That is promoting Claude Code no ?
+"One caution before creating it: CLAUDE.md is more niche than "augmented journalism," so notability may be questioned. Having the reference URL on every statement from the start will significantly improve its chances of sticking.
+
+Good question — let me untangle the two things, because they're separate issues.
+
+**What I meant by the caution.** Wikidata has a notability policy: an item must be a "clearly identifiable conceptual entity" that can be described using "serious and publicly available references." Items that don't meet this get nominated for deletion by other editors. My point was purely practical: "augmented journalism" is a concept discussed in academic literature and industry reports, so nobody will challenge it. CLAUDE.md is a single file convention of one specific product — an editor patrolling new items might ask "does this deserve its own item, or is it just a detail of the Claude Code item (Q138457287)?" That's why references matter: they're your evidence that the concept is independently documented. And there's actually a decent case — CLAUDE.md has been written about by third parties (Medium guides, Milvus, independent tutorials), and equivalent conventions exist as Wikidata items (README, robots.txt, .gitignore all have their own items as file conventions).
+
+**Is it promotion?** Creating the item isn't promotional in the Wikidata sense. Wikidata is deliberately neutral infrastructure: it describes what exists, including commercial products — Photoshop, iPhone, Claude Code itself all have items. "Promotion" on Wikidata would mean writing a laudatory description ("the best memory file for AI agents") or adding unverifiable marketing claims. A factual description ("markdown configuration file read by Claude Code...") with sourced statements is documentation, not advertising. The same logic lets Wikidata have items for LocalSettings.php (MediaWiki's config file) or package.json.
+
+So: good to create, as long as the description stays factual and the statements are referenced. The caution was about deletion risk from notability patrol, not about ethics. And worth noting for your plugin's workflow: this distinction — "is this concept independently documented or just a product feature?" — is exactly the test you'd want to encode for any term your pipeline proposes to push to Wikidata.
+
+
+
+## PROMPT_4
+Give a wikidata definition in english for CLAUDE.md plus a set
+for "subclass of" and "uses".
+
+## A_PROMPT_4
+Here's the set, plain text, with all QIDs verified against Wikidata:
+
+CLAUDE.md
+
+markdown configuration file read by Claude Code at the start of each session to provide persistent project instructions and context to the AI coding agent
+
+Shorter alternative:
+
+markdown file giving persistent project instructions to the Claude Code AI agent
+
+Possible aliases: Claude memory file | CLAUDE.local.md
+
+Suggested statements:
+subclass of (P279) -> configuration file (Q1571814)
+subclass of (P279) -> Markdown (Q1193600)
+uses (P2283) -> artificial intelligence (Q11660)
+
+Two additional statements worth adding, because they capture the most defining relationship:
+used by (P1535) -> Claude Code (Q138457287)
+developer (P178) -> Anthropic (Q116758847)
+
+A note on modeling: the relationship between CLAUDE.md and Claude Code is really "used by" rather than "uses" — it's Claude Code that reads the file at the start of every session to get persistent instructions, the file itself doesn't use anything except the Markdown format. So if you keep only one "uses"-family statement, P1535 → Q138457287 is the semantically strongest link. For references (P854), the official documentation page https://code.claude.com/docs/en/memory is the ideal source.
+
+One caution before creating it: CLAUDE.md is more niche than "augmented journalism," so notability may be questioned. Having the reference URL on every statement from the start will significantly improve its chances of sticking.
 
 
 ## PROMPT_3
