@@ -18,7 +18,6 @@
 .bm-stats {
 	display: flex;
 	gap: 12px;
-	margin: 12px 0;
 	flex-wrap: wrap;
 }
 
@@ -42,11 +41,36 @@
 /* ── Filters ───────────────────────────────────────────────────────────────── */
 
 .bm-filters {
-	display: flex;
-	align-items: center;
-	gap: 8px;
+	display: block;
 	margin: 12px 0;
+}
+
+.bm-filter-sections {
+	display: flex;
+	gap: 16px;
 	flex-wrap: wrap;
+	margin: 16px 0 0;
+}
+
+.bm-filter-section {
+	flex: 1;
+	min-width: 260px;
+	margin: 0;
+}
+
+.bm-filter-section__controls {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.bm-filter-actions {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	justify-content: flex-end;
+	margin-top: 12px;
 }
 
 .bm-filters select,
@@ -58,7 +82,12 @@
 }
 
 .bm-filters input[type="search"] {
-	min-width: 240px;
+	min-width: 180px;
+}
+
+.bm-filter-wikidata-id {
+	min-width: 160px !important;
+	max-width: 200px;
 }
 
 /* ── Card ──────────────────────────────────────────────────────────────────── */
@@ -1023,6 +1052,14 @@
 	color: #1d2327;
 	border-bottom: 1px solid #e0e0e0;
 	padding-bottom: 8px;
+}
+
+.bm-panel--overview {
+	border-left: 4px solid #2271b1;
+}
+
+.bm-panel--overview .bm-stats {
+	margin: 0;
 }
 
 .bm-panel--requirements {

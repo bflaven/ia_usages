@@ -406,6 +406,27 @@ Home > Tags > 17 octobre 1961      ← "Tags" links to /tags/ (WP page with slug
 
 ## Changelog
 
+### v1.18.0 — 2026-06-11
+- **UX**: **Proposals — "Overview" stats panel** — `bm_render_stats()` output now wrapped in `<section class="bm-panel bm-panel--overview">`; titled "Overview" with `<h3 class="bm-panel__title">`; blue left border (`#2271b1`) matches WP admin card conventions
+- **UX**: **Proposals — filter sections use WP panel style** — both "Filter" and "Search" sections now carry `bm-panel bm-filter-section` classes (white background, `#c3c4c7` border, `border-radius: 4px`), consistent with Bulk Description panels; old gray `#f9f9f9` card style removed
+- **UX**: **"Basic Filters" renamed to "Filter"** — shorter, imperative label; section titles use `bm-panel__title` (14 px, 600 weight, bottom rule) matching every other panel in the plugin
+- **UX**: **Filter + Reset buttons right-aligned** — `bm-filter-actions` uses `justify-content: flex-end`; button order: Reset (`.button`) on the left, Filter (`.button-primary`) on the right — standard WP list-table convention
+- `admin-page.php`: `bm_render_stats()` rewritten to template style, wrapped in panel section; `bm_render_filters()` section classes + titles updated, button order and primary class applied
+- `breadcrumb-migration.php`: version bumped to `1.18.0`
+- `admin.css`: `.bm-filter-section` reduced to layout-only (`flex:1`, `min-width:260px`, `margin:0`); visual styling delegated to `.bm-panel`; `.bm-filter-actions` gets `justify-content:flex-end` + `margin-top:12px`; `.bm-panel--overview` added (blue left border); `.bm-panel--overview .bm-stats` resets margin; `.bm-stats` standalone margin removed
+
+### v1.17.0 — 2026-06-11
+- **UX**: **Proposals — filter form restructured into two `<section>` panels** to avoid overloading a single filter bar
+  - **Section "Basic Filters"**: taxonomy dropdown (All / Category / Tag) + validation-state dropdown (All / Pending / Approved / Rejected)
+  - **Section "Search"**: name/slug text search + new Wikidata ID input + new spaCy entity dropdown
+- **Feature**: **Wikidata ID filter** — new `bm_wikidata_id` GET param; partial `LIKE` match against `p.wikidata_id`; placeholder `Q41773`; searches across any term whose wikidata_id contains the typed value
+- **Feature**: **spaCy entity filter** — new `bm_spacy` GET param; `<select>` dropdown listing all 18 NER types (`PERSON`, `NORP`, `FAC`, `ORG`, `GPE`, `LOC`, `PRODUCT`, `EVENT`, `WORK_OF_ART`, `LAW`, `LANGUAGE`, `DATE`, `TIME`, `PERCENT`, `MONEY`, `QUANTITY`, `ORDINAL`, `CARDINAL`); exact match against `p.spacy_entity`
+- Both new filters survive pagination (params carried in pagination URLs)
+- Empty-state "run pipeline" hint only shown when no filters are active (including the two new params)
+- `admin-page.php`: `bm_render_tab_proposals()` reads `bm_wikidata_id` + `bm_spacy`, extends WHERE accordingly; `bm_render_filters()` new signature + section layout; `bm_render_pagination()` carries new params in URL args
+- `breadcrumb-migration.php`: version bumped to `1.17.0`
+- `admin.css`: `.bm-filters` changed to `display:block`; new `.bm-filter-sections` (flex row of section cards), `.bm-filter-section`, `.bm-filter-section__title`, `.bm-filter-section__controls`, `.bm-filter-actions`, `.bm-filter-wikidata-id` styles
+
 ### v1.16.0 — 2026-06-11
 - **UX**: **Bulk Assign — 2-step workflow** — tab split into two `<section class="bm-bulk-step">` blocks with numbered step badges
   - **Step 1 "Search Keywords — Check Existing Assignments"**: paste keywords → click "Check Current Assignments" → preview table shows each keyword, whether it exists in the migration DB, and its current parent category (if any); read-only, no DB writes; new AJAX handler `bm_ajax_bulk_check()`

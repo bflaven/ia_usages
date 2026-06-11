@@ -81,9 +81,11 @@ function bm_render_tab_proposals( string $base_url ): void {
 	$t = bm_tables();
 
 	// ── Filters ────────────────────────────────────────────────────────────────
-	$filter_taxonomy = sanitize_text_field( $_GET['bm_taxonomy'] ?? 'all' );
-	$filter_state    = sanitize_text_field( $_GET['bm_state']    ?? 'all' );
-	$search          = sanitize_text_field( $_GET['bm_search']   ?? '' );
+	$filter_taxonomy    = sanitize_text_field( $_GET['bm_taxonomy']    ?? 'all' );
+	$filter_state       = sanitize_text_field( $_GET['bm_state']       ?? 'all' );
+	$search             = sanitize_text_field( $_GET['bm_search']      ?? '' );
+	$filter_wikidata_id = sanitize_text_field( $_GET['bm_wikidata_id'] ?? '' );
+	$filter_spacy       = sanitize_text_field( $_GET['bm_spacy']       ?? '' );
 	$per_page        = 20;
 	$current_page    = max( 1, absint( $_GET['paged'] ?? 1 ) );
 	$offset          = ( $current_page - 1 ) * $per_page;
@@ -105,6 +107,14 @@ function bm_render_tab_proposals( string $base_url ): void {
 		$like     = '%' . $wpdb->esc_like( $search ) . '%';
 		$params[] = $like;
 		$params[] = $like;
+	}
+	if ( $filter_wikidata_id !== '' ) {
+		$where   .= ' AND p.wikidata_id LIKE %s';
+		$params[] = '%' . $wpdb->esc_like( $filter_wikidata_id ) . '%';
+	}
+	if ( $filter_spacy !== '' ) {
+		$where   .= ' AND p.spacy_entity = %s';
+		$params[] = $filter_spacy;
 	}
 
 	// ── Count ──────────────────────────────────────────────────────────────────
@@ -151,12 +161,12 @@ function bm_render_tab_proposals( string $base_url ): void {
 	}
 
 	bm_render_stats( $stat_map );
-	bm_render_filters( $base_url, $filter_taxonomy, $filter_state, $search );
+	bm_render_filters( $base_url, $filter_taxonomy, $filter_state, $search, $filter_wikidata_id, $filter_spacy );
 
 	if ( empty( $rows ) ) {
 		?>
 		<div class="bm-empty">
-			<?php if ( $total === 0 && $filter_taxonomy === 'all' && $search === '' ) : ?>
+			<?php if ( $total === 0 && $filter_taxonomy === 'all' && $search === '' && $filter_wikidata_id === '' && $filter_spacy === '' ) : ?>
 				<p><?php esc_html_e( 'No terms found. Run the pipeline then import via the Import & Export tab, or run Step 4 with --no-dry-run.', 'breadcrumb-migration' ); ?></p>
 				<code>python source/pipeline/004_step_4_breadcrumb_proposal.py --auto-input --no-dry-run</code>
 			<?php else : ?>
@@ -171,7 +181,7 @@ function bm_render_tab_proposals( string $base_url ): void {
 				<?php bm_render_term_card( $row ); ?>
 			<?php endforeach; ?>
 		</div>
-		<?php bm_render_pagination( $total, $per_page, $current_page, $base_url, $filter_taxonomy, $filter_state, $search ); ?>
+		<?php bm_render_pagination( $total, $per_page, $current_page, $base_url, $filter_taxonomy, $filter_state, $search, $filter_wikidata_id, $filter_spacy ); ?>
 		<?php
 	}
 }
@@ -909,44 +919,80 @@ function bm_render_stats( array $stats ): void {
 		'approved' => __( 'Approved', 'breadcrumb-migration' ),
 		'rejected' => __( 'Rejected', 'breadcrumb-migration' ),
 	];
-	echo '<div class="bm-stats">';
-	foreach ( $labels as $key => $label ) {
-		$count = $stats[ $key ] ?? 0;
-		printf(
-			'<span class="bm-stat bm-stat--%s"><strong>%d</strong> %s</span>',
-			esc_attr( $key ),
-			(int) $count,
-			esc_html( $label )
-		);
-	}
-	echo '</div>';
+	?>
+	<section class="bm-panel bm-panel--overview" aria-label="<?php esc_attr_e( 'Overview', 'breadcrumb-migration' ); ?>">
+		<h3 class="bm-panel__title"><?php esc_html_e( 'Overview', 'breadcrumb-migration' ); ?></h3>
+		<div class="bm-stats">
+			<?php foreach ( $labels as $key => $label ) :
+				$count = $stats[ $key ] ?? 0;
+			?>
+			<span class="bm-stat bm-stat--<?php echo esc_attr( $key ); ?>">
+				<strong><?php echo (int) $count; ?></strong> <?php echo esc_html( $label ); ?>
+			</span>
+			<?php endforeach; ?>
+		</div>
+	</section>
+	<?php
 }
 
 // ── Filter bar ─────────────────────────────────────────────────────────────────
 
-function bm_render_filters( string $base_url, string $taxonomy, string $state, string $search ): void {
+function bm_render_filters( string $base_url, string $taxonomy, string $state, string $search, string $wikidata_id = '', string $spacy = '' ): void {
+	$spacy_options = [
+		'PERSON', 'NORP', 'FAC', 'ORG', 'GPE', 'LOC', 'PRODUCT', 'EVENT',
+		'WORK_OF_ART', 'LAW', 'LANGUAGE', 'DATE', 'TIME', 'PERCENT',
+		'MONEY', 'QUANTITY', 'ORDINAL', 'CARDINAL',
+	];
 	?>
 	<form method="get" action="<?php echo esc_url( $base_url ); ?>" class="bm-filters">
 		<input type="hidden" name="page" value="breadcrumb-migration">
 
-		<select name="bm_taxonomy">
-			<option value="all"      <?php selected( $taxonomy, 'all' ); ?>><?php esc_html_e( 'All taxonomies', 'breadcrumb-migration' ); ?></option>
-			<option value="category" <?php selected( $taxonomy, 'category' ); ?>><?php esc_html_e( 'Category', 'breadcrumb-migration' ); ?></option>
-			<option value="post_tag" <?php selected( $taxonomy, 'post_tag' ); ?>><?php esc_html_e( 'Tag', 'breadcrumb-migration' ); ?></option>
-		</select>
+		<div class="bm-filter-sections">
 
-		<select name="bm_state">
-			<option value="all"      <?php selected( $state, 'all' ); ?>><?php esc_html_e( 'All states', 'breadcrumb-migration' ); ?></option>
-			<option value="pending"  <?php selected( $state, 'pending' ); ?>><?php esc_html_e( 'Pending', 'breadcrumb-migration' ); ?></option>
-			<option value="approved" <?php selected( $state, 'approved' ); ?>><?php esc_html_e( 'Approved', 'breadcrumb-migration' ); ?></option>
-			<option value="rejected" <?php selected( $state, 'rejected' ); ?>><?php esc_html_e( 'Rejected', 'breadcrumb-migration' ); ?></option>
-		</select>
+			<!-- Filter -->
+			<section class="bm-panel bm-filter-section" aria-label="<?php esc_attr_e( 'Filter', 'breadcrumb-migration' ); ?>">
+				<h3 class="bm-panel__title"><?php esc_html_e( 'Filter', 'breadcrumb-migration' ); ?></h3>
+				<div class="bm-filter-section__controls">
+					<select name="bm_taxonomy">
+						<option value="all"      <?php selected( $taxonomy, 'all' ); ?>><?php esc_html_e( 'All taxonomies', 'breadcrumb-migration' ); ?></option>
+						<option value="category" <?php selected( $taxonomy, 'category' ); ?>><?php esc_html_e( 'Category', 'breadcrumb-migration' ); ?></option>
+						<option value="post_tag" <?php selected( $taxonomy, 'post_tag' ); ?>><?php esc_html_e( 'Tag', 'breadcrumb-migration' ); ?></option>
+					</select>
+					<select name="bm_state">
+						<option value="all"      <?php selected( $state, 'all' ); ?>><?php esc_html_e( 'All states', 'breadcrumb-migration' ); ?></option>
+						<option value="pending"  <?php selected( $state, 'pending' ); ?>><?php esc_html_e( 'Pending', 'breadcrumb-migration' ); ?></option>
+						<option value="approved" <?php selected( $state, 'approved' ); ?>><?php esc_html_e( 'Approved', 'breadcrumb-migration' ); ?></option>
+						<option value="rejected" <?php selected( $state, 'rejected' ); ?>><?php esc_html_e( 'Rejected', 'breadcrumb-migration' ); ?></option>
+					</select>
+				</div>
+			</section>
 
-		<input type="search" name="bm_search" value="<?php echo esc_attr( $search ); ?>"
-			placeholder="<?php esc_attr_e( 'Search term name…', 'breadcrumb-migration' ); ?>">
+			<!-- Search -->
+			<section class="bm-panel bm-filter-section" aria-label="<?php esc_attr_e( 'Search', 'breadcrumb-migration' ); ?>">
+				<h3 class="bm-panel__title"><?php esc_html_e( 'Search', 'breadcrumb-migration' ); ?></h3>
+				<div class="bm-filter-section__controls">
+					<input type="search" name="bm_search" value="<?php echo esc_attr( $search ); ?>"
+						placeholder="<?php esc_attr_e( 'Name or slug…', 'breadcrumb-migration' ); ?>">
+					<input type="search" name="bm_wikidata_id" value="<?php echo esc_attr( $wikidata_id ); ?>"
+						placeholder="<?php esc_attr_e( 'Wikidata ID, e.g. Q41773', 'breadcrumb-migration' ); ?>"
+						class="bm-filter-wikidata-id">
+					<select name="bm_spacy">
+						<option value=""><?php esc_html_e( 'All spaCy entities', 'breadcrumb-migration' ); ?></option>
+						<?php foreach ( $spacy_options as $entity ) : ?>
+							<option value="<?php echo esc_attr( $entity ); ?>" <?php selected( $spacy, $entity ); ?>>
+								<?php echo esc_html( $entity ); ?>
+							</option>
+						<?php endforeach; ?>
+					</select>
+				</div>
+			</section>
 
-		<button type="submit" class="button"><?php esc_html_e( 'Filter', 'breadcrumb-migration' ); ?></button>
-		<a href="<?php echo esc_url( $base_url ); ?>" class="button"><?php esc_html_e( 'Reset', 'breadcrumb-migration' ); ?></a>
+		</div><!-- .bm-filter-sections -->
+
+		<div class="bm-filter-actions">
+			<a href="<?php echo esc_url( $base_url ); ?>" class="button"><?php esc_html_e( 'Reset', 'breadcrumb-migration' ); ?></a>
+			<button type="submit" class="button button-primary"><?php esc_html_e( 'Filter', 'breadcrumb-migration' ); ?></button>
+		</div>
 	</form>
 	<?php
 }
@@ -1178,16 +1224,18 @@ function bm_render_term_card( object $row ): void {
 
 // ── Pagination ─────────────────────────────────────────────────────────────────
 
-function bm_render_pagination( int $total, int $per_page, int $current, string $base_url, string $taxonomy, string $state, string $search ): void {
+function bm_render_pagination( int $total, int $per_page, int $current, string $base_url, string $taxonomy, string $state, string $search, string $wikidata_id = '', string $spacy = '' ): void {
 	$total_pages = (int) ceil( $total / $per_page );
 	if ( $total_pages <= 1 ) {
 		return;
 	}
 
 	$url_params = add_query_arg( [
-		'bm_taxonomy' => $taxonomy,
-		'bm_state'    => $state,
-		'bm_search'   => $search,
+		'bm_taxonomy'    => $taxonomy,
+		'bm_state'       => $state,
+		'bm_search'      => $search,
+		'bm_wikidata_id' => $wikidata_id,
+		'bm_spacy'       => $spacy,
 	], $base_url );
 
 	echo '<div class="bm-pagination">';
