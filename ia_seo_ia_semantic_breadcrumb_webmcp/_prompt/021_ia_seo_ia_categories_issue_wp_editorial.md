@@ -1,3 +1,26 @@
+## PROMPT_4
+I am fine with the evolutions in the plugin `breadcrumb-migration` Version 1.15.0 bu I want a better UX.
+
+1. In the tab "Bulk Assign", I want 2 sections or 2 steps e.g you can use `<section></section>` to mark out the steps or sections. Feel free to make propositions for each title section.
+In first step or section, I should be able to cut and paste in bm-bulk-keywords a list of keywords and search if they have first a default parent category e.g Tunisian Arabic, user stories, vectorization, version control, Whisper, Wolof, Wordpress, Yoruba, Zulu. 
+In second step or section, I should able to select
+2. In the tab "Bulk Description", I need to know with color code the status for each row. Indicate also the below "Requirements" with a your choice name that explain the color code. Use light color because it has to remain readable. Let's say
+light green: the status is published and everything has  been completed and the breadcrumb is published in the frontend. I don't have to give a shit about these tags. You can add a filter also "Completed" as a checkbox.
+light orange: there is something wrong eg Wikidata ID empty or Wikidata description empty or Actual description empty
+light red : this shit storm there is nothing, no Wikidata ID empty and no Wikidata description empty and no Actual description empty.
+
+3. For every filter indicate the number of tags available at the right of the button "Show all". By default, when it is "Show all", show at the same place the total amount of tags. Be carful with these changes, I do not want to shatter the performance for a fucking UX enhancement so challenge me if it is not possible.
+
+Note: Before coding, summarize in bullet points that you understand from the given instructions. Update the readme in the changelog in the readme and the version of the plugin when I validate the changes asked.
+
+
+## PROMPT_3
+Add this change below to the existing list.
+One more change. I have made a manual edit of a selected tag and added Description so I should be able to see in the column Actual Description if I had a refresh button somewhere near "Edit in WP". It should not be "Empty". You need also to flag the porcess of creating a description because it means that is handwriting description made by me an that is fucking precious because even is there is Wikidata ID or no Wikidata ID the description wa unavailable so I had to write to it down, I do not want to loose it but i want to know that these description has been written by me and do not need to be synchronize.
+Note: Before coding, summarize in bullet points that you understand from the given instructions. Update the readme in the changelog in the readme and the version of the plugin when I validate the changes asked.
+
+
+
 ## PROMPT_3
 Add this change below to the existing list.
 One more change. I have made a manual edit of a selected tag and added Description so I should be able to see in the column Actual Description if I had a refresh button somewhere near "Edit in WP". It should not be "Empty". You need also to flag the porcess of creating a description because it means that is handwriting description made by me an that is fucking precious because even is there is Wikidata ID or no Wikidata ID the description wa unavailable so I had to write to it down, I do not want to loose it but i want to know that these description has been written by me and do not need to be synchronize.
