@@ -1,3 +1,29 @@
+## PROMPT_3
+Add this change below to the existing list.
+One more change. I have made a manual edit of a selected tag and added Description so I should be able to see in the column Actual Description if I had a refresh button somewhere near "Edit in WP". It should not be "Empty". You need also to flag the porcess of creating a description because it means that is handwriting description made by me an that is fucking precious because even is there is Wikidata ID or no Wikidata ID the description wa unavailable so I had to write to it down, I do not want to loose it but i want to know that these description has been written by me and do not need to be synchronize.
+Note: Before coding, summarize in bullet points that you understand from the given instructions. Update the readme in the changelog in the readme and the version of the plugin when I validate the changes asked.
+
+## PROMPT_2
+
+I am fine with the evolutions in the plugin `breadcrumb-migration` Version 1.14.0 bu I want a better UX.
+
+1. On the tab "Bulk Description", the screen is now a bit messy, you should each function in a tag `<section></section>`  or something that separates each function so we can easily identify the function in the Bulk Description main section. Capisce ?
+
+2. For tout information, I just make a proposition of section names. Find a better and shorter name, the most functional and english native speaking eg american or english who cares :)
+e.g 
+section_1 -> Caution using Bulk Description
+section_2 -> Search tag
+section_3 -> Filter by tag names
+section_4 -> Working by row.
+Do do use section_#NB -> as name ! it is just for educational purposes, make some good suggestions yourself.
+3. For the caution message, it is fucking messy. Be more direct and explicit, enumerate the conditions required to enable the edition of each tag because I will probably forget the requirements to have the opportunity to see tags in this page. Gotcha ? I just give you some orientation, it is just for educational purposes, make some good propositions yourself.
+
+Use after Bulk Assign: 
+	i. You must assign a default category to each tag so the tag is available in the tab "Bulk Description"
+	ii. You must validate but not necessary publish.
+
+Note: Before coding, summarize in bullet points that you understand from the given instructions. Update the readme in the changelog in the readme and the version of the plugin when I validate the changes asked.
+
 
 
 ## PROMPT_1
@@ -20,15 +46,11 @@ Note: Before coding, summarize in bullet points that you understand from the giv
 
 
 
-
-
-
-
-
-
-
-
 ## DEPOT
+- wikidata extension for tag contribution
+```txt
+Alexandre Brachet is the founder of the production company UPIAN, a pioneer in web documentaries and transmedia production.
+```
 - categories
 ```txt
 APIs & Integration, 
