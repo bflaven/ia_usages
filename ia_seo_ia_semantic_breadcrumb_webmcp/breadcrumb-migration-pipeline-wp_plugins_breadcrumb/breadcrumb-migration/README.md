@@ -190,7 +190,7 @@ http://localhost:8080/wp-admin/admin.php?page=breadcrumb-migration
 |---|---|---|
 | **Proposals** | `?page=breadcrumb-migration` | Two-column card list with filters and pagination |
 | **Delta — New Tags** | `?page=breadcrumb-migration&tab=delta` | Scan, Wikidata-search, and manually enrich tags added after pipeline ran |
-| **Bulk Assign** | `?page=breadcrumb-migration&tab=bulk_assign` | Assign a parent category to a list of keywords in one step |
+| **Bulk Assign** | `?page=breadcrumb-migration&tab=bulk_assign` | Two-step workflow: check existing assignments (Step 1) then assign a parent category (Step 2) |
 | **Bulk Description** | `?page=breadcrumb-migration&tab=bulk_description` | Review, fetch, and save Wikidata descriptions to WordPress for all approved tags |
 | **Import & Export** | `?page=breadcrumb-migration&tab=import` | File upload form + 3 CSV/JSON download buttons |
 | **Settings** | `?page=breadcrumb-migration&tab=settings` | Plugin options: Wikidata search language |
@@ -405,6 +405,24 @@ Home > Tags > 17 octobre 1961      ← "Tags" links to /tags/ (WP page with slug
 ---
 
 ## Changelog
+
+### v1.16.0 — 2026-06-11
+- **UX**: **Bulk Assign — 2-step workflow** — tab split into two `<section class="bm-bulk-step">` blocks with numbered step badges
+  - **Step 1 "Search Keywords — Check Existing Assignments"**: paste keywords → click "Check Current Assignments" → preview table shows each keyword, whether it exists in the migration DB, and its current parent category (if any); read-only, no DB writes; new AJAX handler `bm_ajax_bulk_check()`
+  - **Step 2 "Assign Parent Category to Keywords"**: category dropdown + "Assign Category to Keywords" button — same bulk-assign logic as before, reuses keywords from Step 1 textarea
+- **UX**: **Bulk Description — row color coding** — every row in the Tag Descriptions table is now color-coded by status:
+  - **Light green** (`#f0fdf4`): `term_status = 'published'` — breadcrumb live on frontend, no action needed
+  - **Light orange** (`#fff7ed`): at least one field missing (Wikidata ID, Wikidata description, or actual description) but not all three
+  - **Light red** (`#fef2f2`): all three fields empty — needs full attention
+  - Row color recalculates live via `bmUpdateRowStatus()` after fetch, copy, refresh, or sync operations
+- **UX**: **Bulk Description — "Status Key" legend panel** — new `<section class="bm-panel bm-panel--legend">` between Requirements and Quick Find; shows three color swatches (green/orange/red) with label and description
+- **UX**: **Bulk Description — filter counts** — count badge `(N)` added after each filter label showing how many rows match that criterion; `N / total` visible counter appears to the right of the "Show all" button and updates after every filter, search, or data change; pure DOM counting — zero extra DB queries
+- **Feature**: **"Completed" filter checkbox** — new filter in the "Show only:" bar that shows only green (published) rows; complements existing "Wikidata ID empty", "Wikidata description empty", "Actual description empty", "Written (manual) only" filters
+- `admin-page.php`: `bm_render_tab_bulk_assign()` restructured into two `<section>` elements with step badges and descriptions; `bm_render_tab_bulk_description()` SQL updated to fetch `t.status AS term_status`; row `foreach` computes `$is_published` and `$row_status`; TR gets `bm-desc-row--{status}` class + `data-row-status` + `data-term-published` attributes; Status Key legend added; filters section gets count spans + Completed checkbox + visible-count display
+- `ajax-handler.php`: new `bm_ajax_bulk_check()` — read-only lookup of existing parent-category assignments for a list of keywords; returns `found`, `parent_id`, `parent_name` per keyword
+- `breadcrumb-migration.php`: `wp_ajax_bm_bulk_check` hook registered; version bumped to `1.16.0`
+- `admin.js`: new `bmUpdateRowStatus()` helper recomputes row color class from data attributes; new `bmUpdateFilterCounts()` updates all count badges + visible counter; bulk-check click handler added; `bmDescApplyFilters()` extended for Completed filter + calls `bmUpdateFilterCounts()`; filter reset updated; `bmSetActualBadge()` calls `bmUpdateRowStatus()` after updating data attributes; Wikidata fetch handler calls `bmUpdateRowStatus()`; filter counts initialised on page load via `bmUpdateFilterCounts()`; name search and tag filter apply/clear call `bmUpdateFilterCounts()`
+- `admin.css`: `.bm-bulk-step`, `.bm-bulk-step--1/2`, `.bm-bulk-step__title`, `.bm-step-badge`, `.bm-bulk-step__actions`, `.bm-bulk-check-table` styles; `.bm-desc-row--green/orange/red` row status colors; `.bm-filter-count` badge; `.bm-filter-visible-count`; `.bm-panel--legend`, `.bm-legend-list`, `.bm-legend-item`, `.bm-legend-swatch` styles added
 
 ### v1.15.0 — 2026-06-11
 - **UX**: **Bulk Description — 4 named sections** — tab now split into `<section class="bm-panel">` wrappers: **Requirements**, **Quick Find**, **Batch Filter**, **Tag Descriptions**; each has a visible `<h3>` title and bordered card layout

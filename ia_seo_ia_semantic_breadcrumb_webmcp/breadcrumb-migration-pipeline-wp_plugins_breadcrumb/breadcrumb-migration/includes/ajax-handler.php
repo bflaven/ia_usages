@@ -931,3 +931,65 @@ function bm_ajax_publish_term(): void {
 		),
 	] );
 }
+
+// ── Bulk check existing parent-category assignments (read-only) ───────────────
+
+function bm_ajax_bulk_check(): void {
+	bm_verify_request();
+
+	$keywords_raw = sanitize_textarea_field( $_POST['keywords'] ?? '' );
+	if ( ! $keywords_raw ) {
+		wp_send_json_error( [ 'message' => 'No keywords provided.' ] );
+	}
+
+	$keywords = array_values( array_unique( array_filter(
+		array_map( 'trim', preg_split( '/[\n\r,]+/', $keywords_raw ) )
+	) ) );
+
+	if ( empty( $keywords ) ) {
+		wp_send_json_error( [ 'message' => 'No valid keywords.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$results = [];
+	foreach ( $keywords as $kw ) {
+		$row = $wpdb->get_row( $wpdb->prepare(
+			"SELECT t.id, p.id AS proposal_id, p.proposed_parent_id
+			 FROM {$t['terms']} t
+			 LEFT JOIN {$t['proposals']} p ON p.term_id = t.id
+			 WHERE t.taxonomy = 'post_tag'
+			   AND (t.original_name = %s OR t.original_slug = %s)
+			 LIMIT 1",
+			$kw,
+			sanitize_title( $kw )
+		) );
+
+		if ( ! $row ) {
+			$results[] = [
+				'keyword'     => $kw,
+				'found'       => false,
+				'parent_id'   => null,
+				'parent_name' => null,
+			];
+			continue;
+		}
+
+		$parent_id   = (int) ( $row->proposed_parent_id ?? 0 );
+		$parent_name = null;
+		if ( $parent_id ) {
+			$cat = get_term( $parent_id, 'category' );
+			$parent_name = ( $cat && ! is_wp_error( $cat ) ) ? $cat->name : null;
+		}
+
+		$results[] = [
+			'keyword'     => $kw,
+			'found'       => true,
+			'parent_id'   => $parent_id ?: null,
+			'parent_name' => $parent_name,
+		];
+	}
+
+	wp_send_json_success( [ 'results' => $results, 'total' => count( $results ) ] );
+}

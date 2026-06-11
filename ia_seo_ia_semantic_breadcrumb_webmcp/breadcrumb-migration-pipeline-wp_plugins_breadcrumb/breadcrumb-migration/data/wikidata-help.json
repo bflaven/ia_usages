@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "sections": [
+    {
+      "id": "create-items",
+      "icon": "➕",
+      "title": "Creating Wikidata Items",
+      "description": "Step-by-step guides to add new entities to Wikidata's knowledge graph — from label and description to linked statements and references.",
+      "articles": [
+        {
+          "id": "wikidata-augmented-journalism",
+          "title": "How to add 'augmented journalism' to Wikidata",
+          "item": {
+            "language": "en",
+            "label": "augmented journalism",
+            "description": "journalistic practice combining human expertise with artificial intelligence to assist reporting, data analysis and fact-checking while keeping editorial judgment human",
+            "aliases": ["AI-assisted journalism", "augmented journalist"]
+          },
+          "steps": [
+            {
+              "step": 1,
+              "name": "Create the item",
+              "url": "https://www.wikidata.org/wiki/Special:NewItem",
+              "instructions": "Fill in Language (en), Label, Description and Aliases (pipe-separated), then click 'Create'. Wikidata assigns the item a unique QID.",
+              "fields": {
+                "language": "en",
+                "label": "augmented journalism",
+                "description": "journalistic practice combining human expertise with artificial intelligence to assist reporting, data analysis and fact-checking while keeping editorial judgment human",
+                "aliases_input": "AI-assisted journalism | augmented journalist"
+              }
+            },
+            {
+              "step": 2,
+              "name": "Add statement: subclass of → journalism",
+              "instructions": "In the Statements section, click '+ add statement'. Select the property, select the value, then click 'publish'.",
+              "statement": {
+                "property": { "id": "P279", "label": "subclass of" },
+                "value":    { "id": "Q11030", "label": "journalism" }
+              }
+            },
+            {
+              "step": 3,
+              "name": "Add statement: uses → artificial intelligence",
+              "instructions": "Click '+ add statement' again. Select the property, select the value, then click 'publish'.",
+              "statement": {
+                "property": { "id": "P2283", "label": "uses" },
+                "value":    { "id": "Q11660", "label": "artificial intelligence" }
+              }
+            },
+            {
+              "step": 4,
+              "name": "Add a reference (recommended)",
+              "instructions": "Under each statement, click 'add reference'. Add a reference URL and the retrieval date, then click 'publish'. References protect new items from deletion for lack of notability.",
+              "reference_properties": [
+                { "id": "P854", "label": "reference URL",  "value": "URL of a source supporting the claim" },
+                { "id": "P813", "label": "retrieved",       "value": "today's date" }
+              ]
+            }
+          ],
+          "result": "The item is searchable on Wikidata, linked to the knowledge graph as a subclass of journalism (Q11030) that uses artificial intelligence (Q11660), and usable for entity linking via its QID."
+        }
+      ]
+    }
+  ]
+}

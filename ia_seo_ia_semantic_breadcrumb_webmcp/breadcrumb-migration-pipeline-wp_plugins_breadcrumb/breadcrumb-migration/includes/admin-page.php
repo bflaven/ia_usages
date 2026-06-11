@@ -11,6 +11,7 @@ function bm_render_tabs( string $base_url, string $current ): void {
 		'delta'            => __( 'Delta — New Tags', 'breadcrumb-migration' ),
 		'bulk_assign'      => __( 'Bulk Assign', 'breadcrumb-migration' ),
 		'bulk_description' => __( 'Bulk Description', 'breadcrumb-migration' ),
+		'help_wikidata'    => __( 'Help — Wikidata', 'breadcrumb-migration' ),
 		'import'           => __( 'Import & Export', 'breadcrumb-migration' ),
 		'settings'         => __( 'Settings', 'breadcrumb-migration' ),
 		'danger'           => __( 'Danger Zone', 'breadcrumb-migration' ),
@@ -57,6 +58,8 @@ function bm_render_admin_page(): void {
 			bm_render_tab_bulk_assign();
 		} elseif ( $current_tab === 'bulk_description' ) {
 			bm_render_tab_bulk_description();
+		} elseif ( $current_tab === 'help_wikidata' ) {
+			bm_render_tab_help_wikidata();
 		} elseif ( $current_tab === 'import' ) {
 			bm_render_tab_import();
 		} elseif ( $current_tab === 'settings' ) {
@@ -215,20 +218,41 @@ function bm_render_tab_bulk_assign(): void {
 	?>
 	<div class="bm-section">
 		<h2><?php esc_html_e( 'Bulk Assign Category', 'breadcrumb-migration' ); ?></h2>
-		<p class="description">
-			<?php esc_html_e( 'Paste keywords (one per line or comma-separated). Select a parent category, then click Assign. Each keyword will be matched by name against post_tag terms in the migration database and assigned the selected category as breadcrumb parent.', 'breadcrumb-migration' ); ?>
-		</p>
 
-		<div class="bm-bulk-form">
+		<!-- ── Step 1: Keyword Lookup ──────────────────────────────────────── -->
+		<section class="bm-bulk-step bm-bulk-step--1" aria-label="<?php esc_attr_e( 'Step 1: Keyword Lookup', 'breadcrumb-migration' ); ?>">
+			<h3 class="bm-bulk-step__title">
+				<span class="bm-step-badge">1</span>
+				<?php esc_html_e( 'Search Keywords — Check Existing Assignments', 'breadcrumb-migration' ); ?>
+			</h3>
+			<p class="description">
+				<?php esc_html_e( 'Paste keywords (one per line or comma-separated), then click "Check" to preview which already have a parent category assigned in the migration database.', 'breadcrumb-migration' ); ?>
+			</p>
 			<div class="bm-bulk-form__field">
 				<label for="bm-bulk-keywords">
 					<strong><?php esc_html_e( 'Keywords', 'breadcrumb-migration' ); ?></strong>
 					<span class="description"><?php esc_html_e( 'One per line or comma-separated', 'breadcrumb-migration' ); ?></span>
 				</label>
-				<textarea id="bm-bulk-keywords" rows="14" class="bm-bulk-keywords"
-					placeholder="<?php esc_attr_e( 'One keyword per line, e.g.&#10;Adolph Zukor&#10;Brand content&#10;Hollywood', 'breadcrumb-migration' ); ?>"></textarea>
+				<textarea id="bm-bulk-keywords" rows="10" class="bm-bulk-keywords"
+					placeholder="<?php esc_attr_e( 'One keyword per line, e.g.&#10;Tunisian Arabic&#10;Whisper&#10;Wordpress&#10;Yoruba&#10;Zulu', 'breadcrumb-migration' ); ?>"></textarea>
 			</div>
+			<div class="bm-bulk-step__actions">
+				<button type="button" class="button bm-btn-bulk-check">
+					<?php esc_html_e( 'Check Current Assignments', 'breadcrumb-migration' ); ?>
+				</button>
+			</div>
+			<div id="bm-bulk-check-results" style="display:none;" class="bm-bulk-check-results"></div>
+		</section>
 
+		<!-- ── Step 2: Assign Category ─────────────────────────────────────── -->
+		<section class="bm-bulk-step bm-bulk-step--2" aria-label="<?php esc_attr_e( 'Step 2: Assign Category', 'breadcrumb-migration' ); ?>">
+			<h3 class="bm-bulk-step__title">
+				<span class="bm-step-badge">2</span>
+				<?php esc_html_e( 'Assign Parent Category to Keywords', 'breadcrumb-migration' ); ?>
+			</h3>
+			<p class="description">
+				<?php esc_html_e( 'Select a parent category, then click Assign. Each keyword from Step 1 will be matched by name against post_tag terms in the migration database and assigned the selected category as breadcrumb parent.', 'breadcrumb-migration' ); ?>
+			</p>
 			<div class="bm-bulk-form__field">
 				<label for="bm-bulk-category">
 					<strong><?php esc_html_e( 'Parent Category', 'breadcrumb-migration' ); ?></strong>
@@ -243,15 +267,13 @@ function bm_render_tab_bulk_assign(): void {
 					<?php endforeach; ?>
 				</select>
 			</div>
-
-			<div class="bm-bulk-form__actions">
+			<div class="bm-bulk-step__actions">
 				<button type="button" class="button button-primary bm-btn-bulk-assign">
-					<?php esc_html_e( 'Assign Category to Selected Keywords', 'breadcrumb-migration' ); ?>
+					<?php esc_html_e( 'Assign Category to Keywords', 'breadcrumb-migration' ); ?>
 				</button>
 			</div>
-		</div>
-
-		<div id="bm-bulk-results" style="display:none;" class="bm-bulk-results"></div>
+			<div id="bm-bulk-results" style="display:none;" class="bm-bulk-results"></div>
+		</section>
 	</div>
 	<?php
 }
@@ -265,7 +287,7 @@ function bm_render_tab_bulk_description(): void {
 	$rows = $wpdb->get_results( // phpcs:ignore
 		"SELECT p.id AS proposal_id, p.wikidata_id, p.wikidata_description,
 		        p.proposed_description, p.proposed_slug,
-		        t.wp_term_id, t.original_name
+		        t.wp_term_id, t.original_name, t.status AS term_status
 		 FROM {$t['proposals']} p
 		 JOIN {$t['terms']} t ON t.id = p.term_id
 		 WHERE p.validation_state = 'approved'
@@ -303,6 +325,34 @@ function bm_render_tab_bulk_description(): void {
 		<?php if ( empty( $rows ) ) : ?>
 			<p class="bm-no-data" style="margin-top:16px;"><?php esc_html_e( 'No approved tags found. Approve proposals in the Proposals tab first.', 'breadcrumb-migration' ); ?></p>
 		<?php else : ?>
+
+			<!-- ── Status Key ───────────────────────────────────────────────── -->
+			<section class="bm-panel bm-panel--legend" aria-label="<?php esc_attr_e( 'Status Key', 'breadcrumb-migration' ); ?>">
+				<h3 class="bm-panel__title"><?php esc_html_e( 'Status Key', 'breadcrumb-migration' ); ?></h3>
+				<ul class="bm-legend-list">
+					<li class="bm-legend-item">
+						<span class="bm-legend-swatch bm-legend-swatch--green"></span>
+						<div>
+							<strong><?php esc_html_e( 'Completed', 'breadcrumb-migration' ); ?></strong>
+							<?php esc_html_e( '— Published to the frontend. Breadcrumb is live. No action needed.', 'breadcrumb-migration' ); ?>
+						</div>
+					</li>
+					<li class="bm-legend-item">
+						<span class="bm-legend-swatch bm-legend-swatch--orange"></span>
+						<div>
+							<strong><?php esc_html_e( 'Incomplete', 'breadcrumb-migration' ); ?></strong>
+							<?php esc_html_e( '— One or more fields missing: Wikidata ID, Wikidata description, or actual tag description.', 'breadcrumb-migration' ); ?>
+						</div>
+					</li>
+					<li class="bm-legend-item">
+						<span class="bm-legend-swatch bm-legend-swatch--red"></span>
+						<div>
+							<strong><?php esc_html_e( 'Empty', 'breadcrumb-migration' ); ?></strong>
+							<?php esc_html_e( '— No Wikidata ID, no Wikidata description, and no actual tag description. Needs full attention.', 'breadcrumb-migration' ); ?>
+						</div>
+					</li>
+				</ul>
+			</section>
 
 			<!-- ── Section 2: Quick Find ────────────────────────────────────── -->
 			<section class="bm-panel bm-panel--quick-find" aria-label="<?php esc_attr_e( 'Quick Find', 'breadcrumb-migration' ); ?>">
@@ -354,22 +404,34 @@ function bm_render_tab_bulk_description(): void {
 				<label>
 					<input type="checkbox" id="bm-filter-wd-id-empty" class="bm-desc-filter">
 					<?php esc_html_e( 'Wikidata ID empty', 'breadcrumb-migration' ); ?>
+					<span class="bm-filter-count" id="bm-count-wd-id-empty">0</span>
 				</label>
 				<label>
 					<input type="checkbox" id="bm-filter-wd-desc-empty" class="bm-desc-filter">
 					<?php esc_html_e( 'Wikidata description empty', 'breadcrumb-migration' ); ?>
+					<span class="bm-filter-count" id="bm-count-wd-desc-empty">0</span>
 				</label>
 				<label>
 					<input type="checkbox" id="bm-filter-actual-desc-empty" class="bm-desc-filter">
 					<?php esc_html_e( 'Actual description empty', 'breadcrumb-migration' ); ?>
+					<span class="bm-filter-count" id="bm-count-actual-desc-empty">0</span>
 				</label>
 				<label>
 					<input type="checkbox" id="bm-filter-manual-only" class="bm-desc-filter">
 					<?php esc_html_e( 'Written (manual) only', 'breadcrumb-migration' ); ?>
+					<span class="bm-filter-count" id="bm-count-manual-only">0</span>
+				</label>
+				<label>
+					<input type="checkbox" id="bm-filter-completed" class="bm-desc-filter">
+					<?php esc_html_e( 'Completed', 'breadcrumb-migration' ); ?>
+					<span class="bm-filter-count" id="bm-count-completed">0</span>
 				</label>
 				<button type="button" class="button button-small" id="bm-desc-filter-reset">
 					<?php esc_html_e( 'Show all', 'breadcrumb-migration' ); ?>
 				</button>
+				<span class="bm-filter-visible-count">
+					<span id="bm-desc-visible-count">0</span> / <span id="bm-desc-total-count">0</span>
+				</span>
 			</div>
 
 			<table class="widefat striped bm-bulk-desc-table" id="bm-bulk-desc-table">
@@ -404,14 +466,25 @@ function bm_render_tab_bulk_description(): void {
 					} else {
 						$desc_source = 'empty';
 					}
+
+					$is_published = ( ( $row->term_status ?? '' ) === 'published' );
+					if ( $is_published ) {
+						$row_status = 'green';
+					} elseif ( empty( $row->wikidata_id ) && $wikidata_desc === '' && $proposed_desc === '' ) {
+						$row_status = 'red';
+					} else {
+						$row_status = 'orange';
+					}
 				?>
-					<tr class="bm-bulk-desc-row"
+					<tr class="bm-bulk-desc-row bm-desc-row--<?php echo esc_attr( $row_status ); ?>"
 						data-proposal-id="<?php echo esc_attr( $proposal_id ); ?>"
 						data-tag-name="<?php echo esc_attr( mb_strtolower( $row->original_name, 'UTF-8' ) ); ?>"
 						data-desc-source="<?php echo esc_attr( $desc_source ); ?>"
 						data-wd-id-empty="<?php echo empty( $row->wikidata_id ) ? '1' : '0'; ?>"
 						data-wd-desc-empty="<?php echo $wikidata_desc === '' ? '1' : '0'; ?>"
-						data-actual-desc-empty="<?php echo $proposed_desc === '' ? '1' : '0'; ?>">
+						data-actual-desc-empty="<?php echo $proposed_desc === '' ? '1' : '0'; ?>"
+						data-term-published="<?php echo $is_published ? '1' : '0'; ?>"
+						data-row-status="<?php echo esc_attr( $row_status ); ?>">
 						<td class="bm-bulk-col-cb">
 							<input type="checkbox" class="bm-desc-cb"
 								value="<?php echo esc_attr( $proposal_id ); ?>">
@@ -510,6 +583,195 @@ function bm_render_tab_bulk_description(): void {
 			</section><!-- .bm-panel--tag-descriptions -->
 		<?php endif; ?>
 	</div>
+	<?php
+}
+
+// ── Help — Wikidata tab ────────────────────────────────────────────────────────
+
+function bm_render_tab_help_wikidata(): void {
+	$json_path = BM_PLUGIN_DIR . 'data/wikidata-help.json';
+
+	if ( ! file_exists( $json_path ) ) {
+		?>
+		<div class="bm-section">
+			<p class="bm-error"><?php esc_html_e( 'Help data file not found: data/wikidata-help.json', 'breadcrumb-migration' ); ?></p>
+		</div>
+		<?php
+		return;
+	}
+
+	$raw  = file_get_contents( $json_path ); // phpcs:ignore
+	$data = json_decode( $raw, true );
+
+	if ( ! is_array( $data ) || empty( $data['sections'] ) ) {
+		?>
+		<div class="bm-section">
+			<p class="bm-error"><?php esc_html_e( 'Help data file is empty or has an invalid format.', 'breadcrumb-migration' ); ?></p>
+		</div>
+		<?php
+		return;
+	}
+	?>
+	<div class="bm-section bm-help-wrap">
+		<h2><?php esc_html_e( 'Help — Wikidata', 'breadcrumb-migration' ); ?></h2>
+		<p class="description">
+			<?php esc_html_e( 'Step-by-step guides and reference material for working with Wikidata entities in the breadcrumb migration workflow. Content is loaded from ', 'breadcrumb-migration' ); ?>
+			<code>data/wikidata-help.json</code> — <?php esc_html_e( 'edit that file to add new sections or articles without touching PHP.', 'breadcrumb-migration' ); ?>
+		</p>
+
+		<?php foreach ( $data['sections'] as $section ) :
+			if ( empty( $section['id'] ) || empty( $section['title'] ) ) continue;
+		?>
+		<section class="bm-help-section-block" id="bm-help-<?php echo esc_attr( $section['id'] ); ?>">
+
+			<div class="bm-help-section-header">
+				<?php if ( ! empty( $section['icon'] ) ) : ?>
+					<span class="bm-help-icon" aria-hidden="true"><?php echo esc_html( $section['icon'] ); ?></span>
+				<?php endif; ?>
+				<div>
+					<h3 class="bm-help-section-title"><?php echo esc_html( $section['title'] ); ?></h3>
+					<?php if ( ! empty( $section['description'] ) ) : ?>
+						<p class="bm-help-section-desc description"><?php echo esc_html( $section['description'] ); ?></p>
+					<?php endif; ?>
+				</div>
+			</div>
+
+			<?php if ( ! empty( $section['articles'] ) ) :
+				foreach ( $section['articles'] as $article ) :
+					if ( empty( $article['id'] ) || empty( $article['title'] ) ) continue;
+			?>
+			<div class="bm-help-article" id="bm-help-article-<?php echo esc_attr( $article['id'] ); ?>">
+
+				<button class="bm-help-article-toggle" type="button" aria-expanded="true"
+					aria-controls="bm-help-body-<?php echo esc_attr( $article['id'] ); ?>">
+					<span class="bm-help-article-title"><?php echo esc_html( $article['title'] ); ?></span>
+					<span class="bm-help-toggle-icon" aria-hidden="true">&#9660;</span>
+				</button>
+
+				<div class="bm-help-article-body" id="bm-help-body-<?php echo esc_attr( $article['id'] ); ?>">
+
+					<?php if ( ! empty( $article['item'] ) ) :
+						$item = $article['item'];
+					?>
+					<div class="bm-help-item-card">
+						<h4 class="bm-help-item-card__title"><?php esc_html_e( 'Item summary', 'breadcrumb-migration' ); ?></h4>
+						<table class="bm-help-item-table">
+							<?php if ( ! empty( $item['label'] ) ) : ?>
+							<tr>
+								<th><?php esc_html_e( 'Label', 'breadcrumb-migration' ); ?></th>
+								<td><code><?php echo esc_html( $item['label'] ); ?></code></td>
+							</tr>
+							<?php endif; ?>
+							<?php if ( ! empty( $item['language'] ) ) : ?>
+							<tr>
+								<th><?php esc_html_e( 'Language', 'breadcrumb-migration' ); ?></th>
+								<td><span class="bm-help-badge"><?php echo esc_html( $item['language'] ); ?></span></td>
+							</tr>
+							<?php endif; ?>
+							<?php if ( ! empty( $item['description'] ) ) : ?>
+							<tr>
+								<th><?php esc_html_e( 'Description', 'breadcrumb-migration' ); ?></th>
+								<td><?php echo esc_html( $item['description'] ); ?></td>
+							</tr>
+							<?php endif; ?>
+							<?php if ( ! empty( $item['aliases'] ) ) : ?>
+							<tr>
+								<th><?php esc_html_e( 'Aliases', 'breadcrumb-migration' ); ?></th>
+								<td>
+									<?php foreach ( $item['aliases'] as $alias ) : ?>
+										<span class="bm-help-badge bm-help-badge--alias"><?php echo esc_html( $alias ); ?></span>
+									<?php endforeach; ?>
+								</td>
+							</tr>
+							<?php endif; ?>
+						</table>
+					</div>
+					<?php endif; ?>
+
+					<?php if ( ! empty( $article['steps'] ) ) : ?>
+					<ol class="bm-help-steps">
+						<?php foreach ( $article['steps'] as $step ) : ?>
+						<li class="bm-help-step">
+
+							<div class="bm-help-step-header">
+								<strong class="bm-help-step-name"><?php echo esc_html( $step['name'] ?? '' ); ?></strong>
+								<?php if ( ! empty( $step['url'] ) ) : ?>
+									<a href="<?php echo esc_url( $step['url'] ); ?>"
+										target="_blank" rel="noopener noreferrer"
+										class="bm-help-step-url">
+										<?php echo esc_html( $step['url'] ); ?> ↗
+									</a>
+								<?php endif; ?>
+							</div>
+
+							<?php if ( ! empty( $step['instructions'] ) ) : ?>
+								<p class="bm-help-step-instructions"><?php echo esc_html( $step['instructions'] ); ?></p>
+							<?php endif; ?>
+
+							<?php if ( ! empty( $step['fields'] ) ) : ?>
+							<table class="bm-help-fields-table">
+								<?php foreach ( $step['fields'] as $key => $val ) : ?>
+								<tr>
+									<th><?php echo esc_html( ucwords( str_replace( '_', ' ', $key ) ) ); ?></th>
+									<td><?php echo esc_html( $val ); ?></td>
+								</tr>
+								<?php endforeach; ?>
+							</table>
+							<?php endif; ?>
+
+							<?php if ( ! empty( $step['statement'] ) ) :
+								$prop = $step['statement']['property'] ?? [];
+								$val  = $step['statement']['value']    ?? [];
+							?>
+							<div class="bm-help-statement">
+								<span class="bm-help-property">
+									<?php if ( ! empty( $prop['id'] ) ) : ?><code><?php echo esc_html( $prop['id'] ); ?></code><?php endif; ?>
+									<?php echo esc_html( $prop['label'] ?? '' ); ?>
+								</span>
+								<span class="bm-help-arrow">&#8594;</span>
+								<span class="bm-help-value">
+									<?php if ( ! empty( $val['id'] ) ) : ?><code><?php echo esc_html( $val['id'] ); ?></code><?php endif; ?>
+									<?php echo esc_html( $val['label'] ?? '' ); ?>
+								</span>
+							</div>
+							<?php endif; ?>
+
+							<?php if ( ! empty( $step['reference_properties'] ) ) : ?>
+							<ul class="bm-help-ref-list">
+								<?php foreach ( $step['reference_properties'] as $ref ) : ?>
+								<li>
+									<?php if ( ! empty( $ref['id'] ) ) : ?>
+										<code><?php echo esc_html( $ref['id'] ); ?></code>
+									<?php endif; ?>
+									<strong><?php echo esc_html( $ref['label'] ?? '' ); ?></strong>
+									<?php if ( ! empty( $ref['value'] ) ) : ?>
+										— <?php echo esc_html( $ref['value'] ); ?>
+									<?php endif; ?>
+								</li>
+								<?php endforeach; ?>
+							</ul>
+							<?php endif; ?>
+
+						</li>
+						<?php endforeach; ?>
+					</ol>
+					<?php endif; ?>
+
+					<?php if ( ! empty( $article['result'] ) ) : ?>
+					<div class="bm-help-result">
+						<strong><?php esc_html_e( 'Result:', 'breadcrumb-migration' ); ?></strong>
+						<?php echo esc_html( $article['result'] ); ?>
+					</div>
+					<?php endif; ?>
+
+				</div><!-- .bm-help-article-body -->
+			</div><!-- .bm-help-article -->
+			<?php endforeach; endif; ?>
+
+		</section>
+		<?php endforeach; ?>
+
+	</div><!-- .bm-help-wrap -->
 	<?php
 }
 

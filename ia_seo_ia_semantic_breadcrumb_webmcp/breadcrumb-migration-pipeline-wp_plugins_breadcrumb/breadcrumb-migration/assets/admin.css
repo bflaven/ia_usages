@@ -1086,3 +1086,473 @@ button.bm-btn-done {
 	opacity: .7;
 	cursor: default;
 }
+
+/* ── Bulk Assign — step sections (v1.16.0) ─────────────────────────────────── */
+
+.bm-bulk-step {
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+}
+
+.bm-bulk-step--1 {
+	border-radius: 4px 4px 0 0;
+	border-bottom: 2px dashed #c3c4c7;
+	margin-top: 16px;
+}
+
+.bm-bulk-step--2 {
+	border-radius: 0 0 4px 4px;
+}
+
+.bm-bulk-step__title {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 0 0 12px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.bm-step-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	background: #2271b1;
+	color: #fff;
+	border-radius: 50%;
+	font-size: 12px;
+	font-weight: 700;
+	flex-shrink: 0;
+}
+
+.bm-bulk-step .bm-bulk-form__field {
+	max-width: 720px;
+}
+
+.bm-bulk-step__actions {
+	margin-top: 12px;
+}
+
+.bm-bulk-check-results {
+	margin-top: 16px;
+}
+
+.bm-bulk-check-table {
+	font-size: 13px;
+	margin-top: 8px;
+}
+
+.bm-bulk-check-table td,
+.bm-bulk-check-table th {
+	padding: 7px 10px;
+	vertical-align: middle;
+}
+
+/* ── Bulk Description — row status colors (v1.16.0) ────────────────────────── */
+
+.bm-desc-row--green  { background: #f0fdf4 !important; }
+.bm-desc-row--orange { background: #fff7ed !important; }
+.bm-desc-row--red    { background: #fef2f2 !important; }
+
+/* ── Filter count badges ────────────────────────────────────────────────────── */
+
+.bm-filter-count {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 20px;
+	padding: 1px 5px;
+	margin-left: 4px;
+	background: #e0e0e0;
+	color: #50575e;
+	border-radius: 10px;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.bm-filter-visible-count {
+	margin-left: auto;
+	padding-left: 12px;
+	font-size: 12px;
+	color: #50575e;
+	white-space: nowrap;
+	font-weight: 600;
+}
+
+/* ── Status Key legend ──────────────────────────────────────────────────────── */
+
+.bm-panel--legend {
+	border-left: 4px solid #8c8f94;
+}
+
+.bm-legend-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.bm-legend-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	font-size: 13px;
+}
+
+.bm-legend-swatch {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,.15);
+	flex-shrink: 0;
+	margin-top: 1px;
+}
+
+.bm-legend-swatch--green  { background: #d1fae5; }
+.bm-legend-swatch--orange { background: #fed7aa; }
+.bm-legend-swatch--red    { background: #fecaca; }
+
+/* ── Help — Wikidata tab (v1.17.0) ─────────────────────────────────────────── */
+
+.bm-help-wrap {
+	/* extends .bm-section */
+}
+
+.bm-help-section-block {
+	margin: 24px 0;
+	border: 1px solid #c3c4c7;
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+.bm-help-section-block:first-of-type {
+	margin-top: 20px;
+}
+
+.bm-help-section-header {
+	display: flex;
+	align-items: flex-start;
+	gap: 14px;
+	padding: 16px 20px;
+	background: #f0f6fc;
+	border-bottom: 2px solid #c8dff0;
+}
+
+.bm-help-icon {
+	font-size: 22px;
+	line-height: 1;
+	flex-shrink: 0;
+	margin-top: 3px;
+}
+
+.bm-help-section-title {
+	margin: 0 0 4px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.bm-help-section-desc {
+	margin: 0;
+	font-size: 13px;
+}
+
+/* ── Article accordion ──────────────────────────────────────────────────────── */
+
+.bm-help-article {
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.bm-help-article:last-child {
+	border-bottom: none;
+}
+
+.bm-help-article-toggle {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 14px 20px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	text-align: left;
+	transition: background .12s;
+}
+
+.bm-help-article-toggle:hover {
+	background: #f8fbff;
+}
+
+.bm-help-article-title {
+	font-size: 13px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.bm-help-toggle-icon {
+	font-size: 14px;
+	color: #50575e;
+	transition: transform .2s ease;
+	flex-shrink: 0;
+	margin-left: 10px;
+}
+
+.bm-help-article.is-collapsed .bm-help-toggle-icon {
+	transform: rotate(-90deg);
+}
+
+.bm-help-article-body {
+	padding: 4px 20px 20px;
+}
+
+/* ── Item summary card ──────────────────────────────────────────────────────── */
+
+.bm-help-item-card {
+	margin: 12px 0 18px;
+	padding: 14px 16px;
+	background: #f0f6fc;
+	border: 1px solid #c8dff0;
+	border-radius: 4px;
+}
+
+.bm-help-item-card__title {
+	margin: 0 0 10px;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: .06em;
+	color: #2271b1;
+}
+
+.bm-help-item-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+
+.bm-help-item-table th {
+	width: 110px;
+	text-align: left;
+	color: #50575e;
+	font-weight: 500;
+	padding: 4px 10px 4px 0;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+.bm-help-item-table td {
+	padding: 4px 0;
+	word-break: break-word;
+}
+
+/* ── Steps list ─────────────────────────────────────────────────────────────── */
+
+.bm-help-steps {
+	list-style: none;
+	margin: 12px 0 0;
+	padding: 0;
+	counter-reset: bm-step;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.bm-help-step {
+	position: relative;
+	padding: 14px 16px 14px 54px;
+	background: #fff;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+	counter-increment: bm-step;
+}
+
+.bm-help-step::before {
+	content: counter(bm-step);
+	position: absolute;
+	left: 14px;
+	top: 14px;
+	width: 24px;
+	height: 24px;
+	background: #2271b1;
+	color: #fff;
+	border-radius: 50%;
+	font-size: 12px;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+}
+
+.bm-help-step-header {
+	display: flex;
+	align-items: baseline;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin-bottom: 6px;
+}
+
+.bm-help-step-name {
+	font-size: 13px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.bm-help-step-url {
+	font-size: 11px;
+	color: #2271b1;
+	text-decoration: none;
+	word-break: break-all;
+}
+
+.bm-help-step-url:hover {
+	text-decoration: underline;
+}
+
+.bm-help-step-instructions {
+	font-size: 13px;
+	color: #50575e;
+	margin: 0 0 10px;
+	line-height: 1.5;
+}
+
+/* ── Fields cheat-sheet table ───────────────────────────────────────────────── */
+
+.bm-help-fields-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 12px;
+	margin-bottom: 10px;
+	max-width: 640px;
+}
+
+.bm-help-fields-table th {
+	text-align: left;
+	padding: 4px 10px 4px 0;
+	color: #50575e;
+	font-weight: 500;
+	width: 150px;
+	white-space: nowrap;
+	vertical-align: top;
+}
+
+.bm-help-fields-table td {
+	padding: 4px 0;
+	word-break: break-word;
+}
+
+/* ── Statement badge ────────────────────────────────────────────────────────── */
+
+.bm-help-statement {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 7px 14px;
+	background: #f6f7f7;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	font-size: 13px;
+	margin-bottom: 10px;
+	flex-wrap: wrap;
+}
+
+.bm-help-property,
+.bm-help-value {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.bm-help-property code {
+	background: #dbeafe;
+	color: #1e40af;
+	padding: 2px 6px;
+	border-radius: 3px;
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.bm-help-value code {
+	background: #d1fae5;
+	color: #065f46;
+	padding: 2px 6px;
+	border-radius: 3px;
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.bm-help-arrow {
+	color: #50575e;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+/* ── Reference properties list ──────────────────────────────────────────────── */
+
+.bm-help-ref-list {
+	list-style: none;
+	margin: 6px 0 10px;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	font-size: 12px;
+	color: #50575e;
+}
+
+.bm-help-ref-list li {
+	display: flex;
+	align-items: baseline;
+	gap: 6px;
+	flex-wrap: wrap;
+}
+
+.bm-help-ref-list code {
+	background: #f0f0f1;
+	color: #50575e;
+	padding: 1px 5px;
+	border-radius: 3px;
+	font-size: 11px;
+	white-space: nowrap;
+}
+
+/* ── Badges ─────────────────────────────────────────────────────────────────── */
+
+.bm-help-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	background: #e8f0fe;
+	color: #1a56db;
+	border-radius: 10px;
+	font-size: 11px;
+	font-weight: 500;
+	margin-right: 4px;
+}
+
+.bm-help-badge--alias {
+	background: #f3f4f6;
+	color: #374151;
+}
+
+/* ── Result callout ─────────────────────────────────────────────────────────── */
+
+.bm-help-result {
+	margin-top: 16px;
+	padding: 12px 16px;
+	background: #d1fae5;
+	border: 1px solid #6ee7b7;
+	border-left: 4px solid #10b981;
+	border-radius: 4px;
+	font-size: 13px;
+	color: #065f46;
+	line-height: 1.6;
+}

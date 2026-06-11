@@ -458,9 +458,93 @@
 			} );
 	} );
 
+	// ── Bulk Assign — step 1: check existing assignments ─────────────────────
+
+	$( document ).on( 'click', '.bm-btn-bulk-check', function () {
+		const $btn     = $( this );
+		const keywords = $( '#bm-bulk-keywords' ).val().trim();
+		const $results = $( '#bm-bulk-check-results' );
+
+		if ( ! keywords ) {
+			flashNotice( 'Enter at least one keyword.', 'error' );
+			return;
+		}
+
+		$btn.addClass( 'bm-loading' ).text( 'Checking…' );
+		$results.hide().empty();
+
+		post( 'bm_bulk_check', { keywords } )
+			.done( function ( res ) {
+				if ( res.success ) {
+					const { results } = res.data;
+					const found      = results.filter( r => r.found ).length;
+					const withParent = results.filter( r => r.parent_name ).length;
+
+					let html = '<table class="widefat striped bm-bulk-check-table"><thead><tr>';
+					html += '<th>Keyword</th><th>Found in DB</th><th>Current Parent Category</th>';
+					html += '</tr></thead><tbody>';
+
+					results.forEach( function ( r ) {
+						const cls = ! r.found          ? 'bm-bulk-row--skip'
+								  : r.parent_name       ? 'bm-bulk-row--ok'
+								  : 'bm-bulk-row--err';
+						html += `<tr class="${ cls }">`;
+						html += `<td><strong>${ escHtml( r.keyword ) }</strong></td>`;
+						html += `<td>${ r.found ? '&#10003; Yes' : '&#10007; Not found' }</td>`;
+						html += `<td>${ r.parent_name
+							? `<span class="bm-bulk-status bm-bulk-status--updated">${ escHtml( r.parent_name ) }</span>`
+							: ( r.found ? '<em>— none —</em>' : '—' ) }</td>`;
+						html += '</tr>';
+					} );
+
+					html += '</tbody></table>';
+					$results.html( html ).slideDown( 200 );
+					flashNotice( `Check done: ${ found }/${ results.length } found in DB, ${ withParent } already have a parent category.` );
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+				}
+			} )
+			.fail( () => flashNotice( i18n.error, 'error' ) )
+			.always( () => $btn.removeClass( 'bm-loading' ).text( 'Check Current Assignments' ) );
+	} );
+
 	// ── Bulk Description tab ─────────────────────────────────────────────────
 
 	// ── Bulk Description — row filter ────────────────────────────────────────
+
+	function bmUpdateRowStatus( $row ) {
+		const isPublished  = $row.attr( 'data-term-published' ) === '1';
+		const wdIdEmpty    = $row.attr( 'data-wd-id-empty' )       === '1';
+		const wdDescEmpty  = $row.attr( 'data-wd-desc-empty' )     === '1';
+		const actDescEmpty = $row.attr( 'data-actual-desc-empty' ) === '1';
+
+		let status;
+		if ( isPublished ) {
+			status = 'green';
+		} else if ( wdIdEmpty && wdDescEmpty && actDescEmpty ) {
+			status = 'red';
+		} else {
+			status = 'orange';
+		}
+
+		$row
+			.removeClass( 'bm-desc-row--green bm-desc-row--orange bm-desc-row--red' )
+			.addClass( `bm-desc-row--${ status }` )
+			.attr( 'data-row-status', status );
+	}
+
+	function bmUpdateFilterCounts() {
+		const $allRows = $( '#bm-bulk-desc-table tbody .bm-bulk-desc-row' );
+		if ( ! $allRows.length ) return;
+
+		$( '#bm-count-wd-id-empty' ).text(       $allRows.filter( '[data-wd-id-empty="1"]' ).length );
+		$( '#bm-count-wd-desc-empty' ).text(     $allRows.filter( '[data-wd-desc-empty="1"]' ).length );
+		$( '#bm-count-actual-desc-empty' ).text( $allRows.filter( '[data-actual-desc-empty="1"]' ).length );
+		$( '#bm-count-manual-only' ).text(       $allRows.filter( '[data-desc-source="manual"]' ).length );
+		$( '#bm-count-completed' ).text(         $allRows.filter( '[data-row-status="green"]' ).length );
+		$( '#bm-desc-visible-count' ).text(      $allRows.filter( ':visible' ).length );
+		$( '#bm-desc-total-count' ).text(        $allRows.length );
+	}
 
 	function bmSetActualBadge( $row, desc, isManual ) {
 		const $cell  = $row.find( '.bm-desc-actual-text' );
@@ -493,37 +577,41 @@
 			$badge.remove();
 			$row.attr( 'data-desc-source', 'empty' );
 		}
+
+		bmUpdateRowStatus( $row );
 	}
 
 	function bmDescApplyFilters() {
-		const filterWdId     = $( '#bm-filter-wd-id-empty' ).prop( 'checked' );
-		const filterWdDesc   = $( '#bm-filter-wd-desc-empty' ).prop( 'checked' );
-		const filterActDesc  = $( '#bm-filter-actual-desc-empty' ).prop( 'checked' );
-		const filterManual   = $( '#bm-filter-manual-only' ).prop( 'checked' );
-		const anyActive      = filterWdId || filterWdDesc || filterActDesc || filterManual;
+		const filterWdId      = $( '#bm-filter-wd-id-empty' ).prop( 'checked' );
+		const filterWdDesc    = $( '#bm-filter-wd-desc-empty' ).prop( 'checked' );
+		const filterActDesc   = $( '#bm-filter-actual-desc-empty' ).prop( 'checked' );
+		const filterManual    = $( '#bm-filter-manual-only' ).prop( 'checked' );
+		const filterCompleted = $( '#bm-filter-completed' ).prop( 'checked' );
+		const anyActive       = filterWdId || filterWdDesc || filterActDesc || filterManual || filterCompleted;
 
 		$( '#bm-bulk-desc-table tbody .bm-bulk-desc-row' ).each( function () {
 			const $row = $( this );
 
 			if ( ! anyActive ) {
 				$row.show();
-				return;
+			} else {
+				let show = true;
+				if ( filterWdId      && $row.attr( 'data-wd-id-empty' )       !== '1' ) { show = false; }
+				if ( filterWdDesc    && $row.attr( 'data-wd-desc-empty' )     !== '1' ) { show = false; }
+				if ( filterActDesc   && $row.attr( 'data-actual-desc-empty' ) !== '1' ) { show = false; }
+				if ( filterManual    && $row.attr( 'data-desc-source' )       !== 'manual' ) { show = false; }
+				if ( filterCompleted && $row.attr( 'data-row-status' )        !== 'green' ) { show = false; }
+				$row.toggle( show );
 			}
-
-			let show = true;
-			if ( filterWdId    && $row.attr( 'data-wd-id-empty' )       !== '1' ) { show = false; }
-			if ( filterWdDesc  && $row.attr( 'data-wd-desc-empty' )     !== '1' ) { show = false; }
-			if ( filterActDesc && $row.attr( 'data-actual-desc-empty' ) !== '1' ) { show = false; }
-			if ( filterManual  && $row.attr( 'data-desc-source' )       !== 'manual' ) { show = false; }
-
-			$row.toggle( show );
 		} );
+
+		bmUpdateFilterCounts();
 	}
 
 	$( document ).on( 'change', '.bm-desc-filter', bmDescApplyFilters );
 
 	$( document ).on( 'click', '#bm-desc-filter-reset', function () {
-		$( '#bm-filter-wd-id-empty, #bm-filter-wd-desc-empty, #bm-filter-actual-desc-empty, #bm-filter-manual-only' ).prop( 'checked', false );
+		$( '#bm-filter-wd-id-empty, #bm-filter-wd-desc-empty, #bm-filter-actual-desc-empty, #bm-filter-manual-only, #bm-filter-completed' ).prop( 'checked', false );
 		bmDescApplyFilters();
 	} );
 
@@ -576,8 +664,9 @@
 					}
 
 					// Sync data attributes so filters stay accurate
-					$row.attr( 'data-wd-id-empty',   res.data.wikidata_id ? '0' : '1' );
-					$row.attr( 'data-wd-desc-empty',  desc ? '0' : '1' );
+					$row.attr( 'data-wd-id-empty',  res.data.wikidata_id ? '0' : '1' );
+					$row.attr( 'data-wd-desc-empty', desc ? '0' : '1' );
+					bmUpdateRowStatus( $row );
 					bmDescApplyFilters();
 
 					if ( desc ) {
@@ -860,6 +949,7 @@
 			const name = $( this ).attr( 'data-tag-name' ) || '';
 			$( this ).toggle( ! query || name.indexOf( query ) !== -1 );
 		} );
+		bmUpdateFilterCounts();
 	} );
 
 	// ── Bulk Description — tag filter textarea ───────────────────────────────────
@@ -884,6 +974,7 @@
 		} );
 
 		flashNotice( `Filter applied: ${ visible } tag(s) visible.` );
+		bmUpdateFilterCounts();
 	} );
 
 	$( document ).on( 'click', '#bm-desc-tag-filter-clear', function () {
@@ -892,6 +983,12 @@
 		$( '#bm-bulk-desc-table tbody .bm-bulk-desc-row' ).show();
 		bmDescApplyFilters();
 	} );
+
+	// ── Bulk Description — init filter counts on page load ──────────────────────
+
+	if ( $( '#bm-bulk-desc-table' ).length ) {
+		bmUpdateFilterCounts();
+	}
 
 	// ── Bulk Description — synchronize descriptions from WordPress ───────────────
 
@@ -976,6 +1073,23 @@
 			} )
 			.fail( () => flashNotice( i18n.error, 'error' ) )
 			.always( () => $btn.removeClass( 'bm-loading' ).text( '↺' ) );
+	} );
+
+	// ── Help — Wikidata tab — accordion ──────────────────────────────────────
+
+	$( document ).on( 'click', '.bm-help-article-toggle', function () {
+		const $btn     = $( this );
+		const $article = $btn.closest( '.bm-help-article' );
+		const $body    = $article.find( '.bm-help-article-body' );
+		const expanded = $btn.attr( 'aria-expanded' ) === 'true';
+
+		$btn.attr( 'aria-expanded', ! expanded );
+		$article.toggleClass( 'is-collapsed', expanded );
+		if ( expanded ) {
+			$body.slideUp( 180 );
+		} else {
+			$body.slideDown( 180 );
+		}
 	} );
 
 } )( jQuery );
