@@ -1,3 +1,71 @@
+
+Give a wikidata definition in english for "Robbie Naish" plus a set for "subclass of" and "uses". No explanations just say the essential 
+
+Robert Staunton Naish (born April 23, 1963 in La Jolla, San Diego, California) is an American athlete and entrepreneur who has won 24 World Championship Windsurfing titles.[3][4][5] He is also considered a pioneer of kiteboarding and standup paddleboarding.
+
+In 1976, Naish won his first world championship in windsurfing at age 13 in the Bahamas.[6] Since then, he has been featured in films, videos, news reports, and articles. In 1996, Naish founded Naish Sails Hawaii, which manufactures and sells sailboards, sails, kitesurfing equipment, stand up paddle boards and paddles, hydrofoils, foilboards, and wing-surfers. In 2023 the Naish board business was sold to Kubus Sports.[7]
+
+
+**Robbie Naish** (Q726199)
+
+**Description (en):** American windsurfer, kiteboarder and stand-up paddleboarder, 24-time windsurfing world champion and founder of Naish Sails Hawaii
+
+**instance of (P31):** human — *(note: "subclass of" P279 doesn't apply to persons; the correct property is P31)*
+
+**occupation (P106):** windsurfer; kitesurfer; entrepreneur
+
+**sport (P641):** windsurfing; kiteboarding; standup paddleboarding
+
+**uses (P2283):**
+- sailboard
+- windsurf sail
+- kite (power kite)
+- stand up paddle board
+- paddle
+- hydrofoil / foilboard
+- wing (wing foiling)
+
+
+
+
+## PROMPT_6
+
+Give a wikidata definition in english for "Newman" plus a set for "subclass of" and "uses". No explanations just say the essential 
+
+
+1. quick defintion: Newman is built on Node.js. To get started, first install Node.js, then install Newman. After installing Newman, you can run your Postman Collections from the command line. You can run collections as an exported JSON file or by passing the URL of the collection to Newman. See https://learning.postman.com/docs/reference/newman-cli/installing-running-newman
+
+"Newman" is related to Postman (Q105538901)
+
+Newman (Q105538902) is a command-line collection runner for Postman.
+
+Subclass of:
+
+software (Q7397)
+
+Uses:
+
+Node.js (Q500277)
+
+
+**Newman** (Q-pending)
+
+**Definition (en):** command-line collection runner for Postman that allows running and testing Postman Collections directly from the terminal, built on Node.js
+
+**subclass of (P279):**
+- command-line interface tool (Q189053)
+- test automation software (Q1544863)
+- free and open-source software (Q506883)
+
+**uses (P2283):**
+- Node.js (Q756100)
+- Postman (Q105538901)
+- JSON (Q2063)
+- npm (Q7067518)
+
+
+
+
 ## PROMPT_5
 just say what I have to do i do not care about explanations, say if it is used by or uses
 
