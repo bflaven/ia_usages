@@ -1,53 +1,40 @@
-# item_template.yaml — copy this file and rename it for your item (e.g. item_myproject.yaml)
-# Edit only the VALUES — do NOT rename any key (label_en, qid, label, etc.)
+# item_ntlk.yaml — Wikidata item definition for NLTK
+# Edit only the VALUES — do NOT rename any key (label_en, label, qid, etc.)
 # Lines starting with # are comments and are ignored by the script.
-#
-# HOW TO USE:
-#   1. Copy this file:  cp data/item_template.yaml data/item_myproject.yaml
-#   2. Edit the values below
-#   3. Run:  python 001_wikidata_api_add_item.py --item data/item_myproject.yaml --sandbox --no-claims
-#   4. Check result, then run without --sandbox for production
 
 # ── Basic information ─────────────────────────────────────────────────────────
 
-# Short name shown as the title on Wikidata (keep it short)
 label_en: "NLTK"
 
-# One sentence — no capital letter at start, no period at the end
-description_en: "Open-source Python platform for building natural language processing programs, providing interfaces to corpora and lexical resources, text processing libraries for classification, tokenization, stemming, tagging, parsing and semantic reasoning."
+description_en: "open-source Python platform for building natural language processing programs, providing interfaces to corpora and lexical resources, text processing libraries for classification, tokenization, stemming, tagging, parsing and semantic reasoning"
 
-# Other names people use for this item (one per line, each starts with -)
-# Remove lines you do not need, or add more
 aliases_en:
   - "Natural Language Toolkit"
   - "NLTK Python"
   - "Python NLP Library"
   - "Natural Language Processing Toolkit"
 
-# Natural Language Toolkit | NLTK Python | Python NLP Library | Natural Language Processing Toolkit
-
-
-
 # ── Statements (claims) ───────────────────────────────────────────────────────
-# Each statement links this item to another Wikidata item via its QID.
-# To find a QID: search https://www.wikidata.org → open the item → QID is in the URL.
-# Example: https://www.wikidata.org/wiki/Q1330336  →  QID is Q1330336
+# You do not need to know the QID.
+# The script will search Wikidata automatically using the label.
+# It will print what it found so you can verify before running on production.
 #
-# The "label" line is a human note only — it is NOT sent to Wikidata.
+# If you DO know the QID, add it as:  qid: "Q12345"
+# and it will be used directly without searching.
+#
+# Note: search takes the FIRST result — check the printed output carefully.
 
 # P279 — "subclass of": what broader category does this item belong to?
-# Remove entries you do not need, or add more blocks (- qid / label pairs)
 subclass_of:
-  - qid: "FILL_ME_IN"
-    label: "FILL_ME_IN what category"
-  - qid: "FILL_ME_IN"
-    label: "FILL_ME_IN what category"
+  - label: "natural language processing"
+  - label: "software library"
+  - label: "free and open-source software"
 
-# P2283 — "uses": what technologies, tools, or methods does this item use?
-# Remove entries you do not need, or add more
+# P2283 — "uses": what technologies or tools does this item rely on?
 uses:
-  - qid: "FILL_ME_IN"
-    label: "FILL_ME_IN technology name"
+  - label: "Python"
+  - label: "WordNet"
+  - label: "text corpus"
 
 # P856 — official website (must start with https://)
-official_website: "https://FILL_ME_IN.com/"
+official_website: "https://www.nltk.org/"

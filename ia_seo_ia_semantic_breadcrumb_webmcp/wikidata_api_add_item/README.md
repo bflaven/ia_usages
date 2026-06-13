@@ -10,7 +10,7 @@ Item definition lives in `data/*.yaml` — edit that file to change what gets cr
 | File | Commit? | Description |
 |------|---------|-------------|
 | `001_wikidata_api_add_item.py` | yes | Main script |
-| `data/item_magma.yaml` | yes | Example item (Magma.com) |
+| `data/item_ntlk.yaml` | yes | Example item (NLTK) |
 | `data/item_template.yaml` | yes | Blank template — copy and fill in |
 | `.env.example` | yes | Template showing required variables — safe to share |
 | `.env` | **NO** | Your real credentials — never commit |
@@ -63,10 +63,33 @@ cp data/item_template.yaml data/item_myproject.yaml
 ```
 
 Open `data/item_myproject.yaml` in any text editor. Replace every `FILL_ME_IN` value.
-Do NOT rename any key (`label_en`, `qid`, etc.) — only change the values.
+Do NOT rename any key (`label_en`, `label`, etc.) — only change the values.
 
-To find a QID: search https://www.wikidata.org → open the item → QID is in the URL.
-Example: `https://www.wikidata.org/wiki/Q1330336` → QID is `Q1330336`.
+**You do not need to know QIDs.** Write only the English label — the script searches Wikidata automatically:
+
+```yaml
+subclass_of:
+  - label: "software library"      # script finds Q188860 automatically
+  - label: "free software"
+
+uses:
+  - label: "Python"                # script finds Q28865 automatically
+```
+
+The script prints what it resolved so you can verify before writing to production:
+```
+→ Resolving QIDs from labels (production wikidata.org)...
+  ✓ 'software library' → Q188860 (searched)
+  ✓ 'Python' → Q28865 (searched)
+  ⚠ 'something unknown' → not found on Wikidata, skipping
+```
+
+If a resolved QID is wrong, override it directly in the YAML:
+```yaml
+subclass_of:
+  - label: "software library"
+    qid: "Q188860"    # add this line to bypass search and use exact QID
+```
 
 ---
 
@@ -108,34 +131,62 @@ Regular account passwords are **rejected** by the Wikidata API. You must use a *
 
 ### Mode A: Sandbox (safe, use this first)
 
+The sandbox (`test.wikidata.org`) is a safe playground — nothing created there affects the real Wikidata.
+
+**Two equivalent commands — both do the same thing:**
+
 ```bash
-# Step 1 — preview the payload, no network write
-python 001_wikidata_api_add_item.py --item data/item_myproject.yaml --sandbox --no-claims --dry-run
+# Short form (recommended) — claims skipped automatically
+python 001_wikidata_api_add_item.py --sandbox
 
-# Step 2 — write to sandbox (test.wikidata.org), skip claims
-python 001_wikidata_api_add_item.py --item data/item_myproject.yaml --sandbox --no-claims
-
-# Step 3 — check the result at the printed URL
-# e.g. https://test.wikidata.org/wiki/Q246762
+# Long form — explicit flag, same result
+python 001_wikidata_api_add_item.py --sandbox --no-claims
 ```
+
+> `--no-claims` is now optional with `--sandbox`. The script skips claims automatically
+> because `test.wikidata.org` has a separate database and does not have production
+> properties (P279, P2283, P856). The item is created with label, description and
+> aliases only — enough to confirm login and item creation work correctly.
 
 Expected output:
 ```
 ⚠ SANDBOX MODE — writing to test.wikidata.org
 → Loading item from: item_myproject.yaml
+ℹ Claims skipped automatically (test.wikidata.org lacks production properties)
 ✓ Logged in as YourAccount@BotName
 ✓ CSRF token obtained
-✓ Item created successfully: https://test.wikidata.org/wiki/Q246762
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Item : NLTK
+  URL  : https://test.wikidata.org/wiki/Q246769
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
+
+Copy the URL and open it in your browser to verify the item was created correctly.
 
 ---
 
 ### Mode B: Production (wikidata.org — only after autoconfirmed)
 
 ```bash
-# Step 1 — preview the full payload including claims
+# Step 1 — preview payload + verify QID resolution (no network write)
 python 001_wikidata_api_add_item.py --item data/item_myproject.yaml --dry-run
+```
 
+Expected output — check the resolved QIDs carefully:
+```
+→ Loading item from: item_myproject.yaml
+→ Resolving QIDs from labels (production wikidata.org)...
+  ✓ 'software library' → Q188860 (searched)
+  ✓ 'Python' → Q28865 (searched)
+  ⚠ 'bad label' → not found on Wikidata, skipping
+=== DRY RUN — payload that would be sent to www.wikidata.org ===
+...
+```
+
+If a QID is wrong → fix the label or add `qid:` override in YAML. Then:
+
+```bash
 # Step 2 — write to production
 python 001_wikidata_api_add_item.py --item data/item_myproject.yaml
 
@@ -146,10 +197,19 @@ python 001_wikidata_api_add_item.py --item data/item_myproject.yaml
 Expected output:
 ```
 → Loading item from: item_myproject.yaml
+→ Resolving QIDs from labels (production wikidata.org)...
+  ✓ 'software library' → Q188860 (searched)
+  ✓ 'Python' → Q28865 (searched)
 ✓ Logged in as YourAccount@BotName
 ✓ CSRF token obtained
-✓ Item created successfully: https://www.wikidata.org/wiki/Q130591234
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Item : My Project
+  URL  : https://www.wikidata.org/wiki/Q130591234
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
+
+Copy the URL and open it in your browser to verify the full item with all claims.
 
 ---
 
@@ -170,13 +230,21 @@ Expected output:
 - **Duplicate check**: search Wikidata by label before POST — warn if item already exists
 - **`instance_of` support**: add P31 block to YAML (most items need it alongside P279)
 - **Multilingual**: add `label_fr`, `description_fr` blocks in YAML — script picks them all up
-- **QID validator**: `--validate-qids` hits Wikidata API to confirm all QIDs in YAML exist before submitting
 - **Update mode**: `--qid Q123456` patches an existing item instead of creating new
 - **Log to file**: `--log output.json` saves API response for audit trail
 
 ---
 
 ## Changelog
+
+### v1.5.0
+- **Auto QID resolution**: no more manual QID lookup — write `label:` only in YAML; script calls `wbsearchentities` on production wikidata.org and resolves each label to a QID automatically
+- Resolved QIDs printed before submission so user can verify (`✓ 'Python' → Q28865`)
+- Labels not found on Wikidata print a warning and are skipped (`⚠ not found, skipping`)
+- `qid:` field remains optional override — if provided, used directly without searching (backward compatible)
+- Fix `item_ntlk.yaml`: corrected broken YAML structure (duplicate keys, misaligned list syntax)
+- New `item_template.yaml`: label-only format, no QIDs required, full inline instructions
+- Remove stale `~~` backup files from `data/`
 
 ### v1.4.0
 - Move item YAML files to `data/` directory — keeps scripts and data separate

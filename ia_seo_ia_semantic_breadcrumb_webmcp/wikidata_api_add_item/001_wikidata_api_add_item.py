@@ -24,17 +24,21 @@ pip install -r requirements.txt
 
 
 # [path]
-cd /path/to/wikidata_api_add_item/
+cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_seo_ia_semantic_breadcrumb_webmcp/wikidata_api_add_item/
 
 # LAUNCH the file
-python 001_wikidata_api_add_item.py
+python 001_wikidata_api_add_item.py --sandbox
 
-
-001_wikidata_api_add_item.py  — v1.4.0
+001_wikidata_api_add_item.py  — v1.5.0
 --------------------
 Creates a new Wikidata item via the MediaWiki API.
 Item definition lives in data/*.yaml — pass --item to specify which file.
 If data/ contains exactly one .yaml file, it is used automatically.
+
+QID resolution:
+    You do not need to know QIDs. Write only "label" in your YAML.
+    The script searches Wikidata automatically and prints what it resolved.
+    If you DO know the QID, add "qid: Q12345" and it is used directly.
 
 Requirements:
     pip install requests python-dotenv pyyaml
@@ -188,6 +192,50 @@ def get_session() -> requests.Session:
     return session
 
 
+def resolve_label_to_qid(label: str, session: requests.Session) -> Optional[str]:
+    """Search production Wikidata for a QID by English label. Returns first match or None."""
+    r = session.get(PROD_API_URL, params={
+        "action": "wbsearchentities",
+        "search": label,
+        "language": "en",
+        "type": "item",
+        "limit": 1,
+        "format": "json",
+    })
+    r.raise_for_status()
+    results = r.json().get("search", [])
+    if not results:
+        return None
+    return results[0]["id"]
+
+
+def resolve_claims(item: dict, session: requests.Session) -> None:
+    """Fill in missing QIDs in subclass_of and uses by searching Wikidata.
+
+    Modifies item in-place. Entries that cannot be resolved are removed.
+    Always searches production wikidata.org regardless of --sandbox.
+    """
+    print("→ Resolving QIDs from labels (production wikidata.org)...")
+    for field in ("subclass_of", "uses"):
+        resolved = []
+        for entry in item.get(field, []):
+            label = entry.get("label", "")
+            if not label or "FILL_ME_IN" in label:
+                continue
+            if entry.get("qid"):
+                print(f"  ✓ {label!r} → {entry['qid']} (from YAML)")
+                resolved.append(entry)
+                continue
+            qid = resolve_label_to_qid(label, session)
+            if qid:
+                print(f"  ✓ {label!r} → {qid} (searched)")
+                entry["qid"] = qid
+                resolved.append(entry)
+            else:
+                print(f"  ⚠ {label!r} → not found on Wikidata, skipping")
+        item[field] = resolved
+
+
 def login(session: requests.Session) -> None:
     r = session.get(API_URL, params={
         "action": "query",
@@ -252,18 +300,19 @@ def build_item_data(item: dict, no_claims: bool = False) -> dict:
         statements = {}
         statements["P279"] = [
             {"mainsnak": qid_snak("P279", e["qid"]), "type": "statement", "rank": "normal"}
-            for e in item["subclass_of"]
+            for e in item["subclass_of"] if e.get("qid")
         ]
         statements["P2283"] = [
             {"mainsnak": qid_snak("P2283", e["qid"]), "type": "statement", "rank": "normal"}
-            for e in item["uses"]
+            for e in item["uses"] if e.get("qid")
         ]
         statements["P856"] = [{
             "mainsnak": url_snak("P856", item["official_website"]),
             "type": "statement",
             "rank": "preferred",
         }]
-        data["claims"] = statements
+        # Only include non-empty claim groups
+        data["claims"] = {k: v for k, v in statements.items() if v}
 
     return data
 
@@ -324,7 +373,17 @@ def main() -> None:
     item_path = resolve_item_path(args.item)
     print(f"→ Loading item from: {item_path.name}")
     item = load_item(item_path)
-    no_claims = args.no_claims
+
+    # Sandbox lacks production properties — claims always skipped automatically
+    no_claims = True if args.sandbox else args.no_claims
+    if args.sandbox and not args.no_claims:
+        print("ℹ Claims skipped automatically (test.wikidata.org lacks production properties)")
+
+    # Resolve labels → QIDs unless claims are skipped
+    if not no_claims:
+        search_session = get_session()
+        resolve_claims(item, search_session)
+
     item_data = build_item_data(item, no_claims=no_claims)
 
     if args.dry_run:
@@ -335,10 +394,10 @@ def main() -> None:
         if not no_claims:
             print("\nSubclass of (P279):")
             for e in item["subclass_of"]:
-                print(f"  {e['qid']}  {e['label']}")
+                print(f"  {e.get('qid', '???')}  {e.get('label', '')}")
             print("\nUses (P2283):")
             for e in item["uses"]:
-                print(f"  {e['qid']}  {e['label']}")
+                print(f"  {e.get('qid', '???')}  {e.get('label', '')}")
             print(f"\nOfficial website (P856): {item['official_website']}")
         return
 
@@ -350,7 +409,12 @@ def main() -> None:
     print("✓ CSRF token obtained")
 
     new_qid = create_item(session, item_data, csrf_token, item["label_en"])
-    print(f"✓ Item created successfully: {wiki_base}/{new_qid}")
+    url = f"{wiki_base}/{new_qid}"
+    bar = "━" * 40
+    print(f"\n{bar}")
+    print(f"  Item : {item['label_en']}")
+    print(f"  URL  : {url}")
+    print(bar)
 
 
 if __name__ == "__main__":
