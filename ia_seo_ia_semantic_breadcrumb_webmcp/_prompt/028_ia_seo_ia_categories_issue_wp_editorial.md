@@ -1,7 +1,5 @@
 
 
-
-
 ## PROMPT_2
 Update the script `001_wikidata_api_add_item.py`. Fix the error and prevent the error when the item has been aleready been created.
 
