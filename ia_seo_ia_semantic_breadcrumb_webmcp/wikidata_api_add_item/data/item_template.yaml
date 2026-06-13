@@ -1,0 +1,47 @@
+# item_template.yaml — copy this file and rename it for your item (e.g. item_myproject.yaml)
+# Edit only the VALUES — do NOT rename any key (label_en, qid, label, etc.)
+# Lines starting with # are comments and are ignored by the script.
+#
+# HOW TO USE:
+#   1. Copy this file:  cp data/item_template.yaml data/item_myproject.yaml
+#   2. Edit the values below
+#   3. Run:  python 001_wikidata_api_add_item.py --item data/item_myproject.yaml --sandbox --no-claims
+#   4. Check result, then run without --sandbox for production
+
+# ── Basic information ─────────────────────────────────────────────────────────
+
+# Short name shown as the title on Wikidata (keep it short)
+label_en: "FILL_ME_IN"
+
+# One sentence — no capital letter at start, no period at the end
+description_en: "FILL_ME_IN short description of the item"
+
+# Other names people use for this item (one per line, each starts with -)
+# Remove lines you do not need, or add more
+aliases_en:
+  - "FILL_ME_IN alias 1"
+  - "FILL_ME_IN alias 2"
+
+# ── Statements (claims) ───────────────────────────────────────────────────────
+# Each statement links this item to another Wikidata item via its QID.
+# To find a QID: search https://www.wikidata.org → open the item → QID is in the URL.
+# Example: https://www.wikidata.org/wiki/Q1330336  →  QID is Q1330336
+#
+# The "label" line is a human note only — it is NOT sent to Wikidata.
+
+# P279 — "subclass of": what broader category does this item belong to?
+# Remove entries you do not need, or add more blocks (- qid / label pairs)
+subclass_of:
+  - qid: "FILL_ME_IN"
+    label: "FILL_ME_IN what category"
+  - qid: "FILL_ME_IN"
+    label: "FILL_ME_IN what category"
+
+# P2283 — "uses": what technologies, tools, or methods does this item use?
+# Remove entries you do not need, or add more
+uses:
+  - qid: "FILL_ME_IN"
+    label: "FILL_ME_IN technology name"
+
+# P856 — official website (must start with https://)
+official_website: "https://FILL_ME_IN.com/"

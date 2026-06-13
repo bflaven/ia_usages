@@ -1,0 +1,46 @@
+# item.yaml — Wikidata item definition
+# Edit this file to change what gets created on Wikidata.
+# Do NOT change the key names (label_en, qid, etc.) — only change the values.
+# Lines starting with # are comments and are ignored.
+
+# ── Basic information ────────────────────────────────────────────────────────
+
+# Short name for the item (shown as the title on Wikidata)
+label_en: "Magma"
+
+# One-sentence description — no capital letter at start, no period at the end
+description_en: >-
+  web-based collaborative drawing and digital art platform offering
+  multiplayer tools for illustration, portfolio building, fan art,
+  and video game design
+
+# Other names people use for this item (one per line, each starts with -)
+aliases_en:
+  - "Magma.com"
+  - "Aggie.io"
+  - "collaborative drawing tool"
+  - "multiplayer art platform"
+
+# ── Statements (claims) ──────────────────────────────────────────────────────
+# Each statement links this item to another Wikidata item using its QID.
+# To find a QID, search at https://www.wikidata.org and look at the URL.
+# The "label" line is just a note for humans — it is not sent to Wikidata.
+
+# P279 — "subclass of": broader categories this item belongs to
+subclass_of:
+  - qid: "Q1330336"
+    label: "web application"
+  - qid: "Q1058741"
+    label: "collaborative software"
+  - qid: "Q869490"
+    label: "graphics software"
+
+# P2283 — "uses": technologies or tools this item relies on
+uses:
+  - qid: "Q1784778"
+    label: "real-time collaboration"
+  - qid: "Q1779239"
+    label: "WebRTC"
+
+# P856 — official website URL (must start with https://)
+official_website: "https://magma.com/"
