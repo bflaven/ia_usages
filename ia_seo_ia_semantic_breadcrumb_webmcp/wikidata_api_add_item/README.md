@@ -227,7 +227,7 @@ Copy the URL and open it in your browser to verify the full item with all claims
 ## Improvement ideas (roadmap)
 
 - **Batch mode**: `--item-dir data/` creates all `.yaml` files in one run
-- **Duplicate check**: search Wikidata by label before POST — warn if item already exists
+- **Duplicate check**: ~~search Wikidata by label before POST — warn if item already exists~~ (done in v1.6.0)
 - **`instance_of` support**: add P31 block to YAML (most items need it alongside P279)
 - **Multilingual**: add `label_fr`, `description_fr` blocks in YAML — script picks them all up
 - **Update mode**: `--qid Q123456` patches an existing item instead of creating new
@@ -236,6 +236,10 @@ Copy the URL and open it in your browser to verify the full item with all claims
 ---
 
 ## Changelog
+
+### v1.6.0
+- **Duplicate-item guard**: if the API returns `modification-failed` with a label+description conflict, the script now extracts the existing QID, prints a warning (`⚠ Item already exists as QXXXXX`), and exits cleanly instead of crashing with a `RuntimeError`
+- Add `import re` (stdlib, no new dependency)
 
 ### v1.5.0
 - **Auto QID resolution**: no more manual QID lookup — write `label:` only in YAML; script calls `wbsearchentities` on production wikidata.org and resolves each label to a QID automatically

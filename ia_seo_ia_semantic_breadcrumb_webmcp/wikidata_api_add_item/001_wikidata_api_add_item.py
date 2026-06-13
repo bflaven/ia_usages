@@ -29,7 +29,7 @@ cd /Users/brunoflaven/Documents/03_git/ia_usages/ia_seo_ia_semantic_breadcrumb_w
 # LAUNCH the file
 python 001_wikidata_api_add_item.py --sandbox
 
-001_wikidata_api_add_item.py  — v1.5.0
+001_wikidata_api_add_item.py  — v1.6.0
 --------------------
 Creates a new Wikidata item via the MediaWiki API.
 Item definition lives in data/*.yaml — pass --item to specify which file.
@@ -76,6 +76,7 @@ Note on --no-claims / sandbox:
 """
 
 import os
+import re
 import sys
 import json
 import argparse
@@ -317,6 +318,19 @@ def build_item_data(item: dict, no_claims: bool = False) -> dict:
     return data
 
 
+def _extract_qid_from_conflict(error: dict) -> Optional[str]:
+    """Return the existing QID from a label-with-description-conflict error, or None."""
+    for msg in error.get("messages", []):
+        if msg.get("name") == "wikibase-validator-label-with-description-conflict":
+            params = msg.get("parameters", [])
+            # params[2] looks like "[[Q246769|Q246769]]"
+            if len(params) >= 3:
+                m = re.search(r"\[\[(\w+)\|", str(params[2]))
+                if m:
+                    return m.group(1)
+    return None
+
+
 def create_item(session: requests.Session, data: dict, csrf_token: str, label: str) -> str:
     r = session.post(API_URL, data={
         "action": "wbeditentity",
@@ -329,7 +343,12 @@ def create_item(session: requests.Session, data: dict, csrf_token: str, label: s
     r.raise_for_status()
     result = r.json()
     if "error" in result:
-        raise RuntimeError(f"API error: {result['error']}")
+        error = result["error"]
+        existing_qid = _extract_qid_from_conflict(error)
+        if existing_qid:
+            print(f"⚠ Item already exists as {existing_qid} (same label + description). Skipping creation.")
+            return existing_qid
+        raise RuntimeError(f"API error: {error}")
     return result["entity"]["id"]
 
 
