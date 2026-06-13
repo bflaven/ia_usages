@@ -1,3 +1,43 @@
+## PROMPT_4
+Give a wikidata definition in English for "Ezra Zygmuntowicz" plus a set for "subclass of", "uses". Add also "aliases" with a pipe | separated list. Give an answer that eases the cut and paste of each element of the answer. No explanations just say the essential. Advise also how to add the official URL. Do not forget to remind the ID on wikidata for "subclass of" and "uses" e.g Subclass of: (P279), Uses: (P2283). In order to avoid duplicates, advice on a strategy to promote disambiguation is important. The description should clearly state something to distinguish it.
+
+- source of definition
+Ezra Zygmuntowicz passed from this life on November 26, 2014. He was an extraordinary hacker, CTO, entrepreneur, 3-D printing pioneer, glass artist, Father, Son, Brother, and friend to many. His brilliance and creativity as a trailblazing technologist were only surpassed by his gentle, kind spirit.
+
+Nearly ten years ago, three great developers with a need to deploy Rails quickly and easily got together and created a company called Engine Yard. It was with heavy hearts that we received news of the death of one of these founders, [Ezra Zygmuntowicz](https://twitter.com/ezmobius). Ezra, along with [Tom Mornini](https://twitter.com/tmornini) and [Lance Walley](https://twitter.com/lancewalley), founded Engine Yard in 2006. Additionally, he created Merb, a framework that competed with Rails until being merged with it. In 2010, Ezra left Engine Yard to pursue new start-up opportunities, while continuing to help the Ruby community with his many talks and contributions. Ezra’s brother Eli had this to say on a thread sharing memories of Ezra: > Thank you all for you kind comments. I know he valued his programming and tech community immensely. He will be sorely missed by his family, friends and son. Ezra’s good friend, and Engine Yard co-founder, Tom Mornini said: > It’s an incredibly sad day: a great hacker, founder, and community member has been lost forever. > > Goodbye Ezra, I’ll miss you. As most of us will remember Ezra through his community work, here he is speaking at RailsConf 2012:
+
+Print the result as plain text ```text...``` and not as a readme file by removing all tags like `**`, `##`, etc.
+
+## A_PROMPT_4
+```text
+DESCRIPTION (English)
+American software engineer, entrepreneur, and open-source developer; co-founder of Engine Yard and creator of the Merb web framework for Ruby
+
+ALIASES (pipe-separated)
+Ezra Z | ezmobius | Ezra Zygmuntowicz Engine Yard | Ezra Merb
+
+SUBCLASS OF (P279)
+software engineer | entrepreneur | open-source developer | technology pioneer
+
+USES (P2283)
+Ruby (programming language) | Ruby on Rails | Merb | 3D printing
+
+OFFICIAL URL
+Property: official website (P856)
+Add the Engine Yard URL or any archived personal/professional page via: P856 → https://engineyard.com (or archived URL via Wayback Machine)
+For social media: use Twitter username (P2002) → ezmobius
+
+DISAMBIGUATION STRATEGY
+The description above anchors on three specific facts (Engine Yard co-founder, Merb creator, American) which together are unique. No other person shares all three. When creating the Wikidata entry, also add:
+- date of birth (P569) if known
+- date of death (P570) → 2014-11-26
+- employer (P108) → Engine Yard (link to its Wikidata item)
+- notable work (P800) → Merb (create or link its Wikidata item)
+- programming language (P277) → Ruby
+These combined properties eliminate risk of confusion with any homonym.
+```
+
+
 ## PROMPT_3
 
 Give a wikidata definition in English for "Epoch" plus a set for "subclass of", "uses". Add also "aliases" with a pipe | separated list. Give an answer that eases the cut and paste of each element of the answer. No explanations just say the essential. Advise also how to add the official URL. Do not forget to remind the ID on wikidata for "subclass of" and "uses" e.g Subclass of: (P279), Uses: (P2283). In order to avoid duplicates, advice on a strategy to promote disambiguation is important. The description should clearly state something to distinguish it.

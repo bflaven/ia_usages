@@ -1,3 +1,15 @@
+- set_2
+Animation, Animoto, photos, Slideshow, Texte, vidéos
+
+
+- set_1
+RoR, Ruby on Rails, Webapplication
+
+
+
+Animation, Animoto, AWS, Development, développement, Ezra Zygmuntowicz, GitHub, HAProxy, Lethal, Merb, photos, Phusion Passenger, RoR, Ruby on Rails, Slideshow, Texte, vidéos, Weapon, Webapp, Webapplication
+
+
 
 
 ## PROMPT_2
