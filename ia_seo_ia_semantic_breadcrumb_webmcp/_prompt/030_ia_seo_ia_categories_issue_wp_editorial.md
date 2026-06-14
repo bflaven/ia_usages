@@ -1,8 +1,126 @@
 
+
 agentic browsers, dbt, digital autonomy, DuckDB, innovation theater, natural search, organizational pathologies, privacy
 
 
+## PROMPT_4
+Give a wikidata definition in English for "DuckDB" (Q133271766) plus a set for "subclass of", "uses". Add also "aliases" with a pipe | separated list. Give an answer that eases the cut and paste of each element of the answer. No explanations just say the essential. Advise also how to add the official URL. Do not forget to remind the ID on wikidata for "subclass of" and "uses" e.g Subclass of: (P279), Uses: (P2283). In order to avoid duplicates, advice on a strategy to promote disambiguation is important. The description should clearly state something to distinguish it.
 
+- source of definition
+DuckDB is an open-source column-oriented Relational Database Management System (RDBMS). It is designed to provide high performance on complex queries against large databases in embedded configuration, such as combining tables with hundreds of columns and billions of rows. Unlike other embedded databases (for example, SQLite) DuckDB is not focusing on transactional (OLTP) applications and instead is specialized for online analytical processing (OLAP) workloads.[3] The project has over 6 million downloads per month.
+
+Print the result as plain text ```text...``` and not as a readme file by removing all tags like `**`, `##`, etc.
+
+
+
+```text
+Label:
+DuckDB (Q133271766)
+
+Aliases:
+DuckDB | Duck DB | DuckDB OLAP | DuckDB Analytics | In-process SQL OLAP
+
+Description:
+Open-source in-process column-oriented RDBMS specialized for OLAP workloads.
+
+---
+
+Subclass of (P279):
+- relational database management system (Q172757)
+- column-oriented DBMS (Q1500328)
+- free and open-source software (Q341)
+- embedded database (Q1047234)
+
+---
+
+Uses (P2283):
+- SQL (Q47607)
+- online analytical processing (Q901407)
+- Apache Arrow (Q116682975)
+- Python (Q28865)
+- R (Q206904)
+
+---
+
+File format (P2701):
+- Parquet (Q99588765)
+- CSV (Q935809)
+- JSON (Q2063663)
+- Apache Arrow (Q116682975)
+- DuckDB file (.db) → may need to be created
+
+---
+
+Official website (P856):
+https://duckdb.org/
+
+---
+
+Disambiguation strategy:
+- Item Q133271766 already exists — EDIT, do not create a new one.
+- Navigate to: https://www.wikidata.org/wiki/Q133271766
+- Use different from (P1889) → SQLite (Q319417) to explicitly
+  distinguish OLAP (DuckDB) from OLTP (SQLite).
+
+-----------------
+Label:
+DuckDB (Q133271766)
+
+Aliases:
+DuckDB | Duck DB | DuckDB OLAP | DuckDB Analytics | In-process SQL OLAP
+
+Description:
+Open-source in-process column-oriented relational database management system
+specialized for online analytical processing (OLAP) workloads, designed for
+high performance on complex queries against large datasets in embedded
+configuration, distinct from transactional (OLTP) databases such as SQLite.
+
+---
+
+Subclass of (P279):
+- relational database management system (Q172757)
+- column-oriented DBMS (Q1500328)
+- free and open-source software (Q341)
+- embedded database (Q1047234)
+
+---
+
+Uses (P2283):
+- SQL (Q47607)
+- online analytical processing (Q901407)
+- Apache Arrow (Q116682975)
+- Python (Q28865)
+- R (Q206904)
+
+---
+
+Official website (P856):
+https://duckdb.org/
+
+---
+
+Disambiguation strategy:
+- Item Q133271766 already exists — EDIT the existing item, do not create a new one.
+- Navigate directly to:
+  https://www.wikidata.org/wiki/Q133271766
+- Verify existing label, description and claims before adding anything
+  to avoid redundant or conflicting statements.
+- "DuckDB" must be distinguished from SQLite (Q319417) and other
+  embedded databases — description must explicitly state "OLAP" and
+  "column-oriented" as primary disambiguating terms.
+- Add instance of (P31) → software (Q7397) and
+  relational database management system (Q172757) if not already present.
+- Avoid merging or linking with SQLite (Q319417) — they are distinct:
+  DuckDB is OLAP-focused, SQLite is OLTP-focused.
+  Use different from (P1889) → SQLite (Q319417) to make this explicit.
+```
+
+
+## DEPOT
+agentic browsers, dbt, digital autonomy, DuckDB, innovation theater, natural search, organizational pathologies, privacy
+
+
+## A_PROMPT_3
 there is no related to I found has list is that OK ?
 
 
