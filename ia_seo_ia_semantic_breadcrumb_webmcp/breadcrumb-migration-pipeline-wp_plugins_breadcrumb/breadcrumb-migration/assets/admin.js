@@ -6,6 +6,10 @@
 
 	const { ajaxUrl, nonce, i18n } = bmData;
 
+	// Persistent filter state — survive button clicks that call bmDescApplyFilters()
+	let bmActiveTagFilter   = [];
+	let bmActiveSearchQuery = '';
+
 	// ── Helper ────────────────────────────────────────────────────────────────
 
 	function post( action, data ) {
@@ -318,12 +322,12 @@
 
 	$( document ).on( 'click', '.bm-btn-bulk-assign', function () {
 		const $btn     = $( this );
-		const keywords = $( '#bm-bulk-keywords' ).val().trim();
+		const keywords = $( '#bm-check-selected-keywords' ).val().trim();
 		const catId    = $( '#bm-bulk-category' ).val();
 		const $results = $( '#bm-bulk-results' );
 
 		if ( ! keywords ) {
-			flashNotice( 'Enter at least one keyword.', 'error' );
+			flashNotice( 'Check at least one keyword in Step 1 first.', 'error' );
 			return;
 		}
 		if ( ! catId || catId === '0' ) {
@@ -481,6 +485,7 @@
 					const withParent = results.filter( r => r.parent_name ).length;
 
 					let html = '<table class="widefat striped bm-bulk-check-table"><thead><tr>';
+					html += '<th class="bm-bulk-col-cb"><label><input type="checkbox" id="bm-check-select-all"> All</label></th>';
 					html += '<th>Keyword</th><th>Found in DB</th><th>Current Parent Category</th>';
 					html += '</tr></thead><tbody>';
 
@@ -488,7 +493,11 @@
 						const cls = ! r.found          ? 'bm-bulk-row--skip'
 								  : r.parent_name       ? 'bm-bulk-row--ok'
 								  : 'bm-bulk-row--err';
+						const canCheck = r.found;
 						html += `<tr class="${ cls }">`;
+						html += `<td class="bm-bulk-col-cb">${ canCheck
+							? `<input type="checkbox" class="bm-check-cb" value="${ escHtml( r.keyword ) }">`
+							: '' }</td>`;
 						html += `<td><strong>${ escHtml( r.keyword ) }</strong></td>`;
 						html += `<td>${ r.found ? '&#10003; Yes' : '&#10007; Not found' }</td>`;
 						html += `<td>${ r.parent_name
@@ -498,6 +507,15 @@
 					} );
 
 					html += '</tbody></table>';
+					html += `<div class="bm-check-selected-wrap">
+						<label for="bm-check-selected-keywords">
+							<strong>Selected keywords</strong>
+							<span class="description"> — comma-separated list of checked keywords, copy &amp; paste ready</span>
+						</label>
+						<textarea id="bm-check-selected-keywords" class="bm-check-selected-keywords" rows="2" readonly
+							placeholder="Check keywords above to populate this list…"></textarea>
+					</div>`;
+
 					$results.html( html ).slideDown( 200 );
 					flashNotice( `Check done: ${ found }/${ results.length } found in DB, ${ withParent } already have a parent category.` );
 				} else {
@@ -507,6 +525,33 @@
 			.fail( () => flashNotice( i18n.error, 'error' ) )
 			.always( () => $btn.removeClass( 'bm-loading' ).text( 'Check Current Assignments' ) );
 	} );
+
+	// ── Bulk Check — select all ───────────────────────────────────────────────
+
+	$( document ).on( 'change', '#bm-check-select-all', function () {
+		const checked = $( this ).prop( 'checked' );
+		$( '#bm-bulk-check-results .bm-check-cb' ).prop( 'checked', checked );
+		bmUpdateCheckSelectedKeywords();
+	} );
+
+	// ── Bulk Check — individual checkbox → update textarea ────────────────────
+
+	$( document ).on( 'change', '.bm-check-cb', function () {
+		const total   = $( '#bm-bulk-check-results .bm-check-cb' ).length;
+		const checked = $( '#bm-bulk-check-results .bm-check-cb:checked' ).length;
+		$( '#bm-check-select-all' )
+			.prop( 'indeterminate', checked > 0 && checked < total )
+			.prop( 'checked', checked > 0 && checked === total );
+		bmUpdateCheckSelectedKeywords();
+	} );
+
+	function bmUpdateCheckSelectedKeywords() {
+		const keywords = [];
+		$( '#bm-bulk-check-results .bm-check-cb:checked' ).each( function () {
+			keywords.push( $( this ).val() );
+		} );
+		$( '#bm-check-selected-keywords' ).val( keywords.join( ', ' ) );
+	}
 
 	// ── Bulk Description tab ─────────────────────────────────────────────────
 
@@ -587,7 +632,10 @@
 		const filterActDesc   = $( '#bm-filter-actual-desc-empty' ).prop( 'checked' );
 		const filterManual    = $( '#bm-filter-manual-only' ).prop( 'checked' );
 		const filterCompleted = $( '#bm-filter-completed' ).prop( 'checked' );
-		const anyActive       = filterWdId || filterWdDesc || filterActDesc || filterManual || filterCompleted;
+		const anyCheckbox     = filterWdId || filterWdDesc || filterActDesc || filterManual || filterCompleted;
+		const hasTagFilter    = bmActiveTagFilter.length > 0;
+		const hasSearch       = bmActiveSearchQuery.length > 0;
+		const anyActive       = anyCheckbox || hasTagFilter || hasSearch;
 
 		$( '#bm-bulk-desc-table tbody .bm-bulk-desc-row' ).each( function () {
 			const $row = $( this );
@@ -596,11 +644,21 @@
 				$row.show();
 			} else {
 				let show = true;
-				if ( filterWdId      && $row.attr( 'data-wd-id-empty' )       !== '1' ) { show = false; }
-				if ( filterWdDesc    && $row.attr( 'data-wd-desc-empty' )     !== '1' ) { show = false; }
-				if ( filterActDesc   && $row.attr( 'data-actual-desc-empty' ) !== '1' ) { show = false; }
-				if ( filterManual    && $row.attr( 'data-desc-source' )       !== 'manual' ) { show = false; }
-				if ( filterCompleted && $row.attr( 'data-row-status' )        !== 'green' ) { show = false; }
+				if ( anyCheckbox ) {
+					if ( filterWdId      && $row.attr( 'data-wd-id-empty' )       !== '1' ) { show = false; }
+					if ( filterWdDesc    && $row.attr( 'data-wd-desc-empty' )     !== '1' ) { show = false; }
+					if ( filterActDesc   && $row.attr( 'data-actual-desc-empty' ) !== '1' ) { show = false; }
+					if ( filterManual    && $row.attr( 'data-desc-source' )       !== 'manual' ) { show = false; }
+					if ( filterCompleted && $row.attr( 'data-row-status' )        !== 'green' ) { show = false; }
+				}
+				if ( show && hasTagFilter ) {
+					const name = $row.attr( 'data-tag-name' ) || '';
+					if ( bmActiveTagFilter.indexOf( name ) === -1 ) { show = false; }
+				}
+				if ( show && hasSearch ) {
+					const name = $row.attr( 'data-tag-name' ) || '';
+					if ( name.indexOf( bmActiveSearchQuery ) === -1 ) { show = false; }
+				}
 				$row.toggle( show );
 			}
 		} );
@@ -941,15 +999,16 @@
 		$result.closest( '.bm-wikidata-results' ).slideUp( 200 );
 	} );
 
-	// ── Bulk Description — live name search ──────────────────────────────────────
+	// ── Bulk Description — live name search (persistent) ─────────────────────────
 
 	$( document ).on( 'input', '#bm-desc-name-search', function () {
-		const query = $( this ).val().trim().toLowerCase();
-		$( '#bm-bulk-desc-table tbody .bm-bulk-desc-row' ).each( function () {
-			const name = $( this ).attr( 'data-tag-name' ) || '';
-			$( this ).toggle( ! query || name.indexOf( query ) !== -1 );
-		} );
-		bmUpdateFilterCounts();
+		bmActiveSearchQuery = $( this ).val().trim().toLowerCase();
+		bmDescApplyFilters();
+	} );
+
+	$( document ).on( 'click', '#bm-desc-search-submit', function () {
+		bmActiveSearchQuery = $( '#bm-desc-name-search' ).val().trim().toLowerCase();
+		bmDescApplyFilters();
 	} );
 
 	// ── Bulk Description — tag filter textarea ───────────────────────────────────
@@ -965,22 +1024,18 @@
 			return;
 		}
 
-		let visible = 0;
-		$( '#bm-bulk-desc-table tbody .bm-bulk-desc-row' ).each( function () {
-			const name  = $( this ).attr( 'data-tag-name' ) || '';
-			const match = tags.indexOf( name ) !== -1;
-			$( this ).toggle( match );
-			if ( match ) visible++;
-		} );
+		bmActiveTagFilter = tags;
+		bmDescApplyFilters();
 
+		const visible = $( '#bm-bulk-desc-table tbody .bm-bulk-desc-row:visible' ).length;
 		flashNotice( `Filter applied: ${ visible } tag(s) visible.` );
-		bmUpdateFilterCounts();
 	} );
 
 	$( document ).on( 'click', '#bm-desc-tag-filter-clear', function () {
 		$( '#bm-desc-tag-list' ).val( '' );
 		$( '#bm-desc-name-search' ).val( '' );
-		$( '#bm-bulk-desc-table tbody .bm-bulk-desc-row' ).show();
+		bmActiveTagFilter   = [];
+		bmActiveSearchQuery = '';
 		bmDescApplyFilters();
 	} );
 
@@ -1073,6 +1128,47 @@
 			} )
 			.fail( () => flashNotice( i18n.error, 'error' ) )
 			.always( () => $btn.removeClass( 'bm-loading' ).text( '↺' ) );
+	} );
+
+	// ── Bulk Description — checkbox → selected keywords textarea ────────────
+
+	function bmUpdateDescSelectedKeywords() {
+		const keywords = [];
+		$( '#bm-bulk-desc-table .bm-desc-cb:checked' ).each( function () {
+			keywords.push( $( this ).data( 'tagName' ) );
+		} );
+		const $wrap = $( '#bm-desc-selected-wrap' );
+		const $ta   = $( '#bm-desc-selected-keywords' );
+		$ta.val( keywords.join( ', ' ) );
+		if ( keywords.length ) {
+			$wrap.slideDown( 150 );
+		} else {
+			$wrap.slideUp( 150 );
+		}
+	}
+
+	$( document ).on( 'change', '#bm-bulk-desc-table .bm-desc-cb', bmUpdateDescSelectedKeywords );
+
+	// Also update when "Select All" is toggled (prop() doesn't fire change on children)
+	$( document ).on( 'change', '#bm-desc-select-all', function () {
+		setTimeout( bmUpdateDescSelectedKeywords, 0 );
+	} );
+
+	// ── Proposals — WP-style page jump (Enter on current-page input) ─────────
+
+	$( document ).on( 'keydown', '.bm-page-jump', function ( e ) {
+		if ( e.key !== 'Enter' ) return;
+		e.preventDefault();
+		const $input   = $( this );
+		const page     = parseInt( $input.val(), 10 );
+		const total    = parseInt( $input.data( 'totalPages' ), 10 );
+		const template = $input.data( 'urlTemplate' );
+		if ( isNaN( page ) || page < 1 || page > total ) {
+			$input.addClass( 'bm-page-invalid' );
+			setTimeout( () => $input.removeClass( 'bm-page-invalid' ), 800 );
+			return;
+		}
+		window.location.href = template.replace( 'BM_PAGE', String( page ) );
 	} );
 
 	// ── Help — Wikidata tab — accordion ──────────────────────────────────────

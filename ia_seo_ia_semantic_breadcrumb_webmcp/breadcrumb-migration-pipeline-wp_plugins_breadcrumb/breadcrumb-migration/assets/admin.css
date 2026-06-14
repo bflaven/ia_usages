@@ -333,21 +333,43 @@
 	font-size: 12px;
 }
 
-/* ── Pagination ────────────────────────────────────────────────────────────── */
+/* ── WP-style tablenav pagination (Proposals tab) ──────────────────────────── */
 
-.bm-pagination {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	margin-top: 16px;
-	padding: 12px 0;
+.bm-tablenav {
+	padding: 6px 0;
 	border-top: 1px solid #e0e0e0;
 }
 
-.bm-pagination__info {
+.bm-tablenav--top {
+	border-top: none;
+	border-bottom: 1px solid #e0e0e0;
+	margin-bottom: 12px;
+}
+
+.bm-tablenav--bottom {
+	margin-top: 4px;
+}
+
+.bm-tablenav .tablenav-pages {
+	float: none !important;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 6px;
+	flex-wrap: wrap;
+	margin: 0;
+}
+
+.bm-tablenav .displaying-num {
+	margin-right: auto;
 	color: #50575e;
 	font-size: 13px;
-	margin-right: auto;
+}
+
+.bm-page-invalid {
+	background: #fef2f2 !important;
+	border-color: #d63638 !important;
+	outline: none;
 }
 
 /* ── Tabs ──────────────────────────────────────────────────────────────────── */
@@ -894,23 +916,53 @@
 	white-space: nowrap;
 }
 
-/* ── Bulk Description — search + sync bar ─────────────────────────────────── */
+/* ── Bulk Assign — selected keywords textarea ──────────────────────────────── */
 
-.bm-desc-search-bar {
-	display: flex;
+.bm-check-selected-wrap {
+	margin-top: 14px;
+	padding: 12px 14px;
+	background: #f0f6fc;
+	border: 1px solid #c8dff0;
+	border-radius: 4px;
+}
+
+.bm-check-selected-wrap label {
+	display: block;
+	margin-bottom: 6px;
+	font-size: 13px;
+}
+
+.bm-check-selected-keywords {
+	width: 100%;
+	font-family: monospace;
+	font-size: 13px;
+	padding: 6px 8px;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	resize: vertical;
+	box-sizing: border-box;
+	background: #fff;
+	color: #1d2327;
+}
+
+/* ── Bulk Description — WP-style search box inside filters ─────────────────── */
+
+.bm-desc-search-box {
+	display: inline-flex;
 	align-items: center;
-	gap: 10px;
-	margin-bottom: 12px;
-	flex-wrap: wrap;
+	gap: 4px;
+	margin: 0;
+	flex-shrink: 0;
 }
 
 .bm-desc-name-search {
-	height: 30px;
-	padding: 0 10px;
+	height: 26px;
+	padding: 0 8px;
 	border: 1px solid #8c8f94;
 	border-radius: 3px;
-	font-size: 13px;
-	min-width: 220px;
+	font-size: 12px;
+	min-width: 160px;
+	box-sizing: border-box;
 }
 
 /* ── Bulk Description — tag filter textarea ────────────────────────────────── */
@@ -1578,6 +1630,82 @@ button.bm-btn-done {
 .bm-help-badge--alias {
 	background: #f3f4f6;
 	color: #374151;
+}
+
+/* ── Proposals — bulk keyword search panel ───────────────────────────────── */
+
+.bm-panel--bulk-search {
+	border-left: 4px solid #2271b1;
+	margin-bottom: 0;
+}
+
+.bm-proposals-bulk-keywords {
+	margin-top: 8px;
+	font-family: monospace;
+	font-size: 13px;
+	resize: vertical;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* ── Proposals — bulk results table ─────────────────────────────────────── */
+
+.bm-proposals-bulk-results {
+	margin-top: 16px;
+}
+
+.bm-proposals-bulk-results__title {
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0 0 10px;
+	color: #1d2327;
+}
+
+.bm-proposals-bulk-table {
+	font-size: 13px;
+}
+
+.bm-proposals-bulk-table td,
+.bm-proposals-bulk-table th {
+	padding: 8px 10px;
+	vertical-align: middle;
+}
+
+/* ── Bulk Description — selected keywords wrap ───────────────────────────── */
+
+.bm-desc-selected-wrap {
+	margin: 0 0 12px;
+	padding: 12px 14px;
+	background: #f0f6fc;
+	border: 1px solid #c8dff0;
+	border-radius: 4px;
+}
+
+.bm-desc-selected-wrap label {
+	display: block;
+	margin-bottom: 6px;
+	font-size: 13px;
+}
+
+.bm-desc-selected-keywords {
+	display: block;
+	width: 100%;
+	font-family: monospace;
+	font-size: 13px;
+	padding: 6px 8px;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	resize: vertical;
+	box-sizing: border-box;
+	background: #fff;
+	color: #1d2327;
+}
+
+/* ── Proposals — bulk not-found notice ───────────────────────────────────── */
+
+.bm-bulk-not-found-notice {
+	margin: 0 0 16px !important;
 }
 
 /* ── Result callout ─────────────────────────────────────────────────────────── */
