@@ -1,7 +1,302 @@
+## PROMPT_6
+Give a wikidata definition in English for "Sentence Embeddings" plus a set for "subclass of", "uses". Add also "aliases" with a pipe | separated list. Give an answer that eases the cut and paste of each element of the answer. No explanations just say the essential. Advise also how to add the official URL. Do not forget to remind the ID on wikidata for "subclass of" and "uses" e.g Subclass of: (P279), Uses: (P2283). In order to avoid duplicates, advice on a strategy to promote disambiguation is important. The description should clearly state something to distinguish it.
+
+- source of definition
+In natural language processing, a sentence embedding is a representation of a natural language text as a vector of numbers which encodes meaningful semantic information.
+
+- personal repo
+Add my repo https://github.com/bflaven/ia_usages as Add source code repository (P1324)
+
+Print the result as plain text ```text...``` and not as a readme file by removing all tags like `**`, `##`, etc.
+
+```text
+Label:
+Sentence Embedding
+
+Aliases:
+Sentence Embeddings | Sentence Vector | Text Embedding | Sentence Representation | Semantic Sentence Vector
+
+Description:
+Natural language processing technique representing a sentence as a dense
+numeric vector encoding its semantic meaning, enabling mathematical
+comparison of textual similarity and semantic search.
+
+---
+
+Subclass of (P279):
+- word embedding (Q28777951)
+- vector space model (Q1785087)
+- natural language processing (Q30642)
+- feature learning (Q) → may need to be created
+
+---
+
+Uses (P2283):
+- natural language processing (Q30642)
+- neural network (Q192776)
+- cosine similarity (Q1083302)
+- transformer (Q47533580)
+- BERT (Q61631517)
+- semantic similarity (Q) → may need to be created
+- sentence-transformers (Q) → may need to be created
+
+---
+
+Official website (P856):
+No single official URL — concept defined across multiple sources.
+Use reference URL (P854):
+https://en.wikipedia.org/wiki/Sentence_embedding
+
+Source code repository (P1324):
+https://github.com/bflaven/ia_usages
+
+---
+
+Disambiguation strategy:
+- Search before creating:
+  https://www.wikidata.org/w/index.php?search=sentence+embedding
+- Must be distinguished from word embedding (Q28777951) — sentence
+  embeddings encode full sentences, not individual tokens or words.
+- Must be distinguished from document embedding and paragraph embedding —
+  use description qualifier "sentence-level" as primary disambiguating term.
+- Use different from (P1889) → word embedding (Q28777951) to make
+  the distinction explicit.
+- Use instance of (P31) → concept (Q151885) or
+  natural language processing technique as anchor claim.
+- Add named after (P138) → no single author; add significant person (P3342)
+  → Jakob Uszkoreit or Nils Reimers if attribution is needed.
+```
 
 
+
+```text
+- Content quality 
+Content quality refers to how well content meets standards and best practices, such as accuracy, relevance, and accessibility. **High-quality content** is useful, reliable, and tailored to its audience, aligning with both brand goals and user needs.
+
+- Sentence Embeddings
+In natural language processing, a sentence embedding is a representation of a natural language text as a vector of numbers which encodes meaningful semantic information.
+```
+
+## A_ANSWER
+
+Wikipedia has strict rules about self-promotion. Here is the honest picture:
+
+```text
+DIRECT ANSWER:
+You cannot add your own GitHub repo as a Wikipedia article or link.
+Wikipedia will delete it as self-promotion (WP:COI, WP:PROMO policies).
+
+---
+
+WHAT YOU CAN LEGITIMATELY DO:
+
+1. WIKIDATA (most viable right now)
+   Create items for tools hosted in your repo that have no QID yet:
+   - PySentence-Similarity → new item
+   - PyTextRank usage examples → contribute to existing PyTextRank item
+   Add source code repository (P1324) pointing to your GitHub URL.
+   This is factual, not promotional.
+
+2. WIKIPEDIA EXISTING ARTICLES (indirect)
+   If your repo contains a notable implementation or benchmark,
+   add it as an external link or reference in an existing article:
+   - spaCy article → https://en.wikipedia.org/wiki/SpaCy
+   - Natural language processing article
+   - TextRank article (if it exists)
+   Only if your repo is genuinely cited or referenced elsewhere first.
+
+3. BUILD NOTABILITY FIRST (prerequisite for Wikipedia)
+   Wikipedia requires secondary sources independent of you:
+   - Get your repo cited in a blog post, paper, or tutorial by others
+   - Publish a companion article on flaven.fr and get it indexed
+   - Get cited in spaCy community docs or awesome-nlp lists
+   - Accumulate GitHub stars (signals independent interest)
+
+4. GITHUB AWESOME LISTS (faster than Wikipedia)
+   Submit a pull request to:
+   - https://github.com/explosion/spaCy (community resources)
+   - https://github.com/keon/awesome-nlp
+   - https://github.com/brianspiering/awesome-dl4nlp
+   These are indexed by Google and visible to practitioners.
+
+5. WIKIDATA AS SEO ANCHOR
+   Even without a Wikipedia article, a Wikidata item with:
+   - instance of (P31) → software library
+   - source code repository (P1324) → your GitHub URL
+   - main subject (P921) → spaCy, NLP, sentence similarity
+   ...gives your repo a structured semantic presence in the
+   Linked Open Data cloud, visible to knowledge graph consumers.
+
+---
+
+REALISTIC PRIORITY ORDER:
+
+Step 1 → Create Wikidata items for PySentence-Similarity and
+          link to your repo via P1324.
+Step 2 → Write about it on flaven.fr and LinkedIn (you already do this).
+Step 3 → Submit to awesome-nlp lists.
+Step 4 → Once cited externally, add as external link to spaCy Wikipedia page.
+Step 5 → Only then consider a standalone Wikipedia article.
+```
+
+
+## PROMPT_6
+Give a wikidata definition in English for "PyTextRank" plus a set for "subclass of", "uses". Add also "aliases" with a pipe | separated list. Give an answer that eases the cut and paste of each element of the answer. No explanations just say the essential. Advise also how to add the official URL. Do not forget to remind the ID on wikidata for "subclass of" and "uses" e.g Subclass of: (P279), Uses: (P2283). In order to avoid duplicates, advice on a strategy to promote disambiguation is important. The description should clearly state something to distinguish it.
+
+- source of definition
+PyTextRank is a Python library that implements the TextRank algorithm for extractive summarization and keyword extraction in natural language processing. It works as an extension of the spaCy library, allowing users to extract top-ranked phrases and infer links from unstructured text.
+
+Print the result as plain text ```text...``` and not as a readme file by removing all tags like `**`, `##`, etc.
+
+
+```text
+Label:
+PyTextRank
+
+Aliases:
+PyTextRank | Python TextRank | TextRank spaCy | spaCy TextRank | pytextrank
+
+Description:
+Open-source Python library implementing the TextRank algorithm as a spaCy
+extension for extractive text summarization and keyword extraction from
+unstructured natural language text.
+
+---
+
+Subclass of (P279):
+- natural language processing tool (Q107520748)
+- software library (Q188860)
+- free and open-source software (Q341)
+
+---
+
+Uses (P2283):
+- Python (Q28865)
+- spaCy (Q28127706)
+- TextRank (Q) → may need to be created
+- natural language processing (Q30642)
+- keyword extraction (Q) → may need to be created
+- extractive summarization (Q) → may need to be created
+- graph-based ranking (Q) → may need to be created
+
+---
+
+Official website (P856):
+https://spacy.io/universe/project/spacy-pytextrank
+
+Source code repository (P1324):
+https://github.com/DerwenAI/pytextrank
+
+---
+
+Disambiguation strategy:
+- Search before creating:
+  https://www.wikidata.org/w/index.php?search=PyTextRank
+- No known QID exists yet — safe to create a new item.
+- Must be distinguished from raw TextRank algorithm (academic paper,
+  Mihalcea & Tarau 2004) — PyTextRank is the Python implementation,
+  not the original algorithm.
+- Use instance of (P31) → software library (Q188860) as anchor claim.
+- Add based on (P144) → TextRank if a TextRank QID exists or is created,
+  to explicitly link implementation to source algorithm.
+- Include "spaCy extension" in description as primary disambiguating term
+  against other TextRank implementations.
+```
+
+
+## PROMPT_5
+Give a wikidata definition in English for "PySentence-Similarity" plus a set for "subclass of", "uses". Add also "aliases" with a pipe | separated list. Give an answer that eases the cut and paste of each element of the answer. No explanations just say the essential. Advise also how to add the official URL. Do not forget to remind the ID on wikidata for "subclass of" and "uses" e.g Subclass of: (P279), Uses: (P2283). In order to avoid duplicates, advice on a strategy to promote disambiguation is important. The description should clearly state something to distinguish it.
+
+- source of definition
+PySentence-Similarity is a tool designed to identify and find similarities between sentences and a base sentence, expressed as a percentage
+
+Print the result as plain text ```text...``` and not as a readme file by removing all tags like `**`, `##`, etc.
+
+
+```text
+Label:
+PySentence-Similarity
+
+Aliases:
+PySentence Similarity | Sentence Similarity Python | Python Sentence Matcher | PySentenceSimilarity
+
+Description:
+Open-source Python tool for computing and ranking similarity between sentences
+and a base sentence, returning results expressed as a percentage score.
+
+---
+
+Subclass of (P279):
+- natural language processing tool (Q107520748)
+- software library (Q188860)
+- free and open-source software (Q341)
+
+---
+
+Uses (P2283):
+- Python (Q28865)
+- natural language processing (Q30642)
+- semantic similarity (Q) → may need to be created
+- sentence embedding (Q) → may need to be created
+- cosine similarity (Q1083302)
+
+---
+
+Official website (P856):
+https://github.com/goldpulpy/pysentence-similarity
+https://github.com/bflaven/ia_usages/tree/main/ia_using_spacy
+→ add reference URL (P854) if no dedicated domain exists
+
+---
+
+Disambiguation strategy:
+- Search before creating:
+  https://www.wikidata.org/w/index.php?search=PySentence-Similarity
+- No known QID exists yet — safe to create a new item.
+- Description must include "Python" and "percentage score" as primary
+  disambiguating terms against other sentence similarity tools
+  (e.g. sentence-transformers, SimCSE, BERTScore).
+- Use instance of (P31) → software (Q7397) as anchor claim.
+- If hosted solely on GitHub, use source code repository (P1324)
+  → https://github.com/bflaven/ia_usages as the primary URL claim
+  instead of or alongside official website (P856).
+```
+
+
+```text
+
+- pysentence-similarity
+PySentence-Similarity is a tool designed to identify and find similarities between sentences and a base sentence, expressed as a percentage
+
+- pytextrank
+PyTextRank is a Python library that implements the TextRank algorithm for extractive summarization and keyword extraction in natural language processing. It works as an extension of the spaCy library, allowing users to extract top-ranked phrases and infer links from unstructured text.
+
+- Content quality 
+Content quality refers to how well content meets standards and best practices, such as accuracy, relevance, and accessibility. **High-quality content** is useful, reliable, and tailored to its audience, aligning with both brand goals and user needs.
+
+- Sentence Embeddings
+In natural language processing, a sentence embedding is a representation of a natural language text as a vector of numbers which encodes meaningful semantic information.
+
+
+
+--- set_1
+AI-Generated Text, Content Quality, Correctness, Downsides, Environment, Hallucinations, Labor Market, pysentence-similarity, pytextrank, Sentence Embeddings, spacy-llm, Usefulness, Validation
+
+
+
+
+
+
+
+--- all
+AI, AI-Generated Text, artificial intelligence, Content Quality, Correctness, Downsides, Environment, Hallucinations, Labor Market, pysentence-similarity, pytextrank, Sentence Embeddings, spacy-llm, Usefulness, Validation
+```
+
+
+
+```text
 agentic browsers, dbt, digital autonomy, DuckDB, innovation theater, natural search, organizational pathologies, privacy
-
+```
 
 ## PROMPT_4
 Give a wikidata definition in English for "DuckDB" (Q133271766) plus a set for "subclass of", "uses". Add also "aliases" with a pipe | separated list. Give an answer that eases the cut and paste of each element of the answer. No explanations just say the essential. Advise also how to add the official URL. Do not forget to remind the ID on wikidata for "subclass of" and "uses" e.g Subclass of: (P279), Uses: (P2283). In order to avoid duplicates, advice on a strategy to promote disambiguation is important. The description should clearly state something to distinguish it.
