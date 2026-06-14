@@ -1,4 +1,17 @@
 
+## DEPOT_VALIDATION_3
+
+```text
+agentic browsers, AI exploration, Atlas, Comet, dbt, digital autonomy, DuckDB, innovation theater, natural search, OpenAI, organizational pathologies, privacy
+```
+
+## DEPOT_VALIDATION_2
+```text
+agentic browsers, AI, AI agents, AI exploration, Anthropic, artificial intelligence, Atlas, Comet, dbt, digital autonomy, digital sovereignty, digital transformation, DuckDB, GDPR, GEO, Google Chrome, innovation theater, late-stage capitalism, natural search, OpenAI, organizational pathologies, Perplexity, personal data, privacy, Product Owner, python, semantic layer, SEO, surveillance, taxonomies
+```
+
+## DEPOT_VALIDATION_1
+
 Test made on Version is 1.23.0 fine
 ```text
 Android, apache, Alain Devalpo
@@ -28,12 +41,6 @@ agentic browsers, Atlas, Comet, dbt
 3. CAUTION: Use as much as possible native look and feel from WP, avoid floating, ugly that deserves the UX and the intuitive understanding of a beginner user.
 
 Note: Before coding, summarize in bullet points that you understand from the given instructions. Update the readme in the changelog in the readme and the version of the plugin when I validate the changes asked.
-
-
-
-
-
-
 
 ## PROMPT_1
 
