@@ -311,6 +311,18 @@ function bm_render_tab_delta(): void {
 		<p class="description">
 			<?php esc_html_e( 'Scan detects tags present in WordPress but not yet tracked. Fill spaCy entity and Wikidata fields manually, then add to migration. The tag will appear in the Proposals tab for validation.', 'breadcrumb-migration' ); ?>
 		</p>
+
+		<div class="bm-bulk-step" style="margin-bottom: 16px;">
+			<label for="bm-delta-keywords" style="display:block; font-weight:600; margin-bottom:4px;">
+				<?php esc_html_e( 'Filter by keywords (optional)', 'breadcrumb-migration' ); ?>
+			</label>
+			<p class="description" style="margin-bottom:6px;">
+				<?php esc_html_e( 'Paste a comma or newline-separated list of tag names. Scan will be limited to these tags only. Leave empty to scan all tags.', 'breadcrumb-migration' ); ?>
+			</p>
+			<textarea id="bm-delta-keywords" rows="5" class="large-text"
+				placeholder="<?php esc_attr_e( 'Applied computing, Automatic fact-checking, BeautifulSoup, Clickbait detection, Credibility…', 'breadcrumb-migration' ); ?>"></textarea>
+		</div>
+
 		<button class="button button-primary bm-btn-scan-delta">
 			<?php esc_html_e( 'Scan for new tags', 'breadcrumb-migration' ); ?>
 		</button>

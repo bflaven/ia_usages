@@ -582,6 +582,70 @@
 	margin: 0;
 }
 
+.bm-delta-toolbar {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 14px;
+	background: #f0f6fc;
+	border: 1px solid #c3d4e4;
+	border-radius: 4px;
+	margin-bottom: 12px;
+	flex-wrap: wrap;
+}
+
+.bm-delta-select-all-wrap {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.bm-delta-selected-count {
+	font-size: 12px;
+	color: #50575e;
+	margin-right: auto;
+}
+
+.bm-delta-header input[type="checkbox"].bm-delta-cb {
+	margin: 0;
+	flex-shrink: 0;
+	cursor: pointer;
+}
+
+.bm-delta-toolbar-sep {
+	display: inline-block;
+	width: 1px;
+	height: 22px;
+	background: #c3d4e4;
+	margin: 0 4px;
+	vertical-align: middle;
+	flex-shrink: 0;
+}
+
+.bm-delta-entity-label {
+	font-size: 13px;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.bm-delta-bulk-entity {
+	max-width: 280px;
+	font-size: 12px;
+}
+
+.bm-btn-apply-entity {
+	white-space: nowrap;
+}
+
+.bm-delta-fields.bm-entity-applied {
+	outline: 2px solid #2271b1;
+	border-radius: 3px;
+	transition: outline 0.3s ease;
+}
+
 /* ── Wikidata search block (inside Delta rows) ─────────────────────────────── */
 
 .bm-wikidata-search {

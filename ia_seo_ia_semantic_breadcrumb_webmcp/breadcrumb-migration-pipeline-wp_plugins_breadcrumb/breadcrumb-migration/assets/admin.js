@@ -10,6 +10,29 @@
 	let bmActiveTagFilter   = [];
 	let bmActiveSearchQuery = '';
 
+	// spaCy named-entity list — shared by toolbar and per-row selects
+	const BM_SPACY_ENTITIES = [
+		[ '',            '— none —' ],
+		[ 'PERSON',      'PERSON — People, including fictional' ],
+		[ 'NORP',        'NORP — Nationalities, religious or political groups' ],
+		[ 'FAC',         'FAC — Buildings, airports, highways, bridges' ],
+		[ 'ORG',         'ORG — Companies, agencies, institutions' ],
+		[ 'GPE',         'GPE — Countries, cities, states' ],
+		[ 'LOC',         'LOC — Non-GPE locations, mountain ranges, bodies of water' ],
+		[ 'PRODUCT',     'PRODUCT — Objects, vehicles, foods (not services)' ],
+		[ 'EVENT',       'EVENT — Hurricanes, battles, wars, sports events' ],
+		[ 'WORK_OF_ART', 'WORK_OF_ART — Titles of books, songs, etc.' ],
+		[ 'LAW',         'LAW — Named documents made into laws' ],
+		[ 'LANGUAGE',    'LANGUAGE — Any named language' ],
+		[ 'DATE',        'DATE — Absolute or relative dates or periods' ],
+		[ 'TIME',        'TIME — Times smaller than a day' ],
+		[ 'PERCENT',     'PERCENT — Percentage, including "%"' ],
+		[ 'MONEY',       'MONEY — Monetary values, including unit' ],
+		[ 'QUANTITY',    'QUANTITY — Measurements, weight or distance' ],
+		[ 'ORDINAL',     'ORDINAL — "first", "second", etc.' ],
+		[ 'CARDINAL',    'CARDINAL — Numerals not under another type' ],
+	];
+
 	// ── Helper ────────────────────────────────────────────────────────────────
 
 	function post( action, data ) {
@@ -795,13 +818,8 @@
 	}
 
 	function renderDeltaRow( tag ) {
-		const entities = [
-			'', 'PERSON', 'NORP', 'FAC', 'ORG', 'GPE', 'LOC', 'PRODUCT', 'EVENT',
-			'WORK_OF_ART', 'LAW', 'LANGUAGE', 'DATE', 'TIME', 'PERCENT',
-			'MONEY', 'QUANTITY', 'ORDINAL', 'CARDINAL',
-		];
-		const opts = entities
-			.map( e => `<option value="${e}">${ e || '— none —' }</option>` )
+		const opts = BM_SPACY_ENTITIES
+			.map( ( [ v, label ] ) => `<option value="${v}">${ v || '— none —' }</option>` )
 			.join( '' );
 		const extUrl = 'https://www.wikidata.org/w/index.php?search=' +
 			encodeURIComponent( tag.name ) + '&language=' + encodeURIComponent( bmData.wikidataLang || 'en' );
@@ -809,6 +827,7 @@
 		return `
 			<div class="bm-delta-row" data-wp-term-id="${escHtml( tag.wp_term_id )}">
 				<div class="bm-delta-header">
+					<input type="checkbox" class="bm-delta-cb" data-wp-term-id="${escHtml( tag.wp_term_id )}" title="Select for bulk action">
 					<strong class="bm-delta-name">${escHtml( tag.name )}</strong>
 					<code>${escHtml( tag.slug )}</code>
 					<span class="bm-delta-count">${escHtml( tag.count )} post(s)</span>
@@ -874,20 +893,37 @@
 	}
 
 	$( document ).on( 'click', '.bm-btn-scan-delta', function () {
-		const $btn     = $( this );
-		const $results = $( '#bm-delta-results' );
+		const $btn      = $( this );
+		const $results  = $( '#bm-delta-results' );
+		const keywords  = $( '#bm-delta-keywords' ).val() || '';
 
 		$btn.addClass( 'bm-loading' ).text( 'Scanning…' );
 		$results.empty();
 
-		post( 'bm_scan_delta', {} )
+		post( 'bm_scan_delta', { keywords } )
 			.done( function ( res ) {
 				if ( res.success ) {
 					const { tags, count } = res.data;
 					if ( count === 0 ) {
 						$results.html( '<p class="bm-delta-none">No new tags found — all post_tag terms are already tracked.</p>' );
 					} else {
+						const entityOpts = BM_SPACY_ENTITIES
+							.map( ( [ v, label ] ) => `<option value="${v}">${label}</option>` )
+							.join( '' );
+
 						$results.html(
+							`<div class="bm-delta-toolbar">
+								<label class="bm-delta-select-all-wrap">
+									<input type="checkbox" id="bm-delta-select-all"> Select all
+								</label>
+								<span class="bm-delta-selected-count">0 of ${count} selected</span>
+								<span class="bm-delta-toolbar-sep" aria-hidden="true"></span>
+								<label class="bm-delta-entity-label" for="bm-delta-bulk-entity">spaCy entity:</label>
+								<select id="bm-delta-bulk-entity" class="bm-delta-bulk-entity">${entityOpts}</select>
+								<button type="button" class="button bm-btn-apply-entity" title="Set this entity on all checked rows">Apply to selected</button>
+								<span class="bm-delta-toolbar-sep" aria-hidden="true"></span>
+								<button class="button button-primary bm-btn-bulk-add-delta" disabled>Add to migration</button>
+							</div>` +
 							`<p class="bm-delta-count-msg"><strong>${count}</strong> new tag(s) found.</p>` +
 							`<div class="bm-delta-list">${ tags.map( renderDeltaRow ).join( '' ) }</div>`
 						);
@@ -941,6 +977,92 @@
 			} );
 	} );
 
+
+	// ── Delta bulk: select-all + individual checkbox ─────────────────────────
+
+	function bmUpdateDeltaBulkToolbar() {
+		const total    = $( '.bm-delta-cb' ).length;
+		const checked  = $( '.bm-delta-cb:checked' ).length;
+		$( '.bm-delta-selected-count' ).text( checked + ' of ' + total + ' selected' );
+		$( '.bm-btn-bulk-add-delta' ).prop( 'disabled', checked === 0 );
+		$( '#bm-delta-select-all' ).prop( 'indeterminate', checked > 0 && checked < total )
+			.prop( 'checked', total > 0 && checked === total );
+	}
+
+	$( document ).on( 'change', '#bm-delta-select-all', function () {
+		$( '.bm-delta-cb' ).prop( 'checked', $( this ).is( ':checked' ) );
+		bmUpdateDeltaBulkToolbar();
+	} );
+
+	$( document ).on( 'change', '.bm-delta-cb', function () {
+		bmUpdateDeltaBulkToolbar();
+	} );
+
+	$( document ).on( 'click', '.bm-btn-apply-entity', function () {
+		const entity = $( '#bm-delta-bulk-entity' ).val();
+		const $checked = $( '.bm-delta-cb:checked' );
+		if ( ! $checked.length ) {
+			flashNotice( 'Select at least one tag first.', 'error' );
+			return;
+		}
+		$checked.each( function () {
+			const $select = $( this ).closest( '.bm-delta-row' ).find( '[name="spacy_entity"]' );
+			$select.val( entity ).closest( '.bm-delta-fields' ).addClass( 'bm-entity-applied' );
+			setTimeout( () => $select.closest( '.bm-delta-fields' ).removeClass( 'bm-entity-applied' ), 1200 );
+		} );
+		const label = entity || '— none —';
+		flashNotice( `Entity "${label}" applied to ${$checked.length} selected tag(s).` );
+	} );
+
+	$( document ).on( 'click', '.bm-btn-bulk-add-delta', function () {
+		const $btn = $( this );
+		const terms = [];
+
+		$( '.bm-delta-cb:checked' ).each( function () {
+			const $row = $( this ).closest( '.bm-delta-row' );
+			terms.push( {
+				wp_term_id:           $row.data( 'wp-term-id' ),
+				spacy_entity:         $row.find( '[name="spacy_entity"]' ).val(),
+				wikidata_id:          $row.find( '[name="wikidata_id"]' ).val().trim(),
+				wikidata_label:       $row.find( '[name="wikidata_label"]' ).val().trim(),
+				wikidata_description: $row.find( '[name="wikidata_description"]' ).val().trim(),
+				proposed_name:        $row.find( '[name="proposed_name"]' ).val().trim(),
+				proposed_slug:        $row.find( '[name="proposed_slug"]' ).val().trim(),
+			} );
+		} );
+
+		if ( ! terms.length ) return;
+
+		$btn.addClass( 'bm-loading' ).text( 'Adding…' );
+
+		post( 'bm_bulk_add_delta_terms', { terms: JSON.stringify( terms ) } )
+			.done( function ( res ) {
+				if ( res.success ) {
+					const { added, skipped, errors } = res.data;
+					const msg = added + ' tag(s) added to migration' +
+						( skipped ? ', ' + skipped + ' skipped (already tracked)' : '' ) +
+						( errors.length ? ', ' + errors.length + ' error(s)' : '' ) + '.';
+					flashNotice( msg );
+
+					$( '.bm-delta-cb:checked' ).each( function () {
+						$( this ).closest( '.bm-delta-row' ).fadeOut( 300, function () {
+							$( this ).remove();
+							const remaining = $( '.bm-delta-row' ).length;
+							if ( remaining === 0 ) {
+								$( '#bm-delta-results' ).html( '<p class="bm-delta-none">All new tags added to migration.</p>' );
+							} else {
+								$( '.bm-delta-count-msg strong' ).text( remaining );
+								bmUpdateDeltaBulkToolbar();
+							}
+						} );
+					} );
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+				}
+			} )
+			.fail( () => flashNotice( i18n.error, 'error' ) )
+			.always( () => $btn.removeClass( 'bm-loading' ).text( 'Add to migration' ) );
+	} );
 
 	// ── Wikidata search (Delta tab) ───────────────────────────────────────────
 

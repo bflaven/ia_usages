@@ -406,6 +406,27 @@ Home > Tags > 17 octobre 1961      ← "Tags" links to /tags/ (WP page with slug
 
 ## Changelog
 
+### v1.26.0 — 2026-06-15
+- **UX**: **Delta — bulk spaCy entity picker** — toolbar now includes a `<select id="bm-delta-bulk-entity">` listing all 18 spaCy named-entity types with full descriptions (`PERSON — People, including fictional`, etc.) and an "Apply to selected" button; clicking it propagates the chosen entity to every checked row's individual spaCy select, flashes a blue outline on each updated fields block for 1.2 s, and shows a confirmation notice; individual row selects remain editable after apply; "Add to migration" reads each row's (now pre-filled) value as before — no backend change needed
+- **Refactor**: `BM_SPACY_ENTITIES` module-level constant (array of `[value, description]` pairs) replaces the inline array in `renderDeltaRow()` — single source of truth for both toolbar and per-row options
+- `admin.js`: `BM_SPACY_ENTITIES` const added at module scope; `renderDeltaRow()` builds row `<option>` list from it (short label); toolbar HTML gains separator `<span>`s, entity `<select>`, and "Apply to selected" `<button>`; toolbar entity `<select>` uses full descriptions; `.bm-btn-apply-entity` click handler added — validates selection, sets each checked row's `[name="spacy_entity"]` val, applies/removes `.bm-entity-applied` class for flash, shows notice
+- `admin.css`: `.bm-delta-toolbar-sep`, `.bm-delta-entity-label`, `.bm-delta-bulk-entity`, `.bm-btn-apply-entity`, `.bm-delta-fields.bm-entity-applied` added
+- `breadcrumb-migration.php`: version bumped to `1.26.0`
+
+### v1.25.0 — 2026-06-15
+- **Feature**: **Delta — bulk add to migration** — scan results now show a sticky toolbar above the tag list with a "Select all" checkbox, a live counter ("X of N selected"), and a primary "Add to migration" button; each tag row gains its own checkbox; selecting tags and clicking the button sends all checked rows in one request; success message summarises added / skipped (already tracked) / errors; processed rows fade out and the counter updates; individual per-row "Add to migration" button still available for one-off adds with custom fields
+- `admin.js`: `renderDeltaRow()` adds `.bm-delta-cb` checkbox to header; scan result HTML prepends `.bm-delta-toolbar` with `#bm-delta-select-all`, `.bm-delta-selected-count`, `.bm-btn-bulk-add-delta`; new `bmUpdateDeltaBulkToolbar()` helper syncs count label, indeterminate state, button disabled state; `#bm-delta-select-all` change handler toggles all checkboxes; `.bm-delta-cb` change handler calls toolbar update; `.bm-btn-bulk-add-delta` click handler collects checked rows into a JSON payload, POSTs `bm_bulk_add_delta_terms`, fades out added rows
+- `ajax-handler.php`: new `bm_ajax_bulk_add_delta_terms()` — decodes JSON `terms` array, loops each item through the same insert logic as the single-add handler, returns `{ added, skipped, errors }`
+- `admin.css`: `.bm-delta-toolbar`, `.bm-delta-select-all-wrap`, `.bm-delta-selected-count`, `.bm-delta-cb` styles added
+- `breadcrumb-migration.php`: `wp_ajax_bm_bulk_add_delta_terms` hook registered; version bumped to `1.25.0`
+
+### v1.24.0 — 2026-06-15
+- **Feature**: **Delta — keyword filter textarea** — new optional textarea (`#bm-delta-keywords`) added above the "Scan for new tags" button in the Delta tab; accepts a comma or newline-separated list of tag names; when populated, the scan is restricted to those names only; empty textarea preserves original behaviour (scan all untracked tags)
+- `admin-page.php`: `bm_render_tab_delta()` — label + description + `<textarea id="bm-delta-keywords" rows="5">` inserted before scan button
+- `admin.js`: scan button click handler reads `#bm-delta-keywords` value, passes it as `keywords` in the `post()` payload
+- `ajax-handler.php`: `bm_ajax_scan_delta()` — reads optional `keywords` POST param, splits on comma/newline, appends `AND t.name IN (…)` filter when non-empty
+- `breadcrumb-migration.php`: version bumped to `1.24.0`
+
 ### v1.23.0 — 2026-06-14
 - **Fix/UX**: **Proposals — Bulk Search results now render as cards** — replaced the flat `widefat striped` status table with real `.bm-card.bm-state--[status]` cards using the same `bm_render_term_card()` renderer as the normal Proposals view; all card actions (Simulate, Validate, Reject, Edit, Publish) are fully functional on bulk results; keywords not found in DB shown as a `notice notice-warning inline` bar above the card list; single `IN (...)` query fetches all matched rows at once instead of one query per keyword
 - **Fix**: **Proposals — card checkboxes removed** — `.bm-proposals-card-cb` checkbox added in v1.22.0 was in the wrong tab; removed from `.bm-card__header` in `bm_render_term_card()`; Proposals cards restored to their clean header layout

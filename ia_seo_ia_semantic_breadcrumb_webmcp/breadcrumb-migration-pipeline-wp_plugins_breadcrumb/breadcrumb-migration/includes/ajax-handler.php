@@ -270,6 +270,17 @@ function bm_ajax_scan_delta(): void {
 	global $wpdb;
 	$t = bm_tables();
 
+	$raw_keywords = sanitize_textarea_field( wp_unslash( $_POST['keywords'] ?? '' ) );
+	$keyword_filter = '';
+
+	if ( '' !== $raw_keywords ) {
+		$names = array_values( array_filter( array_map( 'trim', preg_split( '/[\r\n,]+/', $raw_keywords ) ) ) );
+		if ( ! empty( $names ) ) {
+			$placeholders   = implode( ', ', array_fill( 0, count( $names ), '%s' ) );
+			$keyword_filter = $wpdb->prepare( " AND t.name IN ($placeholders)", $names ); // phpcs:ignore
+		}
+	}
+
 	$rows = $wpdb->get_results( // phpcs:ignore
 		"SELECT tt.term_id AS wp_term_id, t.name, t.slug, tt.count
 		 FROM {$wpdb->term_taxonomy} tt
@@ -278,6 +289,7 @@ function bm_ajax_scan_delta(): void {
 		   AND tt.term_id NOT IN (
 		       SELECT wp_term_id FROM {$t['terms']} WHERE taxonomy = 'post_tag'
 		   )
+		 {$keyword_filter}
 		 ORDER BY t.name ASC",
 		ARRAY_A
 	);
@@ -360,6 +372,94 @@ function bm_ajax_add_delta_term(): void {
 		'term_id'    => $term_internal_id,
 		'wp_term_id' => $wp_term_id,
 		'message'    => sprintf( '"%s" added to migration.', $wp_term->name ),
+	] );
+}
+
+// ── Delta: bulk add multiple new tags to migration ────────────────────────────
+
+function bm_ajax_bulk_add_delta_terms(): void {
+	bm_verify_request();
+
+	$raw = sanitize_text_field( wp_unslash( $_POST['terms'] ?? '' ) );
+	if ( ! $raw ) {
+		wp_send_json_error( [ 'message' => 'No terms provided.' ] );
+	}
+
+	$items = json_decode( stripslashes( $raw ), true );
+	if ( ! is_array( $items ) || empty( $items ) ) {
+		wp_send_json_error( [ 'message' => 'Invalid terms payload.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$added   = 0;
+	$skipped = 0;
+	$errors  = [];
+
+	foreach ( $items as $item ) {
+		$wp_term_id = absint( $item['wp_term_id'] ?? 0 );
+		if ( ! $wp_term_id ) {
+			$errors[] = 'Missing wp_term_id.';
+			continue;
+		}
+
+		$exists = $wpdb->get_var( $wpdb->prepare( // phpcs:ignore
+			"SELECT id FROM {$t['terms']} WHERE wp_term_id = %d AND taxonomy = 'post_tag'",
+			$wp_term_id
+		) );
+		if ( $exists ) {
+			$skipped++;
+			continue;
+		}
+
+		$wp_term = get_term( $wp_term_id, 'post_tag' );
+		if ( ! $wp_term || is_wp_error( $wp_term ) ) {
+			$errors[] = sprintf( 'WP term %d not found.', $wp_term_id );
+			continue;
+		}
+
+		$wpdb->insert( $t['terms'], [
+			'wp_term_id'         => $wp_term_id,
+			'taxonomy'           => 'post_tag',
+			'original_name'      => $wp_term->name,
+			'original_slug'      => $wp_term->slug,
+			'original_parent_id' => $wp_term->parent ?: null,
+			'content_count'      => $wp_term->count,
+			'language'           => 'fr',
+			'status'             => 'original',
+		] );
+		$term_internal_id = (int) $wpdb->insert_id;
+
+		$proposed_name        = sanitize_text_field( $item['proposed_name'] ?? $wp_term->name );
+		$proposed_slug        = sanitize_title( $item['proposed_slug'] ?? $wp_term->slug );
+		$spacy_entity         = sanitize_text_field( $item['spacy_entity'] ?? '' );
+		$wikidata_id          = sanitize_text_field( $item['wikidata_id'] ?? '' );
+		$wikidata_label       = sanitize_text_field( $item['wikidata_label'] ?? '' );
+		$wikidata_description = sanitize_textarea_field( $item['wikidata_description'] ?? '' );
+
+		$wpdb->insert( $t['proposals'], [
+			'term_id'              => $term_internal_id,
+			'proposed_name'        => $proposed_name,
+			'proposed_slug'        => $proposed_slug,
+			'proposed_description' => null,
+			'proposed_parent_id'   => null,
+			'proposed_language'    => 'fr',
+			'spacy_entity'         => $spacy_entity ?: null,
+			'wikidata_id'          => $wikidata_id ?: null,
+			'wikidata_label'       => $wikidata_label ?: null,
+			'wikidata_description' => $wikidata_description ?: null,
+			'proposed_breadcrumb'  => wp_json_encode( [ 'Home', 'Tags', $wp_term->name ] ),
+			'validation_state'     => 'pending',
+		] );
+
+		$added++;
+	}
+
+	wp_send_json_success( [
+		'added'   => $added,
+		'skipped' => $skipped,
+		'errors'  => $errors,
 	] );
 }
 

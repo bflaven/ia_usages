@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Breadcrumb Migration
  * Description: Validate spaCy/Wikidata pipeline proposals and publish enriched taxonomy terms.
- * Version:     1.23.0
+ * Version:     1.26.0
  * Author:      Bruno Flaven + Claude Code
  * Text Domain: breadcrumb-migration
  * Domain Path: /languages
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BM_VERSION',       '1.23.0' );
+define( 'BM_VERSION',       '1.26.0' );
 define( 'BM_PLUGIN_DIR',    plugin_dir_path( __FILE__ ) );
 define( 'BM_PLUGIN_URL',    plugin_dir_url( __FILE__ ) );
 
@@ -44,7 +44,8 @@ add_action( 'wp_ajax_bm_publish_term',        'bm_ajax_publish_term' );
 add_action( 'wp_ajax_bm_update_proposal',     'bm_ajax_update_proposal' );
 add_action( 'wp_ajax_bm_empty_tables',        'bm_ajax_empty_tables' );
 add_action( 'wp_ajax_bm_scan_delta',         'bm_ajax_scan_delta' );
-add_action( 'wp_ajax_bm_add_delta_term',     'bm_ajax_add_delta_term' );
+add_action( 'wp_ajax_bm_add_delta_term',          'bm_ajax_add_delta_term' );
+add_action( 'wp_ajax_bm_bulk_add_delta_terms',    'bm_ajax_bulk_add_delta_terms' );
 add_action( 'wp_ajax_bm_search_wikidata',    'bm_ajax_search_wikidata' );
 add_action( 'wp_ajax_bm_bulk_assign',        'bm_ajax_bulk_assign' );
 add_action( 'wp_ajax_bm_bulk_check',         'bm_ajax_bulk_check' );

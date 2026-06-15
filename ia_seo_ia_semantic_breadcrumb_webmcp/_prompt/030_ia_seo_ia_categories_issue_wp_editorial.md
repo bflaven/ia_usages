@@ -1,4 +1,75 @@
 
+- tags examples for LANGUAGE
+```text
+Mandenkan, Peul
+andrew devigal, Andrew G King
+```
+
+
+
+## PROMPT_16
+Fine with 1.25.0 changes. Do a better UX in 1.26.0. Update change log in readme. 
+
+In the tab "Delta — New Tags", I need to improve the bulk action. Enable to define the Named entities from Spacy lists below in for all the tags selected. Make the UX easy to understand that is incorporated with the action "Add to migration" button. I am f.... sloth, u should know that.
+
+```text
+# Named entities from Spacy
+PERSON:      People, including fictional.
+NORP:        Nationalities or religious or political groups.
+FAC:         Buildings, airports, highways, bridges, etc.
+ORG:         Companies, agencies, institutions, etc.
+GPE:         Countries, cities, states.
+LOC:         Non-GPE locations, mountain ranges, bodies of water.
+PRODUCT:     Objects, vehicles, foods, etc. (Not services.)
+EVENT:       Named hurricanes, battles, wars, sports events, etc.
+WORK_OF_ART: Titles of books, songs, etc.
+LAW:         Named documents made into laws.
+LANGUAGE:    Any named language.
+DATE:        Absolute or relative dates or periods.
+TIME:        Times smaller than a day.
+PERCENT:     Percentage, including "%".
+MONEY:       Monetary values, including unit.
+QUANTITY:    Measurements, as of weight or distance.
+ORDINAL:     "first", "second", etc.
+CARDINAL:    Numerals that do not fall under another type.
+```
+
+## PROMPT_15
+
+Fine with 1.24.0 changes. Do a better UX in 1.25.0. Update change log in readme. I have added a .gitignore for the sake of the plugin.
+
+In the tab "Delta — New Tags", I need the bulk action. Select option, all tags select + button "Add to migration" that massively migrate the tags to the WP. I am f.... sloth, u should know that.
+
+- tags examples
+```text
+5.x, 6.x, développement, Drupal, Module, MySQL, PHP, Tutorial
+```
+- url where the action takes place
+```text
+admin.php?page=breadcrumb-migration&tab=delta
+```
+
+
+
+
+
+
+## PROMPT_14
+
+--- EVOLUTION_1 add to breadcrumb-migration in tab "Delta (plugin breadcrumb-migration)
+
+In the tab "Delta — New Tags", add a texteare that authorize the cut and paste keywords list to import specific keywords list because I want to be able to grab specific tags. I can "Scan for new tags" on this list
+
+```text
+5.x, 6.x, développement, Drupal, Module, MySQL, PHP, Tutorial
+```
+```text
+admin.php?page=breadcrumb-migration&tab=delta
+```
+
+
+
+
 ```text
 Name: Calabash
 Name if disambiguation needed: Calabash (acceptance testing framework)
