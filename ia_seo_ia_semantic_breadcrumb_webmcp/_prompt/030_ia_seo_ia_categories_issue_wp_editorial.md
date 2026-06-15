@@ -1,6 +1,236 @@
 
+```text
+Name: Calabash
+Name if disambiguation needed: Calabash (acceptance testing framework)
+Description: Open source acceptance testing framework for writing and running automated UI acceptance tests on iOS and Android mobile applications.
+Aliases: Calabash acceptance testing framework | Calabash mobile testing | Calabash iOS Android tests | Calabash test automation | Calabash-BDD
+
+Instance of: software testing framework
+Subclass of: acceptance testing framework (P279) | mobile application testing framework (P279) | open source software (P279)
+Uses: automated UI testing (P2283) | behavior-driven development (P2283) | Cucumber framework (P2283) | Ruby language (P2283)
+
+Source code repository: https://github.com/calabash/calabash-android
+Source code repository property on Wikidata: source code repository (P1324)
+
+Disambiguation strategy: keep description focused on mobile acceptance testing and use "Calabash (acceptance testing framework)" if risks confusion with other Calabash uses.
+
+—
+
+Name: Gherkin
+Name if disambiguation needed: Gherkin (BDD language)
+Description: Plain-text domain-specific language with structured keywords (Given/When/Then/And/But) for writing human-readable acceptance criteria and executable specifications in behavior-driven development.
+Aliases: Gherkin language | Gherkin BDD language | Gherkin acceptance criteria | Gherkin DSL | Cucumber Gherkin
+
+Instance of: programming language
+Subclass of: domain-specific language (P279) | behavior-driven development language (P279) | specification language (P279)
+Uses: acceptance criteria writing (P2283) | executable specifications (P2283) | Cucumber framework (P2283) | user stories (P2283) | test automation (P2283)
+
+Official website: https://cucumber.io/docs/gherkin/
+Official website property on Wikidata: official website (P856)
+
+Disambiguation strategy: keep description focused on BDD language and structured syntax for acceptance criteria, and use "Gherkin (BDD language)" to distinguish from other uses.
+```
+
+```text
+- Calabash
+Calabash is an open source acceptance testing framework that allows you to write and run tests for iOS and Android applications.
+https://github.com/calabash/calabash-android
+
+- Gherkin
+Gherkin is a set of keywords that give structure and meaning to acceptance tests written in plain language. Learn how to use Gherkin, localize it, and organize your step definitions with Cucumber.
+
+At its core, Gherkin is a set of grammatical rules that enables users to write human-readable descriptions of software behaviors without delving into the technical details of their implementation.
+```
 
 
+
+
+```text
+
+Calabash, Gherkin, Testing
+
+Calabash
+Calabash is an open source acceptance testing framework that allows you to write and run tests for iOS and Android applications.
+https://github.com/calabash/calabash-android
+
+Gherkin
+Gherkin is a set of keywords that give structure and meaning to acceptance tests written in plain language. Learn how to use Gherkin, localize it, and organize your step definitions with Cucumber.
+
+At its core, Gherkin is a set of grammatical rules that enables users to write human-readable descriptions of software behaviors without delving into the technical details of their implementation.
+
+
+
+
+Android, Calabash, Gherkin, iOS, Mobile, Testing
+```
+
+
+## PROMPT_14
+Give a wikidata definition in English for "Framer". Add something to the name specific to avoid ambiguity if needed plus a set for "subclass of", "uses". Add also "aliases" with a pipe | separated list. Give an answer that eases the cut and paste of each element of the answer. No explanations just say the essential. Advise also how to add the official URL. Do not forget to remind the ID on wikidata for "subclass of" and "uses" e.g Subclass of: (P279), Uses: (P2283). In order to avoid duplicates, advice on a strategy to promote disambiguation is important. The description should clearly state something to distinguish it.
+
+- source of definition
+Framer is the site builder trusted by leading startups and Fortune 500 companies. Build fast and scale more easily with an integrated CMS, analytics, localization, and SEO.
+Framer:  Easily go from design to world-class site with Framer, the web builder for creative pros. Design and ship your dream site. Zero code, maximum speed. No-Code Website Builder · AI-Powered Design Tools · Free to Start
+
+
+- official repo or official website
+Add official website or official source code repository (P1324)
+https://www.framer.com/
+
+
+Add post or article e.g
+https://flaven.fr/2017/07/framer-origami-prototyping-mobile-applications-with-the-best-ux-design-tool/
+
+
+Print the result as plain text ```text...``` and not as a readme file by removing all tags like `**`, `##`, etc.
+
+
+
+
+## A_PROMPT_14
+```text
+Name: Framer
+Name if disambiguation needed: Framer (website builder)
+Description: No-code website builder and design-to-site platform for creating, publishing, and scaling websites with CMS, analytics, localization, and SEO.
+Aliases: Framer website builder | Framer web builder | Framer CMS | Framer no-code website builder | Framer design tool
+
+Instance of: no-code development platform
+Subclass of: website builder (P279) | content management system (P279) | design tool (P279)
+Uses: website design (P2283) | content management (P2283) | search engine optimization (P2283) | localization (P2283) | web analytics (P2283)
+
+Official website: https://www.framer.com/ 
+Official website property on Wikidata: official website (P856)
+Source code repository: if available, add with source code repository (P1324)
+
+Disambiguation strategy: keep the description focused on the product category and main function, and use “Framer (website builder)” if the item risks confusion with the older prototyping tool or other uses.
+```
+
+
+
+
+## A_PROMPT_13
+- for some other ressource
+```text
+Reference URL (P854) # official url
+
+# retrieved # blog post title + url
+Retrieved (P813) # date e.g 2026-06-15
+Title (P1476) # title of the post
+Reference URL (P854) # url of the post
+```
+
+## A_PROMPT_12
+```text
+if the source exists, you can publish it on Wikidata as a reference on the statement you are editing. Use Reference URL (P854) for a web page, and Retrieved (P813) for the access date; use Stated in (P248) only when the source itself has a Wikidata item. [upload.wikimedia](https://upload.wikimedia.org/wikipedia/commons/3/37/WikiSalon_Wikidata_Adding_References.pdf)
+
+Copy-paste format:
+Source URL: https://origami.design/documentation/index.html
+Source URL: https://origami.design/tutorials/
+Source URL: https://origami.design/
+Source URL: https://flaven.fr/2017/07/framer-origami-prototyping-mobile-applications-with-the-best-ux-design-tool/
+
+How to add it:
+1. Open the statement on the Wikidata item.
+2. Click add reference.
+3. Choose reference URL (P854).
+4. Paste the source URL.
+5. Add retrieved (P813).
+6. Publish. [upload.wikimedia](https://upload.wikimedia.org/wikipedia/commons/f/f2/WikiSalon_Wikidata_Editing_and_Enhancing_Entries.pdf)
+
+For disambiguation, keep the description explicit enough to distinguish it from the paper-folding art: “free Mac design and prototyping tool created by Meta for interactive interface prototypes.” [origami](https://origami.design/documentation/index.html)
+
+Official URL:
+Add it as official website in the item, not as a reference. [wikidata](https://www.wikidata.org/wiki/Help:Sources)
+
+Source code repository:
+If you have the repo URL, add it with source code repository (P1324).
+
+Suggested reference strategy to avoid duplicates:
+- Use the most authoritative source first.
+- Reuse the same reference URL for identical claims.
+- Prefer one reference per statement unless you need multiple independent sources. [en.wikipedia](https://en.wikipedia.org/wiki/Wikipedia:How_to_add_sources_to_Wikidata)
+
+```
+
+## PROMPT_11
+Give a wikidata definition in English for "Origami Studio" plus a set for "subclass of", "uses". Add also "aliases" with a pipe | separated list. Give an answer that eases the cut and paste of each element of the answer. No explanations just say the essential. Advise also how to add the official URL. Do not forget to remind the ID on wikidata for "subclass of" and "uses" e.g Subclass of: (P279), Uses: (P2283). In order to avoid duplicates, advice on a strategy to promote disambiguation is important. The description should clearly state something to distinguish it.
+
+- source of definition
+Origami
+Get up to speed in Origami Studio. Learn how to build, preview and share your prototypes.
+
+Origami Studio is a free design tool created by Meta and available for Mac. It allows designers to rapidly build and share interactive interfaces.
+
+
+- personal repo
+Add repo as source code repository (P1324)
+https://origami.design/
+https://origami.design/tutorials/
+
+
+Add post or article e.g
+https://flaven.fr/2017/07/framer-origami-prototyping-mobile-applications-with-the-best-ux-design-tool/
+
+
+Print the result as plain text ```text...``` and not as a readme file by removing all tags like `**`, `##`, etc.
+
+
+
+```
+Label: Origami Studio
+Description: Free Mac design and prototyping tool created by Meta for building, previewing, and sharing interactive interfaces.
+Aliases: Origami | Origami Studio prototype tool | Origami design tool | Meta Origami
+
+Instance of: software
+Subclass of: interactive design software (P279) | prototyping software (P279)
+Uses: user interface design (P2283) | interactive prototyping (P2283) | animation (P2283)
+Source code repository: https://github.com/your-repo-origami-studio
+Official URL: https://origami.design/ (add as official website on Wikidata)
+
+Disambiguation strategy: keep the description specific with “free Mac design and prototyping tool created by Meta” and prefer aliases that do not match unrelated origami/craft topics.
+
+Source references to use for the Wikidata edit:
+- https://origami.design/documentation/index.html
+- https://origami.design/tutorials/
+- https://flaven.fr/2017/07/framer-origami-prototyping-mobile-applications-with-the-best-ux-design-tool/
+```
+
+
+
+## PROMPT_10
+
+```text
+Origami
+Get up to speed in Origami Studio. Learn how to build, preview and share your prototypes.
+
+Origami Studio is a free design tool created by Meta and available for Mac. It allows designers to rapidly build and share interactive interfaces.
+
+
+
+
+
+
+- SET_DEDICATED_2
+Framer, Mobile, origami, Quartz Composer
+
+- SET_DEDICATED_1
+DRY, MVP, wireframe, Workflow
+
+
+- SET_MISSING_1
+DRY, Framer, Mobile, MVP, origami, Quartz Composer, wireframe, Workflow
+
+
+- SET_ALL
+Agile, Android, API, Apple, DRY, Framer, iOS, Mobile, MVP, origami, POC, Quartz Composer, web, wireframe, Workflow
+
+# Business & Case Studies
+# https://flaven.fr/2017/07/framer-origami-prototyping-mobile-applications-with-the-best-ux-design-tool/
+
+
+```
+
+## PROMPT_9
 
 ```text
 Anaconda, Computer Vision, Deep Learning, IA, Image Classification, json, JSON-SCHEMA, Models, Natural language processing, NTLK, Object Detection, P.O, python, TensorFlow Keras, Theano, Video Classification, Worpress
@@ -18,7 +248,7 @@ Creative, how-to, learning, Mind Mapping, practice, teaching, training
 
 
 
-
+## PROMPT_8
 
 ```text
 

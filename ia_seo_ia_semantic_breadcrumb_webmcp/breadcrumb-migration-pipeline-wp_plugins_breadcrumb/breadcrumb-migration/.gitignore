@@ -1,0 +1,102 @@
+# =========================
+# WordPress Plugin .gitignore
+# =========================
+
+# --- Core: NEVER ignore plugin source ---
+# (No *.php, *.js, *.css ignored intentionally)
+
+# --- Environment / Secrets ---
+.env
+.env.local
+.env.*.local
+
+# --- Composer ---
+vendor/
+composer.lock
+
+# --- Node / Frontend tooling ---
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Build / Distribution ---
+dist/
+build/
+*.zip
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Cache ---
+.cache/
+.tmp/
+temp/
+
+# --- OS files ---
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# --- Editors / IDE ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+
+# --- PHPUnit / Testing ---
+phpunit.xml
+phpunit.xml.dist
+coverage/
+
+# --- WordPress-specific ---
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+
+# --- Optional: ignore local config overrides ---
+config.local.php
+
+# =========================
+# APPENDED (your block)
+# =========================
+
+# Claude Code local settings — never commit
+.claude/
+
+# OpenWolf (deprecated) — never commit
+.wolf/
+
+# Environment secrets
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Build output
+dist/
+
+# Memory output files (generated, not source)
+memory/*.md
+memory/*.png
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor directories
+.idea/
+.vscode/
+*.swp
+*.swo
+
+
+
