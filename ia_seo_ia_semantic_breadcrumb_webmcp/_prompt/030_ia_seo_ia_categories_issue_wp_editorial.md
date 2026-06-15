@@ -1,4 +1,8 @@
 
+- tags examples for other
+```text
+5.x, 6.x, développement, Drupal, Module, MySQL, PHP, Tutorial
+```
 - tags examples for LANGUAGE
 ```text
 Mandenkan, Peul
