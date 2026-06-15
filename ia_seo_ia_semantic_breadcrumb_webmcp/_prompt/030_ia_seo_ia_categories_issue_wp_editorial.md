@@ -1,3 +1,154 @@
+
+
+
+
+```text
+Anaconda, Computer Vision, Deep Learning, IA, Image Classification, json, JSON-SCHEMA, Models, Natural language processing, NTLK, Object Detection, P.O, python, TensorFlow Keras, Theano, Video Classification, Worpress
+# AI & Machine Learning
+# https://flaven.fr/2020/05/python-anaconda-worpress-json-json-schema-messy-post-with-few-practices-and-feedback-from-my-p-o-experience/
+
+
+
+Creative, how-to, learning, Mind Mapping, practice, teaching, training
+# Business & Case Studies
+# https://flaven.fr/2020/05/mind-mapping-learn-better-and-be-more-creative-with-mind-mapping-a-small-introduction-to-mind-mapping/
+
+```
+
+
+
+
+
+
+```text
+
+--- 
+
+Spike (Agile)
+
+
+A Spike in Agile is a time-boxed research activity used to explore an idea, investigate a problem, or validate a technical approach before committing to development. The goal is learning, not delivering a working feature.
+
+https://en.wikipedia.org/wiki/Spike_(software_development)
+
+--- 
+
+DAM (Digital Asset Management)
+detox (homebrew)
+
+articles, book chapters, definition, Diogenes, documentation, GitHub, markdown, Mauve, quotes, vocabulary, writing, Agile, Agile Toolkit, Apple, AppleScript, Automationn, Bulk, CI, Craft, DevOps, Docker, imagemagick, images, Lockdown, photoshop, processing, Scripts, scrum, solution, Spike
+
+--- 
+
+
+# SET_2
+# Business & Case Studies
+articles, book chapters, definition, Diogenes, documentation, GitHub, markdown, Mauve, quotes, vocabulary, writing
+
+
+
+# SET_1
+# Business & Case Studies
+Agile, Agile Toolkit, Apple, AppleScript, Automationn, Bulk, CI, Craft, DevOps, Docker, imagemagick, images, Lockdown, photoshop, processing, Scripts, scrum, solution, Spike
+
+
+
+
+
+# SET_2
+console, documents, epub, generate document, html, markdown, md, pandoc, pdf, readme
+
+# SET_1
+AFP, DAM, detox, Digital Assets Management, exiftool, Getty, Homebrew, Image, metada, Metadata, photoshop, pictures, Reuters
+```
+
+
+## PROMPT_7
+Give a wikidata definition in English for "detox (homebrew)" plus a set for "subclass of", "uses". Add also "aliases" with a pipe | separated list. Give an answer that eases the cut and paste of each element of the answer. No explanations just say the essential. Advise also how to add the official URL. Do not forget to remind the ID on wikidata for "subclass of" and "uses" e.g Subclass of: (P279), Uses: (P2283). In order to avoid duplicates, advice on a strategy to promote disambiguation is important. The description should clearly state something to distinguish it.
+
+- source of definition
+detox is a utility designed to clean up filenames. It replaces difficult to work with characters, such as spaces, with standard equivalents. It will also clean up filenames with UTF-8 or Latin-1 (or CP-1252) characters in them (i.e: foo bar – quz.avi -> foo_bar-quz.avi).
+
+- personal repo
+Add repo as source code repository (P1324)
+https://github.com/dharple/detox
+https://formulae.brew.sh/formula/detox
+Add post or article e.g
+https://flaven.fr/2019/07/image-metadata-dam-getting-metada-from-pictures/
+
+
+Print the result as plain text ```text...``` and not as a readme file by removing all tags like `**`, `##`, etc.
+
+
+
+
+## A_PROMPT_7
+
+
+```text
+Label:
+detox (file renaming utility)
+
+Aliases:
+detox | detox CLI | detox homebrew | detox filename cleaner | detox Unix tool
+
+Description:
+Open-source Unix command-line utility for cleaning and sanitizing filenames
+by replacing problematic characters such as spaces, UTF-8 and Latin-1
+characters with standard safe equivalents.
+
+---
+
+Subclass of (P279):
+- command-line software (Q189103)
+- file manager (Q112032623)
+- free and open-source software (Q341)
+- Unix utility (Q754782)
+
+---
+
+Uses (P2283):
+- UTF-8 (Q193907)
+- Latin-1 (Q600830)
+- regular expression (Q185359)
+- Homebrew (Q2300846)
+- C (Q15777)
+
+---
+
+Official website (P856):
+https://formulae.brew.sh/formula/detox
+
+Source code repository (P1324):
+https://github.com/dharple/detox
+
+Described at URL (P973):
+https://flaven.fr/2019/07/image-metadata-dam-getting-metada-from-pictures/
+
+---
+
+Disambiguation strategy:
+- Search before creating:
+  https://www.wikidata.org/w/index.php?search=detox+file+utility
+- Must be clearly distinguished from:
+  detox (medical/drug withdrawal) → Q1198831
+  Detox (rapper) → Q3023534
+  Detox (Dr. Dre album) → Q846744
+- Use label "detox (file renaming utility)" with parenthetical qualifier.
+- Use different from (P1889) → Q1198831 to make medical disambiguation explicit.
+- Add instance of (P31) → software (Q7397) as primary anchor claim.
+- Include "Unix" and "filename" in description as first disambiguating terms.
+- Add operating system (P306) → Unix (Q11368) or Linux (Q388)
+  to further distinguish from non-technical uses of the word.
+```
+
+
+
+
+
+
+
+
 ## PROMPT_6
 Give a wikidata definition in English for "Sentence Embeddings" plus a set for "subclass of", "uses". Add also "aliases" with a pipe | separated list. Give an answer that eases the cut and paste of each element of the answer. No explanations just say the essential. Advise also how to add the official URL. Do not forget to remind the ID on wikidata for "subclass of" and "uses" e.g Subclass of: (P279), Uses: (P2283). In order to avoid duplicates, advice on a strategy to promote disambiguation is important. The description should clearly state something to distinguish it.
 
