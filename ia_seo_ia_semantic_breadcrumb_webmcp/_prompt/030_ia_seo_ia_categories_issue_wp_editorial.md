@@ -1,7 +1,21 @@
 
 - tags examples for other
 ```text
+
+Yulia Tymoshenko, Yves Marchand, ZDF, Zygote Body, Ziguinchor, Zététique, yonaoshi311.com, Youphil
+
+
+Zeplin
+zeplin.io
+
+
 5.x, 6.x, développement, Drupal, Module, MySQL, PHP, Tutorial
+
+Bundle, CakePHP, CamelCasing, développement, Fabien Potencier, Framework Web, GitHub, Mac, Mac Os X, PHP, Scaffolding, SensioLabs, Symfony, symfony2, twig, Zend
+
+développement, Git, GitHub, GUI, IHM, Mac, Mac Os X, Matthew McCullough, PHP, web
+
+
 ```
 - tags examples for LANGUAGE
 ```text
