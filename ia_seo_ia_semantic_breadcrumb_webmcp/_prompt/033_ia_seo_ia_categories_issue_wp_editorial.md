@@ -1,4 +1,8 @@
 
+## PROMPT_12
+Ok with the change for v1.31.0
+1. In the tab "Bulk Description". Error in row color for status (Completed, Incomplete, Empty). I have row Completed and they are NOT in the good color. Check color per status row and fiw.
+
 
 
 ## PROMPT_11
