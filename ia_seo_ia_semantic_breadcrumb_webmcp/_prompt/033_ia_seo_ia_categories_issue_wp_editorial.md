@@ -1,6 +1,36 @@
- ```text
 
- analyse, documentaire, Flash, flv, Intended Consequences, Jonathan Torgovnik, MediaStorm, technique
+
+
+```text
+
+Agile, AI development, AI ethics, AI ideology, AI philosophy, AI tools, AI workflow, Alex Karp, artificial intelligence, automation, cc-lens, CCTOP, chunking, Claude AI, Claude Code, Claude Code Token Optimization Problem, CLAUDE.md, cognitive tinkering, context handoff, cost reduction, digital product management, embeddings, FAISS, future of work, Gemini, HANDOFF.md, ingestion, large language model, liquid capitalism, LLM, mistral, open source, OpenWolf, Palantir, Perplexity, Product Owner, prompt engineering, python, RAG, Retrieval-Augmented Generation, semantic search, semantic SEO, session bridging, symbolic violence, technological progress, token limit, token management, token optimization, user stories, value-driven development, WordPress plugin
+
+
+AI, breadcrumb, categories, Claude Code, Generative Engine Optimization, GEO, LLM, MCP, Model Context Protocol, named entities, negative externality, NLP, organic traffic, python, SEO, SERP, spacy, tags, Taxonomy, WebMCP, Wikidata, Wordpress, WordPress plugin
+
+
+
+
+African languages, AI, AI agents, AI exploration, Amharic, Anthropic, augmented journalism, automation, bash, batch processing, breadcrumbs, business requirements, Claude AI, code-switching, containerization, content clustering, CSV structure, database migration, Deutsche Welle, digital sovereignty, digital transformation, Diola, DJO Project, Docker, Docker Compose, editorial workflow, embedding models, end-to-end process, fine-tuning, France Médias Monde, Fulfude, Gemini, GEO, GitHub, Hausa, Igbo, IPSI Tunisia, JSON format, Kirundi, Kiswahili, KPIs, large language models, ld+json, Lingala, LLM, low-resource languages, Mandenkan, Media Loves Tech, Mistral OCR, multilingualism, multimodal AI, MySQL, named entity recognition, Natural language processing, NER, NLP, OCR, Oromo, Perplexity, Peul, PhpMyadmin, plugin development, POC, post-processing, product discovery, proof of concept, python, related content, REST API, Schema.org, semantic clustering, semantic layer, semantic SEO, SEO, shell scripting, Somali, speech recognition, staging environment, structured output, Swahili, tag families, taxonomies, Tigrinya, transcription quality, Tunisian Arabic, user stories, vectorization, version control, Whisper, Wolof, Wordpress, Yoruba, Zulu
+
+
+
+AI experiments in MLflow, AI from POC to scaling, AI industrialization with MLflow, AI JSON validation, generative AI control, improve LLM results, leveraging prompt engineering, LLM model configuration, LLM parameter tuning, LLM prompt engineering, MLflow and LLMs, MLflow features, MLflow for AI, MLflow integration, MLflow LLM management, Ollama AI integration, open-source LLMs, optimize LLM prompts, prompt quality enhancement, prompt tracking in MLflow, scaling AI projects, self-hosted LLMs, using MLflow with LLMs
+
+
+
+
+#18DaysInEgypt, #idocs, 3WDOC, 3WDOC Studio, A navalla suiza, Brett Gaylor, Brian Chirls, Bristol, collusion, CSS3, digital citizenship, documentaire interactif, Eva Dominguez, Flash, Gerald Holubowicz, hecube, highrise, HTML5, i-doc, i-doc symposium, idoc, interactive documentary, Jigar Mehta, katerina cizek, María Yáñez, Mozilla Foundation, nfb, ONE MILLIONth TOWER, participation, Paulina Tervo, PopCorn JS, Popcorn Maker, prescription, rich-media, Sandra Gaudenzi, social media, Transmedia, University of West England, Web made movies, webdoc, Webdocumentaire, WebGL, Webmademovies, workshop, write this down
+
+
+
+
+
+analyse, Canon, Philip Bloom, portrait, Sofia, technique, Webdocumentaire, analyse, codec, flv, mp3, technique, Thanatorama, Webdocumentaire, Contact, Formulaire, PHP, plugin, Wordpress
+
+
+
+analyse, documentaire, Flash, flv, Intended Consequences, Jonathan Torgovnik, MediaStorm, technique
 
  
 apache, CodeIgniter, Framework, Kohana, Linux, OOP, PHP, PHP5
