@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Breadcrumb Migration
  * Description: Validate spaCy/Wikidata pipeline proposals and publish enriched taxonomy terms.
- * Version:     1.26.0
+ * Version:     1.27.0
  * Author:      Bruno Flaven + Claude Code
  * Text Domain: breadcrumb-migration
  * Domain Path: /languages
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BM_VERSION',       '1.26.0' );
+define( 'BM_VERSION',       '1.27.0' );
 define( 'BM_PLUGIN_DIR',    plugin_dir_path( __FILE__ ) );
 define( 'BM_PLUGIN_URL',    plugin_dir_url( __FILE__ ) );
 
@@ -54,6 +54,8 @@ add_action( 'wp_ajax_bm_fetch_wikidata_description', 'bm_ajax_fetch_wikidata_des
 add_action( 'wp_ajax_bm_bulk_save_description',      'bm_ajax_bulk_save_description' );
 add_action( 'wp_ajax_bm_sync_descriptions',             'bm_ajax_sync_descriptions' );
 add_action( 'wp_ajax_bm_refresh_single_description',   'bm_ajax_refresh_single_description' );
+add_action( 'wp_ajax_bm_update_original_term',         'bm_ajax_update_original_term' );
+add_action( 'wp_ajax_bm_update_breadcrumb',            'bm_ajax_update_breadcrumb' );
 
 // admin-post — file import + CSV export + settings save
 add_action( 'admin_post_bm_import',         'bm_handle_import' );

@@ -258,6 +258,43 @@
 	color: #1d2327;
 }
 
+.bm-breadcrumb-td .bm-btn-edit-breadcrumb {
+	margin-top: 4px;
+}
+
+.bm-breadcrumb-edit-form {
+	margin-top: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.bm-breadcrumb-edit-form .bm-crumb-input {
+	width: 100%;
+	font-size: 12px;
+	padding: 4px 6px;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	box-sizing: border-box;
+}
+
+.bm-breadcrumb-edit-actions {
+	display: flex;
+	gap: 4px;
+	margin-top: 4px;
+}
+
+/* ── Original column inline edit ────────────────────────────────────────────── */
+
+.bm-original-input {
+	width: 100%;
+	font-size: 12px;
+	padding: 4px 6px;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	box-sizing: border-box;
+}
+
 .bm-crumb { color: #2271b1; }
 .bm-crumb--current { color: #1d2327; font-weight: 600; }
 .bm-sep { color: #8c8f94; font-size: 11px; }

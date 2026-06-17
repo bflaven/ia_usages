@@ -1173,8 +1173,26 @@ function bm_render_term_card( object $row ): void {
 				<h3><?php esc_html_e( 'Original', 'breadcrumb-migration' ); ?></h3>
 				<table class="bm-data-table">
 					<tr><th><?php esc_html_e( 'WP ID',     'breadcrumb-migration' ); ?></th><td><?php echo esc_html( $row->wp_term_id ); ?></td></tr>
-					<tr><th><?php esc_html_e( 'Name',      'breadcrumb-migration' ); ?></th><td><?php echo esc_html( $row->original_name ); ?></td></tr>
-					<tr><th><?php esc_html_e( 'Slug',      'breadcrumb-migration' ); ?></th><td><code><?php echo esc_html( $row->original_slug ); ?></code></td></tr>
+					<tr>
+						<th><?php esc_html_e( 'Name', 'breadcrumb-migration' ); ?></th>
+						<td>
+							<span class="bm-original-val"><?php echo esc_html( $row->original_name ); ?></span>
+							<input type="text" class="bm-original-input bm-original-input--name"
+								value="<?php echo esc_attr( $row->original_name ); ?>"
+								data-original="<?php echo esc_attr( $row->original_name ); ?>"
+								style="display:none">
+						</td>
+					</tr>
+					<tr>
+						<th><?php esc_html_e( 'Slug', 'breadcrumb-migration' ); ?></th>
+						<td>
+							<span class="bm-original-val bm-original-val--slug"><code><?php echo esc_html( $row->original_slug ); ?></code></span>
+							<input type="text" class="bm-original-input bm-original-input--slug"
+								value="<?php echo esc_attr( $row->original_slug ); ?>"
+								data-original="<?php echo esc_attr( $row->original_slug ); ?>"
+								style="display:none">
+						</td>
+					</tr>
 					<tr><th><?php esc_html_e( 'Parent ID', 'breadcrumb-migration' ); ?></th><td><?php echo $row->original_parent_id ? esc_html( $row->original_parent_id ) : '—'; ?></td></tr>
 					<tr><th><?php esc_html_e( 'Posts',     'breadcrumb-migration' ); ?></th><td><?php echo esc_html( $row->content_count ); ?></td></tr>
 				</table>
@@ -1183,6 +1201,18 @@ function bm_render_term_card( object $row ): void {
 					<button class="button bm-btn-simulate"
 						data-term-id="<?php echo esc_attr( $term_id ); ?>">
 						<?php esc_html_e( 'Simulate', 'breadcrumb-migration' ); ?>
+					</button>
+					<button class="button bm-btn-edit-original"
+						data-term-id="<?php echo esc_attr( $term_id ); ?>">
+						<?php esc_html_e( 'Edit Original', 'breadcrumb-migration' ); ?>
+					</button>
+					<button class="button button-primary bm-btn-save-original"
+						data-term-id="<?php echo esc_attr( $term_id ); ?>"
+						style="display:none">
+						<?php esc_html_e( 'Save', 'breadcrumb-migration' ); ?>
+					</button>
+					<button class="button bm-btn-cancel-original" style="display:none">
+						<?php esc_html_e( 'Cancel', 'breadcrumb-migration' ); ?>
 					</button>
 					<?php if ( $proposal_id && $state === 'pending' ) : ?>
 						<button class="button button-primary bm-btn-validate"
@@ -1255,7 +1285,35 @@ function bm_render_term_card( object $row ): void {
 						</tr>
 						<tr>
 							<th><?php esc_html_e( 'Breadcrumb', 'breadcrumb-migration' ); ?></th>
-							<td class="bm-breadcrumb-preview"><?php echo $bc_html; // already escaped above ?></td>
+							<td class="bm-breadcrumb-td">
+								<div class="bm-breadcrumb-preview"><?php echo $bc_html; // already escaped above ?></div>
+								<?php if ( $proposal_id ) : ?>
+								<button class="button button-small bm-btn-edit-breadcrumb"
+									data-proposal-id="<?php echo esc_attr( $proposal_id ); ?>">
+									<?php esc_html_e( '✎ Edit', 'breadcrumb-migration' ); ?>
+								</button>
+								<div class="bm-breadcrumb-edit-form" style="display:none">
+									<?php if ( ! empty( $bc_parts ) ) :
+										foreach ( $bc_parts as $crumb ) : ?>
+										<input type="text" class="bm-crumb-input"
+											value="<?php echo esc_attr( $crumb ); ?>">
+									<?php endforeach; else : ?>
+										<input type="text" class="bm-crumb-input" placeholder="<?php esc_attr_e( 'Home', 'breadcrumb-migration' ); ?>">
+										<input type="text" class="bm-crumb-input" placeholder="<?php esc_attr_e( 'Category', 'breadcrumb-migration' ); ?>">
+										<input type="text" class="bm-crumb-input" placeholder="<?php esc_attr_e( 'Tag', 'breadcrumb-migration' ); ?>">
+									<?php endif; ?>
+									<div class="bm-breadcrumb-edit-actions">
+										<button class="button button-primary button-small bm-btn-save-breadcrumb"
+											data-proposal-id="<?php echo esc_attr( $proposal_id ); ?>">
+											<?php esc_html_e( 'Save', 'breadcrumb-migration' ); ?>
+										</button>
+										<button class="button button-small bm-btn-cancel-breadcrumb">
+											<?php esc_html_e( 'Cancel', 'breadcrumb-migration' ); ?>
+										</button>
+									</div>
+								</div>
+								<?php endif; ?>
+							</td>
 						</tr>
 					</table>
 

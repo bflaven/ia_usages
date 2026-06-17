@@ -187,6 +187,85 @@ function bm_ajax_update_proposal(): void {
 	] );
 }
 
+// ── Update original term (Name + Slug in terms table) ─────────────────────────
+
+function bm_ajax_update_original_term(): void {
+	bm_verify_request();
+
+	$term_id       = absint( $_POST['term_id']       ?? 0 );
+	$original_name = sanitize_text_field( $_POST['original_name'] ?? '' );
+	$original_slug = sanitize_title( $_POST['original_slug']      ?? '' );
+
+	if ( ! $term_id || ! $original_name ) {
+		wp_send_json_error( [ 'message' => 'Missing required fields.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$updated = $wpdb->update(
+		$t['terms'],
+		[
+			'original_name' => $original_name,
+			'original_slug' => $original_slug,
+		],
+		[ 'id' => $term_id ]
+	);
+
+	if ( $updated === false ) {
+		wp_send_json_error( [ 'message' => 'DB update failed.' ] );
+	}
+
+	wp_send_json_success( [
+		'term_id'       => $term_id,
+		'original_name' => $original_name,
+		'original_slug' => $original_slug,
+	] );
+}
+
+// ── Update breadcrumb directly (proposed_breadcrumb in proposals table) ────────
+
+function bm_ajax_update_breadcrumb(): void {
+	bm_verify_request();
+
+	$proposal_id = absint( $_POST['proposal_id'] ?? 0 );
+	$crumbs_raw  = isset( $_POST['crumbs'] ) ? (array) $_POST['crumbs'] : [];
+
+	if ( ! $proposal_id || empty( $crumbs_raw ) ) {
+		wp_send_json_error( [ 'message' => 'Missing required fields.' ] );
+	}
+
+	$crumbs = array_values( array_filter(
+		array_map( 'sanitize_text_field', $crumbs_raw ),
+		fn( $c ) => $c !== ''
+	) );
+
+	if ( empty( $crumbs ) ) {
+		wp_send_json_error( [ 'message' => 'Breadcrumb cannot be empty.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$breadcrumb_json = wp_json_encode( $crumbs );
+
+	$updated = $wpdb->update(
+		$t['proposals'],
+		[ 'proposed_breadcrumb' => $breadcrumb_json ],
+		[ 'id' => $proposal_id ]
+	);
+
+	if ( $updated === false ) {
+		wp_send_json_error( [ 'message' => 'DB update failed.' ] );
+	}
+
+	wp_send_json_success( [
+		'proposal_id'         => $proposal_id,
+		'proposed_breadcrumb' => $breadcrumb_json,
+		'crumbs'              => $crumbs,
+	] );
+}
+
 // ── Empty all tables (Danger Zone) ────────────────────────────────────────────
 
 function bm_ajax_empty_tables(): void {

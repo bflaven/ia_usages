@@ -1293,6 +1293,125 @@
 		window.location.href = template.replace( 'BM_PAGE', String( page ) );
 	} );
 
+	// ── Edit Original term (ORIGINAL column — Name + Slug) ───────────────────
+
+	$( document ).on( 'click', '.bm-btn-edit-original', function () {
+		const $btn  = $( this );
+		const $card = $btn.closest( '.bm-card' );
+		$card.find( '.bm-original-val' ).hide();
+		$card.find( '.bm-original-input' ).show();
+		$card.find( '.bm-btn-edit-original' ).hide();
+		$card.find( '.bm-btn-save-original, .bm-btn-cancel-original' ).show();
+	} );
+
+	$( document ).on( 'click', '.bm-btn-cancel-original', function () {
+		const $card = $( this ).closest( '.bm-card' );
+		$card.find( '.bm-original-input' ).each( function () {
+			$( this ).val( $( this ).data( 'original' ) ).hide();
+		} );
+		$card.find( '.bm-original-val' ).show();
+		$card.find( '.bm-btn-save-original, .bm-btn-cancel-original' ).hide();
+		$card.find( '.bm-btn-edit-original' ).show();
+	} );
+
+	$( document ).on( 'click', '.bm-btn-save-original', function () {
+		const $btn   = $( this );
+		const termId = $btn.data( 'term-id' );
+		const $card  = $btn.closest( '.bm-card' );
+
+		const originalName = $card.find( '.bm-original-input--name' ).val().trim();
+		const originalSlug = $card.find( '.bm-original-input--slug' ).val().trim();
+
+		if ( ! originalName ) {
+			flashNotice( 'Name cannot be empty.', 'error' );
+			return;
+		}
+
+		$btn.addClass( 'bm-loading' );
+
+		post( 'bm_update_original_term', {
+			term_id:       termId,
+			original_name: originalName,
+			original_slug: originalSlug,
+		} )
+			.done( function ( res ) {
+				if ( res.success ) {
+					const f = res.data;
+					$card.find( '.bm-original-val:not(.bm-original-val--slug)' )
+						.text( f.original_name );
+					$card.find( '.bm-original-val--slug' )
+						.html( `<code>${ escHtml( f.original_slug ) }</code>` );
+					$card.find( '.bm-card__title' ).text( f.original_name );
+					$card.find( '.bm-original-input--name' )
+						.attr( 'data-original', f.original_name );
+					$card.find( '.bm-original-input--slug' )
+						.attr( 'data-original', f.original_slug );
+					$card.find( '.bm-original-val' ).show();
+					$card.find( '.bm-original-input' ).hide();
+					$card.find( '.bm-btn-save-original, .bm-btn-cancel-original' ).hide();
+					$card.find( '.bm-btn-edit-original' ).show();
+					flashNotice( 'Original term updated.' );
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+				}
+			} )
+			.fail( () => flashNotice( i18n.error, 'error' ) )
+			.always( () => $btn.removeClass( 'bm-loading' ) );
+	} );
+
+	// ── Edit Breadcrumb (PROPOSED column — Breadcrumb row) ────────────────────
+
+	$( document ).on( 'click', '.bm-btn-edit-breadcrumb', function () {
+		const $btn = $( this );
+		const $td  = $btn.closest( 'td' );
+		$td.find( '.bm-breadcrumb-preview' ).hide();
+		$td.find( '.bm-breadcrumb-edit-form' ).slideDown( 150 );
+		$btn.hide();
+	} );
+
+	$( document ).on( 'click', '.bm-btn-cancel-breadcrumb', function () {
+		const $td = $( this ).closest( 'td' );
+		$td.find( '.bm-breadcrumb-edit-form' ).slideUp( 150 );
+		$td.find( '.bm-breadcrumb-preview' ).show();
+		$td.find( '.bm-btn-edit-breadcrumb' ).show();
+	} );
+
+	$( document ).on( 'click', '.bm-btn-save-breadcrumb', function () {
+		const $btn       = $( this );
+		const proposalId = $btn.data( 'proposal-id' );
+		const $form      = $btn.closest( '.bm-breadcrumb-edit-form' );
+		const $td        = $btn.closest( 'td' );
+
+		const crumbs = [];
+		$form.find( '.bm-crumb-input' ).each( function () {
+			const val = $( this ).val().trim();
+			if ( val ) crumbs.push( val );
+		} );
+
+		if ( ! crumbs.length ) {
+			flashNotice( 'Breadcrumb cannot be empty.', 'error' );
+			return;
+		}
+
+		$btn.addClass( 'bm-loading' );
+
+		post( 'bm_update_breadcrumb', { proposal_id: proposalId, crumbs: crumbs } )
+			.done( function ( res ) {
+				if ( res.success ) {
+					const sep  = ' <span class="bm-sep">›</span> ';
+					const html = res.data.crumbs.map( c => escHtml( c ) ).join( sep );
+					$td.find( '.bm-breadcrumb-preview' ).html( html ).show();
+					$form.slideUp( 150 );
+					$td.find( '.bm-btn-edit-breadcrumb' ).show();
+					flashNotice( 'Breadcrumb updated.' );
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+				}
+			} )
+			.fail( () => flashNotice( i18n.error, 'error' ) )
+			.always( () => $btn.removeClass( 'bm-loading' ) );
+	} );
+
 	// ── Help — Wikidata tab — accordion ──────────────────────────────────────
 
 	$( document ).on( 'click', '.bm-help-article-toggle', function () {
