@@ -222,6 +222,13 @@
 						} catch ( e ) { /* leave preview as-is */ }
 					}
 
+					// Update Actual Desc cell + badge
+					bmUpdateActualDescCell(
+						$card,
+						f.proposed_description ?? '',
+						res.data.wikidata_description ?? ''
+					);
+
 					$form.slideUp( 200 );
 					const msg = res.data.wp_synced
 						? i18n.savedSynced
@@ -1243,7 +1250,9 @@
 				if ( res.success ) {
 					bmSetActualBadge( $row, res.data.description, res.data.is_manual );
 					bmDescApplyFilters();
-					flashNotice( res.data.is_manual ? 'Description refreshed — marked as Written.' : 'Description refreshed from WordPress.' );
+					flashNotice( res.data.is_manual
+						? 'Description pulled from WordPress → ✍ Written. Will show as Written in Proposals tab.'
+						: 'Description refreshed from WordPress.' );
 				} else {
 					flashNotice( res.data?.message ?? i18n.error, 'error' );
 				}
@@ -1404,6 +1413,83 @@
 					$form.slideUp( 150 );
 					$td.find( '.bm-btn-edit-breadcrumb' ).show();
 					flashNotice( 'Breadcrumb updated.' );
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+				}
+			} )
+			.fail( () => flashNotice( i18n.error, 'error' ) )
+			.always( () => $btn.removeClass( 'bm-loading' ) );
+	} );
+
+	// ── Proposals — Actual Desc cell helper ─────────────────────────────────
+
+	function bmUpdateActualDescCell( $card, proposedDesc, wikidataDesc ) {
+		const $cell = $card.find( '.bm-actual-desc-cell' );
+		if ( ! $cell.length ) return;
+
+		let descSource;
+		if ( proposedDesc !== '' && ( wikidataDesc === '' || proposedDesc !== wikidataDesc ) ) {
+			descSource = 'manual';
+		} else if ( proposedDesc !== '' ) {
+			descSource = 'wikidata';
+		} else {
+			descSource = 'empty';
+		}
+
+		$cell.attr( 'data-proposed-desc', proposedDesc )
+		     .attr( 'data-wikidata-desc', wikidataDesc );
+
+		$cell.find( '.bm-desc-actual-badge' ).remove();
+		if ( descSource === 'manual' ) {
+			$cell.prepend( '<span class="bm-desc-actual-badge bm-desc-actual-badge--manual">✍ Written</span>' );
+		} else if ( descSource === 'wikidata' ) {
+			$cell.prepend( '<span class="bm-desc-actual-badge bm-desc-actual-badge--wikidata">Wikidata</span>' );
+		}
+
+		const $text = $cell.find( '.bm-actual-desc-text' );
+		if ( proposedDesc !== '' ) {
+			$text.text( proposedDesc );
+		} else {
+			$text.html( '<em class="bm-no-data">Empty</em>' );
+		}
+	}
+
+	// ── Proposals — Clear Wikidata fields ────────────────────────────────────
+
+	$( document ).on( 'click', '.bm-btn-clear-wikidata', function () {
+		const $btn       = $( this );
+		const proposalId = $btn.data( 'proposal-id' );
+		const $form      = $btn.closest( '.bm-edit-form' );
+		const $card      = $form.closest( '.bm-card' );
+
+		if ( ! window.confirm( 'Clear Wikidata ID, label and WD description?\nActual Description will not be affected.' ) ) return;
+
+		$btn.addClass( 'bm-loading' );
+
+		post( 'bm_clear_wikidata_fields', { proposal_id: proposalId } )
+			.done( function ( res ) {
+				if ( res.success ) {
+					// Clear form inputs
+					$form.find( '[name="wikidata_id"]' ).val( '' );
+					$form.find( '[name="wikidata_label"]' ).val( '' );
+
+					// Update Wikidata ID cell
+					$card.find( '.bm-col--proposed .bm-data-table th' )
+						.filter( function () { return $( this ).text().trim() === 'Wikidata ID'; } )
+						.siblings( 'td' ).first().text( '—' );
+
+					// Update Label cell
+					$card.find( '.bm-col--proposed .bm-data-table th' )
+						.filter( function () { return $( this ).text().trim() === 'Label'; } )
+						.siblings( 'td' ).first().text( '—' );
+
+					// Update WD Desc cell
+					$card.find( '.bm-wikidata-desc-cell' ).text( '—' );
+
+					// Update Actual Desc badge — wikidata now empty so proposed becomes Written
+					bmUpdateActualDescCell( $card, res.data.proposed_description ?? '', '' );
+
+					flashNotice( 'Wikidata fields cleared. Actual Description preserved as ✍ Written.' );
 				} else {
 					flashNotice( res.data?.message ?? i18n.error, 'error' );
 				}

@@ -1822,3 +1822,21 @@ button.bm-btn-done {
 	color: #065f46;
 	line-height: 1.6;
 }
+
+/* ── Proposals — Actual Desc cell ───────────────────────────────────────────── */
+
+.bm-actual-desc-cell { font-size: 12px; line-height: 1.5; }
+.bm-actual-desc-text { display: block; margin-top: 2px; }
+
+/* ── Proposals edit form — Clear Wikidata section ───────────────────────────── */
+
+.bm-clear-wikidata-section {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 4px 0 8px;
+}
+.bm-clear-wikidata-section small {
+	color: #646970;
+	font-size: 11px;
+}

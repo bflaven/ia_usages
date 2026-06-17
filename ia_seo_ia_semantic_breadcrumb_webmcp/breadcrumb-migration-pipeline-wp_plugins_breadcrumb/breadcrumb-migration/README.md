@@ -406,6 +406,18 @@ Home > Tags > 17 octobre 1961      ← "Tags" links to /tags/ (WP page with slug
 
 ## Changelog
 
+### v1.28.0 — 2026-06-17
+- **Bug fix**: Proposals card "Description" row showed `wikidata_description` but the edit form edited `proposed_description` — confusing mismatch; saving an empty description appeared to do nothing
+- **Feature**: **Proposals — "Actual Desc" row with ✍ Written badge** — each card in the Proposals tab now shows two description rows: "WD Desc" (Wikidata source, read-only) and "Actual Desc" (`proposed_description`) with `✍ Written` / `Wikidata` / Empty badge computed from source detection logic (same logic as Bulk Description tab); badge and text update in-place after every save
+- **Feature**: **Proposals edit form — "✕ Clear Wikidata fields" button** — clears `wikidata_id`, `wikidata_label`, `wikidata_description` in DB without touching `proposed_description`; after clear, card updates all three Wikidata cells to `—` and flips Actual Desc badge to `✍ Written`; edit form "Description" label renamed to "Actual Description" to match what the textarea actually edits
+- **Feature**: **Bulk Description ↺ button tooltip improved** — `title` attribute now reads "Pull description from WordPress — marks as ✍ Written in Proposals tab" to communicate the cross-tab relationship; flash message enhanced when `is_manual`
+- **Use case**: hand-written description (e.g. `Zeplin` tag with wrong Wikidata ID) — editor clears wrong Wikidata data, keeps written description, sees `✍ Written` badge in Proposals; can later add correct Wikidata ID and re-fetch to overwrite if desired (existing fetch flow unchanged)
+- `admin-page.php`: `bm_render_term_card()` — adds `$desc_source` / `$proposed_desc` / `$wikidata_desc` computation; PROPOSED column "Description" row replaced with "WD Desc" row (`bm-wikidata-desc-cell`) + "Actual Desc" row (`bm-actual-desc-cell`) with badge and `data-proposed-desc` / `data-wikidata-desc` attributes; edit form gains `bm-clear-wikidata-section` div with "✕ Clear Wikidata fields" button and "Description" label renamed to "Actual Description"; ↺ button tooltip updated
+- `ajax-handler.php`: `bm_ajax_update_proposal()` — `$term_info` query extended to include `p.wikidata_description`; `wikidata_description` added to success response; new `bm_ajax_clear_wikidata_fields()` — sets three Wikidata columns to NULL, returns `proposed_description` for badge re-computation
+- `breadcrumb-migration.php`: registers `bm_clear_wikidata_fields` AJAX hook; version bumped to 1.28.0
+- `admin.js`: new `bmUpdateActualDescCell($card, proposedDesc, wikidataDesc)` helper recomputes badge and text DOM in-place; save-edit handler calls helper after successful save; new `.bm-btn-clear-wikidata` handler — confirm dialog → POST → update four card cells → call helper; refresh-single-desc flash message updated
+- `admin.css`: `.bm-actual-desc-cell` / `.bm-actual-desc-text` display styles; `.bm-clear-wikidata-section` flex layout for button + hint text
+
 ### v1.27.0 — 2026-06-17
 - **UX**: **Proposals — editorial corrections on all states** — editors can now fix typos directly on any card regardless of validation state (Pending, Approved, Rejected)
 - **Feature**: **ORIGINAL column — inline edit for Name and Slug** — "Edit Original" button toggles inline inputs for `original_name` and `original_slug` in the ORIGINAL column; save writes directly to `wp_breadcrumb_terms`; replaces Save/Cancel buttons on confirm; does not auto-rebuild the breadcrumb (intentional — breadcrumb corrected independently)

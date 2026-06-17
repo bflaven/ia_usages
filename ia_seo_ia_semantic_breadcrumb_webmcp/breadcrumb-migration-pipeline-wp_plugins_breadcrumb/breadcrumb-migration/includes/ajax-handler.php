@@ -114,7 +114,7 @@ function bm_ajax_update_proposal(): void {
 	$proposed_breadcrumb    = null;
 
 	$term_info = $wpdb->get_row( $wpdb->prepare(
-		"SELECT t.original_name, t.taxonomy
+		"SELECT t.original_name, t.taxonomy, p.wikidata_description
 		   FROM {$t['proposals']} p
 		   JOIN {$t['terms']} t ON t.id = p.term_id
 		  WHERE p.id = %d",
@@ -182,8 +182,47 @@ function bm_ajax_update_proposal(): void {
 		'proposal_id'         => $proposal_id,
 		'fields'              => $fields,
 		'proposed_breadcrumb' => $proposed_breadcrumb,
+		'wikidata_description' => $term_info ? ( $term_info->wikidata_description ?? '' ) : '',
 		'wp_synced'           => $wp_synced,
 		'sync_error'          => $sync_error,
+	] );
+}
+
+// ── Clear Wikidata fields (keeps proposed_description) ────────────────────────
+
+function bm_ajax_clear_wikidata_fields(): void {
+	bm_verify_request();
+
+	$proposal_id = absint( $_POST['proposal_id'] ?? 0 );
+	if ( ! $proposal_id ) {
+		wp_send_json_error( [ 'message' => 'Missing proposal_id.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$proposed_desc = $wpdb->get_var( $wpdb->prepare(
+		"SELECT proposed_description FROM {$t['proposals']} WHERE id = %d",
+		$proposal_id
+	) );
+
+	$updated = $wpdb->update(
+		$t['proposals'],
+		[
+			'wikidata_id'          => null,
+			'wikidata_label'       => null,
+			'wikidata_description' => null,
+		],
+		[ 'id' => $proposal_id ]
+	);
+
+	if ( $updated === false ) {
+		wp_send_json_error( [ 'message' => 'DB update failed.' ] );
+	}
+
+	wp_send_json_success( [
+		'proposal_id'          => $proposal_id,
+		'proposed_description' => $proposed_desc ?? '',
 	] );
 }
 

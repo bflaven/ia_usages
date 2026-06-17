@@ -695,7 +695,7 @@ function bm_render_tab_bulk_description(): void {
 								<button type="button"
 									class="button button-small bm-btn-refresh-single-desc"
 									data-proposal-id="<?php echo esc_attr( $proposal_id ); ?>"
-									title="<?php esc_attr_e( 'Re-read description from WordPress', 'breadcrumb-migration' ); ?>">↺</button>
+									title="<?php esc_attr_e( 'Pull description from WordPress — marks as ✍ Written in Proposals tab', 'breadcrumb-migration' ); ?>">↺</button>
 								<a href="<?php echo esc_url( $edit_url ); ?>"
 									target="_blank" rel="noopener noreferrer"
 									class="bm-desc-edit-link">✏ <?php esc_html_e( 'Edit in WP', 'breadcrumb-migration' ); ?></a>
@@ -1150,6 +1150,16 @@ function bm_render_term_card( object $row ): void {
 		? implode( ' <span class="bm-sep">›</span> ', array_map( 'esc_html', $bc_parts ) )
 		: '<em>' . esc_html__( 'None', 'breadcrumb-migration' ) . '</em>';
 
+	$proposed_desc = $row->proposed_description ?? '';
+	$wikidata_desc = $row->wikidata_description ?? '';
+	if ( $proposed_desc !== '' && ( $wikidata_desc === '' || $proposed_desc !== $wikidata_desc ) ) {
+		$desc_source = 'manual';
+	} elseif ( $proposed_desc !== '' ) {
+		$desc_source = 'wikidata';
+	} else {
+		$desc_source = 'empty';
+	}
+
 	$taxonomy_label = $row->taxonomy === 'category'
 		? __( 'Category', 'breadcrumb-migration' )
 		: __( 'Tag', 'breadcrumb-migration' );
@@ -1280,8 +1290,27 @@ function bm_render_term_card( object $row ): void {
 							<td><?php echo esc_html( $row->wikidata_label ?? '—' ); ?></td>
 						</tr>
 						<tr>
-							<th><?php esc_html_e( 'Description', 'breadcrumb-migration' ); ?></th>
-							<td class="bm-desc"><?php echo esc_html( $row->wikidata_description ?? '—' ); ?></td>
+							<th><?php esc_html_e( 'WD Desc', 'breadcrumb-migration' ); ?></th>
+							<td class="bm-wikidata-desc-cell"><?php echo esc_html( $row->wikidata_description ?? '—' ); ?></td>
+						</tr>
+						<tr>
+							<th><?php esc_html_e( 'Actual Desc', 'breadcrumb-migration' ); ?></th>
+							<td class="bm-actual-desc-cell"
+								data-proposed-desc="<?php echo esc_attr( $proposed_desc ); ?>"
+								data-wikidata-desc="<?php echo esc_attr( $wikidata_desc ); ?>">
+								<?php if ( $desc_source === 'manual' ) : ?>
+									<span class="bm-desc-actual-badge bm-desc-actual-badge--manual">✍ <?php esc_html_e( 'Written', 'breadcrumb-migration' ); ?></span>
+								<?php elseif ( $desc_source === 'wikidata' ) : ?>
+									<span class="bm-desc-actual-badge bm-desc-actual-badge--wikidata"><?php esc_html_e( 'Wikidata', 'breadcrumb-migration' ); ?></span>
+								<?php endif; ?>
+								<span class="bm-actual-desc-text">
+									<?php if ( $proposed_desc !== '' ) :
+										echo esc_html( $proposed_desc );
+									else : ?>
+										<em class="bm-no-data"><?php esc_html_e( 'Empty', 'breadcrumb-migration' ); ?></em>
+									<?php endif; ?>
+								</span>
+							</td>
 						</tr>
 						<tr>
 							<th><?php esc_html_e( 'Breadcrumb', 'breadcrumb-migration' ); ?></th>
@@ -1374,7 +1403,14 @@ function bm_render_term_card( object $row ): void {
 					<label><?php esc_html_e( 'Wikidata ID', 'breadcrumb-migration' ); ?>
 						<input type="text" name="wikidata_id" value="<?php echo esc_attr( $row->wikidata_id ?? '' ); ?>" placeholder="Q42">
 					</label>
-					<label><?php esc_html_e( 'Description', 'breadcrumb-migration' ); ?>
+					<div class="bm-clear-wikidata-section">
+						<button type="button" class="button button-small bm-btn-clear-wikidata"
+							data-proposal-id="<?php echo esc_attr( $proposal_id ); ?>">
+							<?php esc_html_e( '✕ Clear Wikidata fields', 'breadcrumb-migration' ); ?>
+						</button>
+						<small><?php esc_html_e( 'Clears ID, label and WD description — keeps Actual Description.', 'breadcrumb-migration' ); ?></small>
+					</div>
+					<label><?php esc_html_e( 'Actual Description', 'breadcrumb-migration' ); ?>
 						<textarea name="proposed_description"><?php echo esc_textarea( $row->proposed_description ?? '' ); ?></textarea>
 					</label>
 
