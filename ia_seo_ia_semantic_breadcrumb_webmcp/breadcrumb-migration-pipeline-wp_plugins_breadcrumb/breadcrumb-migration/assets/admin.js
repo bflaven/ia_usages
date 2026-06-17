@@ -588,18 +588,17 @@
 	// ── Bulk Description — row filter ────────────────────────────────────────
 
 	function bmUpdateRowStatus( $row ) {
-		const isPublished  = $row.attr( 'data-term-published' ) === '1';
 		const wdIdEmpty    = $row.attr( 'data-wd-id-empty' )       === '1';
 		const wdDescEmpty  = $row.attr( 'data-wd-desc-empty' )     === '1';
 		const actDescEmpty = $row.attr( 'data-actual-desc-empty' ) === '1';
 
 		let status;
-		if ( isPublished ) {
+		if ( ! actDescEmpty ) {
 			status = 'green';
-		} else if ( wdIdEmpty && wdDescEmpty && actDescEmpty ) {
-			status = 'red';
-		} else {
+		} else if ( ! wdIdEmpty || ! wdDescEmpty ) {
 			status = 'orange';
+		} else {
+			status = 'red';
 		}
 
 		$row
@@ -848,7 +847,8 @@
 						if ( r.status === 'saved' ) {
 							$cb.prop( 'disabled', true ).prop( 'checked', false );
 							bmSetActualBadge( $row, r.description, false );
-							$row.addClass( 'bm-bulk-desc-row--saved' ).removeClass( 'bm-bulk-desc-row--err' );
+							bmUpdateRowStatus( $row );
+							$row.removeClass( 'bm-bulk-desc-row--err' );
 						} else {
 							$row.addClass( 'bm-bulk-desc-row--err' );
 						}
@@ -1318,6 +1318,7 @@
 						const $cb  = $( `#bm-bulk-desc-table .bm-desc-cb[value="${ pid }"]` );
 						const $row = $cb.closest( 'tr' );
 						bmSetActualBadge( $row, entry.description, entry.is_manual );
+						bmUpdateRowStatus( $row );
 					} );
 					bmDescApplyFilters();
 					const skipped = res.data.skipped || 0;
@@ -1340,6 +1341,13 @@
 		const proposalId = $btn.data( 'proposal-id' );
 		const $row       = $btn.closest( 'tr' );
 
+		if ( $row.attr( 'data-desc-source' ) === 'manual' ) {
+			const tagName = $row.find( '.bm-desc-tag-name' ).text().trim();
+			if ( ! window.confirm(
+				'⚠ "' + tagName + '" has a hand-written description.\nOverwrite it with the Wikidata text?'
+			) ) return;
+		}
+
 		$btn.addClass( 'bm-loading' ).text( '…' );
 
 		post( 'bm_bulk_save_description', { proposal_ids: [ proposalId ] } )
@@ -1348,8 +1356,9 @@
 					const r = res.data.results[ 0 ];
 					if ( r && r.status === 'saved' ) {
 						bmSetActualBadge( $row, r.description, false );
+						bmUpdateRowStatus( $row );
 						$row.find( '.bm-desc-cb' ).prop( 'disabled', true ).prop( 'checked', false );
-						$row.addClass( 'bm-bulk-desc-row--saved' ).removeClass( 'bm-bulk-desc-row--err' );
+						$row.removeClass( 'bm-bulk-desc-row--err' );
 						bmDescApplyFilters();
 						flashNotice( 'Description copied to Actual.' );
 					} else {
@@ -1377,6 +1386,7 @@
 			.done( function ( res ) {
 				if ( res.success ) {
 					bmSetActualBadge( $row, res.data.description, res.data.is_manual );
+					bmUpdateRowStatus( $row );
 					bmDescApplyFilters();
 					flashNotice( res.data.is_manual
 						? 'Description pulled from WordPress → ✍ Written. Will show as Written in Proposals tab.'

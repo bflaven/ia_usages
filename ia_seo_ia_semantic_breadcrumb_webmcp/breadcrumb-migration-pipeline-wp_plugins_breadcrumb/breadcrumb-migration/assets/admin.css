@@ -997,8 +997,7 @@
 	word-break: break-word;
 }
 
-.bm-bulk-desc-row--saved { background: #f0fdf4; }
-.bm-bulk-desc-row--err   { background: #fef2f2; }
+.bm-bulk-desc-row--err { background: #fef2f2 !important; }
 
 .bm-bulk-desc-filters {
 	display: flex;
@@ -1182,6 +1181,16 @@
 	padding: 0 6px !important;
 	height: 22px !important;
 	line-height: 20px !important;
+}
+
+tr[data-desc-source="manual"] .bm-btn-copy-wd-desc {
+	background: #f6c344 !important;
+	border-color: #d4930a !important;
+	color: #1d2327 !important;
+}
+tr[data-desc-source="manual"] .bm-btn-copy-wd-desc:hover {
+	background: #efb31a !important;
+	border-color: #b37c00 !important;
 }
 
 /* ── Bulk Description — actual description cell ────────────────────────────── */

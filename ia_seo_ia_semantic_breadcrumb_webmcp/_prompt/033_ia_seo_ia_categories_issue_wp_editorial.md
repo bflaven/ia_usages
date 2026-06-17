@@ -1,4 +1,79 @@
 
+```text
+agentic browser
+
+An agentic browser is an AI-powered web browser that can autonomously navigate websites, fill out forms, and complete tasks on behalf of the user, rather than just displaying content.
+```
+
+```text
+Label:
+agentic browser
+
+Aliases:
+agentic browser | AI browser agent | autonomous browser | AI-powered browser |
+browser agent | web agent | agentic web browser
+
+Description:
+AI-powered web browser capable of autonomously navigating websites, filling
+forms and completing multi-step tasks on behalf of the user, going beyond
+passive content display toward goal-directed autonomous web interaction.
+
+---
+
+Subclass of (P279):
+- web browser (Q6368)
+- intelligent agent (Q2676249)
+- artificial intelligence software (Q97508154)
+
+---
+
+Uses (P2283):
+- large language model (Q107520748)
+- natural language processing (Q30642)
+- reinforcement learning (Q830687)
+- web scraping (Q665452)
+- computer vision (Q45977760)
+- autonomous agent (Q2676249)
+
+---
+
+Official website (P856):
+No single official URL — concept spanning multiple implementations.
+Use reference URL (P854):
+https://en.wikipedia.org/wiki/Browser_automation
+
+---
+
+Notable implementations — add has part (P527) or
+different from (P1889) once QIDs exist:
+- Operator (OpenAI)
+- Atlas (OpenAI)
+- Comet (Perplexity)
+- Browser Use (open source)
+- Convergence Proxy
+
+---
+
+Disambiguation strategy:
+- Search before creating:
+  https://www.wikidata.org/w/index.php?search=agentic+browser
+- Existing item Q135456040 may already cover this concept —
+  verify before creating a duplicate:
+  https://www.wikidata.org/wiki/Q135456040
+- Must be distinguished from:
+  web browser (Q6368) → passive content display only
+  browser automation (Q) → scripted automation, not AI-driven
+  web crawler (Q680916) → indexing focus, not task completion
+- Use different from (P1889) → web browser (Q6368) to make
+  the autonomous AI distinction explicit.
+- Add instance of (P31) → software (Q7397) and
+  concept (Q151885) depending on whether item represents
+  the concept or a specific implementation.
+- Add main subject (P921) → autonomous agent (Q2676249)
+  and artificial intelligence (Q11660) as thematic anchors.
+```
+
+
 ## PROMPT_12
 Ok with the change for v1.31.0
 1. In the tab "Bulk Description". Error in row color for status (Completed, Incomplete, Empty). I have row Completed and they are NOT in the good color. Check color per status row and fiw.

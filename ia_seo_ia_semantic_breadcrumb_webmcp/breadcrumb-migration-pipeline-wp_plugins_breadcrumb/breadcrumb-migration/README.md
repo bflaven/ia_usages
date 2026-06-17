@@ -406,6 +406,21 @@ Home > Tags > 17 octobre 1961      ← "Tags" links to /tags/ (WP page with slug
 
 ## Changelog
 
+### v1.32.0 — 2026-06-17
+- **Bug fix**: **Bulk Description — row status colors corrected** — "Completed" (green) was incorrectly tied to `term_status = published`; many rows with a filled Actual Description but not yet published therefore showed as orange (incomplete); fixed: green = has `proposed_description`, orange = has Wikidata data but no actual description, red = completely empty
+- **Bug fix**: **Row color not updating after actions** — row color only changed after "Fetch Wikidata description"; Save to WordPress, Copy to Actual, Sync from WordPress, and per-row ↺ refresh all called `bmSetActualBadge()` but not `bmUpdateRowStatus()`, so the color (and "Completed" filter count) stayed stale after those actions; `bmUpdateRowStatus()` now called in all four handlers
+- **Bug fix**: **`bm-bulk-desc-row--saved` class overridden by `!important`** — `.bm-desc-row--orange !important` masked the green background added after a successful save; removed the `bm-bulk-desc-row--saved` rule entirely (row goes green via `bmUpdateRowStatus`); kept `bm-bulk-desc-row--err` with `!important` so save-error red overrides the normal status color
+- `admin-page.php`: `$row_status` logic changed — `green` if `$proposed_desc !== ''`; `orange` if `wikidata_id` or `wikidata_description` present; `red` otherwise; `$is_published` variable kept for badge rendering but no longer drives row color
+- `admin.js`: `bmUpdateRowStatus()` rewritten — removes `isPublished` check, mirrors PHP logic (green = `!actDescEmpty`, orange = has wikidata data, red = all empty); added after `bmSetActualBadge()` in bulk-save, sync, copy-to-actual, and per-row refresh handlers; `bm-bulk-desc-row--saved` class no longer added on success
+- `admin.css`: removed `.bm-bulk-desc-row--saved`; `.bm-bulk-desc-row--err` kept with `!important`
+
+### v1.31.0 — 2026-06-17
+- **Safety**: **"→ Copy to Actual" — overwrite protection for ✍ Written descriptions** — clicking "→ Copy to Actual" when the row already has a hand-written (`✍ Written`) Actual Description now triggers a confirm dialog: `⚠ "{tag name}" has a hand-written description. Overwrite it with the Wikidata text?` — the copy only proceeds on explicit confirmation; cancelling leaves the hand-written description intact
+- **Visual**: **"→ Copy to Actual" button turns amber when ✍ Written** — button background changes to amber/orange for any row whose `data-desc-source` is `manual`, giving an immediate visual cue that clicking is a destructive action on editorial content; colour updates live as badges change (CSS selector on `data-desc-source` attribute)
+- **Motivation**: automated Wikidata ID matching produces errors; many tags intentionally have no Wikidata item; hand-written SEO descriptions are high-value editorial work that must not be silently overwritten
+- `admin.js`: `.bm-btn-copy-wd-desc` handler checks `$row.attr('data-desc-source') === 'manual'` before POSTing; shows `window.confirm` with tag name; aborts if user cancels
+- `admin.css`: `tr[data-desc-source="manual"] .bm-btn-copy-wd-desc` — amber background + darker border; `:hover` deepens the amber
+
 ### v1.30.0 — 2026-06-17
 - **UX**: **Bulk Description — unified 4-button action bar** — top and bottom action bars now both contain all four action buttons at the same visual level in one flex row; brief on-screen hint below explains buttons 1 and 2
 - **Feature**: **Export CSV (button 3)** — downloads the currently selected rows (or all visible rows if none checked) as a UTF-8 CSV file with BOM for correct Excel encoding; filename: `breadcrumb_migration_bulk_description_YYYYMMDD_HHMMSS.csv`; columns: `tag_name`, `proposed_slug`, `wp_term_id`, `wikidata_id`, `wikidata_description`, `actual_description`, `desc_source`

@@ -610,12 +610,12 @@ function bm_render_tab_bulk_description(): void {
 					}
 
 					$is_published = ( ( $row->term_status ?? '' ) === 'published' );
-					if ( $is_published ) {
+					if ( $proposed_desc !== '' ) {
 						$row_status = 'green';
-					} elseif ( empty( $row->wikidata_id ) && $wikidata_desc === '' && $proposed_desc === '' ) {
-						$row_status = 'red';
-					} else {
+					} elseif ( ! empty( $row->wikidata_id ) || $wikidata_desc !== '' ) {
 						$row_status = 'orange';
+					} else {
+						$row_status = 'red';
 					}
 				?>
 					<tr class="bm-bulk-desc-row bm-desc-row--<?php echo esc_attr( $row_status ); ?>"
