@@ -504,17 +504,22 @@ function bm_render_tab_bulk_description(): void {
 
 			<div class="bm-bulk-desc-actions-top">
 				<button type="button" class="button button-primary bm-btn-bulk-save-desc">
-					<?php esc_html_e( 'Save Description to WordPress', 'breadcrumb-migration' ); ?>
+					<?php esc_html_e( 'Save to WordPress', 'breadcrumb-migration' ); ?>
 				</button>
-				<span class="description">
-					<?php esc_html_e( 'Copies Wikidata description → tag Description field for all selected rows.', 'breadcrumb-migration' ); ?>
-				</span>
 				<button type="button" class="button" id="bm-sync-descriptions">
-					↺ <?php esc_html_e( 'Synchronize from WordPress', 'breadcrumb-migration' ); ?>
+					↺ <?php esc_html_e( 'Sync from WordPress', 'breadcrumb-migration' ); ?>
 				</button>
-				<span class="description">
-					<?php esc_html_e( 'Re-reads description from each live WP tag. Skips manually written descriptions.', 'breadcrumb-migration' ); ?>
-				</span>
+				<button type="button" class="button bm-btn-export-csv">
+					↓ <?php esc_html_e( 'Export CSV', 'breadcrumb-migration' ); ?>
+				</button>
+				<button type="button" class="button bm-btn-export-json">
+					↓ <?php esc_html_e( 'Export JSON', 'breadcrumb-migration' ); ?>
+				</button>
+				<p class="description bm-bulk-actions-hint">
+					<strong><?php esc_html_e( 'Save to WordPress', 'breadcrumb-migration' ); ?></strong>: <?php esc_html_e( 'copies selected rows\' Wikidata description → live WP tag Description field.', 'breadcrumb-migration' ); ?>
+					&nbsp;
+					<strong>↺ <?php esc_html_e( 'Sync from WordPress', 'breadcrumb-migration' ); ?></strong>: <?php esc_html_e( 'pulls current WP descriptions back into plugin DB for all approved tags — skips ✍ Written.', 'breadcrumb-migration' ); ?>
+				</p>
 			</div>
 
 			<div class="bm-bulk-desc-filters" id="bm-bulk-desc-filters">
@@ -723,11 +728,22 @@ function bm_render_tab_bulk_description(): void {
 
 			<div class="bm-bulk-desc-actions-bottom">
 				<button type="button" class="button button-primary bm-btn-bulk-save-desc">
-					<?php esc_html_e( 'Save Description to WordPress', 'breadcrumb-migration' ); ?>
+					<?php esc_html_e( 'Save to WordPress', 'breadcrumb-migration' ); ?>
 				</button>
-				<span class="description">
-					<?php esc_html_e( 'Copies Wikidata description → tag Description field for all selected rows.', 'breadcrumb-migration' ); ?>
-				</span>
+				<button type="button" class="button" id="bm-sync-descriptions-bottom">
+					↺ <?php esc_html_e( 'Sync from WordPress', 'breadcrumb-migration' ); ?>
+				</button>
+				<button type="button" class="button bm-btn-export-csv">
+					↓ <?php esc_html_e( 'Export CSV', 'breadcrumb-migration' ); ?>
+				</button>
+				<button type="button" class="button bm-btn-export-json">
+					↓ <?php esc_html_e( 'Export JSON', 'breadcrumb-migration' ); ?>
+				</button>
+				<p class="description bm-bulk-actions-hint">
+					<strong><?php esc_html_e( 'Save to WordPress', 'breadcrumb-migration' ); ?></strong>: <?php esc_html_e( 'copies selected rows\' Wikidata description → live WP tag Description field.', 'breadcrumb-migration' ); ?>
+					&nbsp;
+					<strong>↺ <?php esc_html_e( 'Sync from WordPress', 'breadcrumb-migration' ); ?></strong>: <?php esc_html_e( 'pulls current WP descriptions back into plugin DB for all approved tags — skips ✍ Written.', 'breadcrumb-migration' ); ?>
+				</p>
 			</div>
 
 			<div id="bm-bulk-desc-results" style="display:none; margin-top:16px;"></div>

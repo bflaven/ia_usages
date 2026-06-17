@@ -860,7 +860,86 @@
 				}
 			} )
 			.fail( () => flashNotice( i18n.error, 'error' ) )
-			.always( () => $btn.removeClass( 'bm-loading' ).text( 'Save Description to WordPress' ) );
+			.always( () => $btn.removeClass( 'bm-loading' ).text( 'Save to WordPress' ) );
+	} );
+
+	// ── Bulk Description — export CSV / JSON ─────────────────────────────────
+
+	function bmBulkDescGetSelectedRows() {
+		const $checked = $( '#bm-bulk-desc-table .bm-desc-cb:checked' );
+		if ( $checked.length ) {
+			return $checked.map( function () { return $( this ).closest( 'tr' )[0]; } ).get();
+		}
+		return $( '#bm-bulk-desc-table tbody tr:visible' ).get();
+	}
+
+	function bmBulkDescRowToObject( row ) {
+		const $row       = $( row );
+		const $actualEl  = $row.find( '.bm-desc-actual-content' );
+		const actualDesc = $actualEl.find( 'em.bm-no-data' ).length ? '' : $actualEl.text().trim();
+		return {
+			tag_name:             $row.find( '.bm-desc-tag-name' ).text().trim(),
+			proposed_slug:        $row.find( '.bm-desc-td-tag code' ).text().trim(),
+			wp_term_id:           $row.find( '.bm-desc-wp-id' ).val() || '',
+			wikidata_id:          $row.find( '.bm-desc-wikidata-id' ).val().trim(),
+			wikidata_description: $row.find( '.bm-desc-wikidata-content' ).text().trim(),
+			actual_description:   actualDesc,
+			desc_source:          $row.attr( 'data-desc-source' ) || '',
+		};
+	}
+
+	function bmTriggerDownload( content, filename, mimeType ) {
+		const blob = new Blob( [ content ], { type: mimeType } );
+		const url  = URL.createObjectURL( blob );
+		const a    = document.createElement( 'a' );
+		a.href     = url;
+		a.download = filename;
+		document.body.appendChild( a );
+		a.click();
+		document.body.removeChild( a );
+		URL.revokeObjectURL( url );
+	}
+
+	function bmExportTimestamp() {
+		const d = new Date();
+		return d.getFullYear() +
+			String( d.getMonth() + 1 ).padStart( 2, '0' ) +
+			String( d.getDate() ).padStart( 2, '0' ) + '_' +
+			String( d.getHours() ).padStart( 2, '0' ) +
+			String( d.getMinutes() ).padStart( 2, '0' ) +
+			String( d.getSeconds() ).padStart( 2, '0' );
+	}
+
+	$( document ).on( 'click', '.bm-btn-export-json', function () {
+		const rows = bmBulkDescGetSelectedRows();
+		if ( ! rows.length ) { flashNotice( 'No rows to export.', 'error' ); return; }
+		const data = rows.map( bmBulkDescRowToObject );
+		bmTriggerDownload(
+			JSON.stringify( data, null, 2 ),
+			'breadcrumb_migration_bulk_description_' + bmExportTimestamp() + '.json',
+			'application/json'
+		);
+		flashNotice( `Exported ${ data.length } row(s) as JSON.` );
+	} );
+
+	$( document ).on( 'click', '.bm-btn-export-csv', function () {
+		const rows = bmBulkDescGetSelectedRows();
+		if ( ! rows.length ) { flashNotice( 'No rows to export.', 'error' ); return; }
+		const data    = rows.map( bmBulkDescRowToObject );
+		const headers = Object.keys( data[0] );
+		const csvRows = [ headers.join( ',' ) ].concat(
+			data.map( function ( r ) {
+				return headers.map( function ( h ) {
+					return '"' + String( r[ h ] ).replace( /"/g, '""' ) + '"';
+				} ).join( ',' );
+			} )
+		);
+		bmTriggerDownload(
+			'﻿' + csvRows.join( '\r\n' ),
+			'breadcrumb_migration_bulk_description_' + bmExportTimestamp() + '.csv',
+			'text/csv;charset=utf-8;'
+		);
+		flashNotice( `Exported ${ data.length } row(s) as CSV.` );
 	} );
 
 	// ── Delta — New Tags ──────────────────────────────────────────────────────
@@ -1225,7 +1304,7 @@
 
 	// ── Bulk Description — synchronize descriptions from WordPress ───────────────
 
-	$( document ).on( 'click', '#bm-sync-descriptions', function () {
+	$( document ).on( 'click', '#bm-sync-descriptions, #bm-sync-descriptions-bottom', function () {
 		const $btn = $( this );
 		$btn.addClass( 'bm-loading' ).text( '↺ Syncing…' );
 
@@ -1251,7 +1330,7 @@
 				}
 			} )
 			.fail( () => flashNotice( i18n.error, 'error' ) )
-			.always( () => $btn.removeClass( 'bm-loading' ).text( '↺ Synchronize from WordPress' ) );
+			.always( () => $btn.removeClass( 'bm-loading' ).text( '↺ Sync from WordPress' ) );
 	} );
 
 	// ── Bulk Description — copy Wikidata desc → Actual (per row) ────────────────

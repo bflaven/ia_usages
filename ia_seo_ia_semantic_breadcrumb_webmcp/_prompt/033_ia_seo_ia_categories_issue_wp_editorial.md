@@ -1,6 +1,22 @@
 
 
 
+## PROMPT_11
+It is not exactly working like you describe. At least let me explain the possible workflow because we are talking about editorial with value not technical feature or function with no value ! Here is my understanding of what it should do. Humans are above machines.
+
+
+Ok so I have edited  and updated the "Adobe" description like you said in the WP out of the scope of the `Breadcrumb Migration` plugin. It is now  a human written description in `Actual Description`. 
+The real risk is that I overwrite the `Actual Description` with `Description from Wikidata` with the help of the `→ Copy to Actual` button when the `Wikidata ID` is existing. You have to know that I need to write hand-written `Actual Description` because `Wikidata ID` does not exist or is wrong as the process of matching has been massively based on the tag string. It has produced errors and also not everything has an item with definition in wikidata. What can be done to prevent this issue?
+To get a good description for an item in the plugin, I am sometimes forced to create a reference in wikidata, which is very time consuming and my objective is too improve the SEO of my site, not fill wikidata with my brain juice. Gotcha ?
+
+NOTE: Before coding, summarize in bullet points that you understand from the given instructions. Update the readme in the changelog in the readme and the version of the script when I validate the changes asked.
+
+
+
+
+
+
+
 ## PROMPT_10
 
 I need a better UX for the plugin `Breadcrumb Migration Version 1.29.0`, through use, I discovered that the plugin needs improvements. Here are the changes needed that should take into account these observations.

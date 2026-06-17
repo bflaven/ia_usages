@@ -942,6 +942,14 @@
 	border-radius: 4px;
 }
 
+.bm-bulk-actions-hint {
+	flex: 0 0 100%;
+	margin: 2px 0 0;
+	font-size: 12px;
+	color: #50575e;
+	line-height: 1.5;
+}
+
 .bm-bulk-desc-table {
 	margin-top: 4px;
 	font-size: 13px;
