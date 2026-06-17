@@ -1,6 +1,25 @@
 
 
 
+## PROMPT_10
+
+I need a better UX for the plugin `Breadcrumb Migration Version 1.29.0`, through use, I discovered that the plugin needs improvements. Here are the changes needed that should take into account these observations.
+
+1. In the tab "Bulk Description", I want to be able to export the selected tags meaning all the tags if it is the option that I chose or the set of selected ones the i should have 2 buttons that one export the data in CSV (button_3) and JSON (button_4). For the file breadcrumb_migration_bulk_description_[timesteamp].json or breadcrumb_migration_bulk_description_[timesteamp].csv
+
+You have also to make a better UX with the existing buttons that must be at the same level as I will play with the same dataset. Capisce ?
+
+1.1 Save Description to WordPress (button_2)
+Copies Wikidata description → tag Description field for all selected rows.
+
+1.2 ↺ Synchronize from WordPress (button_2)
+What does this button actually do? Explain it briefly in the screen and more explicitly in the readme
+
+1.3 so that a make line or a list with four buttons. Document also briefly button_3 and button_4 only in readme as it should be straightforwarded on the screen.
+
+NOTE: Before coding, summarize in bullet points that you understand from the given instructions. Update the readme in the changelog in the readme and the version of the script when I validate the changes asked.
+
+
 
 
 
