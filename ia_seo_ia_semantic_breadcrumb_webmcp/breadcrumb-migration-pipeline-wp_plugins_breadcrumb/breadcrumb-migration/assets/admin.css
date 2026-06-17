@@ -1823,6 +1823,38 @@ button.bm-btn-done {
 	line-height: 1.6;
 }
 
+/* ── Bulk Description — inline Wikidata search results ──────────────────────── */
+
+.bm-desc-search-results {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 3px;
+	box-shadow: 0 2px 8px rgba(0,0,0,.12);
+	margin-top: 4px;
+	max-height: 200px;
+	overflow-y: auto;
+	position: relative;
+	z-index: 100;
+}
+.bm-desc-search-result {
+	cursor: pointer;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 6px;
+	padding: 5px 8px;
+	border-bottom: 1px solid #f0f0f1;
+	font-size: 12px;
+	line-height: 1.4;
+}
+.bm-desc-search-result:last-child { border-bottom: none; }
+.bm-desc-search-result:hover,
+.bm-desc-search-result:focus { background: #f0f6fc; outline: none; }
+.bm-desc-sr-qid { color: #2271b1; font-weight: 600; white-space: nowrap; }
+.bm-desc-sr-label { font-weight: 500; }
+.bm-desc-sr-desc { color: #50575e; flex: 0 0 100%; font-size: 11px; }
+.bm-desc-sr-empty { color: #646970; font-size: 12px; margin: 6px 8px; }
+.bm-desc-wd-search-link { font-size: 14px; text-decoration: none; }
+
 /* ── Proposals — Actual Desc cell ───────────────────────────────────────────── */
 
 .bm-actual-desc-cell { font-size: 12px; line-height: 1.5; }

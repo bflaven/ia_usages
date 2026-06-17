@@ -406,6 +406,14 @@ Home > Tags > 17 octobre 1961      ← "Tags" links to /tags/ (WP page with slug
 
 ## Changelog
 
+### v1.29.0 — 2026-06-17
+- **Feature**: **Bulk Description — inline Wikidata search per row** — new "Search" button next to each "Fetch" button uses the tag's `original_name` to query the Wikidata `wbsearchentities` API (reuses existing `bm_search_wikidata` AJAX action); results appear as an inline dropdown below the Wikidata ID input showing QID + label + description for each candidate; clicking a result populates the Wikidata ID field; dropdown dismisses on outside click
+- **Feature**: **Bulk Description — external Wikidata search link** — a 🔍 link next to the Search button opens `https://www.wikidata.org/w/index.php?search={tag_name}&language={lang}&title=Special%3ASearch&ns0=1` in a new tab for human validation of the correct QID; language taken from plugin Settings (`wikidata_lang`); tag name is URL-encoded via `add_query_arg()`
+- **Use case**: `chunking` tag has no Wikidata ID → click Search → dropdown shows `Q5116438 Chunking ...` → click to fill → click Fetch to pull description; 🔍 link confirms the correct item before committing
+- `admin-page.php`: `bm_render_tab_bulk_description()` — loads `$bm_settings` to resolve language for 🔍 URL; each Wikidata ID cell gains "Search" button (`bm-btn-search-single-wikidata`, `data-tag-name`) and 🔍 link (`bm-desc-wd-search-link`) inside `.bm-desc-wikidata-id-wrap`; empty `.bm-desc-search-results` div added after wrap
+- `admin.js`: `.bm-btn-search-single-wikidata` handler POSTs `bm_search_wikidata` with tag name, renders inline result items; `.bm-desc-search-result` click handler fills `.bm-desc-wikidata-id` + flashes fill; document click listener dismisses any open dropdown when clicking outside `.bm-desc-td-wikidata-id`
+- `admin.css`: `.bm-desc-search-results` dropdown (white, shadowed, max-height 200px, scroll); `.bm-desc-search-result` flex row with hover state; `.bm-desc-sr-qid/label/desc` item part styles
+
 ### v1.28.0 — 2026-06-17
 - **Bug fix**: Proposals card "Description" row showed `wikidata_description` but the edit form edited `proposed_description` — confusing mismatch; saving an empty description appeared to do nothing
 - **Feature**: **Proposals — "Actual Desc" row with ✍ Written badge** — each card in the Proposals tab now shows two description rows: "WD Desc" (Wikidata source, read-only) and "Actual Desc" (`proposed_description`) with `✍ Written` / `Wikidata` / Empty badge computed from source detection logic (same logic as Bulk Description tab); badge and text update in-place after every save

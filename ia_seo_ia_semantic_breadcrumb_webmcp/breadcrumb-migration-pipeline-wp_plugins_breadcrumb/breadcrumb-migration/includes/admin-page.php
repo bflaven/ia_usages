@@ -418,7 +418,8 @@ function bm_render_tab_bulk_description(): void {
 		 WHERE p.validation_state = 'approved'
 		 ORDER BY t.original_name ASC"
 	);
-	$base_url = admin_url( 'admin.php?page=breadcrumb-migration' );
+	$base_url    = admin_url( 'admin.php?page=breadcrumb-migration' );
+	$bm_settings = get_option( 'bm_settings', [] );
 	?>
 	<div class="bm-section">
 		<h2><?php esc_html_e( 'Bulk Description', 'breadcrumb-migration' ); ?></h2>
@@ -657,12 +658,26 @@ function bm_render_tab_bulk_description(): void {
 									data-proposal-id="<?php echo esc_attr( $proposal_id ); ?>">
 									<?php esc_html_e( 'Fetch', 'breadcrumb-migration' ); ?>
 								</button>
+								<button type="button" class="button button-small bm-btn-search-single-wikidata"
+									data-tag-name="<?php echo esc_attr( $row->original_name ); ?>">
+									<?php esc_html_e( 'Search', 'breadcrumb-migration' ); ?>
+								</button>
+								<a href="<?php echo esc_url( add_query_arg( [
+											'search'   => $row->original_name,
+											'language' => $bm_settings['wikidata_lang'] ?? 'en',
+											'title'    => 'Special:Search',
+											'ns0'      => '1',
+										], 'https://www.wikidata.org/w/index.php' ) ); ?>"
+									target="_blank" rel="noopener noreferrer"
+									class="bm-wikidata-ext-link bm-desc-wd-search-link"
+									title="<?php esc_attr_e( 'Search this tag on Wikidata (opens in new tab)', 'breadcrumb-migration' ); ?>">🔍</a>
 								<?php if ( $row->wikidata_id ) : ?>
 									<a href="<?php echo esc_url( 'https://www.wikidata.org/wiki/' . $row->wikidata_id ); ?>"
 										target="_blank" rel="noopener noreferrer"
 										class="bm-wikidata-ext-link bm-desc-wd-link">↗</a>
 								<?php endif; ?>
 							</div>
+							<div class="bm-desc-search-results" style="display:none;"></div>
 						</td>
 						<!-- Wikidata description + per-row copy button -->
 						<td class="bm-desc-wikidata-text">

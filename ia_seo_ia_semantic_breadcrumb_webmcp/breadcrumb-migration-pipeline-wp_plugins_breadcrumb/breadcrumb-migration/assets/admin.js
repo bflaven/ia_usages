@@ -770,6 +770,55 @@
 			.always( () => $btn.removeClass( 'bm-loading' ).text( 'Fetch' ) );
 	} );
 
+	// ── Bulk Description — inline Wikidata search ───────────────────────────────
+
+	$( document ).on( 'click', '.bm-btn-search-single-wikidata', function ( e ) {
+		e.stopPropagation();
+		const $btn     = $( this );
+		const tagName  = $btn.data( 'tag-name' );
+		const $td      = $btn.closest( 'td' );
+		const $results = $td.find( '.bm-desc-search-results' );
+
+		if ( ! tagName ) return;
+
+		$btn.addClass( 'bm-loading' ).text( '…' );
+		$results.hide().empty();
+
+		post( 'bm_search_wikidata', { query: tagName } )
+			.done( function ( res ) {
+				if ( res.success && res.data.results.length ) {
+					const html = res.data.results.map( function ( r ) {
+						return `<div class="bm-desc-search-result" data-id="${ escHtml( r.id ) }" data-label="${ escHtml( r.label ) }" tabindex="0">` +
+							`<span class="bm-desc-sr-qid">${ escHtml( r.id ) }</span>` +
+							`<span class="bm-desc-sr-label">${ escHtml( r.label ) }</span>` +
+							( r.description ? `<span class="bm-desc-sr-desc">${ escHtml( r.description ) }</span>` : '' ) +
+							`</div>`;
+					} ).join( '' );
+					$results.html( html ).show();
+				} else {
+					$results.html( '<p class="bm-desc-sr-empty">No results found on Wikidata.</p>' ).show();
+				}
+			} )
+			.fail( () => flashNotice( i18n.error, 'error' ) )
+			.always( () => $btn.removeClass( 'bm-loading' ).text( 'Search' ) );
+	} );
+
+	$( document ).on( 'click', '.bm-desc-search-result', function () {
+		const $result = $( this );
+		const $td     = $result.closest( 'td' );
+		const qid     = $result.data( 'id' );
+
+		$td.find( '.bm-desc-wikidata-id' ).val( qid ).addClass( 'bm-field-filled' );
+		setTimeout( () => $td.find( '.bm-desc-wikidata-id' ).removeClass( 'bm-field-filled' ), 1200 );
+		$td.find( '.bm-desc-search-results' ).hide().empty();
+	} );
+
+	$( document ).on( 'click', function ( e ) {
+		if ( ! $( e.target ).closest( '.bm-desc-td-wikidata-id' ).length ) {
+			$( '.bm-desc-search-results:visible' ).hide().empty();
+		}
+	} );
+
 	$( document ).on( 'click', '.bm-btn-bulk-save-desc', function () {
 		const $btn       = $( this );
 		const proposalIds = [];
