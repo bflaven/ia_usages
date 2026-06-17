@@ -1,6 +1,28 @@
 
 
 
+
+
+
+
+
+## PROMPT_9
+I need a better UX for the plugin `Breadcrumb Migration Version 1.28.0`, through use, I discovered that the plugin needs improvements. Here are the changes needed that should take into account these observations.
+
+
+1. In the tab "Bulk Description", for each tag,  the column `Wikidata ID` is often empty, as I have need tags coming constantly, so I need to perform a search on wikidata based the value `bm-desc-tag-name`, you can add a button `Search` at the right of the button `Fetch` so I can directly search on the string.
+For instance, I have the label `chunking` and I should have the quickets way to grab the `Wikidata ID` that correpond to it on wikidata e.g `Chunking (Q5116438)`. Find the best way to do with the button `Search` that perform and may pouplate the `Wikidata ID` inside bm-desc-wikidata-id but also have a link on the right that launch the search in a target blank if I need to ensure that the correct `Wikidata ID` for the correct. Human valiadtion, it is called, capisce? 
+`https://www.wikidata.org/w/index.php?search=chunking&language=en&title=Special%3ASearch&ns0=1`
+
+ 
+NOTE: Before coding, summarize in bullet points that you understand from the given instructions. Update the readme in the changelog in the readme and the version of the script when I validate the changes asked.
+
+
+
+
+
+## PROMPT_8
+
 ```text
 
 Agile, AI development, AI ethics, AI ideology, AI philosophy, AI tools, AI workflow, Alex Karp, artificial intelligence, automation, cc-lens, CCTOP, chunking, Claude AI, Claude Code, Claude Code Token Optimization Problem, CLAUDE.md, cognitive tinkering, context handoff, cost reduction, digital product management, embeddings, FAISS, future of work, Gemini, HANDOFF.md, ingestion, large language model, liquid capitalism, LLM, mistral, open source, OpenWolf, Palantir, Perplexity, Product Owner, prompt engineering, python, RAG, Retrieval-Augmented Generation, semantic search, semantic SEO, session bridging, symbolic violence, technological progress, token limit, token management, token optimization, user stories, value-driven development, WordPress plugin
@@ -50,13 +72,15 @@ amour, Cyril Slucki, Ela & Dimitri, Lise Couzinier, temporalité, Transmedia, Tr
 Agathe Films, Bruno Masi, Chechnya, Chernobyl, Cosaques, Crimea, documentaire, Gaité lyrique, Georgia, Guillaume Herbaut, Iran, La Montaña, La Zone, Lemonde.fr, livre, multimédia, Oeil Public, Ossetia, photographe, photojournaliste, Pripyat, Putin, ransmedia, révolution, russia, St Petersburg, Twitter, Webdocumentaire
 ```
 
-
+## PROMPT_7
 ```text
 Zeplin is a tool that helps you push ready-to-build designs, automate workflows, and build products faster. It connects design, development, and product teams across functions, lifecycles, and geographies.
 
 
 YSlow is a tool that grades web pages based on Yahoo!'s rules for high performance web sites. It offers suggestions, statistics, and tools for improving the page's speed and efficiency across various browsers and platforms.
 ```
+
+## PROMPT_6
 ```text
 Wwwhatsnew
 
@@ -68,7 +92,7 @@ Wwwhatsnew.com es un medio de tecnología fundado en 2005 por Juan Diego Polo, c
 https://wwwhatsnew.com/
 ```
 
-
+## PROMPT_5
 ```text
 Label:
 Wwwhatsnew
