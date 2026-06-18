@@ -2,6 +2,52 @@
 
 Python script to create a new Wikidata item via the MediaWiki API.
 Item definition lives in `data/*.yaml` — edit that file to change what gets created, no Python required.
+---
+
+## TRY
+
+### 002_wikidata_api_add_item.py (v2 — claims work in sandbox too)
+
+```bash
+# SANDBOX (safe, use this first)
+# create the item (label + description + aliases only)
+python 002_wikidata_api_add_item.py --item data/item_3WDOC.yaml --sandbox --no-claims
+
+# create the item with the claims (attempts P279/P2283/P856 on test.wikidata.org)
+python 002_wikidata_api_add_item.py --item data/item_Zeplin.yaml --sandbox
+
+# PRODUCTION
+# dry-run — print payload, no write
+python 002_wikidata_api_add_item.py --item data/item_Zeplin.yaml --dry-run
+
+# write to production
+python 002_wikidata_api_add_item.py --item data/item_Zeplin.yaml
+```
+
+### 001_wikidata_api_add_item.py (v1 — claims always skipped in sandbox)
+
+```bash
+# SANDBOX (safe, use this first)
+# create the item (no claims — sandbox auto-skips them)
+python 001_wikidata_api_add_item.py --item data/item_3WDOC.yaml --sandbox --no-claims
+
+python 001_wikidata_api_add_item.py --item data/item_Zeplin.yaml --sandbox
+
+# PRODUCTION
+# dry-run
+python 001_wikidata_api_add_item.py --item data/item_3WDOC.yaml --dry-run
+
+python 001_wikidata_api_add_item.py --item data/item_Zeplin.yaml --dry-run
+
+# write to production
+python 001_wikidata_api_add_item.py --item data/item_3WDOC.yaml
+
+python 001_wikidata_api_add_item.py --item data/item_Zeplin.yaml
+```
+
+
+
+
 
 ---
 
@@ -9,7 +55,8 @@ Item definition lives in `data/*.yaml` — edit that file to change what gets cr
 
 | File | Commit? | Description |
 |------|---------|-------------|
-| `001_wikidata_api_add_item.py` | yes | Main script |
+| `002_wikidata_api_add_item.py` | yes | v2 — claims attempted in sandbox; `--no-claims` is explicit opt-out |
+| `001_wikidata_api_add_item.py` | yes | v1 — sandbox always skips claims automatically |
 | `data/item_ntlk.yaml` | yes | Example item (NLTK) |
 | `data/item_template.yaml` | yes | Blank template — copy and fill in |
 | `.env.example` | yes | Template showing required variables — safe to share |
@@ -26,6 +73,9 @@ Item definition lives in `data/*.yaml` — edit that file to change what gets cr
 3. cp data/item_template.yaml data/item_myproject.yaml   → fill in item
 4. python 001_wikidata_api_add_item.py --item data/item_myproject.yaml --sandbox --no-claims
 5. python 001_wikidata_api_add_item.py --item data/item_myproject.yaml   (production, when autoconfirmed)
+
+
+
 ```
 
 ---
@@ -121,9 +171,12 @@ Regular account passwords are **rejected** by the Wikidata API. You must use a *
 3. Same steps as above — same grants required
 4. Bot passwords are **site-specific**, so you need a separate one for sandbox
 
-> **Sandbox limitation**: `test.wikidata.org` has a separate database.
-> Production properties (P279, P2283, P856) do not exist there.
-> Always use `--no-claims` with `--sandbox`. Full item with claims only works on production.
+> **Sandbox limitation (v1)**: `test.wikidata.org` has a separate database.
+> In `001_wikidata_api_add_item.py`, claims are **always skipped** in sandbox mode — `--no-claims` is implied.
+> Full item with claims only works reliably on production.
+>
+> **v2 behaviour**: `002_wikidata_api_add_item.py` attempts claims in sandbox too.
+> Pass `--no-claims` explicitly if properties are missing on `test.wikidata.org`.
 
 ---
 
@@ -236,6 +289,12 @@ Copy the URL and open it in your browser to verify the full item with all claims
 ---
 
 ## Changelog
+
+### v2.0.0 — `002_wikidata_api_add_item.py`
+- **Claims in sandbox**: removed auto-skip of claims when `--sandbox` is passed; `--no-claims` is now the explicit opt-out instead of being implied
+- Output line added: prints QID alongside URL in the success banner
+- Success banner shows claimed properties summary (e.g. `P279 ×3, P2283 ×4, P856`)
+- `build_item_data`: skips empty claim groups per-property (cleaner than end dict-comp)
 
 ### v1.6.0
 - **Duplicate-item guard**: if the API returns `modification-failed` with a label+description conflict, the script now extracts the existing QID, prints a warning (`⚠ Item already exists as QXXXXX`), and exits cleanly instead of crashing with a `RuntimeError`

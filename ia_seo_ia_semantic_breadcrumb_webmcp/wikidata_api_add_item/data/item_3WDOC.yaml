@@ -1,0 +1,39 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+label_en: "3WDOC"
+
+# One sentence — no capital letter at start, no period at the end
+description_en: "open-source HTML5 authoring and playback platform for creating interactive rich media web stories and webdocumentaries, combining a Studio editor with a Player for digital storytelling on the web"
+
+# Other names people use for this item (one per line, each line starts with -)
+aliases_en:
+  - "3WDOC Studio"
+  - "3WDOC Player"
+  - "3WDOC Editor"
+  - "Three W Doc"
+  - "HTML5 Webdocumentary Tool"
+
+# ── Statements (claims) ───────────────────────────────────────────────────────
+# P279 — "subclass of"
+subclass_of:
+  - label: "web application"
+    qid: "Q1330336"
+  - label: "multimedia authoring software"
+    qid: "Q1420342"
+  - label: "free and open-source software"
+    qid: "Q341"
+  - label: "digital storytelling"
+    qid: "Q7325049"
+
+# P2283 — "uses"
+uses:
+  - label: "HTML5"
+    qid: "Q2053796"
+  - label: "JavaScript"
+    qid: "Q2005"
+  - label: "rich media"
+    qid: "Q1361745"
+  - label: "digital storytelling"
+    qid: "Q7325049"
+
+# P856 — official website
+official_website: "https://3wdoc.com/"

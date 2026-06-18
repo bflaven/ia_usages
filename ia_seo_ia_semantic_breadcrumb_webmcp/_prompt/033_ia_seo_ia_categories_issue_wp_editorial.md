@@ -1,4 +1,272 @@
 
+
+
+
+
+
+## PROMPT_14
+Create 002_wikidata_api_add_item.py that take into account the claims e.g subclass_of, uses... etc
+
+```text
+# SANDBOX (safe, use this first)
+# create the item
+python 001_wikidata_api_add_item.py --item data/item_3WDOC.yaml --sandbox --no-claims
+
+# create the item with the claims
+python 001_wikidata_api_add_item.py --item data/item_Zeplin.yaml --sandbox
+
+
+
+# PRODUCTION 
+# dry-run
+python 001_wikidata_api_add_item.py --item data/item_Zeplin.yaml --dry-run
+
+# go for it
+# write to production
+
+python 001_wikidata_api_add_item.py --item data/item_Zeplin.yaml
+```
+
+
+
+```yaml
+# item_zeplin.yaml
+
+label_en: "Zeplin"
+
+description_en: "web-based collaboration platform connecting design, development and product teams by transforming ready-to-build designs into automated workflows and developer handoff assets"
+
+aliases_en:
+  - "Zeplin app"
+  - "Zeplin design handoff"
+  - "Zeplin collaboration tool"
+  - "Zeplin design to development"
+
+subclass_of:
+  - label: "web application"
+  - label: "collaborative software"
+  - label: "software as a service"
+
+uses:
+  - label: "design handoff"
+  - label: "Figma"
+  - label: "Sketch"
+  - label: "Adobe XD"
+
+official_website: "https://zeplin.io/"
+```
+
+
+## PROMPT_13
+Generate a wikipedia and also replace the elemnts in the template YAML below
+
+```text
+Zeplin
+
+Zeplin is a tool that helps you push ready-to-build designs, automate workflows, and build products faster. It connects design, development, and product teams across functions, lifecycles, and geographies.
+```
+
+```yaml
+# item_template.yaml — copy this file and rename it for your item
+# Example:  cp data/item_template.yaml data/item_myproject.yaml
+#
+# Edit only the VALUES — do NOT rename any key (label_en, label, qid, etc.)
+# Lines starting with # are comments and are ignored by the script.
+#
+# HOW TO USE:
+#   1. Copy:   cp data/item_template.yaml data/item_myproject.yaml
+#   2. Fill in all FILL_ME_IN values below
+#   3. Test:   python 001_wikidata_api_add_item.py --item data/item_myproject.yaml --sandbox --no-claims
+#   4. Check the printed QID resolutions, fix any wrong matches in your YAML
+#   5. Dry-run: python 001_wikidata_api_add_item.py --item data/item_myproject.yaml --dry-run
+#   6. Produce: python 001_wikidata_api_add_item.py --item data/item_myproject.yaml
+
+# ── Basic information ─────────────────────────────────────────────────────────
+
+# Short name shown as the title on Wikidata (keep it short, no period)
+label_en: "FILL_ME_IN"
+
+# One sentence — no capital letter at start, no period at the end
+description_en: "FILL_ME_IN short description of the item"
+
+# Other names people use for this item (one per line, each line starts with -)
+# Remove lines you do not need, or add more
+aliases_en:
+  - "FILL_ME_IN alias 1"
+  - "FILL_ME_IN alias 2"
+
+# ── Statements (claims) ───────────────────────────────────────────────────────
+# You do NOT need to know the QID — just write the English label.
+# The script searches Wikidata automatically and prints what it found.
+# Check the printed output before running on production.
+#
+# To find good label names: search https://www.wikidata.org and copy the label text.
+#
+# If you DO know the exact QID, add:  qid: "Q12345"
+# and it will be used directly without searching.
+#
+# Remove entries you do not need. Add more by copying a "- label:" block.
+
+# P279 — "subclass of": what broader category does this item belong to?
+subclass_of:
+  - label: "FILL_ME_IN category name"
+  - label: "FILL_ME_IN category name"
+
+# P2283 — "uses": what technologies, tools, or languages does this item use?
+uses:
+  - label: "FILL_ME_IN technology name"
+  - label: "FILL_ME_IN technology name"
+
+# P856 — official website (must start with https://)
+official_website: "https://FILL_ME_IN.com/"
+```
+
+
+## PROMPT_13
+```text
+University of the West of England
+
+The University of the West of England, also known as UWE Bristol, is a public research university, located in and around Bristol, England, UK. With over 38,000 students and 4,500 staff, it is the largest provider of higher education in the South West of England. 
+```
+
+## A_PROMPT_12
+```text
+Label:
+3WDOC
+
+Aliases:
+3WDOC Studio | 3WDOC Player | 3WDOC Editor | Three W Doc | WebDoc Studio |
+HTML5 Webdocumentary Tool
+
+Description:
+Open-source HTML5 authoring and playback platform for creating and
+delivering interactive rich media web stories and webdocumentaries,
+combining a Studio editor with a Player for digital storytelling on the web.
+
+---
+
+Subclass of (P279):
+- web application (Q1330336)
+- multimedia authoring software (Q1420342)
+- free and open-source software (Q341)
+- digital storytelling tool (Q) → may need to be created
+
+---
+
+Uses (P2283):
+- HTML5 (Q2053796)
+- JavaScript (Q2005)
+- rich media (Q1361745)
+- webdocumentary (Q) → may need to be created
+- digital storytelling (Q7325049)
+
+---
+
+Official website (P856):
+https://3wdoc.com/
+
+---
+
+Disambiguation strategy:
+- Search before creating:
+  https://www.wikidata.org/w/index.php?search=3WDOC
+- Low collision risk due to distinctive alphanumeric name.
+- Add instance of (P31) → software (Q7397) as primary anchor claim.
+- Add main subject (P921) → webdocumentary and digital storytelling
+  to anchor thematic scope.
+```
+
+---
+
+```yaml
+# One sentence — no capital letter at start, no period at the end
+description_en: "open-source HTML5 authoring and playback platform for creating interactive rich media web stories and webdocumentaries, combining a Studio editor with a Player for digital storytelling on the web"
+
+# Other names people use for this item (one per line, each line starts with -)
+aliases_en:
+  - "3WDOC Studio"
+  - "3WDOC Player"
+  - "3WDOC Editor"
+  - "Three W Doc"
+  - "HTML5 Webdocumentary Tool"
+
+# ── Statements (claims) ───────────────────────────────────────────────────────
+# P279 — "subclass of"
+subclass_of:
+  - label: "web application"
+    qid: "Q1330336"
+  - label: "multimedia authoring software"
+    qid: "Q1420342"
+  - label: "free and open-source software"
+    qid: "Q341"
+  - label: "digital storytelling"
+    qid: "Q7325049"
+
+# P2283 — "uses"
+uses:
+  - label: "HTML5"
+    qid: "Q2053796"
+  - label: "JavaScript"
+    qid: "Q2005"
+  - label: "rich media"
+    qid: "Q1361745"
+  - label: "digital storytelling"
+    qid: "Q7325049"
+
+# P856 — official website
+official_website: "https://3wdoc.com/"
+```
+
+
+## PROMPT_14
+Generate a wikipedia and also replace the elemnts in the template YAML below
+
+```text
+3WDOC
+
+3WDOC Studio is a versatile tool specificaly designed to create and deliver rich media experiences optimized in HTML5 to run across the web. The 3WDOC Player's ultimate goal is to enable one or several author(s) to create an authentic web story. 3WDOC Player is a versatile tool to create and deliver rich media experiences optimized in HTML5 to run across the web. This technology can be applied to any kind of rich media sites, like for instance for the emerging genre named webdocumentary. So naturally, here in 3WDOC, we summarize the project concept in this simple motto: "Facilitating the digital storytelling on the Web". 3WDOC Studio = 3WDOC Player + 3WDOC Editor."
+```
+
+```yaml
+# One sentence — no capital letter at start, no period at the end
+description_en: "FILL_ME_IN short description of the item"
+
+# Other names people use for this item (one per line, each line starts with -)
+# Remove lines you do not need, or add more
+aliases_en:
+  - "FILL_ME_IN alias 1"
+  - "FILL_ME_IN alias 2"
+
+# ── Statements (claims) ───────────────────────────────────────────────────────
+# You do NOT need to know the QID — just write the English label.
+# The script searches Wikidata automatically and prints what it found.
+# Check the printed output before running on production.
+#
+# To find good label names: search https://www.wikidata.org and copy the label text.
+#
+# If you DO know the exact QID, add:  qid: "Q12345"
+# and it will be used directly without searching.
+#
+# Remove entries you do not need. Add more by copying a "- label:" block.
+
+# P279 — "subclass of": what broader category does this item belong to?
+subclass_of:
+  - label: "FILL_ME_IN category name"
+  - label: "FILL_ME_IN category name"
+
+# P2283 — "uses": what technologies, tools, or languages does this item use?
+uses:
+  - label: "FILL_ME_IN technology name"
+  - label: "FILL_ME_IN technology name"
+
+# P856 — official website (must start with https://)
+official_website: "https://FILL_ME_IN.com/"
+```
+
+
+
+## PROMPT_13
+
 ```text
 agentic browser
 

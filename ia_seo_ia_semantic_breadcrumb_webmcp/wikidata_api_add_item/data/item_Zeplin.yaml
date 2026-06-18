@@ -1,0 +1,24 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+
+label_en: "Zeplin"
+
+description_en: "web-based collaboration platform connecting design, development and product teams by transforming ready-to-build designs into automated workflows and developer handoff assets"
+
+aliases_en:
+  - "Zeplin app"
+  - "Zeplin design handoff"
+  - "Zeplin collaboration tool"
+  - "Zeplin design to development"
+
+subclass_of:
+  - label: "web application"
+  - label: "collaborative software"
+  - label: "software as a service"
+
+uses:
+  - label: "design handoff"
+  - label: "Figma"
+  - label: "Sketch"
+  - label: "Adobe XD"
+
+official_website: "https://zeplin.io/"
