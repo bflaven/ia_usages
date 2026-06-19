@@ -1,4 +1,34 @@
 
+sh auto_update_repo.sh
+sh remove_dsstore.sh
+
+I need a better UX for the plugin `Breadcrumb Migration Version Version 1.32.0`, through use, I discovered that the plugin needs improvements. Here are the changes needed that should take into account these observations.
+
+
+1. In the tab "Proposals", I need to know the exact list of tag above "Bulk Keyword Search" 
+
+ 
+NOTE: Before coding, summarize in bullet points that you understand from the given instructions. Update the readme in the changelog in the readme and the version of the script when I validate the changes asked.
+
+
+
+
+
+1581 Pending
+1021 Approved
+5 Rejected
+
+
+
+
+```text
+2012, Alexis Sarini, Antonin Lhôte, atelier, atelier desmédias, bruxelles, CFPJ, CFPJ Médias, Damien Van Achter, data, Data journalism, data journalisme, davanac, davanac.net, Eghezée, équipe de campagne, éric schérer, étudiants, formation, François Hollande, futur, IHECS, initiation, marie coussin, master class, masterclass, Namur, open newsroom, organigramme, owni.fr, Parti Socialiste, politique, présidentielle 2012, presse, Primaires, Primaires Socialistes, PS, richmedia, Studio Hans Lucas, UMP
+
+
+#mc11, #mc12, #mc13, 17 octobre 1961, 2012, 3WDOC, 3WDOC Studio, Alexis Sarini, Algérie, Antonin Lhôte, atelier, atelier desmédias, belgique, bruxelles, CFPJ, CFPJ Médias, Dailymotion, Damien Van Achter, data, Data journalism, data journalisme, davanac, davanac.net, Eghezée, EMI-CFD, équipe de campagne, éric schérer, étudiants, formation, François Hollande, futur, guerre d'Algérie, HTML5, IHECS, initiation, journalisme, La nuit oubliée, Lemonde.fr, marie coussin, master class, masterclass, Namur, Olivier Lambert, open newsroom, organigramme, Owni, owni.fr, Parti Socialiste, politique, présidentielle 2012, presse, Primaires, Primaires Socialistes, PS, reportage, richmedia, Studio Hans Lucas, Thomas Salva, Twitter, UMP, Virginie Terrasse, webdocu, webdocu.fr, webjournalisme, Wilfrid Estève, workshop
+```
+
+
 
 
 
