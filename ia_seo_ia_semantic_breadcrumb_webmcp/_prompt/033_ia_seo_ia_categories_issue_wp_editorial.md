@@ -1,25 +1,63 @@
 
-sh auto_update_repo.sh
-sh remove_dsstore.sh
+## PROMPT_19
+
+Do not make any development this time inside the plugin. This is temporary work. I want to take advantage of your ability to categorize tags in a single main category base on you understanding. If the tag is unkwon, put it in `Miscellaneous / Other` 
+
+1. Can you make a quick bulk assignment for each tag inside `breadcrumb-migration`.
+- Here is the categories in `sample_categories_1.txt`
+- Here is the tags in `sample_pending_tag_1.txt`
+
+You can output the result in a file `sample_tags_assigned_categories_1.txt` like so, with the same structure I want a quick and dirty cut and paste. One tag can only belong to one category. Goctha ?
+
+- future file `sample_tags_assigned_categories_1.txt`
+```text
+// AI & Machine Learning
+AI Product Owner, AI takeover... etc
+
+
+// Digital Storytelling & Webdocs
+Honky Tonk, honkytonk, honkytonk films... etc
+
+// Miscellaneous / Other
+[nothing that you know, so it is the same for me !]
+
+```
+
+NOTE: Before coding, summarize in bullet points that you understand from the given instructions. Update the readme in the changelog in the readme and the version of the script when I validate the changes asked.
+
+
+
+## PROMPT_18
 
 I need a better UX for the plugin `Breadcrumb Migration Version Version 1.32.0`, through use, I discovered that the plugin needs improvements. Here are the changes needed that should take into account these observations.
 
+1. The files are in `breadcrumb-migration`.
 
-1. In the tab "Proposals", I need to know the exact list of tag above "Bulk Keyword Search" 
+2. In the tab "Proposals", I need to know the exact list of tag for each status `Pending`, `Approved`, `Rejected` if I click on one of the word then it should a new area with 3 buttons and textarea make it look like wp stuff e.g
+`<span class="bm-stat bm-stat--pending"><strong>1930</strong> Pending</span>` I should be able grab a comma separated list e.g `Trump, Obama, Wordpress, IA` of the tags in this status in a textarea that need to be created, you can give a name to this section above "Bulk Keyword Search" and under "Overview".
+Why because I am wasting my time look for tags, I need to leverage on bulk operations available in the other tabs and through a list of tag selected.
 
- 
+- Actual counting for the tags status
+```text
+1581 Pending
+1021 Approved
+5 Rejected
+```
+
 NOTE: Before coding, summarize in bullet points that you understand from the given instructions. Update the readme in the changelog in the readme and the version of the script when I validate the changes asked.
 
 
 
 
 
-1581 Pending
-1021 Approved
-5 Rejected
 
 
 
+
+
+
+
+## PROMPT_15
 
 ```text
 2012, Alexis Sarini, Antonin Lhôte, atelier, atelier desmédias, bruxelles, CFPJ, CFPJ Médias, Damien Van Achter, data, Data journalism, data journalisme, davanac, davanac.net, Eghezée, équipe de campagne, éric schérer, étudiants, formation, François Hollande, futur, IHECS, initiation, marie coussin, master class, masterclass, Namur, open newsroom, organigramme, owni.fr, Parti Socialiste, politique, présidentielle 2012, presse, Primaires, Primaires Socialistes, PS, richmedia, Studio Hans Lucas, UMP
