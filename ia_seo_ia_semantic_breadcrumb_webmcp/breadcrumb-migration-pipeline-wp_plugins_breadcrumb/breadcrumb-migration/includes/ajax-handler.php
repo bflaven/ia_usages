@@ -1211,3 +1211,44 @@ function bm_ajax_bulk_check(): void {
 
 	wp_send_json_success( [ 'results' => $results, 'total' => count( $results ) ] );
 }
+
+// ── Tags by Status ─────────────────────────────────────────────────────────────
+
+function bm_ajax_get_tags_by_status(): void {
+	bm_verify_request();
+
+	$state = sanitize_text_field( $_POST['state'] ?? '' );
+	if ( ! in_array( $state, [ 'pending', 'approved', 'rejected' ], true ) ) {
+		wp_send_json_error( [ 'message' => 'Invalid state.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	if ( $state === 'pending' ) {
+		$names = $wpdb->get_col(
+			"SELECT t.original_name
+			 FROM {$t['terms']} t
+			 LEFT JOIN {$t['proposals']} p ON p.term_id = t.id
+			 WHERE COALESCE(p.validation_state, 'pending') = 'pending'
+			 ORDER BY t.original_name ASC"
+		); // phpcs:ignore
+	} else {
+		$names = $wpdb->get_col(
+			$wpdb->prepare(
+				"SELECT t.original_name
+				 FROM {$t['terms']} t
+				 LEFT JOIN {$t['proposals']} p ON p.term_id = t.id
+				 WHERE p.validation_state = %s
+				 ORDER BY t.original_name ASC",
+				$state
+			)
+		);
+	}
+
+	wp_send_json_success( [
+		'state' => $state,
+		'count' => count( $names ),
+		'tags'  => implode( ', ', $names ),
+	] );
+}

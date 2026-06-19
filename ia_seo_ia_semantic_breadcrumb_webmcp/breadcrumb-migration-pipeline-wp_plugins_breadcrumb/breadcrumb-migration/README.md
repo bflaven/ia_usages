@@ -406,6 +406,21 @@ Home > Tags > 17 octobre 1961      ← "Tags" links to /tags/ (WP page with slug
 
 ## Changelog
 
+### v1.34.0 — 2026-06-19
+- **Data**: bulk tag-to-category assignment — ~1000 pending tags from `sample_pending_tag_1.txt` categorized into 20 WordPress categories defined in `sample_categories_1.txt` using AI knowledge; result written to `sample_tags_assigned_categories_1.txt`
+- Format: one `// Category Name` header per section, comma-separated `original_name` values per line; unknown/ambiguous tags assigned to `// Miscellaneous / Other`
+- No plugin code changes — pure classification artifact, ready for copy-paste into Bulk Keyword Search per category
+
+### v1.33.0 — 2026-06-19
+- **Feature**: **Proposals — Tags by Status browser** — clicking any Overview stat badge (`Pending` / `Approved` / `Rejected`) expands a new "Tags by Status" panel between the Overview and Bulk Keyword Search sections; panel shows a readonly textarea pre-filled via AJAX with a comma-separated list of all `original_name` values for that status; clicking the same badge again collapses the panel
+- **Feature**: **3 action buttons in Tags by Status panel** — **Copy to Clipboard** (copies comma list; `execCommand` fallback for older browsers), **↓ Send to Bulk Search** (populates the Bulk Keyword Search textarea and scrolls to it), **✕ Close** (collapses panel); panel label badge updates colour to match the clicked status (yellow/green/red)
+- **UX**: stat badges (`bm-stat`) now have `cursor:pointer`, hover highlight, and keyboard focus ring; accessible via `role="button"` + `tabindex="0"` + `title` (e.g. "Click to list all Pending tags"); Enter/Space also toggle the panel
+- `breadcrumb-migration.php`: `wp_ajax_bm_get_tags_by_status` hook registered; version bumped to `1.33.0`
+- `ajax-handler.php`: new `bm_ajax_get_tags_by_status()` — validates state param, queries `original_name` for pending (handles `NULL` via `COALESCE`) / approved / rejected; returns `{ state, count, tags }` (comma-separated string)
+- `admin-page.php`: `bm_render_stats()` span elements gain `data-state`, `role="button"`, `tabindex="0"`, `title`; new `bm_render_status_tag_browser()` function renders the hidden panel; called between `bm_render_stats()` and `bm_render_filters()` in `bm_render_tab_proposals()`
+- `admin.js`: `bmStatusTagCurrentState` module var tracks open state; `.bm-stat[data-state]` click/keydown handler (toggle same = close, different = reload); `#bm-status-tag-copy`, `#bm-status-tag-send`, `#bm-status-tag-close` handlers added
+- `admin.css`: `.bm-stat[data-state]` clickable styles (cursor, hover, focus); `.bm-panel--status-tags` (amber left border matching pending colour); `.bm-status-tag-textarea`, `.bm-status-tag-actions`, `.bm-status-tag-count` styles
+
 ### v1.32.0 — 2026-06-17
 - **Bug fix**: **Bulk Description — row status colors corrected** — "Completed" (green) was incorrectly tied to `term_status = published`; many rows with a filled Actual Description but not yet published therefore showed as orange (incomplete); fixed: green = has `proposed_description`, orange = has Wikidata data but no actual description, red = completely empty
 - **Bug fix**: **Row color not updating after actions** — row color only changed after "Fetch Wikidata description"; Save to WordPress, Copy to Actual, Sync from WordPress, and per-row ↺ refresh all called `bmSetActualBadge()` but not `bmUpdateRowStatus()`, so the color (and "Completed" filter count) stayed stale after those actions; `bmUpdateRowStatus()` now called in all four handlers

@@ -1636,6 +1636,89 @@
 			.always( () => $btn.removeClass( 'bm-loading' ) );
 	} );
 
+	// ── Proposals — Tags by Status browser ───────────────────────────────────
+
+	let bmStatusTagCurrentState = null;
+
+	$( document ).on( 'click keydown', '.bm-stat[data-state]', function ( e ) {
+		if ( e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ' ) return;
+		e.preventDefault();
+
+		const $btn   = $( this );
+		const state  = $btn.data( 'state' );
+		const $panel = $( '#bm-status-tag-browser' );
+		const $ta    = $( '#bm-status-tag-textarea' );
+
+		// Toggle off if same badge clicked again while panel is open
+		if ( bmStatusTagCurrentState === state && $panel.is( ':visible' ) ) {
+			$panel.slideUp( 200 );
+			bmStatusTagCurrentState = null;
+			return;
+		}
+
+		bmStatusTagCurrentState = state;
+
+		// Set label badge text + colour class
+		const labelText = $btn.text().trim().replace( /^\d+\s*/, '' );
+		$( '#bm-status-tag-label' )
+			.text( labelText )
+			.attr( 'class', 'bm-badge bm-badge--' + state );
+		$( '#bm-status-tag-count-wrap' ).hide();
+
+		$ta.val( '' ).attr( 'placeholder', 'Loading…' );
+		$panel.slideDown( 200 );
+
+		post( 'bm_get_tags_by_status', { state } )
+			.done( function ( res ) {
+				if ( res.success ) {
+					$ta.val( res.data.tags ).attr( 'placeholder', '' );
+					$( '#bm-status-tag-count' ).text( res.data.count );
+					$( '#bm-status-tag-count-wrap' ).show();
+				} else {
+					$ta.val( '' ).attr( 'placeholder', res.data?.message ?? i18n.error );
+				}
+			} )
+			.fail( function () {
+				$ta.val( '' ).attr( 'placeholder', i18n.error );
+			} );
+	} );
+
+	$( document ).on( 'click', '#bm-status-tag-close', function () {
+		$( '#bm-status-tag-browser' ).slideUp( 200 );
+		bmStatusTagCurrentState = null;
+	} );
+
+	$( document ).on( 'click', '#bm-status-tag-copy', function () {
+		const text = $( '#bm-status-tag-textarea' ).val();
+		if ( ! text ) {
+			flashNotice( 'Nothing to copy.', 'error' );
+			return;
+		}
+		if ( navigator.clipboard && navigator.clipboard.writeText ) {
+			navigator.clipboard.writeText( text )
+				.then( function () { flashNotice( 'Copied to clipboard.' ); } )
+				.catch( function () { flashNotice( 'Copy failed — select text manually.', 'warning' ); } );
+		} else {
+			$( '#bm-status-tag-textarea' )[0].select();
+			document.execCommand( 'copy' );
+			flashNotice( 'Copied to clipboard.' );
+		}
+	} );
+
+	$( document ).on( 'click', '#bm-status-tag-send', function () {
+		const text = $( '#bm-status-tag-textarea' ).val();
+		if ( ! text ) {
+			flashNotice( 'Nothing to send.', 'error' );
+			return;
+		}
+		const $target = $( '#bm-proposals-bulk-keywords' );
+		$target.val( text );
+		$target[0].scrollIntoView( { behavior: 'smooth', block: 'center' } );
+		$target.addClass( 'bm-field-filled' );
+		setTimeout( function () { $target.removeClass( 'bm-field-filled' ); }, 1500 );
+		flashNotice( 'Tags sent to Bulk Search — click Filter to search.' );
+	} );
+
 	// ── Help — Wikidata tab — accordion ──────────────────────────────────────
 
 	$( document ).on( 'click', '.bm-help-article-toggle', function () {

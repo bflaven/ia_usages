@@ -1889,3 +1889,59 @@ button.bm-btn-done {
 	color: #646970;
 	font-size: 11px;
 }
+
+/* ── Proposals — Tags by Status browser (v1.33.0) ───────────────────────── */
+
+.bm-stat[data-state] {
+	cursor: pointer;
+	transition: background .15s, border-color .15s;
+	user-select: none;
+}
+
+.bm-stat[data-state]:hover {
+	background: #f0f6fc;
+}
+
+.bm-stat[data-state]:focus {
+	outline: 2px solid #2271b1;
+	outline-offset: 2px;
+}
+
+.bm-panel--status-tags {
+	border-left: 4px solid #dba617;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.bm-panel--status-tags .bm-panel__title {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.bm-status-tag-textarea {
+	margin-top: 8px;
+	font-family: monospace;
+	font-size: 13px;
+	resize: vertical;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	background: #fafafa;
+	color: #1d2327;
+}
+
+.bm-status-tag-actions {
+	display: flex;
+	gap: 8px;
+	margin-top: 10px;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.bm-status-tag-count {
+	font-size: 12px;
+	font-weight: 400;
+	color: #50575e;
+}

@@ -169,6 +169,7 @@ function bm_render_tab_proposals( string $base_url ): void {
 	}
 
 	bm_render_stats( $stat_map );
+	bm_render_status_tag_browser();
 	bm_render_filters( $base_url, $filter_taxonomy, $filter_state, $search, $filter_wikidata_id, $filter_spacy, $filter_bulk_keywords );
 
 	// ── Bulk keyword results mode ──────────────────────────────────────────────
@@ -1069,6 +1070,39 @@ function bm_render_tab_danger(): void {
 	<?php
 }
 
+// ── Status Tag Browser ────────────────────────────────────────────────────────
+
+function bm_render_status_tag_browser(): void {
+	?>
+	<section class="bm-panel bm-panel--status-tags" id="bm-status-tag-browser" style="display:none;"
+		aria-label="<?php esc_attr_e( 'Tags by Status', 'breadcrumb-migration' ); ?>">
+		<h3 class="bm-panel__title">
+			<?php esc_html_e( 'Tags by Status', 'breadcrumb-migration' ); ?>
+			&mdash; <span id="bm-status-tag-label"></span>
+			<span class="bm-status-tag-count" id="bm-status-tag-count-wrap" style="display:none;">
+				(<span id="bm-status-tag-count">0</span>)
+			</span>
+		</h3>
+		<p class="description">
+			<?php esc_html_e( 'All tag names for the selected status — comma-separated, copy &amp; paste ready.', 'breadcrumb-migration' ); ?>
+		</p>
+		<textarea id="bm-status-tag-textarea" class="large-text bm-status-tag-textarea" rows="5" readonly
+			placeholder="<?php esc_attr_e( 'Loading…', 'breadcrumb-migration' ); ?>"></textarea>
+		<div class="bm-status-tag-actions">
+			<button type="button" class="button button-primary" id="bm-status-tag-copy">
+				<?php esc_html_e( 'Copy to Clipboard', 'breadcrumb-migration' ); ?>
+			</button>
+			<button type="button" class="button" id="bm-status-tag-send">
+				&#8595; <?php esc_html_e( 'Send to Bulk Search', 'breadcrumb-migration' ); ?>
+			</button>
+			<button type="button" class="button" id="bm-status-tag-close">
+				&#10005; <?php esc_html_e( 'Close', 'breadcrumb-migration' ); ?>
+			</button>
+		</div>
+	</section>
+	<?php
+}
+
 // ── Stats bar ──────────────────────────────────────────────────────────────────
 
 function bm_render_stats( array $stats ): void {
@@ -1084,7 +1118,14 @@ function bm_render_stats( array $stats ): void {
 			<?php foreach ( $labels as $key => $label ) :
 				$count = $stats[ $key ] ?? 0;
 			?>
-			<span class="bm-stat bm-stat--<?php echo esc_attr( $key ); ?>">
+			<span class="bm-stat bm-stat--<?php echo esc_attr( $key ); ?>"
+				data-state="<?php echo esc_attr( $key ); ?>"
+				role="button"
+				tabindex="0"
+				title="<?php
+					/* translators: %s: status label e.g. Pending */
+					printf( esc_attr__( 'Click to list all %s tags', 'breadcrumb-migration' ), esc_attr( $label ) );
+				?>">
 				<strong><?php echo (int) $count; ?></strong> <?php echo esc_html( $label ); ?>
 			</span>
 			<?php endforeach; ?>
