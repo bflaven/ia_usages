@@ -1,0 +1,29 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+
+# item_bankslave.yaml
+
+label_en: "Bankslave"
+
+description_en: "Kenyan visual and graffiti artist known for socially engaged murals and street art, born in Nairobi, with major exhibitions in Australia and Denmark"
+
+aliases_en:
+  - "Bankslave artist"
+  - "Bankslave graffiti"
+  - "Bankslave muralist"
+  - "Bankslave Nairobi"
+
+subclass_of:
+  - label: "human"
+  - label: "visual artist"
+  - label: "graffiti artist"
+  - label: "muralist"
+
+uses:
+  - label: "graffiti"
+  - label: "street art"
+  - label: "mural"
+  - label: "social activism"
+
+official_website: "https://www.bankslave.com/"
+
+

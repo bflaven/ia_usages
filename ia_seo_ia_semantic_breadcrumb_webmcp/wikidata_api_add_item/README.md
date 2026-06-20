@@ -16,12 +16,27 @@ python 002_wikidata_api_add_item.py --item data/item_3WDOC.yaml --sandbox --no-c
 # create the item with the claims (attempts P279/P2283/P856 on test.wikidata.org)
 python 002_wikidata_api_add_item.py --item data/item_Zeplin.yaml --sandbox
 
+
+python 002_wikidata_api_add_item.py --item data/item_ben_fundis.yaml --sandbox
+
+python 002_wikidata_api_add_item.py --item data/item_ben_hollis.yaml --sandbox
+
+
 # PRODUCTION
 # dry-run — print payload, no write
 python 002_wikidata_api_add_item.py --item data/item_Zeplin.yaml --dry-run
 
 # write to production
 python 002_wikidata_api_add_item.py --item data/item_Zeplin.yaml
+
+
+python 002_wikidata_api_add_item.py --item data/item_bankslave.yaml
+
+python 002_wikidata_api_add_item.py --item data/item_ben_fundis.yaml
+
+python 002_wikidata_api_add_item.py --item data/item_ben_hollis.yaml
+
+
 ```
 
 ### 001_wikidata_api_add_item.py (v1 — claims always skipped in sandbox)

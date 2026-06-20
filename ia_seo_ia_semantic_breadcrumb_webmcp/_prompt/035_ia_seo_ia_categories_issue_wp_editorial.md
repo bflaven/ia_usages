@@ -1,3 +1,16 @@
+## PROMPT_3
+At the bottom, just keep the pagination on the right. Remove the button actions. So, button actions will be only top with also pagination.  
+
+
+
+
+## PROMPT_2
+I need a better UX for the plugin `Breadcrumb Migration Version Version 1.34.0`, through use, I discovered that the plugin needs improvements. Here are the changes needed that should take into account these observations.
+
+1. The bottom class="tablenav bottom bm-desc-tablenav" is floating in terms of UX, put it in the proper way.
+For the bottom, put the pagination first and below, put the action buttons. The top stuff is OK.
+
+
 ## PROMPT_1
 
 I need a better UX for the plugin `Breadcrumb Migration Version Version 1.33.0`, through use, I discovered that the plugin needs improvements. Here are the changes needed that should take into account these observations.

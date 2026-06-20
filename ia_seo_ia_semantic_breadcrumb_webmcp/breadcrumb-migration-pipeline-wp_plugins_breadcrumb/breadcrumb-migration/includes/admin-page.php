@@ -410,22 +410,67 @@ function bm_render_tab_bulk_description(): void {
 	global $wpdb;
 	$t = bm_tables();
 
-	$rows = $wpdb->get_results( // phpcs:ignore
-		"SELECT p.id AS proposal_id, p.wikidata_id, p.wikidata_description,
-		        p.proposed_description, p.proposed_slug,
-		        t.wp_term_id, t.original_name, t.status AS term_status
-		 FROM {$t['proposals']} p
-		 JOIN {$t['terms']} t ON t.id = p.term_id
-		 WHERE p.validation_state = 'approved'
-		 ORDER BY t.original_name ASC"
+	$search_desc   = sanitize_text_field( $_GET['bm_desc_search'] ?? '' );
+	$per_page_desc = 20;
+	$current_page  = max( 1, absint( $_GET['paged'] ?? 1 ) );
+	$offset        = ( $current_page - 1 ) * $per_page_desc;
+	$base_url      = admin_url( 'admin.php?page=breadcrumb-migration' );
+	$base_url_desc = add_query_arg( 'tab', 'bulk_description', $base_url );
+	$bm_settings   = get_option( 'bm_settings', [] );
+
+	$where_desc   = "WHERE p.validation_state = 'approved'";
+	$where_params = [];
+	if ( $search_desc !== '' ) {
+		$where_desc    .= ' AND (t.original_name LIKE %s OR t.original_slug LIKE %s)';
+		$like           = '%' . $wpdb->esc_like( $search_desc ) . '%';
+		$where_params[] = $like;
+		$where_params[] = $like;
+	}
+
+	$count_sql  = "SELECT COUNT(*) FROM {$t['proposals']} p JOIN {$t['terms']} t ON t.id = p.term_id $where_desc";
+	$total_desc = (int) ( $where_params
+		? $wpdb->get_var( $wpdb->prepare( $count_sql, ...$where_params ) )
+		: $wpdb->get_var( $count_sql ) // phpcs:ignore
 	);
-	$base_url    = admin_url( 'admin.php?page=breadcrumb-migration' );
-	$bm_settings = get_option( 'bm_settings', [] );
+
+	$data_sql     = "SELECT p.id AS proposal_id, p.wikidata_id, p.wikidata_description,
+		                    p.proposed_description, p.proposed_slug,
+		                    t.wp_term_id, t.original_name, t.status AS term_status
+		             FROM {$t['proposals']} p
+		             JOIN {$t['terms']} t ON t.id = p.term_id
+		             $where_desc
+		             ORDER BY t.original_name ASC
+		             LIMIT %d OFFSET %d";
+	$limit_params = array_merge( $where_params, [ $per_page_desc, $offset ] );
+	$rows         = $where_params
+		? $wpdb->get_results( $wpdb->prepare( $data_sql, ...$limit_params ) )
+		: $wpdb->get_results( $wpdb->prepare( $data_sql, $per_page_desc, $offset ) ); // phpcs:ignore
 	?>
 	<div class="bm-section">
 		<h2><?php esc_html_e( 'Bulk Description', 'breadcrumb-migration' ); ?></h2>
 
-		<!-- ── Section 1: Requirements ──────────────────────────────────────── -->
+		<!-- ── Server-side search ────────────────────────────────────────────── -->
+		<form method="get" action="<?php echo esc_url( admin_url( 'admin.php' ) ); ?>" class="bm-desc-server-search">
+			<input type="hidden" name="page" value="breadcrumb-migration">
+			<input type="hidden" name="tab" value="bulk_description">
+			<p class="search-box">
+				<label class="screen-reader-text" for="bm-desc-server-search-input">
+					<?php esc_html_e( 'Search Tags:', 'breadcrumb-migration' ); ?>
+				</label>
+				<input type="search" id="bm-desc-server-search-input" name="bm_desc_search"
+					value="<?php echo esc_attr( $search_desc ); ?>"
+					placeholder="<?php esc_attr_e( 'Search tag name or slug…', 'breadcrumb-migration' ); ?>">
+				<input type="submit" id="bm-desc-search-submit-server" class="button"
+					value="<?php esc_attr_e( 'Search Tags', 'breadcrumb-migration' ); ?>">
+				<?php if ( $search_desc !== '' ) : ?>
+					<a href="<?php echo esc_url( $base_url_desc ); ?>" class="button bm-desc-search-clear">
+						✕ <?php esc_html_e( 'Clear', 'breadcrumb-migration' ); ?>
+					</a>
+				<?php endif; ?>
+			</p>
+		</form>
+
+		<!-- ── Section 1: Requirements ───────────────────────────────────────── -->
 		<section class="bm-panel bm-panel--requirements" aria-label="<?php esc_attr_e( 'Requirements', 'breadcrumb-migration' ); ?>">
 			<h3 class="bm-panel__title"><?php esc_html_e( 'Requirements', 'breadcrumb-migration' ); ?></h3>
 			<p class="bm-requirements-intro"><?php esc_html_e( 'Tags appear in this tab only when both conditions are met:', 'breadcrumb-migration' ); ?></p>
@@ -449,11 +494,11 @@ function bm_render_tab_bulk_description(): void {
 			</ol>
 		</section>
 
-		<?php if ( empty( $rows ) ) : ?>
+		<?php if ( $total_desc === 0 && $search_desc === '' ) : ?>
 			<p class="bm-no-data" style="margin-top:16px;"><?php esc_html_e( 'No approved tags found. Approve proposals in the Proposals tab first.', 'breadcrumb-migration' ); ?></p>
 		<?php else : ?>
 
-			<!-- ── Status Key ───────────────────────────────────────────────── -->
+			<!-- ── Status Key ──────────────────────────────────────────────────── -->
 			<section class="bm-panel bm-panel--legend" aria-label="<?php esc_attr_e( 'Status Key', 'breadcrumb-migration' ); ?>">
 				<h3 class="bm-panel__title"><?php esc_html_e( 'Status Key', 'breadcrumb-migration' ); ?></h3>
 				<ul class="bm-legend-list">
@@ -481,7 +526,7 @@ function bm_render_tab_bulk_description(): void {
 				</ul>
 			</section>
 
-			<!-- ── Section 3: Batch Filter ──────────────────────────────────── -->
+			<!-- ── Batch Filter ────────────────────────────────────────────────── -->
 			<section class="bm-panel bm-panel--batch-filter" aria-label="<?php esc_attr_e( 'Batch Filter', 'breadcrumb-migration' ); ?>">
 				<h3 class="bm-panel__title"><?php esc_html_e( 'Batch Filter', 'breadcrumb-migration' ); ?></h3>
 				<p class="description" style="margin-bottom:8px;"><?php esc_html_e( 'Paste a comma or newline-separated list of tag names to narrow the table to that batch only.', 'breadcrumb-migration' ); ?></p>
@@ -499,36 +544,41 @@ function bm_render_tab_bulk_description(): void {
 				</div>
 			</section>
 
-			<!-- ── Section 4: Tag Descriptions ──────────────────────────────── -->
+			<!-- ── Tag Descriptions ────────────────────────────────────────────── -->
 			<section class="bm-panel bm-panel--tag-descriptions" aria-label="<?php esc_attr_e( 'Tag Descriptions', 'breadcrumb-migration' ); ?>">
 				<h3 class="bm-panel__title"><?php esc_html_e( 'Tag Descriptions', 'breadcrumb-migration' ); ?></h3>
 
-			<div class="bm-bulk-desc-actions-top">
-				<button type="button" class="button button-primary bm-btn-bulk-save-desc">
-					<?php esc_html_e( 'Save to WordPress', 'breadcrumb-migration' ); ?>
-				</button>
-				<button type="button" class="button" id="bm-sync-descriptions">
-					↺ <?php esc_html_e( 'Sync from WordPress', 'breadcrumb-migration' ); ?>
-				</button>
-				<button type="button" class="button bm-btn-export-csv">
-					↓ <?php esc_html_e( 'Export CSV', 'breadcrumb-migration' ); ?>
-				</button>
-				<button type="button" class="button bm-btn-export-json">
-					↓ <?php esc_html_e( 'Export JSON', 'breadcrumb-migration' ); ?>
-				</button>
-				<p class="description bm-bulk-actions-hint">
-					<strong><?php esc_html_e( 'Save to WordPress', 'breadcrumb-migration' ); ?></strong>: <?php esc_html_e( 'copies selected rows\' Wikidata description → live WP tag Description field.', 'breadcrumb-migration' ); ?>
-					&nbsp;
-					<strong>↺ <?php esc_html_e( 'Sync from WordPress', 'breadcrumb-migration' ); ?></strong>: <?php esc_html_e( 'pulls current WP descriptions back into plugin DB for all approved tags — skips ✍ Written.', 'breadcrumb-migration' ); ?>
-				</p>
+			<!-- ── Tablenav top ─────────────────────────────────────────────────── -->
+			<div class="tablenav top bm-desc-tablenav">
+				<div class="bm-desc-actions-bar">
+					<button type="button" class="button button-primary bm-btn-bulk-save-desc">
+						<?php esc_html_e( 'Save to WordPress', 'breadcrumb-migration' ); ?>
+					</button>
+					<button type="button" class="button" id="bm-sync-descriptions">
+						↺ <?php esc_html_e( 'Sync from WordPress', 'breadcrumb-migration' ); ?>
+					</button>
+					<button type="button" class="button bm-btn-export-csv">
+						↓ <?php esc_html_e( 'Export CSV', 'breadcrumb-migration' ); ?>
+					</button>
+					<button type="button" class="button bm-btn-export-json">
+						↓ <?php esc_html_e( 'Export JSON', 'breadcrumb-migration' ); ?>
+					</button>
+				</div>
+				<?php bm_render_bulk_desc_pagination( $total_desc, $per_page_desc, $current_page, $base_url_desc, $search_desc, 'top' ); ?>
 			</div>
 
+			<!-- ── Client-side filters ──────────────────────────────────────────── -->
 			<div class="bm-bulk-desc-filters" id="bm-bulk-desc-filters">
 				<strong><?php esc_html_e( 'Show only:', 'breadcrumb-migration' ); ?></strong>
 				<label>
 					<input type="checkbox" id="bm-filter-wd-id-empty" class="bm-desc-filter">
 					<?php esc_html_e( 'Wikidata ID empty', 'breadcrumb-migration' ); ?>
 					<span class="bm-filter-count" id="bm-count-wd-id-empty">0</span>
+				</label>
+				<label>
+					<input type="checkbox" id="bm-filter-wd-id-filled" class="bm-desc-filter">
+					<?php esc_html_e( 'Wikidata ID filled', 'breadcrumb-migration' ); ?>
+					<span class="bm-filter-count" id="bm-count-wd-id-filled">0</span>
 				</label>
 				<label>
 					<input type="checkbox" id="bm-filter-wd-desc-empty" class="bm-desc-filter">
@@ -553,16 +603,6 @@ function bm_render_tab_bulk_description(): void {
 				<button type="button" class="button button-small" id="bm-desc-filter-reset">
 					<?php esc_html_e( 'Show all', 'breadcrumb-migration' ); ?>
 				</button>
-				<p class="bm-desc-search-box">
-					<label class="screen-reader-text" for="bm-desc-name-search">
-						<?php esc_html_e( 'Search Tags:', 'breadcrumb-migration' ); ?>
-					</label>
-					<input type="search" id="bm-desc-name-search"
-						class="bm-desc-name-search"
-						placeholder="<?php esc_attr_e( 'Search tags…', 'breadcrumb-migration' ); ?>">
-					<input type="submit" id="bm-desc-search-submit" class="button button-small"
-						value="<?php esc_attr_e( 'Search Tags', 'breadcrumb-migration' ); ?>">
-				</p>
 				<span class="bm-filter-visible-count">
 					<span id="bm-desc-visible-count">0</span> / <span id="bm-desc-total-count">0</span>
 				</span>
@@ -576,6 +616,20 @@ function bm_render_tab_bulk_description(): void {
 				<textarea id="bm-desc-selected-keywords" class="bm-desc-selected-keywords large-text" rows="2" readonly
 					placeholder="<?php esc_attr_e( 'Check tags above to populate this list…', 'breadcrumb-migration' ); ?>"></textarea>
 			</div>
+
+			<?php if ( empty( $rows ) ) : ?>
+				<p class="bm-no-data" style="margin: 16px 0;">
+					<?php if ( $search_desc !== '' ) :
+						printf(
+							/* translators: %s: search query */
+							esc_html__( 'No tags match "%s". Try a different search or clear the search.', 'breadcrumb-migration' ),
+							esc_html( $search_desc )
+						);
+					else :
+						esc_html_e( 'No tags on this page.', 'breadcrumb-migration' );
+					endif; ?>
+				</p>
+			<?php else : ?>
 
 			<table class="widefat striped bm-bulk-desc-table" id="bm-bulk-desc-table">
 				<thead>
@@ -727,29 +781,86 @@ function bm_render_tab_bulk_description(): void {
 				</tbody>
 			</table>
 
-			<div class="bm-bulk-desc-actions-bottom">
-				<button type="button" class="button button-primary bm-btn-bulk-save-desc">
-					<?php esc_html_e( 'Save to WordPress', 'breadcrumb-migration' ); ?>
-				</button>
-				<button type="button" class="button" id="bm-sync-descriptions-bottom">
-					↺ <?php esc_html_e( 'Sync from WordPress', 'breadcrumb-migration' ); ?>
-				</button>
-				<button type="button" class="button bm-btn-export-csv">
-					↓ <?php esc_html_e( 'Export CSV', 'breadcrumb-migration' ); ?>
-				</button>
-				<button type="button" class="button bm-btn-export-json">
-					↓ <?php esc_html_e( 'Export JSON', 'breadcrumb-migration' ); ?>
-				</button>
-				<p class="description bm-bulk-actions-hint">
-					<strong><?php esc_html_e( 'Save to WordPress', 'breadcrumb-migration' ); ?></strong>: <?php esc_html_e( 'copies selected rows\' Wikidata description → live WP tag Description field.', 'breadcrumb-migration' ); ?>
-					&nbsp;
-					<strong>↺ <?php esc_html_e( 'Sync from WordPress', 'breadcrumb-migration' ); ?></strong>: <?php esc_html_e( 'pulls current WP descriptions back into plugin DB for all approved tags — skips ✍ Written.', 'breadcrumb-migration' ); ?>
-				</p>
+			<?php endif; // empty( $rows ) ?>
+
+			<!-- ── Tablenav bottom ──────────────────────────────────────────────── -->
+			<div class="tablenav bottom bm-desc-tablenav">
+				<?php bm_render_bulk_desc_pagination( $total_desc, $per_page_desc, $current_page, $base_url_desc, $search_desc, 'bottom' ); ?>
 			</div>
 
 			<div id="bm-bulk-desc-results" style="display:none; margin-top:16px;"></div>
 
 			</section><!-- .bm-panel--tag-descriptions -->
+		<?php endif; // total_desc === 0 && no search ?>
+	</div>
+	<?php
+}
+
+// ── Bulk Description — pagination ─────────────────────────────────────────────
+
+function bm_render_bulk_desc_pagination( int $total, int $per_page, int $current, string $base_url, string $search, string $position ): void {
+	$total_pages = max( 1, (int) ceil( $total / $per_page ) );
+	$url_base    = $search !== '' ? add_query_arg( 'bm_desc_search', $search, $base_url ) : $base_url;
+
+	$is_first  = $current <= 1;
+	$is_last   = $current >= $total_pages;
+	$first_url = esc_url( add_query_arg( 'paged', 1, $url_base ) );
+	$prev_url  = $is_first ? '' : esc_url( add_query_arg( 'paged', $current - 1, $url_base ) );
+	$next_url  = $is_last  ? '' : esc_url( add_query_arg( 'paged', $current + 1, $url_base ) );
+	$last_url  = esc_url( add_query_arg( 'paged', $total_pages, $url_base ) );
+	$url_tpl   = esc_attr( add_query_arg( 'paged', 'BM_PAGE', $url_base ) );
+	$input_id  = 'bm-desc-page-selector-' . esc_attr( $position );
+	?>
+	<div class="tablenav-pages<?php echo $total_pages <= 1 ? ' one-page' : ''; ?>">
+		<span class="displaying-num">
+			<?php printf(
+				esc_html( _n( '%s item', '%s items', $total, 'breadcrumb-migration' ) ),
+				esc_html( number_format_i18n( $total ) )
+			); ?>
+		</span>
+		<?php if ( $total_pages > 1 ) : ?>
+		<span class="pagination-links">
+			<?php if ( $is_first ) : ?>
+				<span class="tablenav-pages-navspan button disabled" aria-hidden="true">«</span>
+				<span class="tablenav-pages-navspan button disabled" aria-hidden="true">‹</span>
+			<?php else : ?>
+				<a class="first-page button" href="<?php echo $first_url; ?>">
+					<span class="screen-reader-text"><?php esc_html_e( 'First page', 'breadcrumb-migration' ); ?></span>
+					<span aria-hidden="true">«</span>
+				</a>
+				<a class="prev-page button" href="<?php echo $prev_url; ?>">
+					<span class="screen-reader-text"><?php esc_html_e( 'Previous page', 'breadcrumb-migration' ); ?></span>
+					<span aria-hidden="true">‹</span>
+				</a>
+			<?php endif; ?>
+			<span class="paging-input">
+				<label for="<?php echo $input_id; ?>" class="screen-reader-text">
+					<?php esc_html_e( 'Current Page', 'breadcrumb-migration' ); ?>
+				</label>
+				<input class="current-page bm-page-jump" id="<?php echo $input_id; ?>"
+					type="text" name="paged"
+					value="<?php echo esc_attr( $current ); ?>" size="3"
+					data-total-pages="<?php echo esc_attr( $total_pages ); ?>"
+					data-url-template="<?php echo $url_tpl; ?>">
+				<span class="tablenav-paging-text">
+					<?php esc_html_e( 'of', 'breadcrumb-migration' ); ?>
+					<span class="total-pages"><?php echo esc_html( number_format_i18n( $total_pages ) ); ?></span>
+				</span>
+			</span>
+			<?php if ( $is_last ) : ?>
+				<span class="tablenav-pages-navspan button disabled" aria-hidden="true">›</span>
+				<span class="tablenav-pages-navspan button disabled" aria-hidden="true">»</span>
+			<?php else : ?>
+				<a class="next-page button" href="<?php echo $next_url; ?>">
+					<span class="screen-reader-text"><?php esc_html_e( 'Next page', 'breadcrumb-migration' ); ?></span>
+					<span aria-hidden="true">›</span>
+				</a>
+				<a class="last-page button" href="<?php echo $last_url; ?>">
+					<span class="screen-reader-text"><?php esc_html_e( 'Last page', 'breadcrumb-migration' ); ?></span>
+					<span aria-hidden="true">»</span>
+				</a>
+			<?php endif; ?>
+		</span>
 		<?php endif; ?>
 	</div>
 	<?php

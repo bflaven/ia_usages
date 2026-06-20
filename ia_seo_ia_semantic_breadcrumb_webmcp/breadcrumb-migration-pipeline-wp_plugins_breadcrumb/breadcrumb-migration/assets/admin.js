@@ -612,6 +612,7 @@
 		if ( ! $allRows.length ) return;
 
 		$( '#bm-count-wd-id-empty' ).text(       $allRows.filter( '[data-wd-id-empty="1"]' ).length );
+		$( '#bm-count-wd-id-filled' ).text(      $allRows.filter( '[data-wd-id-empty="0"]' ).length );
 		$( '#bm-count-wd-desc-empty' ).text(     $allRows.filter( '[data-wd-desc-empty="1"]' ).length );
 		$( '#bm-count-actual-desc-empty' ).text( $allRows.filter( '[data-actual-desc-empty="1"]' ).length );
 		$( '#bm-count-manual-only' ).text(       $allRows.filter( '[data-desc-source="manual"]' ).length );
@@ -656,12 +657,13 @@
 	}
 
 	function bmDescApplyFilters() {
-		const filterWdId      = $( '#bm-filter-wd-id-empty' ).prop( 'checked' );
-		const filterWdDesc    = $( '#bm-filter-wd-desc-empty' ).prop( 'checked' );
-		const filterActDesc   = $( '#bm-filter-actual-desc-empty' ).prop( 'checked' );
-		const filterManual    = $( '#bm-filter-manual-only' ).prop( 'checked' );
-		const filterCompleted = $( '#bm-filter-completed' ).prop( 'checked' );
-		const anyCheckbox     = filterWdId || filterWdDesc || filterActDesc || filterManual || filterCompleted;
+		const filterWdId       = $( '#bm-filter-wd-id-empty' ).prop( 'checked' );
+		const filterWdIdFilled = $( '#bm-filter-wd-id-filled' ).prop( 'checked' );
+		const filterWdDesc     = $( '#bm-filter-wd-desc-empty' ).prop( 'checked' );
+		const filterActDesc    = $( '#bm-filter-actual-desc-empty' ).prop( 'checked' );
+		const filterManual     = $( '#bm-filter-manual-only' ).prop( 'checked' );
+		const filterCompleted  = $( '#bm-filter-completed' ).prop( 'checked' );
+		const anyCheckbox      = filterWdId || filterWdIdFilled || filterWdDesc || filterActDesc || filterManual || filterCompleted;
 		const hasTagFilter    = bmActiveTagFilter.length > 0;
 		const hasSearch       = bmActiveSearchQuery.length > 0;
 		const anyActive       = anyCheckbox || hasTagFilter || hasSearch;
@@ -674,11 +676,12 @@
 			} else {
 				let show = true;
 				if ( anyCheckbox ) {
-					if ( filterWdId      && $row.attr( 'data-wd-id-empty' )       !== '1' ) { show = false; }
-					if ( filterWdDesc    && $row.attr( 'data-wd-desc-empty' )     !== '1' ) { show = false; }
-					if ( filterActDesc   && $row.attr( 'data-actual-desc-empty' ) !== '1' ) { show = false; }
-					if ( filterManual    && $row.attr( 'data-desc-source' )       !== 'manual' ) { show = false; }
-					if ( filterCompleted && $row.attr( 'data-row-status' )        !== 'green' ) { show = false; }
+					if ( filterWdId       && $row.attr( 'data-wd-id-empty' )       !== '1' ) { show = false; }
+					if ( filterWdIdFilled && $row.attr( 'data-wd-id-empty' )       !== '0' ) { show = false; }
+					if ( filterWdDesc     && $row.attr( 'data-wd-desc-empty' )     !== '1' ) { show = false; }
+					if ( filterActDesc    && $row.attr( 'data-actual-desc-empty' ) !== '1' ) { show = false; }
+					if ( filterManual     && $row.attr( 'data-desc-source' )       !== 'manual' ) { show = false; }
+					if ( filterCompleted  && $row.attr( 'data-row-status' )        !== 'green' ) { show = false; }
 				}
 				if ( show && hasTagFilter ) {
 					const name = $row.attr( 'data-tag-name' ) || '';
@@ -698,7 +701,7 @@
 	$( document ).on( 'change', '.bm-desc-filter', bmDescApplyFilters );
 
 	$( document ).on( 'click', '#bm-desc-filter-reset', function () {
-		$( '#bm-filter-wd-id-empty, #bm-filter-wd-desc-empty, #bm-filter-actual-desc-empty, #bm-filter-manual-only, #bm-filter-completed' ).prop( 'checked', false );
+		$( '#bm-filter-wd-id-empty, #bm-filter-wd-id-filled, #bm-filter-wd-desc-empty, #bm-filter-actual-desc-empty, #bm-filter-manual-only, #bm-filter-completed' ).prop( 'checked', false );
 		bmDescApplyFilters();
 	} );
 

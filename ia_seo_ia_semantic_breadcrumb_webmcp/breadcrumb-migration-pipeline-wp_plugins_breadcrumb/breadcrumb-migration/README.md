@@ -406,6 +406,20 @@ Home > Tags > 17 octobre 1961      ← "Tags" links to /tags/ (WP page with slug
 
 ## Changelog
 
+### v1.35.0 — 2026-06-20
+- **UX**: **Bulk Description — bottom tablenav simplified** — action buttons (Save / Sync / Export) removed from bottom tablenav; pagination only, right-aligned; all actions remain in top tablenav alongside top pagination
+- `admin-page.php`: `bm-desc-actions-bar` div and hint text removed from bottom tablenav
+- `admin.css`: `.bm-desc-tablenav.bottom` now `justify-content: flex-end` (was column-stack)
+
+### v1.34.0 — 2026-06-20
+- **Feature**: **Bulk Description — server-side search** — new WP-native `<p class="search-box">` form at top of section submits `bm_desc_search` GET param; searches `original_name` and `proposed_slug` via `LIKE`; active search shows a "✕ Clear" link to reset; search scope is the full approved dataset, not just the current page
+- **Feature**: **Bulk Description — server-side pagination (20 per page)** — SQL now uses `COUNT` + `LIMIT/OFFSET`; new `bm_render_bulk_desc_pagination()` function renders WP-native tablenav pagination (item count, first/prev/page-input/next/last) at top and bottom of table; page-jump input (Enter key) works via existing `.bm-page-jump` JS handler
+- **Feature**: **Bulk Description — "Wikidata ID filled" filter** — new checkbox between "Wikidata ID empty" and "Wikidata description empty"; shows count of rows where `data-wd-id-empty="0"`; client-side JS filter, reset by "Show all" button; useful to quickly work the set that already has a QID but needs a description fetch
+- **UX**: **Bulk Description — WP-style tablenav layout** — action buttons (Save to WordPress / Sync from WordPress / Export CSV / Export JSON) moved into `tablenav top` and `tablenav bottom` divs alongside pagination; replaces old `bm-bulk-desc-actions-top/bottom` divs; client-side search box removed from filter bar (superseded by server-side search)
+- `admin-page.php`: `bm_render_tab_bulk_description()` reads `$_GET['bm_desc_search']` + `$_GET['paged']`; builds parameterised WHERE + COUNT + LIMIT/OFFSET query; empty state distinguishes "no approved tags at all" from "search returned 0 results"; new `bm_render_bulk_desc_pagination()` function added
+- `admin.js`: `bmDescApplyFilters()` gains `filterWdIdFilled` var and condition; `bmUpdateFilterCounts()` populates `#bm-count-wd-id-filled`; reset handler selector includes `#bm-filter-wd-id-filled`
+- `admin.css`: old `.bm-bulk-desc-actions-top/bottom` rules replaced with `.bm-desc-server-search`, `.bm-desc-tablenav`, `.bm-desc-actions-bar`; removed unused `.bm-desc-search-box` / `.bm-desc-name-search` rules
+
 ### v1.34.0 — 2026-06-19
 - **Data**: bulk tag-to-category assignment — ~1000 pending tags from `sample_pending_tag_1.txt` categorized into 20 WordPress categories defined in `sample_categories_1.txt` using AI knowledge; result written to `sample_tags_assigned_categories_1.txt`
 - Format: one `// Category Name` header per section, comma-separated `original_name` values per line; unknown/ambiguous tags assigned to `// Miscellaneous / Other`

@@ -1,0 +1,22 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+
+# item_ben_fundis.yaml
+
+label_en: "Ben Fundis"
+
+description_en: "American film editor and director known for Border Stories (2009), Paradise Is There (2015) and Mega Engineering (2009)"
+
+aliases_en:
+  - "Ben Fundis director"
+  - "Ben Fundis editor"
+  - "Benjamin Fundis"
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "film editing"
+  - label: "documentary film"
+  - label: "film direction"
+
+official_website: "https://www.newburyportmovies.com/"

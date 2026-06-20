@@ -1,5 +1,48 @@
+```text
+Bankslave
+
+Bankslave is a versatile visual and graffiti artist well known for using his art as a voice for social change. Born in Nairobi, Kenya, he has travelled the world making murals of all kinds. His major exhibitions have been held in Australia and Denmark.
+```
+
+
+
+
+
 
 ```text
+
+Ben Hollis
+
+Ben Hollis, a software developer in Seattle. I worked for 10 years as a software developer at 📦 Amazon.com, and another 7.5 years at 👻 Snap Inc. I co-founded and was CTO of ☁️ Stately Cloud, building a "No Regrets" database on top of DynamoDB. Stately got acquired by 🧱 Databricks, where I am now. I also currently lead development of the popular 🎮 Destiny Item Manager (DIM) app. I'm one of those "Full Stack Developers" you hear about.
+
+https://github.com/bhollis
+https://benhollis.net/
+
+
+Ben Fundis
+
+american editor and director. He is known for Border Stories (2009), Paradise Is There (2015) and Mega Engineering (2009).
+
+https://www.newburyportmovies.com/
+
+
+réalisateur et monteur américain. Il est connu pour Border Stories (2009), Paradise Is There (2015) et Mega Engineering (2009).
+
+
+
+
+Bankslave
+
+Bankslave is a versatile visual and graffiti artist well known for using his art as a voice for social change. Born in Nairobi, Kenya, he has travelled the world making murals of all kinds. His major exhibitions have been held in Australia and Denmark.
+
+
+
+- Antoine Lefébure
+Né en 1950, est un essayiste français, expert des technologies de la communication, créateur en 1974 de la revue Interférences, militant de la libéralisation de la bande FM dans les années 70 et à l'origine de la chaîne Canal+.
+
+
+Born in 1950, he is a French essayist, expert in communication technologies, creator in 1974 of the magazine Interférences, activist for the liberalization of the FM band in the 70s and the originator of the Canal+ channel.
+
 
 
 

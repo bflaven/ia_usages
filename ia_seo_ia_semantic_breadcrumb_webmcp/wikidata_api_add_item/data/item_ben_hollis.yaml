@@ -1,0 +1,24 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+
+# item_ben_hollis.yaml
+
+label_en: "Ben Hollis"
+
+description_en: "American full-stack software developer based in Seattle, co-founder and former CTO of Stately Cloud, lead developer of Destiny Item Manager, formerly at Amazon and Snap Inc"
+
+aliases_en:
+  - "Ben Hollis developer"
+  - "bhollis"
+  - "Ben Hollis Seattle"
+  - "Ben Hollis Databricks"
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "software development"
+  - label: "DynamoDB"
+  - label: "cloud computing"
+  - label: "full-stack development"
+
+official_website: "https://benhollis.net/"

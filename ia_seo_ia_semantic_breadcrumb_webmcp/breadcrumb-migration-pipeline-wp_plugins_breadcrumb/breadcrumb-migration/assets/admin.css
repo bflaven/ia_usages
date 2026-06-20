@@ -924,22 +924,47 @@
 	margin: 0 0 16px !important;
 }
 
-.bm-bulk-desc-actions-top,
-.bm-bulk-desc-actions-bottom {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	flex-wrap: wrap;
-	margin-bottom: 12px;
+/* ── Bulk Description — server-side search form ─────────────────────────────── */
+
+.bm-desc-server-search {
+	text-align: right;
+	margin: 0 0 8px;
 }
 
-.bm-bulk-desc-actions-bottom {
-	margin-top: 14px;
-	margin-bottom: 0;
-	padding: 12px 14px;
-	background: #f0f6fc;
-	border: 1px solid #c8dff0;
-	border-radius: 4px;
+.bm-desc-server-search .search-box {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.bm-desc-search-clear {
+	margin-left: 2px;
+}
+
+/* ── Bulk Description — tablenav ─────────────────────────────────────────────── */
+
+.bm-desc-tablenav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 8px;
+	padding: 8px 0;
+	border-top: 1px solid #c3c4c7;
+}
+
+.bm-desc-tablenav.bottom {
+	justify-content: flex-end;
+	border-top: 1px solid #c3c4c7;
+	border-bottom: none;
+	margin-top: 4px;
+}
+
+.bm-desc-actions-bar {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 6px;
 }
 
 .bm-bulk-actions-hint {
@@ -1053,25 +1078,6 @@
 	color: #1d2327;
 }
 
-/* ── Bulk Description — WP-style search box inside filters ─────────────────── */
-
-.bm-desc-search-box {
-	display: inline-flex;
-	align-items: center;
-	gap: 4px;
-	margin: 0;
-	flex-shrink: 0;
-}
-
-.bm-desc-name-search {
-	height: 26px;
-	padding: 0 8px;
-	border: 1px solid #8c8f94;
-	border-radius: 3px;
-	font-size: 12px;
-	min-width: 160px;
-	box-sizing: border-box;
-}
 
 /* ── Bulk Description — tag filter textarea ────────────────────────────────── */
 
