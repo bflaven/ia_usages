@@ -1,7 +1,7 @@
 
 ```text
 # breadcrumb-migration 
-# paged=115 21/06/26
+# paged=113 21/06/26
 
 artificial intelligence (Q11660)
 URL shortener (Q62694393)
@@ -17,6 +17,8 @@ agile software development (Q30232)
 audience measurement (Q847520)
 data journalism (Q5227309)
 web design (Q190637)
+Laravel (Q13634357)
+JavaScript (Q2005)
 
 ```
 
