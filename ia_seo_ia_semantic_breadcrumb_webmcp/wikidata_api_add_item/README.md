@@ -9,6 +9,7 @@ Item definition lives in `data/*.yaml` — edit that file to change what gets cr
 ### 002_wikidata_api_add_item.py (v2 — claims work in sandbox too)
 
 ```bash
+
 # SANDBOX (safe, use this first)
 # create the item (label + description + aliases only)
 python 002_wikidata_api_add_item.py --item data/item_3WDOC.yaml --sandbox --no-claims
@@ -20,6 +21,12 @@ python 002_wikidata_api_add_item.py --item data/item_Zeplin.yaml --sandbox
 python 002_wikidata_api_add_item.py --item data/item_ben_fundis.yaml --sandbox
 
 python 002_wikidata_api_add_item.py --item data/item_ben_hollis.yaml --sandbox
+
+python 002_wikidata_api_add_item.py --item data/item_Youphil.yaml --sandbox
+
+python 002_wikidata_api_add_item.py --item data/item_trevor_tweeten.yaml --sandbox
+
+python 002_wikidata_api_add_item.py --item data/item_token_ai.yaml --sandbox
 
 
 # PRODUCTION
@@ -36,6 +43,12 @@ python 002_wikidata_api_add_item.py --item data/item_ben_fundis.yaml
 
 python 002_wikidata_api_add_item.py --item data/item_ben_hollis.yaml
 
+
+python 002_wikidata_api_add_item.py --item data/item_Youphil.yaml
+
+python 002_wikidata_api_add_item.py --item data/item_trevor_tweeten.yaml
+
+python 002_wikidata_api_add_item.py --item data/item_token_ai.yaml
 
 ```
 

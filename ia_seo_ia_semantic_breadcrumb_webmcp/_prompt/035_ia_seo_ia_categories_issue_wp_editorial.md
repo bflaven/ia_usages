@@ -1,3 +1,59 @@
+
+```text
+# breadcrumb-migration 
+# paged=115 21/06/26
+
+artificial intelligence (Q11660)
+URL shortener (Q62694393)
+Vue.js (Q24589705)
+HTML5 (Q2053)
+You Only Look Once (Q97732222)
+3WDOC (Q140278441)
+WordPress (Q13166)
+tutorial (Q535741)
+web documentary (Q3566966)
+branded content (Q2040409)
+agile software development (Q30232)
+audience measurement (Q847520)
+data journalism (Q5227309)
+web design (Q190637)
+
+```
+
+
+
+```text
+Token (artificial intelligence)
+
+In the field of artificial intelligence and natural language processing (NLP), a token is the smallest indivisible textual and conceptual unit isolated by a "segmentation algorithm" (or tokenizer) to transform raw text (or an image, a recording, a sound creation, or other complex elements) into simple numerical data usable by a computational model.
+
+In the architecture of large language models (LLMs) in AI, a token does not always correspond to a single or entire word: it can be an entire word, a single character, a word fragment (subword), or a punctuation mark.
+
+```
+
+
+```text
+Trevor Tweeten (b. 1983, USA) is a Los Angeles-based artist and cinematographer working at the crossroads between film, sculpture and installation.
+
+
+https://trevortweeten.com/
+```
+
+
+```text
+
+Youphil
+
+
+In 2009, Youphil.com was the first media outlet to choose to cover current events from the perspective of social innovation and to decipher the cross-fertilization of organizations of all types working to address environmental, social and societal challenges.
+
+https://www.youphil.com/
+```
+
+
+
+
+
 ## PROMPT_3
 At the bottom, just keep the pagination on the right. Remove the button actions. So, button actions will be only top with also pagination.  
 

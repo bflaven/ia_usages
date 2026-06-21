@@ -1,0 +1,24 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+
+# item_trevor_tweeten.yaml
+
+label_en: "Trevor Tweeten"
+
+description_en: "American artist and cinematographer born in 1983, based in Los Angeles, working across film, sculpture and installation art"
+
+aliases_en:
+  - "Trevor Tweeten artist"
+  - "Trevor Tweeten cinematographer"
+  - "Trevor Tweeten LA"
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "cinematography"
+  - label: "sculpture"
+  - label: "installation art"
+  - label: "film"
+
+official_website: "https://trevortweeten.com/"
+

@@ -1,0 +1,30 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+
+# item_token_ai.yaml
+
+label_en: "Token (artificial intelligence)"
+
+description_en: "smallest indivisible unit of text or data produced by a tokenizer to transform raw input into numerical data usable by a machine learning or large language model"
+
+aliases_en:
+  - "AI token"
+  - "NLP token"
+  - "language model token"
+  - "token (NLP)"
+  - "token (machine learning)"
+  - "subword token"
+  - "tokenization unit"
+
+subclass_of:
+  - label: "natural language processing"
+  - label: "unit of information"
+  - label: "machine learning concept"
+
+uses:
+  - label: "tokenization"
+  - label: "natural language processing"
+  - label: "large language model"
+  - label: "transformer"
+  - label: "subword segmentation"
+
+official_website: ""

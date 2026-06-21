@@ -1,0 +1,24 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_youphil.yaml
+
+label_en: "Youphil"
+
+description_en: "French online media outlet founded in 2009 specializing in coverage of social innovation, environmental and societal challenges through cross-sector organizational perspectives"
+
+aliases_en:
+  - "Youphil.com"
+  - "Youphil media"
+  - "Youphil social innovation"
+  - "Youphil magazine"
+
+subclass_of:
+  - label: "online newspaper"
+  - label: "digital media"
+  - label: "independent media"
+
+uses:
+  - label: "social innovation"
+  - label: "web publishing"
+  - label: "journalism"
+
+official_website: "https://www.youphil.com/"
