@@ -1,0 +1,23 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_sandra_gaudenzi.yaml
+
+label_en: "Sandra Gaudenzi"
+
+description_en: "British academic and researcher specialising in interactive and immersive documentary practice, consultant, mentor and lecturer with twenty years of international experience"
+
+aliases_en:
+  - "Dr Sandra Gaudenzi"
+  - "Sandra Gaudenzi researcher"
+  - "Sandra Gaudenzi documentary"
+  - "Sandra Gaudenzi UCL"
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "interactive documentary"
+  - label: "immersive media"
+  - label: "documentary film"
+  - label: "digital storytelling"
+
+official_website: "https://profiles.ucl.ac.uk/90291-sandra-gaudenzi"

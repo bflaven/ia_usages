@@ -1,0 +1,23 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_romain_meffre.yaml
+
+label_en: "Romain Meffre"
+
+description_en: "French photographer born in 1987 in Châtenay-Malabry, member of the Marchand Meffre duo, specialising in large-format chamber photography of modern ruins and urban decay"
+
+aliases_en:
+  - "Romain Meffre photographer"
+  - "Marchand Meffre"
+  - "Romain Meffre ruins"
+  - "Romain Meffre Paris"
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "photography"
+  - label: "large-format photography"
+  - label: "documentary photography"
+  - label: "urban exploration"
+
+official_website: "https://www.marchandmeffre.com/"

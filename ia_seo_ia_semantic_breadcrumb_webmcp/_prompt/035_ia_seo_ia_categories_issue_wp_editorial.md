@@ -1,48 +1,67 @@
 
 ```text
 # breadcrumb-migration 
-# paged=106 22/06/26
+# paged=99 22/06/26
 
-e-commerce (Q484847)
-Sócrates (Q102331)
-artificial intelligence (Q11660)
-URL shortener (Q62694393)
-Vue.js (Q24589705)
-HTML5 (Q2053)
-You Only Look Once (Q97732222)
 3WDOC (Q140278441)
-WordPress (Q13166)
-tutorial (Q535741)
-web documentary (Q3566966)
-branded content (Q2040409)
-agile software development (Q30232)
-audience measurement (Q847520)
-data journalism (Q5227309)
-web design (Q190637)
-Laravel (Q13634357)
-JavaScript (Q2005)
-Al Sweigart (Q125994279)
-mobile phone (Q17517)
-Drupal (Q170855)
-SVG (Q2078)
-Apache Subversion (Q46794)
-Swagger (Q39069667)
 Adobe Flex Builder 3 (Q116875452)
+agile software development (Q30232)
+Al Sweigart (Q125994279)
+Apache Subversion (Q46794)
+Arthur Schopenhauer (Q38193)
+artificial intelligence (Q11660)
+audience measurement (Q847520)
+branded content (Q2040409)
+British Broadcasting Corporation (Q9531)
+D3.js (Q3011087)
+data journalism (Q5227309)
+Drupal (Q170855)
+e-commerce (Q484847)
 exploratory data analysis (Q1322871)
 Google Chrome extension (Q5583816)
-unstable version (Q21727724)
-Stop Starting, Start Finishing (Q140311353)
-Sourcetree (Q23920987)
-social marketing (Q17081927)
-website wireframe (Q3045202)
+HTML5 (Q2053)
+JavaScript (Q2005)
+Jean-Michel Basquiat (Q155407)
+jQuery (Q230036)
+Laravel (Q13634357)
+mobile phone (Q17517)
+MS-13 (Q127784)
+Radio France Internationale (Q19912)
+rich web application (Q725485)
+robots.txt (Q80776)
+Romain Meffre (Q140311905)
+Samuel Bollendorff (Q99480763)
+sandbox (Q2667186)
+Sarah Leduc (Q140311870)
+search engine optimization (Q180711)
+security (Q2526135)
+Sébastien Brothier (Q129564087)
+Selenium (Q752522)
+Silex (Q22661313)
+Silverstripe CMS (Q653262)
 Skitch (Q126084570)
 Skype (Q40984)
 SlideRocket (Q17081402)
 Slim (Q140311715)
-Silex (Q22661313)
-Silverstripe CMS (Q653262)
-British Broadcasting Corporation (Q9531)
-jQuery (Q230036)
+social marketing (Q17081927)
+Sócrates (Q102331)
+Sourcetree (Q23920987)
+Stop Starting, Start Finishing (Q140311353)
+SVG (Q2078)
+Swagger (Q39069667)
+tutorial (Q535741)
+unstable version (Q21727724)
+URL shortener (Q62694393)
+Vue.js (Q24589705)
+web design (Q190637)
+web documentary (Q3566966)
+website wireframe (Q3045202)
+WordPress (Q13166)
+Yves Marchand (Q140311924)
+You Only Look Once (Q97732222)
+
+
+
 
 
 ```
@@ -51,6 +70,77 @@ jQuery (Q230036)
 
 
 ```text
+
+Romain Meffre
+
+Photographer from the Marchand Meffre collective.
+
+French photographer born in 1987 in Châtenay-Malabry, member of the Marchand Meffre duo, specialising in large-format chamber photography of modern ruins and urban decay
+
+Yves Marchand
+
+Photographer from the Marchand Meffre collective.
+
+French photographer born in 1981 in Orsay, member of the Marchand Meffre duo, specialising in large-format chamber photography of modern ruins and urban decay
+https://www.marchandmeffre.com/
+
+
+
+
+
+Yves Marchand, né le 5 janvier 1981 à Orsay dans l'Essonne et Romain Meffre, né le 9 mars 1987 à Châtenay-Malabry dans les Hauts-de-Seine, sont un duo de photographes français travaillant principalement à la chambre photographique sur le thème des ruines modernes. Ils vivent et travaillent à Paris.
+
+
+
+RSE (responsabilité sociétale des entreprises)
+corporate social responsibility
+corporate social responsibility (Q218600)
+
+
+```
+
+```text
+Sarah Leduc 
+Sarah Leduc | sarah leduc 
+
+Born in 1981 in Paris, I am a freelance journalist and photographer living between Franceand Spain. I graduated from the EHESS in anthropology and then trained in journalism in London. 
+
+https://hanslucas.com/sleduc/photo
+```
+
+
+```text
+
+Sandra Gaudenzi
+
+Sandra Gaudenzi | sandra gaudenzi
+
+Dr Sandra Gaudenzi is an internationally acknowledged authority in the field of interactive and immersive documentary practice. She has been consulting, mentoring, researching, lecturing, writing and speaking at international events for the last twenty years.
+
+https://profiles.ucl.ac.uk/90291-sandra-gaudenzi
+
+
+```text
+Creative Director @ Upian
+Upian
+Sébastien Brothier | sébastien brothier | sebastien brothier | Sebastien Brothier
+```
+
+
+
+
+```text
+
+
+
+Semantic Clustering
+
+Semantic Clustering | semantic clustering
+
+
+Semantic clustering is the process of grouping data points based on their meanings or contexts rather than just categorical identifiers. This method enhances the understanding of unstructured data, allowing for more nuanced insights and better decision-making.
+
+
 
 Slim
 Slim | slim

@@ -1,0 +1,23 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_sarah_leduc.yaml
+
+label_en: "Sarah Leduc"
+
+description_en: "French freelance journalist and photographer born in 1981 in Paris, trained in anthropology at EHESS and journalism in London, based between France and Spain"
+
+aliases_en:
+  - "Sarah Leduc journalist"
+  - "Sarah Leduc photographer"
+  - "sleduc"
+  - "Sarah Leduc EHESS"
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "photojournalism"
+  - label: "journalism"
+  - label: "photography"
+  - label: "anthropology"
+
+official_website: "https://hanslucas.com/sleduc/photo"

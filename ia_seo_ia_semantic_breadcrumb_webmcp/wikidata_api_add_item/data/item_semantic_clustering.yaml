@@ -1,0 +1,28 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_semantic_clustering.yaml
+
+label_en: "semantic clustering"
+
+description_en: "natural language processing method for grouping data points by semantic meaning and contextual similarity rather than categorical identifiers, enabling nuanced analysis of unstructured text data"
+
+aliases_en:
+  - "Semantic Clustering"
+  - "semantic text clustering"
+  - "meaning-based clustering"
+  - "contextual clustering"
+  - "NLP clustering"
+
+subclass_of:
+  - label: "cluster analysis"
+  - label: "natural language processing"
+  - label: "unsupervised learning"
+
+uses:
+  - label: "natural language processing"
+  - label: "word embedding"
+  - label: "sentence embedding"
+  - label: "cosine similarity"
+  - label: "machine learning"
+  - label: "vector space model"
+
+official_website: ""

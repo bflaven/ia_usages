@@ -1,0 +1,23 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_yves_marchand.yaml
+
+label_en: "Yves Marchand"
+
+description_en: "French photographer born in 1981 in Orsay, member of the Marchand Meffre duo, specialising in large-format chamber photography of modern ruins and urban decay"
+
+aliases_en:
+  - "Yves Marchand photographer"
+  - "Marchand Meffre"
+  - "Yves Marchand ruins"
+  - "Yves Marchand Paris"
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "photography"
+  - label: "large-format photography"
+  - label: "documentary photography"
+  - label: "urban exploration"
+
+official_website: "https://www.marchandmeffre.com/"
