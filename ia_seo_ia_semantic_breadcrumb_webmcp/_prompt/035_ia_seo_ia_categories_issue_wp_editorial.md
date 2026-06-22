@@ -1,7 +1,7 @@
 
 ```text
 # breadcrumb-migration 
-# paged=90 22/06/26
+# paged=85 22/06/26
 
 Apache Subversion (Q46794)
 reveal.js (Q94995149)
@@ -19,6 +19,19 @@ Poedit (Q1422754)
 poetry (Q70481196)
 computer font (Q1147633)
 portrait photography (Q182956)
+VirtualBox (Q11393)
+Wii (Q8079)
+Nokia (Q1418)
+Pillow (Q105891242)
+sea piracy (Q45393)
+philosophy (Q5891)
+photojournalist (Q957729)
+Web performance optimization (Q7978612)
+Periscope (Q19687076)
+Pac-Man (Q173626)
+Facebook (Q355)
+PAL (Q105973)
+Google AdSense (Q183480)
 
 
 

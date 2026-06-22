@@ -1,0 +1,182 @@
+[
+  {
+    "tag_name": "nfb",
+    "proposed_slug": "nfb",
+    "wp_term_id": "1376",
+    "wikidata_id": "Q1530721",
+    "wikidata_description": "Canada's public film and digital media producer and distributor",
+    "actual_description": "Canada's public film and digital media producer and distributor",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "NFT",
+    "proposed_slug": "nft",
+    "wp_term_id": "2876",
+    "wikidata_id": "Q55648452",
+    "wikidata_description": "unique digital asset recorded on a blockchain that cannot be replicated or exchanged on a like-for-like basis",
+    "actual_description": "unique digital asset recorded on a blockchain that cannot be replicated or exchanged on a like-for-like basis",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "nginx",
+    "proposed_slug": "nginx",
+    "wp_term_id": "588",
+    "wikidata_id": "Q306144",
+    "wikidata_description": "open source web server and a reverse proxy server",
+    "actual_description": "open source web server and a reverse proxy server",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "Nicéphore",
+    "proposed_slug": "nicephore",
+    "wp_term_id": "1723",
+    "wikidata_id": "Q60589584",
+    "wikidata_description": "male given name",
+    "actual_description": "",
+    "desc_source": "empty"
+  },
+  {
+    "tag_name": "nicola saint-cyr",
+    "proposed_slug": "nicola-saint-cyr",
+    "wp_term_id": "1377",
+    "wikidata_id": "",
+    "wikidata_description": "",
+    "actual_description": "",
+    "desc_source": "empty"
+  },
+  {
+    "tag_name": "Nicola Sessa",
+    "proposed_slug": "nicola-sessa",
+    "wp_term_id": "839",
+    "wikidata_id": "",
+    "wikidata_description": "",
+    "actual_description": "",
+    "desc_source": "empty"
+  },
+  {
+    "tag_name": "Nicolae Ceaușescu",
+    "proposed_slug": "nicolae-ceausescu",
+    "wp_term_id": "1861",
+    "wikidata_id": "Q80504",
+    "wikidata_description": "dictator of Romania from 1965 to 1989",
+    "actual_description": "dictator of Romania from 1965 to 1989",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "Nicolas Bouvier",
+    "proposed_slug": "nicolas-bouvier",
+    "wp_term_id": "1032",
+    "wikidata_id": "Q123518",
+    "wikidata_description": "Swiss writer, artist and traveller (1929–1998)",
+    "actual_description": "Swiss writer, artist and traveller (1929–1998)",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "nicolas sauret",
+    "proposed_slug": "nicolas-sauret",
+    "wp_term_id": "1378",
+    "wikidata_id": "Q122829896",
+    "wikidata_description": "",
+    "actual_description": "",
+    "desc_source": "empty"
+  },
+  {
+    "tag_name": "Niger",
+    "proposed_slug": "niger",
+    "wp_term_id": "1183",
+    "wikidata_id": "Q503932",
+    "wikidata_description": "state in Nigeria",
+    "actual_description": "state in Nigeria",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "Nigeria",
+    "proposed_slug": "nigeria",
+    "wp_term_id": "1184",
+    "wikidata_id": "Q1033",
+    "wikidata_description": "sovereign state in West Africa",
+    "actual_description": "sovereign state in West Africa",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "Nike",
+    "proposed_slug": "nike",
+    "wp_term_id": "1022",
+    "wikidata_id": "Q483915",
+    "wikidata_description": "American athletic equipment company",
+    "actual_description": "American athletic equipment company",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "Nikita Khrouchtchev",
+    "proposed_slug": "nikita-khrouchtchev",
+    "wp_term_id": "1760",
+    "wikidata_id": "Q35314",
+    "wikidata_description": "leader of the Soviet Union from 1953 to 1964",
+    "actual_description": "leader of the Soviet Union from 1953 to 1964",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "Nitendo Wii",
+    "proposed_slug": "nitendo-wii",
+    "wp_term_id": "260",
+    "wikidata_id": "",
+    "wikidata_description": "",
+    "actual_description": "",
+    "desc_source": "empty"
+  },
+  {
+    "tag_name": "NLP",
+    "proposed_slug": "nlp",
+    "wp_term_id": "2808",
+    "wikidata_id": "Q30642",
+    "wikidata_description": "field of computer science and linguistics",
+    "actual_description": "field of computer science and linguistics",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "NLP (Natural Language Processing)",
+    "proposed_slug": "nlp-natural-language-processing",
+    "wp_term_id": "3109",
+    "wikidata_id": "Q30642",
+    "wikidata_description": "field of computer science and linguistics",
+    "actual_description": "field of computer science and linguistics",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "nltk",
+    "proposed_slug": "nltk",
+    "wp_term_id": "2567",
+    "wikidata_id": "Q1635410",
+    "wikidata_description": "suite for natural language processing (NLP)",
+    "actual_description": "suite for natural language processing (NLP)",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "Node",
+    "proposed_slug": "node",
+    "wp_term_id": "571",
+    "wikidata_id": "Q756100",
+    "wikidata_description": "JavaScript runtime environment",
+    "actual_description": "JavaScript runtime environment",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "Noël Quidu",
+    "proposed_slug": "noel-quidu",
+    "wp_term_id": "1719",
+    "wikidata_id": "Q105098955",
+    "wikidata_description": "French photojournalist",
+    "actual_description": "French photojournalist",
+    "desc_source": "wikidata"
+  },
+  {
+    "tag_name": "nokia",
+    "proposed_slug": "nokia",
+    "wp_term_id": "492",
+    "wikidata_id": "Q192870",
+    "wikidata_description": "town in the region of Pirkanmaa in Finland",
+    "actual_description": "",
+    "desc_source": "empty"
+  }
+]
