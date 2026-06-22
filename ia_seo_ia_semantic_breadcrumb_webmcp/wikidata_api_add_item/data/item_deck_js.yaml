@@ -1,0 +1,28 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+
+# item_deck_js.yaml
+
+label_en: "deck.js"
+
+description_en: "open-source JavaScript library for building modern HTML-based slide presentations, offering both customisable CSS and JavaScript authoring and ready-made templates for novice users"
+
+aliases_en:
+  - "deck js"
+  - "deckjs"
+  - "deck.js library"
+  - "deck.js presentations"
+  - "HTML presentation deck.js"
+
+subclass_of:
+  - label: "JavaScript library"
+  - label: "presentation software"
+  - label: "free and open-source software"
+
+uses:
+  - label: "JavaScript"
+  - label: "HTML5"
+  - label: "CSS"
+  - label: "jQuery"
+  - label: "web presentation"
+
+official_website: "https://github.com/imakewebthings/deck.js/"

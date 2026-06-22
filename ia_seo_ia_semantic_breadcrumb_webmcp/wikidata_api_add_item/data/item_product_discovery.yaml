@@ -1,0 +1,28 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_product_discovery.yaml
+
+label_en: "product discovery"
+
+description_en: "product management process of understanding customer needs and business context to define and validate the right product features before development begins"
+
+aliases_en:
+  - "Product Discovery"
+  - "product discovery process"
+  - "product discovery phase"
+  - "customer discovery"
+  - "product definition phase"
+
+subclass_of:
+  - label: "product management"
+  - label: "design thinking"
+  - label: "agile software development"
+
+uses:
+  - label: "user research"
+  - label: "customer interview"
+  - label: "product management"
+  - label: "agile software development"
+  - label: "design thinking"
+  - label: "prototyping"
+
+official_website: ""

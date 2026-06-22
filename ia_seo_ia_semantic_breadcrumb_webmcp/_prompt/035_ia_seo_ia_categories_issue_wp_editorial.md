@@ -1,7 +1,7 @@
 
 ```text
 # breadcrumb-migration 
-# paged=93 22/06/26
+# paged=90 22/06/26
 
 Apache Subversion (Q46794)
 reveal.js (Q94995149)
@@ -10,6 +10,15 @@ pirate radio (Q877017)
 non-fungible token (Q55648452)
 Python (Q28865)
 .htaccess (Q159900)
+Cuban Missile Crisis (Q128160)
+Postman (Q105538901)
+Microsoft PowerPoint (Q11266)
+deck.js (Q140313352)
+sketch (Q5078274)
+Poedit (Q1422754)
+poetry (Q70481196)
+computer font (Q1147633)
+portrait photography (Q182956)
 
 
 
@@ -80,6 +89,19 @@ You Only Look Once (Q97732222)
 
 
 ```text
+deck.js
+
+A JavaScript library for building modern HTML presentations. deck.js is flexible enough to let advanced CSS and JavaScript authors craft highly customized decks, but also provides templates and themes for the HTML novice to build a standard slideshow.
+
+https://github.com/imakewebthings/deck.js/
+
+Product Discovery
+
+product discovery is the process of understanding customers' needs and business context and using that knowledge to build a product. It helps product teams decide the features of a product and helps ensure the right product gets built for the right customer.
+
+
+
+
 RAKE
 
 
