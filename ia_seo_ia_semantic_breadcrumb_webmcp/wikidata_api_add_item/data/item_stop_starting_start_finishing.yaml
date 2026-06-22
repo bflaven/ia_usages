@@ -1,0 +1,28 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_stop_starting_start_finishing.yaml
+
+label_en: "Stop Starting, Start Finishing"
+
+description_en: "foundational agile and kanban principle derived from lean manufacturing advocating reduction of work in progress by completing existing tasks before starting new ones"
+
+aliases_en:
+  - "Stop Starting Start Finishing"
+  - "Stop Starting Start Stopping"
+  - "WIP limit principle"
+  - "Kanban WIP principle"
+  - "start finishing stop starting"
+
+subclass_of:
+  - label: "agile software development principle"
+  - label: "lean manufacturing principle"
+  - label: "Kanban principle"
+
+uses:
+  - label: "Kanban"
+  - label: "lean manufacturing"
+  - label: "agile software development"
+  - label: "work in progress"
+  - label: "Toyota Production System"
+
+official_website: "https://www.scrum.org/"
+

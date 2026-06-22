@@ -28,6 +28,13 @@ python 002_wikidata_api_add_item.py --item data/item_trevor_tweeten.yaml --sandb
 
 python 002_wikidata_api_add_item.py --item data/item_token_ai.yaml --sandbox
 
+python 002_wikidata_api_add_item.py --item data/item_stop_starting_start_finishing.yaml --sandbox
+
+python 002_wikidata_api_add_item.py --item data/item_hans_lucas.yaml --sandbox
+
+python 002_wikidata_api_add_item.py --item data/item_stephane_distinguin.yaml --sandbox
+
+python 002_wikidata_api_add_item.py --item data/item_slim_framework.yaml --sandbox
 
 # PRODUCTION
 # dry-run — print payload, no write
@@ -50,6 +57,14 @@ python 002_wikidata_api_add_item.py --item data/item_trevor_tweeten.yaml
 
 python 002_wikidata_api_add_item.py --item data/item_token_ai.yaml
 
+python 002_wikidata_api_add_item.py --item data/item_stop_starting_start_finishing.yaml 
+
+python 002_wikidata_api_add_item.py --item data/item_hans_lucas.yaml
+
+python 002_wikidata_api_add_item.py --item data/item_stephane_distinguin.yaml
+
+python 002_wikidata_api_add_item.py --item data/item_slim_framework.yaml
+
 ```
 
 ### 001_wikidata_api_add_item.py (v1 — claims always skipped in sandbox)
@@ -71,6 +86,10 @@ python 001_wikidata_api_add_item.py --item data/item_Zeplin.yaml --dry-run
 python 001_wikidata_api_add_item.py --item data/item_3WDOC.yaml
 
 python 001_wikidata_api_add_item.py --item data/item_Zeplin.yaml
+
+python 002_wikidata_api_add_item.py --item data/item_stop_starting_start_finishing.yaml
+
+
 ```
 
 

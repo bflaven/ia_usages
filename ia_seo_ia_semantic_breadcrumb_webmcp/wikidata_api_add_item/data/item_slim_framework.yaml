@@ -1,0 +1,28 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_slim_framework.yaml
+
+label_en: "Slim"
+
+description_en: "open-source PHP micro framework for quickly building simple and powerful web applications and APIs with a minimal footprint"
+
+aliases_en:
+  - "Slim Framework"
+  - "Slim PHP"
+  - "Slim micro framework"
+  - "SlimPHP"
+  - "Slim PHP framework"
+
+subclass_of:
+  - label: "web framework"
+  - label: "software framework"
+  - label: "free and open-source software"
+
+uses:
+  - label: "PHP"
+  - label: "REST API"
+  - label: "middleware"
+  - label: "HTTP"
+  - label: "Composer"
+
+official_website: "https://www.slimframework.com/"
+

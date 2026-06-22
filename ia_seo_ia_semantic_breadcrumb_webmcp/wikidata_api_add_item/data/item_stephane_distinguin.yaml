@@ -1,0 +1,21 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_stephane_distinguin.yaml
+
+label_en: "Stéphane Distinguin"
+
+description_en: "French entrepreneur, founder and president of Fabernovel, an international company specializing in the creation of digital products and services"
+
+aliases_en:
+  - "Stephane Distinguin"
+  - "Stéphane Distinguin Fabernovel"
+  - "Distinguin Stéphane"
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "digital transformation"
+  - label: "product design"
+  - label: "innovation consulting"
+
+official_website: ""

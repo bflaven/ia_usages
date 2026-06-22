@@ -1,0 +1,25 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_hans_lucas.yaml
+
+label_en: "Hans Lucas"
+
+description_en: "French hybrid photo agency and collaborative platform for independent photographers, operating internationally and offering a wide range of photographic services"
+
+aliases_en:
+  - "Hans Lucas photo"
+  - "Hans Lucas agency"
+  - "Hans Lucas photography"
+  - "hanslucas.com"
+
+subclass_of:
+  - label: "photo agency"
+  - label: "online platform"
+  - label: "collaborative platform"
+
+uses:
+  - label: "photography"
+  - label: "digital publishing"
+  - label: "web platform"
+
+official_website: "https://hanslucas.com/"
+

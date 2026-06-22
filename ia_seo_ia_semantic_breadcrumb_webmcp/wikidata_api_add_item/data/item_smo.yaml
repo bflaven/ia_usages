@@ -1,0 +1,25 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_social_media_optimization.yaml
+
+label_en: "social media optimization"
+
+description_en: "set of methods for attracting visitors to website content by promoting it through social media channels"
+
+aliases_en:
+  - "SMO"
+  - "social media optimisation"
+  - "social media promotion"
+  - "SMO marketing"
+
+subclass_of:
+  - label: "digital marketing"
+  - label: "search engine optimization"
+  - label: "web marketing"
+
+uses:
+  - label: "social media"
+  - label: "content marketing"
+  - label: "search engine optimization"
+  - label: "web analytics"
+
+official_website: ""

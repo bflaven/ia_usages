@@ -1,8 +1,10 @@
 
 ```text
 # breadcrumb-migration 
-# paged=113 21/06/26
+# paged=106 22/06/26
 
+e-commerce (Q484847)
+Sócrates (Q102331)
 artificial intelligence (Q11660)
 URL shortener (Q62694393)
 Vue.js (Q24589705)
@@ -19,8 +21,112 @@ data journalism (Q5227309)
 web design (Q190637)
 Laravel (Q13634357)
 JavaScript (Q2005)
+Al Sweigart (Q125994279)
+mobile phone (Q17517)
+Drupal (Q170855)
+SVG (Q2078)
+Apache Subversion (Q46794)
+Swagger (Q39069667)
+Adobe Flex Builder 3 (Q116875452)
+exploratory data analysis (Q1322871)
+Google Chrome extension (Q5583816)
+unstable version (Q21727724)
+Stop Starting, Start Finishing (Q140311353)
+Sourcetree (Q23920987)
+social marketing (Q17081927)
+website wireframe (Q3045202)
+Skitch (Q126084570)
+Skype (Q40984)
+SlideRocket (Q17081402)
+Slim (Q140311715)
+Silex (Q22661313)
+Silverstripe CMS (Q653262)
+British Broadcasting Corporation (Q9531)
+jQuery (Q230036)
+
 
 ```
+
+
+
+
+```text
+
+Slim
+Slim | slim
+
+Slim is a PHP micro framework that helps you quickly write simple yet powerful web applications and APIs.
+
+https://www.slimframework.com/
+
+
+
+
+social media optimization (Q1071262)
+
+SMO | smo
+set of methods for attracting visitors to website content by promoting it through social media channels
+
+
+L’optimisation pour les médias sociaux ou référencement social (social media optimization en anglais, ou SMO) est un ensemble de méthodes pour attirer des visiteurs sur des contenus de site web grâce à la promotion de ceux-ci via les médias sociaux.
+
+
+
+Stéphane Distinguin (Q33210444)
+stephane distinguin
+stéphane distinguin
+
+founder and president of Fabernovel, which has now become an international company specializing in the creation of digital products and services.
+
+
+fondateur et président de Fabernovel, aujourd’hui devenue internationale et spécialisée dans la création de produits et de services numériques. 
+
+
+
+
+
+Stefano Strocchi (Q56611640)
+stefano strocchi
+
+italian independent documentary producer and author from Italy based in Berlin, Germany where he heads Unknown Media Gmbh, production company focusing on high end documentary series.
+```
+
+```text
+Hans Lucas (photo)
+
+Hans Lucas: A photo agency and collaborative platform serving photography
+
+Hans Lucas has established itself in the photographic landscape as a hybrid and innovative organization, operating both as an international photo agency and a collaborative platform for independent photographers. Offering a wide range of services and an inclusive vision of photography, Hans Lucas has positioned itself as a key player.
+
+https://hanslucas.com/
+```
+
+
+
+```text
+
+Stop Starting, Start Stopping (Agile)
+
+The phrase “stop starting, start finishing” is deceptively simple. It is the foundational principle behind Kanban’s Work in Progress (WIP) limits, rooted in Toyota’s Lean manufacturing philosophy and validated across decades of software development practice.
+
+```
+
+
+
+
+```text
+
+Steve Souders
+steve souders
+
+works at Google on web performance and open source initiatives, creator of YSlow, the performance analysis extension to Firebug with more than 1 million downloads.
+
+travaille chez Google sur les performances web et les initiatives open source, et est le créateur de YSlow, l'extension d'analyse de performance pour Firebug qui compte plus d'un million de téléchargements.
+```
+
+
+
+
 
 
 
