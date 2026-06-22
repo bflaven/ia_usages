@@ -1,12 +1,16 @@
 
 ```text
 # breadcrumb-migration 
-# paged=99 22/06/26
+# paged=93 22/06/26
 
 Apache Subversion (Q46794)
 reveal.js (Q94995149)
 prompt engineering (Q108941486)
 pirate radio (Q877017)
+non-fungible token (Q55648452)
+Python (Q28865)
+.htaccess (Q159900)
+
 
 
 3WDOC (Q140278441)
