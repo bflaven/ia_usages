@@ -36,6 +36,9 @@ python 002_wikidata_api_add_item.py --item data/item_stephane_distinguin.yaml --
 
 python 002_wikidata_api_add_item.py --item data/item_slim_framework.yaml --sandbox
 
+python 002_wikidata_api_add_item.py --item data/item_RAKE.yaml --sandbox
+
+
 # PRODUCTION
 # dry-run — print payload, no write
 python 002_wikidata_api_add_item.py --item data/item_Zeplin.yaml --dry-run
@@ -64,6 +67,9 @@ python 002_wikidata_api_add_item.py --item data/item_hans_lucas.yaml
 python 002_wikidata_api_add_item.py --item data/item_stephane_distinguin.yaml
 
 python 002_wikidata_api_add_item.py --item data/item_slim_framework.yaml
+
+python 002_wikidata_api_add_item.py --item data/item_RAKE.yaml
+
 
 ```
 

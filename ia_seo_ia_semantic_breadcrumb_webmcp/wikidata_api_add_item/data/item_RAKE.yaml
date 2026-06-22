@@ -1,0 +1,30 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_rake.yaml
+
+label_en: "RAKE"
+
+description_en: "domain-independent keyword extraction algorithm that identifies key phrases in text by analysing word frequency and co-occurrence, implemented as an open-source Python library"
+
+aliases_en:
+  - "Rapid Automatic Keyword Extraction"
+  - "RAKE algorithm"
+  - "rake-nltk"
+  - "RAKE keyword extraction"
+  - "Rapid Automatic Keyword Extraction algorithm"
+
+subclass_of:
+  - label: "keyword extraction"
+  - label: "natural language processing"
+  - label: "algorithm"
+
+uses:
+  - label: "Python"
+  - label: "natural language processing"
+  - label: "NLTK"
+  - label: "co-occurrence matrix"
+  - label: "text mining"
+  - label: "stopword"
+
+official_website: "https://pypi.org/project/rake-nltk/"
+
+

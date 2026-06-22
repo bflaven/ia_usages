@@ -3,6 +3,12 @@
 # breadcrumb-migration 
 # paged=99 22/06/26
 
+Apache Subversion (Q46794)
+reveal.js (Q94995149)
+prompt engineering (Q108941486)
+pirate radio (Q877017)
+
+
 3WDOC (Q140278441)
 Adobe Flex Builder 3 (Q116875452)
 agile software development (Q30232)
@@ -70,6 +76,25 @@ You Only Look Once (Q97732222)
 
 
 ```text
+RAKE
+
+
+RAKE short for Rapid Automatic Keyword Extraction algorithm, is a domain independent keyword extraction algorithm which tries to determine key phrases in a body of text by analyzing the frequency of word appearance and its co-occurance with other words in the text
+
+
+https://pypi.org/project/rake-nltk/
+
+
+
+Rafael Trapet (Q99483791)
+Rafael Trapet | rafael trapet | Rafaël Trapet | rafaël trapet
+
+photographe français, photographie le monde contemporain avec ses problématiques et ses alternatives. Ses images, que l'on peut qualifier de sociales, demeurent au plus près du monde du travail, du monde agricole et de l'écologie.
+
+french photographer, photographs the contemporary world with its problems and alternatives. His images, which can be described as social, remain closely linked to the world of work, agriculture, and ecology.
+
+
+
 
 Romain Meffre
 
