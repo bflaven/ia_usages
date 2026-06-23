@@ -3,8 +3,9 @@
 
 ```text
 # breadcrumb-migration 
-# paged=83 22/06/26
-
+# 23/06/26
+# &paged=14 (begin) 
+# &paged=69 (end)
 
 Open 3D Viewer (Q140319875)
 OpenWolf (Q140319873)
@@ -54,7 +55,9 @@ Git (Q186055)
 Grunt (Q24576808)
 Mapbox (Q17068357)
 MS-13 (Q127784)
-
+ActionScript (Q234657)
+AmfPHP (Q4745972)
+application programming interface (Q165194)
 
 
 output (Q778569)
@@ -163,6 +166,10 @@ You Only Look Once (Q97732222)
 
 ## TODO ##
 
+
+
+
+
 - Marie-Eve Maheu
 
 French:  
@@ -222,6 +229,15 @@ https://3dviewer.net/
 
 
 ## DONE ##
+- Alain Devalpo (Q116280308)
+
+French:  
+Journaliste et écrivain indépendant basé à Istanbul, auteur d’articles, documentaires radio et livres, nourri par ses voyages à travers le monde et animé par une curiosité générale.
+
+English:  
+Independent journalist and writer based in Istanbul, author of articles, radio documentaries, and books, shaped by global travels and driven by broad curiosity.
+
+
 - Mat Jacob
 mat jacob
 
