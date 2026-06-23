@@ -1,8 +1,17 @@
 
 ```text
 # breadcrumb-migration 
-# paged=85 22/06/26
+# paged=83 22/06/26
 
+output (Q778569)
+Google Maps (Q4558504)
+newsletter (Q264238)
+webmaster (Q41674)
+hurricane (Q34439356)
+George Orwell (Q3335)
+object–relational mapping (Q58748)
+management theory (Q28515457)
+search engine optimization (Q180711)
 Apache Subversion (Q46794)
 reveal.js (Q94995149)
 prompt engineering (Q108941486)
