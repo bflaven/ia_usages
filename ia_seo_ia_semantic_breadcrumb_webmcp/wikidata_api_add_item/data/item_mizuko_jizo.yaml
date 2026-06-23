@@ -1,0 +1,25 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_mizuko_jizo.yaml
+
+label_en: "Mizuko Jizo"
+
+description_en: "Japanese Buddhist form of the bodhisattva Ksitigarbha associated with memorial rituals for miscarriages, stillbirths, abortions and young infant deaths"
+
+aliases_en:
+  - "Mizuko Jizō"
+  - "水子地蔵"
+  - "Jizo Ksitigarbha"
+  - "Mizuko memorial"
+  - "Jizo miscarriage"
+
+subclass_of:
+  - label: "bodhisattva"
+  - label: "religious concept"
+  - label: "Buddhist deity"
+
+uses:
+  - label: "Buddhism"
+  - label: "Japanese Buddhism"
+  - label: "memorial ritual"
+
+official_website: "https://FILL_ME_IN.com/"

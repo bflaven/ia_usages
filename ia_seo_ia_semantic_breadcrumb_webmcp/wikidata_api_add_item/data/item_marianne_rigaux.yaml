@@ -1,0 +1,21 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_marianne_rigaux.yaml
+
+label_en: "Marianne Rigaux"
+
+description_en: "French freelance journalist trained at ESJ Lille, producing reports in France and Romania for print and online magazines, and educational manager at Samsa.fr since 2015"
+
+aliases_en:
+  - "Marianne Rigaux journaliste"
+  - "Marianne Rigaux ESJ Lille"
+  - "Marianne Rigaux Samsa"
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "journalism"
+  - label: "magazine journalism"
+  - label: "professional training"
+
+official_website: "https://www.samsa.fr/"

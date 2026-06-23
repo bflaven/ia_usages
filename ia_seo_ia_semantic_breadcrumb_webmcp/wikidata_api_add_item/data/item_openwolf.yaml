@@ -1,0 +1,25 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_openwolf.yaml
+
+label_en: "OpenWolf"
+
+description_en: "open-source Node.js middleware for Claude Code providing persistent project intelligence through invisible hooks without requiring workflow changes"
+
+aliases_en:
+  - "OpenWolf middleware"
+  - "OpenWolf Claude Code"
+  - "OpenWolf hooks"
+  - "Open Wolf"
+
+subclass_of:
+  - label: "software middleware"
+  - label: "developer tool"
+  - label: "free and open-source software"
+
+uses:
+  - label: "Node.js"
+  - label: "Claude Code"
+  - label: "software hook"
+  - label: "JavaScript"
+
+official_website: "https://openwolf.com/"

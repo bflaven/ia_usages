@@ -39,6 +39,15 @@ python 002_wikidata_api_add_item.py --item data/item_slim_framework.yaml --sandb
 python 002_wikidata_api_add_item.py --item data/item_RAKE.yaml --sandbox
 
 
+python 002_wikidata_api_add_item.py --item data/item_marie_eve_maheu.yaml  --sandbox
+python 002_wikidata_api_add_item.py --item data/item_marie_normand.yaml  --sandbox
+python 002_wikidata_api_add_item.py --item data/item_marianne_rigaux.yaml  --sandbox
+python 002_wikidata_api_add_item.py --item data/item_mizuko_jizo.yaml  --sandbox
+python 002_wikidata_api_add_item.py --item data/item_olivia_colo.yaml  --sandbox
+python 002_wikidata_api_add_item.py --item data/item_openwolf.yaml  --sandbox
+python 002_wikidata_api_add_item.py --item data/item_open_3d_viewer.yaml  --sandbox
+
+
 # PRODUCTION
 # dry-run — print payload, no write
 python 002_wikidata_api_add_item.py --item data/item_Zeplin.yaml --dry-run
@@ -69,6 +78,15 @@ python 002_wikidata_api_add_item.py --item data/item_stephane_distinguin.yaml
 python 002_wikidata_api_add_item.py --item data/item_slim_framework.yaml
 
 python 002_wikidata_api_add_item.py --item data/item_RAKE.yaml
+
+python 002_wikidata_api_add_item.py --item data/item_marie_eve_maheu.yaml
+python 002_wikidata_api_add_item.py --item data/item_marie_normand.yaml
+python 002_wikidata_api_add_item.py --item data/item_marianne_rigaux.yaml
+python 002_wikidata_api_add_item.py --item data/item_mizuko_jizo.yaml
+python 002_wikidata_api_add_item.py --item data/item_olivia_colo.yaml
+python 002_wikidata_api_add_item.py --item data/item_openwolf.yaml
+python 002_wikidata_api_add_item.py --item data/item_open_3d_viewer.yaml
+
 
 
 ```

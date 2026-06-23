@@ -1,0 +1,30 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+
+# item_open_3d_viewer.yaml
+
+label_en: "Open 3D Viewer"
+
+description_en: "free and open-source browser-based web application for visualising and exploring 3D models, supporting formats including STL, OBJ, FBX, GLTF, IFC, STEP and over fifteen others"
+
+aliases_en:
+  - "3D Viewer"
+  - "3dviewer.net"
+  - "Open3D Viewer"
+  - "web 3D viewer"
+  - "browser 3D model viewer"
+
+subclass_of:
+  - label: "web application"
+  - label: "3D computer graphics software"
+  - label: "free and open-source software"
+
+uses:
+  - label: "WebGL"
+  - label: "JavaScript"
+  - label: "HTML5"
+  - label: "3D modeling"
+  - label: "GLTF"
+  - label: "STL"
+  - label: "IFC"
+
+official_website: "https://3dviewer.net/"

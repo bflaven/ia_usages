@@ -1,0 +1,21 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_olivia_colo.yaml
+
+label_en: "Olivia Colo"
+
+description_en: "French journalist and photo editor, editor-in-chief of L'Oeil Public since 1998, collaborating with photographers on documentary projects and photo editing for Marianne newspaper"
+
+aliases_en:
+  - "Olivia Colo journaliste"
+  - "Olivia Colo L'Oeil Public"
+  - "Olivia Colo photo editor"
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "photojournalism"
+  - label: "photo editing"
+  - label: "documentary photography"
+
+official_website: "https://www.oeilpublic.com/"

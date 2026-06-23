@@ -1,0 +1,21 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_marie_normand.yaml
+
+label_en: "Marie Normand"
+
+description_en: "French journalist, former head of RFI international desk and editor-in-chief since 2025, recipient of the Varenne and Bayeux awards, specialising in international reporting"
+
+aliases_en:
+  - "Marie Normand journaliste"
+  - "Marie Normand RFI"
+  - "Marie Normand rédactrice en chef"
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "journalism"
+  - label: "international reporting"
+  - label: "radio journalism"
+
+official_website: "https://www.rfi.fr/"

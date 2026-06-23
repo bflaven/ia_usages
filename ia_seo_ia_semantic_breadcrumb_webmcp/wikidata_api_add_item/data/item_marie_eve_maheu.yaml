@@ -1,0 +1,21 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+# item_marie_eve_maheu.yaml
+
+label_en: "Marie-Eve Maheu"
+
+description_en: "Canadian journalist at Radio-Canada since 2009, co-creator of the Rad journalism lab and acting editor-in-chief"
+
+aliases_en:
+  - "Marie-Eve Maheu journaliste"
+  - "Marie-Eve Maheu Radio-Canada"
+  - "Marie-Eve Maheu Rad"
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "journalism"
+  - label: "digital journalism"
+  - label: "data journalism"
+
+official_website: "https://ici.radio-canada.ca/"
