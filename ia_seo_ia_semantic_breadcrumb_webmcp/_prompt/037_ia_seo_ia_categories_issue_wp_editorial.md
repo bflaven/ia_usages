@@ -7,6 +7,39 @@
 # &paged=14 (begin) 
 # &paged=68 (end)
 
+Jigar Mehta (Q140320368)
+
+JSON (Q2063)
+
+AppleScript (Q129137)
+natural language processing (Q30642)
+Memcached (Q306661)
+large language model (Q115305900)
+logging (Q949532)
+long tail (Q534685)
+library (Q7075)
+Zygmunt Bauman (Q158092)
+Le Monde (Q12461)
+LESS (Q1107192)
+LeWeb (Q1809712)
+Nicolae Ceaușescu (Q80504)
+John F. Kennedy (Q9696)
+Lean (Q6509476)
+Anaconda (Q18209310)
+Label Studio (Q140320281)
+data set (Q1172284)
+LAMP (Q191342)
+Lando (Q140320298)
+customer relationship management (Q485643)
+Paris Commune (Q133132)
+Cathedral of Our Lady of Strasbourg (Q745460)
+Keiko Courdy (Q99670242)
+Keras (Q28470421)
+keybert (Q127163188)
+Keywords (Q6398560)
+
+
+
 Open 3D Viewer (Q140319875)
 OpenWolf (Q140319873)
 Mizuko Jizo (Q140319870)
@@ -14,6 +47,7 @@ Marianne Rigaux (Q140319869)
 Marie Normand (Q140319868)
 Marie-Eve Maheu (Q140319867)
 Google Chrome extension (Q5583816)
+smart TV (Q564635)
 
 
 OpenCart (Q288473)
@@ -60,7 +94,11 @@ ActionScript (Q234657)
 AmfPHP (Q4745972)
 application programming interface (Q165194)
 Michèle Alliot-Marie (Q58130)
+International Documentary Film Festival Amsterdam (Q1666506)
 
+control freak (Q1586477)
+Pandoc (Q2049294)
+Gecko (Q487834)
 
 output (Q778569)
 Google Maps (Q4558504)
@@ -101,8 +139,23 @@ Facebook (Q355)
 PAL (Q105973)
 Google AdSense (Q183480)
 MacPorts (Q1475706)
+Chrome Web Store (Q1211075)
 
 
+Immanuel Kant (Q9312)
+Keiko Courdy (Q99670242)
+install (Q6038648)
+Google Charts (Q28957012)
+chart (Q28923)
+
+
+The Innovation Theater (Q138970591)
+Laravel (Q13634357)
+information (Q11028)
+Adobe Illustrator (Q215016)
+Galata (Q501817)
+
+full stack developer (Q96072517)
 
 3WDOC (Q140278441)
 Adobe Flex Builder 3 (Q116875452)
@@ -160,6 +213,40 @@ website wireframe (Q3045202)
 WordPress (Q13166)
 Yves Marchand (Q140311924)
 You Only Look Once (Q97732222)
+JPEG (Q2195)
+JavaScript (Q2005)
+Jewish people (Q7325)
+Juno Beach (Q668308)
+iPod (Q9479)
+Janrain (Q3415301)
+iPadOS (Q64350339)
+interpreter (Q183065)
+Institut national de l'audiovisuel (Q1665109)
+Search engine indexing (Q2258979)
+Amazon basin (Q244451)
+prison (Q40357)
+HTTP persistent connection (Q647809)
+HuffPost (Q18049522)
+hoax (Q190084)
+Claude (Q118876059)
+hashtag (Q278485)
+headline (Q1313396)
+
+facial recognition system (Q1192553)
+Martin Heidegger (Q48301)
+gradio (Q117829662)
+David Graeber (Q1174579)
+garbage in, garbage out (Q1569381)
+gang (Q275186)
+Galt MacDermot (Q1346345)
+Clarín (Q878108)
+
+clickbait (Q17649781)
+cognition (Q2200417)
+iPhone (Q2766)
+fact-checking (Q59555084)
+Docker container (Q88466429)
+cluster analysis (Q622825)
 
 ```
 
@@ -169,7 +256,104 @@ You Only Look Once (Q97732222)
 
 ## TODO ##
 
+Flowplayer
 
+Flowplayer| flowplayer
+
+French:  
+lecteur vidéo HTML5 léger, conçu pour le web et le mobile, avec streaming adaptatif jusqu’à 1440p (4K) et prise en charge du live, du on-demand et du simulated-live. Il s’intègre à Wowza Video pour la publicité, le DRM et l’analytics. 
+
+English:  
+lightweight HTML5 video player for web and mobile, with adaptive bitrate streaming up to 1440p (4K) and support for live, on-demand, and simulated-live content. It integrates with Wowza Video for advertising, DRM, and analytics.
+
+
+Digital autonomy
+
+Digital autonomy | digital autonomy
+
+
+French:  
+L’autonomie numérique désigne la capacité des individus, organisations ou États à contrôler leurs technologies et données sans dépendre de fournisseurs externes, en assurant sécurité et confidentialité.
+
+English:  
+ability of individuals, organizations, or states to control their technologies and data independently, ensuring security and privacy without relying on external providers.
+
+
+
+
+Chainlit (Q137732299)
+
+
+Chainlit
+Chainlit | chainlit
+French:  
+Chainlit développe des outils pour les développeurs et les entreprises souhaitant déployer des applications d’IA ambitieuses et fiables.
+
+English:  
+Chainlit builds tools for developers and enterprises to deploy ambitious and reliable AI applications.
+
+
+
+Gerald Holubowicz
+gerald holubowicz | Gerald Holubowicz
+Gerald Holubowicz (Q140320632)
+
+
+French:  
+journaliste spécialisé en technologies, IA générative et deepfakes, Gerald Holubowicz est fondateur et directeur de publication de Synth Media et formateur.
+
+English:  
+journalist specializing in technology, generative AI, and deepfakes, founder and publishing director of Synth Media, and a trainer.
+
+
+
+Jeff Gothelf
+Jeff Gothelf | jeff gothelf
+French:  
+Jeff Gothelf est un expert en agilité, formateur et consultant reconnu pour accompagner les organisations vers une meilleure collaboration et une orientation résultats.
+
+English:  
+Jeff Gothelf is an agility expert, teacher, and consultant known for helping organizations improve collaboration and become more outcome-oriented.
+
+
+Johan Rousselot
+johan rousselot | Johan Rousselot
+Johan Rousselot (Q140320384)
+
+
+
+French:  
+Photographe né en 1971 à Bruxelles, ancien membre de L’Œil Public, représenté par Signatures et Laif/Redux, il vit à New Delhi après 20 ans passés à Paris.
+
+English:  
+Photographer born in Brussels in 1971, former member of L’Œil Public, represented by Signatures and Laif/Redux, he lives in New Delhi after 20 years in Paris.
+
+
+
+
+
+Jigar Mehta
+jigar mehta | Jigar Mehta
+French:  
+Jigar Mehta est journaliste et co-créateur du projet documentaire 18 Days in Egypt, soutenu par Tribeca et Sundance, ancien Knight Journalism Fellow et journaliste vidéo au New York Times.
+
+English:  
+Jigar Mehta is a journalist and co-creator of the documentary project 18 Days in Egypt, supported by Tribeca and Sundance, and a former Knight Journalism Fellow and video journalist at The New York Times.
+
+French:  
+Keiko Courdy est réalisateur et scénariste, connu pour ses documentaires sur Fukushima et la beauté, dont *L’Île invisible* (2021) et *Au-delà du nuage* (2013).
+
+English:  
+Keiko Courdy is a director and screenwriter known for documentaries on Fukushima and beauty, including *The Invisible Island* (2021) and *Beyond the Cloud* (2013).
+
+
+- Label Studio
+
+- Lando
+
+https://lando.dev/
+
+development tool for all your projects. It is  a push-button development environments hosted on your computer or in the cloud.
 
 
 
