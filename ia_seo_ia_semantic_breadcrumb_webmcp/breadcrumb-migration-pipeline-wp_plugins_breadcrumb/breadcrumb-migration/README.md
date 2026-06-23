@@ -406,6 +406,15 @@ Home > Tags > 17 octobre 1961      ← "Tags" links to /tags/ (WP page with slug
 
 ## Changelog
 
+### v1.36.0 — 2026-06-23
+- **Feature**: **Bulk Description — "↺ Sync" button per row** — new button in the Tag column pulls the current name and slug from the live WordPress tag and writes them back to `wp_breadcrumb_terms.original_name/slug` + `wp_breadcrumb_proposals.proposed_slug`; refreshes Tag column cells and updates the "↗ View" link href in-place; flash warning shown if the WP tag no longer exists (e.g. deleted after import)
+- **Feature**: **Bulk Description — "🗑 Remove" button per row** — removes a tag's plugin-DB records (FK-safe: proposal row deleted first, then term row) without touching the live WordPress tag; confirm dialog makes this explicit; row fades out on success and filter counts update
+- `ajax-handler.php`: `bm_ajax_refresh_tag_from_wp()` — reads `get_term()`, updates `original_name/slug` in `wp_breadcrumb_terms` and `proposed_slug` in `wp_breadcrumb_proposals`, returns `{found, name, slug}`; `bm_ajax_delete_tag_row()` — deletes from `wp_breadcrumb_proposals` then `wp_breadcrumb_terms` for the given `bm_term_id`
+- `admin-page.php`: "↺ Sync" and "🗑 Remove" buttons added to Tag column action links (`bm-desc-tag-action-link` group) with `data-bm-term-id` / `data-wp-term-id` / `data-tag-name` attributes
+- `admin.js`: `.bm-btn-refresh-tag` handler POSTs `bm_refresh_tag_from_wp`, updates `.bm-desc-tag-name/slug` DOM cells + view-link href; `.bm-btn-delete-tag-row` handler shows confirm dialog, POSTs `bm_delete_tag_row`, fades out row + calls `bmUpdateFilterCounts()`
+- `admin.css`: `.bm-desc-tag-action-link--danger` danger variant (red tint + hover deepens)
+- `breadcrumb-migration.php`: `wp_ajax_bm_refresh_tag_from_wp` + `wp_ajax_bm_delete_tag_row` hooks registered; version bumped to `1.36.0`
+
 ### v1.35.0 — 2026-06-20
 - **UX**: **Bulk Description — bottom tablenav simplified** — action buttons (Save / Sync / Export) removed from bottom tablenav; pagination only, right-aligned; all actions remain in top tablenav alongside top pagination
 - `admin-page.php`: `bm-desc-actions-bar` div and hint text removed from bottom tablenav
