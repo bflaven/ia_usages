@@ -1252,3 +1252,66 @@ function bm_ajax_get_tags_by_status(): void {
 		'tags'  => implode( ', ', $names ),
 	] );
 }
+
+// ── Refresh tag name / slug from WordPress ─────────────────────────────────────
+
+function bm_ajax_refresh_tag_from_wp(): void {
+	bm_verify_request();
+
+	$bm_term_id = absint( $_POST['bm_term_id'] ?? 0 );
+	$wp_term_id = absint( $_POST['wp_term_id'] ?? 0 );
+
+	if ( ! $bm_term_id || ! $wp_term_id ) {
+		wp_send_json_error( [ 'message' => 'Missing parameters.' ] );
+	}
+
+	$wp_term = get_term( $wp_term_id );
+
+	if ( is_wp_error( $wp_term ) || ! $wp_term ) {
+		wp_send_json_success( [ 'found' => false ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$wpdb->update(
+		$t['terms'],
+		[
+			'original_name' => $wp_term->name,
+			'original_slug' => $wp_term->slug,
+		],
+		[ 'id' => $bm_term_id ]
+	);
+
+	$wpdb->query( $wpdb->prepare(
+		"UPDATE {$t['proposals']} SET proposed_slug = %s WHERE term_id = %d",
+		$wp_term->slug,
+		$bm_term_id
+	) );
+
+	wp_send_json_success( [
+		'found' => true,
+		'name'  => $wp_term->name,
+		'slug'  => $wp_term->slug,
+	] );
+}
+
+// ── Delete tag row from plugin DB ──────────────────────────────────────────────
+
+function bm_ajax_delete_tag_row(): void {
+	bm_verify_request();
+
+	$bm_term_id = absint( $_POST['bm_term_id'] ?? 0 );
+
+	if ( ! $bm_term_id ) {
+		wp_send_json_error( [ 'message' => 'Missing bm_term_id.' ] );
+	}
+
+	global $wpdb;
+	$t = bm_tables();
+
+	$wpdb->delete( $t['proposals'], [ 'term_id' => $bm_term_id ] );
+	$wpdb->delete( $t['terms'],     [ 'id'      => $bm_term_id ] );
+
+	wp_send_json_success( [ 'bm_term_id' => $bm_term_id ] );
+}

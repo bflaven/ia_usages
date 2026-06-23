@@ -6,9 +6,7 @@
 
 	const { ajaxUrl, nonce, i18n } = bmData;
 
-	// Persistent filter state — survive button clicks that call bmDescApplyFilters()
-	let bmActiveTagFilter   = [];
-	let bmActiveSearchQuery = '';
+	// (batch tag filter is now server-side; checkbox filters remain client-side)
 
 	// spaCy named-entity list — shared by toolbar and per-row selects
 	const BM_SPACY_ENTITIES = [
@@ -664,33 +662,20 @@
 		const filterManual     = $( '#bm-filter-manual-only' ).prop( 'checked' );
 		const filterCompleted  = $( '#bm-filter-completed' ).prop( 'checked' );
 		const anyCheckbox      = filterWdId || filterWdIdFilled || filterWdDesc || filterActDesc || filterManual || filterCompleted;
-		const hasTagFilter    = bmActiveTagFilter.length > 0;
-		const hasSearch       = bmActiveSearchQuery.length > 0;
-		const anyActive       = anyCheckbox || hasTagFilter || hasSearch;
 
 		$( '#bm-bulk-desc-table tbody .bm-bulk-desc-row' ).each( function () {
 			const $row = $( this );
 
-			if ( ! anyActive ) {
+			if ( ! anyCheckbox ) {
 				$row.show();
 			} else {
 				let show = true;
-				if ( anyCheckbox ) {
-					if ( filterWdId       && $row.attr( 'data-wd-id-empty' )       !== '1' ) { show = false; }
-					if ( filterWdIdFilled && $row.attr( 'data-wd-id-empty' )       !== '0' ) { show = false; }
-					if ( filterWdDesc     && $row.attr( 'data-wd-desc-empty' )     !== '1' ) { show = false; }
-					if ( filterActDesc    && $row.attr( 'data-actual-desc-empty' ) !== '1' ) { show = false; }
-					if ( filterManual     && $row.attr( 'data-desc-source' )       !== 'manual' ) { show = false; }
-					if ( filterCompleted  && $row.attr( 'data-row-status' )        !== 'green' ) { show = false; }
-				}
-				if ( show && hasTagFilter ) {
-					const name = $row.attr( 'data-tag-name' ) || '';
-					if ( bmActiveTagFilter.indexOf( name ) === -1 ) { show = false; }
-				}
-				if ( show && hasSearch ) {
-					const name = $row.attr( 'data-tag-name' ) || '';
-					if ( name.indexOf( bmActiveSearchQuery ) === -1 ) { show = false; }
-				}
+				if ( filterWdId       && $row.attr( 'data-wd-id-empty' )       !== '1' ) { show = false; }
+				if ( filterWdIdFilled && $row.attr( 'data-wd-id-empty' )       !== '0' ) { show = false; }
+				if ( filterWdDesc     && $row.attr( 'data-wd-desc-empty' )     !== '1' ) { show = false; }
+				if ( filterActDesc    && $row.attr( 'data-actual-desc-empty' ) !== '1' ) { show = false; }
+				if ( filterManual     && $row.attr( 'data-desc-source' )       !== 'manual' ) { show = false; }
+				if ( filterCompleted  && $row.attr( 'data-row-status' )        !== 'green' ) { show = false; }
 				$row.toggle( show );
 			}
 		} );
@@ -1259,44 +1244,75 @@
 		$result.closest( '.bm-wikidata-results' ).slideUp( 200 );
 	} );
 
-	// ── Bulk Description — live name search (persistent) ─────────────────────────
-
-	$( document ).on( 'input', '#bm-desc-name-search', function () {
-		bmActiveSearchQuery = $( this ).val().trim().toLowerCase();
-		bmDescApplyFilters();
-	} );
-
-	$( document ).on( 'click', '#bm-desc-search-submit', function () {
-		bmActiveSearchQuery = $( '#bm-desc-name-search' ).val().trim().toLowerCase();
-		bmDescApplyFilters();
-	} );
-
-	// ── Bulk Description — tag filter textarea ───────────────────────────────────
-
-	$( document ).on( 'click', '#bm-desc-tag-filter-apply', function () {
-		const raw  = $( '#bm-desc-tag-list' ).val();
-		const tags = raw.split( /[,\n\r]+/ )
-			.map( t => t.trim().toLowerCase() )
-			.filter( t => t.length > 0 );
-
-		if ( ! tags.length ) {
-			flashNotice( 'Enter at least one tag name.', 'error' );
-			return;
-		}
-
-		bmActiveTagFilter = tags;
-		bmDescApplyFilters();
-
-		const visible = $( '#bm-bulk-desc-table tbody .bm-bulk-desc-row:visible' ).length;
-		flashNotice( `Filter applied: ${ visible } tag(s) visible.` );
-	} );
+	// ── Bulk Description — batch filter clear (textarea only; submit is server-side) ──
 
 	$( document ).on( 'click', '#bm-desc-tag-filter-clear', function () {
 		$( '#bm-desc-tag-list' ).val( '' );
-		$( '#bm-desc-name-search' ).val( '' );
-		bmActiveTagFilter   = [];
-		bmActiveSearchQuery = '';
-		bmDescApplyFilters();
+	} );
+
+	// ── Bulk Description — refresh tag name/slug from WordPress ─────────────────
+
+	$( document ).on( 'click', '.bm-btn-refresh-tag', function () {
+		const $btn      = $( this );
+		const bmTermId  = $btn.data( 'bm-term-id' );
+		const wpTermId  = $btn.data( 'wp-term-id' );
+		const $row      = $btn.closest( 'tr' );
+
+		$btn.addClass( 'bm-loading' ).text( '↺ …' );
+
+		post( 'bm_refresh_tag_from_wp', { bm_term_id: bmTermId, wp_term_id: wpTermId } )
+			.done( function ( res ) {
+				if ( res.success ) {
+					if ( res.data.found ) {
+						$row.find( '.bm-desc-tag-name' ).text( res.data.name );
+						$row.find( '.bm-desc-tag-slug' ).text( res.data.slug );
+						$row.attr( 'data-tag-name', res.data.name.toLowerCase() );
+						// Update the View link href so ↗ View points to the new slug
+						const newUrl = bmData.tagBase + encodeURIComponent( res.data.slug ) + '/';
+						const $viewLink = $row.find( '.bm-desc-tag-view-link' );
+						$viewLink.attr( 'href', newUrl ).show();
+						flashNotice( 'Synced: "' + res.data.name + '" / ' + res.data.slug );
+					} else {
+						flashNotice(
+							'Tag not found in WordPress (may have been deleted). Use 🗑 Remove to clean up.',
+							'warning'
+						);
+					}
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+				}
+			} )
+			.fail( () => flashNotice( i18n.error, 'error' ) )
+			.always( () => $btn.removeClass( 'bm-loading' ).text( '↺ Sync' ) );
+	} );
+
+	// ── Bulk Description — delete tag row from plugin DB ────────────────────────
+
+	$( document ).on( 'click', '.bm-btn-delete-tag-row', function () {
+		const $btn     = $( this );
+		const bmTermId = $btn.data( 'bm-term-id' );
+		const tagName  = $btn.data( 'tag-name' );
+
+		if ( ! window.confirm( '🗑 Remove "' + tagName + '" from the migration database?\n\nThis does NOT delete the WordPress tag — only the plugin DB record.' ) ) {
+			return;
+		}
+
+		$btn.addClass( 'bm-loading' ).text( '…' );
+
+		post( 'bm_delete_tag_row', { bm_term_id: bmTermId } )
+			.done( function ( res ) {
+				if ( res.success ) {
+					$btn.closest( 'tr' ).fadeOut( 300, function () { $( this ).remove(); bmUpdateFilterCounts(); } );
+					flashNotice( '"' + tagName + '" removed from migration database.' );
+				} else {
+					flashNotice( res.data?.message ?? i18n.error, 'error' );
+					$btn.removeClass( 'bm-loading' ).text( '🗑 Remove' );
+				}
+			} )
+			.fail( () => {
+				flashNotice( i18n.error, 'error' );
+				$btn.removeClass( 'bm-loading' ).text( '🗑 Remove' );
+			} );
 	} );
 
 	// ── Bulk Description — init filter counts on page load ──────────────────────

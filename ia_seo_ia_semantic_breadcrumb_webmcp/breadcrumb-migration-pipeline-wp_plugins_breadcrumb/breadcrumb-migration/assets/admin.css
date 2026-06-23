@@ -1150,20 +1150,43 @@
 	margin-top: 4px;
 }
 
-.bm-desc-wp-id {
-	width: 54px;
-	height: 22px;
-	padding: 0 4px;
-	border: 1px solid #c3c4c7;
-	border-radius: 3px;
+.bm-desc-wp-id-label {
 	font-size: 11px;
 	font-family: monospace;
 	color: #50575e;
 	background: #f6f7f7;
-	box-sizing: border-box;
-	cursor: default;
+	border: 1px solid #c3c4c7;
+	border-radius: 3px;
+	padding: 1px 5px;
+	white-space: nowrap;
 }
 
+.bm-desc-tag-action-link {
+	font-size: 11px;
+	color: #2271b1;
+	text-decoration: none;
+	white-space: nowrap;
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	font-family: inherit;
+}
+
+.bm-desc-tag-action-link:hover {
+	text-decoration: underline;
+	color: #135e96;
+}
+
+.bm-desc-tag-action-link--danger {
+	color: #d63638;
+}
+
+.bm-desc-tag-action-link--danger:hover {
+	color: #8c1515;
+}
+
+/* legacy alias kept for any rendered anchors with old class */
 .bm-desc-edit-link {
 	font-size: 11px;
 	color: #2271b1;

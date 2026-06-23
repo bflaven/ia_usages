@@ -410,7 +410,15 @@ function bm_render_tab_bulk_description(): void {
 	global $wpdb;
 	$t = bm_tables();
 
-	$search_desc   = sanitize_text_field( $_GET['bm_desc_search'] ?? '' );
+	$search_desc    = sanitize_text_field( $_GET['bm_desc_search'] ?? '' );
+	$desc_tags_raw  = sanitize_textarea_field( $_GET['bm_desc_tags'] ?? '' );
+	$desc_tags_list = [];
+	if ( $desc_tags_raw !== '' ) {
+		$desc_tags_list = array_values( array_filter(
+			array_map( 'trim', preg_split( '/[,\n\r]+/', $desc_tags_raw ) ),
+			fn( $v ) => $v !== ''
+		) );
+	}
 	$per_page_desc = 20;
 	$current_page  = max( 1, absint( $_GET['paged'] ?? 1 ) );
 	$offset        = ( $current_page - 1 ) * $per_page_desc;
@@ -426,6 +434,13 @@ function bm_render_tab_bulk_description(): void {
 		$where_params[] = $like;
 		$where_params[] = $like;
 	}
+	if ( ! empty( $desc_tags_list ) ) {
+		$placeholders = implode( ', ', array_fill( 0, count( $desc_tags_list ), '%s' ) );
+		$where_desc  .= " AND LOWER(t.original_name) IN ($placeholders)";
+		foreach ( $desc_tags_list as $tag ) {
+			$where_params[] = mb_strtolower( $tag, 'UTF-8' );
+		}
+	}
 
 	$count_sql  = "SELECT COUNT(*) FROM {$t['proposals']} p JOIN {$t['terms']} t ON t.id = p.term_id $where_desc";
 	$total_desc = (int) ( $where_params
@@ -435,7 +450,7 @@ function bm_render_tab_bulk_description(): void {
 
 	$data_sql     = "SELECT p.id AS proposal_id, p.wikidata_id, p.wikidata_description,
 		                    p.proposed_description, p.proposed_slug,
-		                    t.wp_term_id, t.original_name, t.status AS term_status
+		                    t.id AS bm_term_id, t.wp_term_id, t.original_name, t.status AS term_status
 		             FROM {$t['proposals']} p
 		             JOIN {$t['terms']} t ON t.id = p.term_id
 		             $where_desc
@@ -529,19 +544,45 @@ function bm_render_tab_bulk_description(): void {
 			<!-- ── Batch Filter ────────────────────────────────────────────────── -->
 			<section class="bm-panel bm-panel--batch-filter" aria-label="<?php esc_attr_e( 'Batch Filter', 'breadcrumb-migration' ); ?>">
 				<h3 class="bm-panel__title"><?php esc_html_e( 'Batch Filter', 'breadcrumb-migration' ); ?></h3>
-				<p class="description" style="margin-bottom:8px;"><?php esc_html_e( 'Paste a comma or newline-separated list of tag names to narrow the table to that batch only.', 'breadcrumb-migration' ); ?></p>
-				<div class="bm-desc-tag-filter-row">
-					<textarea id="bm-desc-tag-list" rows="3"
-						placeholder="<?php esc_attr_e( 'Apidoc, Chai, cheerio, CRUD, ejs, Express…', 'breadcrumb-migration' ); ?>"></textarea>
-					<div class="bm-desc-tag-filter-actions">
-						<button type="button" class="button button-primary" id="bm-desc-tag-filter-apply">
-							<?php esc_html_e( 'Apply Filter', 'breadcrumb-migration' ); ?>
-						</button>
-						<button type="button" class="button" id="bm-desc-tag-filter-clear">
-							<?php esc_html_e( 'Clear', 'breadcrumb-migration' ); ?>
-						</button>
-					</div>
+				<p class="description" style="margin-bottom:8px;"><?php esc_html_e( 'Paste a comma or newline-separated list of tag names. Searches the full dataset — not just the current page.', 'breadcrumb-migration' ); ?></p>
+				<?php if ( ! empty( $desc_tags_list ) ) :
+					$clear_batch_url = $search_desc !== ''
+						? add_query_arg( 'bm_desc_search', $search_desc, $base_url_desc )
+						: $base_url_desc;
+				?>
+				<div class="bm-batch-filter-active notice notice-info inline" style="margin-bottom:8px;">
+					<p>
+						<strong><?php printf(
+							/* translators: %d: number of tag names in the active batch filter */
+							esc_html__( 'Batch filter active — %d tag name(s)', 'breadcrumb-migration' ),
+							count( $desc_tags_list )
+						); ?></strong>
+						&mdash;
+						<a href="<?php echo esc_url( $clear_batch_url ); ?>">
+							✕ <?php esc_html_e( 'Clear batch filter', 'breadcrumb-migration' ); ?>
+						</a>
+					</p>
 				</div>
+				<?php endif; ?>
+				<form method="get" action="<?php echo esc_url( admin_url( 'admin.php' ) ); ?>" class="bm-batch-filter-form">
+					<input type="hidden" name="page" value="breadcrumb-migration">
+					<input type="hidden" name="tab" value="bulk_description">
+					<?php if ( $search_desc !== '' ) : ?>
+						<input type="hidden" name="bm_desc_search" value="<?php echo esc_attr( $search_desc ); ?>">
+					<?php endif; ?>
+					<div class="bm-desc-tag-filter-row">
+						<textarea name="bm_desc_tags" id="bm-desc-tag-list" rows="3"
+							placeholder="<?php esc_attr_e( 'Apidoc, Chai, cheerio, CRUD, ejs, Express…', 'breadcrumb-migration' ); ?>"><?php echo esc_textarea( $desc_tags_raw ); ?></textarea>
+						<div class="bm-desc-tag-filter-actions">
+							<button type="submit" class="button button-primary" id="bm-desc-tag-filter-apply">
+								<?php esc_html_e( 'Apply Filter', 'breadcrumb-migration' ); ?>
+							</button>
+							<button type="button" class="button" id="bm-desc-tag-filter-clear">
+								<?php esc_html_e( 'Clear', 'breadcrumb-migration' ); ?>
+							</button>
+						</div>
+					</div>
+				</form>
 			</section>
 
 			<!-- ── Tag Descriptions ────────────────────────────────────────────── -->
@@ -564,7 +605,7 @@ function bm_render_tab_bulk_description(): void {
 						↓ <?php esc_html_e( 'Export JSON', 'breadcrumb-migration' ); ?>
 					</button>
 				</div>
-				<?php bm_render_bulk_desc_pagination( $total_desc, $per_page_desc, $current_page, $base_url_desc, $search_desc, 'top' ); ?>
+				<?php bm_render_bulk_desc_pagination( $total_desc, $per_page_desc, $current_page, $base_url_desc, $search_desc, 'top', $desc_tags_raw ); ?>
 			</div>
 
 			<!-- ── Client-side filters ──────────────────────────────────────────── -->
@@ -649,6 +690,7 @@ function bm_render_tab_bulk_description(): void {
 				<tbody>
 				<?php foreach ( $rows as $row ) :
 					$proposal_id   = (int) $row->proposal_id;
+					$bm_term_id    = (int) $row->bm_term_id;
 					$proposed_desc = $row->proposed_description ?? '';
 					$wikidata_desc = $row->wikidata_description ?? '';
 					$tag_url       = $row->proposed_slug
@@ -691,20 +733,28 @@ function bm_render_tab_bulk_description(): void {
 						<td class="bm-desc-td-tag">
 							<strong class="bm-desc-tag-name"><?php echo esc_html( $row->original_name ); ?></strong>
 							<?php if ( $row->proposed_slug ) : ?>
-								<code><?php echo esc_html( $row->proposed_slug ); ?></code>
+								<code class="bm-desc-tag-slug"><?php echo esc_html( $row->proposed_slug ); ?></code>
 							<?php endif; ?>
 							<div class="bm-desc-tag-meta">
-								<input type="text" readonly class="bm-desc-wp-id"
-									value="<?php echo esc_attr( $row->wp_term_id ); ?>"
-									title="<?php esc_attr_e( 'WP Term ID', 'breadcrumb-migration' ); ?>">
+								<span class="bm-desc-wp-id-label">WP#<?php echo absint( $row->wp_term_id ); ?></span>
+								<a href="<?php echo $tag_url ? esc_url( $tag_url ) : '#'; ?>"
+									target="_blank" rel="noopener noreferrer"
+									class="bm-desc-tag-action-link bm-desc-tag-view-link"
+									<?php if ( ! $tag_url ) : ?>style="display:none;"<?php endif; ?>
+									title="<?php esc_attr_e( 'View tag on site', 'breadcrumb-migration' ); ?>">↗ <?php esc_html_e( 'View', 'breadcrumb-migration' ); ?></a>
 								<a href="<?php echo esc_url( $edit_url ); ?>"
 									target="_blank" rel="noopener noreferrer"
-									class="bm-desc-edit-link">✏ <?php esc_html_e( 'Edit', 'breadcrumb-migration' ); ?></a>
-								<?php if ( $tag_url ) : ?>
-									<a href="<?php echo esc_url( $tag_url ); ?>"
-										target="_blank" rel="noopener noreferrer"
-										class="bm-wikidata-ext-link">↗</a>
-								<?php endif; ?>
+									class="bm-desc-tag-action-link">✏ <?php esc_html_e( 'Edit in WP', 'breadcrumb-migration' ); ?></a>
+								<button type="button"
+									class="bm-desc-tag-action-link bm-btn-refresh-tag"
+									data-bm-term-id="<?php echo esc_attr( $bm_term_id ); ?>"
+									data-wp-term-id="<?php echo esc_attr( $row->wp_term_id ); ?>"
+									title="<?php esc_attr_e( 'Pull updated name &amp; slug from WordPress', 'breadcrumb-migration' ); ?>">↺ <?php esc_html_e( 'Sync', 'breadcrumb-migration' ); ?></button>
+								<button type="button"
+									class="bm-desc-tag-action-link bm-desc-tag-action-link--danger bm-btn-delete-tag-row"
+									data-bm-term-id="<?php echo esc_attr( $bm_term_id ); ?>"
+									data-tag-name="<?php echo esc_attr( $row->original_name ); ?>"
+									title="<?php esc_attr_e( 'Remove this tag from the migration database', 'breadcrumb-migration' ); ?>">🗑 <?php esc_html_e( 'Remove', 'breadcrumb-migration' ); ?></button>
 							</div>
 						</td>
 						<!-- Wikidata ID input -->
@@ -785,7 +835,7 @@ function bm_render_tab_bulk_description(): void {
 
 			<!-- ── Tablenav bottom ──────────────────────────────────────────────── -->
 			<div class="tablenav bottom bm-desc-tablenav">
-				<?php bm_render_bulk_desc_pagination( $total_desc, $per_page_desc, $current_page, $base_url_desc, $search_desc, 'bottom' ); ?>
+				<?php bm_render_bulk_desc_pagination( $total_desc, $per_page_desc, $current_page, $base_url_desc, $search_desc, 'bottom', $desc_tags_raw ); ?>
 			</div>
 
 			<div id="bm-bulk-desc-results" style="display:none; margin-top:16px;"></div>
@@ -798,9 +848,16 @@ function bm_render_tab_bulk_description(): void {
 
 // ── Bulk Description — pagination ─────────────────────────────────────────────
 
-function bm_render_bulk_desc_pagination( int $total, int $per_page, int $current, string $base_url, string $search, string $position ): void {
+function bm_render_bulk_desc_pagination( int $total, int $per_page, int $current, string $base_url, string $search, string $position, string $tags = '' ): void {
 	$total_pages = max( 1, (int) ceil( $total / $per_page ) );
-	$url_base    = $search !== '' ? add_query_arg( 'bm_desc_search', $search, $base_url ) : $base_url;
+	$url_args    = [];
+	if ( $search !== '' ) {
+		$url_args['bm_desc_search'] = $search;
+	}
+	if ( $tags !== '' ) {
+		$url_args['bm_desc_tags'] = $tags;
+	}
+	$url_base = $url_args ? add_query_arg( $url_args, $base_url ) : $base_url;
 
 	$is_first  = $current <= 1;
 	$is_last   = $current >= $total_pages;

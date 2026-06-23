@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Breadcrumb Migration
  * Description: Validate spaCy/Wikidata pipeline proposals and publish enriched taxonomy terms.
- * Version:     1.35.0
+ * Version:     1.36.0
  * Author:      Bruno Flaven + Claude Code
  * Text Domain: breadcrumb-migration
  * Domain Path: /languages
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BM_VERSION',       '1.35.0' );
+define( 'BM_VERSION',       '1.36.0' );
 define( 'BM_PLUGIN_DIR',    plugin_dir_path( __FILE__ ) );
 define( 'BM_PLUGIN_URL',    plugin_dir_url( __FILE__ ) );
 
@@ -58,6 +58,8 @@ add_action( 'wp_ajax_bm_update_original_term',         'bm_ajax_update_original_
 add_action( 'wp_ajax_bm_update_breadcrumb',            'bm_ajax_update_breadcrumb' );
 add_action( 'wp_ajax_bm_clear_wikidata_fields',        'bm_ajax_clear_wikidata_fields' );
 add_action( 'wp_ajax_bm_get_tags_by_status',          'bm_ajax_get_tags_by_status' );
+add_action( 'wp_ajax_bm_refresh_tag_from_wp',         'bm_ajax_refresh_tag_from_wp' );
+add_action( 'wp_ajax_bm_delete_tag_row',              'bm_ajax_delete_tag_row' );
 
 // admin-post — file import + CSV export + settings save
 add_action( 'admin_post_bm_import',         'bm_handle_import' );
@@ -101,6 +103,7 @@ function bm_enqueue_assets( string $hook ): void {
 	wp_localize_script( 'bm-admin', 'bmData', [
 		'ajaxUrl'      => admin_url( 'admin-ajax.php' ),
 		'nonce'        => wp_create_nonce( 'bm_nonce' ),
+		'tagBase'      => trailingslashit( home_url( '/tag' ) ),
 		'wikidataLang' => $bm_settings['wikidata_lang'] ?? 'en',
 		'i18n'         => [
 			'confirmPublish' => __( 'Publish this term to WordPress? This will update the live taxonomy.', 'breadcrumb-migration' ),
