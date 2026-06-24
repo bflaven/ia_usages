@@ -87,6 +87,7 @@ python 002_wikidata_api_add_item.py --item data/item_olivia_colo.yaml
 python 002_wikidata_api_add_item.py --item data/item_openwolf.yaml
 python 002_wikidata_api_add_item.py --item data/item_open_3d_viewer.yaml
 
+python 002_wikidata_api_add_item.py --item data/item_bruno_flaven_extended.yaml
 
 
 ```

@@ -1,0 +1,127 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+
+# item_bruno_flaven_extended.yaml
+
+label_en: "Bruno Flaven"
+
+description_en: "French AI coordinator and digital project manager with 20 years of experience in mobile and desktop internet applications, working for France Médias Monde on iOS and Android apps"
+
+aliases_en:
+  - "Bruno Flaven AI"
+  - "Bruno Flaven coordinator"
+  - "Bruno Flaven"
+  - "bflaven"
+
+# ── Basic claims ──────────────────────────────────────────────────────────────
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "artificial intelligence"
+  - label: "Python"
+  - label: "natural language processing"
+  - label: "large language model"
+  - label: "Symfony"
+  - label: "FastAPI"
+  - label: "Docker"
+  - label: "Agile software development"
+  - label: "iOS"
+  - label: "Android"
+  - label: "WordPress"
+  - label: "Drupal"
+
+official_website: "https://flaven.fr/"
+
+# ── Extended claims (add manually on Wikidata) ────────────────────────────────
+
+# instance of (P31):
+#   human (Q5)
+
+# occupation (P106):
+#   - project manager (Q16798631)
+#   - product owner
+#   - artificial intelligence coordinator
+#   - trainer (Q974144)
+#   - entrepreneur (Q131524)
+#   - author (Q482980)
+
+# country of citizenship (P27):
+#   France (Q142)
+
+# employer (P108):
+#   France Médias Monde (Q3082571)  [2013–present]
+#   Hecube / 3WDOC                  [2006–2013] → may need to be created
+#   Style-Vision                    [2002–2006] → may need to be created
+#   FDK                             [2000–2002] → may need to be created
+#   Lycos France                    [late 1990s]
+#   Chez.com / Tiscali              [late 1990s]
+
+# founded (P112):
+#   Hecube (web agency, Paris)      [2006]
+#   FDK (multimedia, Paris)         [2000]
+
+# field of work (P101):
+#   - artificial intelligence (Q11660)
+#   - natural language processing (Q30642)
+#   - mobile application (Q620615)
+#   - project management (Q176165)
+#   - digital journalism (Q1130752)
+#   - machine learning (Q2539)
+
+# educated at (P69):
+#   - École Polytechnique (Q273626)
+#     [Executive Education, Technology Innovation Management, 2021–2022]
+#   - Université Paris Dauphine (Q1394262)
+#     [DESS 226, Telecommunications & New Media, 1997–1998]
+#   - Université Paris II Panthéon-Assas (Q662976)
+#     [Master Economics & Business Management, 1995–1996]
+
+# notable work (P800):
+#   - DENIA (AI microservices API, FMM) → may need to be created
+#   - 3WDOC (HTML5 webdocumentary SaaS) → may need to be created
+#   - COCKPIT (web micro-services platform) → may need to be created
+#   - BACH (Symfony editorial back-office) → may need to be created
+#   - "A Quick Journey Through API Testing" (Amazon Kindle, 2018)
+#   - "Redefining a Testing Automation Strategy for a P.O." (Kindle, 2020)
+#   - "Learning and Building E2E Test Automation with Cypress & OKR" (Kindle, 2022)
+
+# languages spoken (P1412):
+#   - French (Q150)    [native]
+#   - English (Q1860)  [fluent]
+#   - Spanish (Q1321)  [professional]
+#   - Russian (Q7737)  [basic]
+
+# source code repository (P1324):
+#   https://github.com/bflaven
+
+# official website (P856):
+#   https://flaven.fr/
+
+# social media (P6634 LinkedIn / P2037 GitHub):
+#   GitHub: bflaven
+
+# has part (P527) — AI stack used professionally:
+#   Claude (Anthropic), ChatGPT (OpenAI), Mistral,
+#   Whisper, NLLB, CLIP, MLflow
+
+# award received (P166):
+#   → none documented publicly yet
+
+# interests / hobbies (P101 field of work or P2032 described at):
+#   long-distance running, yoga, philosophy (Foucault, Wittgenstein),
+#   ukulele, cinema, literature
+#   → these are informal and not standard Wikidata claims;
+#     add only if a cited source documents them.
+
+# NOTE:
+# - Search before editing or creating:
+#   https://www.wikidata.org/w/index.php?search=Bruno+Flaven
+# - France Médias Monde QID is Q3082571 — verified.
+# - 3WDOC item may already exist — check:
+#   https://www.wikidata.org/w/index.php?search=3WDOC
+# - Amazon Kindle books can be linked via edition or
+#   translation of (P629) or described at URL (P973)
+#   pointing to amzn.to/2WQbRpA
+# - Add IPSI Tunisia training via participant in (P1344)
+#   or described at URL (P973) if a citable source exists.

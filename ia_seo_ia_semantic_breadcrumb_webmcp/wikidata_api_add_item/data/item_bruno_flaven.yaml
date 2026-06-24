@@ -1,0 +1,37 @@
+# ── Basic information ─────────────────────────────────────────────────────────
+
+
+# item_bruno_flaven.yaml
+
+label_en: "Bruno Flaven"
+
+description_en: "French AI coordinator and digital project manager with 20 years of experience in mobile and desktop internet applications, working for France Médias Monde on iOS and Android apps"
+
+aliases_en:
+  - "Bruno Flaven AI"
+  - "Bruno Flaven coordinator"
+  - "Bruno Flaven"
+  - "bflaven"
+
+subclass_of:
+  - label: "human"
+
+uses:
+  - label: "artificial intelligence"
+  - label: "project management"
+  - label: "iOS"
+  - label: "Android"
+  - label: "Symfony"
+
+official_website: "https://flaven.fr/"
+
+# French:  
+# Bruno Flaven est coordinateur IA en France, avec 20 ans d’expérience comme chef de projet dans des applications Internet mobiles et desktop. Il travaille actuellement pour France Médias Monde sur des applications iOS et Android, et a aussi été product owner sur un projet back-office Symfony.
+
+# English:  
+# Bruno Flaven is an AI coordinator in France with 20 years of experience as a project manager in mobile and desktop internet applications. He currently works for France Médias Monde on iOS and Android apps and has also served as a product owner on a Symfony back-office project.
+
+# Spanish:  
+# Bruno Flaven es coordinador de IA en Francia, con 20 años de experiencia como gestor de proyectos en aplicaciones de Internet para móvil y escritorio. Actualmente trabaja en France Médias Monde en aplicaciones iOS y Android, y también ha sido product owner de un proyecto back-office con Symfony.
+
+# https://flaven.fr/
