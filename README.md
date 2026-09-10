@@ -106,9 +106,7 @@
 26. WebMCP, the End of Clicks, and the Semantic Upgrade Your WordPress Site Actually Needs [https://wp.me/p3Vuhl-3rb](https://wp.me/p3Vuhl-3rb)
 
 
-
-
-
+27. AI, Liquid Capitalism, and the Death of Execution: What BMad, Caveman, and OpenClaw Taught Me [https://wp.me/p3Vuhl-3rD](https://wp.me/p3Vuhl-3rD)
 
 
 **And some other directories that does not have any attached to it but shows useful resources and code.**
