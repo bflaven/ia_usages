@@ -21,7 +21,8 @@ htmlcov/
 .claude/
 
 # Working/prompt scratch files and dirs, e.g. _prompts, _notes, _draft
-_*
+# you can add
+# _*
 
 # Raw diff monster files (proofreading exports, not repo content)
 *.diff
