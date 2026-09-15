@@ -1,0 +1,110 @@
+{
+  "updated": "2026-09-15",
+  "entries": [
+    {
+      "term": "Sud-Liban",
+      "language_pair": "fr-en",
+      "approved": "southern Lebanon",
+      "note": "Lowercase 'southern' unless starting a headline; do not use 'South Lebanon' as a proper noun.",
+      "category": "place_name"
+    },
+    {
+      "term": "France Médias Monde",
+      "language_pair": "fr-en",
+      "approved": "France Médias Monde",
+      "note": "Never translate the company name. Keep accents.",
+      "category": "institution_name"
+    },
+    {
+      "term": "intelligence artificielle générative",
+      "language_pair": "fr-en",
+      "approved": "generative AI",
+      "note": "Do not spell out 'artificial intelligence' on second reference; use 'AI'.",
+      "category": "terminology"
+    },
+    {
+      "term": "Model Context Protocol",
+      "language_pair": "en-fr",
+      "approved": "protocole de contexte de modèle (MCP)",
+      "note": "Keep the English acronym MCP even in French copy; it is the standard's own name.",
+      "category": "terminology"
+    },
+    {
+      "term": "Monte Carlo Doualiya",
+      "language_pair": "fr-en",
+      "approved": "Monte Carlo Doualiya",
+      "note": "Never translate; keep full name on first reference, MCD acceptable after.",
+      "category": "institution_name"
+    },
+    {
+      "term": "gouvernance IA",
+      "language_pair": "fr-en",
+      "approved": "AI governance",
+      "note": "Preferred over 'AI oversight' in house style.",
+      "category": "terminology"
+    },
+    {
+      "term": "Kiev",
+      "language_pair": "ru-en",
+      "approved": "Kyiv",
+      "note": "House style since 2022: use the Ukrainian transliteration 'Kyiv', not the Russian-derived 'Kiev', for the capital.",
+      "category": "place_name"
+    },
+    {
+      "term": "Kharkov",
+      "language_pair": "ru-en",
+      "approved": "Kharkiv",
+      "note": "Use the Ukrainian transliteration, not the Russian one, per house policy on Ukrainian place names.",
+      "category": "place_name"
+    },
+    {
+      "term": "Lvov",
+      "language_pair": "ru-en",
+      "approved": "Lviv",
+      "note": "Use the Ukrainian transliteration, not the Russian one.",
+      "category": "place_name"
+    },
+    {
+      "term": "Odessa",
+      "language_pair": "ru-en",
+      "approved": "Odesa",
+      "note": "Ukrainian spelling uses a single 's' — 'Odesa', not the Russian-style double-s 'Odessa'.",
+      "category": "place_name"
+    },
+    {
+      "term": "Nikolaev",
+      "language_pair": "ru-en",
+      "approved": "Mykolaiv",
+      "note": "Use the Ukrainian transliteration, not the Russian one.",
+      "category": "place_name"
+    },
+    {
+      "term": "Zaporozhye",
+      "language_pair": "ru-en",
+      "approved": "Zaporizhzhia",
+      "note": "Use the Ukrainian transliteration, not the Russian one.",
+      "category": "place_name"
+    },
+    {
+      "term": "Chernigov",
+      "language_pair": "ru-en",
+      "approved": "Chernihiv",
+      "note": "Use the Ukrainian transliteration, not the Russian one.",
+      "category": "place_name"
+    },
+    {
+      "term": "Dnepropetrovsk",
+      "language_pair": "ru-en",
+      "approved": "Dnipro",
+      "note": "City renamed in the post-2016 decommunization law. 'Dnepropetrovsk' is valid only in pre-2016 historical context, never for current references.",
+      "category": "place_name"
+    },
+    {
+      "term": "Artemivsk",
+      "language_pair": "ru-en",
+      "approved": "Bakhmut",
+      "note": "Post-2016 decommunization name; 'Artemivsk' is obsolete — use 'Bakhmut', the name under which the city is known in current (including wartime) coverage.",
+      "category": "place_name"
+    }
+  ]
+}

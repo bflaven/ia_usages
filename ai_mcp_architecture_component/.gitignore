@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.coverage
+htmlcov/
+.DS_Store
+
+# Claude Code / AI assistant local state
+.claude/
+
+# Working/prompt scratch files and dirs, e.g. _prompts, _notes, _draft
+_*
+
+# Raw diff monster files (proofreading exports, not repo content)
+*.diff
