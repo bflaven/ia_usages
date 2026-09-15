@@ -249,13 +249,11 @@ AttributeError: module 'mcp' has no attribute '__version__'
 
 
 ## PROMPT_4
-
 Write an MODOP (Operational Method) to launch the workflow and verify that everything is in order—e.g., activating the Anaconda environment, running the Python script, checking specific items, etc.
 
 
 ## PROMPT_3
-
-add a .gitignore to the project for python, that exlcude also .claude, file strating with inndescore e.g `/Users/brunoflaven/Documents/01_work/blog_articles/_ia_mcp_architecture_component/_prompts` or file with `.diff` that are monster files.
+Add a .gitignore to the project for python, that exlcude also .claude, file strating with inndescore e.g `/Users/brunoflaven/Documents/01_work/blog_articles/_ia_mcp_architecture_component/_prompts` or file with `.diff` that are monster files.
 
 
 ## PROMPT_2
@@ -263,7 +261,7 @@ So, let's do the POC in English only. I will release the code on GitHub only and
 
 1. Write a readme.md with a changelog and a claude.md in English for this POC, write everything in English. 
 
-2. I want to use this POC to also demonstrate what I have said during the interview with C+ e.g. KPIs, methodology, define User story, make interviews of stakeholders, find a use case, think technically to solve with MCP, do not create technical debt... and I want also to demonstrate my cognitive flexibility by showing that—regardless of the stage where I intervene in the process of capturing a use case, identifying value, or exploring potential AI automation—I strive for consistency and maintain a "big picture" perspective. For example, while I may implement MCP, I do not do so for its own sake; rather, my approach is grounded in a proven methodology, best practices, an ROI-driven mindset, and a culture centered on the product and the user experience. Capisce ?
+2. I want to use this POC to also demonstrate what I have said during an interview e.g. KPIs, methodology, define User story, make interviews of stakeholders, find a use case, think technically to solve with MCP, do not create technical debt... and I want also to demonstrate my cognitive flexibility by showing that—regardless of the stage where I intervene in the process of capturing a use case, identifying value, or exploring potential AI automation—I strive for consistency and maintain a "big picture" perspective. For example, while I may implement MCP, I do not do so for its own sake; rather, my approach is grounded in a proven methodology, best practices, an ROI-driven mindset, and a culture centered on the product and the user experience. Capisce ?
 
 - extract from fiche_memo_condensee.md
 ```text 
@@ -287,15 +285,17 @@ So, let's do the POC in English only. I will release the code on GitHub only and
 
 ## PROMPT_1
 
-1. Peux-tu m'indiquer ce que c'est simplement le "volet architecture MCP spécifiquement" ?  J'ai créé un répertoire de blog post pour consigner tes réponses `/Users/brunoflaven/Documents/01_work/blog_articles/_ia_mcp_architecture_component` car cela va aussi devenor un article. C'est une manière d'étoffer ma crédibilité lorsque j'envoie des CV et réponds à des annonces qu'en penses-tu ? 
+1. Could you briefly explain what the "MCP architecture component" specifically entails? I’ve created a directory—`/Users/brunoflaven/Documents/01_work/blog_articles/_ia_mcp_architecture_component`—to log your answers, as this will eventually become a blog post. It’s a way to boost my credibility when sending out CVs and applying for jobs; what do you think?
 
 
-2. En quoi et comment j'aurai pu l'appliquer sur DENIA ? Sans doute que le protocole MCP n'était pas sec mais nous avions discuté avec l'architecte de DENIA.  
+2. In what way—and how—could I have applied this to DENIA? The MCP protocol probably wasn't fully mature back then, though I did discuss it with the DENIA architect.
 
-3. Ensuite je peux faire un POC rapide sur cette partie spécifiquement. J'ai déjà exploré cet aspect voire mon blog post `https://flaven.fr/2025/05/maximizing-claude-ai-desktop-app-mcp-agents-presentation-generation-guide/`  
-- Réponse dans la lettre de motivation 
+3. I could also create a quick POC for this specific part. I’ve already explored this aspect—see my blog post: `https://flaven.fr/2025/05/maximizing-claude-ai-desktop-app-mcp-agents-presentation-generation-guide/`
+
+- Answer for the cover letter:
+
 ```text
-Sur le volet architecture MCP spécifiquement : je n'ai pas encore piloté de produit MCP en environnement d'entreprise, mais je pratique le protocole concrètement, au quotidien, via Claude Code sur mes propres projets (agents, orchestration d'outils, automatisation) — une pratique documentée sur mon blog (flaven.fr) et mon dépôt GitHub. Je préfère le dire directement plutôt que de laisser croire à une expertise MCP en production que je n'ai pas encore : ce que j'apporte, c'est la même discipline de gouvernance que j'applique à DENIA (validation multi-directions avant mise en production, association systématique de la sécurité et du juridique), transposée à un contexte MCP que je maîtrise déjà dans sa logique, sinon dans son échelle.  
+Regarding the MCP architecture component specifically: while I haven't yet managed an MCP product in an enterprise environment, I work with the protocol hands-on every day using Claude Code on my own projects (agents, tool orchestration, automation)—practices I document on my blog (flaven.fr) and GitHub repository. I prefer to be upfront about this rather than implying I have production-level MCP expertise that I don't yet possess. What I do bring is the same governance discipline I apply to DENIA (multi-stakeholder validation prior to deployment, systematic integration of security and legal reviews), adapted to an MCP context—a framework I have already mastered conceptually, even if I haven't yet operated it at scale.
 ```
 
  
